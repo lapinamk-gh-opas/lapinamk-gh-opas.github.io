@@ -1,0 +1,18 @@
+.site-footer {
+  display: flex !important;
+  align-items: center;
+  padding: 2vh 2vw;
+  border-top: #14827d 2px solid;
+}
+
+.footer-content-center {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.footer-text {
+  margin: 0;
+  padding: 0 1vw;
+}
