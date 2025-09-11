@@ -1,0 +1,135 @@
+.page-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  width: 300px;
+  background: rgba(20, 130, 125, 0.2);
+  border-right: 2px solid rgba(20, 130, 125, 0.4);
+  transition: width 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+
+.sidebar.closed {
+  width: 30px; /* pienempi leveys */
+}
+
+/* Toggle-nappi */
+.toggle-btn {
+  position: fixed;
+  left: 280px;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, left 0.3s ease;
+}
+
+.toggle-btn.closed {
+  transform: rotate(180deg);
+  left: 10px;
+}
+
+/* Menu */
+.sidebar-menu,
+.sidebar-sub-list {
+  list-style: none;
+  padding: 1rem;
+  margin: 0;
+}
+
+.sidebar-sub-list li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.sidebar-sub-list {
+  margin: 0 0 1rem 2rem !important;
+  padding: 0 !important;
+}
+
+.sidebar-sub-list a {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.sidebar-menu a {
+  color: #000;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+}
+
+/* Tekstien liuku/fade */
+.sidebar span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  white-space: nowrap;
+}
+
+.sidebar.closed span {
+  transform: translateX(-280px);
+}
+
+.button-and-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  position: relative;
+}
+
+/* ---------- Main content ---------- */
+.main-container {
+  flex: 1;
+  padding: 3rem;
+  background: #f9f9f9;
+  transition: margin-left 0.3s ease;
+}
+
+@media (max-width: 1000px) {
+  .page-layout {
+    position: relative;
+    min-height: 100vh;
+  }
+  .sidebar {
+    background: #d0e6e5;
+    position: absolute;
+    height: 100%;
+    z-index: 1000;
+    width: 10px; /* pienempi leveys */
+  }
+
+  .sidebar.closed {
+    width: 90%;
+    left: 0;
+    top: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .toggle-btn {
+    transform: rotate(180deg);
+    left: -10px;
+  }
+
+  .toggle-btn.closed {
+    transform: rotate(0deg);
+    left: 85%;
+  }
+
+  .sidebar span {
+    transform: translateX(-280px);
+  }
+
+  .sidebar.closed span {
+    transform: translateX(0);
+  }
+}

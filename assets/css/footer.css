@@ -16,3 +16,17 @@
   margin: 0;
   padding: 0 1vw;
 }
+
+@media (max-width: 600px) {
+  .site-footer {
+    flex-direction: column;
+  }
+  .footer-content-center {
+    flex-direction: column;
+  }
+
+  .footer-text {
+    text-align: center;
+    padding: 1em 1vw;
+  }
+}
