@@ -1,6 +1,6 @@
 .page-layout {
   display: flex;
-  min-height: 100vh;
+  flex: 1;
 }
 
 /* ---------- Sidebar ---------- */
@@ -9,21 +9,20 @@
   background: rgba(20, 130, 125, 0.2);
   border-right: 2px solid rgba(20, 130, 125, 0.4);
   transition: width 0.3s ease;
-  overflow: hidden;
   position: relative;
   z-index: 10;
 }
 
 .sidebar.closed {
-  width: 30px; /* pienempi leveys */
+  width: 20px;
 }
 
 /* Toggle-nappi */
 .toggle-btn {
   position: fixed;
   left: 280px;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin-top: 2rem;
+  margin-bottom: 15rem;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -31,12 +30,13 @@
   color: #fff;
   border: none;
   cursor: pointer;
+  z-index: 20;
   transition: transform 0.3s ease, left 0.3s ease;
 }
 
 .toggle-btn.closed {
   transform: rotate(180deg);
-  left: 10px;
+  left: 1px;
 }
 
 /* Menu */
@@ -67,6 +67,11 @@
   display: inline-flex;
   align-items: center;
   padding: 8px 16px;
+  text-decoration: none;
+}
+
+.sidebar-menu a:hover {
+  text-decoration: underline;
 }
 
 /* Tekstien liuku/fade */
@@ -78,6 +83,10 @@
 
 .sidebar.closed span {
   transform: translateX(-280px);
+}
+
+.sidebar.closed a {
+  pointer-events: none;
 }
 
 .button-and-menu {
@@ -95,24 +104,54 @@
   transition: margin-left 0.3s ease;
 }
 
+/* ---------- Dropdown functionality ---------- */
+.dropdown-toggle {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  transform: translateY(+4px);
+  transition: transform 0.3s;
+}
+
+.dropdown-toggle.open {
+  transform: rotate(180deg) translateY(-6px);
+}
+
+.sidebar-sub-list {
+  display: none;
+  list-style: none;
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+.sidebar-sub-list.open {
+  display: block;
+}
+
+/* ---------- Mobile ---------- */
 @media (max-width: 1000px) {
   .page-layout {
     position: relative;
-    min-height: 100vh;
+    height: fit-content;
   }
   .sidebar {
     background: #d0e6e5;
-    position: absolute;
-    height: 100%;
-    z-index: 1000;
-    width: 10px; /* pienempi leveys */
+    position: relative;
+    height: auto;
+    z-index: 10;
+    width: 10px;
   }
 
   .sidebar.closed {
-    width: 90%;
-    left: 0;
-    top: 0;
-    transition: transform 0.3s ease;
+    width: 350px;
+    max-width: 95% !important;
+    transition: width 0.3s ease;
+  }
+
+  .main-container.shifted {
+    margin-left: -340px;
   }
 
   .toggle-btn {
@@ -122,7 +161,7 @@
 
   .toggle-btn.closed {
     transform: rotate(0deg);
-    left: 85%;
+    left: 330px;
   }
 
   .sidebar span {
@@ -131,5 +170,16 @@
 
   .sidebar.closed span {
     transform: translateX(0);
+  }
+}
+
+/* ---------- Mobile narrow---------- */
+@media (max-width: 400px) {
+  .sidebar.closed {
+    width: 95%;
+  }
+
+  .toggle-btn.closed {
+    left: 88%;
   }
 }

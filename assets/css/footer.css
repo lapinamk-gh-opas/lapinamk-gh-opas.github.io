@@ -28,5 +28,6 @@
   .footer-text {
     text-align: center;
     padding: 1em 1vw;
+    font-size: 1rem !important;
   }
 }

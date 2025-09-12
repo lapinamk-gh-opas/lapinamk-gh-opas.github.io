@@ -26,3 +26,13 @@
   color: #000000 !important;
   white-space: nowrap;
 }
+
+.nav-link:hover {
+  color: #14827d !important;
+}
+
+@media (max-width: 1000px) {
+  .navbar-text {
+    font-size: 1.2rem !important;
+  }
+}
