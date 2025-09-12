@@ -17,12 +17,11 @@
   width: 20px;
 }
 
-/* Toggle-nappi */
+/* ---------- Toggle button ---------- */
 .toggle-btn {
   position: absolute;
   left: 280px;
   margin-top: 5rem;
-  margin-bottom: 15rem;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -39,7 +38,7 @@
   left: 1px;
 }
 
-/* Menu */
+/* ---------- Menu ---------- */
 .sidebar-menu,
 .sidebar-sub-list {
   list-style: none;
@@ -74,15 +73,18 @@
   text-decoration: underline;
 }
 
-/* Tekstien liuku/fade */
-.sidebar span {
-  display: inline-block;
+/* ---------- Sidebar slide ---------- */
+.sidebar .menu-items {
   transition: transform 0.3s ease;
-  white-space: nowrap;
+  transform: translateX(0) !important;
 }
 
-.sidebar.closed span {
-  transform: translateX(-280px);
+.sidebar.closed .menu-items {
+  transform: translateX(-280px) !important;
+}
+.sidebar span {
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .sidebar.closed a {
@@ -106,16 +108,20 @@
 
 /* ---------- Dropdown functionality ---------- */
 .dropdown-toggle {
-  display: flex;
-  justify-content: space-between;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1rem;
   line-height: 2rem;
-  content: "▼";
+  transform: translateY(5px);
 }
 
-.dropdown-toggle.open {
+.dropdown-toggle::after {
+  content: "▼";
+  border-top: none;
+}
+
+.dropdown-toggle.open::after {
   content: "▲";
+  border-top: none;
 }
 
 .sidebar-sub-list {
@@ -147,6 +153,14 @@
     pointer-events: none;
   }
 
+  .sidebar .menu-items {
+    transform: translateX(-280px) !important;
+  }
+
+  .sidebar.closed .menu-items {
+    transform: translateX(0) !important;
+  }
+
   .sidebar.closed a {
     pointer-events: auto;
   }
@@ -157,7 +171,11 @@
   }
 
   .main-container {
-    padding: 2rem 4rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .main-container a {
+    pointer-events: auto !important;
   }
 
   .main-container.shifted {
@@ -174,15 +192,7 @@
     left: 280px;
   }
 
-  .dropdown-toggle.open {
-    transform: rotate(180deg) translateY(-6px) translateX(280px);
-  }
-
-  .sidebar span {
-    transform: translateX(-280px);
-  }
-
-  .sidebar.closed span {
-    transform: translateX(0);
+  .sidebar.closed .dropdown-toggle {
+    transform: translateY(4px) !important;
   }
 }

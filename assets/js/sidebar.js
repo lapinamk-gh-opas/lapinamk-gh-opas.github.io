@@ -1,3 +1,4 @@
+// Sidebar opening and closing functionality
 document.querySelectorAll("[data-include]").forEach(async (el) => {
   const path = el.getAttribute("data-include");
   const res = await fetch(path);
@@ -18,6 +19,7 @@ document.querySelectorAll("[data-include]").forEach(async (el) => {
   }
 });
 
+// Sidebar dropdown functionality
 document.querySelectorAll("[data-include]").forEach(async (el) => {
   const path = el.getAttribute("data-include");
   const res = await fetch(path);
@@ -35,6 +37,7 @@ document.querySelectorAll("[data-include]").forEach(async (el) => {
   }
 });
 
+// opens the correct sidebar dropdown based on current page
 document.querySelectorAll("[data-include]").forEach(async (el) => {
   const path = el.getAttribute("data-include");
   const res = await fetch(path);
@@ -44,12 +47,8 @@ document.querySelectorAll("[data-include]").forEach(async (el) => {
     const currentPath = window.location.pathname;
     const menuItems = document.querySelectorAll(".sidebar-menu a");
 
-    console.log("Current Path:", currentPath);
-
     menuItems.forEach((link) => {
       if (link.getAttribute("href") === currentPath) {
-        console.log("Matching link found:", link);
-
         const parentSubList = link.closest("#sidebar-main-item");
         if (parentSubList) {
           parentSubList
