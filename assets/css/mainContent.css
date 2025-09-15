@@ -16,6 +16,10 @@
   margin-bottom: 1rem;
 }
 
+.arrow-container.hide {
+  display: none;
+}
+
 .arrow-btn {
   width: 30px;
   height: 30px;

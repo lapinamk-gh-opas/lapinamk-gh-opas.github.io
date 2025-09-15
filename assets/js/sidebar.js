@@ -1,64 +1,47 @@
-// Sidebar opening and closing functionality
-document.querySelectorAll("[data-include]").forEach(async (el) => {
-  const path = el.getAttribute("data-include");
-  const res = await fetch(path);
-  el.outerHTML = await res.text();
+// includes.js fires event: "sidebar component:loaded" after sidebar component is loaded to DOM
+// and that event is used to launch/run this script.
 
-  if (path.includes("sidebar/sidebar.html")) {
-    const sidebar = document.getElementById("sidebar");
-    const toggleBtn = document.getElementById("toggleBtn");
-    const mainContainer = document.getElementById("mainContainer");
+document.addEventListener("sidebar component:loaded", () => {
+  // 1. Sidebar opening and closing functionality.
+  const sidebar = document.getElementById("sidebar"); // get sidebat element
+  const toggleBtn = document.getElementById("toggleBtn"); // get toggle button element
+  const mainContainer = document.getElementById("mainContainer"); // get main container element
 
-    if (toggleBtn) {
-      toggleBtn.addEventListener("click", () => {
-        sidebar.classList.toggle("closed");
-        toggleBtn.classList.toggle("closed");
-        mainContainer.classList.toggle("shifted");
-      });
-    }
-  }
-});
-
-// Sidebar dropdown functionality
-document.querySelectorAll("[data-include]").forEach(async (el) => {
-  const path = el.getAttribute("data-include");
-  const res = await fetch(path);
-  el.innerHTML = await res.text();
-
-  if (path.includes("sidebar/sidebar.html")) {
-    const listItems = document.querySelectorAll("#sidebar-main-item");
-    listItems.forEach((item) => {
-      const toggle = item.querySelector(".dropdown-toggle");
-      toggle.addEventListener("click", () => {
-        toggle.classList.toggle("open");
-        item.querySelector(".sidebar-sub-list").classList.toggle("open");
-      });
+  // listen click event to toggle button and toggle classes to open/close for selected elements
+  if (sidebar && toggleBtn && mainContainer) {
+    toggleBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("closed");
+      toggleBtn.classList.toggle("closed");
+      mainContainer.classList.toggle("shifted");
     });
   }
-});
 
-// opens the correct sidebar dropdown based on current page
-document.querySelectorAll("[data-include]").forEach(async (el) => {
-  const path = el.getAttribute("data-include");
-  const res = await fetch(path);
-  el.innerHTML = await res.text();
+  // 2. Sidebar dropdown functionality
+  const listItems = document.querySelectorAll(".sidebar-main-item"); // gets sibebars first level list items
 
-  if (path.includes("sidebar/sidebar.html")) {
-    const currentPath = window.location.pathname;
-    const menuItems = document.querySelectorAll(".sidebar-menu a");
+  // listens click events to each list items dropdown button and toggles class open for sub list
+  listItems.forEach((item) => {
+    const toggle = item.querySelector(".dropdown-toggle"); //gets dropdown button
+    toggle.addEventListener("click", () => {
+      toggle.classList.toggle("open"); // add open class for button
+      item.querySelector(".sidebar-sub-list").classList.toggle("open"); // add open class for sub list
+    });
+  });
 
-    menuItems.forEach((link) => {
-      if (link.getAttribute("href") === currentPath) {
-        const parentSubList = link.closest("#sidebar-main-item");
-        if (parentSubList) {
-          parentSubList
-            .querySelector(".sidebar-sub-list")
-            .classList.toggle("open");
-          parentSubList
-            .querySelector(".dropdown-toggle")
-            .classList.toggle("open");
-        }
+  // 3. opens the correct sidebar dropdown based on current page
+  const currentPath = window.location.pathname; // gets current path
+  const menuItems = document.querySelectorAll(".sidebar-menu a"); // gets all sidebar links
+
+  // loops through links and if links href matches current path, opens the parent dropdown
+  menuItems.forEach((link) => {
+    if (link.getAttribute("href") === currentPath) {
+      console.log("found match", link.getAttribute("href"), currentPath);
+      const parentSubList = link.closest(".sidebar-main-item"); // gets parent list item
+      console.log("parentSubList", parentSubList);
+      if (parentSubList) {
+        parentSubList.querySelector(".sidebar-sub-list").classList.add("open"); // adds open class for sidebar-sub-list
+        parentSubList.querySelector(".dropdown-toggle").classList.add("open"); // adds open class for dropdown button
       }
-    });
-  }
+    }
+  });
 });

@@ -26,19 +26,26 @@
     <link rel="stylesheet" href="../assets/css/nav.css" />
     <link rel="stylesheet" href="../assets/css/footer.css" />
     <link rel="stylesheet" href="../assets/css/sidebar.css" />
+    <link rel="stylesheet" href="../assets/css/mainContent.css" />
 
     <!-- Custom js scripts -->
     <script src="../assets/js/includes.js" defer></script>
     <script src="../assets/js/sidebar.js" defer></script>
+    <script src="../assets/js/includeSubContent.js" defer></script>
+    <script src="../assets/js/arrows.js" defer></script>
   </head>
   <body>
     <div data-include="../navbar/nav.html"></div>
 
-    <div class="page-layout">
+    <div class="page-layout" id="pageLayout">
       <div data-include="../sidebar/sidebar.html"></div>
 
       <main class="main-container" id="mainContainer">
         <h1>Lisätoiminnot Index</h1>
+        <!-- <a class="page-selection" href="#" data-page="installing-git"
+          >Tähän ala osiot</a> -->
+        <main id="content" class="content-screen"></main>
+        <div data-include="../arrows/arrows.html"></div>
       </main>
     </div>
 

@@ -65,7 +65,7 @@
   color: #000;
   display: inline-flex;
   align-items: center;
-  padding: 8px 16px;
+  margin: 8px 16px;
   text-decoration: none;
 }
 
@@ -77,6 +77,7 @@
 .sidebar .menu-items {
   transition: transform 0.3s ease;
   transform: translateX(0) !important;
+  white-space: nowrap;
 }
 
 .sidebar.closed .menu-items {
