@@ -6,7 +6,7 @@ let linkNames = [];
 let pageIndex = 0;
 let linkIndex = 0;
 
-document.addEventListener("sidebar component:loaded", () => {
+document.addEventListener("sidebar:loaded", () => {
   currentPath = window.location.pathname;
   const menuItems = document.querySelectorAll(".sidebar-menu a");
 
@@ -37,7 +37,6 @@ document.addEventListener("pages:loaded", () => {
     prevBtn.classList.add("hide");
   }
 
-  console.log(pageIndex, pageNames.length - 1, linkIndex, linkNames.length - 1);
   if (
     (pageIndex === pageNames.length - 1 || pageIndex === 0) &&
     linkIndex === linkNames.length - 1
@@ -47,7 +46,6 @@ document.addEventListener("pages:loaded", () => {
 
   if (prevBtn) {
     prevBtn.onclick = () => {
-      console.log("pageIndex: ", pageIndex);
       if (pageIndex > 0) {
         pageIndex = pageIndex - 1;
         loadPage(pageNames[pageIndex], basePath);
@@ -59,7 +57,6 @@ document.addEventListener("pages:loaded", () => {
 
   if (nextBtn) {
     nextBtn.onclick = () => {
-      console.log("pageIndex: ", pageIndex);
       if (pageIndex < pageNames.length - 1) {
         pageIndex = pageIndex + 1;
         loadPage(pageNames[pageIndex], basePath);

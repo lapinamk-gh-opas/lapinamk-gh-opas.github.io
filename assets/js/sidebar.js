@@ -15,7 +15,9 @@ document.addEventListener("sidebar component:loaded", () => {
       mainContainer.classList.toggle("shifted");
     });
   }
+});
 
+document.addEventListener("sidebar component:loaded", () => {
   // 2. Sidebar dropdown functionality
   const listItems = document.querySelectorAll(".sidebar-main-item"); // gets sibebars first level list items
 
@@ -27,7 +29,8 @@ document.addEventListener("sidebar component:loaded", () => {
       item.querySelector(".sidebar-sub-list").classList.toggle("open"); // add open class for sub list
     });
   });
-
+});
+document.addEventListener("sidebar component:loaded", () => {
   // 3. opens the correct sidebar dropdown based on current page
   const currentPath = window.location.pathname; // gets current path
   const menuItems = document.querySelectorAll(".sidebar-menu a"); // gets all sidebar links
@@ -35,9 +38,7 @@ document.addEventListener("sidebar component:loaded", () => {
   // loops through links and if links href matches current path, opens the parent dropdown
   menuItems.forEach((link) => {
     if (link.getAttribute("href") === currentPath) {
-      console.log("found match", link.getAttribute("href"), currentPath);
       const parentSubList = link.closest(".sidebar-main-item"); // gets parent list item
-      console.log("parentSubList", parentSubList);
       if (parentSubList) {
         parentSubList.querySelector(".sidebar-sub-list").classList.add("open"); // adds open class for sidebar-sub-list
         parentSubList.querySelector(".dropdown-toggle").classList.add("open"); // adds open class for dropdown button
