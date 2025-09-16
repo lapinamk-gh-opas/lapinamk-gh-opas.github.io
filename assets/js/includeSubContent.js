@@ -52,10 +52,10 @@ function getBasePath() {
 // This manipulates dom after it has been loaded and uses
 // loadPage and getPageFromHash functions to load correct content
 // also listens click events to links inside content div and loads correct content
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   const subContent = getPageFromHash(); // on first load and after refresh gets page from hash or first link
   const basePath = getBasePath(); // gets base path from current path
-  loadPage(subContent, basePath); // loads the page using page name and path
+  await loadPage(subContent, basePath); // loads the page using page name and path
 
   const container = document.getElementById("mainContainer"); // gets main container div
 
