@@ -39,6 +39,12 @@
     padding-bottom 0.3s ease;
 }
 
+/* removing top and bottom margin from paragraphs inside content area */
+.content p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 /* hiding content */
 .content.hidden {
   max-height: 0;
