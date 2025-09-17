@@ -1,22 +1,23 @@
 document.addEventListener("subContent:loaded", () => {
-  const listItems = document.querySelectorAll(".header-content"); // gets sibebars first level list items
+  const listItems = document.querySelectorAll(".header-content"); //gets collapsible elemets (accordions)
 
-  // listens click events to each list items dropdown button and toggles class open for sub list
+  // Loops through collasible elements and listens click events of
+  // each list items open buttons and close buttons then toggles class hidden for elements accordingly
   if (listItems) {
     listItems.forEach((item) => {
-      const toggleOpen = item.querySelector(".bookButton.open"); //gets dropdown button
-      const toggleClose = item.querySelector(".bookButton.close");
+      const toggleOpen = item.querySelector(".bookButton.open"); // gets open button
+      const toggleClose = item.querySelector(".bookButton.close"); // gets close button
 
       toggleOpen.addEventListener("click", () => {
-        toggleOpen.classList.toggle("hidden"); // add open class for button
-        toggleClose.classList.toggle("hidden"); // add open class for button
-        item.querySelector(".content").classList.toggle("hidden"); // add open class for sub list
+        toggleOpen.classList.toggle("hidden"); // toggless hidden class for open button
+        toggleClose.classList.toggle("hidden"); // toggless hidden class for close button
+        item.querySelector(".content").classList.toggle("hidden"); // toggless hidden class for content div
       });
 
       toggleClose.addEventListener("click", () => {
-        toggleOpen.classList.toggle("hidden"); // add open class for button
-        toggleClose.classList.toggle("hidden"); // add open class for button
-        item.querySelector(".content").classList.toggle("hidden"); // add open class for sub list
+        toggleOpen.classList.toggle("hidden"); // toggless hidden class for open button
+        toggleClose.classList.toggle("hidden"); // toggless hidden class for close button
+        item.querySelector(".content").classList.toggle("hidden"); // toggless hidden class for content div
       });
     });
   }

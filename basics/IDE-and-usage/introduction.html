@@ -2,8 +2,8 @@
   <header>
     <h1>Git:n Käyttötapojen esittely</h1>
     <p>
-      Tällä sivulla käsitellään kolme yleistä tapaa käyttää
-      <strong>Gitiä</strong>:
+      Tällä sivulla käsitellään seuraavat kolme yleistä tapaa käyttää
+      <strong>Git:ä</strong>
     </p>
   </header>
   <div>
@@ -14,13 +14,13 @@
           <img
             class="bookButton open"
             src="../../assets/images/svg/book.png"
-            alt="Kirja"
+            alt="Kirja painike"
             width="25"
           />
           <img
             class="bookButton close hidden"
             src="../../assets/images/svg/book-open.png"
-            alt="Kirja"
+            alt="Kirja painike"
             width="32"
           />
         </div>
@@ -29,8 +29,8 @@
         <p>
           <strong>Yleistä:</strong> Komentorivi on Gitin alkuperäinen
           käyttöympäristö ja tarjoaa täydellisen hallinnan. Kaikki toiminnot,
-          kuten haarat, yhdistely, etärepojen hallinta, ovat käytettävissä
-          välittömästi.
+          kuten haarat, yhdistely, etärepositorioiden hallinta, ovat
+          käytettävissä välittömästi.
         </p>
         <h6>Tyypilliset ympäristöt</h6>
         <ul>
@@ -47,15 +47,17 @@
             terminal toimii ilman erillisen komentorivi ikkunan käyttöä.
           </li>
         </ul>
-        <h6>Käyttö (esimerkkejä)</h6>
-        <p>
-          Käytetään tekstikomennoin, kuten <code>git init</code>,
-          <code>git add</code>, <code>git commit</code>,
-          <code>git push</code> jne.
-        </p>
+        <h6>Käyttö</h6>
+        <ul>
+          <li>
+            Käytetään tekstikomennoin, kuten <code>git init</code>,
+            <code>git add</code>, <code>git commit</code>,
+            <code>git push</code> jne.
+          </li>
+        </ul>
         <h6>Plussat</h6>
         <ul>
-          <li>Kaikkein joustavin ja tehokkain tapa.</li>
+          <li>Kaikkein joustavin ja hyvin hallittuna tehokkain tapa.</li>
           <li>
             Ei rajoituksia ympäristöstä riippuen (sopii myös
             palvelinympäristöihin).
@@ -89,18 +91,19 @@
       <div class="content hidden">
         <p>
           <strong>Yleistä:</strong> Monet nykyaikaiset IDE:t ja editorit
-          tarjoavat sisäänrakennetun Git-tuennan kuten commit, branch-hallinta
-          ja konflikti-työkalut suoraan samassa käyttöliittymässä.
+          tarjoavat sisäänrakennetun Git-tuennan kuten yhdistely,
+          haarojen-hallinta ja konflikti-työkalut suoraan samassa
+          käyttöliittymässä.
         </p>
-        <h6>Ympäristöjä:</h6>
+        <h6>Ympäristöjä</h6>
         <ul>
           <li>
-            <strong>Visual Studio Codessa</strong> Source Control -paneeli,
-            integroitu terminaali.
+            <strong>Visual Studio Codessa</strong> on Source Control -paneeli ja
+            integroitu terminaali versionhallintaan.
           </li>
           <li>
-            <strong>JetBrains, PyCharm</strong> tarjoaa mm. graafisen historian,
-            interaktiivisen rebase-työkalun ja helpon branchien hallinnan.
+            <strong>JetBrains, PyCharm</strong> tarjoaa integraation git:n ja
+            githubin hallintaan.
           </li>
           <li>
             <strong>Android Studio</strong> versionhallinta integraation
@@ -110,15 +113,15 @@
         <h6>Käyttö</h6>
         <ul>
           <li>
-            Voit ajaa Git-komennot editorin terminaalista <em>tai</em> käyttää
-            graafista käyttöliittymää
+            Voit ajaa Git-komennot käyttäen graafista käyttöliittymää
+            <em>tai</em> editorin terminaalista.
           </li>
         </ul>
         <h6>Plussat</h6>
         <ul>
           <li>
-            Ei tarvetta vaihtaa sovellusta — koodaus ja versionhallinta samassa
-            paikassa.
+            Ei tarvetta vaihtaa sovellusta, kun koodaus ja versionhallinta ovat
+            samassa paikassa.
           </li>
           <li>
             Helppo käsitellä muutoksia ja ratkaista merge-konflikteja
@@ -127,7 +130,7 @@
         </ul>
         <h6>Miinukset</h6>
         <ul>
-          <li>Joissain erikoistapauksissa rajoittuneempi kuin komentorivi.</li>
+          <li>Joissain tapauksissa rajoittuneempi kuin komentorivi.</li>
         </ul>
       </div>
     </div>
@@ -155,7 +158,7 @@
         <p>
           <strong>Yleistä:</strong> GitHub Desktop on käyttäjäystävällinen
           sovellus, joka keskittyy GitHubin kanssa työskentelyyn. Se tarjoaa
-          graafisen käyttöliittymän tavallisille Git-työkuvioille.
+          graafisen käyttöliittymän tavallisille Git-työkuluille.
         </p>
         <h6>Ominaisuuksia</h6>
         <ul>
@@ -166,10 +169,12 @@
           </li>
         </ul>
         <h6>Käyttö</h6>
-        <p>
-          Käytetään täysin graafisella käyttöliittymällä — ei vaadi
-          komentorivikäskyjä.
-        </p>
+        <ul>
+          <li>
+            Käytetään täysin graafisella käyttöliittymällä eikä vaadi
+            komentorivikäskyjä.
+          </li>
+        </ul>
         <h6>Plussat</h6>
         <ul>
           <li>Erittäin aloittelijaystävällinen.</li>
