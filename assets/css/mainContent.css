@@ -87,6 +87,10 @@
   text-align: end;
 }
 
+.page-selection.hide {
+  display: none;
+}
+
 /* lay out changes for mobile */
 @media (max-width: 1000px) {
   /* content width */
