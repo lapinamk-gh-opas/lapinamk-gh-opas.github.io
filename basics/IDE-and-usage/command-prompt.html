@@ -1,8 +1,8 @@
 <section class="git-install">
   <header>
-    <h1>Git:n käyttö komentorivillä</h1>
+    <h1>Gitin käyttö komentorivillä</h1>
     <p>
-      Tällä sivulla käsitellään Git:n käyttöä
+      Tällä sivulla käsitellään Gitin käyttöä
       <strong>komentoriviltä</strong>. Luodaan komentorivin avulla tiedosto ja
       repositorio sekä viedään se etärepositorioon.
     </p>
@@ -14,8 +14,9 @@
       Linux)
       <ul>
         <li>
-          Git Bash asennetaan Windowsille oletuksena Git:n asennuksen yhteydessä
+          Git Bash asennetaan Windowsille oletuksena Gitin asennuksen yhteydessä
         </li>
+        <li>Avaa Git Bash Windowsin aloitusvalikosta tai etsi Git Bash</li>
       </ul>
       <figure>
         <img
@@ -24,24 +25,64 @@
           alt="Git Bash avaaminen Windows"
         />
         <figcaption>
-          Avaa Git Bash Windows:n aloitusvalikossa tai etsi Git Bash.
+          Git Bash on oletuksena Git kansiossa Windowsin aloitusvalikossa.
         </figcaption>
       </figure>
+      <div class="header-content small">
+        <div class="header-icon">
+          <h5 class="header">Huomio Git Bashin käytöstä VS Codella</h5>
+          <div>
+            <img
+              class="bookButton open"
+              src="../../assets/images/svg/book.png"
+              alt="Kirja"
+              width="18"
+            />
+            <img
+              class="bookButton close hidden"
+              src="../../assets/images/svg/book-open.png"
+              alt="Kirja"
+              width="25"
+            />
+          </div>
+        </div>
+        <div class="content hidden">
+          <p>
+            Git Bashin saa käyttöön terminaaliin
+            <img
+              class="plus-sign"
+              src="../../assets/images/svg/plus.svg"
+              alt="plus merkki"
+            />
+            -painikkeen vierestä avattavasta alasvetovalikosta.
+          </p>
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/Git usage terminal 6.webp"
+              alt="Git Bash näkymä VS Codessa"
+            />
+            <figcaption>
+              Git bashin avaaminen VS Coden terminaalista.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
     </li>
     <li>
       Luodaan kansio ja tiedosto testausta varten.
       <ul>
         <li>
-          Siirry kansioon johon haluat luoda uuden kansion:
+          Siirry kansioon minne haluat luoda uuden kansion:<br />
           <code>cd polku/valittuun/hakemistoon</code>
         </li>
         <li>
-          Luo uusi kansio projektia varten:
+          Luo uusi kansio projektia varten:<br />
           <code>mkdir kansion-nimi</code>
         </li>
         <li>
-          Siirry luotuun kansioon:
-          <code>mkdir kansion-nimi</code>
+          Siirry luotuun kansioon:<br />
+          <code>cd kansion-nimi</code>
         </li>
         <li>
           Voit ketjuttaa komentoja käyttämällä niiden välissä <code>&&</code
@@ -71,23 +112,22 @@
       luodaan paikallinen repositorio ja yhdistetään se etärepositorioon.
       <ul>
         <li>
-          Paikallinen repositorio luodaan kansiossa, jonka sisältö halutaan
-          mukaan versionhallintaan komennolla:
+          Luodaan paikallinen repositorio komennolla:<br />
           <code>git init</code>
         </li>
         <li>
-          Yhdistetään etärepositorio paikalliseen komennolla:
+          Yhdistetään etärepositorio paikalliseen komennolla:<br />
           <code
             >git remote add origin
             https://github.com/käyttäjänimi/repositorion-nimi.git</code
           >
         </li>
         <li>
-          Lisätään tiedosto README.md repositorioon komennolla:
+          Lisätään tiedosto README.md repositorioon komennolla:<br />
           <code>git add README.md</code>
         </li>
         <li>
-          Tehdään ensimmäinen commit komennolla:
+          Tehdään ensimmäinen commit komennolla:<br />
           <code>git commit -m "Ensimmäinen commit"</code>
         </li>
       </ul>
@@ -105,11 +145,11 @@
       </figure>
     </li>
     <li>
-      Lopuksi siirretään paikallisen repositorion sisältö/muutokset
-      etärepositorioon githubissa.
+      Lopuksi siirretään paikallisen repositorion muutokset etärepositorioon
+      GitHubissa.
       <ul>
         <li>
-          Commitoidut muutokset saadaan siirrettyä etärepositorioon komennolla:
+          Siirto etärepositorioon tapahtuu komennolla:<br />
           <code>git push -u origin main</code>
         </li>
       </ul>
@@ -129,8 +169,8 @@
       Nyt lisätty tiedosto näkyy githubissa.
       <ul>
         <li>
-          Koska kyseessä oli <code>README.md</code> tiedosto myös sen sisältö
-          näkyy repositorion etusivulla.
+          Koska kyseessä oli <em>README.md</em>-tiedosto myös sen sisältö näkyy
+          repositorion etusivulla.
         </li>
       </ul>
 
