@@ -1,14 +1,17 @@
+/* navbar main area color and border */
 .navbar {
   background-color: #ffffff !important;
   border-bottom: #14827d 2px solid;
 }
 
+/* navbar logo and text area */
 .navbar-brand {
   display: flex;
   align-items: center;
   max-width: 70%;
 }
 
+/* navbar header text */
 .navbar-text {
   padding: 0 1vw;
   color: #000000 !important;
@@ -16,10 +19,12 @@
   word-break: break-word;
 }
 
+/* navbar items right padding */
 .navbar-nav {
   padding-right: 1vw;
 }
 
+/* navbar items padding and text */
 .nav-item {
   padding: 0 1vw;
   font-weight: bold;
@@ -27,11 +32,14 @@
   white-space: nowrap;
 }
 
+/* navbar items hover effect */
 .nav-link:hover {
   color: #14827d !important;
 }
 
+/* lay out changes for mobile */
 @media (max-width: 1000px) {
+  /* navbar header text */
   .navbar-text {
     font-size: 1.2rem !important;
   }

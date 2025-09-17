@@ -1,8 +1,12 @@
+/* For layout of  main content and navigation arrow buttons */
+
+/* content screen width and padding */
 .content-screen {
   padding: 2rem 0;
   max-width: 70%;
 }
 
+/* image size */
 .wide-image {
   max-width: 100%;
   height: auto;
@@ -10,12 +14,14 @@
   margin: 0;
 }
 
+/* div for arrow buttons */
 .page-arrows {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
 }
 
+/* button it self */
 .button-container {
   display: flex;
   align-items: start;
@@ -27,6 +33,7 @@
   user-select: none !important;
 }
 
+/* next buttons */
 .button-container.next {
   flex-direction: column-reverse;
   align-items: end;
@@ -34,16 +41,19 @@
   margin-right: 0;
 }
 
+/* for hiding button */
 .button-container.hide {
   display: none;
 }
 
+/* button text */
 .arrow-text {
   display: flex;
   align-items: center;
   margin: 0;
 }
 
+/* button arrow img */
 .arrow-btn {
   width: 30px;
   height: 30px;
@@ -51,32 +61,40 @@
   border: none;
 }
 
+/* margin for prev button arrow*/
 .arrow-btn.prev {
   margin: 0 0.5rem 0 0;
 }
 
+/* margin and direction for next button arrow*/
 .arrow-btn.next {
   transform: rotate(180deg);
   margin: 0 0 0 0.5rem;
 }
 
+/* margin for prev button text*/
 .arrow-container strong.prev {
   margin: 0 1rem 0 0;
 }
 
+/* margin for next button text*/
 .arrow-container strong.next {
   margin: 0 0 0 1rem !important;
 }
 
+/* text align for next button additional text */
 #nextPart {
   text-align: end;
 }
 
+/* lay out changes for mobile */
 @media (max-width: 1000px) {
+  /* content width */
   .content-screen {
     max-width: 100%;
   }
 
+  /* button text size */
   #prevPart,
   #prevText,
   #nextPart,
@@ -85,6 +103,7 @@
     white-space: nowrap;
   }
 
+  /* button arrow size */
   .arrow-btn {
     width: 15px;
     height: 15px;
