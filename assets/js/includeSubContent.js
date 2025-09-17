@@ -67,4 +67,5 @@ document.addEventListener("DOMContentLoaded", async () => {
       loadPage(subContent, basePath);
     });
   });
+  document.dispatchEvent(new Event("subContent:loaded"));
 });

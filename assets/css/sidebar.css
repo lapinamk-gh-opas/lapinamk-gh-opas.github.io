@@ -29,8 +29,15 @@
   color: #fff;
   border: none;
   cursor: pointer;
-  z-index: 20;
+
   transition: transform 0.3s ease, left 0.3s ease;
+}
+
+.toggle-arrow {
+  fill: #ffffff;
+  width: 32px;
+  height: 32px;
+  z-index: 20;
 }
 
 .toggle-btn.closed {

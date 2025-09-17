@@ -1,0 +1,195 @@
+<section class="git-install">
+  <header>
+    <h1>Git:n Käyttötapojen esittely</h1>
+    <p>
+      Tällä sivulla käsitellään kolme yleistä tapaa käyttää
+      <strong>Gitiä</strong>:
+    </p>
+  </header>
+  <div>
+    <div class="header-content">
+      <div class="header-icon">
+        <h4 class="header">1. Komentorivi</h4>
+        <div>
+          <img
+            class="bookButton open"
+            src="../../assets/images/svg/book.png"
+            alt="Kirja"
+            width="25"
+          />
+          <img
+            class="bookButton close hidden"
+            src="../../assets/images/svg/book-open.png"
+            alt="Kirja"
+            width="32"
+          />
+        </div>
+      </div>
+      <div class="content hidden">
+        <p>
+          <strong>Yleistä:</strong> Komentorivi on Gitin alkuperäinen
+          käyttöympäristö ja tarjoaa täydellisen hallinnan. Kaikki toiminnot,
+          kuten haarat, yhdistely, etärepojen hallinta, ovat käytettävissä
+          välittömästi.
+        </p>
+        <h6>Tyypilliset ympäristöt</h6>
+        <ul>
+          <li>
+            <strong>Git Bash</strong> (Windows) on Linux-tyylinen komentorivi
+            Windowsille.
+          </li>
+          <li>
+            <strong>Terminal</strong> (macOS/Linux) tukee git komentoja kun git
+            on asennettu.
+          </li>
+          <li>
+            <strong>Koodieditorien sisäinen terminaali</strong> esim. VS Code:n
+            terminal toimii ilman erillisen komentorivi ikkunan käyttöä.
+          </li>
+        </ul>
+        <h6>Käyttö (esimerkkejä)</h6>
+        <p>
+          Käytetään tekstikomennoin, kuten <code>git init</code>,
+          <code>git add</code>, <code>git commit</code>,
+          <code>git push</code> jne.
+        </p>
+        <h6>Plussat</h6>
+        <ul>
+          <li>Kaikkein joustavin ja tehokkain tapa.</li>
+          <li>
+            Ei rajoituksia ympäristöstä riippuen (sopii myös
+            palvelinympäristöihin).
+          </li>
+        </ul>
+        <h6>Miinukset</h6>
+        <ul>
+          <li>Jyrkempi opettelukynnys</li>
+          <li>Komentojen muistaminen vaatii harjoittelua</li>
+        </ul>
+      </div>
+    </div>
+    <div class="header-content">
+      <div class="header-icon">
+        <h4 class="header">2. Koodieditori (IDE)</h4>
+        <div>
+          <img
+            class="bookButton open"
+            src="../../assets/images/svg/book.png"
+            alt="Kirja"
+            width="25"
+          />
+          <img
+            class="bookButton close hidden"
+            src="../../assets/images/svg/book-open.png"
+            alt="Kirja"
+            width="32"
+          />
+        </div>
+      </div>
+      <div class="content hidden">
+        <p>
+          <strong>Yleistä:</strong> Monet nykyaikaiset IDE:t ja editorit
+          tarjoavat sisäänrakennetun Git-tuennan kuten commit, branch-hallinta
+          ja konflikti-työkalut suoraan samassa käyttöliittymässä.
+        </p>
+        <h6>Ympäristöjä:</h6>
+        <ul>
+          <li>
+            <strong>Visual Studio Codessa</strong> Source Control -paneeli,
+            integroitu terminaali.
+          </li>
+          <li>
+            <strong>JetBrains, PyCharm</strong> tarjoaa mm. graafisen historian,
+            interaktiivisen rebase-työkalun ja helpon branchien hallinnan.
+          </li>
+          <li>
+            <strong>Android Studio</strong> versionhallinta integraation
+            käyttöönotto mahdollistaa git toiminnallisuudet.
+          </li>
+        </ul>
+        <h6>Käyttö</h6>
+        <ul>
+          <li>
+            Voit ajaa Git-komennot editorin terminaalista <em>tai</em> käyttää
+            graafista käyttöliittymää
+          </li>
+        </ul>
+        <h6>Plussat</h6>
+        <ul>
+          <li>
+            Ei tarvetta vaihtaa sovellusta — koodaus ja versionhallinta samassa
+            paikassa.
+          </li>
+          <li>
+            Helppo käsitellä muutoksia ja ratkaista merge-konflikteja
+            visuaalisesti.
+          </li>
+        </ul>
+        <h6>Miinukset</h6>
+        <ul>
+          <li>Joissain erikoistapauksissa rajoittuneempi kuin komentorivi.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="header-content">
+      <div class="header-icon">
+        <h4 class="header">
+          3. Erilliset graafiset sovellukset (GitHub Desktop)
+        </h4>
+        <div>
+          <img
+            class="bookButton open"
+            src="../../assets/images/svg/book.png"
+            alt="Kirja"
+            width="25"
+          />
+          <img
+            class="bookButton close hidden"
+            src="../../assets/images/svg/book-open.png"
+            alt="Kirja"
+            width="32"
+          />
+        </div>
+      </div>
+      <div class="content hidden">
+        <p>
+          <strong>Yleistä:</strong> GitHub Desktop on käyttäjäystävällinen
+          sovellus, joka keskittyy GitHubin kanssa työskentelyyn. Se tarjoaa
+          graafisen käyttöliittymän tavallisille Git-työkuvioille.
+        </p>
+        <h6>Ominaisuuksia</h6>
+        <ul>
+          <li>Visuaalinen commit-historia ja haara-/merge-näkymä.</li>
+          <li>Helppo kloonaus GitHubista ja synkronointi.</li>
+          <li>
+            Drag &amp; drop -tiedostojen lisäys ja pull requestien nopea luonti.
+          </li>
+        </ul>
+        <h6>Käyttö</h6>
+        <p>
+          Käytetään täysin graafisella käyttöliittymällä — ei vaadi
+          komentorivikäskyjä.
+        </p>
+        <h6>Plussat</h6>
+        <ul>
+          <li>Erittäin aloittelijaystävällinen.</li>
+          <li>Sujuva GitHub-integraatio.</li>
+        </ul>
+        <h6>Miinukset</h6>
+        <ul>
+          <li>Vähemmän joustava monimutkaisissa projekteissa.</li>
+          <li>Suunniteltu vain GitHubin käyttöön.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div>
+    <h4>Suositus opiskelijalle</h4>
+    <p>
+      Aloita komentoriviltä, jotta ymmärrät Gitin perusperiaatteet. Kun
+      perusteet ovat selvät, opettele saman työnkulun tekeminen omassa IDE:ssäsi
+      (esim. VS Code tai PyCharm) ja tarvittaessa käytä GitHub Desktopia nopeana
+      apuvälineenä.
+    </p>
+  </div>
+</section>

@@ -42,8 +42,18 @@
 
       <main class="main-container" id="mainContainer">
         <h1>1.1. Git:n ja versionhallinnan idea</h1>
-        <!-- <a class="page-selection" href="#" data-page="installing-git"
-          >Tähän ala osiot</a> -->
+        <!-- Tähän kohti lisätään osiossa näytettävät alisivut linkkeinä <a>. 
+         Alisivujen tiedostot laitetaan saman nimiseen kansioon kuin tiedosto, jossa ne halutaan näyttää. 
+         Esim. tämä tiedosto: 1. git-idea.htm joten alisivujen kansio nimellä 2. git-idea tulee 3. basics kansion juureen.
+         Näin saadaan alisivun sisältö näkymään dynaamisesti 4. includeSubContent.js tiedoston avulla 5. main elementin
+         sisällä jolla on id content ja luokka content-screen.
+
+         Esimerkki linkistä:
+         <a class="page-selection" href="#" data-page="näytettävän tiedoston nimi ilman päätettä">
+           Otsikko tähän
+         </a>
+         Eli jos halutaan näyttää tiedosto 6. introduction.html niin laitetaan data-page atribuuttiin introduction
+        -->
         <main id="content" class="content-screen"></main>
         <div data-include="../arrows/arrows.html"></div>
       </main>
