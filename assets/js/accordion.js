@@ -9,15 +9,15 @@ document.addEventListener("subContent:loaded", () => {
       const toggleClose = item.querySelector(".bookButton.close"); // gets close button
 
       toggleOpen.addEventListener("click", () => {
-        toggleOpen.classList.toggle("hidden"); // toggless hidden class for open button
-        toggleClose.classList.toggle("hidden"); // toggless hidden class for close button
-        item.querySelector(".content").classList.toggle("hidden"); // toggless hidden class for content div
+        toggleOpen.classList.add("hidden"); // toggless hidden class for open button
+        toggleClose.classList.remove("hidden"); // toggless hidden class for close button
+        item.querySelector(".content").classList.remove("hidden"); // toggless hidden class for content div
       });
 
       toggleClose.addEventListener("click", () => {
-        toggleOpen.classList.toggle("hidden"); // toggless hidden class for open button
-        toggleClose.classList.toggle("hidden"); // toggless hidden class for close button
-        item.querySelector(".content").classList.toggle("hidden"); // toggless hidden class for content div
+        toggleOpen.classList.remove("hidden"); // toggless hidden class for open button
+        toggleClose.classList.add("hidden"); // toggless hidden class for close button
+        item.querySelector(".content").classList.add("hidden"); // toggless hidden class for content div
       });
     });
   }

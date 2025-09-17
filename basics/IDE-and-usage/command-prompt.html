@@ -1,0 +1,147 @@
+<section class="git-install">
+  <header>
+    <h1>Git:n käyttö komentorivillä</h1>
+    <p>
+      Tällä sivulla käsitellään Git:n käyttöä
+      <strong>komentoriviltä</strong>. Luodaan komentorivin avulla tiedosto ja
+      repositorio sekä viedään se etärepositorioon.
+    </p>
+  </header>
+
+  <ol>
+    <li>
+      Avaa <strong>Git Bash</strong> tai <strong>terminaali</strong> (macOS tai
+      Linux)
+      <ul>
+        <li>
+          Git Bash asennetaan Windowsille oletuksena Git:n asennuksen yhteydessä
+        </li>
+      </ul>
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/Git usage terminal 1.webp"
+          alt="Git Bash avaaminen Windows"
+        />
+        <figcaption>
+          Avaa Git Bash Windows:n aloitusvalikossa tai etsi Git Bash.
+        </figcaption>
+      </figure>
+    </li>
+    <li>
+      Luodaan kansio ja tiedosto testausta varten.
+      <ul>
+        <li>
+          Siirry kansioon johon haluat luoda uuden kansion:
+          <code>cd polku/valittuun/hakemistoon</code>
+        </li>
+        <li>
+          Luo uusi kansio projektia varten:
+          <code>mkdir kansion-nimi</code>
+        </li>
+        <li>
+          Siirry luotuun kansioon:
+          <code>mkdir kansion-nimi</code>
+        </li>
+        <li>
+          Voit ketjuttaa komentoja käyttämällä niiden välissä <code>&&</code
+          ><br />
+          esim.
+          <code>cd Desktop/ && mkdir git-testaus && cd git-testaus</code>
+        </li>
+        <li>
+          Luodaan vielä markdown (.md) tekstitiedosto uuteen kansioon:<br />
+          <code
+            >echo Tämä on tekstitiedosto git testausta varten. >>
+            README.md</code
+          >
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/Git usage terminal 2.webp"
+          alt="Git Bash näkymä kansion ja tiedoston luominen"
+        />
+        <figcaption>Esimerkki kansion ja tiedoston luomisesta</figcaption>
+      </figure>
+    </li>
+    <li>
+      luodaan paikallinen repositorio ja yhdistetään se etärepositorioon.
+      <ul>
+        <li>
+          Paikallinen repositorio luodaan kansiossa, jonka sisältö halutaan
+          mukaan versionhallintaan komennolla:
+          <code>git init</code>
+        </li>
+        <li>
+          Yhdistetään etärepositorio paikalliseen komennolla:
+          <code
+            >git remote add origin
+            https://github.com/käyttäjänimi/repositorion-nimi.git</code
+          >
+        </li>
+        <li>
+          Lisätään tiedosto README.md repositorioon komennolla:
+          <code>git add README.md</code>
+        </li>
+        <li>
+          Tehdään ensimmäinen commit komennolla:
+          <code>git commit -m "Ensimmäinen commit"</code>
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/Git usage terminal 3.webp"
+          alt="Git Bash näkymä repositorion luominen"
+        />
+        <figcaption>
+          Esimerkki repositorion luomisesta, etärepositorion yhdistämisestä sekä
+          tiedoston lisäämisestä ja commitin tekemisestä
+        </figcaption>
+      </figure>
+    </li>
+    <li>
+      Lopuksi siirretään paikallisen repositorion sisältö/muutokset
+      etärepositorioon githubissa.
+      <ul>
+        <li>
+          Commitoidut muutokset saadaan siirrettyä etärepositorioon komennolla:
+          <code>git push -u origin main</code>
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/Git usage terminal 4.webp"
+          alt="Git Bash näkymä muutoksien vienti etärepositorioon"
+        />
+        <figcaption>
+          Esimerkki muutoksien viemisestä etärepositorioon
+        </figcaption>
+      </figure>
+    </li>
+    <li>
+      Nyt lisätty tiedosto näkyy githubissa.
+      <ul>
+        <li>
+          Koska kyseessä oli <code>README.md</code> tiedosto myös sen sisältö
+          näkyy repositorion etusivulla.
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/Git usage terminal 5.webp"
+          alt="Git Bash näkymä kansion ja tiedoston luominen"
+        />
+        <figcaption>Esimerkki näkymä githubissa muutoksien jälkeen</figcaption>
+      </figure>
+    </li>
+  </ol>
+</section>

@@ -132,6 +132,7 @@ document.addEventListener("pages:loaded", () => {
       }
     };
     window.scrollTo(0, 0); //scrolls window to top
+    document.dispatchEvent(new Event("subContent:loaded"));
   }
 });
 

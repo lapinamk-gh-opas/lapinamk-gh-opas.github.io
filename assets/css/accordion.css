@@ -34,7 +34,7 @@
   padding: 1rem;
   border-radius: 0 0 13px 13px;
   max-height: 1000px; /* needed for accordion animation*/
-  overflow-y: auto; /* in case if content is taller than 1000px */
+  overflow-y: hidden; /* in case if content is taller than 1000px */
   transition: max-height 0.3s ease, padding-top 0.3s ease,
     padding-bottom 0.3s ease;
 }
