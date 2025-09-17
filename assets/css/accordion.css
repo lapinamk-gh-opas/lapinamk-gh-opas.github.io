@@ -1,3 +1,6 @@
+/* ---------- Accordion animations and layout ---------- */
+
+/* header and content div*/
 .header-content {
   background: rgba(20, 130, 125);
   padding: 1em 0 0 0;
@@ -7,37 +10,43 @@
   margin-bottom: 1rem;
 }
 
+/* header and icon */
 .header-icon {
   display: flex;
   justify-content: space-between;
 }
 
+/* button for togling content */
 .bookButton {
   margin-right: 2em;
   cursor: pointer;
 }
 
+/* for hiding open or close buttons book image */
 .bookButton.hidden {
   display: none;
 }
 
+/* content area of accordion */
 .content {
   background: white;
   color: black;
   padding: 1rem;
   border-radius: 0 0 13px 13px;
-  max-height: 1000px; /* tarpeeksi suuri oletuskorkeus */
-  overflow: hidden;
+  max-height: 1000px; /* needed for accordion animation*/
+  overflow-y: auto; /* in case if content is taller than 1000px */
   transition: max-height 0.3s ease, padding-top 0.3s ease,
     padding-bottom 0.3s ease;
 }
 
+/* hiding content */
 .content.hidden {
   max-height: 0;
   padding-top: 0;
   padding-bottom: 0;
 }
 
+/* margin for header div */
 .header {
   margin: 0 0 1rem 1rem;
 }

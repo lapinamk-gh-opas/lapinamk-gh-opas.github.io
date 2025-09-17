@@ -1,9 +1,12 @@
+/* for layout of side bar and main content */
+
+/* takes available screen heigt as default */
 .page-layout {
   display: flex;
   flex: 1;
 }
 
-/* ---------- Sidebar ---------- */
+/* Sidebar color, width when open, border and animation */
 .sidebar {
   width: 300px;
   background: rgba(20, 130, 125, 0.2);
@@ -13,11 +16,12 @@
   z-index: 10;
 }
 
+/* Sidebar width when closed */
 .sidebar.closed {
   width: 20px;
 }
 
-/* ---------- Toggle button ---------- */
+/* Toggle/arrow button for sidebar */
 .toggle-btn {
   position: absolute;
   left: 280px;
@@ -29,10 +33,10 @@
   color: #fff;
   border: none;
   cursor: pointer;
-
   transition: transform 0.3s ease, left 0.3s ease;
 }
 
+/* arrow svg/img inside round button */
 .toggle-arrow {
   fill: #ffffff;
   width: 32px;
@@ -40,12 +44,13 @@
   z-index: 20;
 }
 
+/* turns arrow aroun when sidebar is closed */
 .toggle-btn.closed {
   transform: rotate(180deg);
   left: 1px;
 }
 
-/* ---------- Menu ---------- */
+/* Menu list of sidebar */
 .sidebar-menu,
 .sidebar-sub-list {
   list-style: none;
@@ -53,21 +58,25 @@
   margin: 0;
 }
 
-.sidebar-sub-list li {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
+/* sidebar dropdown list */
 .sidebar-sub-list {
   margin: 0 0 1rem 2rem !important;
   padding: 0 !important;
 }
 
+/* sidebar dropdown list items */
+.sidebar-sub-list li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* sidebar dropdown list items/links */
 .sidebar-sub-list a {
   margin: 0 !important;
   padding: 0 !important;
 }
 
+/* all sidebar list items/links */
 .sidebar-menu a {
   color: #000;
   display: inline-flex;
@@ -76,29 +85,35 @@
   text-decoration: none;
 }
 
+/* all sidebar list items/links hover effect */
 .sidebar-menu a:hover {
   text-decoration: underline;
 }
 
-/* ---------- Sidebar slide ---------- */
+/*  Sidebar slide effect */
 .sidebar .menu-items {
   transition: transform 0.3s ease;
   transform: translateX(0) !important;
   white-space: nowrap;
 }
 
+/* sidebas position when closed */
 .sidebar.closed .menu-items {
   transform: translateX(-280px) !important;
 }
+
+/* sidebar texts display type */
 .sidebar span {
   display: inline-block;
   white-space: nowrap;
 }
 
+/* prevent pointer events on links when sidebar is closed */
 .sidebar.closed a {
   pointer-events: none;
 }
 
+/* sidebar and toggle button positioning */
 .button-and-menu {
   display: flex;
   flex-direction: row;
@@ -106,7 +121,7 @@
   position: relative;
 }
 
-/* ---------- Main content ---------- */
+/* Main content positioning, color and width */
 .main-container {
   flex: 1;
   padding: 4rem 8rem;
@@ -114,7 +129,8 @@
   transition: margin-left 0.3s ease;
 }
 
-/* ---------- Dropdown functionality ---------- */
+/* Dropdown functionality for sub menu items */
+/* Dropdown arrow */
 .dropdown-toggle {
   cursor: pointer;
   font-size: 1rem;
@@ -122,16 +138,19 @@
   transform: translateY(5px);
 }
 
+/* Dropdown arrow when dropdown is closed */
 .dropdown-toggle::after {
   content: "▼";
   border-top: none;
 }
 
+/* Dropdown arrow when dropdown is open */
 .dropdown-toggle.open::after {
   content: "▲";
   border-top: none;
 }
 
+/* sublist is hidden by default */
 .sidebar-sub-list {
   display: none;
   list-style: none;
@@ -139,16 +158,20 @@
   margin-top: 0.5rem;
 }
 
+/* and shown when button is clicked */
 .sidebar-sub-list.open {
   display: block;
 }
 
-/* ---------- Mobile ---------- */
+/* lay out changes for mobile */
 @media (max-width: 1000px) {
+  /* maincontent area for mobile */
   .page-layout {
     position: relative;
     height: fit-content;
   }
+
+  /* side bar is closed as default for mobile */
   .sidebar {
     background: #d0e6e5;
     position: relative;
@@ -165,6 +188,7 @@
     transform: translateX(-280px) !important;
   }
 
+  /* sidebar after togglebutton is clicked */
   .sidebar.closed .menu-items {
     transform: translateX(0) !important;
   }
@@ -178,6 +202,7 @@
     transition: width 0.3s ease;
   }
 
+  /* main content area for mobile */
   .main-container {
     padding: 2rem 1.5rem;
   }
@@ -190,6 +215,7 @@
     margin-left: -290px;
   }
 
+  /* toggle button for mobile */
   .toggle-btn {
     transform: rotate(180deg);
     left: -10px;

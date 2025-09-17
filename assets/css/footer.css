@@ -1,3 +1,4 @@
+/* ---------- Footer layout ---------- */
 .site-footer {
   display: flex !important;
   align-items: center;
@@ -17,6 +18,7 @@
   padding: 0 1vw;
 }
 
+/* ---------- Footer for mobile ---------- */
 @media (max-width: 600px) {
   .site-footer {
     flex-direction: column;
