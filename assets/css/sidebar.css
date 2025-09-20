@@ -230,3 +230,86 @@
     transform: translateY(4px) !important;
   }
 }
+
+ /* sidebar codelist styles */
+
+.sidebar-commands summary {
+  cursor: pointer;
+  padding: 0.25rem 0;
+}
+
+.cmd-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.7rem;
+  table-layout: fixed;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+
+}
+.sidebar .cmd-table th:first-child,
+.sidebar .cmd-table td:first-child {
+  width: 35%;
+}
+
+.sidebar .cmd-table th:last-child,
+.sidebar .cmd-table td:last-child {
+  width: 65%;
+}
+
+.sidebar .cmd-table th,
+.sidebar .cmd-table td {
+  padding: 0.3rem 0.3rem 0rem 0.3rem;
+  vertical-align: top;
+  text-align: left;
+  border-bottom: 1px solid #ccc;    
+}
+
+.sidebar .cmd-table tr:last-child td {
+  border-bottom: none;
+  padding-bottom: 0.2rem;
+}
+
+.cmd-table th {
+  font-weight: bold;
+}
+
+.cmd-table code {
+  font-family: monospace;
+  font-size: 0.7rem;
+}
+
+/* making sure text wraps within table cells */
+.sidebar .cmd-table th,
+.sidebar .cmd-table td,
+.sidebar .cmd-table code {
+  white-space: normal;
+  overflow-wrap: normal;
+  word-break: keep-all; 
+}
+
+/*dropdown arrow in summary*/
+.sidebar-commands summary::-webkit-details-marker {
+  display: none;
+}
+.sidebar-commands summary::marker {
+  content: "";
+}
+.sidebar-commands summary .dropdown-toggle {
+  margin-left: 0.5rem;
+  font-size: 1rem;
+  transform: translateY(5px);
+}
+.sidebar-commands summary .dropdown-toggle::after {
+  content: "▼";
+  border-top: none;
+}
+.sidebar-commands[open] summary .dropdown-toggle::after {
+  content: "▲";
+  border-top: none;
+}
+
+
+

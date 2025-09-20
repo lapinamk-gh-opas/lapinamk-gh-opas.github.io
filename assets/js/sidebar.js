@@ -23,10 +23,14 @@ document.addEventListener("sidebar component:loaded", () => {
 
   // listens click events to each list items dropdown button and toggles class open for sub list
   listItems.forEach((item) => {
-    const toggle = item.querySelector(".dropdown-toggle"); //gets dropdown button
-    toggle.addEventListener("click", () => {
-      toggle.classList.toggle("open"); // add open class for button
-      item.querySelector(".sidebar-sub-list").classList.toggle("open"); // add open class for sub list
+    const toggle = item.querySelector(".dropdown-toggle"); // gets dropdown button
+    const sublist = item.querySelector(".sidebar-sub-list"); // gets sub list
+
+        if (!toggle || !sublist) return; // if no toggle button or sub list, skip to next item
+
+    toggle.addEventListener("click", () => { 
+      toggle.classList.toggle("open"); 
+      sublist.classList.toggle("open"); 
     });
   });
 });
@@ -34,16 +38,20 @@ document.addEventListener("sidebar component:loaded", () => {
 // 3. opens the correct sidebar dropdown based on current page
 document.addEventListener("sidebar component:loaded", () => {
   const currentPath = window.location.pathname; // gets current path
-  const menuItems = document.querySelectorAll(".sidebar-menu a"); // gets all sidebar links
+  const menuItems = document.querySelectorAll(".sidebar-menu a"); // gets all sidebar menu links
 
-  // loops through links and if links href matches current path, opens the parent dropdown
-  menuItems.forEach((link) => {
-    if (link.getAttribute("href") === currentPath) {
-      const parentSubList = link.closest(".sidebar-main-item"); // gets parent list item
-      if (parentSubList) {
-        parentSubList.querySelector(".sidebar-sub-list").classList.add("open"); // adds open class for sidebar-sub-list
-        parentSubList.querySelector(".dropdown-toggle").classList.add("open"); // adds open class for dropdown button
-      }
+  // loops through all menu links and checks if any matches current path
+  menuItems.forEach((link) => { 
+    if (link.getAttribute("href") === currentPath) { 
+      const parentItem = link.closest(".sidebar-main-item"); 
+      if (!parentItem) return;
+
+      const sublist = parentItem.querySelector(".sidebar-sub-list"); 
+      const toggle  = parentItem.querySelector(".dropdown-toggle");
+
+      // if match found, adds class open to sub list and toggle button to open the dropdown
+      if (sublist) sublist.classList.add("open");
+      if (toggle)  toggle.classList.add("open");
     }
   });
 });
