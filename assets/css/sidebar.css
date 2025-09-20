@@ -231,7 +231,7 @@
   }
 }
 
- /* sidebar codelist styles */
+ /* sidebar commands table and download button -styles */
 
 .sidebar-commands summary {
   cursor: pointer;
@@ -247,8 +247,8 @@
   background-color: #ffffff;
   border: 1px solid #ccc;
   border-radius: 10px;
-
 }
+
 .sidebar .cmd-table th:first-child,
 .sidebar .cmd-table td:first-child {
   width: 35%;
@@ -272,10 +272,6 @@
   padding-bottom: 0.2rem;
 }
 
-.cmd-table th {
-  font-weight: bold;
-}
-
 .cmd-table code {
   font-family: monospace;
   font-size: 0.7rem;
@@ -286,17 +282,13 @@
 .sidebar .cmd-table td,
 .sidebar .cmd-table code {
   white-space: normal;
-  overflow-wrap: normal;
   word-break: keep-all; 
 }
 
 /*dropdown arrow in summary*/
-.sidebar-commands summary::-webkit-details-marker {
-  display: none;
-}
-.sidebar-commands summary::marker {
-  content: "";
-}
+.sidebar-commands summary::-webkit-details-marker { display: none; }
+.sidebar-commands summary::marker { content: ""; }
+
 .sidebar-commands summary .dropdown-toggle {
   margin-left: 0.5rem;
   font-size: 1rem;
@@ -309,6 +301,23 @@
 .sidebar-commands[open] summary .dropdown-toggle::after {
   content: "▲";
   border-top: none;
+}
+
+
+/* download button styles */
+.download-wrap {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.download-btn {
+  background-color: #14827d;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.8rem;
 }
 
 

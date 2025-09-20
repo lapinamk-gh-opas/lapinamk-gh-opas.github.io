@@ -55,3 +55,36 @@ document.addEventListener("sidebar component:loaded", () => {
     }
   });
 });
+
+// Download command list as .txt file
+// after sidebar component is loaded, adds click event listener to download button
+document.addEventListener("sidebar component:loaded", () => {
+  const btn = document.getElementById("downloadListBtn");
+  if (!btn) return;
+
+  btn.addEventListener("click", () => { 
+    // gets table rows and maps them to lines of text
+    const rows = Array.from(
+      document.querySelectorAll(".cmd-table tbody tr")
+    );
+    const lines = rows.map((tr) => {
+      const cmd = tr.cells[0]?.innerText?.trim() ?? "";
+      const desc = tr.cells[1]?.innerText?.trim() ?? "";
+      return `${cmd} — ${desc}`;
+    });
+
+    const content = `Git muistilista\n\n${lines.join("\n")}`;
+
+    // downloads the content as a .txt file
+    const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "git-muistilista.txt";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  });
+});
+
