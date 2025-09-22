@@ -102,7 +102,6 @@ table {
   border-radius: 10px;
 }
 
-
 table th,
 table td {
   padding: 0.5rem;
@@ -119,6 +118,22 @@ table tr:last-child td {
 /* list item spacing */
 li {
   margin-bottom: 0.5rem;
+}
+
+/*training exercise spoiler*/
+.spoiler {
+background-color: gray;
+color: transparent;
+user-select: all;
+border-radius: 5px;
+padding: 0.5rem;
+transition: color 0.3s ease;
+}
+
+.spoiler:hover {
+  color: black;
+  background-color: lightgray;
+  user-select: all;
 }
 
 /* figure caption size */
