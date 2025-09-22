@@ -1,64 +1,60 @@
-
 <section class="document-status">
+  <header>
+    <h4>Git-tiedoston tilat (VS Code -näkymä)</h4>
+    <p>
+      Gitissä tiedostojen tilat kertovat, missä vaiheessa muutosten hallinta on.
+      Kun lisäät, muokkaat tai poistat tiedostoja, Git seuraa niitä eri tilojen avulla.
+    </p>
+    <p>
+      Taulukossa on esitetty yleisimmät tilat, niiden värit ja lyhenne Visual Studio Codessa,
+      sekä lyhyt kuvaus siitä, mitä tila tarkoittaa käytännössä.
+    </p>
 
-<div>
-        <div class="header-content">
-            <div class="header-icon">
-                <h4 class="header">Git-tiedoston tilat (VS Code -näkymä)</h4>
-                <div>
-                    <img class="bookButton open" src="../../assets/images/svg/book.png" alt="Kirja painike"
-                        width="25" />
-                    <img class="bookButton close hidden" src="../../assets/images/svg/book-open.png" alt="Kirja painike"
-                        width="32" />
-                </div>
-            </div>
-            <div class="content hidden">
-                <p>Versionhallinta on järjestelmä, jolla seurataan ja hallitaan tiedostoihin tehtyjä muutoksia. Sen
-                    avulla voidaan palauttaa aiempia versioita, tarkastella projektin historiaa ja työskennellä
-                    usean
-                    ihmisen kanssa samoissa tiedostoissa yhtä aikaa. </p>
-<table>
-  <thead>
-    <tr>
-      <th>Tila</th>
-      <th>Väri</th>
-      <th>Selitys</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Untracked (U)</td>
-      <td>Vihreä</td>
-      <td>Uusi tiedosto, jota Git ei vielä seuraa. Lisää versiohistoriaan komennolla <code>git add</code>.</td>
-    </tr>
-    <tr>
-      <td>Unmodified (-)</td>
-      <td>Ei väriä</td>
-      <td>Ei muutoksia edellisen commitin jälkeen. Synkassa repositorion kanssa.</td>
-    </tr>
-    <tr>
-      <td>Modified (M)</td>
-      <td>Keltainen</td>
-      <td>Tiedostoa on muokattu, mutta muutoksia ei ole lisätty staging-alueelle.</td>
-    </tr>
-    <tr>
-      <td>Added (A)</td>
-      <td>Vihreä</td>
-      <td>Muutokset on lisätty stagingiin komennolla <code>git add</code> ja ovat valmiina commitille.</td>
-    </tr>
-    <tr>
-      <td>Deleted (D)</td>
-      <td>Yliviivattu</td>
-      <td>Tiedosto on poistettu.</td>
-    </tr>
-    <tr>
-      <td>Committed (-)</td>
-      <td>Ei väriä</td>
-      <td>Muutokset on tallennettu repositorioon (paikallisesti). Pushaa GitHubiin komennolla <code>git push</code>.</td>
-    </tr>
-  </tbody>
-</table>
-            </div>
-            
-        </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Tila</th>
+          <th>Väri</th>
+          <th>Selitys</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Untracked (U)</td>
+          <td>Vihreä</td>
+          <td>Uusi tiedosto, jota Git ei vielä seuraa. Lisää versiohistoriaan komennolla <code>git add</code>.</td>
+        </tr>
+        <tr>
+          <td>Unmodified (-)</td>
+          <td>Ei väriä</td>
+          <td>Ei muutoksia edellisen commitin jälkeen. Synkassa repositorion kanssa.</td>
+        </tr>
+        <tr>
+          <td>Modified (M)</td>
+          <td>Keltainen</td>
+          <td>Tiedostoa on muokattu, mutta muutoksia ei ole lisätty staging-alueelle.</td>
+        </tr>
+        <tr>
+          <td>Added (A)</td>
+          <td>Vihreä</td>
+          <td>Muutokset on lisätty stagingiin komennolla <code>git add</code> ja ovat valmiina commitille.</td>
+        </tr>
+        <tr>
+          <td>Deleted (D)</td>
+          <td>Yliviivattu</td>
+          <td>Tiedosto on poistettu.</td>
+        </tr>
+        <tr>
+          <td>Committed (-)</td>
+          <td>Ei väriä</td>
+          <td>Muutokset on tallennettu repositorioon (paikallisesti). Pushaa GitHubiin komennolla <code>git push</code>.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+        <p>
+      Tämä tarjoaa visuaalisen keinon hahmottaa projektin tilanne yhdellä silmäyksellä ja nähdä nopeasti,
+      mitkä tiedostot vaativat vielä toimenpiteitä ja mitkä ovat jo valmiina tallennettavaksi versiohistoriaan.
+    </p>
+  </header>
 </section>
