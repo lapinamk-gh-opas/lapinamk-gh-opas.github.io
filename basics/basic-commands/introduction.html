@@ -1,0 +1,225 @@
+<section class="workflow">
+  <h2>Keskeiset komennot (komentorivi)</h2>
+  <p>
+    Gitin käyttäminen komentokehotteesta on nopea ja tehokas tapa hallita
+    versionhallintaa. Kun opit peruskomennot, työskentelet sujuvasti IDE:stä
+    riippumatta ja saat täyden hallinnan Git-toimintoihin.
+  </p>
+  <p>
+    Tässä on yleisimmät ja hyödyllisimmät Git-komennot, jotka jokaisen
+    kehittäjän tulisi ymmärtää.
+  </p>
+
+  <h4>Kansionhallinta</h4>
+  <h6>Siirry kansioon - <code>cd Projekti</code></h6>
+  <p>
+    Vaihtaa nykyisen työskentelykansion toiseen. Aja tämä ennen Git-komentoja,
+    jotta olet oikeassa projektikansiossa.
+  </p>
+
+  <h6>Siirry yksi taso ylemmäs - <code>cd ..</code></h6>
+  <p>
+    Liikkuu hakemistopuussa ylöspäin. Eli esimerkiksi kansiosta
+    <code>Projekti</code> kansioon, jossa <code>Projekti</code> sijaitsee.
+  </p>
+
+  <h6>Näytä kansion sisältö - <code>dir</code> / <code>ls</code></h6>
+  <p>
+    Listaa nykyisen kansion tiedostot ja kansiot (Windows: <code>dir</code>,
+    macOS/Linux: <code>ls</code>). Varmistat nopeasti mitä kansiossa on.
+  </p>
+
+  <h6>Luo uusi kansio - <code>mkdir harjoitus-1</code></h6>
+  <p>
+    Luo tyhjän kansion esimerkiksi uutta harjoitusta tai projektia varten.
+    Siirry sitten kansioon komennolla <code>cd harjoitus-1</code>.
+  </p>
+
+  <h4>Git Peruskomennot</h4>
+  <h6>Alusta uusi Git-repositorio - <code>git init</code></h6>
+  <p>
+    Käynnistää versionhallinnan nykyisessä kansiossa luomalla
+    <code>.git</code>-hakemiston. Aja vain projektin juuressa.
+  </p>
+
+  <h6>
+    Kloonaa olemassa oleva repo -
+    <code>git clone https://github.com/user/projekti.git</code>
+  </h6>
+  <p>
+    Lataa etärepositorion sisällön paikallisesti ja luo repolle uuden kansion
+    tietokoneellesi. URLin löydät GitHubista kohdasta repo → Code → HTTPS.
+  </p>
+
+  <h6>Näytä muutosten tila - <code>git status</code></h6>
+  <p>
+    Näyttää uudet, muokatut ja stagingiin lisätyt tiedostot, sekä nykyisen
+    haaran. Ensimmäinen komento, kun mietit 'missä mennään'. Tiivis versio
+    <code>git status -sb</code>.
+  </p>
+
+  <h6>Lisää tiedosto stagingiin - <code>git add index.html</code></h6>
+  <p>
+    Valmistelee yksittäisen tiedoston seuraavaan committiin. Toista useille
+    tiedostoille tarpeen mukaan.
+  </p>
+
+  <h6>Lisää kaikki muutokset stagingiin - <code>git add .</code></h6>
+  <p>
+    Kerää tämän kansion ja alikansioiden muutokset kerralla stagingiin. Nopea
+    tapa valmistella commit.
+  </p>
+
+  <h6>
+    Tallenna muutokset (commit) - <code>git commit -m "add index.html"</code>
+  </h6>
+  <p>
+    Kirjaa stagingissa olevat muutokset paikalliseen historiaan. Pidä viesti
+    lyhyenä, mutta kuvaavana.
+  </p>
+
+  <h6>Näytä kaikki haarat - <code>git branch</code></h6>
+  <p>
+    Listaa paikalliset haarat. Nykyinen haara on merkitty tähdellä
+    (<code>*</code>).
+  </p>
+
+  <h6>Luo ja siirry haaraan - <code>git checkout -b dev</code></h6>
+  <p>
+    Luo uuden kehityshaaran ja vaihtaa siihen. Vaihtoehtoisesti
+    <code>git switch -c dev</code>.
+  </p>
+
+  <h6>Siirry olemassa olevaan haaraan - <code>git checkout dev</code></h6>
+  <p>
+    Vaihda kehitystyö toiseen haaraan. Varmista, että keskeneräiset muutokset on
+    commitoitu tai stasattu ennen vaihtoa. Vaihtoehtoisesti
+    <code>git switch dev</code>
+  </p>
+
+  <h6>Hae ja yhdistä etärepon muutokset - <code>git pull</code></h6>
+  <p>Hakee uusimmat commitit etärepostosta ja yhdistää ne nykyiseen haaraan.</p>
+
+  <h6>Lähetä muutokset etärepoon - <code>git push</code></h6>
+  <p>
+    Julkaisee paikalliset commitit etärepositorioon (esim. GitHubiin).
+    Ensimmäisellä kerralla määritä seuranta haaralle.
+  </p>
+
+  <h6>Työnnä dev ja aseta seuranta - <code>git push -u origin dev</code></h6>
+  <p>
+    Lähettää <code>dev</code>-haaran ja asettaa upstreamin, eli yhdistää
+    paikallisen ja etähaaran, jolloin jatkossa riittää pelkkä
+    <code>git push</code>.
+  </p>
+
+  <h6>Yhdistä haara nykyiseen - <code>git merge dev</code></h6>
+  <p>
+    Yhdistää <code>dev</code>-haaran nykyiseen haaraan. Varmista, että työpuu on
+    puhdas ennen yhdistämistä, eli kaikki muutokset on commitoitu ja staging on
+    tyhjä.
+  </p>
+
+  <h4>Lisäkomennot</h4>
+  <h6>Näytä erot muutosten välillä - <code>git diff</code></h6>
+  <p>
+    Vertaa työpuuta viimeisimpään commit-tilaan. Tarkista stagingiin lisätyt
+    erot lisäämällä <code>--staged</code>.
+  </p>
+
+  <h6>
+    Palauta tiedosto viime commitin tilaan - <code>git restore index.html</code>
+  </h6>
+  <p>
+    Kumoaa paikalliset muutokset valitussa tiedostossa. Turvallinen tapa perua
+    yksittäisen tiedoston muokkaukset.
+  </p>
+
+  <h6>Peru viimeisin commit - <code>git reset HEAD~</code></h6>
+  <p>
+    Siirtää historian osoitinta taaksepäin jättäen muutokset työpuuhun (oletus
+    <code>--mixed</code>). Vaihtoehdot: <code>--soft</code> (jättää stagingiin)
+    ja <code>--hard</code> (poistaa muutokset, älä käytä ellet ole aivan
+    varma!).
+  </p>
+
+  <h6>Näytä commit-historia - <code>git log</code></h6>
+  <p>
+    Listaa commitit nykyisessä haarassa uusimmasta vanhimpaan. Lisää
+    <code>--oneline</code> tiiviimpään näkymään.
+  </p>
+
+  <div
+    class="accordion"
+    data-include="../../accordion-element/accordion.html"
+    data-title="Ongelmatilanteessa"
+  >
+    <div class="contentToAccordion">
+      <h4>Ongelmatilanteet – mistä aloitan?</h4>
+      <p>
+        Ei hätää! Versionhallinnan vahvuus on se, että virheistä voi lähes aina
+        toipua. Tässä muutamia yleisiä komentoja ja vinkkejä, jotka auttavat
+        sinua pääsemään eteenpäin.
+      </p>
+      <ul>
+        <li>
+          <strong>Ongelma komennon kanssa:</strong>
+          <code>git help &lt;komento&gt;</code>
+          Avaa viralliset ohjeet selaimeen juuri sille komennolle, jonka kanssa
+          kamppailet. Esim.
+          <code>git help commit</code> selittää komennon käytön
+          yksityiskohtaisesti. Nopea tiivistelmä löytyy usein komennolla
+          <code>git &lt;komento&gt; -h</code>. Kokeile näitä rohkeasti!
+        </li>
+
+        <li>
+          <strong>Katso missä mennään:</strong> aja <code>git status</code>. Lue
+          viesti rauhassa.
+        </li>
+
+        <li>
+          <strong>Jos on merge-konflikti:</strong> avaa listatut tiedostot, etsi
+          <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code
+          >/<code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>, yhdistä oikeat rivit →
+          <code>git add .</code> →
+          <code>git commit -m "resolve conflict" </code>. Merge-konflikteista
+          lisää yhteistyöosiossa.
+        </li>
+
+        <li>
+          <strong>Tiedoston historia:</strong> VS Codessa voit katsoa myös
+          tiedostokohtaisen historian <em>Timeline</em>-paneelista ja palata
+          aiempiin versioihin.
+        </li>
+
+        <li>
+          <strong>Jos kaikki menee pieleen:</strong> kopioi tärkeät tiedostot
+          talteen → poista koko kansio → kloonaa repo uudestaan
+          <code>git clone &lt;url&gt;</code> → palauta tärkeät tiedostot
+          takaisin kansioon ja tee uusi commit.
+        </li>
+      </ul>
+
+      <p>
+        Jos mikään näistä ei auta, älä epäröi kysyä apua tai etsiä ratkaisua
+        verkosta. Gitin oppimiskäyrä on jyrkkä, mutta kärsivällisyys palkitaan.
+        Jokainen virhe on opettaa lisää versionhallinnasta!
+      </p>
+    </div>
+  </div>
+
+  <p>
+    Älä hätkähdä komentojen määrää. Käymme ne läpi tapauskohtaisesti esimerkein
+    ja harjoituksin. Samat komennot löytyvät myös sivupalkin muistilistasta,
+    joten sinun ei tarvitse opetella niitä ulkoa.
+  </p>
+  <p>
+    Säännöllinen käyttö tekee komennoista rutiinia ja Gitin käytöstä sujuvaa
+    missä tahansa ympäristössä.
+  </p>
+
+  <p>
+    Kappaleiden edetessä voit aina palata tähän listaan kertaamaan komentoja ja
+    niiden tarkoituksia.
+  </p>
+</section>

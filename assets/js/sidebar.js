@@ -7,12 +7,28 @@ document.addEventListener("sidebar component:loaded", () => {
   const toggleBtn = document.getElementById("toggleBtn"); // get toggle button element
   const mainContainer = document.getElementById("mainContainer"); // get main container element
 
+  const sidebarState = sessionStorage.getItem("sidebar");
+
+  if (sidebarState === "closed") {
+    console.log("lisää closed");
+    sidebar.classList.add("closed");
+    toggleBtn.classList.add("closed");
+    mainContainer.classList.add("shifted");
+  } else {
+    sidebar.classList.remove("closed");
+    toggleBtn.classList.remove("closed");
+    mainContainer.classList.remove("shifted");
+  }
+
   // listen click event to toggle button and toggle classes to open/close for selected elements
   if (sidebar && toggleBtn && mainContainer) {
     toggleBtn.addEventListener("click", () => {
       sidebar.classList.toggle("closed");
       toggleBtn.classList.toggle("closed");
       mainContainer.classList.toggle("shifted");
+
+      const isClosed = sidebar.classList.contains("closed");
+      sessionStorage.setItem("sidebar", isClosed ? "closed" : "open");
     });
   }
 });
@@ -26,11 +42,11 @@ document.addEventListener("sidebar component:loaded", () => {
     const toggle = item.querySelector(".dropdown-toggle"); // gets dropdown button
     const sublist = item.querySelector(".sidebar-sub-list"); // gets sub list
 
-        if (!toggle || !sublist) return; // if no toggle button or sub list, skip to next item
+    if (!toggle || !sublist) return; // if no toggle button or sub list, skip to next item
 
-    toggle.addEventListener("click", () => { 
-      toggle.classList.toggle("open"); 
-      sublist.classList.toggle("open"); 
+    toggle.addEventListener("click", () => {
+      toggle.classList.toggle("open");
+      sublist.classList.toggle("open");
     });
   });
 });
@@ -41,17 +57,17 @@ document.addEventListener("sidebar component:loaded", () => {
   const menuItems = document.querySelectorAll(".sidebar-menu a"); // gets all sidebar menu links
 
   // loops through all menu links and checks if any matches current path
-  menuItems.forEach((link) => { 
-    if (link.getAttribute("href") === currentPath) { 
-      const parentItem = link.closest(".sidebar-main-item"); 
+  menuItems.forEach((link) => {
+    if (link.getAttribute("href") === currentPath) {
+      const parentItem = link.closest(".sidebar-main-item");
       if (!parentItem) return;
 
-      const sublist = parentItem.querySelector(".sidebar-sub-list"); 
-      const toggle  = parentItem.querySelector(".dropdown-toggle");
+      const sublist = parentItem.querySelector(".sidebar-sub-list");
+      const toggle = parentItem.querySelector(".dropdown-toggle");
 
       // if match found, adds class open to sub list and toggle button to open the dropdown
       if (sublist) sublist.classList.add("open");
-      if (toggle)  toggle.classList.add("open");
+      if (toggle) toggle.classList.add("open");
     }
   });
 });
@@ -62,11 +78,9 @@ document.addEventListener("sidebar component:loaded", () => {
   const btn = document.getElementById("downloadListBtn");
   if (!btn) return;
 
-  btn.addEventListener("click", () => { 
+  btn.addEventListener("click", () => {
     // gets table rows and maps them to lines of text
-    const rows = Array.from(
-      document.querySelectorAll(".cmd-table tbody tr")
-    );
+    const rows = Array.from(document.querySelectorAll(".cmd-table tbody tr"));
     const lines = rows.map((tr) => {
       const cmd = tr.cells[0]?.innerText?.trim() ?? "";
       const desc = tr.cells[1]?.innerText?.trim() ?? "";
@@ -87,4 +101,3 @@ document.addEventListener("sidebar component:loaded", () => {
     URL.revokeObjectURL(url);
   });
 });
-

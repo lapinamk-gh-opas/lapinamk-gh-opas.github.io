@@ -205,6 +205,7 @@
   /* main content area for mobile */
   .main-container {
     padding: 2rem 1.5rem;
+    max-width: calc(100% - 10px);
   }
 
   .main-container a {
@@ -231,7 +232,7 @@
   }
 }
 
- /* sidebar commands table and download button -styles */
+/* sidebar commands table and download button -styles */
 
 .sidebar-commands summary {
   cursor: pointer;
@@ -264,7 +265,7 @@
   padding: 0.3rem 0.3rem 0rem 0.3rem;
   vertical-align: top;
   text-align: left;
-  border-bottom: 1px solid #ccc;    
+  border-bottom: 1px solid #ccc;
 }
 
 .sidebar .cmd-table tr:last-child td {
@@ -282,12 +283,16 @@
 .sidebar .cmd-table td,
 .sidebar .cmd-table code {
   white-space: normal;
-  word-break: keep-all; 
+  word-break: keep-all;
 }
 
 /*dropdown arrow in summary*/
-.sidebar-commands summary::-webkit-details-marker { display: none; }
-.sidebar-commands summary::marker { content: ""; }
+.sidebar-commands summary::-webkit-details-marker {
+  display: none;
+}
+.sidebar-commands summary::marker {
+  content: "";
+}
 
 .sidebar-commands summary .dropdown-toggle {
   margin-left: 0.5rem;
@@ -302,7 +307,6 @@
   content: "▲";
   border-top: none;
 }
-
 
 /* download button styles */
 .download-wrap {
@@ -319,6 +323,3 @@
   cursor: pointer;
   font-size: 0.8rem;
 }
-
-
-

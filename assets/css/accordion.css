@@ -33,26 +33,31 @@
 .content {
   background: white;
   color: black;
-  padding: 1rem;
   border-radius: 0 0 13px 13px;
   max-height: 1000px; /* needed for accordion animation*/
   overflow-y: hidden; /* in case if content is taller than 1000px */
-  transition: max-height 0.3s ease, padding-top 0.3s ease,
-    padding-bottom 0.3s ease;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.contentToAccordion {
+  margin: 1rem;
 }
 
 /* removing bottom margin from paragraphs inside accordion-content area */
-.accordion-content p.nomargin,
+.accordion-content p:last-of-type,
 .accordion-content ul:last-of-type,
-.accordion-content figure {
+.accordion-content figure:last-of-type {
   margin-bottom: 0;
+}
+
+/* keep bottom margin from paragraphs inside accordion-content area */
+.accordion-content p.keep-margin {
+  margin-bottom: 1em;
 }
 
 /* hiding content */
 .content.hidden {
   max-height: 0;
-  padding-top: 0;
-  padding-bottom: 0;
 }
 
 /* margin for header div */
