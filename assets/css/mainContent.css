@@ -120,15 +120,16 @@ ol.edit-number li::marker {
   font-weight: bold;
 }
 
-ol.sections {
-  margin-bottom: 0;
-}
-
+/* gap between listitem to ol that has class sections  */
 ol.sections > li {
   margin-bottom: 1.25rem;
 }
 
 ol.sections > li:last-child {
+  margin-bottom: 0;
+}
+
+ol.sections {
   margin-bottom: 0;
 }
 

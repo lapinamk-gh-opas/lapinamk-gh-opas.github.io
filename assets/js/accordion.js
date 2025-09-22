@@ -1,21 +1,45 @@
 document.addEventListener("subContent:loaded", () => {
-  const listItems = document.querySelectorAll(".header-content"); //gets collapsible elemets (accordions)
+  document.querySelectorAll(".accordion[data-include]").forEach(async (acc) => {
+    const path = acc.dataset.include;
+    const placeholder = acc.querySelector(".contentToAccordion");
 
-  // Loops through collasible elements and listens click events of
-  // each list items open buttons and close buttons then toggles class hidden for elements accordingly
-  if (listItems) {
-    listItems.forEach((item) => {
-      const imgBookOpen = item.querySelector(".bookButton.open"); // gets open book img
-      const imgBookClosed = item.querySelector(".bookButton.close"); // gets closed book img
-      const content = item.querySelector(".content"); // gets content div
+    const original = placeholder ? placeholder.outerHTML : "";
 
-      item.onclick = () => {
-        const isHidden = content.classList.contains("hidden"); // is content hidden
+    try {
+      const resp = await fetch(path);
+      if (!resp.ok) throw new Error(resp.statusText);
 
-        content.classList.toggle("hidden", !isHidden); // Toggle content class hidden
-        imgBookOpen.classList.toggle("hidden", isHidden); // Toggle open book img class hidden
-        imgBookClosed.classList.toggle("hidden", !isHidden); // Toggle closed book img class hidden
-      };
-    });
+      const html = await resp.text();
+      acc.innerHTML = html;
+
+      acc.dataset.originalContent = original;
+      document.dispatchEvent(
+        new CustomEvent("accordion:loaded", { detail: acc })
+      );
+    } catch (err) {
+      acc.innerHTML = `<p style="color:red">Sisällön lataus epäonnistui: ${path}</p>`;
+    }
+  });
+});
+
+document.addEventListener("accordion:loaded", (e) => {
+  const item = e.detail;
+  const content = item.querySelector(".content");
+  const header = item.querySelector(".header");
+  const title = item.dataset.title;
+
+  if (header && title) header.textContent = title;
+  if (content && item.dataset.originalContent) {
+    content.innerHTML = item.dataset.originalContent;
   }
+
+  const imgOpen = item.querySelector(".bookButton.open");
+  const imgClose = item.querySelector(".bookButton.close");
+
+  item.onclick = () => {
+    const hidden = content.classList.contains("hidden");
+    content.classList.toggle("hidden", !hidden);
+    imgOpen?.classList.toggle("hidden", hidden);
+    imgClose?.classList.toggle("hidden", !hidden);
+  };
 });

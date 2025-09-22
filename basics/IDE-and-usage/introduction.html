@@ -3,29 +3,16 @@
     <h1>Gitin Käyttötapojen esittely</h1>
     <p>
       Tällä sivulla käsitellään seuraavat kolme yleistä tapaa käyttää
-      <strong>Git:ä</strong>
+      <strong>Gitiä</strong>
     </p>
   </header>
   <div>
-    <div class="header-content">
-      <div class="header-icon">
-        <h4 class="header">1. Komentorivi</h4>
-        <div>
-          <img
-            class="bookButton open"
-            src="../../assets/images/svg/book.png"
-            alt="Kirja painike"
-            width="25"
-          />
-          <img
-            class="bookButton close hidden"
-            src="../../assets/images/svg/book-open.png"
-            alt="Kirja painike"
-            width="32"
-          />
-        </div>
-      </div>
-      <div class="content accordion-content hidden">
+    <div
+      class="accordion"
+      data-include="../../accordion-element/accordion.html"
+      data-title="1. Komentorivi"
+    >
+      <div class="contentToAccordion">
         <p>
           <strong>Yleistä:</strong> Komentorivi on Gitin alkuperäinen
           käyttöympäristö ja tarjoaa täydellisen hallinnan. Kaikki toiminnot,
@@ -70,25 +57,12 @@
         </ul>
       </div>
     </div>
-    <div class="header-content">
-      <div class="header-icon">
-        <h4 class="header">2. Koodieditori (IDE)</h4>
-        <div>
-          <img
-            class="bookButton open"
-            src="../../assets/images/svg/book.png"
-            alt="Kirja"
-            width="25"
-          />
-          <img
-            class="bookButton close hidden"
-            src="../../assets/images/svg/book-open.png"
-            alt="Kirja"
-            width="32"
-          />
-        </div>
-      </div>
-      <div class="content accordion-content hidden">
+    <div
+      class="accordion"
+      data-include="../../accordion-element/accordion.html"
+      data-title="2. Koodieditori (IDE)"
+    >
+      <div class="contentToAccordion">
         <p>
           <strong>Yleistä:</strong> Monet nykyaikaiset IDE:t ja editorit
           tarjoavat sisäänrakennetun Git-tuen kuten yhdistely, haarojen hallinta
@@ -97,16 +71,16 @@
         <h6>Ympäristöjä</h6>
         <ul>
           <li>
-            <strong>Visual Studio Codessa</strong> on Source Control-paneeli ja
-            integroitu terminaali versionhallintaan.
+            <strong>Microsoft, Visual Studio Codessa</strong> on Source
+            Control-paneeli ja integroitu terminaali versionhallintaan.
           </li>
           <li>
             <strong>JetBrains, PyCharm</strong> tarjoaa integraation gitin ja
             githubin hallintaan.
           </li>
           <li>
-            <strong>Android Studio</strong> versionhallinta integraation
-            käyttöönotto mahdollistaa git toiminnallisuudet.
+            <strong>Google(JetBrains), Android Studio</strong> versionhallinta
+            integraation käyttöönotto mahdollistaa git toiminnallisuudet.
           </li>
         </ul>
         <h6>Käyttö</h6>
@@ -133,27 +107,12 @@
         </ul>
       </div>
     </div>
-    <div class="header-content">
-      <div class="header-icon">
-        <h4 class="header">
-          3. Erilliset graafiset sovellukset (GitHub Desktop)
-        </h4>
-        <div>
-          <img
-            class="bookButton open"
-            src="../../assets/images/svg/book.png"
-            alt="Kirja"
-            width="25"
-          />
-          <img
-            class="bookButton close hidden"
-            src="../../assets/images/svg/book-open.png"
-            alt="Kirja"
-            width="32"
-          />
-        </div>
-      </div>
-      <div class="content accordion-content hidden">
+    <div
+      class="accordion"
+      data-include="../../accordion-element/accordion.html"
+      data-title="3. Erilliset graafiset sovellukset (GitHub Desktop)"
+    >
+      <div class="contentToAccordion">
         <p>
           <strong>Yleistä:</strong> GitHub Desktop on käyttäjäystävällinen
           sovellus, joka keskittyy GitHubin kanssa työskentelyyn. Se tarjoaa
