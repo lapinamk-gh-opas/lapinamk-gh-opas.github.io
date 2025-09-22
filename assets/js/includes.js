@@ -6,8 +6,7 @@ let sidebarLoaded = false;
 let arrowsLoaded = false;
 document.querySelectorAll("[data-include]").forEach(async (el) => {
   const path = el.getAttribute("data-include"); // gets path from divs data-include attribute
-  let sidebar = false;
-  let arrows = false;
+
   try {
     const content = await fetch(path); // fetches the content from the path
     if (!content.ok) throw new Error(content.statusText); // trows error if fetch fails
