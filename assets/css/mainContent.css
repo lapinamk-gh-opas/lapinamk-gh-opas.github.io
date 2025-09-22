@@ -93,7 +93,7 @@
 
 /*table*/
 table {
-width: 100%;
+  width: 100%;
   border-collapse: separate;
   border-spacing: 0;
   font-size: 0.8rem;
@@ -107,6 +107,29 @@ td {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
+}
+
+/* Edits ol's li's marker number to match h6 text size */
+ol.edit-number {
+  list-style-type: decimal;
+  font-size: 1rem;
+}
+
+ol.edit-number li::marker {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+ol.sections {
+  margin-bottom: 0;
+}
+
+ol.sections > li {
+  margin-bottom: 1.25rem;
+}
+
+ol.sections > li:last-child {
+  margin-bottom: 0;
 }
 
 /* lay out changes for mobile */
