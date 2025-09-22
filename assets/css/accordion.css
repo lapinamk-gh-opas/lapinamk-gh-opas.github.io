@@ -8,6 +8,8 @@
   border-radius: 15px;
   color: white;
   margin-bottom: 1rem;
+  cursor: pointer;
+  user-select: none;
 }
 
 /* header and icon */

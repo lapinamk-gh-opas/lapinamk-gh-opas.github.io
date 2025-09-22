@@ -5,20 +5,17 @@ document.addEventListener("subContent:loaded", () => {
   // each list items open buttons and close buttons then toggles class hidden for elements accordingly
   if (listItems) {
     listItems.forEach((item) => {
-      const toggleOpen = item.querySelector(".bookButton.open"); // gets open button
-      const toggleClose = item.querySelector(".bookButton.close"); // gets close button
+      const imgBookOpen = item.querySelector(".bookButton.open"); // gets open book img
+      const imgBookClosed = item.querySelector(".bookButton.close"); // gets closed book img
+      const content = item.querySelector(".content"); // gets content div
 
-      toggleOpen.addEventListener("click", () => {
-        toggleOpen.classList.add("hidden"); // toggless hidden class for open button
-        toggleClose.classList.remove("hidden"); // toggless hidden class for close button
-        item.querySelector(".content").classList.remove("hidden"); // toggless hidden class for content div
-      });
+      item.onclick = () => {
+        const isHidden = content.classList.contains("hidden"); // is content hidden
 
-      toggleClose.addEventListener("click", () => {
-        toggleOpen.classList.remove("hidden"); // toggless hidden class for open button
-        toggleClose.classList.add("hidden"); // toggless hidden class for close button
-        item.querySelector(".content").classList.add("hidden"); // toggless hidden class for content div
-      });
+        content.classList.toggle("hidden", !isHidden); // Toggle content class hidden
+        imgBookOpen.classList.toggle("hidden", isHidden); // Toggle open book img class hidden
+        imgBookClosed.classList.toggle("hidden", !isHidden); // Toggle closed book img class hidden
+      };
     });
   }
 });
