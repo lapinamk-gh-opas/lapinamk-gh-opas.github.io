@@ -39,9 +39,10 @@
     padding-bottom 0.3s ease;
 }
 
-/* removing top and bottom margin from paragraphs inside content area */
-.content p {
-  margin-top: 0;
+/* removing bottom margin from paragraphs inside accordion-content area */
+.accordion-content p:last-of-type,
+.accordion-content ul:last-of-type, 
+.accordion-content figure {
   margin-bottom: 0;
 }
 

@@ -91,6 +91,24 @@
   display: none;
 }
 
+/*table*/
+table {
+width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.8rem;
+
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
 /* lay out changes for mobile */
 @media (max-width: 1000px) {
   /* content width */
