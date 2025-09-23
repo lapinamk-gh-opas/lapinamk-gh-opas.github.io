@@ -1,0 +1,57 @@
+<section class="basic-problems">
+  <h2>Miten selvitä ongelmatilanteesta?</h2>
+
+  <p>
+    Git on tehokas työkalu, mutta aina asiat eivät mene suunnitelmien mukaan.
+    Ehkä unohdit commitata muutoksen, teit virheen komennossa tai poistit
+    vahingossa tärkeitä tiedostoja. </p>
+
+  <p>
+    No problem! Versionhallinnan vahvuus on se, että virheistä voi lähes aina
+    toipua. Git myös kertoo jos typotat tai yrität jotain, mikä ei ole
+    sallittua, joten kokeile asioita vapaasti! </p>
+
+  <h6>Katso missä mennään</h6>
+  <p>Aja <code>git status</code>. Lue viesti rauhassa. Voit ajaa tämän komennon joka välissä, jotta pysyt kartalla siitä
+    mitä tapahtuu.</p>
+
+  <h6>Ongelma komennon kanssa</h6>
+  <p>Jos jokin komento tuottaa päänvaivaa, avaa sen viralliset ohjeet selaimeen
+    komennolla <code>git help &lt;komento&gt;</code>. Tämä antaa yksityiskohtaisen selityksen
+    komennon käytöstä. Usein nopea yhteenveto löytyy myös komennolla
+    <code>git &lt;komento&gt; -h</code>. Kokeile rohkeasti molempia!
+  </p>
+
+  <h6>Vahingossa poistettu tiedosto</h6>
+  <p>Jos tiedosto on poistettu, mutta et ole vielä commitannut, voit palauttaa sen helposti komennolla
+    <code>git restore &lt;tiedosto&gt;</code>.
+    Jos taas tiedosto on poistettu ja commitattu, voit palauttaa sen aiemmasta commitista komennolla
+    <code>git checkout HEAD~1 -- &lt;tiedosto&gt;</code>.
+  </p>
+
+  <h6>Tiedoston historia</h6>
+  <p>Tiedoston aiempia versioita voit selata VS Coden <em>Timeline</em>-paneelissa (ala-vasen). 
+  Siellä näkyvät kaikki tekemäsi tiedoston tallennukset ja voit helposti avata tai vertailla eri versioita. 
+  Tämä on kätevää esimerkiksi silloin, kun haluat palauttaa vain osan koodin 
+  aiemmasta versiosta. Myös GitHubin selainversiossa on <em>History</em>-toiminto, 
+  jonka avulla voit tarkastella tiedoston muutoshistoriaa suoraan selaimessa.
+  </p>
+
+  <h6>Jos kaikki menee pieleen</h6>
+  <p>Kopioi tärkeät tiedostot talteen → poista koko kansio → kloonaa repo uudestaan
+    <code>git clone &lt;url&gt;</code> → palauta tärkeät tiedostot
+    takaisin kansioon ja tee uusi commit.
+  </p>
+
+  <p>
+    Muista, että virheitä sattuu kaikille! Tärkeintä on oppia niistä ja
+    jatkaa eteenpäin. Harjoitus tekee mestarin! </p>
+
+  <p>Lisää vinkkejä ongelmatilanteisiin:
+    <ul>
+  <li><a href="https://ohshitgit.com/fi">OhShitGit - Humoristinen ratkaisuopas</a></li>
+  <li><a href="https://git-scm.com/doc">Git Documentation</a></li>
+  <li><a href="https://docs.github.com/">GitHub Docs</a></li>
+  <li><a href="https://code.visualstudio.com/docs">Visual Studio Code Documentation</a></li>
+   </p>
+</section>
