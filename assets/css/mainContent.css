@@ -144,20 +144,13 @@ li {
   margin-bottom: 0.5rem;
 }
 
-/*training exercise spoiler*/
-.spoiler {
-background-color: gray;
-color: transparent;
-user-select: all;
-border-radius: 5px;
-padding: 0.5rem;
-transition: color 0.3s ease;
-}
-
-.spoiler:hover {
-  color: black;
-  background-color: lightgray;
-  user-select: all;
+/*pre*/
+pre {
+  padding: 0rem;
+  margin-block-end: 0rem;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 /* figure caption size */
