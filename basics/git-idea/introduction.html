@@ -21,11 +21,21 @@
   </header>
 
   <div>
+    <!-- Accordion element starts -->
+    <!--  
+          Give title to accordion to this divs parameter data-title
+          Give path to reusable accordion to this divs parameter data-include
+          path must be relative to the html file where accordion.js is presented 
+    -->
     <div
       class="accordion"
       data-include="../../accordion-element/accordion.html"
       data-title="Versionhallinta"
     >
+      <!-- 
+          Put accordion content inside this element. 
+          Content can contain all kinds of html elements
+      -->
       <div class="contentToAccordion">
         <p>
           Versionhallinta on järjestelmä, jolla seurataan ja hallitaan
@@ -35,6 +45,7 @@
         </p>
       </div>
     </div>
+    <!-- Accordion element ends -->
 
     <div>
       <h4>Mikä on Git?</h4>
