@@ -38,6 +38,11 @@ document.addEventListener("accordion:loaded", (e) => {
 
   item.onclick = () => {
     const hidden = content.classList.contains("hidden");
+
+    hidden
+      ? (content.style.maxHeight = content.scrollHeight + "px")
+      : (content.style.maxHeight = "0px");
+
     content.classList.toggle("hidden", !hidden);
     imgOpen?.classList.toggle("hidden", hidden);
     imgClose?.classList.toggle("hidden", !hidden);
