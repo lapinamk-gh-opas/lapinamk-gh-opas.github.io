@@ -102,21 +102,8 @@ document.addEventListener("pages:loaded", () => {
   // Functionality of prev button click if button is active/shown.
   // Loads previous page if there is one or else navigates to previous part/link
   if (prevBtn) {
-    prevBtn.onclick = async () => {
-      if (pageIndex > 0) {
-        pageIndex = pageIndex - 1; // sets previous page index
-        await loadPage(pageNames[pageIndex], basePath); // loads previous page
-      } else if (pageIndex === 0) {
-        const prevPage = await getLastSubPageName(linkNames[linkIndex - 1]); // gets previous parts last subpage
-
-        //if previous part has subpages navigates to last subpare or else navigates to previous part
-        if (prevPage) {
-          window.location.href = `${linkNames[linkIndex - 1]}#${prevPage}`; // navigates to previous parts last subpage
-        } else {
-          window.location.href = linkNames[linkIndex - 1]; // navigates to previous parts
-        }
-      }
-      window.scrollTo(0, 0); //scrolls window to top
+    prevBtn.onclick = () => {
+      navPrev();
     };
   }
 
@@ -124,15 +111,8 @@ document.addEventListener("pages:loaded", () => {
   // Loads next page if there is one or else navigates to next part/link
   if (nextBtn) {
     nextBtn.onclick = () => {
-      if (pageIndex < pageNames.length - 1) {
-        pageIndex = pageIndex + 1; // sets next page index
-        loadPage(pageNames[pageIndex], basePath); // loads next page
-      } else if (pageIndex === pageNames.length - 1 || pageIndex === 0) {
-        window.location.href = linkNames[linkIndex + 1]; // navigates to next parts
-      }
+      navNext();
     };
-    window.scrollTo(0, 0); //scrolls window to top
-    document.dispatchEvent(new Event("subContent:loaded"));
   }
 });
 
@@ -152,4 +132,58 @@ async function getLastSubPageName(sectionPath) {
   } catch (err) {
     console.error(err); // is there is no part shows error on browser console
   }
+}
+
+// Event listener that handles navigating on pages with arrow keys
+document.addEventListener("keyup", function (event) {
+  switch (event.key) {
+    case "ArrowLeft":
+      if (pageIndex === 0 && linkIndex === 0) {
+        break;
+      } else {
+        navPrev();
+        break;
+      }
+    case "ArrowRight":
+      if (
+        (pageIndex === pageNames.length - 1 || pageIndex === 0) &&
+        linkIndex === linkNames.length - 1
+      ) {
+        break;
+      } else {
+        navNext();
+        break;
+      }
+  }
+});
+
+// Function for navigating to next part or subpage
+function navNext() {
+  console.log("next");
+  if (pageIndex < pageNames.length - 1) {
+    pageIndex = pageIndex + 1; // sets next page index
+    loadPage(pageNames[pageIndex], basePath); // loads next page
+  } else if (pageIndex === pageNames.length - 1 || pageIndex === 0) {
+    window.location.href = linkNames[linkIndex + 1]; // navigates to next parts
+  }
+  window.scrollTo(0, 0); //scrolls window to top
+  document.dispatchEvent(new Event("subContent:loaded"));
+}
+
+// Function for navigating to prev part or subpage
+async function navPrev() {
+  if (pageIndex > 0) {
+    pageIndex = pageIndex - 1; // sets previous page index
+    await loadPage(pageNames[pageIndex], basePath); // loads previous page
+  } else if (pageIndex === 0) {
+    const prevPage = await getLastSubPageName(linkNames[linkIndex - 1]); // gets previous parts last subpage
+
+    //if previous part has subpages navigates to last subpare or else navigates to previous part
+    if (prevPage) {
+      window.location.href = `${linkNames[linkIndex - 1]}#${prevPage}`; // navigates to previous parts last subpage
+    } else {
+      window.location.href = linkNames[linkIndex - 1]; // navigates to previous parts
+    }
+  }
+  window.scrollTo(0, 0); //scrolls window to top
 }
