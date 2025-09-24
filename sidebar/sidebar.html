@@ -31,19 +31,22 @@
           <a href="/teamwork/index.html"><span>2. Tiimityöskentely</span></a><span class="dropdown-toggle"></span>
           <ul class="sidebar-sub-list">
             <li>
-              <a href="/teamwork/how-to-teamwork.html"><span>2.1. Tiimityöskentely</span></a>
+              <a href="/teamwork/how-to-teamwork.html"><span>2.1. Git ja tiimityö</span></a>
             </li>
             <li>
-              <a href="/teamwork/merge-conflicts.html"><span>2.2. Mergekonfliktit</span></a>
+              <a href="/teamwork/merge-conflicts.html"><span>2.2. Commit-viestit</span></a>
             </li>
             <li>
-              <a href="/teamwork/rollbacks.html"><span>2.3. Rollback</span></a>
+              <a href="/teamwork/rollbacks.html"><span>2.3. Pull Request</span></a>
             </li>
             <li>
-              <a href="/teamwork/commit-messages.html"><span>2.4. Commit-viestit</span></a>
+              <a href="/teamwork/commit-messages.html"><span>2.4. Merge-konfliktit</span></a>
             </li>
             <li>
-              <a href="/teamwork/privacy-and-security.html"><span>2.5. Tietoturva ja yksityisyys</span></a>
+              <a href="/teamwork/privacy-and-security.html"><span>2.5. Yksityisyys ja tietoturva</span></a>
+            </li>
+            <li>
+              <a href="/teamwork/training.html"><span>2.6. Harjoitukset</span></a>
             </li>
           </ul>
         </li>
@@ -110,8 +113,11 @@
                   </tr>
                   <tr>
                     <td><code>git clone &lt;repo&gt;</code></td>
-                    <td>Kloonaa olemassa oleva repo</td>
+                    <td>Kloonaa olemassa oleva repositorio</td>
                   </tr>
+                  <tr>
+                    <td><code>git remote add origin &lt;url&gt;</code></td>
+                    <td>Yhdistä paikallinen repo etärepositorioon</td>
                   <tr>
                     <td><code>git status</code></td>
                     <td>Näytä muutosten tila</td>
@@ -133,8 +139,8 @@
                     <td>Luo ja siirry haaraan <code>dev</code></td>
                   </tr>
                   <tr>
-                    <td><code>git checkout dev</code></td>
-                    <td>Siirry olemassa olevaan <code>dev</code>-haaraan</td>
+                    <td><code>git checkout main</code></td>
+                    <td>Siirry olemassa olevaan haaraan <code>main</code></td>
                   </tr>
                   <tr>
                     <td><code>git pull</code></td>
@@ -149,6 +155,13 @@
                     <td>Työnnä <code>dev</code> ja aseta seuranta</td>
                   </tr>
                   <tr>
+                    <td><code>git merge dev</code></td>
+                    <td>Yhdistä <code>dev</code> nykyiseen haaraan</td>
+                  </tr>
+                  <tr>
+                    <td><code>git branch</code></td>
+                    <td>Näytä kaikki haarat</td>
+                  <tr>
                     <td><code>git diff</code></td>
                     <td>Näytä erot muutosten välillä</td>
                   </tr>
@@ -160,10 +173,7 @@
                     <td><code>git reset HEAD~</code></td>
                     <td>Peru viimeisin commit (muutokset jäävät)</td>
                   </tr>
-                  <tr>
-                    <td><code>git merge dev</code></td>
-                    <td>Yhdistä <code>dev</code> nykyiseen haaraan</td>
-                  </tr>
+
                 </tbody>
               </table>
             </div>
