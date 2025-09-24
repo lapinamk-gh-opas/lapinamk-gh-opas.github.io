@@ -158,15 +158,16 @@ document.addEventListener("keyup", function (event) {
 });
 
 // Function for navigating to next part or subpage
-function navNext() {
+async function navNext() {
   console.log("next");
   if (pageIndex < pageNames.length - 1) {
     pageIndex = pageIndex + 1; // sets next page index
-    loadPage(pageNames[pageIndex], basePath); // loads next page
+    await loadPage(pageNames[pageIndex], basePath); // loads next page
   } else if (pageIndex === pageNames.length - 1 || pageIndex === 0) {
     window.location.href = linkNames[linkIndex + 1]; // navigates to next parts
   }
   window.scrollTo(0, 0); //scrolls window to top
+  document.dispatchEvent(new Event("subContent:loaded"));
 }
 
 // Function for navigating to prev part or subpage
@@ -185,4 +186,5 @@ async function navPrev() {
     }
   }
   window.scrollTo(0, 0); //scrolls window to top
+  document.dispatchEvent(new Event("subContent:loaded"));
 }
