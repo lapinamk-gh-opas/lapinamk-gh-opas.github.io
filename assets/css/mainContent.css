@@ -159,6 +159,14 @@ figcaption {
   font-style: italic;
 }
 
+/*note textbox background*/
+.note-box {
+  background: rgba(20, 130, 125, 0.2);
+  border: 2px solid rgba(20, 130, 125, 0.4);
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+}
+
 /* layout changes for mobile */
 @media (max-width: 1000px) {
   /* content width */
