@@ -27,21 +27,25 @@
       <h6>Tarkasta .gitconfig tiedoston sisältö</h6>
       <ul>
         <li>Anna komento <code>git config --global --list</code></li>
-        <li>
-          Tämän tiedoston asetuksia käytetään globaalisti, eli kaikissa git
-          repositorioissa
-        </li>
-        <li>
+      </ul>
+      <div class="note-box">
+        <p>
+          Tämän tiedoston asetuksia käytetään laitteella globaalisti, eli
+          kaikissa git repositorioissa. Asetuksia on mahdollista muuttaa
+          tarvittaessa myös repositorio kohtaisesti, siirtymällä kansioon jossa
+          repositorio on ja antamalla komennot ilman
+          <code>--global</code> lippua.
+        </p>
+        <p>
           Jos et ole aikaisemmin tehnyt tiedostoon muutoksia, niin se ei sisällä
           vielä muita asetuksia kuin asennuksen yhteydessä asetettu oletus
-          editori (core.editor). Tässä tapauksessa se on Visual Studio Code.
-        </li>
-        <li>
-          Oletus editoria käytetään commit-viestien kirjoittamiseen, mikäli et
-          lisää sitä commit komentoon lipulla
-          <code>-m "joku commit viesti"</code>.
-        </li>
-      </ul>
+          tekstieditori (core.editor). Tässä tapauksessa se on gitin asennuksen
+          yhteydessä annettu Visual Studio Code. Oletus editoria käytetään
+          commit-viestien kirjoittamiseen, mikäli et ole lisännyt viestiä commit
+          komentoon lipulla
+          <code>-m "commit viestisi"</code>.
+        </p>
+      </div>
       <figure>
         <img
           class="wide-image"
@@ -65,13 +69,13 @@
         <li>
           Tarkasta muutokset komennolla <code>git config --global --list</code>
         </li>
-        <li>
-          Git käyttää nimeä ja sähköpostia commitin tekijätietoina. Mikäli
-          käytät GitHub tillä olevaa sähköpostiosoitetta, osaa GitHub yhdistää
-          commitin sinun tiliisi. Tätä tietoa ja tiedostoa ei kuitenkaan käytetä
-          tunnistautumiseen.
-        </li>
       </ul>
+      <p class="note-box">
+        Git käyttää nimeä ja sähköpostia commitin ns. tekijätietoina. Mikäli
+        käytät GitHub tillä olevaa sähköpostiosoitetta, osaa GitHub yhdistää
+        commitin sinun tiliisi. Tätä tiedostoa ei kuitenkaan käytetä GitHubissa
+        tunnistautumiseen.
+      </p>
       <figure>
         <img
           class="wide-image"
@@ -91,12 +95,12 @@
         <li>
           Tarkasta muutokset komennolla <code>git config --global --list</code>
         </li>
-        <li>
-          Tämä tehtiin jo asennuksen yhteydessä system tasolle, mutta nimeäminen
-          voidaan varmistaa vielä käyttäjätasolla tai nimeä voi muuttaa
-          tarvittaessa myöhemmin näin.
-        </li>
       </ul>
+      <p class="note-box">
+        Tämä tehtiin jo asennuksen yhteydessä system tasolle, mutta nimeäminen
+        voidaan varmistaa vielä käyttäjätasolla tai nimeä voi muuttaa
+        tarvittaessa myöhemmin näin.
+      </p>
       <figure>
         <img
           class="wide-image"
@@ -112,52 +116,54 @@
     git:n dokumentaatiosta komennolla: <br />
     <code>git help config</code>.
   </p>
-  <p>
-    Dokumentaatio voi vaikuttaa alkuun aavistuksen kryptiseltä. Joten tässä
-    vielä taulukko jo käytetyistä ja muutamista muista mahdollisesti
-    hyödyllisistä asetuksista:
-  </p>
+  <div class="note-box">
+    <p>
+      Dokumentaatio voi vaikuttaa alkuun aavistuksen kryptiseltä. Joten tässä
+      vielä taulukko jo käytetyistä ja muutamista muista mahdollisesti
+      hyödyllisistä asetuksista:
+    </p>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Asetus</th>
-        <th>Kuvaus</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>user.name</code></td>
-        <td>Commitin tekijän nimi</td>
-      </tr>
-      <tr>
-        <td><code>user.email</code></td>
-        <td>Commitin tekijän sähköposti</td>
-      </tr>
-      <tr>
-        <td><code>core.editor</code></td>
-        <td>Editor commit-viesteille</td>
-      </tr>
-      <tr>
-        <td><code>init.defaultBranch</code></td>
-        <td>Pää/oletushaaran nimeäminen</td>
-      </tr>
-      <tr>
-        <td><code>core.autocrlf</code></td>
-        <td>Rivinvaihtojen käsittely Windows/Linux</td>
-      </tr>
-      <tr>
-        <td><code>color.ui</code></td>
-        <td>Värit Git-komentojen tulosteessa</td>
-      </tr>
-      <tr>
-        <td><code>alias.*</code></td>
-        <td>
-          Lyhenteiden (alias) luominen usein käytetyille komennoille <br />
-          (esim. <code>git config --global alias.ci commit</code> luo komenolle
-          <code>commit</code> lyhenteen <code>ci</code>)
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    <table>
+      <thead>
+        <tr>
+          <th>Asetus</th>
+          <th>Kuvaus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>user.name</code></td>
+          <td>Commitin tekijän nimi</td>
+        </tr>
+        <tr>
+          <td><code>user.email</code></td>
+          <td>Commitin tekijän sähköposti</td>
+        </tr>
+        <tr>
+          <td><code>core.editor</code></td>
+          <td>Oletus editorin asettaminen commit-viesteille</td>
+        </tr>
+        <tr>
+          <td><code>init.defaultBranch</code></td>
+          <td>Pää/oletushaaran nimeäminen</td>
+        </tr>
+        <tr>
+          <td><code>core.autocrlf</code></td>
+          <td>Rivinvaihtojen käsittely Windows/Linux</td>
+        </tr>
+        <tr>
+          <td><code>color.ui</code></td>
+          <td>Värit Git-komentojen tulosteessa</td>
+        </tr>
+        <tr>
+          <td><code>alias.*</code></td>
+          <td>
+            Lyhenteiden (alias) luominen usein käytetyille komennoille <br />
+            (esim. <code>git config --global alias.ci commit</code> luo
+            komenolle <code>commit</code> lyhenteen <code>ci</code>)
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </section>
