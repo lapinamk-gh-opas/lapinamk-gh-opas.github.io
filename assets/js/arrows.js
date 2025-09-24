@@ -167,7 +167,6 @@ function navNext() {
     window.location.href = linkNames[linkIndex + 1]; // navigates to next parts
   }
   window.scrollTo(0, 0); //scrolls window to top
-  document.dispatchEvent(new Event("subContent:loaded"));
 }
 
 // Function for navigating to prev part or subpage
