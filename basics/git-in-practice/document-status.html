@@ -1,22 +1,40 @@
 <section class="document-status">
-    <h4>Git-tiedoston tilat (VS Code -näkymä)</h4>
-    <p>
-      Gitissä tiedostojen tilat kertovat, missä vaiheessa muutosten hallinta on.
-      Kun lisäät, muokkaat tai poistat tiedostoja, Git seuraa niitä eri tilojen avulla.
-    </p>
-    <p><strong>GitLens (suositus):</strong> VS Coden perusnäkymässä näkyy usein vain <em>M</em> (Modified).
-GitLens-lisäosa näyttää selkeästi myös <em>U</em> (Untracked), <em>A</em> (Added), <em>D</em> (Deleted), 
-<em>R</em> (Renamed), <em>C</em> (Copied) ja muut tilat, sekä tarjoaa rivikohtaisen <em>blame</em>-tiedon, 
-tiedoston/rivin historian ja nopeat diff-vertailut. Se helpottaa Gitin käyttöä VS Codessa merkittävästi.
-    </p>
-    <p>Asenna: avaa <strong>Extensions</strong> (Ctrl+Shift+X) → etsi <strong>“GitLens — Git supercharged”</strong> → Install.</p>
-    
+  <h4>Git-tiedoston tilat (Git status)</h4>
+  <p>
+    Tiedoston tila kertoo missä vaiheessa sen muutokset ovat.
+    Tilat näkyvät esimerkiksi VS Code Explorerin hakemistorakenteessa tilakoristeilla (status decorations), eli eri
+    väreillä ja lyhenteillä, sekä <code>git status</code> -komennon tulosteessa. </p>
 
-    <p>
-      Taulukossa on esitetty yleisimmät tilat, niiden värit ja lyhenne Visual Studio Codessa,
-      sekä lyhyt kuvaus siitä, mitä tila tarkoittaa käytännössä.
-    </p>
+  <figure>
+    <img src="/assets/images/basics/status.png" alt="Git-tiedoston tilat">
+    <figcaption>Git-tiedoston tilat VS Code -näkymässä</figcaption>
+  </figure>
+  <p>
+    Komento <code>git status</code> näyttää aina ajantasaisen yhteenvedon repositorion tiedostoista poikkeavien
+    tiedostojen tilanteesta.
+  </p>
+  <figure>
+    <img src="/assets/images/basics/status2.png" alt="git status -komennon tulos">
+    <figcaption>Komennon 'git status' tulos</figcaption>
+  </figure>
 
+  <p>
+    Uusi tiedosto näkyy ensin <em>Untracked (U)</em>-tilassa, kunnes lisäät sen komennolla <code>git add</code>.
+    Tällöin se siirtyy staging-alueelle, muuttuu tilaan <em>Added (A)</em> ja on valmiina seuraavaan committiin.
+    Jos muokkaat jo seurattua tiedostoa se näkyy tilassa <em>Modified (M)</em>, kunnes committaat muutokset
+    repositorioon.
+  </p>
+  <p>
+    Kun commit on tehty, tiedostojen tilakoristeet katoavat,
+    eikä commitattuja tiedostoja enää näy <code>git status</code> -komennolla.
+  </p>
+
+  <p>
+    Taulukossa on esitetty yleisimmät tilat, niiden värit,
+    sekä lyhyt kuvaus siitä, mitä tila tarkoittaa käytännössä.
+  </p>
+
+  <figure>
     <table>
       <thead>
         <tr>
@@ -29,39 +47,34 @@ tiedoston/rivin historian ja nopeat diff-vertailut. Se helpottaa Gitin käyttö�
         <tr>
           <td>Untracked (U)</td>
           <td>Vihreä</td>
-          <td>Uusi tiedosto, jota Git ei vielä seuraa. Lisää versiohistoriaan komennolla <code>git add</code>.</td>
+          <td>Uusi tiedosto, jota Git ei vielä seuraa. Lisää versiohistoriaan komennolla <code>git add</code></td>
         </tr>
         <tr>
           <td>Unmodified (-)</td>
           <td>Ei väriä</td>
-          <td>Ei muutoksia edellisen commitin jälkeen. Synkassa repositorion kanssa.</td>
+          <td>Ei muutoksia edellisen commitin jälkeen, synkassa repositorion kanssa</td>
         </tr>
         <tr>
           <td>Modified (M)</td>
           <td>Keltainen</td>
-          <td>Tiedostoa on muokattu, mutta muutoksia ei ole lisätty staging-alueelle.</td>
+          <td>Tiedostoa on muokattu, mutta muutoksia ei ole commitattu</td>
         </tr>
         <tr>
           <td>Added (A)</td>
           <td>Vihreä</td>
-          <td>Muutokset on lisätty stagingiin komennolla <code>git add</code> ja ovat valmiina commitille.</td>
+          <td>Tiedosto on lisätty stagingiin komennolla <code>git add</code> ja ovat valmiina commitille</td>
         </tr>
         <tr>
           <td>Deleted (D)</td>
           <td>Yliviivattu</td>
-          <td>Tiedosto on poistettu.</td>
-        </tr>
-        <tr>
-          <td>Committed (-)</td>
-          <td>Ei väriä</td>
-          <td>Muutokset on tallennettu repositorioon (paikallisesti). Pushaa GitHubiin komennolla <code>git push</code>.
-          </td>
+          <td>Tiedosto on poistettu</td>
         </tr>
       </tbody>
     </table>
-        <br><p>
-      Tämä tarjoaa visuaalisen keinon hahmottaa projektin tilanne yhdellä silmäyksellä ja nähdä nopeasti,
-      mitkä tiedostot vaativat vielä toimenpiteitä ja mitkä ovat jo valmiina tallennettavaksi versiohistoriaan.
-    </p>
+    <figcaption>Tiedostojen tilat, värit ja selitys</figcaption>
+  </figure>
+  <p>
+    Tämä tarjoaa visuaalisen keinon hahmottaa projektin tilanne yhdellä silmäyksellä ja seurata helposti, mitä tiedostoille on tapahtunut.
+  </p>
 
 </section>
