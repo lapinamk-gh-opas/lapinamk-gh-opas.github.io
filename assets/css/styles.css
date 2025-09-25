@@ -22,5 +22,10 @@ body {
 
 /* Top margin class */
 .margin-top {
-  margin-top: 2em;
+  margin-top: 2rem;
+}
+
+/* Top margin class */
+.margin-right {
+  margin-right: 5rem !important;
 }
