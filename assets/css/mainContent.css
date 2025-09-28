@@ -14,6 +14,15 @@
   margin: 0.4rem auto;
 }
 
+/* image zoom effect on click */
+img:active,
+img:focus {
+  transform: scale(1.5);
+  transition: transform 0.25s ease;
+  z-index: 10;
+  position: relative;
+}
+
 /* div for arrow buttons */
 .page-arrows {
   display: flex;
