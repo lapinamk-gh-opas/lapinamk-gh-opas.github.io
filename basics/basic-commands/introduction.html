@@ -9,7 +9,8 @@
 
   <p>
     Tässä on yleisimmät ja hyödyllisimmät Git-komennot, jotka jokaisen
-    kehittäjän tulisi ymmärtää.
+    kehittäjän tulisi ymmärtää. Samat komennot löytyvät myös sivupalkin muistilistasta,
+  joten <em>sinun ei tarvitse opetella niitä ulkoa</em>.
   </p>
 
   <h4>Kansionhallinta</h4>
@@ -86,6 +87,7 @@
     lyhyenä, mutta kuvaavana.
   </p>
 
+  <h4 id="haarojen-hallinta">Haarojen hallinta</h4>
   <h6>Näytä kaikki haarat - <code>git branch</code></h6>
   <p>
     Listaa paikalliset haarat. Nykyinen haara on merkitty tähdellä
@@ -127,6 +129,12 @@
     puhdas ennen yhdistämistä, eli kaikki muutokset on commitoitu ja staging on
     tyhjä.
   </p>
+  <h6>Poista haara - <code>git branch -d dev</code></h6>
+  <p>
+    Poistaa paikallisen <code>dev</code>-haaran. Varmista, että kaikki muutokset
+    on yhdistetty ennen poistamista. Poista etähaara komennolla
+    <code>git push -d origin dev</code>.
+  </p>
 
   <h4>Lisäkomennot</h4>
   <h6>Näytä erot muutosten välillä - <code>git diff</code></h6>
@@ -157,17 +165,14 @@
     <code>--oneline</code> tiiviimpään näkymään.
   </p>
 
-  <hr style="border:0; height:1px; background:#ccc; margin:20px 0;" />
-
-  <p>
-  <h6>Älä hätkähdä komentojen määrää!</h6> Käymme ne läpi tapauskohtaisesti esimerkein
-  ja harjoituksin. Samat komennot löytyvät myös sivupalkin muistilistasta,
-  joten <em>sinun ei tarvitse opetella niitä ulkoa</em>.
+  <p class="note-box">
+  Älä hätkähdä komentojen määrää! Käymme ne läpi tapauskohtaisesti esimerkein
+  ja harjoituksin. 
   </p>
 
   <p>
     Säännöllinen käyttö tekee komennoista rutiinia ja Gitin käytöstä sujuvaa. Kappaleiden edetessä voit aina palata
-    tähän listaan kertaamaan komentoja ja niiden käyttötarkoituksia.
+    tähän listaan, tai sivupalkin muistilistaan kertaamaan komentoja ja niiden käyttötarkoituksia.
   </p>
 
   <p>Lisää tietoa komennoista: <a href="https://git-scm.com/docs">https://git-scm.com/docs</a>.</p>
