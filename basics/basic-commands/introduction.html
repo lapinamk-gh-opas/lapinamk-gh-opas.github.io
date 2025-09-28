@@ -87,6 +87,7 @@
     lyhyenä, mutta kuvaavana.
   </p>
 
+  <h4>Haarojen hallinta</h4>
   <h6>Näytä kaikki haarat - <code>git branch</code></h6>
   <p>
     Listaa paikalliset haarat. Nykyinen haara on merkitty tähdellä
@@ -128,6 +129,12 @@
     puhdas ennen yhdistämistä, eli kaikki muutokset on commitoitu ja staging on
     tyhjä.
   </p>
+  <h6>Poista haara - <code>git branch -d dev</code></h6>
+  <p>
+    Poistaa paikallisen <code>dev</code>-haaran. Varmista, että kaikki muutokset
+    on yhdistetty ennen poistamista. Poista etähaara komennolla
+    <code>git push -d origin dev</code>.
+  </p>
 
   <h4>Lisäkomennot</h4>
   <h6>Näytä erot muutosten välillä - <code>git diff</code></h6>
@@ -165,7 +172,7 @@
 
   <p>
     Säännöllinen käyttö tekee komennoista rutiinia ja Gitin käytöstä sujuvaa. Kappaleiden edetessä voit aina palata
-    tähän listaan kertaamaan komentoja ja niiden käyttötarkoituksia.
+    tähän listaan, tai sivupalkin muistilistaan kertaamaan komentoja ja niiden käyttötarkoituksia.
   </p>
 
   <p>Lisää tietoa komennoista: <a href="https://git-scm.com/docs">https://git-scm.com/docs</a>.</p>
