@@ -1,6 +1,6 @@
 /* ---------- Footer layout ---------- */
 .site-footer {
-  display: flex !important;
+  display: flex;
   align-items: center;
   padding: 2vh 2vw;
   border-top: #14827d 2px solid;
@@ -11,6 +11,17 @@
   align-items: center;
   width: 100%;
   justify-content: center;
+  text-align: center;
+}
+
+.footer-img {
+  height: 70px;
+  margin-left: 1vw;
+}
+
+.info-img {
+  height: 40px;
+  margin-left: 1vw;
 }
 
 .footer-text {
