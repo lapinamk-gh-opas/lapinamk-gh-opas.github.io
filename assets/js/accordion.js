@@ -24,6 +24,8 @@ document.addEventListener("subContent:loaded", () => {
 
 document.addEventListener("accordion:loaded", (e) => {
   const item = e.detail;
+  console.log("item: ", item);
+  const buttonArea = item.querySelector(".header-icon");
   const content = item.querySelector(".content");
   const header = item.querySelector(".header");
   const title = item.dataset.title;
@@ -47,7 +49,7 @@ document.addEventListener("accordion:loaded", (e) => {
     imgClose.classList.remove("hidden");
   }
 
-  item.onclick = () => {
+  buttonArea.onclick = () => {
     defaultOpen && placeholderDiv.classList.remove("open");
     const hidden = content.classList.contains("hidden");
 

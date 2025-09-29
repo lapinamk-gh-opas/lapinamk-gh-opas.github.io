@@ -57,6 +57,43 @@
         />
         <figcaption>Uuden kansion luominen ja valitseminen</figcaption>
       </figure>
+
+      <!-- Accordion element starts -->
+      <div
+        class="accordion"
+        data-include="../../accordion-element/accordion.html"
+        data-title="Do you trust the authors of the files in this folder? -varoitus"
+      >
+        <div class="contentToAccordion">
+          <!-- Accordion content starts -->
+          <ul>
+            <li>
+              Jos tiedät, että kansio on luotettava (esim. oma projektisi),
+              valitse <strong>Yes, I trust the authors</strong>.
+            </li>
+            <li>
+              Jos et ole varma kansion tai projektin sisällöstä ja
+              luotettavuudesta, voit avata kansion vain “Restricted Mode”
+              -tilassa, jolloin mm. laajennukset ja koodin suoritus estetään.
+            </li>
+            <li>
+              Hyväksy viesti klikkaamalla oikealta ylhäältä
+              <strong>Accept Commit Message</strong> nappia.
+            </li>
+          </ul>
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 1.1.webp"
+              alt="Muutoksien tarkastelu ja vertaaminen"
+            />
+            <figcaption>Muutoksien tarkastelu ja vertaaminen</figcaption>
+          </figure>
+          <!-- Accordion content ends -->
+        </div>
+      </div>
+      <!-- Accordion element ends -->
     </li>
     <li>
       <h6>Luo paikallinen repositorio.</h6>
@@ -232,29 +269,44 @@
         <figcaption>README.md tiedoston muokkaaminen</figcaption>
       </figure>
 
-      <ul>
-        <li>
-          Avaa Source Control-valikko klikkaamalla sivupalkin kuvakkeesta tai
-          näppäimillä <strong>CTRL</strong> + <strong>SHIFT</strong> +
-          <strong>G</strong>. Klikkaa Changes valikon alta README.MD tiedostoa.
-        </li>
-        <li>
-          Aukeaa ruutu README.md (working tree) jonka avulla voit tarkastella
-          muutoksia tidoston edellisen commitin tilaan verrattuna.
-        </li>
-        <li>
-          Ikkunassa vihreällä tehdyt muutokset ja aikaisempi tila punaisella.
-        </li>
-      </ul>
+      <!-- Accordion element starts -->
+      <div
+        class="accordion"
+        data-include="../../accordion-element/accordion.html"
+        data-title="Muutoksien vertailu"
+      >
+        <div class="contentToAccordion">
+          <!-- Accordion content starts -->
+          <ul>
+            <li>
+              Avaa Source Control-valikko klikkaamalla sivupalkin kuvakkeesta
+              tai näppäimillä <strong>CTRL</strong> + <strong>SHIFT</strong> +
+              <strong>G</strong>. Klikkaa Changes valikon alta README.MD
+              tiedostoa.
+            </li>
+            <li>
+              Aukeaa ruutu README.md (working tree) jonka avulla voit
+              tarkastella muutoksia tidoston edellisen commitin tilaan
+              verrattuna.
+            </li>
+            <li>
+              Ikkunassa vihreällä tehdyt muutokset ja aikaisempi tila
+              punaisella.
+            </li>
+          </ul>
 
-      <figure>
-        <img
-          class="wide-image"
-          src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 10.webp"
-          alt="Muutoksien tarkastelu ja vertaaminen"
-        />
-        <figcaption>Muutoksien tarkastelu ja vertaaminen</figcaption>
-      </figure>
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 10.webp"
+              alt="Muutoksien tarkastelu ja vertaaminen"
+            />
+            <figcaption>Muutoksien tarkastelu ja vertaaminen</figcaption>
+          </figure>
+          <!-- Accordion content ends -->
+        </div>
+      </div>
+      <!-- Accordion element ends -->
     </li>
     <li>
       <h6>Luodaan repositoriolle uusi haara (branch)</h6>
@@ -304,8 +356,7 @@
           Anna message kenttään commit-viesti esim.
           <code>Ensimmäinen commit vs codella</code>.
         </li>
-        <li>Klikkaa <strong>Commit</strong> painiketta</li>
-        .
+        <li>Klikkaa <strong>Commit</strong> painiketta.</li>
       </ul>
 
       <figure>
@@ -316,6 +367,56 @@
         />
         <figcaption>Muutoksien commitointi ja viestin lisääminen</figcaption>
       </figure>
+
+      <!-- Accordion element starts -->
+      <div
+        class="accordion"
+        data-include="../../accordion-element/accordion.html"
+        data-title="Vaihtoehtoinen tapa lisätä commit message"
+      >
+        <div class="contentToAccordion">
+          <!-- Accordion content starts -->
+          <ul>
+            <li>
+              Jätä message kenttä tyhjäksi ja paina
+              <strong>Commit</strong> nappia.
+            </li>
+          </ul>
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 13.1.webp"
+              alt="Muutoksien tarkastelu ja vertaaminen"
+            />
+            <figcaption>Muutoksien tarkastelu ja vertaaminen</figcaption>
+          </figure>
+
+          <ul>
+            <li>Aukeaa uusi ikkuna <strong>COMMIT_EDITMSG</strong></li>
+            <li>
+              Lisää commit message ensimmäiselle riville ja tallenna
+              <strong>CTRL</strong> +
+              <strong>S</strong>
+            </li>
+            <li>
+              Hyväksy viesti klikkaamalla oikealta ylhäältä
+              <strong>Accept Commit Message</strong> nappia.
+            </li>
+          </ul>
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 13.2.webp"
+              alt="Muutoksien tarkastelu ja vertaaminen"
+            />
+            <figcaption>Muutoksien tarkastelu ja vertaaminen</figcaption>
+          </figure>
+          <!-- Accordion content ends -->
+        </div>
+      </div>
+      <!-- Accordion element ends -->
     </li>
     <li>
       <h6>Viedään (Push) muutokset etärepositorioon</h6>
