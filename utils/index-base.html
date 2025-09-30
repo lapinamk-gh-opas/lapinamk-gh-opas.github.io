@@ -4,7 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>GitHub tositoimissa</title>
+  <!-- Muuta tähän kappaleen otsikko-->
+  <title>Tiimityö</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -21,12 +22,14 @@
   <link rel="stylesheet" href="../assets/css/footer.css" />
   <link rel="stylesheet" href="../assets/css/sidebar.css" />
   <link rel="stylesheet" href="../assets/css/mainContent.css" />
+  <link rel="stylesheet" href="../assets/css/accordion.css" />
 
   <!-- Custom js scripts -->
   <script src="../assets/js/includes.js" defer></script>
   <script src="../assets/js/sidebar.js" defer></script>
   <script src="../assets/js/includeSubContent.js" defer></script>
   <script src="../assets/js/arrows.js" defer></script>
+  <script src="../assets/js/accordion.js" defer></script>
 </head>
 
 <body>
@@ -36,26 +39,40 @@
     <div data-include="../sidebar/sidebar.html"></div>
 
     <main class="main-container" id="mainContainer">
-      <h1>3 GitHub Tositoimissa – mitä opit tässä osiossa</h1>
+        <!-- Muuta tätän otsikko ja numero! -->
+      <h1>2 Kappaleen otsikko – mitä opit tässä osiossa</h1> 
       <main id="content" class="content-screen">
         <section class="git-install">
-          <p>
-            Tässä osiossa käydään läpi Gitin ja GitHubin käyttö tositoimissa.
-            Opit muun muassa parhaat käytännöt, avoimen lähdekoodin projektien
-            hallinnan ja asiantuntijoiden vinkit tehokkaaseen työskentelyyn.
+          <p> <!-- Muuta tämä johdantoteksti! -->
+            Tässä osiossa käydään läpi Gitin ja GitHubin käyttö tiimityössä.
+            Opit muun muassa haarojen (branch) käytön, merge-konfliktien
+            ratkaisemisen, rollbackin ja tietoturvan perusasiat. Lisäksi saat
+            vinkkejä sujuvaan tiimityöskentelyyn versionhallinnan avulla.
           </p>
-          <ol>
+          <ol> <!-- Tähän muutetaan kappaleen sisällysluettelo! -->
             <li>
-              <strong>Asiantuntijan suusta</strong><br />
-              Asiantuntijoiden vinkit Gitin ja GitHubin tehokkaaseen käyttöön.
+              <strong>Git ja tiimityö</strong><br />
+              Tiimityöskentelyn perusteet, selkeiden commit-viestien merkitys sekä repositorion asetusten hallinta.
             </li>
             <li>
-              <strong>Parhaat käytännöt</strong><br />
-              Gitin ja GitHubin 'best practices', eli suositellut toimintatavat.
+              <strong>Haarat</strong><br />
+              Haarojen (branch) hyödyntäminen rinnakkaisessa työskentelyssä.
             </li>
             <li>
-              <strong>Avoin lähdekoodi</strong><br />
-              Avoimen lähdekoodin projektien hallinta ja niihin osallistuminen.
+              <strong>Pull Request</strong><br />
+              Pull requestien luominen, tarkastelu ja hyväksyminen GitHubissa tiimityön sujuvoittamiseksi.
+            </li>
+            <li>
+              <strong>Merge-konfliktit</strong><br />
+              Merge-konfliktien tunnistaminen, ymmärtäminen ja ratkaiseminen tehokkaasti.
+            </li>
+            <li>
+              <strong>Yksityisyys ja tietoturva</strong><br />
+              Yksityisyyden ja tietoturvan perusasiat Gitin ja GitHubin käytössä.
+            </li>
+            <li>
+              <strong>Harjoitukset</strong><br />
+              Käytännön harjoitukset taitojen vahvistamiseen ja komentojen testaamiseen.
             </li>
           </ol>
 

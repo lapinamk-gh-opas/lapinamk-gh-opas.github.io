@@ -1,9 +1,66 @@
 <section class="how-to-teamwork">
+
     <header>
-        <h2>Repositorion asetukset</h2>
+        <h2>Tärkeimmät GitHub-repositorion asetukset</h2>
     </header>
 
-    <p>GitHub repositorion asetuksia on paljon. Nämä asetukset vaikuttavat siihen, miten tiimi voi työskennellä yhdessä.
-        Käymme niistä läpi tärkeimmät aloittelijan näkökulmasta. </p>
+    <p>
+        GitHub-repositorion asetukset määrittävät sen, miten projekti toimii ja kuka siihen voi osallistua.
+        Tärkeintä on varmistaa, että repositorio on oikein perustettu ja että sen näkyvyys,
+        käyttöoikeudet ja suojaus tukevat tiimin työskentelyä.
+    </p>
 
+    <h4>Repositorion näkyvyys</h4>
+    <p>
+        Uutta repositoriota luodessa valitaan, onko se <em>public</em> (julkinen) vai <em>private</em> (yksityinen).
+        Julkinen repositorio on kaikkien nähtävissä, kun taas yksityisen näkevät vain projektin jäsenet.
+        Aloittelijan on hyvä aloittaa yksityisellä repositoriolla, ellei tarkoitus ole jakaa projektia avoimesti.
+    </p>
+
+    <h4>Käyttöoikeudet</h4>
+    <p>
+        Repositorion omistaja voi kutsua muita käyttäjiä mukaan projektiin.
+        Yleisimpiä rooleja ovat <em>Read</em> (vain luku), <em>Triage</em> (issues ja pull requestien hallinta),
+        <em>Write</em> (koodin muokkaus) ja <em>Admin</em> (kaikki oikeudet).
+        Anna aina vain tarvittavat oikeudet (least privilege) projektin osallistujille.
+    </p>
+    <p>
+        Tasavertaiselle tiimitoverille voi antaa <em>Write</em>-oikeudet (tai jopa <em>Admin</em>-oikeudet), jotta hän
+        voi osallistua koodin kehittämiseen,
+        kun taas arvioivalle opettajalle usein riittää <em>Read</em>-oikeus.
+    </p>
+
+    <h4>Branch protection rules</h4>
+    <p>
+        Varsinkin ryhmäprojekteissa päähaara (<em>main</em>) kannattaa suojata niin, että muutokset täytyy hyväksyä
+        pull requestin kautta ennen yhdistämistä. Tämä estää vahingossa tehdyt virheet ja parantaa koodin laatua.
+    </p>
+
+    <h4>Oletustiedostot</h4>
+
+    <p>
+        Uuteen repositorioon on hyvä lisätä ainakin seuraavat tiedostot:
+    </p>
+    <ul>
+        <li><strong>README.md</strong>: kertoo projektin tarkoituksen ja käytön.</li>
+        <li><strong>.gitignore</strong>: sulkee pois turhat tiedostot versionhallinnasta (esim. väliaikaiset tiedostot).
+        </li>
+        <li><strong>LICENSE</strong>: määrittelee, miten muut voivat käyttää koodia (tarpeen julkisissa projekteissa).
+        </li>
+    </ul>
+
+    <div
+    class="accordion"
+    data-include="../../accordion-element/accordion.html"
+    data-title="HAITARIN OTSIKKO">
+        <div class="contentToAccordion"> 
+
+
+        </div>
+</div>
+
+    <p class="note-box">
+        Muistilista: 1) Valitse repositorion näkyvyys (public/private). 2) Määritä käyttöoikeudet oikein. 3) Suojaa
+        päähaara virheiltä. 4) Lisää perusdokumentaatio. Näillä asetuksilla pääset hyvin alkuun.
+    </p>
 </section>
