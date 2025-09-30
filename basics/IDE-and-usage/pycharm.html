@@ -3,4 +3,545 @@
     <h1>Git:n käyttö PyCharmilla</h1>
     <p>Tällä sivulla käsitellään Git:n käyttö <strong>PyCharmilla</strong>.</p>
   </header>
+  <div
+    class="accordion"
+    data-include="../../accordion-element/accordion.html"
+    data-title="Gitin ja GitHubin käyttöönotto PyCharmissa"
+  >
+    <div class="contentToAccordion">
+      <p class="keep-margin">
+        Gitin ja GitHubin käyttöönottamiseksi PyCharmissa käy läpi,
+        <a href="/basics/git-install.html">1.4 käyttöönotto</a> osiossa tehtyjen
+        toimien lisäksi, seuraavat asetukset.
+      </p>
+      <ol>
+        <li>
+          Klikkaa vasemmalta alhaalta <strong>Ratas</strong> kuvaketta ja
+          valitse <strong>Settings</strong><br />
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 1.webp"
+              alt="Asetusvalikon avaaminen PyCharm."
+            />
+            <figcaption>Asetusvalikon avaaminen PyCharm.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Valitse asetusvalikon vasemmalta puolelta listasta
+          <strong>Version Control</strong> ja sen alta <strong>Git</strong
+          ><br />
+          Testaa, että PyCharm löytää Gitin painamalla
+          <strong>Test</strong> nappia. <br />
+          Mikäli Git löytyy näykyy sen <strong>version numero</strong> polun
+          alla. <br />
+          Mikäli Gitiä ei löytynyt anna PyCharmille polku johon olet Gitin
+          asentanut.
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 2.webp"
+              alt="Vesionhallinta asetukset PyCharm ja Git polun tarkistus"
+            />
+            <figcaption>
+              Vesionhallinta asetukset PyCharm ja Git polun tarkistus.
+            </figcaption>
+          </figure>
+          <div class="note-box">
+            <ul>
+              <li class="warning">
+                Mikäli sinulla on jo GitHub auki selaimessa ja olet kirjatunut
+                sisään, voit siirtyä suoraan kohtaan:
+                <strong>6. Käytettävän tilin valinta</strong>.
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          Valitse asetusvalikon vasemmalta puolelta listasta
+          <strong>Version Controlin</strong> alta <strong>GitHub</strong><br />
+          Yhdistä GitHub tilisi PyCharmiin klikkaamalla
+          <strong>Add account...</strong> tekstiä.
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 3.webp"
+              alt="GitHub tilin lisääminen PyCharmiin"
+            />
+            <figcaption>GitHub tilin lisääminen PyCharmiin.</figcaption>
+          </figure>
+
+          Valitse <strong>Log in via GitHub...</strong>
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 4.webp"
+              alt="GitHub tilin lisääminen PyCharmiin"
+            />
+            <figcaption>GitHub tilin lisääminen PyCharmiin.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Avautuu selain ikkuna ja klikkaa
+          <strong>Authorize in GitHub</strong> nappia
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 5.webp"
+              alt="PGitHub tilin lisääminen PyCharmiin selaimessa"
+            />
+            <figcaption>
+              GitHub tilin lisääminen PyCharmiin selaimessa.
+            </figcaption>
+          </figure>
+
+          <div class="note-box">
+            <ul>
+              <li class="warning">
+                Mikäli sinulla on jo GitHub auki selaimessa ja olet kirjatunut
+                sisään, voit siirtyä suoraan kohtaan:
+                <strong>7. Luvananto PyCharmille</strong>.
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          Syötä aukeavaan selainikkunaan GitHub-tilin
+          <strong>käyttäjänimi</strong> tai <strong>sähköposti</strong> ja
+          <strong>salasana</strong>
+          <strong></strong>
+          <br />
+
+          Klikkaa
+          <strong>Sign in</strong>
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 6.webp"
+              alt="Kirjautuminen GitHubiin"
+            />
+            <figcaption>Kirjautuminen GitHubiin.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Anna kaksivaiheisen tunnistautumisen avainkoodi
+          tunnistautumissovelluksestasi <br />
+
+          Klikkaa
+          <strong>Verify</strong>
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 7.webp"
+              alt="Kaksivaiheinen tunnistautuminen"
+            />
+            <figcaption>Kaksivaiheinen tunnistautuminen.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Anna PyCharmille lupa päästä GitHub-tilillesi klikkaamalla
+          <strong>Authorize JetBrains</strong>
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 8.webp"
+              alt="Luvan antaminen PyCharmille."
+            />
+            <figcaption>Luvan antaminen PyCharmille.</figcaption>
+          </figure>
+
+          <p class="note-box">
+            Mikäli sinulla oli GitHub avoinna selaimessa ja olit jo valmiiksi
+            kirjautuneena sinne sisään ja jos sinulla on kaksivaiheinen
+            tunnistautuminen käytössä saattaa GitHub tämän vaiheen jälkeen
+            pyytää vielä syöttämään tunnistautumissovelluksen avainkoodin (kts.
+            kohta 5).
+          </p>
+        </li>
+        <li>
+          Tulee ilmoitus, että olet sallinut PyCharmille pääsyn GitHub-tilillesi
+          ja voit sulkea selainikkunan.
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 9.webp"
+              alt="GitHub Copiltin käyttöönotto"
+            />
+            <figcaption>GitHub Copiltin käyttöönotto.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Myös PyCharm näyttää GitHub asetusvälilehden alla lisäämäsi tilin.
+          <br />
+          Sulje asetusikkuna klikkaamalla <strong>OK</strong> nappia.
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 10.webp"
+              alt="GitHub Copiltin käyttöönotto"
+            />
+            <figcaption>GitHub Copiltin käyttöönotto.</figcaption>
+          </figure>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <ol class="edit-number sections">
+    <li>
+      <h6>Luo uusi kansio testausta varten</h6>
+      <ul>
+        <li>Klikkaa <strong>Open Folder</strong>.</li>
+        <li>
+          Navigoi haluamaasi kansioon ja klikkaa <strong>Uusi kansio</strong>.
+        </li>
+        <li>Anna kansiolle nimi ja klikka <strong>Valitse kansio</strong>.</li>
+      </ul>
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 1.webp"
+          alt="Uuden kansion luominen ja valitseminen"
+        />
+        <figcaption>Uuden kansion luominen ja valitseminen</figcaption>
+      </figure>
+    </li>
+    <li>
+      <h6>Luo paikallinen repositorio.</h6>
+      <ul>
+        <li>
+          Avaa Source Control-valikko klikkaamalla sivupalkin kuvakkeesta tai
+          näppäimillä <strong>CTRL + SHIFT + G</strong>. Klikkaa Source Control
+          kuvaketta sivuvalikosta.
+        </li>
+        <li>
+          Valitse avautuneesta valikosta
+          <strong>Initalize Repository</strong>.
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 2.webp"
+          alt="Paikallisen repositorion luominen"
+        />
+        <figcaption>Paikallisen repositorion luominen</figcaption>
+      </figure>
+    </li>
+    <li>
+      <h6>Yhdistä paikallinen repositorio etärepositorioon.</h6>
+      <ul>
+        <li>
+          Klikkaa kolmea pistettä luodun repositorion vierestä ja valitse
+          Remoten-valikon alta valinta
+          <strong>Add Remote...</strong>.
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 3.webp"
+          alt="Etärepositorion lisääminen"
+        />
+        <figcaption>Etärepositorion lisääminen</figcaption>
+      </figure>
+
+      <ul>
+        <li>
+          Anna yläpalkin kenttään etärepositorion osoite
+          <code>https://github.com/käyttäjänimi/repositorion-nimi.git</code>
+        </li>
+        <li>Klikkaa <strong>Add remote from URL</strong>.</li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 4.webp"
+          alt="Etärepositorion osoitteen antaminen"
+        />
+        <figcaption>Etärepositorion osoitteen antaminen</figcaption>
+      </figure>
+
+      <ul>
+        <li>
+          Anna yläpalkin kenttään etärepositorion nimi esim.
+          <code>origin</code> (gitin oletus) ja paina <strong>Enter</strong>.
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 4.2.webp"
+          alt="Etärepositorion nimen lisääminen"
+        />
+        <figcaption>Etärepositorion nimen lisääminen</figcaption>
+      </figure>
+    </li>
+    <li>
+      <h6>Tuo (Pull) etärepositorion tila paikalliseen repositorioon.</h6>
+      <div class="note-box">
+        <ul>
+          <li class="warning">
+            Mikäli käytät uutta tyhjää etärepositoriota jätä tämä vaihe välistä
+            ja siirry seuraavaan kohtaan:
+            <em class="no-line-change">5. Luo uusi tiedosto testausta varten</em
+            >.
+          </li>
+        </ul>
+      </div>
+      <ul>
+        <li>
+          Klikkaa kolmea pistettä ja valitse Pull, Push-valikon alta valinta
+          <strong>Pull from...</strong>
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 5.webp"
+          alt="Etärepositorion sisällön tuominen paikalliseen repositorioon"
+        />
+        <figcaption>
+          Etärepositorion sisällön tuominen paikalliseen repositorioon
+        </figcaption>
+      </figure>
+      <ul>
+        <li>Valitse haara jonka sisällön haluat tuoda.</li>
+        <li>
+          <strong>origin/HEAD</strong> tarkoittaa aina etärepositorion
+          oletushaara (Default).
+        </li>
+        <li>
+          Tässä tapauksessa repositorion oletus haara on nimeltää
+          <strong>origin/main</strong>.
+        </li>
+        <li>
+          Eli molemmat vaihtoehdot ovat siis tällä hetkellä tämän repositorion
+          kohdalla yksi ja sama haara
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 6.webp"
+          alt="Tuotavan haaran valitseminen"
+        />
+        <figcaption>Tuotavan haaran valitseminen</figcaption>
+      </figure>
+    </li>
+    <li>
+      <h6>Luo uusi tiedosto testausta varten.</h6>
+      <ul>
+        <li>
+          Avaa Explorer-valikko klikkaamalla sivupalkin kuvakkeesta tai
+          näppäimillä
+          <strong>CTRL + SHIFT + E</strong>.
+        </li>
+        <li>
+          Kansion nimen vierestä uusi tiedosto
+          <strong>kuvaketta</strong>.
+        </li>
+        <li>
+          Anna tiedostolle nimi: esim. <code>tiedosto-vs-codella.md</code> +
+          enter
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 7.webp"
+          alt="Uuden tiedoston luominen"
+        />
+        <figcaption>Uuden tiedoston luominen</figcaption>
+      </figure>
+      <ul>
+        <li>
+          Lisää tiedostolle sopiva sisältö ja tallenna pikanäppäimellä
+          <strong>CTRL + S</strong>
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 8.webp"
+          alt="Tiedoston sisällön lisääminen"
+        />
+        <figcaption>Tiedoston sisällön lisääminen</figcaption>
+      </figure>
+      <ul>
+        <li>Valitse README.md, muuta sen sisältöä ja tallenna.</li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 9.webp"
+          alt="README.md tiedoston muokkaaminen"
+        />
+        <figcaption>README.md tiedoston muokkaaminen</figcaption>
+      </figure>
+    </li>
+    <li>
+      <h6>Luodaan repositoriolle uusi haara (branch)</h6>
+      <ul>
+        <li>
+          Klikkaa kolmea pistettä ja valitse Branch-valikon alta valinta
+          <strong>Create Branch...</strong>
+        </li>
+        <li>
+          Anna yläpalkin kenttään uuden haaran nimi esim.
+          <code>vs-code-haara</code> ja paina <strong>Enter</strong>.
+        </li>
+        <li>
+          Anna yläpalkin kenttään uuden haaran nimi esim.
+          <code>vs-code-haara</code> ja paina <strong>Enter</strong>.
+        </li>
+      </ul>
+
+      <div class="note-box">
+        <ul class="padding-left">
+          <li class="warning">
+            Teoriaa gitin haaroihin (branches) liittyen käydään läpi tarkemmin
+            osiossa
+            <a
+              class="no-line-change"
+              href="/teamwork/how-to-teamwork.html#branches"
+              >2.1 Tiimityö ja haarat</a
+            >.
+          </li>
+        </ul>
+      </div>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 11.webp"
+          alt="Uuden haaran luominen VS Codessa"
+        />
+        <figcaption>Uuden haaran luominen VS Codessa</figcaption>
+      </figure>
+    </li>
+
+    <li>
+      <h6>
+        Lisätään muutokset ja uusi tiedosto staging tilaan ja tehdään commit.
+      </h6>
+      <ul>
+        <li>
+          Klikkaa kolmea pistettä ja valitse Changes-valikon alta valinta
+          <strong>Stage All Changes</strong>
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 12.webp"
+          alt="Muutoksien vieminen staging tilaan"
+        />
+        <figcaption>Muutoksien vieminen staging tilaan</figcaption>
+      </figure>
+
+      <ul>
+        <li>
+          Anna message kenttään commit-viesti esim.
+          <code>Ensimmäinen commit vs codella</code>.
+        </li>
+        <li>Klikkaa <strong>Commit</strong> painiketta.</li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 13.webp"
+          alt="Muutoksien commitointi ja viestin lisääminen"
+        />
+        <figcaption>Muutoksien commitointi ja viestin lisääminen</figcaption>
+      </figure>
+    </li>
+    <li>
+      <h6>Viedään (Push) muutokset etärepositorioon</h6>
+      <ul>
+        <li>Klikkaa kolmea pistettä ja valitse <strong>Push</strong></li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 14.webp"
+          alt="Muutoksien vieminen etärepositorioon"
+        />
+        <figcaption>Muutoksien vieminen etärepositorioon</figcaption>
+      </figure>
+
+      <ul>
+        <li>
+          VS Code varoittaa, että etärepositoriolla ei ole tämän nimistä haaraa.
+        </li>
+        <li>
+          Valitsemalla <strong>OK</strong> voit luoda uuden haaran myös
+          etärepositorioon.
+        </li>
+        <li>
+          Tai voit korvata Pushin painamalla suoraan
+          <strong>Publish Branch</strong> painiketta joka luo suoraan uuden
+          haaran etärepositorioon ja vie muutokset sinne.
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 15.webp"
+          alt="Uuden haaran luominen etärepositorioon"
+        />
+        <figcaption>Uuden haaran luominen etärepositorioon</figcaption>
+      </figure>
+    </li>
+
+    <li>
+      <h6>Uusi haara ja tuodut muutokset GitHubissa</h6>
+      <ul>
+        <li>Mene selaimella GitHubiin</li>
+        <li>Klikkaa haaran valintaa jossa lukee <strong>Main</strong></li>
+        <li>Valitse uusi haara</li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 16.webp"
+          alt="Uusi haara GitHubissa"
+        />
+        <figcaption>Uusi haara GitHubissa</figcaption>
+      </figure>
+
+      <ul>
+        <li>Aukeaa näkymä luodun haaran sisällöstä.</li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 17.webp"
+          alt="Muutokset GitHubissa"
+        />
+        <figcaption>Muutokset GitHubissa</figcaption>
+      </figure>
+    </li>
+  </ol>
 </section>
