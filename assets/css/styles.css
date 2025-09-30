@@ -35,9 +35,13 @@ body {
   margin-right: 5rem !important;
 }
 
+ul.padding-left {
+  padding-left: 1.2rem;
+}
+
 /* No line change mid link */
 .no-line-change,
 strong,
-code {
+code:not(pre code) {
   white-space: nowrap;
 }
