@@ -15,27 +15,159 @@
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
-    data-title="GitHubin käyttöönotto VS Codessa"
+    data-title="Gitin ja GitHubin käyttöönotto VS Codessa"
   >
     <div class="contentToAccordion">
-      <p>
-        Avaa terminaali yläpalkista <strong>View</strong> +
-        <strong>Terminal</strong>. Git Bashin saa käyttöön terminaaliin
-        <img
-          class="plus-sign"
-          src="../../assets/images/svg/plus.svg"
-          alt="plus merkki"
-        />
-        -painikkeen vierestä avattavasta alasvetovalikosta.
+      <p class="keep-margin">
+        Gitin ja GitHubin käyttöönottamiseksi VS Codessa et tarvitse tehdä
+        <a href="/basics/git-install.html">1.4 käyttöönotto</a> osiossa tehtyjen
+        toimien lisäksi valttämättä yhtään mitään muuta. Kuitenkin kirjautumalla
+        sisään GitHub tilillesi VS Codella saat käyttöösi mm. VS Coden asetusten
+        varmuuskopioinnin, GitHub Copilotin, yms. GitHub liitännäisiä.
       </p>
-      <figure>
-        <img
-          class="wide-image"
-          src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 1.webp"
-          alt="Git Bash näkymä VS Codessa"
-        />
-        <figcaption>Git bashin avaaminen VS Coden terminaalista.</figcaption>
-      </figure>
+      <strong>Kirjautminen tapahtuu seuraavasti:</strong>
+      <ol>
+        <li>
+          Klikkaa vasemmalta alhaalta <strong>Accounts</strong> kuvaketta <br />
+          Valitse <strong>Backup and Synch Settings...</strong><br />
+
+          Valitse mitä asetuksia haluat syncronoida ja klikka
+          <strong>Sign in</strong>
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 18.webp"
+              alt="Asetuksien syncronoinnin ja varmuuskopioinnin kytkeminen päälle."
+            />
+            <figcaption>
+              Asetuksien syncronoinnin ja varmuuskopioinnin kytkeminen päälle.
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          Valitse kirjautumiseen käytettävä tili klikkaamalla
+          <strong>Sign in with GitHub</strong>
+
+          <p class="note-box">
+            Mikäli sinulla on jo GitHub auki selaimessa ja olet kirjatunut
+            sisään, voit siirtyä suoraan kohtaan
+            <strong>6. Käytettävän tilin valinta</strong>.
+          </p>
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 19.webp"
+              alt="Kirjautumiseen käytettävän tilin valinta"
+            />
+            <figcaption>Kirjautumiseen käytettävän tilin valinta.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Syötä aukeavaan selainikkunaan GitHub-tilin
+          <strong>käyttäjänimi</strong> tai <strong>sähköposti</strong> ja
+          <strong>salasana</strong>
+          <strong></strong>
+          <br />
+
+          Klikkaa
+          <strong>Sign in</strong>
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 20.webp"
+              alt="Kirjautuminen GitHubiin"
+            />
+            <figcaption>Kirjautuminen GitHubiin.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Anna kaksivaiheisen tunnistautumisen avainkoodi
+          tunnistautumissovelluksestasi <br />
+
+          Klikkaa
+          <strong>Verify</strong>
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 21.webp"
+              alt="Näkymö kaksivaiheinen tunnistautuminen"
+            />
+            <figcaption>Kaksivaiheinen tunnistautuminen.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Lisää halutessasi passkey tai klikkaa
+          <strong>Ask me later</strong>
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 22.webp"
+              alt="Passkeyn lisääminen tai ohitus"
+            />
+            <figcaption>Passkeyn lisääminen tai ohitus.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Valitse käytettävä tili klikkaamalla
+          <strong>Continue</strong> käyttäjänimen vierestä
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 23.webp"
+              alt="Tilin valinnan vahvistus"
+            />
+            <figcaption>Tilin valinnan vahvistus.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Anna VS Codelle lupa päästä GitHub-tilillesi klikkaamalla
+          <strong>Authorize Visuals-Studio-Code</strong>
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 24.webp"
+              alt="Luvan antaminen VS Codelle"
+            />
+            <figcaption>Luvan antaminen VS Codelle.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Siirry takaisin VS Codeen klikkaamalla
+          <strong>Avaa Visuals-Studio-Code</strong>
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 25.webp"
+              alt="Siirtyminen takaisin VS Codeen"
+            />
+            <figcaption>Siirtyminen takaisin VS Codeen.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Halutessasi ota Copilot käyttöön ja asenna tarvittavat liitännäiset
+
+          <ul>
+            <li>Klikkaa ensin <strong>Finnish Setup</strong></li>
+            <li>Valitse sitten <strong>Set up Copilot</strong></li>
+          </ul>
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 26.webp"
+              alt="GitHub Copiltin käyttöönotto"
+            />
+            <figcaption>GitHub Copiltin käyttöönotto.</figcaption>
+          </figure>
+        </li>
+      </ol>
     </div>
   </div>
 
@@ -86,9 +218,11 @@
             <img
               class="wide-image"
               src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 1.1.webp"
-              alt="Muutoksien tarkastelu ja vertaaminen"
+              alt="Do you trust the authors of the files in this folder? -varoitus"
             />
-            <figcaption>Muutoksien tarkastelu ja vertaaminen</figcaption>
+            <figcaption>
+              Do you trust the authors of the files in this folder? -varoitus
+            </figcaption>
           </figure>
           <!-- Accordion content ends -->
         </div>
@@ -100,12 +234,12 @@
       <ul>
         <li>
           Avaa Source Control-valikko klikkaamalla sivupalkin kuvakkeesta tai
-          näppäimillä <strong>CTRL</strong> + <strong>SHIFT</strong> +
-          <strong>G</strong>. Klikkaa Source Control kuvaketta sivuvalikosta.
+          näppäimillä <strong>CTRL + SHIFT + G</strong>. Klikkaa Source Control
+          kuvaketta sivuvalikosta.
         </li>
         <li>
-          Valitse avautuneesta valikosta <strong>Initalize Repository</strong>
-          <br />.
+          Valitse avautuneesta valikosta
+          <strong>Initalize Repository</strong>.
         </li>
       </ul>
 
@@ -124,7 +258,7 @@
         <li>
           Klikkaa kolmea pistettä luodun repositorion vierestä ja valitse
           Remoten-valikon alta valinta
-          <strong>Add Remote...</strong>
+          <strong>Add Remote...</strong>.
         </li>
       </ul>
 
@@ -157,7 +291,7 @@
       <ul>
         <li>
           Anna yläpalkin kenttään etärepositorion nimi esim.
-          <code>origin</code> ja paina <strong>Enter</strong>.
+          <code>origin</code> (gitin oletus) ja paina <strong>Enter</strong>.
         </li>
       </ul>
 
@@ -172,6 +306,11 @@
     </li>
     <li>
       <h6>Tuo (Pull) etärepositorion tila paikalliseen repositorioon.</h6>
+      <p class="note-box">
+        Mikäli käytät uutta tyhjää etärepositoriota jätä tämä vaihe välistä ja
+        siirry seuraavaan kohtaan:
+        <em class="no-line-change">5. Luo uusi tiedosto testausta varten</em>.
+      </p>
       <ul>
         <li>
           Klikkaa kolmea pistettä ja valitse Pull, Push-valikon alta valinta
@@ -200,8 +339,8 @@
           <strong>origin/main</strong>.
         </li>
         <li>
-          Eli molemmat vaihtoehdot ovat siis tämän repositorion kohdalla sama
-          haara
+          Eli molemmat vaihtoehdot ovat siis tällä hetkellä tämän repositorion
+          kohdalla yksi ja sama haara
         </li>
       </ul>
 
@@ -220,7 +359,7 @@
         <li>
           Avaa Explorer-valikko klikkaamalla sivupalkin kuvakkeesta tai
           näppäimillä
-          <strong>CTRL</strong> + <strong>SHIFT</strong> + <strong>E</strong>.
+          <strong>CTRL + SHIFT + E</strong>.
         </li>
         <li>
           Kansion nimen vierestä uusi tiedosto
@@ -243,8 +382,7 @@
       <ul>
         <li>
           Lisää tiedostolle sopiva sisältö ja tallenna pikanäppäimellä
-          <strong>CTRL</strong> +
-          <strong>S</strong>
+          <strong>CTRL + S</strong>
         </li>
       </ul>
 
@@ -319,7 +457,19 @@
           Anna yläpalkin kenttään uuden haaran nimi esim.
           <code>vs-code-haara</code> ja paina <strong>Enter</strong>.
         </li>
+        <li>
+          Anna yläpalkin kenttään uuden haaran nimi esim.
+          <code>vs-code-haara</code> ja paina <strong>Enter</strong>.
+        </li>
       </ul>
+
+      <p class="note-box">
+        Teoriaa gitin haaroihin (branches) liittyen käydään läpi tarkemmin
+        osiossa
+        <a class="no-line-change" href="/teamwork/how-to-teamwork.html#branches"
+          >2.1 Tiimityö ja haarat</a
+        >.
+      </p>
 
       <figure>
         <img
@@ -443,8 +593,8 @@
         </li>
         <li>
           Tai voit korvata Pushin painamalla suoraan
-          <strong>Publish Branch</strong> painiketta joka luo uuden haaran
-          etärepositorioon ja vie muutokset sinne.
+          <strong>Publish Branch</strong> painiketta joka luo suoraan uuden
+          haaran etärepositorioon ja vie muutokset sinne.
         </li>
       </ul>
 
