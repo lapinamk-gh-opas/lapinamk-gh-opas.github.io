@@ -295,18 +295,28 @@
     </li>
   </ol>
   <h4>Muita hyödyllisiä toimintoja</h4>
-  <p>
+  <p class="no-margin-bottom">
     Teoriaa gitin haaroihin (branches) liittyen käydään läpi tarkemmin osiossa
-    <a class="no-line-change" href="/teamwork/how-to-teamwork.html#branches"
+    <a class="no-line-change" href="/teamwork/branches.html#how-to-branches"
       >2.1 Tiimityö ja haarat</a
-    >. joten seuraavien ohjeiden läpi käyminen ei ole vielä välttämätöntä. Näitä
-    ohjeita (erityisesti) haarojen yhdistämistä voi käyttää kehitystyötä yksin
-    tehdessä, mutta tiiminä työskennellessä kannatta soveltaa osion
-    <a class="no-line-change" href="/teamwork/pullrequests.html"
-      >2.3 Pull Request</a
     >
-    oppeja.
+    ja ne kannattaa opiskella sieltä. Alla olevat ohjeet ovat lyhyemmät
+    esimerkit git haaroihin liittyvistä toiminnoista, jotta ne löytyvät helposti
+    samasta paikkasta myöhempää käyttöä varten.
   </p>
+  <div class="note-box">
+    <ul>
+      <li class="warning">
+        Haarojen yhdistämistä tässä esitellyllä tavalla voi käyttää pienissä
+        projekteissa ja kehitystyötä yksin tehdessä, mutta tiiminä
+        työskennellessä ja isompien projektien parissa kannattaa soveltaa osion
+        <a class="no-line-change" href="/teamwork/pullrequests.html">
+          2.3 Pull Request </a
+        >oppeja.
+      </li>
+    </ul>
+  </div>
+
   <!--Accordion 3.-->
   <div
     class="accordion"
@@ -322,14 +332,7 @@
               <code>git checkout -b haaran-nimi</code>
             </li>
             <li>
-              Lisää uusi tiedosto komennolla:<br />
-              <code
-                >echo "Teksti sisältö tähän" >> tiedoston-nimi-tähän.md</code
-              >
-            </li>
-            <li>
-              Muokkaa olemassa olevaa README.md tiedostoa komennolla:<br />
-              <code>echo "Lisättävä muutos tähän" >> README.md</code>
+              Tee tarvittavat muutokset tiedostoihin tai luo uusia tiedostoja.
             </li>
           </ul>
           <figure>
@@ -346,34 +349,18 @@
         <li>
           <ul>
             <li>
-              Lisätään tiedostot stagin-tilaan komennolla:<br />
+              Lisää tiedostot stagin-tilaan komennolla:<br />
               <code>git add .</code>
             </li>
-            <p class="note-box margin-right">
-              Tämän voisi tehdä myös komennolla: <br />
-              <code>
-                git add uuden-tiedoston-nimi.md muutetun-tiedoston-nimi.md </code
-              ><br />
-              Kuitenkin mikäli muutokset koskevat useita tiedostoja, niin on
-              helpompi lisätä kaikki tiedostot kerralla käyttäen komentoa:
-              <code>git add .</code>
-            </p>
             <li>
-              Tehdään commit ja lisätään viesti komennolla:<br />
+              Tee commit ja lisää viesti komennolla:<br />
               <code>git commit -m "commit viesti tähän"</code>
             </li>
             <li>
-              Viedään muutokset etärepositorioon ja luodaan sinne uusi haara:<br />
+              Vie muutokset etärepositorioon ja luo sinne uusi haara
+              komennolla:<br />
               <code>git push -u origin haaran-nimi</code>
             </li>
-            <p class="note-box margin-right keep-margin">
-              <code>push</code> vie muutokset etärepositorioon.<br />
-              <code>-u</code> asettaa paikallisen haaran seuraamaan etähaaraa.
-              <br />
-              <code>origin</code> etärepositorion nimi (oletus nimi origin),
-              viite repon url-osoitteesen.<br />
-              <code>haaran-nimi</code> eli haara jossa olet.
-            </p>
           </ul>
 
           <figure>
@@ -429,10 +416,8 @@
           <ul>
             <li>
               Siirry main-haaraan komenolla:<br />
-              <code>git checkout main</code>
-              <p class="note-box margin-right">
-                <code>git switch main</code> toimii myös.<br />
-              </p>
+              <code>git checkout main</code> tai
+              <code>git switch main</code>
             </li>
             <li>
               yhdistä etärepositorion main-haaran viimeisin tila paikalliseen
@@ -474,7 +459,7 @@
             </li>
             <p class="note-box margin-right keep-margin">
               Tässäkin riittää komento:
-              <code>git pull</code>, mikäli <code>-u</code> lippua on käytetty.
+              <code>git push</code>, mikäli <code>-u</code> lippua on käytetty.
             </p>
           </ul>
 
@@ -488,31 +473,6 @@
               Uuden haaran muutoksien commitointi ja vieminen etärepositorioon
               Git Bashillä.
             </figcaption>
-          </figure>
-        </li>
-        <li>
-          <ul>
-            <li>Klikkaa haaran valintaa jossa lukee <strong>Main</strong></li>
-            <li>Valitse uusi haara</li>
-          </ul>
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/terminal/Git usage terminal 14.webp"
-              alt="Uusi haara GitHubissa"
-            />
-            <figcaption>Uusi haara GitHubissa.</figcaption>
-          </figure>
-          <ul>
-            <li>Aukeaa näkymä luodun haaran sisällöstä.</li>
-          </ul>
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/terminal/Git usage terminal 15.webp"
-              alt="Muutokset GitHubissa"
-            />
-            <figcaption>Muutokset GitHubissa.</figcaption>
           </figure>
         </li>
       </ol>

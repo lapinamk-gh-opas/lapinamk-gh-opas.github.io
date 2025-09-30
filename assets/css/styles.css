@@ -20,6 +20,11 @@ body {
   margin: 0;
 }
 
+/* no bottom margin class */
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
 /* Top margin class */
 .margin-top {
   margin-top: 2rem;
