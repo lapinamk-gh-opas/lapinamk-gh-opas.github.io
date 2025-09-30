@@ -1,56 +1,62 @@
 <section class="workflow">
     <header>
         <h4>Työnkulku eli Git Workflow</h4>
-        <p>Git käyttää hajautettua työnkulkua, joka mahdollistaa koodin muokkaamisen, muutosten lisäämisen välialueelle
-            (stage) ja niiden committaamisen paikalliseen repositorioon ennen niiden lisäämistä etärepositorioon. </p>
-        <p>Tämän työnkulun ymmärtäminen on tärkeää onnistuneen versionhallinnan kannalta. </p>
-        <figure>
-            <img class="wide-image" src="../../assets/images/basics/workflow.png"
-                alt="GitHubin tilityypit ja hinnoittelu" />
-            <figcaption>Git työnkulun kaavio</figcaption>
-        </figure>
-         <p class="note-box">Vinkki! Painamalla kuvaa pohjassa, se aukeaa suuremmaksi. Toimii kaikkialla oppaassa.</p>
-        <p><strong>Työnkulku</strong> koostuu seuraavista vaiheista:</p>
-        <ol>
-            <li><strong>Työhakemisto (Working Directory)</strong>
-                <ul>
-                    <li>Tämä on kansio, jossa työskentelet Git-projektin kanssa</li>
-                    <li>Se syntyy, kun alustat kansion komennolla <code>git init</code> tai kloonaat sen etävarastosta
-                        komennolla <code>git clone</code></li>
-                    <li>Git seuraa tässä kansiossa tehtyjä muutoksia ja kertoo tilanteen komennolla
-                        <code>git status</code></li>
-                </ul>
-            </li>
-            <li><strong>Git Add ja Välialue (Staging Area)</strong> 
-                <ul>
-                    <li>Välialue toimii “odotusalueena”, johon kerätään commit-pakettiin otettavat muutokset</li>
-                    <li>Yksittäinen tiedosto lisätään stagingiin komennolla <code>git add tiedosto.txt</code></li>
-                    <li>Kaikki muutokset puolestaan lisätään komennolla <code>git add .</code></li>
-                    <li>Commit-pakettiin lisättyjen tiedostojen tilanne selviää komennolla <code>git status</code></li>
-                </ul>
-            </li>
-            <li><strong>Git Commit ja Paikallinen Repo (Repository)</strong>
-                <ul>
-                    <li>Kun haluamasi muutokset ovat stagingissa, tee commit komennolla <code>git commit -m "kuvaava viesti"</code></li>
-                    <li>Tämä tallentaa stagingissa olleet muutokset pysyvästi paikalliseen repositorioon</code></li>
-                    <li>Hyvän commit-viestin tulisi olla lyhyt mutta kuvaava, esimerkiksi "fixed bug X" tai "added feature Y"</li>
-                </ul>
-            </li>
-            <li><strong>Git Push ja Etärepo (Remote Repository, esim GitHub)</strong>
-                <ul>
-                    <li>Commitit tallentuvat aluksi vain paikallisesti omalle koneellesi</li>
-                    <li>Jotta muutokset tallentuvat GitHubiin, lähetä ne komennolla <code>git push</code></li>
-                    <li>Ensimmäisellä kerralla voi olla tarpeen käyttää <code>git push -u origin &lt;haara esim main&gt;</code></li>
-                </ul>
-            </li>
-            <li><strong>Git Pull</strong>
-                <ul>
-                    <li>Jos työskentelet tiimissä, on tärkeää säännöllisesti hakea etärepostosta uusimmat muutokset komennolla <code>git pull</code></li>
-                    <li>Tämä varmistaa, että paikallinen repositoriosi on ajan tasalla ja auttaa välttämään yhdistämiskonflikteja (merge conflict)</li>
-                </ul>
-            </li>
-        </ol>
-        <p>Ymmärtämällä ja noudattamalla tätä työnkulkua voit hallita koodimuutoksia järjestelmällisesti ja tehdä yhteistyötä muiden kehittäjien kanssa sujuvasti.</p>
     </header>
-
+    <p>Git käyttää hajautettua työnkulkua, joka mahdollistaa koodin muokkaamisen, muutosten lisäämisen välialueelle
+        (stage) ja niiden committaamisen paikalliseen repositorioon ennen niiden lisäämistä etärepositorioon. </p>
+    <p>Tämän työnkulun ymmärtäminen on tärkeää onnistuneen versionhallinnan kannalta. </p>
+    <figure>
+        <img class="wide-image" src="../../assets/images/basics/workflow.png"
+            alt="GitHubin tilityypit ja hinnoittelu" />
+        <figcaption>Git työnkulun kaavio</figcaption>
+    </figure>
+    <p class="note-box">Vinkki! Painamalla kuvaa pohjassa, se aukeaa suuremmaksi. Toimii kaikkialla oppaassa.</p>
+    <p><strong>Työnkulku</strong> koostuu seuraavista vaiheista:</p>
+    <ol>
+        <li><strong>Työhakemisto (Working Directory)</strong>
+            <ul>
+                <li>Tämä on kansio, jossa työskentelet Git-projektin kanssa</li>
+                <li>Se syntyy, kun alustat kansion komennolla <code>git init</code> tai kloonaat sen etävarastosta
+                    komennolla <code>git clone</code></li>
+                <li>Git seuraa tässä kansiossa tehtyjä muutoksia ja kertoo tilanteen komennolla
+                    <code>git status</code>
+                </li>
+            </ul>
+        </li>
+        <li><strong>Git Add ja Välialue (Staging Area)</strong>
+            <ul>
+                <li>Välialue toimii “odotusalueena”, johon kerätään commit-pakettiin otettavat muutokset</li>
+                <li>Yksittäinen tiedosto lisätään stagingiin komennolla <code>git add tiedosto.txt</code></li>
+                <li>Kaikki muutokset puolestaan lisätään komennolla <code>git add .</code></li>
+                <li>Commit-pakettiin lisättyjen tiedostojen tilanne selviää komennolla <code>git status</code></li>
+            </ul>
+        </li>
+        <li><strong>Git Commit ja Paikallinen Repo (Repository)</strong>
+            <ul>
+                <li>Kun haluamasi muutokset ovat stagingissa, tee commit komennolla
+                    <code>git commit -m "kuvaava viesti"</code></li>
+                <li>Tämä tallentaa stagingissa olleet muutokset pysyvästi paikalliseen repositorioon</code></li>
+                <li>Hyvän commit-viestin tulisi olla lyhyt mutta kuvaava, esimerkiksi "fixed bug X" tai "added feature
+                    Y"</li>
+            </ul>
+        </li>
+        <li><strong>Git Push ja Etärepo (Remote Repository, esim GitHub)</strong>
+            <ul>
+                <li>Commitit tallentuvat aluksi vain paikallisesti omalle koneellesi</li>
+                <li>Jotta muutokset tallentuvat GitHubiin, lähetä ne komennolla <code>git push</code></li>
+                <li>Ensimmäisellä kerralla voi olla tarpeen käyttää
+                    <code>git push -u origin &lt;haara esim main&gt;</code></li>
+            </ul>
+        </li>
+        <li><strong>Git Pull</strong>
+            <ul>
+                <li>Jos työskentelet tiimissä, on tärkeää säännöllisesti hakea etärepostosta uusimmat muutokset
+                    komennolla <code>git pull</code></li>
+                <li>Tämä varmistaa, että paikallinen repositoriosi on ajan tasalla ja auttaa välttämään
+                    yhdistämiskonflikteja (merge conflict)</li>
+            </ul>
+        </li>
+    </ol>
+    <p>Ymmärtämällä ja noudattamalla tätä työnkulkua voit hallita koodimuutoksia järjestelmällisesti ja tehdä
+        yhteistyötä muiden kehittäjien kanssa sujuvasti.</p>
 </section>
