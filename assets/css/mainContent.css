@@ -177,6 +177,14 @@ figcaption {
   display: inline-block;
 }
 
+/* red exclamation mark for important notes */
+.warning::marker {
+  content: "❗";
+  color: red;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
 /* layout changes for mobile */
 @media (max-width: 1000px) {
   /* content width */
