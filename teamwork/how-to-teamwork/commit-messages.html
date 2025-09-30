@@ -5,14 +5,27 @@
 
     <p>Hyvät commit-viestit ovat tärkeitä, jotta tiimin jäsenet ymmärtävät tehdyt muutokset. Hyvä commit-viesti auttaa
         myös, kun halutaan tarkastella projektin historiaa tai etsiä tiettyjä muutoksia.</p>
+
+    <div class="accordion" data-include="../../accordion-element/accordion.html" data-title="Mikä on commit?">
+        <div class="contentToAccordion">
+            <p>
+                Commit on Gitin perusyksikkö, joka paketoi koodiin tehdyt muutokset ja niihin liittyvän commit-viestin yhteen. 
+                Näin syntyy selkeä tallenne, joka kertoo mitä on tehty ja milloin. Useista committeista muodostuu
+                projektin historia, jota voidaan tarkastella ja palata tarvittaessa aiempiin versioihin.
+            </p>
+        </div>
+    </div>
+
+
     <p>Tässä muutamia vinkkejä hyvän commit-viestin kirjoittamiseen:</p>
     <ul>
         <li>Käytä selkeää ja kuvaavaa viestiä, joka kertoo mitä muutoksia on tehty ja miksi</li>
         <li>Käytä englanninkieltä (oletuskieli ohjelmistokehityksessä), ellei muuta erikseen sovita</li>
         <li>Kirjoita viesti imperatiivimuodossa (esim. "Add new feature")</li>
-        <li>Jos commit sisältää useita muutoksia, harkitse niiden jakamista useampaan commit-viestiin (esim.
+        <li>Jos olet tehnyt useita muutoksia, harkitse niiden jakamista useampaan commit-viestiin (esim.
             UI-korjaukset omaansa ja uuden toiminnon lisääminen omaansa)</li>
-        <li>Viestin pituuden tulisi olla kohtuullinen! Pyri pitämään se lyhyenä (max. 72 merkin pituisena)</li>
+        <li>Ensimmäisen rivin tulisi olla lyhyt yhteenveto (max. 50 merkkiä). Tarvittaessa lisää tarkempi kuvaus tyhjän
+            rivin jälkeen.</li>
     </ul>
 
     <h6>Esimerkkejä <strong>hyvistä</strong> commit-viesteistä:</h6>
@@ -25,15 +38,16 @@
 
     <h6>Esimerkkejä <strong>huonoista</strong> commit-viesteistä:</h6>
     <ul>
-        <li>"stuff"</li>
-        <li>"asdasd"</li>
-        <li>"final version"</li>
-        <li>"bug"</li>
-        <li>"added new feature but its still broken"</li>
-        <li>"Lisäsin vähän kaikkea kaikkialle xDDD"</li>
-        <li>"Fix login, update styles, change database schema, remove old tests, add new feature"</li>
+        <li>"stuff" (liian epämääräinen)</li>
+        <li>"asdasd" (merkityksetön)</li>
+        <li>"final version" (ei kerro mitä muutettiin)</li>
+        <li>"added new feature but its still broken" (epäselvä)</li>
+        <li>"Fix login, update styles, change database schema, remove old tests, add new feature" (liian monta asiaa
+            yhdessä)</li>
     </ul>
 
-    <p class="note-box">Commit-viestit ovat projektisi lokikirja. Kirjoita ne niin, että myös viikon päästä ymmärrät mitä teit.</p>
+    <p class="note-box">Hyvä commit-viesti kertoo mitä muutettiin ja miksi. Kirjoita se niin, että myös viikon päästä
+        ymmärrät viestin sisällön.</p>
+
 
 </section>
