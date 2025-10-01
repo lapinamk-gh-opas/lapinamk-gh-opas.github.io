@@ -219,10 +219,6 @@
               luotettavuudesta, voit avata kansion “Restricted Mode” -tilassa,
               jolloin mm. laajennukset ja koodin suoritus estetään.
             </li>
-            <li>
-              Hyväksy viesti klikkaamalla oikealta ylhäältä
-              <strong>Accept Commit Message</strong> nappia.
-            </li>
           </ul>
 
           <figure>
@@ -512,6 +508,26 @@
           <strong>Stage All Changes</strong>
         </li>
       </ul>
+
+      <div class="note-box margin-right">
+        <ul>
+          <li>Tämä vastaa komentoa: <code> git add . </code></li>
+          <li class="warning">
+            Käytä komentoa <code>git add .</code> varoen. <br />
+            Jos olet lisännyt samaan kansioon jotain arkaluontoistatietoa
+            sisältäviä tiedostoja, joita et halua lisätä repositioon, niin
+            <strong>älä</strong> käytä <code>git add .</code> komentoa tai lisää
+            repositorioon <code>.gitignore</code> -tiedosto, joka estää siihen
+            nimettyjen tiedostojen lisäämisen repositorioon.
+          </li>
+          <li>
+            <code>.gitignore</code>:sta lisää tietoa osiossa:
+            <a href="/teamwork/privacy-and-security.html"
+              >2.5 yksityisyys ja tietoturva</a
+            >
+          </li>
+        </ul>
+      </div>
 
       <figure>
         <img
