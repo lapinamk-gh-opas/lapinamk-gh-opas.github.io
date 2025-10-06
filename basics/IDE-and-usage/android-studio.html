@@ -1,8 +1,796 @@
 <section class="git-install">
   <header>
-    <h1>Git:n käyttö Android Studiolla</h1>
+    <h1>Gitin käyttö Android Studiolla</h1>
     <p>
-      Tällä sivulla käsitellään Git:n käyttö <strong>Android Studiolla</strong>.
+      Tällä sivulla käsitellään Gitin käyttöä
+      <strong>Android Studiolla</strong>. Android Studion perustuu JetBrainsin
+      intelliJ koodieditoriin, joten sillä on yhteneväisyyksiä myös edellä
+      esiteltyyn JetBrainsin PyCharm editoriin. Haitari elementistä voit katsoa
+      tarvittaessa ohjeet Gitin ja GitHubin käyttöönottoon Android Studiossa.
+      Muutoin osion ohjeissa käytetään jo komentokehote ja VS Code käytöstä
+      tuttua etärepositoriota, Kloonataan se paikalliseksi repositorioksi
+      IDE:llä. Luodaan editorin avulla jälleen tiedostot ja viedään ne
+      etärepositorioon omaan haaraansa.
+    </p>
+    <!-- Accordion element starts -->
+    <div
+      class="accordion"
+      data-include="../../accordion-element/accordion.html"
+      data-title="Mistä repositoriot ja sen URL-osoite löytyvät GitHubissa?"
+    >
+      <div class="contentToAccordion">
+        <!-- Accordion content starts -->
+        <ul>
+          <li>
+            Repositoriot löytyvät useammasta paikkaa, mutta niitä voi selata
+            esimerkiksi näin.
+          </li>
+          <li>
+            Klikkaa oikealta ylhäältä <strong>profiilikuvaketta</strong> ja
+            valitse sen alta
+            <strong>Repositories</strong>
+          </li>
+        </ul>
+
+        <figure>
+          <img
+            class="wide-image"
+            src="../../assets/images/basics/git-install/Git usage repository 5.webp"
+            alt="Repositoriot löytyvät profiilikuvakkeen alta"
+          />
+          <figcaption>Repositoriot löytyvät profiilikuvakkeen alta.</figcaption>
+        </figure>
+
+        <ul>
+          <li>
+            Avautuu <strong>lista</strong> kaikista käyttäjän repostoireista.
+          </li>
+          <li>Repositoriota pääsee tarkastelemaan klikkaamalla sen nimeä.</li>
+        </ul>
+
+        <figure>
+          <img
+            class="wide-image"
+            src="../../assets/images/basics/git-install/Git usage repository 6.webp"
+            alt="Repositoriot löytyvät profiilikuvakkeen alta"
+          />
+          <figcaption>Lista tilin repositorioista.</figcaption>
+        </figure>
+
+        <h6>Repositorion päänäkymästä löydät mm.</h6>
+
+        <ol>
+          <li>Repositoriossa olevat tiedostot ja kansiot.</li>
+          <li>Repositorion Git-haarat valikko.</li>
+          <li>Code valikon alta löydät mm. repositorion URL osoitteen.</li>
+        </ol>
+
+        <figure>
+          <img
+            class="wide-image"
+            src="../../assets/images/basics/git-install/Git usage repository 7.webp"
+            alt="Repositorion päänäkymä"
+          />
+          <figcaption>Repositorion päänäkymä.</figcaption>
+        </figure>
+        <ul>
+          <li>
+            <strong>URL-osoiteen</strong> näet alasvetovalikossa klikkaamalla
+            <strong>Code</strong> painiketta.
+          </li>
+        </ul>
+        <figure>
+          <img
+            class="wide-image"
+            src="../../assets/images/basics/git-install/Git usage repository 4.webp"
+            alt="Kuva tyhjästä repositoriosta"
+          />
+          <figcaption>Repositorion osoite</figcaption>
+        </figure>
+        <!-- Accordion content ends -->
+      </div>
+    </div>
+    <!-- Accordion element ends -->
+    <p>
+      Huomiona mainittakoon, että myös Android Studio tarjoaa mahdollisuuksia
+      tehdä Git toimintoja usealla eri tavalla. Jotkin toiminnoista voi tehdä
+      mahdollisesti myös toisella tapaa, ehkäpä jopa paremmin sekä tehokkaammin
+      kuin mitä ohjeessa on esitetty.
     </p>
   </header>
+  <!-- Accordion element starts -->
+  <div
+    class="accordion"
+    data-include="../../accordion-element/accordion.html"
+    data-title="Gitin ja GitHubin käyttöönotto Android Studiossa"
+  >
+    <div class="contentToAccordion">
+      <p class="keep-margin">
+        Gitin ja GitHubin käyttöönottamiseksi Android Studiossa käy läpi,
+        <a href="/basics/git-install.html">1.4 käyttöönotto</a> osiossa tehtyjen
+        toimien lisäksi, seuraavat asetukset.
+      </p>
+      <ol>
+        <li>
+          Klikkaa vasemmalta alhaalta <strong>Ratas</strong> kuvaketta ja
+          valitse <strong>Settings</strong><br />
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 1.webp"
+              alt="Asetusvalikon avaaminen Android Studiossa."
+            />
+            <figcaption>Asetusvalikon avaaminen Android Studiossa.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Valitse asetusvalikon vasemmalta puolelta listasta
+          <strong>Version Control</strong> ja sen alta <strong>Git</strong>
+          <ul>
+            <li>
+              Testaa, että Android Studio löytää Gitin painamalla
+              <strong>Test</strong> nappia.
+            </li>
+            <li>
+              Mikäli Git löytyy näykyy sen <strong>version numero</strong> polun
+              alla.
+            </li>
+            <li>
+              Mikäli Gitiä ei löytynyt anna Android Studiolle polku johon olet
+              Gitin asentanut.
+            </li>
+          </ul>
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 2.webp"
+              alt="Vesionhallinta asetukset Android Studio ja Git polun tarkistus"
+            />
+            <figcaption>
+              Vesionhallinta asetukset Android Studio ja Git polun tarkistus.
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          Valitse asetusvalikon vasemmalta puolelta listasta
+          <strong>Version Controlin</strong> alta <strong>GitHub</strong>
+          <ul>
+            <li>
+              Yhdistä GitHub tilisi Android Studioon klikkaamalla
+              <strong>Add account...</strong> tekstiä.
+            </li>
+            <li>
+              Valitse
+              <strong>Log in via GitHub...</strong>
+            </li>
+          </ul>
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 3.webp"
+              alt="GitHub tilin lisääminen Android Studioon"
+            />
+            <figcaption>GitHub tilin lisääminen Android Studioon.</figcaption>
+          </figure>
+
+          <p class="note-box">
+            GitHub-tilin yhdistäminen editoriin voi hieman erota tässä
+            esitetystä, mikäli olet jo antanut oikeudet jollekin toiselle
+            JetBrainsin editorille käyttää tilisi sisältöä.
+          </p>
+        </li>
+        <li>
+          Avautuu selain ikkuna ja klikkaa
+          <strong>Authorize in GitHub</strong> nappia
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 5.webp"
+              alt="PGitHub tilin lisääminen Android Studioon selaimessa"
+            />
+            <figcaption>
+              GitHub tilin lisääminen Android Studioon selaimessa.
+            </figcaption>
+          </figure>
+
+          <div class="note-box">
+            <ul>
+              <li class="warning">
+                Mikäli sinulla on jo GitHub auki selaimessa ja olet kirjatunut
+                sisään, voit siirtyä suoraan kohtaan:
+                <strong>7. Luvananto Android Studiolle</strong>.
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          Syötä aukeavaan selainikkunaan GitHub-tilin
+          <strong>käyttäjänimi</strong> tai <strong>sähköposti</strong> ja
+          <strong>salasana</strong>
+          <strong></strong>
+          <br />
+
+          Klikkaa
+          <strong>Sign in</strong>
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 6.webp"
+              alt="Kirjautuminen GitHubiin"
+            />
+            <figcaption>Kirjautuminen GitHubiin.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Anna kaksivaiheisen tunnistautumisen avainkoodi
+          tunnistautumissovelluksestasi <br />
+
+          Klikkaa
+          <strong>Verify</strong>
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 7.webp"
+              alt="Kaksivaiheinen tunnistautuminen"
+            />
+            <figcaption>Kaksivaiheinen tunnistautuminen.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Anna Android Studiolle lupa päästä GitHub-tilillesi klikkaamalla
+          <strong>Authorize JetBrains</strong>
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 8.webp"
+              alt="Luvan antaminen Android Studiolle."
+            />
+            <figcaption>Luvan antaminen Android Studiolle.</figcaption>
+          </figure>
+
+          <p class="note-box">
+            Mikäli sinulla oli GitHub avoinna selaimessa ja olit jo valmiiksi
+            kirjautuneena sinne sisään ja jos sinulla on kaksivaiheinen
+            tunnistautuminen käytössä saattaa GitHub tämän vaiheen jälkeen
+            pyytää vielä syöttämään tunnistautumissovelluksen avainkoodin (kts.
+            kohta 6).
+          </p>
+        </li>
+        <li>
+          Tulee ilmoitus, että olet sallinut Android Studiolle pääsyn
+          GitHub-tilillesi ja voit sulkea selainikkunan.
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 9.webp"
+              alt="Vahvistus ja sulje selainikkuna"
+            />
+            <figcaption>Vahvistus ja sulje selainikkuna.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Myös Android Studio näyttää GitHub asetusvälilehden alla lisäämäsi
+          tilin.
+          <br />
+          Sulje asetusikkuna klikkaamalla <strong>OK</strong> nappia.
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 4.webp"
+              alt="Vahvistus ja sulje asetusikkuna"
+            />
+            <figcaption>Vahvistus ja sulje asetusikkuna.</figcaption>
+          </figure>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <!-- Accordion element ends -->
+  <ol class="edit-number sections">
+    <li>
+      <h6>Kloonaa etärepositorio PyCharmiin</h6>
+      <ul>
+        <li>
+          Klikkaa projects valikossa
+          <strong>More Actions</strong> .
+        </li>
+        <li>
+          Tai mikäli sinulla on aikaisempia projekteja niin niiden yläpuolelta
+          oikeanpuolimmaisesta <strong>kolmepistettä</strong> napista
+        </li>
+        <li>
+          Klikkaa aukeavasta alasvetovalikosta
+          <strong>Get from Version Control..</strong>
+        </li>
+      </ul>
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 5.webp"
+          alt="Repositorion kloonaaminen (ensimmäinen projekti)."
+        />
+        <figcaption>
+          Repositorion kloonaaminen (ensimmäinen projekti).
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 6.webp"
+          alt="Repositorion kloonaaminen (on jo aikaisempia projekteja)."
+        />
+        <figcaption>
+          Repositorion kloonaaminen (on jo aikaisempia projekteja).
+        </figcaption>
+      </figure>
+    </li>
+    <li>
+      <h6>Anna kloonattava repositorio.</h6>
+      <ul>
+        <li>
+          <strong>Repository URL</strong> valikossa anna
+          <strong>URL-kenttään</strong> etärepositorion osoite.
+        </li>
+        <li>
+          Muuta halutessasi kohde kansio
+          <strong>Directory-kenttään</strong>.
+        </li>
+        <li>
+          Klikkaa
+          <strong>Clone</strong> nappia.
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 7.webp"
+          alt="Kloonattavat etärepositorion valitseminen."
+        />
+        <figcaption>Kloonattavat etärepositorion valitseminen.</figcaption>
+      </figure>
+
+      <!-- Accordion element starts -->
+      <div
+        class="accordion"
+        data-include="../../accordion-element/accordion.html"
+        data-title="Trust and Open Project?-varoitus"
+      >
+        <div class="contentToAccordion">
+          <!-- Accordion content starts -->
+          <ul>
+            <li>
+              Jos tiedät, että kansio on luotettava (esim. oma projektisi),
+              valitse <strong>Trust Project</strong>.
+            </li>
+            <li>
+              Jos et ole varma kansion tai projektin sisällöstä ja
+              luotettavuudesta, voit avata kansion klikkaamalla Preview in Safe
+              Mode-nappia, jolloin voit tarkastella sisältö ennen siihen
+              luottamista.
+            </li>
+          </ul>
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 8.webp"
+              alt="Trust and Open Project?-varoitus."
+            />
+            <figcaption>
+              Trust and Open Project?-varoitus PyCharmissa.
+            </figcaption>
+          </figure>
+          <!-- Accordion content ends -->
+        </div>
+      </div>
+      <!-- Accordion element ends -->
+    </li>
+    <li>
+      <h6>Lisätään uudet tiedostot</h6>
+      <ul>
+        <li>
+          Projekti aukeaa Android Studiossa ja näet kloonatun etärepositorion
+          sisällön. Lisäksi Android Studio loi automaattisesti .idea
+          asetuskansion.
+        </li>
+        <li>
+          lisää uusi tiedosto valitsemalla
+          <img
+            class="plus-sign"
+            src="../../assets/images/svg/plus.svg"
+            alt="plus merkki"
+          />
+          -ikonilla aukeavasta alasvetovalikosta <strong>File</strong>.
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 9.webp"
+          alt="Tiedoston lisääminen."
+        />
+        <figcaption>Tiedoston lisääminen.</figcaption>
+      </figure>
+
+      <ul>
+        <li>
+          Lisättään projektiin .gitignore tiedosto antamalla lisättävälle
+          tiedoslle nimi
+          <code>.gitignore</code> ja paina <strong>Enter</strong>.
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 10.webp"
+          alt="Tiedoston lisääminen ja nimeäminen."
+        />
+        <figcaption>Tiedoston lisääminen ja nimeäminen.</figcaption>
+      </figure>
+      <ul>
+        <li>
+          Android Studio kysyy jo tässä vaiheessa haluatko lisätä tiedoston
+          versionhallintaan. Voi lisätä sen nyt painamalla
+          <strong>Add</strong> nappia tai klikata <strong>Cancel</strong> nappia
+          ja lisätä sen myöhemmin esitellyllä tavalla
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 11.webp"
+          alt="Tiedoston lisääminen versionhallintaan."
+        />
+        <figcaption>Tiedoston lisääminen versionhallintaan.</figcaption>
+      </figure>
+      <ul>
+        <li>
+          Lisättään projektiin vielä toinen tiedosto antamalla lisättävälle
+          tiedoslle nimi esim.
+          <code>testitiedosto-android-studiolla.md</code> ja paina
+          <strong>Enter</strong>.
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 12.webp"
+          alt="Tiedoston lisääminen ja nimeäminen."
+        />
+        <figcaption>Tiedoston lisääminen ja nimeäminen.</figcaption>
+      </figure>
+      <div class="note-box">
+        <ul>
+          <li class="warning">
+            Voi taas lisätä tiedoston versionhallintaa kuten kohdassa 4 tai
+            jättää sen myöhempään.
+          </li>
+        </ul>
+      </div>
+      <ul>
+        <li>
+          Lisää tiedostolle sopiva sisältö ja tallenna pikanäppäimellä
+          <strong>CTRL + S</strong>
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 14.webp"
+          alt="Tiedoston sisällön lisääminen."
+        />
+        <figcaption>Tiedoston sisällön lisääminen.</figcaption>
+      </figure>
+
+      <ul>
+        <li>
+          Muuta vielä README.md tiedoston sisältöä ja tallenna pikanäppäimellä
+          <strong>CTRL + S</strong>
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 15.webp"
+          alt="README.md tiedoston sisällön muokkaaminen."
+        />
+        <figcaption>README.md tiedoston sisällön muokkaaminen.</figcaption>
+      </figure>
+    </li>
+    <li>
+      <h6>Jätä .idea kansio pois versionhallinnasta</h6>
+      <ul>
+        <li>
+          Lisää gitignore-tiedostoon <code>.idea/</code> ja tallenna
+          pikanäppäimellä
+          <strong>CTRL + S</strong>
+        </li>
+      </ul>
+
+      <div class="note-box margin-right">
+        <code>.gitignore</code>:sta lisää tietoa osiossa:
+        <a href="/teamwork/privacy-and-security.html"
+          >2.5 yksityisyys ja tietoturva</a
+        >
+      </div>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 13.webp"
+          alt=".gitignore ja .idea kansion jättäminen pois versionhallinnasta."
+        />
+        <figcaption>
+          .gitignore ja .idea kansion jättäminen pois versionhallinnasta.
+        </figcaption>
+      </figure>
+      <ul>
+        <li>
+          Tiedostojen/kansioiden värit:<br />
+          Oranssi .gitignorattu versionhallinnasta<br />
+          Sininen versionhallinnassa ja muutettu<br />
+          Punainen uusi tiedosto ei lisätty versionhallintaan.
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 25.webp"
+          alt=".gitignore ja .idea kansion jättäminen pois versionhallinnasta."
+        />
+        <figcaption>
+          .gitignore ja .idea kansion jättäminen pois versionhallinnasta.
+        </figcaption>
+      </figure>
+    </li>
+    <li>
+      <h6>
+        Uuden haaran luominen ja uusien tiedostojen lisääminen staging tilaan.
+      </h6>
+      <ul>
+        <li>
+          Valitse <strong>New Branch</strong> joko yläpalkin
+          <strong>versionhallinta pikavalikosta</strong> tai päävalikosta
+          <strong>Main Menu > Git > New Branch</strong> tai pikanäppäimellä
+          <strong>CTRL + ALT + N</strong>
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 16.webp"
+          alt="Muutoksien vieminen staging tilaan."
+        />
+        <figcaption>Muutoksien vieminen staging tilaan.</figcaption>
+      </figure>
+      <ul>
+        <li>
+          Anna haaralle nimi, esim. <code>android-studio-haara</code> ja klikkaa
+          <strong>Create</strong>.
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 17.webp"
+          alt="Muutoksien vieminen staging tilaan."
+        />
+        <figcaption>Muutoksien vieminen staging tilaan.</figcaption>
+      </figure>
+      <ul>
+        <li>Klikkaa <strong>kansiota</strong> jossa tiedostot ovat.</li>
+        <li>
+          Tämän jälkeen klikkaa ylävalikosta
+          <strong>Main Menu</strong> kuvaketta.
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 18.webp"
+          alt="Muutoksien vieminen staging tilaan."
+        />
+        <figcaption>Muutoksien vieminen staging tilaan.</figcaption>
+      </figure>
+      <ul>
+        <li>
+          Valitse päävilikosta välilehti <strong>Git</strong>, Sen alta
+          <strong>Selected Directory</strong> ja klikkaa <strong>Add</strong>.
+        </li>
+        <li>Tämä lisää kaikki kansion tiedostot staging tilaan.</li>
+        <li>
+          Vaihtoehtoisesti voit tehdä lisäämisen pikanäppäimillä painamalla
+          kansion valitsemisen jälkeen
+          <strong>CTRL + ALT + A</strong>. Tai voi valita kansion sijaan
+          yksittäisen tiedonston ja viedä sen staging tilaan, joko valikosta
+          (Main Menu > Git > Current file > Add) tai pikanäppäimillä.
+        </li>
+      </ul>
+
+      <div class="note-box margin-right">
+        <ul>
+          <li>Tämä vastaa komentoa: <code> git add . </code></li>
+          <li class="warning">
+            Käytä komentoa <code>git add .</code> varoen. <br />
+            Jos olet lisännyt samaan kansioon jotain arkaluontoistatietoa
+            sisältäviä tiedostoja, joita et halua lisätä repositioon, niin
+            <strong>älä</strong> käytä <code>git add .</code> komentoa tai lisää
+            repositorioon <code>.gitignore</code> -tiedosto, joka estää siihen
+            nimettyjen tiedostojen lisäämisen repositorioon.
+          </li>
+          <li>
+            <code>.gitignore</code>:sta lisää tietoa osiossa:
+            <a href="/teamwork/privacy-and-security.html"
+              >2.5 yksityisyys ja tietoturva</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 19.webp"
+          alt="Muutoksien vieminen staging tilaan"
+        />
+        <figcaption>Muutoksien vieminen staging tilaan</figcaption>
+      </figure>
+
+      <ul>
+        <li>
+          Lisättyjen tiedostojen väri muuttuu punaisesta vihreäksi. Muutetut
+          säilyvät sinisenä.
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 26.webp"
+          alt="Lisätyt tiedostot"
+        />
+        <figcaption>Lisätyt tiedostot.</figcaption>
+      </figure>
+    </li>
+    <li>
+      <h6>
+        Muutoksin commitoiminen, viestin lisääminen ja vienti etärepositorioon.
+      </h6>
+      <ul>
+        <li>
+          Avaa Commit valikko: klikkaamalla sivupalkin
+          <strong>Commit</strong> kuvaketta tai ylävalikosta
+          <strong>Main Menu > Git > Commit</strong> tai pikanäppäimillä
+          <strong>CTRL + K</strong>.
+        </li>
+        <li>Valitse <strong>tiedostot</strong> committiin.</li>
+        <li>Lisää <strong>commit-viesti</strong> tekstikenttään.</li>
+        <li>
+          Paina <strong>Commit</strong> nappia commitoidaksesi muutokset
+          paikalliseen repositorioon.
+        </li>
+        <li>
+          tai paina <strong>Commit and Push</strong> nappia commitoidaksesi
+          muutokset paikallisesti ja viedäksesi muutoset myös etärepositorioon.
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 20.webp"
+          alt="Muutoksin commitoiminen, viestin lisääminen"
+        />
+        <figcaption>Muutoksin commitoiminen, viestin lisääminen.</figcaption>
+      </figure>
+
+      <ul>
+        <li>
+          Commitoitoitujen tiedostojen väri muuttuu vihreäksi valkoiseksi.
+          Versionhallinnan ulkopuolelle jätetyt tidostot säilyvät oransseina.
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 27.webp"
+          alt="Lisätyt tiedostot"
+        />
+        <figcaption>Lisätyt tiedostot.</figcaption>
+      </figure>
+      <ul>
+        <li>
+          Mikäli teit vain commitin, voit viedä commitoidut muutokset
+          etärepositorioon tekemällä pushin erikseen
+        </li>
+        <li>
+          Valitse <strong>Push</strong> joko yläpalkin
+          <strong>versionhallinta pikavalikosta</strong> tai päävalikosta
+          <strong>Main Menu > Git > Push</strong> tai pikanäppäimellä
+          <strong>CTRL + SHIFT + K</strong>
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 21.webp"
+          alt="Muutoksien pushaaminen erikseen"
+        />
+        <figcaption>Muutoksien pushaaminen erikseen.</figcaption>
+      </figure>
+
+      <ul>
+        <li>
+          Seuraava push ruutu avautuun niin Commit and Push napilla kuin
+          erikseen pushatessa. Ruudussa näkyy pushattavan commitin viesti sekä
+          pushattava haara sekä kohdehaara ja tiedostot.
+        </li>
+        <li>
+          Klikkaa <strong>Push</strong> nappia viedäksesi muutokset
+          etärepositorioon.
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 22.webp"
+          alt="Pushauksen viimeistely ruutu"
+        />
+        <figcaption>Pushauksen viimeistely ruutu.</figcaption>
+      </figure>
+    </li>
+    <li>
+      <h6>Tuodut muutokset GitHubissa</h6>
+      <ul>
+        <li>
+          Mene selaimella GitHubiin ja Android Studioon yhdistämääsi
+          repositorioon.
+        </li>
+        <li>Klikkaa haaran valintaa jossa lukee <strong>Main</strong>.</li>
+        <li>Valitse uusi haara.</li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 23.webp"
+          alt="Muutokset GitHubissa"
+        />
+        <figcaption>Muutokset GitHubissa.</figcaption>
+      </figure>
+      <ul>
+        <li>Nyt lisätyt tiedostot näkyvät uudessa haarassa.</li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 24.webp"
+          alt="Muutokset GitHubissa"
+        />
+        <figcaption>Muutokset GitHubissa.</figcaption>
+      </figure>
+    </li>
+  </ol>
 </section>
