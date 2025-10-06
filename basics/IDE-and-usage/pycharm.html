@@ -1,12 +1,17 @@
 <section class="git-install">
   <header>
-    <h1>Git:n käyttö PyCharmilla</h1>
+    <h1>Gitin käyttö PyCharmilla</h1>
     <p>
       Tällä sivulla käsitellään Gitin käyttöä <strong>PyCharmilla</strong>.
-      Huomiona mainittakoon, että PyCharm tarjoaa mahdollisuuksia tehdä monia
-      Git toimintoja usealla eri tavalla. Eli jokin toiminnoista voi olla
-      mahdollista tehdä paremmin ja tehokkaammin kuin mitä ohjeessa on esitetty,
-      vaikkapa pikanäppäimien avulla.
+      Haitari elementistä voit katsoa tarvittaessa ohjeet Gitin ja GitHubin
+      käyttöönottoon editorille. Muutoin osion ohjeissa käytetään uutta
+      repositoriota, cloonataan se paikalliseksi repositorioksi IDE:llä. Luodaan
+      editorin avulla jälleen tiedostot (oletus main.py ja README.md) ja viedään
+      ne etärepositorion päähaaraan. <br /><br />
+      Huomiona mainittakoon, että myös PyCharm tarjoaa mahdollisuuksia tehdä Git
+      toimintoja usealla eri tavalla. Jotkin toiminnoista voi tehdä
+      mahdollisesti myös toisella tapaa, ehkäpä jopa paremmin sekä tehokkaammin
+      kuin mitä ohjeessa on esitetty.
     </p>
   </header>
   <div
@@ -35,14 +40,21 @@
         </li>
         <li>
           Valitse asetusvalikon vasemmalta puolelta listasta
-          <strong>Version Control</strong> ja sen alta <strong>Git</strong
-          ><br />
-          Testaa, että PyCharm löytää Gitin painamalla
-          <strong>Test</strong> nappia. <br />
-          Mikäli Git löytyy näykyy sen <strong>version numero</strong> polun
-          alla. <br />
-          Mikäli Gitiä ei löytynyt anna PyCharmille polku johon olet Gitin
-          asentanut.
+          <strong>Version Control</strong> ja sen alta <strong>Git</strong>
+          <ul>
+            <li>
+              Testaa, että PyCharm löytää Gitin painamalla
+              <strong>Test</strong> nappia.
+            </li>
+            <li>
+              Mikäli Git löytyy näykyy sen <strong>version numero</strong> polun
+              alla.
+            </li>
+            <li>
+              Mikäli Gitiä ei löytynyt anna PyCharmille polku johon olet Gitin
+              asentanut.
+            </li>
+          </ul>
 
           <figure>
             <img
@@ -57,9 +69,14 @@
         </li>
         <li>
           Valitse asetusvalikon vasemmalta puolelta listasta
-          <strong>Version Controlin</strong> alta <strong>GitHub</strong><br />
-          Yhdistä GitHub tilisi PyCharmiin klikkaamalla
-          <strong>Add account...</strong> tekstiä.
+          <strong>Version Controlin</strong> alta <strong>GitHub</strong>
+          <ul>
+            <li>
+              Yhdistä GitHub tilisi PyCharmiin klikkaamalla
+              <strong>Add account...</strong> tekstiä.
+            </li>
+          </ul>
+
           <figure>
             <img
               class="wide-image"
@@ -69,7 +86,9 @@
             <figcaption>GitHub tilin lisääminen PyCharmiin.</figcaption>
           </figure>
 
-          Valitse <strong>Log in via GitHub...</strong>
+          <ul>
+            <li>Valitse <strong>Log in via GitHub...</strong></li>
+          </ul>
 
           <figure>
             <img
@@ -79,6 +98,11 @@
             />
             <figcaption>GitHub tilin lisääminen PyCharmiin.</figcaption>
           </figure>
+          <p class="note-box">
+            GitHub-tilin yhdistäminen editoriin voi hieman erota tässä
+            esitetystä, mikäli olet jo antanut oikeudet jollekin toiselle
+            JetBrainsin editorille käyttää tilisi sisältöä.
+          </p>
         </li>
         <li>
           Avautuu selain ikkuna ja klikkaa
@@ -125,9 +149,7 @@
         </li>
         <li>
           Anna kaksivaiheisen tunnistautumisen avainkoodi
-          tunnistautumissovelluksestasi <br />
-
-          Klikkaa
+          tunnistautumissovelluksestasi ja klikkaa
           <strong>Verify</strong>
 
           <figure>
@@ -168,9 +190,9 @@
             <img
               class="wide-image"
               src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 9.webp"
-              alt="GitHub Copiltin käyttöönotto"
+              alt="Vahvistus ja sulje selainikkuna"
             />
-            <figcaption>GitHub Copiltin käyttöönotto.</figcaption>
+            <figcaption>Vahvistus ja sulje selainikkuna.</figcaption>
           </figure>
         </li>
         <li>
@@ -182,9 +204,9 @@
             <img
               class="wide-image"
               src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 10.webp"
-              alt="GitHub Copiltin käyttöönotto"
+              alt="Vahvistus ja sulje asetusikkuna"
             />
-            <figcaption>GitHub Copiltin käyttöönotto.</figcaption>
+            <figcaption>Vahvistus ja sulje asetusikkuna.</figcaption>
           </figure>
         </li>
       </ol>
@@ -201,7 +223,7 @@
       </h6>
     </li>
     <li>
-      <h6>Tuo etärepositorio PyCharmiin</h6>
+      <h6>Kloonaa luomasi etärepositorio PyCharmiin</h6>
       <ul>
         <li>
           Klikkaa projects valikossa <strong>Clone Repository</strong>
@@ -300,7 +322,7 @@
         <li>
           PyCharm loi projektille <strong>main.py</strong> ja kysyy haluatko
           lisätä tiedoston versionhallintaan. Voi lisätä sen nyt painamalla
-          <strong>Add</strong> nappia tai klikata <strong>cancel</strong> nappia
+          <strong>Add</strong> nappia tai klikata <strong>Cancel</strong> nappia
           ja lisätä sen myöhemmin esitellyllä tavalla
         </li>
       </ul>
