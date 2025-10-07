@@ -11,7 +11,7 @@
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 0.4rem auto;
+  margin: 0 auto 0 0;
 }
 
 /* image zoom effect on click */
@@ -21,6 +21,19 @@ img:focus {
   transition: transform 0.25s ease;
   z-index: 10;
   position: relative;
+}
+
+figure {
+  height: fit-content;
+}
+
+/* image zoom effect on click */
+.accordion img:active,
+.accordion img:focus {
+  transform: scale(1.5);
+  transition: transform 0.25s ease;
+  z-index: 10;
+  position: absolute;
 }
 
 /* div for arrow buttons */
@@ -125,7 +138,7 @@ ol.edit-number {
   font-size: 1rem;
 }
 
-ol.edit-number li::marker {
+ol.edit-number li::marker:not(.warning::marker) {
   font-size: 1rem;
   font-weight: bold;
 }
@@ -177,7 +190,7 @@ figcaption {
   display: inline-block;
 }
 
-/* red exclamation mark for important notes */
+/* red exclamation mark for important list items */
 .warning::marker {
   content: "❗";
   color: red;

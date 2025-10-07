@@ -1,6 +1,569 @@
 <section class="git-install">
   <header>
-    <h1>Git:n käyttö PyCharmilla</h1>
-    <p>Tällä sivulla käsitellään Git:n käyttö <strong>PyCharmilla</strong>.</p>
+    <h1>Gitin käyttö PyCharmilla</h1>
+    <p>
+      Tällä sivulla käsitellään Gitin käyttöä <strong>PyCharmilla</strong>.
+      Haitari elementistä voit katsoa tarvittaessa ohjeet Gitin ja GitHubin
+      käyttöönottoon editorille. Muutoin osion ohjeissa käytetään uutta
+      repositoriota, cloonataan se paikalliseksi repositorioksi IDE:llä. Luodaan
+      editorin avulla jälleen tiedostot (oletus main.py ja README.md) ja viedään
+      ne etärepositorion päähaaraan. <br /><br />
+      Huomiona mainittakoon, että myös PyCharm tarjoaa mahdollisuuksia tehdä Git
+      toimintoja usealla eri tavalla. Jotkin toiminnoista voi tehdä
+      mahdollisesti myös toisella tapaa, ehkäpä jopa paremmin sekä tehokkaammin
+      kuin mitä ohjeessa on esitetty.
+    </p>
   </header>
+  <div
+    class="accordion"
+    data-include="../../accordion-element/accordion.html"
+    data-title="Gitin ja GitHubin käyttöönotto PyCharmissa"
+  >
+    <div class="contentToAccordion">
+      <p class="keep-margin">
+        Gitin ja GitHubin käyttöönottamiseksi PyCharmissa käy läpi,
+        <a href="/basics/git-install.html">1.4 käyttöönotto</a> osiossa tehtyjen
+        toimien lisäksi, seuraavat asetukset.
+      </p>
+      <ol>
+        <li>
+          Klikkaa vasemmalta alhaalta <strong>Ratas</strong> kuvaketta ja
+          valitse <strong>Settings</strong><br />
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 1.webp"
+              alt="Asetusvalikon avaaminen PyCharm."
+            />
+            <figcaption>Asetusvalikon avaaminen PyCharm.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Valitse asetusvalikon vasemmalta puolelta listasta
+          <strong>Version Control</strong> ja sen alta <strong>Git</strong>
+          <ul>
+            <li>
+              Testaa, että PyCharm löytää Gitin painamalla
+              <strong>Test</strong> nappia.
+            </li>
+            <li>
+              Mikäli Git löytyy näykyy sen <strong>version numero</strong> polun
+              alla.
+            </li>
+            <li>
+              Mikäli Gitiä ei löytynyt anna PyCharmille polku johon olet Gitin
+              asentanut.
+            </li>
+          </ul>
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 2.webp"
+              alt="Vesionhallinta asetukset PyCharm ja Git polun tarkistus"
+            />
+            <figcaption>
+              Vesionhallinta asetukset PyCharm ja Git polun tarkistus.
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          Valitse asetusvalikon vasemmalta puolelta listasta
+          <strong>Version Controlin</strong> alta <strong>GitHub</strong>
+          <ul>
+            <li>
+              Yhdistä GitHub tilisi PyCharmiin klikkaamalla
+              <strong>Add account...</strong> tekstiä.
+            </li>
+          </ul>
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 3.webp"
+              alt="GitHub tilin lisääminen PyCharmiin"
+            />
+            <figcaption>GitHub tilin lisääminen PyCharmiin.</figcaption>
+          </figure>
+
+          <ul>
+            <li>Valitse <strong>Log in via GitHub...</strong></li>
+          </ul>
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 4.webp"
+              alt="GitHub tilin lisääminen PyCharmiin"
+            />
+            <figcaption>GitHub tilin lisääminen PyCharmiin.</figcaption>
+          </figure>
+          <p class="note-box">
+            GitHub-tilin yhdistäminen editoriin voi hieman erota tässä
+            esitetystä, mikäli olet jo antanut oikeudet jollekin toiselle
+            JetBrainsin editorille käyttää tilisi sisältöä.
+          </p>
+        </li>
+        <li>
+          Avautuu selain ikkuna ja klikkaa
+          <strong>Authorize in GitHub</strong> nappia
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 5.webp"
+              alt="PGitHub tilin lisääminen PyCharmiin selaimessa"
+            />
+            <figcaption>
+              GitHub tilin lisääminen PyCharmiin selaimessa.
+            </figcaption>
+          </figure>
+
+          <div class="note-box">
+            <ul>
+              <li class="warning">
+                Mikäli sinulla on jo GitHub auki selaimessa ja olet kirjatunut
+                sisään, voit siirtyä suoraan kohtaan:
+                <strong>7. Luvananto PyCharmille</strong>.
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          Syötä aukeavaan selainikkunaan GitHub-tilin
+          <strong>käyttäjänimi</strong> tai <strong>sähköposti</strong> ja
+          <strong>salasana</strong>
+          <strong></strong>
+          <br />
+
+          Klikkaa
+          <strong>Sign in</strong>
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 6.webp"
+              alt="Kirjautuminen GitHubiin"
+            />
+            <figcaption>Kirjautuminen GitHubiin.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Anna kaksivaiheisen tunnistautumisen avainkoodi
+          tunnistautumissovelluksestasi ja klikkaa
+          <strong>Verify</strong>
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 7.webp"
+              alt="Kaksivaiheinen tunnistautuminen"
+            />
+            <figcaption>Kaksivaiheinen tunnistautuminen.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Anna PyCharmille lupa päästä GitHub-tilillesi klikkaamalla
+          <strong>Authorize JetBrains</strong>
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 8.webp"
+              alt="Luvan antaminen PyCharmille."
+            />
+            <figcaption>Luvan antaminen PyCharmille.</figcaption>
+          </figure>
+
+          <p class="note-box">
+            Mikäli sinulla oli GitHub avoinna selaimessa ja olit jo valmiiksi
+            kirjautuneena sinne sisään ja jos sinulla on kaksivaiheinen
+            tunnistautuminen käytössä saattaa GitHub tämän vaiheen jälkeen
+            pyytää vielä syöttämään tunnistautumissovelluksen avainkoodin (kts.
+            kohta 6).
+          </p>
+        </li>
+        <li>
+          Tulee ilmoitus, että olet sallinut PyCharmille pääsyn GitHub-tilillesi
+          ja voit sulkea selainikkunan.
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 9.webp"
+              alt="Vahvistus ja sulje selainikkuna"
+            />
+            <figcaption>Vahvistus ja sulje selainikkuna.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Myös PyCharm näyttää GitHub asetusvälilehden alla lisäämäsi tilin.
+          <br />
+          Sulje asetusikkuna klikkaamalla <strong>OK</strong> nappia.
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 10.webp"
+              alt="Vahvistus ja sulje asetusikkuna"
+            />
+            <figcaption>Vahvistus ja sulje asetusikkuna.</figcaption>
+          </figure>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <ol class="edit-number sections">
+    <li>
+      <h6>
+        Luo uusi repositorio gitin testaamista varten osan
+        <a href="/basics/git-install.html#create-repository"
+          >1.4 Käyttöönotto/GitHub-repositorion luominen</a
+        >
+        ohjeen mukaan
+      </h6>
+    </li>
+    <li>
+      <h6>Kloonaa luomasi etärepositorio PyCharmiin</h6>
+      <ul>
+        <li>
+          Klikkaa projects valikossa <strong>Clone Repository</strong>
+
+          joko Welcome to PyCharm tekstin alta tai mikäli sinulla on aikaisempia
+          projekteja niin niiden yläpuolelta oikeanpuolimmaisesta napista
+        </li>
+      </ul>
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 12.webp"
+          alt="Repositorion kloonaaminen (ensimmäinen projekti)."
+        />
+        <figcaption>
+          Repositorion kloonaaminen (ensimmäinen projekti).
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 11.webp"
+          alt="Repositorion kloonaaminen (on jo aikaisempia projekteja)."
+        />
+        <figcaption>
+          Repositorion kloonaaminen (on jo aikaisempia projekteja).
+        </figcaption>
+      </figure>
+    </li>
+    <li>
+      <h6>Anna kloonattava repositorio.</h6>
+      <ul>
+        <li>
+          <strong>Repository URL</strong> valikossa anna
+          <strong>URL-kenttään</strong> etärepositorion osoite.
+        </li>
+        <li>
+          Muuta halutessasi kohde kansio
+          <strong>Directory-kenttään</strong>.
+        </li>
+        <li>
+          Klikkaa
+          <strong>Clone</strong> nappia.
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 13.webp"
+          alt="Kloonattavat etärepositorion valitseminen."
+        />
+        <figcaption>Kloonattavat etärepositorion valitseminen.</figcaption>
+      </figure>
+
+      <!-- Accordion element starts -->
+      <div
+        class="accordion"
+        data-include="../../accordion-element/accordion.html"
+        data-title="Trust and Open Project?-varoitus"
+      >
+        <div class="contentToAccordion">
+          <!-- Accordion content starts -->
+          <ul>
+            <li>
+              Jos tiedät, että kansio on luotettava (esim. oma projektisi),
+              valitse <strong>Trust Project</strong>.
+            </li>
+            <li>
+              Jos et ole varma kansion tai projektin sisällöstä ja
+              luotettavuudesta, voit avata kansion klikkaamalla Preview in Safe
+              Mode-nappia, jolloin voit tarkastella sisältö ennen siihen
+              luottamista.
+            </li>
+          </ul>
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 14.webp"
+              alt="Trust and Open Project?-varoitus."
+            />
+            <figcaption>
+              Trust and Open Project?-varoitus PyCharmissa.
+            </figcaption>
+          </figure>
+          <!-- Accordion content ends -->
+        </div>
+      </div>
+      <!-- Accordion element ends -->
+    </li>
+    <li>
+      <h6>PyCharmin luoma main.py tiedosto</h6>
+      <ul>
+        <li>
+          PyCharm loi projektille <strong>main.py</strong> ja kysyy haluatko
+          lisätä tiedoston versionhallintaan. Voi lisätä sen nyt painamalla
+          <strong>Add</strong> nappia tai klikata <strong>Cancel</strong> nappia
+          ja lisätä sen myöhemmin esitellyllä tavalla
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 15.webp"
+          alt="PyCharmin luoma main.py tiedosto."
+        />
+        <figcaption>PyCharmin luoma main.py tiedosto.</figcaption>
+      </figure>
+    </li>
+    <li>
+      <h6>README.md tiedosnton lisääminen</h6>
+      <ul>
+        <li>
+          Valitse
+          <img
+            class="plus-sign"
+            src="../../assets/images/svg/plus.svg"
+            alt="plus merkki"
+          />
+          -ikonilla aukeavasta alasvetovalikosta <strong>File</strong>.
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 16.webp"
+          alt="Tiedoston lisääminen."
+        />
+        <figcaption>Tiedoston lisääminen.</figcaption>
+      </figure>
+
+      <ul>
+        <li>
+          Anna lisättävälle tiedostolle nimi
+          <code>README.md</code> ja paina <strong>Enter</strong>.
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 17.webp"
+          alt="Tiedoston lisääminen ja nimeäminen."
+        />
+        <figcaption>Tiedoston lisääminen ja nimeäminen.</figcaption>
+      </figure>
+      <div class="note-box">
+        <ul>
+          <li class="warning">
+            Voi taas lisätä tiedoston versionhallintaa kuten kohdassa 4 tai
+            jättää sen myöhempään.
+          </li>
+        </ul>
+      </div>
+
+      <ul>
+        <li>
+          Lisää tiedostolle sopiva sisältö ja tallenna pikanäppäimellä
+          <strong>CTRL + S</strong>
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 18.webp"
+          alt="Tiedoston sisällön lisääminen."
+        />
+        <figcaption>Tiedoston sisällön lisääminen.</figcaption>
+      </figure>
+    </li>
+    <li>
+      <h6>Lisätään uudet tiedosto staging tilaan.</h6>
+      <ul>
+        <li>Klikkaa <strong>kansiota</strong> jossa tiedostot ovat.</li>
+        <li>
+          Tämän jälkeen klikkaa ylävalikosta
+          <strong>Main Menu</strong> kuvaketta.
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 19.webp"
+          alt="Muutoksien vieminen staging tilaan."
+        />
+        <figcaption>Muutoksien vieminen staging tilaan.</figcaption>
+      </figure>
+      <ul>
+        <li>
+          Valitse päävilikosta välilehti <strong>Git</strong>, Sen alta
+          <strong>Selected Directory</strong> ja klikkaa <strong>Add</strong>.
+        </li>
+        <li>Tämä lisää kaikki kansion tiedostot staging tilaan.</li>
+        <li>
+          Vaihtoehtoisesti voit tehdä lisäämisen pikanäppäimillä painamalla
+          kansion valitsemisen jälkeen
+          <strong>CTRL + ALT + A</strong>. Tai voi valita kansion sijaan
+          yksittäisen tiedonston ja viedä sen staging tilaan, joko valikosta
+          (Main Menu > Git > Current file > Add) tai pikanäppäimillä.
+        </li>
+      </ul>
+
+      <div class="note-box margin-right">
+        <ul>
+          <li>Tämä vastaa komentoa: <code> git add . </code></li>
+          <li class="warning">
+            Käytä komentoa <code>git add .</code> varoen. <br />
+            Jos olet lisännyt samaan kansioon jotain arkaluontoistatietoa
+            sisältäviä tiedostoja, joita et halua lisätä repositioon, niin
+            <strong>älä</strong> käytä <code>git add .</code> komentoa tai lisää
+            repositorioon <code>.gitignore</code> -tiedosto, joka estää siihen
+            nimettyjen tiedostojen lisäämisen repositorioon.
+          </li>
+          <li>
+            <code>.gitignore</code>:sta lisää tietoa osiossa:
+            <a href="/teamwork/privacy-and-security.html"
+              >2.5 yksityisyys ja tietoturva</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 20.webp"
+          alt="Muutoksien vieminen staging tilaan"
+        />
+        <figcaption>Muutoksien vieminen staging tilaan</figcaption>
+      </figure>
+
+      <ul>
+        <li>Lisättyjen tiedostojen väri muuttuu punaisesta vihreäksi.</li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 21.webp"
+          alt="Lisätyt tiedostot"
+        />
+        <figcaption>Lisätyt tiedostot.</figcaption>
+      </figure>
+    </li>
+    <li>
+      <h6>
+        Muutoksin commitoiminen, viestin lisääminen ja vienti etärepositorioon.
+      </h6>
+      <ul>
+        <li>
+          Avaa Commit valikko: ylävalikosta
+          <strong>Main Menu > Git > Commit</strong> tai klikkaamalla sivupalkin
+          <strong>Commit</strong> kuvaketta tai pikanäppäimillä
+          <strong>CTRL + K</strong>.
+        </li>
+        <li>Lisää commit-viesti <strong>tekstikenttään</strong>.</li>
+        <li>
+          Paina <strong>Commit</strong> nappia commitoidaksesi muutokset
+          paikalliseen repositorioon.
+        </li>
+        <li>
+          tai paina <strong>Commit and Push</strong> nappia commitoidaksesi
+          muutokset paikallisesti ja viedäksesi muutoset etärepositorioon.
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 22.webp"
+          alt="Muutoksin commitoiminen, viestin lisääminen"
+        />
+        <figcaption>Muutoksin commitoiminen, viestin lisääminen.</figcaption>
+      </figure>
+      <ul>
+        <li>
+          Mikäli teit vain commitin, voit viedä commitoidut muutokset
+          etärepositorioon tekemällä pushin erikseen
+        </li>
+        <li>
+          Valitse <strong>Push</strong> joko yläpalkin
+          <strong>versionhallinta pikavalikosta</strong> tai päävalikosta
+          <strong>Main Menu > Git > Push</strong> tai pikanäppäimellä
+          <strong>CTRL + SHIFT + K</strong>
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 23.webp"
+          alt="Muutoksien pushaaminen erikseen"
+        />
+        <figcaption>Muutoksien pushaaminen erikseen.</figcaption>
+      </figure>
+
+      <ul>
+        <li>
+          Seuraava push ruutu avautuun niin Commit and Push napilla kuin
+          erikseen pushatessa. Ruudussa näkyy pushattavan commit-viesti sekä
+          pushattava haara ja tiedostot.
+        </li>
+        <li>
+          Klikkaa <strong>Push</strong> nappia viedäksesi muutokset
+          etärepositorioon.
+        </li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 24.webp"
+          alt="Pushauksen viimeistely ruutu"
+        />
+        <figcaption>Pushauksen viimeistely ruutu.</figcaption>
+      </figure>
+    </li>
+    <li>
+      <h6>Tuodut muutokset GitHubissa</h6>
+      <ul>
+        <li>
+          Mene selaimella GitHubiin ja PyCharmiin yhdistämääsi repositorioon.
+        </li>
+        <li>Nyt lisätyt tiedostot näkyvät GitHubissa</li>
+      </ul>
+
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 25.webp"
+          alt="Muutokset GitHubissa"
+        />
+        <figcaption>Muutokset GitHubissa.</figcaption>
+      </figure>
+    </li>
+  </ol>
 </section>

@@ -10,6 +10,11 @@
       sekä viedään se sammaan, edelisessä osiossakin käytettyyn,
       etärepositorioon, mutta käytetään tälle osiolle omaa haaraansa. Gitin
       käyttöön VS Coden terminaalista voit hyödyntää edellisen sivun ohjeita.
+      <br /><br />
+      Huomiona mainittakoon, että VS Code tarjoaa mahdollisuuksia tehdä Git
+      toimintoja usealla eri tavalla. Jotkin toiminnoista voi tehdä
+      mahdollisesti myös toisella tapaa, ehkäpä jopa paremmin sekä tehokkaammin
+      kuin mitä ohjeessa on esitetty.
     </p>
   </header>
   <div
@@ -49,12 +54,6 @@
           Valitse kirjautumiseen käytettävä tili klikkaamalla
           <strong>Sign in with GitHub</strong>
 
-          <p class="note-box">
-            Mikäli sinulla on jo GitHub auki selaimessa ja olet kirjatunut
-            sisään, voit siirtyä suoraan kohtaan
-            <strong>6. Käytettävän tilin valinta</strong>.
-          </p>
-
           <figure>
             <img
               class="wide-image"
@@ -63,6 +62,15 @@
             />
             <figcaption>Kirjautumiseen käytettävän tilin valinta.</figcaption>
           </figure>
+          <div class="note-box">
+            <ul>
+              <li class="warning">
+                Mikäli sinulla on jo GitHub auki selaimessa ja olet kirjatunut
+                sisään, voit siirtyä suoraan kohtaan:
+                <strong>6. Käytettävän tilin valinta</strong>.
+              </li>
+            </ul>
+          </div>
         </li>
         <li>
           Syötä aukeavaan selainikkunaan GitHub-tilin
@@ -114,6 +122,14 @@
         <li>
           Valitse käytettävä tili klikkaamalla
           <strong>Continue</strong> käyttäjänimen vierestä
+
+          <p class="note-box">
+            Mikäli sinulla oli GitHub avoinna selaimessa ja olit jo valmiiksi
+            kirjautuneena sinne sisään ja jos sinulla on kaksivaiheinen
+            tunnistautuminen käytössä saattaa GitHub tämän vaiheen jälkeen
+            pyytää vielä syöttämään tunnistautumissovelluksen avainkoodin (kts.
+            kohta 4).
+          </p>
 
           <figure>
             <img
@@ -205,12 +221,8 @@
             </li>
             <li>
               Jos et ole varma kansion tai projektin sisällöstä ja
-              luotettavuudesta, voit avata kansion vain “Restricted Mode”
-              -tilassa, jolloin mm. laajennukset ja koodin suoritus estetään.
-            </li>
-            <li>
-              Hyväksy viesti klikkaamalla oikealta ylhäältä
-              <strong>Accept Commit Message</strong> nappia.
+              luotettavuudesta, voit avata kansion “Restricted Mode” -tilassa,
+              jolloin mm. laajennukset ja koodin suoritus estetään.
             </li>
           </ul>
 
@@ -306,11 +318,16 @@
     </li>
     <li>
       <h6>Tuo (Pull) etärepositorion tila paikalliseen repositorioon.</h6>
-      <p class="note-box">
-        Mikäli käytät uutta tyhjää etärepositoriota jätä tämä vaihe välistä ja
-        siirry seuraavaan kohtaan:
-        <em class="no-line-change">5. Luo uusi tiedosto testausta varten</em>.
-      </p>
+      <div class="note-box">
+        <ul>
+          <li class="warning">
+            Mikäli käytät uutta tyhjää etärepositoriota jätä tämä vaihe välistä
+            ja siirry seuraavaan kohtaan:
+            <em class="no-line-change">5. Luo uusi tiedosto testausta varten</em
+            >.
+          </li>
+        </ul>
+      </div>
       <ul>
         <li>
           Klikkaa kolmea pistettä ja valitse Pull, Push-valikon alta valinta
@@ -418,9 +435,8 @@
           <ul>
             <li>
               Avaa Source Control-valikko klikkaamalla sivupalkin kuvakkeesta
-              tai näppäimillä <strong>CTRL</strong> + <strong>SHIFT</strong> +
-              <strong>G</strong>. Klikkaa Changes valikon alta README.MD
-              tiedostoa.
+              tai näppäimillä <strong>CTRL + SHIFT + G</strong>. Klikkaa Changes
+              valikon alta README.MD tiedostoa.
             </li>
             <li>
               Aukeaa ruutu README.md (working tree) jonka avulla voit
@@ -463,13 +479,19 @@
         </li>
       </ul>
 
-      <p class="note-box">
-        Teoriaa gitin haaroihin (branches) liittyen käydään läpi tarkemmin
-        osiossa
-        <a class="no-line-change" href="/teamwork/how-to-teamwork.html#branches"
-          >2.1 Tiimityö ja haarat</a
-        >.
-      </p>
+      <div class="note-box">
+        <ul class="padding-left">
+          <li class="warning">
+            Teoriaa gitin haaroihin (branches) liittyen käydään läpi tarkemmin
+            osiossa
+            <a
+              class="no-line-change"
+              href="/teamwork/how-to-teamwork.html#branches"
+              >2.1 Tiimityö ja haarat</a
+            >.
+          </li>
+        </ul>
+      </div>
 
       <figure>
         <img
@@ -491,6 +513,26 @@
           <strong>Stage All Changes</strong>
         </li>
       </ul>
+
+      <div class="note-box margin-right">
+        <ul>
+          <li>Tämä vastaa komentoa: <code> git add . </code></li>
+          <li class="warning">
+            Käytä komentoa <code>git add .</code> varoen. <br />
+            Jos olet lisännyt samaan kansioon jotain arkaluontoistatietoa
+            sisältäviä tiedostoja, joita et halua lisätä repositioon, niin
+            <strong>älä</strong> käytä <code>git add .</code> komentoa tai lisää
+            repositorioon <code>.gitignore</code> -tiedosto, joka estää siihen
+            nimettyjen tiedostojen lisäämisen repositorioon.
+          </li>
+          <li>
+            <code>.gitignore</code>:sta lisää tietoa osiossa:
+            <a href="/teamwork/privacy-and-security.html"
+              >2.5 yksityisyys ja tietoturva</a
+            >
+          </li>
+        </ul>
+      </div>
 
       <figure>
         <img
@@ -611,6 +653,7 @@
     <li>
       <h6>Uusi haara ja tuodut muutokset GitHubissa</h6>
       <ul>
+        <li>Mene selaimella GitHubiin ja avaa repositorio</li>
         <li>Klikkaa haaran valintaa jossa lukee <strong>Main</strong></li>
         <li>Valitse uusi haara</li>
       </ul>

@@ -276,7 +276,7 @@
     </li>
     <!--List item 5.-->
     <li>
-      <h6>Nyt lisätty tiedosto näkyy githubissa.</h6>
+      <h6>Nyt lisätty tiedosto näkyy GitHubissa.</h6>
       <ul>
         <li>
           Koska kyseessä oli <em>README.md</em>-tiedosto myös sen sisältö näkyy
@@ -302,7 +302,7 @@
     >
     ja ne kannattaa opiskella sieltä. Alla olevat ohjeet ovat lyhyemmät
     esimerkit git haaroihin liittyvistä toiminnoista, jotta ne löytyvät helposti
-    samasta paikkasta myöhempää käyttöä varten.
+    samasta paikkasta muiden peruskomentojen kanssa myöhempää käyttöä varten.
   </p>
   <div class="note-box">
     <ul>
@@ -350,7 +350,11 @@
           <ul>
             <li>
               Lisää tiedostot stagin-tilaan komennolla:<br />
-              <code>git add .</code>
+              <code>git add .</code> tai
+              <code
+                >git add uuden-tiedoston-nimi.md
+                muutetun-tiedoston-nimi.md</code
+              >
             </li>
             <li>
               Tee commit ja lisää viesti komennolla:<br />
@@ -377,6 +381,7 @@
         </li>
         <li>
           <ul>
+            <li>Mene selaimella GitHubiin</li>
             <li>Klikkaa haaran valintaa jossa lukee <strong>Main</strong></li>
             <li>Valitse uusi haara</li>
           </ul>
@@ -411,6 +416,11 @@
     data-title="Feature-haaran yhdistäminen main-haaraan"
   >
     <div class="contentToAccordion">
+      <p class="keep-margin">
+        Kun olet tehnyt kehitystyötäsi varten luomassasi haarasas kaikki
+        tarvittavat muutokset ja saanut valmiiksi vaikkapa uuden ominaisuuden,
+        jonka haluat yhdistää päähaaraan toimi näin:
+      </p>
       <ol>
         <li>
           <ul>
@@ -450,8 +460,8 @@
             </li>
             <p class="note-box margin-right">
               Jos konflikteja ilmenee, Git ilmoittaa ja pyytää ratkaisemaan ne
-              tässä kohtaa. Tästä lisää kohdassa
-              <a href="/teamwork/merge-conflicts.html">merge-konfliktit</a>
+              tässä kohtaa. Tästä lisää osiossa
+              <a href="/teamwork/merge-conflicts.html">2.4 merge-konfliktit</a>
             </p>
             <li>
               Viedään muutokset etärepositorioon komennolla:<br />
