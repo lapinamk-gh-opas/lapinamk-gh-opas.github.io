@@ -1,9 +1,10 @@
 // This JS file enables functionality to content pages arrow buttons (next/prev).
 // user can navigate trugh sub pages and different parts by pressing arrowbuttons.
+import { getPageFromHash, getBasePath, loadPage } from "/assets/js/helpers.js";
 
 // Variables
-let currentPage = getPageFromHash();
-let basePath = getBasePath();
+let currentPage;
+let basePath;
 let currentPath = window.location.pathname;
 let pageNames = [];
 let pageNamesFin = [];
@@ -11,6 +12,11 @@ let linkNames = [];
 let linkNamesFin = [];
 let pageIndex = 0;
 let linkIndex = 0;
+
+document.addEventListener("content:loaded", () => {
+  currentPage = getPageFromHash();
+  basePath = getBasePath();
+});
 
 //Custom event launches this after needed components are loaded
 //Here sidebar links are set to variables for later navigational and text rendering purposes.
@@ -159,11 +165,13 @@ document.addEventListener("keyup", function (event) {
 
 // Function for navigating to next part or subpage
 async function navNext() {
-  console.log("next");
   if (pageIndex < pageNames.length - 1) {
     pageIndex = pageIndex + 1; // sets next page index
     await loadPage(pageNames[pageIndex], basePath); // loads next page
-  } else if (pageIndex === pageNames.length - 1 || pageIndex === 0) {
+  } else if (
+    (pageIndex === pageNames.length - 1 || pageIndex === 0) &&
+    linkNames[linkIndex + 1] !== undefined
+  ) {
     window.location.href = linkNames[linkIndex + 1]; // navigates to next parts
   }
   window.scrollTo(0, 0); //scrolls window to top

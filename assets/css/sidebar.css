@@ -11,7 +11,7 @@
   width: 300px;
   background: rgba(20, 130, 125, 0.2);
   border-right: 2px solid rgba(20, 130, 125, 0.4);
-  transition: width 0.3s ease;
+  transition: width 0.3s ease, min-width 0.3s ease;
   position: relative;
   z-index: 10;
 }
@@ -178,6 +178,7 @@
     height: auto;
     z-index: 10;
     width: 10px;
+    min-width: 10px;
   }
 
   .sidebar a {

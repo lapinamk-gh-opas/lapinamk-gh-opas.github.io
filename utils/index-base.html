@@ -1,89 +1,74 @@
 <!DOCTYPE html>
 <html lang="fi">
+  <head>
+    <link rel="stylesheet" href="/assets/css/loading.css" />
+    <!-- Give page title as variable to initloader function -->
+    <script type="module">
+      import { initLoader } from "/assets/js/loaderInit.js";
+      initLoader("Etusivu");
+    </script>
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <!-- Muuta tähän kappaleen otsikko-->
-  <title>Tiimityö</title>
+  <body>
+    <!-- Loader -->
+    <div id="loader">Ladataan...</div>
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <!-- main content -->
+    <div data-include="../navbar/nav.html"></div>
 
-  <!-- Bootstrap scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"
-    defer></script>
+    <div class="page-layout" id="pageLayout">
+      <div data-include="../sidebar/sidebar.html"></div>
 
-  <!-- Custom CSS stylefiles -->
-  <link rel="stylesheet" href="../assets/css/styles.css" />
-  <link rel="stylesheet" href="../assets/css/nav.css" />
-  <link rel="stylesheet" href="../assets/css/footer.css" />
-  <link rel="stylesheet" href="../assets/css/sidebar.css" />
-  <link rel="stylesheet" href="../assets/css/mainContent.css" />
-  <link rel="stylesheet" href="../assets/css/accordion.css" />
-
-  <!-- Custom js scripts -->
-  <script src="../assets/js/includes.js" defer></script>
-  <script src="../assets/js/sidebar.js" defer></script>
-  <script src="../assets/js/includeSubContent.js" defer></script>
-  <script src="../assets/js/arrows.js" defer></script>
-  <script src="../assets/js/accordion.js" defer></script>
-</head>
-
-<body>
-  <div data-include="../navbar/nav.html"></div>
-
-  <div class="page-layout" id="pageLayout">
-    <div data-include="../sidebar/sidebar.html"></div>
-
-    <main class="main-container" id="mainContainer">
+      <main class="main-container" id="mainContainer">
         <!-- Muuta tätän otsikko ja numero! -->
-      <h1>2 Kappaleen otsikko – mitä opit tässä osiossa</h1> 
-      <main id="content" class="content-screen">
-        <section class="git-install">
-          <p> <!-- Muuta tämä johdantoteksti! -->
-            Tässä osiossa käydään läpi Gitin ja GitHubin käyttö tiimityössä.
-            Opit muun muassa haarojen (branch) käytön, merge-konfliktien
-            ratkaisemisen, rollbackin ja tietoturvan perusasiat. Lisäksi saat
-            vinkkejä sujuvaan tiimityöskentelyyn versionhallinnan avulla.
-          </p>
-          <ol> <!-- Tähän muutetaan kappaleen sisällysluettelo! -->
-            <li>
-              <strong>Git ja tiimityö</strong><br />
-              Tiimityöskentelyn perusteet, selkeiden commit-viestien merkitys sekä repositorion asetusten hallinta.
-            </li>
-            <li>
-              <strong>Haarat</strong><br />
-              Haarojen (branch) hyödyntäminen rinnakkaisessa työskentelyssä.
-            </li>
-            <li>
-              <strong>Pull Request</strong><br />
-              Pull requestien luominen, tarkastelu ja hyväksyminen GitHubissa tiimityön sujuvoittamiseksi.
-            </li>
-            <li>
-              <strong>Merge-konfliktit</strong><br />
-              Merge-konfliktien tunnistaminen, ymmärtäminen ja ratkaiseminen tehokkaasti.
-            </li>
-            <li>
-              <strong>Yksityisyys ja tietoturva</strong><br />
-              Yksityisyyden ja tietoturvan perusasiat Gitin ja GitHubin käytössä.
-            </li>
-            <li>
-              <strong>Harjoitukset</strong><br />
-              Käytännön harjoitukset taitojen vahvistamiseen ja komentojen testaamiseen.
-            </li>
-          </ol>
-
-
-        </section>
+        <h1>2 Kappaleen otsikko – mitä opit tässä osiossa</h1>
+        <main id="content" class="content-screen">
+          <section class="git-install">
+            <p>
+              <!-- Muuta tämä johdantoteksti! -->
+              Tässä osiossa käydään läpi Gitin ja GitHubin käyttö tiimityössä.
+              Opit muun muassa haarojen (branch) käytön, merge-konfliktien
+              ratkaisemisen, rollbackin ja tietoturvan perusasiat. Lisäksi saat
+              vinkkejä sujuvaan tiimityöskentelyyn versionhallinnan avulla.
+            </p>
+            <ol>
+              <!-- Tähän muutetaan kappaleen sisällysluettelo! -->
+              <li>
+                <strong>Git ja tiimityö</strong><br />
+                Tiimityöskentelyn perusteet, selkeiden commit-viestien merkitys
+                sekä repositorion asetusten hallinta.
+              </li>
+              <li>
+                <strong>Haarat</strong><br />
+                Haarojen (branch) hyödyntäminen rinnakkaisessa työskentelyssä.
+              </li>
+              <li>
+                <strong>Pull Request</strong><br />
+                Pull requestien luominen, tarkastelu ja hyväksyminen GitHubissa
+                tiimityön sujuvoittamiseksi.
+              </li>
+              <li>
+                <strong>Merge-konfliktit</strong><br />
+                Merge-konfliktien tunnistaminen, ymmärtäminen ja ratkaiseminen
+                tehokkaasti.
+              </li>
+              <li>
+                <strong>Yksityisyys ja tietoturva</strong><br />
+                Yksityisyyden ja tietoturvan perusasiat Gitin ja GitHubin
+                käytössä.
+              </li>
+              <li>
+                <strong>Harjoitukset</strong><br />
+                Käytännön harjoitukset taitojen vahvistamiseen ja komentojen
+                testaamiseen.
+              </li>
+            </ol>
+          </section>
+        </main>
+        <div data-include="../arrows/arrows.html"></div>
       </main>
-      <div data-include="../arrows/arrows.html"></div>
-    </main>
-  </div>
+    </div>
 
-  <div data-include="../footer/footer.html"></div>
-</body>
-
+    <div data-include="../footer/footer.html"></div>
+  </body>
 </html>

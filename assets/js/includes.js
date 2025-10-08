@@ -16,7 +16,7 @@ document.querySelectorAll("[data-include]").forEach(async (el) => {
 
     // dispatches event when sidebar is loaded (this is used to launch sidebar.js)
     if (path.includes("/sidebar/sidebar.html")) {
-      document.dispatchEvent(new Event("sidebar component:loaded"));
+      document.dispatchEvent(new Event("sidebar-component:loaded"));
       sidebarLoaded = true;
     }
     if (path.includes("/arrows/arrows.html")) {

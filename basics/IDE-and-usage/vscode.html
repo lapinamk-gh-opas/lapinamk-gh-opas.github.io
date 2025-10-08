@@ -5,187 +5,191 @@
       Tällä sivulla käsitellään Gitin käyttöä Microsoftin kehittämällä
       koodieditorilla <strong>Visual Studio Codella</strong> (tai lyhyemmin
       <strong>VS Codella</strong>). Haitari elementistä voit katsoa tarvittaessa
-      ohjeet GitHubin käyttöönottoon editorille. Muutoin osiossa luodaan
-      edellisen sivun malliin editorin avulla jälleen tiedosto ja repositorio
-      sekä viedään se sammaan, edelisessä osiossakin käytettyyn,
-      etärepositorioon, mutta käytetään tälle osiolle omaa haaraansa. Gitin
-      käyttöön VS Coden terminaalista voit hyödyntää edellisen sivun ohjeita.
-      <br /><br />
+      ohjeet GitHubin käyttöönottoon editorille.
+    </p>
+    <div
+      class="accordion"
+      data-include="../../accordion-element/accordion.html"
+      data-title="Gitin ja GitHubin käyttöönotto VS Codessa"
+    >
+      <div class="contentToAccordion">
+        <p class="keep-margin">
+          Gitin ja GitHubin käyttöönottamiseksi VS Codessa et tarvitse tehdä
+          <a href="/basics/git-install.html">1.4 käyttöönotto</a> osiossa
+          tehtyjen toimien lisäksi valttämättä yhtään mitään muuta. Kuitenkin
+          kirjautumalla sisään GitHub tilillesi VS Codella saat käyttöösi mm. VS
+          Coden asetusten varmuuskopioinnin, GitHub Copilotin, yms. GitHub
+          liitännäisiä.
+        </p>
+        <strong>Kirjautminen tapahtuu seuraavasti:</strong>
+        <ol>
+          <li>
+            Klikkaa vasemmalta alhaalta <strong>Accounts</strong> kuvaketta
+            <br />
+            Valitse <strong>Backup and Synch Settings...</strong><br />
+
+            Valitse mitä asetuksia haluat syncronoida ja klikka
+            <strong>Sign in</strong>
+
+            <figure>
+              <img
+                class="wide-image"
+                src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 18.webp"
+                alt="Asetuksien syncronoinnin ja varmuuskopioinnin kytkeminen päälle."
+              />
+              <figcaption>
+                Asetuksien syncronoinnin ja varmuuskopioinnin kytkeminen päälle.
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            Valitse kirjautumiseen käytettävä tili klikkaamalla
+            <strong>Sign in with GitHub</strong>
+
+            <figure>
+              <img
+                class="wide-image"
+                src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 19.webp"
+                alt="Kirjautumiseen käytettävän tilin valinta"
+              />
+              <figcaption>Kirjautumiseen käytettävän tilin valinta.</figcaption>
+            </figure>
+            <div class="note-box">
+              <ul>
+                <li class="warning">
+                  Mikäli sinulla on jo GitHub auki selaimessa ja olet kirjatunut
+                  sisään, voit siirtyä suoraan kohtaan:
+                  <strong>6. Käytettävän tilin valinta</strong>.
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            Syötä aukeavaan selainikkunaan GitHub-tilin
+            <strong>käyttäjänimi</strong> tai <strong>sähköposti</strong> ja
+            <strong>salasana</strong>
+            <strong></strong>
+            <br />
+
+            Klikkaa
+            <strong>Sign in</strong>
+
+            <figure>
+              <img
+                class="wide-image"
+                src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 20.webp"
+                alt="Kirjautuminen GitHubiin"
+              />
+              <figcaption>Kirjautuminen GitHubiin.</figcaption>
+            </figure>
+          </li>
+          <li>
+            Anna kaksivaiheisen tunnistautumisen avainkoodi
+            tunnistautumissovelluksestasi <br />
+
+            Klikkaa
+            <strong>Verify</strong>
+
+            <figure>
+              <img
+                class="wide-image"
+                src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 21.webp"
+                alt="Näkymö kaksivaiheinen tunnistautuminen"
+              />
+              <figcaption>Kaksivaiheinen tunnistautuminen.</figcaption>
+            </figure>
+          </li>
+          <li>
+            Lisää halutessasi passkey tai klikkaa
+            <strong>Ask me later</strong>
+            <figure>
+              <img
+                class="wide-image"
+                src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 22.webp"
+                alt="Passkeyn lisääminen tai ohitus"
+              />
+              <figcaption>Passkeyn lisääminen tai ohitus.</figcaption>
+            </figure>
+          </li>
+          <li>
+            Valitse käytettävä tili klikkaamalla
+            <strong>Continue</strong> käyttäjänimen vierestä
+
+            <p class="note-box">
+              Mikäli sinulla oli GitHub avoinna selaimessa ja olit jo valmiiksi
+              kirjautuneena sinne sisään ja jos sinulla on kaksivaiheinen
+              tunnistautuminen käytössä saattaa GitHub tämän vaiheen jälkeen
+              pyytää vielä syöttämään tunnistautumissovelluksen avainkoodin
+              (kts. kohta 4).
+            </p>
+
+            <figure>
+              <img
+                class="wide-image"
+                src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 23.webp"
+                alt="Tilin valinnan vahvistus"
+              />
+              <figcaption>Tilin valinnan vahvistus.</figcaption>
+            </figure>
+          </li>
+          <li>
+            Anna VS Codelle lupa päästä GitHub-tilillesi klikkaamalla
+            <strong>Authorize Visuals-Studio-Code</strong>
+
+            <figure>
+              <img
+                class="wide-image"
+                src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 24.webp"
+                alt="Luvan antaminen VS Codelle"
+              />
+              <figcaption>Luvan antaminen VS Codelle.</figcaption>
+            </figure>
+          </li>
+          <li>
+            Siirry takaisin VS Codeen klikkaamalla
+            <strong>Avaa Visuals-Studio-Code</strong>
+
+            <figure>
+              <img
+                class="wide-image"
+                src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 25.webp"
+                alt="Siirtyminen takaisin VS Codeen"
+              />
+              <figcaption>Siirtyminen takaisin VS Codeen.</figcaption>
+            </figure>
+          </li>
+          <li>
+            Halutessasi ota Copilot käyttöön ja asenna tarvittavat liitännäiset
+
+            <ul>
+              <li>Klikkaa ensin <strong>Finnish Setup</strong></li>
+              <li>Valitse sitten <strong>Set up Copilot</strong></li>
+            </ul>
+
+            <figure>
+              <img
+                class="wide-image"
+                src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 26.webp"
+                alt="GitHub Copiltin käyttöönotto"
+              />
+              <figcaption>GitHub Copiltin käyttöönotto.</figcaption>
+            </figure>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <p>
+      Muutoin osiossa luodaan edellisen sivun malliin editorin avulla jälleen
+      tiedosto ja repositorio sekä viedään se sammaan, edelisessä osiossakin
+      käytettyyn, etärepositorioon, mutta käytetään tälle osiolle omaa
+      haaraansa. Gitin käyttöön VS Coden terminaalista voit hyödyntää edellisen
+      sivun ohjeita. <br /><br />
       Huomiona mainittakoon, että VS Code tarjoaa mahdollisuuksia tehdä Git
       toimintoja usealla eri tavalla. Jotkin toiminnoista voi tehdä
       mahdollisesti myös toisella tapaa, ehkäpä jopa paremmin sekä tehokkaammin
       kuin mitä ohjeessa on esitetty.
     </p>
   </header>
-  <div
-    class="accordion"
-    data-include="../../accordion-element/accordion.html"
-    data-title="Gitin ja GitHubin käyttöönotto VS Codessa"
-  >
-    <div class="contentToAccordion">
-      <p class="keep-margin">
-        Gitin ja GitHubin käyttöönottamiseksi VS Codessa et tarvitse tehdä
-        <a href="/basics/git-install.html">1.4 käyttöönotto</a> osiossa tehtyjen
-        toimien lisäksi valttämättä yhtään mitään muuta. Kuitenkin kirjautumalla
-        sisään GitHub tilillesi VS Codella saat käyttöösi mm. VS Coden asetusten
-        varmuuskopioinnin, GitHub Copilotin, yms. GitHub liitännäisiä.
-      </p>
-      <strong>Kirjautminen tapahtuu seuraavasti:</strong>
-      <ol>
-        <li>
-          Klikkaa vasemmalta alhaalta <strong>Accounts</strong> kuvaketta <br />
-          Valitse <strong>Backup and Synch Settings...</strong><br />
-
-          Valitse mitä asetuksia haluat syncronoida ja klikka
-          <strong>Sign in</strong>
-
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 18.webp"
-              alt="Asetuksien syncronoinnin ja varmuuskopioinnin kytkeminen päälle."
-            />
-            <figcaption>
-              Asetuksien syncronoinnin ja varmuuskopioinnin kytkeminen päälle.
-            </figcaption>
-          </figure>
-        </li>
-        <li>
-          Valitse kirjautumiseen käytettävä tili klikkaamalla
-          <strong>Sign in with GitHub</strong>
-
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 19.webp"
-              alt="Kirjautumiseen käytettävän tilin valinta"
-            />
-            <figcaption>Kirjautumiseen käytettävän tilin valinta.</figcaption>
-          </figure>
-          <div class="note-box">
-            <ul>
-              <li class="warning">
-                Mikäli sinulla on jo GitHub auki selaimessa ja olet kirjatunut
-                sisään, voit siirtyä suoraan kohtaan:
-                <strong>6. Käytettävän tilin valinta</strong>.
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li>
-          Syötä aukeavaan selainikkunaan GitHub-tilin
-          <strong>käyttäjänimi</strong> tai <strong>sähköposti</strong> ja
-          <strong>salasana</strong>
-          <strong></strong>
-          <br />
-
-          Klikkaa
-          <strong>Sign in</strong>
-
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 20.webp"
-              alt="Kirjautuminen GitHubiin"
-            />
-            <figcaption>Kirjautuminen GitHubiin.</figcaption>
-          </figure>
-        </li>
-        <li>
-          Anna kaksivaiheisen tunnistautumisen avainkoodi
-          tunnistautumissovelluksestasi <br />
-
-          Klikkaa
-          <strong>Verify</strong>
-
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 21.webp"
-              alt="Näkymö kaksivaiheinen tunnistautuminen"
-            />
-            <figcaption>Kaksivaiheinen tunnistautuminen.</figcaption>
-          </figure>
-        </li>
-        <li>
-          Lisää halutessasi passkey tai klikkaa
-          <strong>Ask me later</strong>
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 22.webp"
-              alt="Passkeyn lisääminen tai ohitus"
-            />
-            <figcaption>Passkeyn lisääminen tai ohitus.</figcaption>
-          </figure>
-        </li>
-        <li>
-          Valitse käytettävä tili klikkaamalla
-          <strong>Continue</strong> käyttäjänimen vierestä
-
-          <p class="note-box">
-            Mikäli sinulla oli GitHub avoinna selaimessa ja olit jo valmiiksi
-            kirjautuneena sinne sisään ja jos sinulla on kaksivaiheinen
-            tunnistautuminen käytössä saattaa GitHub tämän vaiheen jälkeen
-            pyytää vielä syöttämään tunnistautumissovelluksen avainkoodin (kts.
-            kohta 4).
-          </p>
-
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 23.webp"
-              alt="Tilin valinnan vahvistus"
-            />
-            <figcaption>Tilin valinnan vahvistus.</figcaption>
-          </figure>
-        </li>
-        <li>
-          Anna VS Codelle lupa päästä GitHub-tilillesi klikkaamalla
-          <strong>Authorize Visuals-Studio-Code</strong>
-
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 24.webp"
-              alt="Luvan antaminen VS Codelle"
-            />
-            <figcaption>Luvan antaminen VS Codelle.</figcaption>
-          </figure>
-        </li>
-        <li>
-          Siirry takaisin VS Codeen klikkaamalla
-          <strong>Avaa Visuals-Studio-Code</strong>
-
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 25.webp"
-              alt="Siirtyminen takaisin VS Codeen"
-            />
-            <figcaption>Siirtyminen takaisin VS Codeen.</figcaption>
-          </figure>
-        </li>
-        <li>
-          Halutessasi ota Copilot käyttöön ja asenna tarvittavat liitännäiset
-
-          <ul>
-            <li>Klikkaa ensin <strong>Finnish Setup</strong></li>
-            <li>Valitse sitten <strong>Set up Copilot</strong></li>
-          </ul>
-
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 26.webp"
-              alt="GitHub Copiltin käyttöönotto"
-            />
-            <figcaption>GitHub Copiltin käyttöönotto.</figcaption>
-          </figure>
-        </li>
-      </ol>
-    </div>
-  </div>
 
   <ol class="edit-number sections">
     <li>

@@ -7,6 +7,7 @@ body {
   flex-direction: column;
   margin: 0;
   font-family: "Roboto", Arial;
+  overflow-x: hidden;
 }
 
 /*header styles*/
@@ -48,8 +49,6 @@ h6 {
   margin-left: 0.75em;
 }
 
-
-
 /* plus signs inside text */
 .plus-sign {
   height: 15px;
@@ -83,4 +82,15 @@ ul.padding-left {
 .no-line-change,
 code:not(pre code) {
   white-space: nowrap;
+}
+
+@media (max-width: 1000px) {
+  .no-line-change,
+  code:not(pre code) {
+    white-space: normal;
+  }
+
+  .margin-right {
+    margin-right: 0.5rem !important;
+  }
 }
