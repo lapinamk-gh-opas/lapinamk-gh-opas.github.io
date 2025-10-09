@@ -104,7 +104,7 @@ document.addEventListener("sidebar-component:loaded", () => {
 
 document.addEventListener("sidebar-component:loaded", () => {
   function checkWidth() {
-    if (window.innerWidth < 1000) {
+    if (window.innerWidth < 1200) {
       sidebar.classList.remove("closed");
       toggleBtn.classList.remove("closed");
       mainContainer.classList.remove("shifted");
@@ -115,9 +115,7 @@ document.addEventListener("sidebar-component:loaded", () => {
     }
   }
 
-  // Alkuperäinen tarkistus
   checkWidth();
 
-  // Kuunnellaan ikkunan muutoksia
   window.addEventListener("resize", checkWidth);
 });

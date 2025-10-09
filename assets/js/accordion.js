@@ -122,15 +122,3 @@ document.addEventListener("accordion:loaded", () => {
     });
   });
 });
-
-function updateWideImages() {
-  const allImages = document.querySelectorAll(".wide-image");
-  const isClosed = sidebar.classList.contains("closed");
-
-  allImages.forEach((image) => {
-    image.classList.toggle("sidebar-closed", isClosed);
-  });
-}
-
-document.addEventListener("sidebar:changed", updateWideImages);
-document.addEventListener("accordion:loaded", updateWideImages);

@@ -124,7 +124,7 @@
 /* Main content positioning, color and width */
 .main-container {
   flex: 1;
-  padding: 4rem 8rem;
+  padding: 5vh 5vw;
   background: #f9f9f9;
   transition: margin-left 0.3s ease;
 }
@@ -164,7 +164,7 @@
 }
 
 /* lay out changes for mobile */
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   /* maincontent area for mobile */
   .page-layout {
     position: relative;
