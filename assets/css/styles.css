@@ -6,9 +6,49 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
-
   font-family: "Roboto", Arial;
 }
+
+/*header styles*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
+
+/* interview section title with lines on sides */
+.interview1 h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin: 1.5em 0;
+  position: relative;
+}
+
+.interview1 h3::before,
+.interview1 h3::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  border-radius: 5px;
+  background-color: rgba(20, 130, 125, 0.3);
+}
+
+.interview1 h3::before {
+  margin-right: 0.75em;
+}
+
+.interview1 h3::after {
+  margin-left: 0.75em;
+}
+
+
 
 /* plus signs inside text */
 .plus-sign {
@@ -41,7 +81,6 @@ ul.padding-left {
 
 /* No line change mid link */
 .no-line-change,
-strong,
 code:not(pre code) {
   white-space: nowrap;
 }
