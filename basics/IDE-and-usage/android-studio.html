@@ -7,90 +7,223 @@
       intelliJ koodieditoriin, joten sillä on yhteneväisyyksiä myös edellä
       esiteltyyn JetBrainsin PyCharm editoriin. Haitari elementistä voit katsoa
       tarvittaessa ohjeet Gitin ja GitHubin käyttöönottoon Android Studiossa.
-      Muutoin osion ohjeissa käytetään jo komentokehote ja VS Code käytöstä
-      tuttua etärepositoriota, Kloonataan se paikalliseksi repositorioksi
-      IDE:llä. Luodaan editorin avulla jälleen tiedostot ja viedään ne
-      etärepositorioon omaan haaraansa.
     </p>
     <!-- Accordion element starts -->
     <div
       class="accordion"
       data-include="../../accordion-element/accordion.html"
-      data-title="Mistä repositoriot ja sen URL-osoite löytyvät GitHubissa?"
+      data-title="Gitin ja GitHubin käyttöönotto Android Studiossa"
     >
       <div class="contentToAccordion">
-        <!-- Accordion content starts -->
-        <ul>
-          <li>
-            Repositoriot löytyvät useammasta paikkaa, mutta niitä voi selata
-            esimerkiksi näin.
-          </li>
-          <li>
-            Klikkaa oikealta ylhäältä <strong>profiilikuvaketta</strong> ja
-            valitse sen alta
-            <strong>Repositories</strong>
-          </li>
-        </ul>
-
-        <figure>
-          <img
-            class="wide-image"
-            src="../../assets/images/basics/git-install/Git usage repository 5.webp"
-            alt="Repositoriot löytyvät profiilikuvakkeen alta"
-          />
-          <figcaption>Repositoriot löytyvät profiilikuvakkeen alta.</figcaption>
-        </figure>
-
-        <ul>
-          <li>
-            Avautuu <strong>lista</strong> kaikista käyttäjän repostoireista.
-          </li>
-          <li>Repositoriota pääsee tarkastelemaan klikkaamalla sen nimeä.</li>
-        </ul>
-
-        <figure>
-          <img
-            class="wide-image"
-            src="../../assets/images/basics/git-install/Git usage repository 6.webp"
-            alt="Repositoriot löytyvät profiilikuvakkeen alta"
-          />
-          <figcaption>Lista tilin repositorioista.</figcaption>
-        </figure>
-
-        <h6>Repositorion päänäkymästä löydät mm.</h6>
-
+        <p class="keep-margin">
+          Gitin ja GitHubin käyttöönottamiseksi Android Studiossa käy läpi,
+          <a href="/basics/git-install.html">1.4 käyttöönotto</a> osiossa
+          tehtyjen toimien lisäksi, seuraavat asetukset.
+        </p>
         <ol>
-          <li>Repositoriossa olevat tiedostot ja kansiot.</li>
-          <li>Repositorion Git-haarat valikko.</li>
-          <li>Code valikon alta löydät mm. repositorion URL osoitteen.</li>
-        </ol>
-
-        <figure>
-          <img
-            class="wide-image"
-            src="../../assets/images/basics/git-install/Git usage repository 7.webp"
-            alt="Repositorion päänäkymä"
-          />
-          <figcaption>Repositorion päänäkymä.</figcaption>
-        </figure>
-        <ul>
           <li>
-            <strong>URL-osoiteen</strong> näet alasvetovalikossa klikkaamalla
-            <strong>Code</strong> painiketta.
+            Klikkaa vasemmalta alhaalta <strong>Ratas</strong> kuvaketta ja
+            valitse <strong>Settings</strong><br />
+            <figure>
+              <img
+                class="wide-image"
+                src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 1.webp"
+                alt="Asetusvalikon avaaminen Android Studiossa."
+              />
+              <figcaption>
+                Asetusvalikon avaaminen Android Studiossa.
+              </figcaption>
+            </figure>
           </li>
-        </ul>
-        <figure>
-          <img
-            class="wide-image"
-            src="../../assets/images/basics/git-install/Git usage repository 4.webp"
-            alt="Kuva tyhjästä repositoriosta"
-          />
-          <figcaption>Repositorion osoite</figcaption>
-        </figure>
-        <!-- Accordion content ends -->
+          <li>
+            Valitse asetusvalikon vasemmalta puolelta listasta
+            <strong>Version Control</strong> ja sen alta <strong>Git</strong>
+            <ul>
+              <li>
+                Testaa, että Android Studio löytää Gitin painamalla
+                <strong>Test</strong> nappia.
+              </li>
+              <li>
+                Mikäli Git löytyy näykyy sen
+                <strong>version numero</strong> polun alla.
+              </li>
+              <li>
+                Mikäli Gitiä ei löytynyt anna Android Studiolle polku johon olet
+                Gitin asentanut.
+              </li>
+            </ul>
+
+            <figure>
+              <img
+                class="wide-image"
+                src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 2.webp"
+                alt="Vesionhallinta asetukset Android Studio ja Git polun tarkistus"
+              />
+              <figcaption>
+                Vesionhallinta asetukset Android Studio ja Git polun tarkistus.
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            Valitse asetusvalikon vasemmalta puolelta listasta
+            <strong>Version Controlin</strong> alta <strong>GitHub</strong>
+            <ul>
+              <li>
+                Yhdistä GitHub tilisi Android Studioon klikkaamalla
+                <strong>Add account...</strong> tekstiä.
+              </li>
+              <li>
+                Valitse
+                <strong>Log in via GitHub...</strong>
+              </li>
+            </ul>
+            <figure>
+              <img
+                class="wide-image"
+                src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 3.webp"
+                alt="GitHub tilin lisääminen Android Studioon"
+              />
+              <figcaption>GitHub tilin lisääminen Android Studioon.</figcaption>
+            </figure>
+
+            <p class="note-box">
+              GitHub-tilin yhdistäminen editoriin voi hieman erota tässä
+              esitetystä, mikäli olet jo antanut oikeudet jollekin toiselle
+              JetBrainsin editorille käyttää tilisi sisältöä.
+            </p>
+          </li>
+          <li>
+            Avautuu selain ikkuna ja klikkaa
+            <strong>Authorize in GitHub</strong> nappia
+
+            <figure>
+              <img
+                class="wide-image"
+                src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 5.webp"
+                alt="PGitHub tilin lisääminen Android Studioon selaimessa"
+              />
+              <figcaption>
+                GitHub tilin lisääminen Android Studioon selaimessa.
+              </figcaption>
+            </figure>
+
+            <div class="note-box">
+              <ul>
+                <li class="warning">
+                  Mikäli sinulla on jo GitHub auki selaimessa ja olet kirjatunut
+                  sisään, voit siirtyä suoraan kohtaan:
+                  <strong>7. Luvananto Android Studiolle</strong>.
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            Syötä aukeavaan selainikkunaan GitHub-tilin
+            <strong>käyttäjänimi</strong> tai <strong>sähköposti</strong> ja
+            <strong>salasana</strong>
+            <strong></strong>
+            <br />
+
+            Klikkaa
+            <strong>Sign in</strong>
+            <figure>
+              <img
+                class="wide-image"
+                src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 6.webp"
+                alt="Kirjautuminen GitHubiin"
+              />
+              <figcaption>Kirjautuminen GitHubiin.</figcaption>
+            </figure>
+          </li>
+          <li>
+            Anna kaksivaiheisen tunnistautumisen avainkoodi
+            tunnistautumissovelluksestasi <br />
+
+            Klikkaa
+            <strong>Verify</strong>
+
+            <figure>
+              <img
+                class="wide-image"
+                src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 7.webp"
+                alt="Kaksivaiheinen tunnistautuminen"
+              />
+              <figcaption>Kaksivaiheinen tunnistautuminen.</figcaption>
+            </figure>
+          </li>
+          <li>
+            Anna Android Studiolle lupa päästä GitHub-tilillesi klikkaamalla
+            <strong>Authorize JetBrains</strong>
+
+            <figure>
+              <img
+                class="wide-image"
+                src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 8.webp"
+                alt="Luvan antaminen Android Studiolle."
+              />
+              <figcaption>Luvan antaminen Android Studiolle.</figcaption>
+            </figure>
+
+            <p class="note-box">
+              Mikäli sinulla oli GitHub avoinna selaimessa ja olit jo valmiiksi
+              kirjautuneena sinne sisään ja jos sinulla on kaksivaiheinen
+              tunnistautuminen käytössä saattaa GitHub tämän vaiheen jälkeen
+              pyytää vielä syöttämään tunnistautumissovelluksen avainkoodin
+              (kts. kohta 6).
+            </p>
+          </li>
+          <li>
+            Tulee ilmoitus, että olet sallinut Android Studiolle pääsyn
+            GitHub-tilillesi ja voit sulkea selainikkunan.
+
+            <figure>
+              <img
+                class="wide-image"
+                src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 9.webp"
+                alt="Vahvistus ja sulje selainikkuna"
+              />
+              <figcaption>Vahvistus ja sulje selainikkuna.</figcaption>
+            </figure>
+          </li>
+          <li>
+            Myös Android Studio näyttää GitHub asetusvälilehden alla lisäämäsi
+            tilin.
+            <br />
+            Sulje asetusikkuna klikkaamalla <strong>OK</strong> nappia.
+
+            <figure>
+              <img
+                class="wide-image"
+                src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 4.webp"
+                alt="Vahvistus ja sulje asetusikkuna"
+              />
+              <figcaption>Vahvistus ja sulje asetusikkuna.</figcaption>
+            </figure>
+          </li>
+        </ol>
       </div>
     </div>
     <!-- Accordion element ends -->
+    <p>
+      Muutoin osion ohjeissa käytetään jo komentokehote ja VS Code käytöstä
+      tuttua etärepositoriota, Kloonataan se paikalliseksi repositorioksi
+      IDE:llä. Luodaan editorin avulla jälleen tiedostot ja viedään ne
+      etärepositorioon omaan haaraansa.
+    </p>
+    <!-- Accordion element with reused content starts -->
+    <div
+      class="accordion"
+      data-include="/accordion-element/accordion.html"
+      data-title="Mistä repositoriot ja sen URL-osoite löytyvät GitHubissa?"
+    >
+      <div
+        class="contentToAccordion reused-accordion"
+        data-include="/reused-accordion-content/repository-and-url.html"
+      >
+        <!-- Accordion content starts from /reused-accordion-content/repository-and-url.html-->
+      </div>
+    </div>
+    <!-- Reusable accordion element ends -->
     <p>
       Huomiona mainittakoon, että myös Android Studio tarjoaa mahdollisuuksia
       tehdä Git toimintoja usealla eri tavalla. Jotkin toiminnoista voi tehdä
@@ -98,200 +231,7 @@
       kuin mitä ohjeessa on esitetty.
     </p>
   </header>
-  <!-- Accordion element starts -->
-  <div
-    class="accordion"
-    data-include="../../accordion-element/accordion.html"
-    data-title="Gitin ja GitHubin käyttöönotto Android Studiossa"
-  >
-    <div class="contentToAccordion">
-      <p class="keep-margin">
-        Gitin ja GitHubin käyttöönottamiseksi Android Studiossa käy läpi,
-        <a href="/basics/git-install.html">1.4 käyttöönotto</a> osiossa tehtyjen
-        toimien lisäksi, seuraavat asetukset.
-      </p>
-      <ol>
-        <li>
-          Klikkaa vasemmalta alhaalta <strong>Ratas</strong> kuvaketta ja
-          valitse <strong>Settings</strong><br />
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 1.webp"
-              alt="Asetusvalikon avaaminen Android Studiossa."
-            />
-            <figcaption>Asetusvalikon avaaminen Android Studiossa.</figcaption>
-          </figure>
-        </li>
-        <li>
-          Valitse asetusvalikon vasemmalta puolelta listasta
-          <strong>Version Control</strong> ja sen alta <strong>Git</strong>
-          <ul>
-            <li>
-              Testaa, että Android Studio löytää Gitin painamalla
-              <strong>Test</strong> nappia.
-            </li>
-            <li>
-              Mikäli Git löytyy näykyy sen <strong>version numero</strong> polun
-              alla.
-            </li>
-            <li>
-              Mikäli Gitiä ei löytynyt anna Android Studiolle polku johon olet
-              Gitin asentanut.
-            </li>
-          </ul>
 
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 2.webp"
-              alt="Vesionhallinta asetukset Android Studio ja Git polun tarkistus"
-            />
-            <figcaption>
-              Vesionhallinta asetukset Android Studio ja Git polun tarkistus.
-            </figcaption>
-          </figure>
-        </li>
-        <li>
-          Valitse asetusvalikon vasemmalta puolelta listasta
-          <strong>Version Controlin</strong> alta <strong>GitHub</strong>
-          <ul>
-            <li>
-              Yhdistä GitHub tilisi Android Studioon klikkaamalla
-              <strong>Add account...</strong> tekstiä.
-            </li>
-            <li>
-              Valitse
-              <strong>Log in via GitHub...</strong>
-            </li>
-          </ul>
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 3.webp"
-              alt="GitHub tilin lisääminen Android Studioon"
-            />
-            <figcaption>GitHub tilin lisääminen Android Studioon.</figcaption>
-          </figure>
-
-          <p class="note-box">
-            GitHub-tilin yhdistäminen editoriin voi hieman erota tässä
-            esitetystä, mikäli olet jo antanut oikeudet jollekin toiselle
-            JetBrainsin editorille käyttää tilisi sisältöä.
-          </p>
-        </li>
-        <li>
-          Avautuu selain ikkuna ja klikkaa
-          <strong>Authorize in GitHub</strong> nappia
-
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 5.webp"
-              alt="PGitHub tilin lisääminen Android Studioon selaimessa"
-            />
-            <figcaption>
-              GitHub tilin lisääminen Android Studioon selaimessa.
-            </figcaption>
-          </figure>
-
-          <div class="note-box">
-            <ul>
-              <li class="warning">
-                Mikäli sinulla on jo GitHub auki selaimessa ja olet kirjatunut
-                sisään, voit siirtyä suoraan kohtaan:
-                <strong>7. Luvananto Android Studiolle</strong>.
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li>
-          Syötä aukeavaan selainikkunaan GitHub-tilin
-          <strong>käyttäjänimi</strong> tai <strong>sähköposti</strong> ja
-          <strong>salasana</strong>
-          <strong></strong>
-          <br />
-
-          Klikkaa
-          <strong>Sign in</strong>
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 6.webp"
-              alt="Kirjautuminen GitHubiin"
-            />
-            <figcaption>Kirjautuminen GitHubiin.</figcaption>
-          </figure>
-        </li>
-        <li>
-          Anna kaksivaiheisen tunnistautumisen avainkoodi
-          tunnistautumissovelluksestasi <br />
-
-          Klikkaa
-          <strong>Verify</strong>
-
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 7.webp"
-              alt="Kaksivaiheinen tunnistautuminen"
-            />
-            <figcaption>Kaksivaiheinen tunnistautuminen.</figcaption>
-          </figure>
-        </li>
-        <li>
-          Anna Android Studiolle lupa päästä GitHub-tilillesi klikkaamalla
-          <strong>Authorize JetBrains</strong>
-
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 8.webp"
-              alt="Luvan antaminen Android Studiolle."
-            />
-            <figcaption>Luvan antaminen Android Studiolle.</figcaption>
-          </figure>
-
-          <p class="note-box">
-            Mikäli sinulla oli GitHub avoinna selaimessa ja olit jo valmiiksi
-            kirjautuneena sinne sisään ja jos sinulla on kaksivaiheinen
-            tunnistautuminen käytössä saattaa GitHub tämän vaiheen jälkeen
-            pyytää vielä syöttämään tunnistautumissovelluksen avainkoodin (kts.
-            kohta 6).
-          </p>
-        </li>
-        <li>
-          Tulee ilmoitus, että olet sallinut Android Studiolle pääsyn
-          GitHub-tilillesi ja voit sulkea selainikkunan.
-
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 9.webp"
-              alt="Vahvistus ja sulje selainikkuna"
-            />
-            <figcaption>Vahvistus ja sulje selainikkuna.</figcaption>
-          </figure>
-        </li>
-        <li>
-          Myös Android Studio näyttää GitHub asetusvälilehden alla lisäämäsi
-          tilin.
-          <br />
-          Sulje asetusikkuna klikkaamalla <strong>OK</strong> nappia.
-
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/androidStudio/android studio 4.webp"
-              alt="Vahvistus ja sulje asetusikkuna"
-            />
-            <figcaption>Vahvistus ja sulje asetusikkuna.</figcaption>
-          </figure>
-        </li>
-      </ol>
-    </div>
-  </div>
-  <!-- Accordion element ends -->
   <ol class="edit-number sections">
     <li>
       <h6>Kloonaa etärepositorio PyCharmiin</h6>

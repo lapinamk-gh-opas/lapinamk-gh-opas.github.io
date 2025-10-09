@@ -4,214 +4,218 @@
     <p>
       Tällä sivulla käsitellään Gitin käyttöä <strong>PyCharmilla</strong>.
       Haitari elementistä voit katsoa tarvittaessa ohjeet Gitin ja GitHubin
-      käyttöönottoon editorille. Muutoin osion ohjeissa käytetään uutta
-      repositoriota, cloonataan se paikalliseksi repositorioksi IDE:llä. Luodaan
-      editorin avulla jälleen tiedostot (oletus main.py ja README.md) ja viedään
-      ne etärepositorion päähaaraan. <br /><br />
+      käyttöönottoon editorille.
+    </p>
+    <div
+      class="accordion"
+      data-include="../../accordion-element/accordion.html"
+      data-title="Gitin ja GitHubin käyttöönotto PyCharmissa"
+    >
+      <div class="contentToAccordion">
+        <p class="keep-margin">
+          Gitin ja GitHubin käyttöönottamiseksi PyCharmissa käy läpi,
+          <a href="/basics/git-install.html">1.4 käyttöönotto</a> osiossa
+          tehtyjen toimien lisäksi, seuraavat asetukset.
+        </p>
+        <ol>
+          <li>
+            Klikkaa vasemmalta alhaalta <strong>Ratas</strong> kuvaketta ja
+            valitse <strong>Settings</strong><br />
+            <figure>
+              <img
+                class="wide-image"
+                src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 1.webp"
+                alt="Asetusvalikon avaaminen PyCharm."
+              />
+              <figcaption>Asetusvalikon avaaminen PyCharm.</figcaption>
+            </figure>
+          </li>
+          <li>
+            Valitse asetusvalikon vasemmalta puolelta listasta
+            <strong>Version Control</strong> ja sen alta <strong>Git</strong>
+            <ul>
+              <li>
+                Testaa, että PyCharm löytää Gitin painamalla
+                <strong>Test</strong> nappia.
+              </li>
+              <li>
+                Mikäli Git löytyy näykyy sen
+                <strong>version numero</strong> polun alla.
+              </li>
+              <li>
+                Mikäli Gitiä ei löytynyt anna PyCharmille polku johon olet Gitin
+                asentanut.
+              </li>
+            </ul>
+
+            <figure>
+              <img
+                class="wide-image"
+                src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 2.webp"
+                alt="Vesionhallinta asetukset PyCharm ja Git polun tarkistus"
+              />
+              <figcaption>
+                Vesionhallinta asetukset PyCharm ja Git polun tarkistus.
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            Valitse asetusvalikon vasemmalta puolelta listasta
+            <strong>Version Controlin</strong> alta <strong>GitHub</strong>
+            <ul>
+              <li>
+                Yhdistä GitHub tilisi PyCharmiin klikkaamalla
+                <strong>Add account...</strong> tekstiä.
+              </li>
+            </ul>
+
+            <figure>
+              <img
+                class="wide-image"
+                src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 3.webp"
+                alt="GitHub tilin lisääminen PyCharmiin"
+              />
+              <figcaption>GitHub tilin lisääminen PyCharmiin.</figcaption>
+            </figure>
+
+            <ul>
+              <li>Valitse <strong>Log in via GitHub...</strong></li>
+            </ul>
+
+            <figure>
+              <img
+                class="wide-image"
+                src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 4.webp"
+                alt="GitHub tilin lisääminen PyCharmiin"
+              />
+              <figcaption>GitHub tilin lisääminen PyCharmiin.</figcaption>
+            </figure>
+            <p class="note-box">
+              GitHub-tilin yhdistäminen editoriin voi hieman erota tässä
+              esitetystä, mikäli olet jo antanut oikeudet jollekin toiselle
+              JetBrainsin editorille käyttää tilisi sisältöä.
+            </p>
+          </li>
+          <li>
+            Avautuu selain ikkuna ja klikkaa
+            <strong>Authorize in GitHub</strong> nappia
+
+            <figure>
+              <img
+                class="wide-image"
+                src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 5.webp"
+                alt="PGitHub tilin lisääminen PyCharmiin selaimessa"
+              />
+              <figcaption>
+                GitHub tilin lisääminen PyCharmiin selaimessa.
+              </figcaption>
+            </figure>
+
+            <div class="note-box">
+              <ul>
+                <li class="warning">
+                  Mikäli sinulla on jo GitHub auki selaimessa ja olet kirjatunut
+                  sisään, voit siirtyä suoraan kohtaan:
+                  <strong>7. Luvananto PyCharmille</strong>.
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            Syötä aukeavaan selainikkunaan GitHub-tilin
+            <strong>käyttäjänimi</strong> tai <strong>sähköposti</strong> ja
+            <strong>salasana</strong>
+            <strong></strong>
+            <br />
+
+            Klikkaa
+            <strong>Sign in</strong>
+            <figure>
+              <img
+                class="wide-image"
+                src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 6.webp"
+                alt="Kirjautuminen GitHubiin"
+              />
+              <figcaption>Kirjautuminen GitHubiin.</figcaption>
+            </figure>
+          </li>
+          <li>
+            Anna kaksivaiheisen tunnistautumisen avainkoodi
+            tunnistautumissovelluksestasi ja klikkaa
+            <strong>Verify</strong>
+
+            <figure>
+              <img
+                class="wide-image"
+                src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 7.webp"
+                alt="Kaksivaiheinen tunnistautuminen"
+              />
+              <figcaption>Kaksivaiheinen tunnistautuminen.</figcaption>
+            </figure>
+          </li>
+          <li>
+            Anna PyCharmille lupa päästä GitHub-tilillesi klikkaamalla
+            <strong>Authorize JetBrains</strong>
+
+            <figure>
+              <img
+                class="wide-image"
+                src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 8.webp"
+                alt="Luvan antaminen PyCharmille."
+              />
+              <figcaption>Luvan antaminen PyCharmille.</figcaption>
+            </figure>
+
+            <p class="note-box">
+              Mikäli sinulla oli GitHub avoinna selaimessa ja olit jo valmiiksi
+              kirjautuneena sinne sisään ja jos sinulla on kaksivaiheinen
+              tunnistautuminen käytössä saattaa GitHub tämän vaiheen jälkeen
+              pyytää vielä syöttämään tunnistautumissovelluksen avainkoodin
+              (kts. kohta 6).
+            </p>
+          </li>
+          <li>
+            Tulee ilmoitus, että olet sallinut PyCharmille pääsyn
+            GitHub-tilillesi ja voit sulkea selainikkunan.
+
+            <figure>
+              <img
+                class="wide-image"
+                src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 9.webp"
+                alt="Vahvistus ja sulje selainikkuna"
+              />
+              <figcaption>Vahvistus ja sulje selainikkuna.</figcaption>
+            </figure>
+          </li>
+          <li>
+            Myös PyCharm näyttää GitHub asetusvälilehden alla lisäämäsi tilin.
+            <br />
+            Sulje asetusikkuna klikkaamalla <strong>OK</strong> nappia.
+
+            <figure>
+              <img
+                class="wide-image"
+                src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 10.webp"
+                alt="Vahvistus ja sulje asetusikkuna"
+              />
+              <figcaption>Vahvistus ja sulje asetusikkuna.</figcaption>
+            </figure>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <p>
+      Muutoin osion ohjeissa käytetään uutta repositoriota, cloonataan se
+      paikalliseksi repositorioksi IDE:llä. Luodaan editorin avulla jälleen
+      tiedostot (oletus main.py ja README.md) ja viedään ne etärepositorion
+      päähaaraan. <br /><br />
       Huomiona mainittakoon, että myös PyCharm tarjoaa mahdollisuuksia tehdä Git
       toimintoja usealla eri tavalla. Jotkin toiminnoista voi tehdä
       mahdollisesti myös toisella tapaa, ehkäpä jopa paremmin sekä tehokkaammin
       kuin mitä ohjeessa on esitetty.
     </p>
   </header>
-  <div
-    class="accordion"
-    data-include="../../accordion-element/accordion.html"
-    data-title="Gitin ja GitHubin käyttöönotto PyCharmissa"
-  >
-    <div class="contentToAccordion">
-      <p class="keep-margin">
-        Gitin ja GitHubin käyttöönottamiseksi PyCharmissa käy läpi,
-        <a href="/basics/git-install.html">1.4 käyttöönotto</a> osiossa tehtyjen
-        toimien lisäksi, seuraavat asetukset.
-      </p>
-      <ol>
-        <li>
-          Klikkaa vasemmalta alhaalta <strong>Ratas</strong> kuvaketta ja
-          valitse <strong>Settings</strong><br />
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 1.webp"
-              alt="Asetusvalikon avaaminen PyCharm."
-            />
-            <figcaption>Asetusvalikon avaaminen PyCharm.</figcaption>
-          </figure>
-        </li>
-        <li>
-          Valitse asetusvalikon vasemmalta puolelta listasta
-          <strong>Version Control</strong> ja sen alta <strong>Git</strong>
-          <ul>
-            <li>
-              Testaa, että PyCharm löytää Gitin painamalla
-              <strong>Test</strong> nappia.
-            </li>
-            <li>
-              Mikäli Git löytyy näykyy sen <strong>version numero</strong> polun
-              alla.
-            </li>
-            <li>
-              Mikäli Gitiä ei löytynyt anna PyCharmille polku johon olet Gitin
-              asentanut.
-            </li>
-          </ul>
 
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 2.webp"
-              alt="Vesionhallinta asetukset PyCharm ja Git polun tarkistus"
-            />
-            <figcaption>
-              Vesionhallinta asetukset PyCharm ja Git polun tarkistus.
-            </figcaption>
-          </figure>
-        </li>
-        <li>
-          Valitse asetusvalikon vasemmalta puolelta listasta
-          <strong>Version Controlin</strong> alta <strong>GitHub</strong>
-          <ul>
-            <li>
-              Yhdistä GitHub tilisi PyCharmiin klikkaamalla
-              <strong>Add account...</strong> tekstiä.
-            </li>
-          </ul>
-
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 3.webp"
-              alt="GitHub tilin lisääminen PyCharmiin"
-            />
-            <figcaption>GitHub tilin lisääminen PyCharmiin.</figcaption>
-          </figure>
-
-          <ul>
-            <li>Valitse <strong>Log in via GitHub...</strong></li>
-          </ul>
-
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 4.webp"
-              alt="GitHub tilin lisääminen PyCharmiin"
-            />
-            <figcaption>GitHub tilin lisääminen PyCharmiin.</figcaption>
-          </figure>
-          <p class="note-box">
-            GitHub-tilin yhdistäminen editoriin voi hieman erota tässä
-            esitetystä, mikäli olet jo antanut oikeudet jollekin toiselle
-            JetBrainsin editorille käyttää tilisi sisältöä.
-          </p>
-        </li>
-        <li>
-          Avautuu selain ikkuna ja klikkaa
-          <strong>Authorize in GitHub</strong> nappia
-
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 5.webp"
-              alt="PGitHub tilin lisääminen PyCharmiin selaimessa"
-            />
-            <figcaption>
-              GitHub tilin lisääminen PyCharmiin selaimessa.
-            </figcaption>
-          </figure>
-
-          <div class="note-box">
-            <ul>
-              <li class="warning">
-                Mikäli sinulla on jo GitHub auki selaimessa ja olet kirjatunut
-                sisään, voit siirtyä suoraan kohtaan:
-                <strong>7. Luvananto PyCharmille</strong>.
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li>
-          Syötä aukeavaan selainikkunaan GitHub-tilin
-          <strong>käyttäjänimi</strong> tai <strong>sähköposti</strong> ja
-          <strong>salasana</strong>
-          <strong></strong>
-          <br />
-
-          Klikkaa
-          <strong>Sign in</strong>
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 6.webp"
-              alt="Kirjautuminen GitHubiin"
-            />
-            <figcaption>Kirjautuminen GitHubiin.</figcaption>
-          </figure>
-        </li>
-        <li>
-          Anna kaksivaiheisen tunnistautumisen avainkoodi
-          tunnistautumissovelluksestasi ja klikkaa
-          <strong>Verify</strong>
-
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 7.webp"
-              alt="Kaksivaiheinen tunnistautuminen"
-            />
-            <figcaption>Kaksivaiheinen tunnistautuminen.</figcaption>
-          </figure>
-        </li>
-        <li>
-          Anna PyCharmille lupa päästä GitHub-tilillesi klikkaamalla
-          <strong>Authorize JetBrains</strong>
-
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 8.webp"
-              alt="Luvan antaminen PyCharmille."
-            />
-            <figcaption>Luvan antaminen PyCharmille.</figcaption>
-          </figure>
-
-          <p class="note-box">
-            Mikäli sinulla oli GitHub avoinna selaimessa ja olit jo valmiiksi
-            kirjautuneena sinne sisään ja jos sinulla on kaksivaiheinen
-            tunnistautuminen käytössä saattaa GitHub tämän vaiheen jälkeen
-            pyytää vielä syöttämään tunnistautumissovelluksen avainkoodin (kts.
-            kohta 6).
-          </p>
-        </li>
-        <li>
-          Tulee ilmoitus, että olet sallinut PyCharmille pääsyn GitHub-tilillesi
-          ja voit sulkea selainikkunan.
-
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 9.webp"
-              alt="Vahvistus ja sulje selainikkuna"
-            />
-            <figcaption>Vahvistus ja sulje selainikkuna.</figcaption>
-          </figure>
-        </li>
-        <li>
-          Myös PyCharm näyttää GitHub asetusvälilehden alla lisäämäsi tilin.
-          <br />
-          Sulje asetusikkuna klikkaamalla <strong>OK</strong> nappia.
-
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/basics/IDE-and-usage/pycharm/pycharm 10.webp"
-              alt="Vahvistus ja sulje asetusikkuna"
-            />
-            <figcaption>Vahvistus ja sulje asetusikkuna.</figcaption>
-          </figure>
-        </li>
-      </ol>
-    </div>
-  </div>
   <ol class="edit-number sections">
     <li>
       <h6>

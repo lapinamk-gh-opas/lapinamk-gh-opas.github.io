@@ -2,7 +2,7 @@
 // and that event is used to launch/run this script.
 
 // 1. Sidebar opening and closing functionality.
-document.addEventListener("sidebar component:loaded", () => {
+document.addEventListener("sidebar-component:loaded", () => {
   const sidebar = document.getElementById("sidebar"); // get sidebat element
   const toggleBtn = document.getElementById("toggleBtn"); // get toggle button element
   const mainContainer = document.getElementById("mainContainer"); // get main container element
@@ -10,7 +10,6 @@ document.addEventListener("sidebar component:loaded", () => {
   const sidebarState = sessionStorage.getItem("sidebar");
 
   if (sidebarState === "closed") {
-    console.log("lisää closed");
     sidebar.classList.add("closed");
     toggleBtn.classList.add("closed");
     mainContainer.classList.add("shifted");
@@ -29,12 +28,13 @@ document.addEventListener("sidebar component:loaded", () => {
 
       const isClosed = sidebar.classList.contains("closed");
       sessionStorage.setItem("sidebar", isClosed ? "closed" : "open");
+      document.dispatchEvent(new Event("sidebar:changed"));
     });
   }
 });
 
 // 2. Sidebar dropdown functionality
-document.addEventListener("sidebar component:loaded", () => {
+document.addEventListener("sidebar-component:loaded", () => {
   const listItems = document.querySelectorAll(".sidebar-main-item"); // gets sibebars first level list items
 
   // listens click events to each list items dropdown button and toggles class open for sub list
@@ -52,7 +52,7 @@ document.addEventListener("sidebar component:loaded", () => {
 });
 
 // 3. opens the correct sidebar dropdown based on current page
-document.addEventListener("sidebar component:loaded", () => {
+document.addEventListener("sidebar-component:loaded", () => {
   const currentPath = window.location.pathname; // gets current path
   const menuItems = document.querySelectorAll(".sidebar-menu a"); // gets all sidebar menu links
 
@@ -74,7 +74,7 @@ document.addEventListener("sidebar component:loaded", () => {
 
 // Download command list as .txt file
 // after sidebar component is loaded, adds click event listener to download button
-document.addEventListener("sidebar component:loaded", () => {
+document.addEventListener("sidebar-component:loaded", () => {
   const btn = document.getElementById("downloadListBtn");
   if (!btn) return;
 
@@ -100,4 +100,22 @@ document.addEventListener("sidebar component:loaded", () => {
     a.remove();
     URL.revokeObjectURL(url);
   });
+});
+
+document.addEventListener("sidebar-component:loaded", () => {
+  function checkWidth() {
+    if (window.innerWidth < 1200) {
+      sidebar.classList.remove("closed");
+      toggleBtn.classList.remove("closed");
+      mainContainer.classList.remove("shifted");
+    } else {
+      sidebar.classList.remove("closed");
+      toggleBtn.classList.remove("closed");
+      mainContainer.classList.remove("shifted");
+    }
+  }
+
+  checkWidth();
+
+  window.addEventListener("resize", checkWidth);
 });
