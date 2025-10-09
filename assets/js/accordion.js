@@ -79,7 +79,8 @@ document.addEventListener("accordion:loaded", (e) => {
 
 // Image zoom effect specialt tweaks for images that are inside accordion
 // This helpsh keeping other elements in oplace when image is zoomed using CSS
-document.addEventListener("accordion:loaded", () => {
+// Luo funktio, joka sisältää kaiken logiikan
+const initializeAccordionFigures = () => {
   const updateFigureHeights = () => {
     document.querySelectorAll(".accordion figure img").forEach((img) => {
       const figure = img.closest("figure");
@@ -94,18 +95,15 @@ document.addEventListener("accordion:loaded", () => {
   });
 
   let resizeTimeout;
+
   document.addEventListener("sidebar:changed", () => {
     clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-      updateFigureHeights();
-    }, 350);
+    resizeTimeout = setTimeout(updateFigureHeights, 350);
   });
 
   window.addEventListener("resize", () => {
     clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-      updateFigureHeights();
-    }, 150);
+    resizeTimeout = setTimeout(updateFigureHeights, 150);
   });
 
   document.querySelectorAll(".accordion figure img").forEach((img) => {
@@ -121,4 +119,8 @@ document.addEventListener("accordion:loaded", () => {
       figure.style.height = "fit-content";
     });
   });
+};
+
+["accordion:loaded", "reusedAccordion:loaded"].forEach((eventName) => {
+  document.addEventListener(eventName, initializeAccordionFigures);
 });

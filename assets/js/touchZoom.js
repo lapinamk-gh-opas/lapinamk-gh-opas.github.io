@@ -58,6 +58,10 @@ document.addEventListener("accordion:loaded", () => {
   updateImages(".accordion figure img");
 });
 
+document.addEventListener("reusedAccordion:loaded", () => {
+  updateImages(".accordion figure img");
+});
+
 function updateWideImages() {
   const allImages = document.querySelectorAll(".wide-image");
   const isClosed = sidebar.classList.contains("closed");
