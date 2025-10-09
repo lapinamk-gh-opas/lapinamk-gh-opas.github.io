@@ -3,7 +3,7 @@
     <h1>Gitin käyttö komentorivillä</h1>
     <p>
       Tällä sivulla käsitellään Gitin käyttöä
-      <strong>komentoriviltä</strong>. Luodaan komentorivin avulla tiedosto ja
+      <strong>komentorivillä</strong>. Luodaan komentorivin avulla tiedosto ja
       paikallinen repositorio. Sen jälkeen se viedään samaan etärepositorioon,
       joka luotiin käyttöönoton yhteydessä osiossa:
       <a href="/basics/git-install.html#create-repository"
@@ -82,11 +82,11 @@
       <h6>Luodaan kansio ja tiedosto testausta varten.</h6>
       <ul>
         <li>
-          Siirry kansioon minne haluat luoda uuden kansion:<br />
+          Siirry kansioon, johon haluat luoda uuden kansion:<br />
           <code>cd polku/valittuun/hakemistoon</code>
         </li>
         <li>
-          Luo uusi kansio projektia varten:<br />
+          Luo uusi kansio testausta varten:<br />
           <code>mkdir kansion-nimi</code>
         </li>
         <li>
@@ -120,7 +120,7 @@
     <!--List item 3.-->
     <li>
       <h6>
-        luodaan paikallinen repositorio ja yhdistetään se etärepositorioon.
+        Luodaan paikallinen repositorio ja yhdistetään se etärepositorioon.
       </h6>
       <ul>
         <li>
@@ -168,10 +168,11 @@
           <code>git push -u origin main</code>
         </li>
         <p class="note-box margin-right keep-margin">
-          <code>-u</code> (tai <code>--set-upstream</code>) on Git push
-          -komennon lippu joka asettaa paikallisen haaran seuraamaan vastaavaa
-          etähaaraa. Jatkossa git siis tietää etähaaran "kotiosoitteen" ja
-          komennoksi riittää <code>git push</code> ja <code>git pull</code>.
+          <code>-u</code> (tai <code>--set-upstream</code>) on
+          <code>git push</code> -komennon lippu, joka asettaa paikallisen haaran
+          seuraamaan vastaavaa etähaaraa. Jatkossa Git siis tietää etähaaran
+          "kotiosoitteen" ja komennoksi riittää <code>git push</code> ja
+          <code>git pull</code>.
         </p>
       </ul>
 
@@ -195,8 +196,8 @@
           <ol>
             <li>
               <p>
-                Kun teen ensimmäisen Git toiminnon joka on yhteydessä GitHubiin.
-                Pyytää GitHub kirjautumaan sisään.
+                Kun teet ensimmäisen Git toiminnon, joka on yhteydessä
+                GitHubiin. Pyytää GitHub kirjautumaan sisään.
               </p>
               <p>
                 Valitse <strong>Browser/Device</strong> ja klikkaa
@@ -215,10 +216,10 @@
             <li>
               <p>
                 Mikäli olet jo kirjautuneena GitHubiin tulee näkyviin vain tyhjä
-                selainikkuna jonka voi sulkea ja kirjautuminen on suoritettu.
+                selainikkuna, jonka voi sulkea ja kirjautuminen on suoritettu.
               </p>
               <p>
-                Mikäli näet alla olevan ikkunan syötä käyttäjänimi tai
+                Mikäli näet alla olevan ikkunan, syötä käyttäjänimi tai
                 sähköpostiosoite sekä salasana ja klikkaa
                 <strong>Sign in</strong>
               </p>
@@ -234,7 +235,7 @@
             <li>
               <p>
                 Syötä kaksivaiheiseen tunnistautumiseen käyttämäsi sovelluksen
-                avainluku ja klikka <strong>Verify</strong>
+                avainluku ja klikka <strong>Verify</strong>.
               </p>
 
               <figure>
@@ -249,10 +250,10 @@
             <li>
               <p>
                 Kirjautuminen saattaa ehdottaa passkeyn lisäämistä
-                tunnistautumis vaihtoehdoksi.
+                tunnistautumistavaksi.
               </p>
               <p>
-                Lisää se halutessasi tai klikka <strong>Ask me later</strong>
+                Lisää se halutessasi tai klikkaa <strong>Ask me later</strong>.
               </p>
 
               <figure>
@@ -266,7 +267,7 @@
             </li>
             <li>
               <p>
-                Lopuksi tulee ilmoitus tunnistautumisen onnistumisesta. tämän
+                Lopuksi tulee ilmoitus tunnistautumisen onnistumisesta. Tämän
                 jälkeen selainikkunan voi sulkea.
               </p>
 
@@ -308,19 +309,21 @@
           src="../../assets/images/basics/IDE-and-usage/terminal/Git usage terminal 5.webp"
           alt="Git Bash näkymä kansion ja tiedoston luominen"
         />
-        <figcaption>Esimerkki näkymä githubissa muutoksien jälkeen</figcaption>
+        <figcaption>
+          Esimerkki näkymästä GitHubissa muutoksien jälkeen
+        </figcaption>
       </figure>
     </li>
   </ol>
   <h4>Muita hyödyllisiä toimintoja</h4>
   <p class="no-margin-bottom">
-    Teoriaa gitin haaroihin (branches) liittyen käydään läpi tarkemmin osiossa
-    <a class="no-line-change" href="/teamwork/branches.html#how-to-branches"
+    Teoriaa Gitin haaroihin (branches) liittyen käydään läpi tarkemmin osiossa
+    <a class="no-line-change" href="/teamwork/branches.html"
       >2.1 Tiimityö ja haarat</a
     >
-    ja ne kannattaa opiskella sieltä. Alla olevat ohjeet ovat lyhyemmät
-    esimerkit git haaroihin liittyvistä toiminnoista, jotta ne löytyvät helposti
-    samasta paikkasta muiden peruskomentojen kanssa myöhempää käyttöä varten.
+    ja ne kannattaa opiskella sieltä. Alla olevat ohjeet ovat tiivistetyt
+    esimerkit Git haaroihin liittyvistä komennoista. Täältä löydät ne helposti
+    samasta paikasta muiden peruskomentojen kanssa.
   </p>
   <div class="note-box">
     <ul>
@@ -400,8 +403,8 @@
         <li>
           <ul>
             <li>Mene selaimella GitHubiin</li>
-            <li>Klikkaa haaran valintaa jossa lukee <strong>Main</strong></li>
-            <li>Valitse uusi haara</li>
+            <li>Klikkaa haaran valintaa, jossa lukee <strong>main</strong>.</li>
+            <li>Valitse uusi haara.</li>
           </ul>
           <figure>
             <img
@@ -435,9 +438,9 @@
   >
     <div class="contentToAccordion">
       <p class="keep-margin">
-        Kun olet tehnyt kehitystyötäsi varten luomassasi haarasas kaikki
-        tarvittavat muutokset ja saanut valmiiksi vaikkapa uuden ominaisuuden,
-        jonka haluat yhdistää päähaaraan toimi näin:
+        Kun olet tehnyt kehitystyötäsi varten luomassasi haarassa kaikki
+        tarvittavat muutokset ja saanut valmiiksi uuden ominaisuuden, jonka
+        haluat yhdistää päähaaraan toimi näin:
       </p>
       <ol>
         <li>
@@ -479,7 +482,7 @@
             <p class="note-box margin-right">
               Jos konflikteja ilmenee, Git ilmoittaa ja pyytää ratkaisemaan ne
               tässä kohtaa. Tästä lisää osiossa
-              <a href="/teamwork/merge-conflicts.html">2.4 merge-konfliktit</a>
+              <a href="/teamwork/merge-conflicts.html">2.4 merge-konfliktit</a>.
             </p>
             <li>
               Viedään muutokset etärepositorioon komennolla:<br />
