@@ -20,6 +20,10 @@ h6 {
   font-weight: 600;
 }
 
+h3 {
+  padding: 1rem 0 0.5rem 0;
+}
+
 /* interview section title with lines on sides */
 .interview1 h3 {
   display: flex;
