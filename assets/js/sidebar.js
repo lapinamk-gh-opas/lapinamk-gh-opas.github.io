@@ -1,6 +1,46 @@
 // includes.js fires event: "sidebar component:loaded" after sidebar component is loaded to DOM
 // and that event is used to launch/run this script.
 
+// 0. Load table files that are included in sidebar
+document.addEventListener("sidebar-component:loaded", () => {
+  // Process any data-include elements within the sidebar (like table files)
+  const sidebarIncludes = document.querySelectorAll("#sidebar [data-include]");
+  let loadPromises = [];
+  
+  sidebarIncludes.forEach(async (el) => {
+    const path = el.getAttribute("data-include");
+    const loadPromise = (async () => {
+      try {
+        const content = await fetch(path);
+        if (!content.ok) throw new Error(content.statusText);
+        const html = await content.text();
+        el.outerHTML = html;
+      } catch (err) {
+        el.innerHTML = `<p style="color:red">Sisällön lataus epäonnistui: ${path}</p>`;
+      }
+    })();
+    loadPromises.push(loadPromise);
+  });
+  
+  // After all table files are loaded, set up download buttons
+  Promise.all(loadPromises).then(() => {
+    // Set up download button event listeners
+    const cmdBtn = document.getElementById("downloadListBtn");
+    if (cmdBtn) {
+      cmdBtn.addEventListener("click", () => {
+        downloadTableAsText(".cmd-table", "git-komennot.txt", "Git Komennot");
+      });
+    }
+
+    const workflowBtn = document.getElementById("downloadWorkflowBtn");
+    if (workflowBtn) {
+      workflowBtn.addEventListener("click", () => {
+        downloadTableAsText(".workflow-table", "git-workflowt.txt", "Git Workflowt");
+      });
+    }
+  });
+});
+
 // 1. Sidebar opening and closing functionality.
 document.addEventListener("sidebar-component:loaded", () => {
   const sidebar = document.getElementById("sidebar"); // get sidebat element
@@ -73,7 +113,6 @@ document.addEventListener("sidebar-component:loaded", () => {
 });
 
 // 4. Sidebar saving a list functionality
-// download table as .txt file
 function downloadTableAsText(tableSelector, filename, title) {
   const table = document.querySelector(tableSelector);
   if (!table) return;
@@ -97,24 +136,6 @@ function downloadTableAsText(tableSelector, filename, title) {
   URL.revokeObjectURL(url);
 }
 
-// download buttons for both lists
-document.addEventListener("sidebar-component:loaded", () => {
-  // command list download button
-  const cmdBtn = document.getElementById("downloadListBtn");
-  if (cmdBtn) {
-    cmdBtn.addEventListener("click", () => {
-      downloadTableAsText(".cmd-table", "git-komennot.txt", "Git Komennot");
-    });
-  }
-
-  // workflow list download button
-  const workflowBtn = document.getElementById("downloadWorkflowBtn");
-  if (workflowBtn) {
-    workflowBtn.addEventListener("click", () => {
-      downloadTableAsText(".workflow-table", "git-workflowt.txt", "Git Workflowt");
-    });
-  }
-});
 
 // 5. Sidebar responsiveness functionality
 
