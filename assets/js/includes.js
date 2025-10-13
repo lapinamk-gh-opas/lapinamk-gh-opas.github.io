@@ -4,6 +4,20 @@
 // This enables modularitys to the site by allowing HTML snippets to be reused across multiple pages
 let sidebarLoaded = false;
 let arrowsLoaded = false;
+// Escapes HTML metacharacters in a string
+function escapeHTML(str) {
+  return str.replace(/[&<>"']/g, function(m) {
+    switch (m) {
+      case "&": return "&amp;";
+      case "<": return "&lt;";
+      case ">": return "&gt;";
+      case '"': return "&quot;";
+      case "'": return "&#39;";
+      default: return m;
+    }
+  });
+}
+
 document.querySelectorAll("[data-include]").forEach(async (el) => {
   const path = el.getAttribute("data-include"); // gets path from divs data-include attribute
 
@@ -27,6 +41,6 @@ document.querySelectorAll("[data-include]").forEach(async (el) => {
     }
   } catch (err) {
     // in case of error, shows error message inside the div
-    el.innerHTML = `<p style="color:red">Sisällön lataus epäonnistui: ${path}</p>`;
+    el.innerHTML = `<p style="color:red">Sisällön lataus epäonnistui: ${escapeHTML(path)}</p>`;
   }
 });
