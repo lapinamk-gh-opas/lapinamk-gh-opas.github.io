@@ -8,7 +8,7 @@
 
 /* Sidebar color, width when open, border and animation */
 .sidebar {
-  width: 300px;
+  width: 320px;
   background: rgba(20, 130, 125, 0.2);
   border-right: 2px solid rgba(20, 130, 125, 0.4);
   transition: width 0.3s ease, min-width 0.3s ease;
@@ -24,7 +24,7 @@
 /* Toggle/arrow button for sidebar */
 .toggle-btn {
   position: absolute;
-  left: 280px;
+  left: 300px;
   margin-top: 5rem;
   width: 40px;
   height: 40px;
@@ -51,29 +51,34 @@
 }
 
 /* Menu list of sidebar */
-.sidebar-menu,
+.sidebar-menu {
+  list-style: none;
+  margin-top: 5rem;
+  padding: 0 1rem;
+}
+
+.sidebar-menu li {
+  margin-bottom: 0;
+}
+
 .sidebar-sub-list {
   list-style: none;
-  padding: 1rem;
-  margin: 0;
 }
 
-/* sidebar dropdown list */
-.sidebar-sub-list {
-  margin: 0 0 1rem 2rem !important;
-  padding: 0 !important;
-}
-
-/* sidebar dropdown list items */
 .sidebar-sub-list li {
-  margin: 0 !important;
-  padding: 0 !important;
+  margin-bottom: 0;
 }
 
-/* sidebar dropdown list items/links */
-.sidebar-sub-list a {
-  margin: 0 !important;
-  padding: 0 !important;
+.sidebar-main-item {
+  margin-left: 1rem;
+}
+
+.sidebar-main-item.commands {
+  margin-left: 0;
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 /* all sidebar list items/links */
@@ -81,7 +86,6 @@
   color: #000;
   display: inline-flex;
   align-items: center;
-  margin: 8px 16px;
   text-decoration: none;
 }
 
@@ -124,7 +128,7 @@
 /* Main content positioning, color and width */
 .main-container {
   flex: 1;
-  padding: 5vh 5vw;
+  padding: 4rem 8rem;
   background: #f9f9f9;
   transition: margin-left 0.3s ease;
 }
@@ -151,11 +155,34 @@
 }
 
 /* sublist is hidden by default */
-.sidebar-sub-list {
+.sidebar-sub-list:not(.commands-table) {
   display: none;
   list-style: none;
   padding-left: 1rem;
   margin-top: 0.5rem;
+}
+
+.sidebar-sub-list.commands-table {
+  padding-left: 0rem;
+  display: none;
+}
+
+/* Dropdown arrow when dropdown is closed */
+.dropdown-toggle.commands::after {
+  content: "+";
+  font-size: 2rem;
+  position: relative;
+  top: 2px;
+}
+
+/* Dropdown arrow when dropdown is open */
+.dropdown-toggle.commands.open::after {
+  content: "–";
+  border-top: none;
+  position: relative;
+  top: 3px;
+  left: -1.5px;
+  transform: scaleY(1.1);
 }
 
 /* and shown when button is clicked */
@@ -186,7 +213,7 @@
   }
 
   .sidebar .menu-items {
-    transform: translateX(-280px) !important;
+    transform: translateX(-300px) !important;
   }
 
   /* sidebar after togglebutton is clicked */
@@ -199,13 +226,13 @@
   }
 
   .sidebar.closed {
-    width: 300px;
+    width: 320px;
     transition: width 0.3s ease;
   }
 
   /* main content area for mobile */
   .main-container {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.5rem 2rem 2rem;
     max-width: calc(100% - 10px);
   }
 
@@ -214,7 +241,7 @@
   }
 
   .main-container.shifted {
-    margin-left: -290px;
+    margin-left: -310px;
   }
 
   /* toggle button for mobile */
@@ -225,7 +252,7 @@
 
   .toggle-btn.closed {
     transform: rotate(0deg);
-    left: 280px;
+    left: 300px;
   }
 
   .sidebar.closed .dropdown-toggle {
@@ -285,28 +312,6 @@
 .sidebar .cmd-table code {
   white-space: normal;
   word-break: keep-all;
-}
-
-/*dropdown arrow in summary*/
-.sidebar-commands summary::-webkit-details-marker {
-  display: none;
-}
-.sidebar-commands summary::marker {
-  content: "";
-}
-
-.sidebar-commands summary .dropdown-toggle {
-  margin-left: 0.5rem;
-  font-size: 1rem;
-  transform: translateY(5px);
-}
-.sidebar-commands summary .dropdown-toggle::after {
-  content: "▼";
-  border-top: none;
-}
-.sidebar-commands[open] summary .dropdown-toggle::after {
-  content: "▲";
-  border-top: none;
 }
 
 /* download button styles */

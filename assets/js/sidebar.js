@@ -1,13 +1,12 @@
 // includes.js fires event: "sidebar component:loaded" after sidebar component is loaded to DOM
 // and that event is used to launch/run this script.
+var sidebarState = sessionStorage.getItem("sidebar");
 
 // 1. Sidebar opening and closing functionality.
 document.addEventListener("sidebar-component:loaded", () => {
   const sidebar = document.getElementById("sidebar"); // get sidebat element
   const toggleBtn = document.getElementById("toggleBtn"); // get toggle button element
   const mainContainer = document.getElementById("mainContainer"); // get main container element
-
-  const sidebarState = sessionStorage.getItem("sidebar");
 
   if (sidebarState === "closed") {
     sidebar.classList.add("closed");
@@ -28,6 +27,7 @@ document.addEventListener("sidebar-component:loaded", () => {
 
       const isClosed = sidebar.classList.contains("closed");
       sessionStorage.setItem("sidebar", isClosed ? "closed" : "open");
+      sidebarState = isClosed ? "closed" : "open";
       document.dispatchEvent(new Event("sidebar:changed"));
     });
   }
@@ -37,6 +37,7 @@ document.addEventListener("sidebar-component:loaded", () => {
 document.addEventListener("sidebar-component:loaded", () => {
   const listItems = document.querySelectorAll(".sidebar-main-item"); // gets sibebars first level list items
 
+  console.log("listItems: ", listItems);
   // listens click events to each list items dropdown button and toggles class open for sub list
   listItems.forEach((item) => {
     const toggle = item.querySelector(".dropdown-toggle"); // gets dropdown button
@@ -45,6 +46,7 @@ document.addEventListener("sidebar-component:loaded", () => {
     if (!toggle || !sublist) return; // if no toggle button or sub list, skip to next item
 
     toggle.addEventListener("click", () => {
+      console.log("clicked toggle");
       toggle.classList.toggle("open");
       sublist.classList.toggle("open");
     });
@@ -102,12 +104,17 @@ document.addEventListener("sidebar-component:loaded", () => {
   });
 });
 
+// close sidebar if screen changes to less than 1200px
 document.addEventListener("sidebar-component:loaded", () => {
   function checkWidth() {
     if (window.innerWidth < 1200) {
       sidebar.classList.remove("closed");
       toggleBtn.classList.remove("closed");
       mainContainer.classList.remove("shifted");
+    } else if (sidebarState === "closed") {
+      sidebar.classList.add("closed");
+      toggleBtn.classList.add("closed");
+      mainContainer.classList.add("shifted");
     } else {
       sidebar.classList.remove("closed");
       toggleBtn.classList.remove("closed");

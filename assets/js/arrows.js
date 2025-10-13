@@ -59,11 +59,6 @@ document.addEventListener("pages:loaded", () => {
   const prevBtn = document.getElementById("prevBtn"); // gets prev button
   const nextBtn = document.getElementById("nextBtn"); // gets next  button
 
-  // hides prev button if there are no previous links or pages
-  if (prevBtn && pageIndex === 0 && linkIndex === 0) {
-    prevBtn.classList.add("hide");
-  }
-
   // hides next button if there are no next links or pages
   if (
     nextBtn &&
@@ -83,9 +78,18 @@ document.addEventListener("pages:loaded", () => {
     if (pageIndex > 0) {
       textPrev.textContent = "EDELLINEN SIVU"; // main field is set here
       additionalTextPrev.textContent = pageNamesFin[pageIndex - 1]; // sub field comes dynamically from variable
-    } else if (pageIndex === 0) {
+    } else if (pageIndex === 0 && linkIndex > 0) {
       textPrev.textContent = "EDELLINEN OSA"; // main field is set here
       additionalTextPrev.textContent = linkNamesFin[linkIndex - 1]; // sub field comes dynamically from variable
+    } else if (pageIndex === 0 && linkIndex === 0) {
+      // Show home page arrow if on basics index page
+      textPrev.textContent = "ETUSIVU";
+    } else if (
+      pageIndex === 0 &&
+      linkIndex === -1 &&
+      currentPath === "/index.html"
+    ) {
+      prevBtn.classList.add("hide");
     }
   }
 
@@ -109,7 +113,11 @@ document.addEventListener("pages:loaded", () => {
   // Loads previous page if there is one or else navigates to previous part/link
   if (prevBtn) {
     prevBtn.onclick = () => {
-      navPrev();
+      if (pageIndex === 0 && linkIndex === 0) {
+        window.location.href = "/index.html";
+      } else {
+        navPrev();
+      }
     };
   }
 
@@ -145,6 +153,14 @@ document.addEventListener("keyup", function (event) {
   switch (event.key) {
     case "ArrowLeft":
       if (pageIndex === 0 && linkIndex === 0) {
+        window.location.href = "/index.html";
+        break;
+      }
+      if (
+        pageIndex === 0 &&
+        linkIndex === -1 &&
+        currentPath === "/index.html"
+      ) {
         break;
       } else {
         navPrev();
