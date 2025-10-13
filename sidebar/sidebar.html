@@ -84,113 +84,18 @@
             <summary>
               <span>Komennot muistilista</span><span class="dropdown-toggle"></span>
             </summary>
-            <div class="table-wrap">
-              <table class="cmd-table">
-                <thead>
-                  <tr>
-                    <th>Komento</th>
-                    <th>Selitys</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><code>cd</code></td>
-                    <td>Siirry kansioon</td>
-                  </tr>
-                  <tr>
-                    <td><code>cd ..</code></td>
-                    <td>Siirry yksi taso ylemmäs</td>
-                  </tr>
-                  <tr>
-                    <td><code>dir</code></td>
-                    <td>Näytä kansion sisältö</td>
-                  </tr>
-                  <tr>
-                    <td><code>mkdir uusiKansio</code></td>
-                    <td>Luo uusi kansio</td>
-                  </tr>
-                  <tr>
-                    <td><code>git init</code></td>
-                    <td>Alusta uusi Git-repositorio</td>
-                  </tr>
-                  <tr>
-                    <td><code>git clone &lt;repo&gt;</code></td>
-                    <td>Kloonaa olemassa oleva repositorio</td>
-                  </tr>
-                  <tr>
-                    <td><code>git remote add origin &lt;url&gt;</code></td>
-                    <td>Yhdistä paikallinen repo etärepositorioon</td>
-                  </tr>
-                  <tr>
-                    <td><code>git status</code></td>
-                    <td>Näytä muutosten tila</td>
-                  </tr>
-                  <tr>
-                    <td><code>git add &lt;tiedosto&gt;</code></td>
-                    <td>Lisää tiedosto stagingiin</td>
-                  </tr>
-                  <tr>
-                    <td><code>git add .</code></td>
-                    <td>Lisää kaikki muutokset stagingiin</td>
-                  </tr>
-                  <tr>
-                    <td><code>git commit -m "viesti"</code></td>
-                    <td>Tallenna muutokset</td>
-                  </tr>
-                  <tr>
-                    <td><code>git branch</code></td>
-                    <td>Näytä kaikki haarat</td>
-                  </tr>
-                  <tr>
-                    <td><code>git checkout -b dev</code></td>
-                    <td>Luo ja siirry haaraan <code>dev</code></td>
-                  </tr>
-                  <tr>
-                    <td><code>git checkout main</code></td>
-                    <td>Siirry olemassa olevaan haaraan <code>main</code></td>
-                  </tr>
-                  <tr>
-                    <td><code>git pull</code></td>
-                    <td>Hae ja yhdistä etärepon muutokset</td>
-                  </tr>
-                  <tr>
-                    <td><code>git push</code></td>
-                    <td>Puske muutokset etärepoon</td>
-                  </tr>
-                  <tr>
-                    <td><code>git push -u origin dev</code></td>
-                    <td>Puske <code>dev</code> ja aseta seuranta</td>
-                  </tr>
-                  <tr>
-                    <td><code>git merge dev</code></td>
-                    <td>Yhdistä <code>dev</code> nykyiseen haaraan</td>
-                  </tr>
-                  <tr>
-                    <td><code>git branch -d dev</code></td>
-                    <td>Poista haara <code>dev</code></td>
-                  </tr>
-                  <tr>
-                    <td><code>git diff</code></td>
-                    <td>Näytä erot muutosten välillä</td>
-                  </tr>
-                  <tr>
-                    <td><code>git restore &lt;tiedosto&gt;</code></td>
-                    <td>Palauta tiedosto viime commitin tilaan</td>
-                  </tr>
-                  <tr>
-                    <td><code>git reset HEAD~</code></td>
-                    <td>Peru viimeisin commit (muutokset jäävät)</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="download-wrap">
-              <button id="downloadListBtn" type="button" class="download-btn">
-                Lataa muistilista (.txt)
-              </button>
-            </div>
+            <div data-include="/sidebar/commands-table.html"></div>
           </details>
         </li>
+
+        <li class="sidebar-main-item">
+          <details class="sidebar-workflows">
+            <summary><span>Workflow muistilista</span><span class="dropdown-toggle"></span></summary>
+            <div data-include="/sidebar/workflow-table.html"></div>
+          </details>
+        </li>
+
+
       </ul>
     </div>
     <button id="toggleBtn" class="toggle-btn">
