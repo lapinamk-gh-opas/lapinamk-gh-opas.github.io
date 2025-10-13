@@ -1,6 +1,7 @@
 // Helper to escape HTML meta-characters in strings
 function escapeHTML(str) {
-  return str.replace(/&/g, "&amp;")
+  return str
+    .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
@@ -9,7 +10,6 @@ function escapeHTML(str) {
 
 document.addEventListener("accordion:loaded", () => {
   const reusedAccordion = document.querySelectorAll(".reused-accordion");
-  console.log("reused-accordion: ", reusedAccordion);
 
   // listens clicks for links and load new sub content accordingly
   reusedAccordion.forEach(async (accordion) => {
@@ -23,7 +23,9 @@ document.addEventListener("accordion:loaded", () => {
       document.dispatchEvent(new Event("reusedAccordion:loaded"));
     } catch (err) {
       // in case of error, shows error message inside the div
-      accordion.innerHTML = `<p style="color:red">Sisällön lataus epäonnistui: ${escapeHTML(path)}</p>`;
+      accordion.innerHTML = `<p style="color:red">Sisällön lataus epäonnistui: ${escapeHTML(
+        path
+      )}</p>`;
     }
   });
 });

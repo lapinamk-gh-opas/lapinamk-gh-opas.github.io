@@ -8,7 +8,7 @@
 
 /* Sidebar color, width when open, border and animation */
 .sidebar {
-  width: 300px;
+  width: 320px;
   background: rgba(20, 130, 125, 0.2);
   border-right: 2px solid rgba(20, 130, 125, 0.4);
   transition: width 0.3s ease, min-width 0.3s ease;
@@ -24,7 +24,7 @@
 /* Toggle/arrow button for sidebar */
 .toggle-btn {
   position: absolute;
-  left: 280px;
+  left: 300px;
   margin-top: 5rem;
   width: 40px;
   height: 40px;
@@ -51,29 +51,63 @@
 }
 
 /* Menu list of sidebar */
-.sidebar-menu,
+.sidebar-menu {
+  list-style: none;
+  margin-top: 6rem;
+  padding: 0 1rem;
+}
+
+.sidebar-menu li {
+  margin-bottom: 0;
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  user-select: none;
+}
+
 .sidebar-sub-list {
   list-style: none;
-  padding: 1rem;
-  margin: 0;
+  height: 0;
+  display: block;
+  overflow: hidden;
+  list-style: none;
+  margin: 0.5rem 0;
+  transition: height 0.3s ease;
 }
 
-/* sidebar dropdown list */
-.sidebar-sub-list {
-  margin: 0 0 1rem 2rem !important;
-  padding: 0 !important;
-}
-
-/* sidebar dropdown list items */
 .sidebar-sub-list li {
-  margin: 0 !important;
-  padding: 0 !important;
+  margin-bottom: 0;
 }
 
-/* sidebar dropdown list items/links */
-.sidebar-sub-list a {
-  margin: 0 !important;
-  padding: 0 !important;
+.sidebar-main-item {
+  margin-left: 1rem;
+  height: 2rem;
+}
+
+.sidebar-main-item.open {
+  height: fit-content;
+}
+
+.top-margin {
+  margin-top: 5rem;
+}
+
+.sidebar-main-item.commands,
+.sidebar-main-item.workflow {
+  margin-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+}
+
+.sidebar-title.commands,
+.sidebar-title.workflow {
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 /* all sidebar list items/links */
@@ -81,7 +115,6 @@
   color: #000;
   display: inline-flex;
   align-items: center;
-  margin: 8px 16px;
   text-decoration: none;
 }
 
@@ -90,16 +123,32 @@
   text-decoration: underline;
 }
 
+a.active {
+  color: rgb(20, 130, 125);
+  text-decoration: underline;
+}
+
+.sidebar-title-main {
+  margin-left: 1rem;
+  margin-bottom: 0.2rem;
+  text-decoration: underline;
+}
+
+.sidebar-title-main.top-margin {
+  margin-left: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
 /*  Sidebar slide effect */
 .sidebar .menu-items {
   transition: transform 0.3s ease;
-  transform: translateX(0) !important;
+  transform: translateX(0);
   white-space: nowrap;
 }
 
 /* sidebas position when closed */
 .sidebar.closed .menu-items {
-  transform: translateX(-280px) !important;
+  transform: translateX(-280px);
 }
 
 /* sidebar texts display type */
@@ -124,43 +173,74 @@
 /* Main content positioning, color and width */
 .main-container {
   flex: 1;
-  padding: 5vh 5vw;
+  padding: 4rem 8rem;
   background: #f9f9f9;
   transition: margin-left 0.3s ease;
 }
 
 /* Dropdown functionality for sub menu items */
 /* Dropdown arrow */
-.dropdown-toggle {
+.dropdown-toggle:not(.commands) {
   cursor: pointer;
-  font-size: 1rem;
-  line-height: 2rem;
-  transform: translateY(5px);
+  font-size: 1.2rem;
+  position: relative;
+  top: 7px;
+  margin-right: 1.5rem;
 }
 
 /* Dropdown arrow when dropdown is closed */
 .dropdown-toggle::after {
   content: "▼";
   border-top: none;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
 }
 
 /* Dropdown arrow when dropdown is open */
 .dropdown-toggle.open::after {
-  content: "▲";
+  transform: rotate(180deg);
   border-top: none;
 }
 
 /* sublist is hidden by default */
-.sidebar-sub-list {
-  display: none;
-  list-style: none;
+.sidebar-sub-list:not(.commands-table) {
   padding-left: 1rem;
-  margin-top: 0.5rem;
+}
+
+.sidebar-sub-list.commands-table {
+  padding-left: 0;
+  margin: 0.5rem 0 1.5rem 0;
+}
+
+/* Dropdown arrow when dropdown is closed */
+.dropdown-toggle.commands::after {
+  content: "+";
+  line-height: 1.5rem;
+  font-size: 2rem;
+  position: relative;
+  margin-right: 0.3rem;
+  transition: transform 0.3s ease;
+}
+
+/* Dropdown arrow when dropdown is open */
+.dropdown-toggle.commands.open::after {
+  content: "–";
+  border-top: none;
+  position: relative;
+  top: 0.5px;
+  left: 4.5px;
+  transform: scaleY(1.1);
+  margin-right: 0.5rem;
+  transform: rotate(360deg);
 }
 
 /* and shown when button is clicked */
 .sidebar-sub-list.open {
-  display: block;
+  height: fit-content;
+}
+
+.small-margin-left {
+  margin-left: 0.5rem;
 }
 
 /* lay out changes for mobile */
@@ -186,7 +266,7 @@
   }
 
   .sidebar .menu-items {
-    transform: translateX(-280px) !important;
+    transform: translateX(-300px) !important;
   }
 
   /* sidebar after togglebutton is clicked */
@@ -199,13 +279,13 @@
   }
 
   .sidebar.closed {
-    width: 300px;
+    width: 320px;
     transition: width 0.3s ease;
   }
 
   /* main content area for mobile */
   .main-container {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.5rem 2rem 2rem;
     max-width: calc(100% - 10px);
   }
 
@@ -214,7 +294,7 @@
   }
 
   .main-container.shifted {
-    margin-left: -290px;
+    margin-left: -310px;
   }
 
   /* toggle button for mobile */
@@ -225,7 +305,7 @@
 
   .toggle-btn.closed {
     transform: rotate(0deg);
-    left: 280px;
+    left: 300px;
   }
 
   .sidebar.closed .dropdown-toggle {
@@ -235,12 +315,14 @@
 
 /* sidebar commands table and download button -styles */
 
-.sidebar-commands summary, .sidebar-workflows summary {
+.sidebar-commands summary,
+.sidebar-workflows summary {
   cursor: pointer;
   padding: 0.25rem 0;
 }
 
-.cmd-table, .workflow-table {
+.cmd-table,
+.workflow-table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
@@ -251,68 +333,51 @@
   border-radius: 10px;
 }
 
-.sidebar .cmd-table th:first-child, .sidebar .workflow-table th:first-child,
-.sidebar .cmd-table td:first-child, .sidebar .workflow-table td:first-child {
+.sidebar .cmd-table th:first-child,
+.sidebar .workflow-table th:first-child,
+.sidebar .cmd-table td:first-child,
+.sidebar .workflow-table td:first-child {
   width: 35%;
 }
 
-.sidebar .cmd-table th:last-child, .sidebar .workflow-table th:last-child,
-.sidebar .cmd-table td:last-child, .sidebar .workflow-table td:last-child {
+.sidebar .cmd-table th:last-child,
+.sidebar .workflow-table th:last-child,
+.sidebar .cmd-table td:last-child,
+.sidebar .workflow-table td:last-child {
   width: 65%;
 }
 
-.sidebar .cmd-table th, .sidebar .workflow-table th,
-.sidebar .cmd-table td, .sidebar .workflow-table td {
+.sidebar .cmd-table th,
+.sidebar .workflow-table th,
+.sidebar .cmd-table td,
+.sidebar .workflow-table td {
   padding: 0.3rem 0.3rem 0rem 0.3rem;
   vertical-align: top;
   text-align: left;
   border-bottom: 1px solid #ccc;
 }
 
-.sidebar .cmd-table tr:last-child td, .sidebar .workflow-table tr:last-child td  {
+.sidebar .cmd-table tr:last-child td,
+.sidebar .workflow-table tr:last-child td {
   border-bottom: none;
   padding-bottom: 0.2rem;
 }
 
-.cmd-table code, .workflow-table code {
+.cmd-table code,
+.workflow-table code {
   font-family: monospace;
   font-size: 0.7rem;
 }
 
 /* making sure text wraps within table cells */
-.sidebar .cmd-table th, .sidebar .workflow-table th,
-.sidebar .cmd-table td, .sidebar .workflow-table td,
-.sidebar .cmd-table code, .sidebar .workflow-table code {
+.sidebar .cmd-table th,
+.sidebar .workflow-table th,
+.sidebar .cmd-table td,
+.sidebar .workflow-table td,
+.sidebar .cmd-table code,
+.sidebar .workflow-table code {
   white-space: normal;
   word-break: keep-all;
-}
-
-/*dropdown arrow in summary*/
-.sidebar-commands summary::-webkit-details-marker, 
-.sidebar-workflows summary::-webkit-details-marker {
-  display: none;
-}
-.sidebar-commands summary::marker, 
-.sidebar-workflows summary::marker {
-  content: "";
-}
-
-.sidebar-commands summary .dropdown-toggle, 
-.sidebar-workflows summary .dropdown-toggle {
-  margin-left: 0.5rem;
-  font-size: 1rem;
-  transform: translateY(5px);
-}
-.sidebar-commands summary .dropdown-toggle::after,
-.sidebar-workflows summary .dropdown-toggle::after {
-  content: "✚";
-  border-top: none;
-}
-.sidebar-commands[open] summary .dropdown-toggle::after,
-.sidebar-workflows[open] summary .dropdown-toggle::after {
-  content: "▬";
-  transform: scaleX(0.6);
-  border-top: none;
 }
 
 /* download button styles */

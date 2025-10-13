@@ -29,6 +29,8 @@ document.addEventListener("sidebar:loaded", () => {
   linkNamesFin = Array.from(menuItems).map((el) => el.textContent); // makes array of links text content
 
   linkIndex = linkNames.indexOf(currentPath); // gets index of currently active link
+
+  menuItems[linkIndex].classList.add("active");
   document.dispatchEvent(new Event("links:loaded")); // fires custom event for next phase of script
 });
 
@@ -50,6 +52,7 @@ document.addEventListener("links:loaded", () => {
 
   // gets current page index or 0 if there are no sub pages/current page
   pageIndex = currentPage ? pageNames.indexOf(currentPage) : 0;
+
   document.dispatchEvent(new Event("pages:loaded")); // fires custom event for next phase of script
 });
 
@@ -58,11 +61,6 @@ document.addEventListener("links:loaded", () => {
 document.addEventListener("pages:loaded", () => {
   const prevBtn = document.getElementById("prevBtn"); // gets prev button
   const nextBtn = document.getElementById("nextBtn"); // gets next  button
-
-  // hides prev button if there are no previous links or pages
-  if (prevBtn && pageIndex === 0 && linkIndex === 0) {
-    prevBtn.classList.add("hide");
-  }
 
   // hides next button if there are no next links or pages
   if (
@@ -83,9 +81,18 @@ document.addEventListener("pages:loaded", () => {
     if (pageIndex > 0) {
       textPrev.textContent = "EDELLINEN SIVU"; // main field is set here
       additionalTextPrev.textContent = pageNamesFin[pageIndex - 1]; // sub field comes dynamically from variable
-    } else if (pageIndex === 0) {
+    } else if (pageIndex === 0 && linkIndex > 0) {
       textPrev.textContent = "EDELLINEN OSA"; // main field is set here
       additionalTextPrev.textContent = linkNamesFin[linkIndex - 1]; // sub field comes dynamically from variable
+    } else if (pageIndex === 0 && linkIndex === 0) {
+      // Show home page arrow if on basics index page
+      textPrev.textContent = "ETUSIVU";
+    } else if (
+      pageIndex === 0 &&
+      linkIndex === -1 &&
+      currentPath === "/index.html"
+    ) {
+      prevBtn.classList.add("hide");
     }
   }
 
@@ -109,7 +116,11 @@ document.addEventListener("pages:loaded", () => {
   // Loads previous page if there is one or else navigates to previous part/link
   if (prevBtn) {
     prevBtn.onclick = () => {
-      navPrev();
+      if (pageIndex === 0 && linkIndex === 0) {
+        window.location.href = "/index.html";
+      } else {
+        navPrev();
+      }
     };
   }
 
@@ -145,6 +156,14 @@ document.addEventListener("keyup", function (event) {
   switch (event.key) {
     case "ArrowLeft":
       if (pageIndex === 0 && linkIndex === 0) {
+        window.location.href = "/index.html";
+        break;
+      }
+      if (
+        pageIndex === 0 &&
+        linkIndex === -1 &&
+        currentPath === "/index.html"
+      ) {
         break;
       } else {
         navPrev();

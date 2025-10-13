@@ -208,6 +208,14 @@ figcaption {
     max-width: 100%;
   }
 
+  img.zoomed:not(.no-zoom) {
+    transform: scale(2.5);
+  }
+
+  img.zoomed.sidebar-closed:not(.no-zoom) {
+    left: 0;
+  }
+
   /* button text size */
   #prevPart,
   #prevText,

@@ -77,12 +77,14 @@ document.addEventListener("accordion:loaded", (e) => {
   };
 });
 
-// Image zoom effect specialt tweaks for images that are inside accordion
-// This helpsh keeping other elements in oplace when image is zoomed using CSS
-// Luo funktio, joka sisältää kaiken logiikan
+// Image zoom effect specialt tweaks for images that are inside accordion.
+// This helpsh keeping other elements in place when image is zoomed.
 const initializeAccordionFigures = () => {
+  const images = document.querySelectorAll(".accordion figure img");
+  let resizeTimeout;
+
   const updateFigureHeights = () => {
-    document.querySelectorAll(".accordion figure img").forEach((img) => {
+    images.forEach((img) => {
       const figure = img.closest("figure");
       if (figure) {
         figure.dataset.normalHeight = figure.clientHeight;
@@ -90,34 +92,37 @@ const initializeAccordionFigures = () => {
     });
   };
 
-  document.querySelectorAll(".accordion figure img").forEach((img) => {
+  images.forEach((img) => {
     img.addEventListener("load", updateFigureHeights);
   });
 
-  let resizeTimeout;
-
-  document.addEventListener("sidebar:changed", () => {
+  const scheduleHeightUpdate = (delay = 150) => {
     clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(updateFigureHeights, 350);
-  });
+    resizeTimeout = setTimeout(updateFigureHeights, delay);
+  };
 
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(updateFigureHeights, 150);
-  });
+  document.addEventListener("sidebar:changed", () => scheduleHeightUpdate(350));
+  window.addEventListener("resize", () => scheduleHeightUpdate(150));
 
-  document.querySelectorAll(".accordion figure img").forEach((img) => {
+  images.forEach((img) => {
     const figure = img.closest("figure");
     if (!figure) return;
 
-    img.addEventListener("mousedown", () => {
+    const lockHeight = () => {
       const height = figure.dataset.normalHeight;
       if (height) figure.style.height = height + "px";
-    });
+    };
 
-    img.addEventListener("mouseup", () => {
+    const releaseHeight = () => {
       figure.style.height = "fit-content";
-    });
+    };
+
+    ["mousedown", "touchstart"].forEach((evt) =>
+      img.addEventListener(evt, lockHeight)
+    );
+    ["mouseup", "touchend", "touchcancel"].forEach((evt) =>
+      img.addEventListener(evt, releaseHeight)
+    );
   });
 };
 

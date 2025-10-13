@@ -1,12 +1,13 @@
 // includes.js fires event: "sidebar component:loaded" after sidebar component is loaded to DOM
 // and that event is used to launch/run this script.
+var sidebarState = sessionStorage.getItem("sidebar");
 
 // 0. Load table files that are included in sidebar
 document.addEventListener("sidebar-component:loaded", () => {
   // Process any data-include elements within the sidebar (like table files)
   const sidebarIncludes = document.querySelectorAll("#sidebar [data-include]");
   let loadPromises = [];
-  
+
   sidebarIncludes.forEach(async (el) => {
     const path = el.getAttribute("data-include");
     const loadPromise = (async () => {
@@ -21,7 +22,7 @@ document.addEventListener("sidebar-component:loaded", () => {
     })();
     loadPromises.push(loadPromise);
   });
-  
+
   // After all table files are loaded, set up download buttons
   Promise.all(loadPromises).then(() => {
     // Set up download button event listeners
@@ -35,7 +36,11 @@ document.addEventListener("sidebar-component:loaded", () => {
     const workflowBtn = document.getElementById("downloadWorkflowBtn");
     if (workflowBtn) {
       workflowBtn.addEventListener("click", () => {
-        downloadTableAsText(".workflow-table", "git-workflowt.txt", "Git Workflowt");
+        downloadTableAsText(
+          ".workflow-table",
+          "git-workflowt.txt",
+          "Git Workflowt"
+        );
       });
     }
   });
@@ -46,8 +51,6 @@ document.addEventListener("sidebar-component:loaded", () => {
   const sidebar = document.getElementById("sidebar"); // get sidebat element
   const toggleBtn = document.getElementById("toggleBtn"); // get toggle button element
   const mainContainer = document.getElementById("mainContainer"); // get main container element
-
-  const sidebarState = sessionStorage.getItem("sidebar");
 
   if (sidebarState === "closed") {
     sidebar.classList.add("closed");
@@ -68,6 +71,7 @@ document.addEventListener("sidebar-component:loaded", () => {
 
       const isClosed = sidebar.classList.contains("closed");
       sessionStorage.setItem("sidebar", isClosed ? "closed" : "open");
+      sidebarState = isClosed ? "closed" : "open";
       document.dispatchEvent(new Event("sidebar:changed"));
     });
   }
@@ -85,9 +89,32 @@ document.addEventListener("sidebar-component:loaded", () => {
     if (!toggle || !sublist) return; // if no toggle button or sub list, skip to next item
 
     toggle.addEventListener("click", () => {
+      let isOpen = item.classList.contains("open");
       toggle.classList.toggle("open");
       sublist.classList.toggle("open");
+
+      console.log("isopen: ", isOpen);
+      isOpen ? item.classList.remove("open") : item.classList.add("open");
     });
+  });
+});
+
+document.addEventListener("sidebar:changed", () => {
+  const listItems = document.querySelectorAll(
+    ".sidebar-main-item.commands, .sidebar-main-item.workfloe"
+  ); // gets sibebars notelist list items
+
+  // listens click events to each list items dropdown button and toggles class open for sub list
+  listItems.forEach((item) => {
+    let isOpen = item.classList.contains("open");
+    const toggle = item.querySelector(".dropdown-toggle"); // gets dropdown button
+    const sublist = item.querySelector(".sidebar-sub-list"); // gets sub list
+
+    if ((!isOpen && !toggle) || !sublist) return; // if no toggle button or sub list, skip to next item
+
+    item.classList.remove("open");
+    toggle.classList.remove("open");
+    sublist.classList.remove("open");
   });
 });
 
@@ -101,6 +128,7 @@ document.addEventListener("sidebar-component:loaded", () => {
     if (link.getAttribute("href") === currentPath) {
       const parentItem = link.closest(".sidebar-main-item");
       if (!parentItem) return;
+      parentItem.classList.add("open");
 
       const sublist = parentItem.querySelector(".sidebar-sub-list");
       const toggle = parentItem.querySelector(".dropdown-toggle");
@@ -119,7 +147,7 @@ function downloadTableAsText(tableSelector, filename, title) {
   const rows = Array.from(table.querySelectorAll("tbody tr"));
   const lines = rows.map((tr) => {
     const cells = Array.from(tr.cells);
-    return cells.map(cell => cell.innerText?.trim() ?? "").join(" — ");
+    return cells.map((cell) => cell.innerText?.trim() ?? "").join(" — ");
   });
 
   const content = `${title}\n\n${lines.join("\n")}`;
@@ -136,15 +164,19 @@ function downloadTableAsText(tableSelector, filename, title) {
   URL.revokeObjectURL(url);
 }
 
-
 // 5. Sidebar responsiveness functionality
 
+// close sidebar if screen changes to less than 1200px
 document.addEventListener("sidebar-component:loaded", () => {
   function checkWidth() {
     if (window.innerWidth < 1200) {
       sidebar.classList.remove("closed");
       toggleBtn.classList.remove("closed");
       mainContainer.classList.remove("shifted");
+    } else if (sidebarState === "closed") {
+      sidebar.classList.add("closed");
+      toggleBtn.classList.add("closed");
+      mainContainer.classList.add("shifted");
     } else {
       sidebar.classList.remove("closed");
       toggleBtn.classList.remove("closed");

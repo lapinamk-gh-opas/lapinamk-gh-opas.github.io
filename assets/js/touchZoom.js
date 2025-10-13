@@ -1,45 +1,62 @@
-window.addEventListener("contextmenu", (e) => e.preventDefault(), false);
-
 let images = [];
 
-// Funktio, joka lisää zoom-toiminnon kaikille kuville
-function initImageZoom(img) {
+const initImageZoom = (img) => {
   img.setAttribute("draggable", "false");
+  img.addEventListener("contextmenu", (e) => e.preventDefault(), false);
 
   let pressTimer;
   let longPressed = false;
+  let noTouchZoom = false;
 
-  const addZoom = () => {
+  const addZoom = (x, y) => {
+    // Laske suhteellinen napsautuskohta kuvan sisällä
+    const rect = img.getBoundingClientRect();
+    const offsetX = ((x - rect.left) / rect.width) * 100;
+    const offsetY = ((y - rect.top) / rect.height) * 100;
+
+    // Aseta transform-origin siihen kohtaan
+    img.style.transformOrigin = `${offsetX}% ${offsetY}%`;
+
     img.classList.add("zoomed");
   };
 
   const removeZoom = () => {
     clearTimeout(pressTimer);
     img.classList.remove("zoomed");
+    longPressed = false;
+    document.body.style.overflow = "";
+    window.removeEventListener("touchmove", preventScroll, { passive: false });
   };
 
-  // Kosketuslaitteet
-  img.addEventListener("touchstart", () => {
-    longPressed = false;
+  const preventScroll = (e) => e.preventDefault();
+
+  window.addEventListener("touchmove", () => {
+    noTouchZoom = true;
     pressTimer = setTimeout(() => {
-      addZoom();
-      longPressed = true;
-    }, 100);
+      noTouchZoom = false;
+    }, 500);
   });
 
-  img.addEventListener("touchend", () => {
-    setTimeout(removeZoom, longPressed ? 80 : 0);
+  img.addEventListener("touchstart", (e) => {
+    longPressed = false;
+    const touch = e.touches[0];
+    pressTimer = setTimeout(() => {
+      if (!noTouchZoom) {
+        addZoom(touch.clientX, touch.clientY);
+        longPressed = true;
+        window.addEventListener("touchmove", preventScroll, { passive: false });
+      }
+    }, 200);
   });
 
+  img.addEventListener("touchend", removeZoom);
   img.addEventListener("touchcancel", removeZoom);
 
-  // Hiiri
   img.addEventListener("mousedown", addZoom);
   img.addEventListener("mouseup", removeZoom);
   img.addEventListener("mouseleave", removeZoom);
-}
+};
 
-// Funktio, joka hakee uudet kuvat ja lisää niille toiminnon
 function updateImages(selector) {
   const newImages = document.querySelectorAll(selector);
   newImages.forEach((img) => {
