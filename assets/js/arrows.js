@@ -29,6 +29,8 @@ document.addEventListener("sidebar:loaded", () => {
   linkNamesFin = Array.from(menuItems).map((el) => el.textContent); // makes array of links text content
 
   linkIndex = linkNames.indexOf(currentPath); // gets index of currently active link
+
+  menuItems[linkIndex].classList.add("active");
   document.dispatchEvent(new Event("links:loaded")); // fires custom event for next phase of script
 });
 
@@ -50,6 +52,7 @@ document.addEventListener("links:loaded", () => {
 
   // gets current page index or 0 if there are no sub pages/current page
   pageIndex = currentPage ? pageNames.indexOf(currentPage) : 0;
+
   document.dispatchEvent(new Event("pages:loaded")); // fires custom event for next phase of script
 });
 

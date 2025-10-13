@@ -1,0 +1,78 @@
+<section class="training">
+    <header>
+        <h3>Salaisuudet ja historia</h3>
+        <p>Tässä harjoituksessa näet, miksi salaisuuksia ei pidä tallentaa Git-repositorioon. Harjoitus tehdään vain
+            <em>tekaistulla salaisuudella</em> testirepossa.
+        </p>
+
+        <ol>
+            <li>Luo tyhjä testirepositorio tai avaa olemassa oleva testiprojekti.</li>
+
+            <li>Luo tiedosto <em>secrets.txt</em> ja lisää teksti:
+                <em>API_KEY=DEMO-12345-ABC</em>
+            </li>
+
+            <li>Tallenna tiedosto versionhallintaan:<br>
+                <code>git add secrets.txt <br>
+            </code>
+            </li>
+
+            <li>Commitoi tiedosto:<br>
+                <code>git commit -m "Lisää demoavain testitarkoituksiin"</code>
+            </li>
+
+            <li>Puske muutokset GitHubiin:<br>
+                <code>git push -u origin main</code>
+            </li>
+
+            <li>Tarkista, että tiedosto näkyy repositorion etusivulla.</li>
+
+            <li>Poista tiedosto manuaalisesti tai komennolla:<br>
+                <code>git rm secrets.txt </code><br>
+            </li>
+
+            <li>Kirjaa poisto omaksi commitiksi:<br>
+                <code>git commit -m "Poista demoavain"</code>
+            </li>
+
+            <li>Puske muutokset GitHubiin:<br>
+                <code>git push -u origin main</code>
+            </li>
+
+            <li>Tarkista, että tiedostoa ei näy repositorion etusivulla.</li>
+
+            <li>Etsi tiedosto GitHubin historiasta: etsi selaimella Commits-lista, siirry ensimmäiseen commit-merkintään
+                ja tarkastele diffiä. Tee sama paikallisesti komentorivillä ajamalla seuraavat komennot yksitellen:<br>
+                <code>git log --follow -- secrets.txt </code><br>
+                <code>git show HEAD~1:secrets.txt</code><br>
+                <code>git grep -n "DEMO-12345" $(git rev-list --all)</code><br>
+            </li>
+            <p class="note-box">Poistettu sisältö on yhä nähtävissä historiassa.</p>
+
+
+            <li>Lisää suojaukseksi mallipohja ja ignore-sääntö:<br>
+                <em>.env.example</em> sisältö:<br>
+                <code>API_KEY=your_api_key_here</code><br>
+                <em>.gitignore</em> sisältö:<br>
+                <code>.env</code><br>
+                <code>.env.*</code>
+                <p>Oikeat arvot sijoitetaan omaan <em>.env</em>-tiedostoon, jota ei koskaan commitata.</p>
+            </li>
+
+            <li>Lisätehtävä: kokeile historian muuttamista vain tässä testirepossa ja ymmärrä vaikutukset.<br>
+                <code>git filter-repo --path secrets.txt --invert-paths</code><br>
+                <code>git push --force</code>
+                <p>Force-push muuttaa commit-historiaa.  Oikeissa projekteissa noudata aina organisaation ohjeita ja GitHubin
+                    virallista dokumentaatiota.</p>
+            </li>
+        </ol>
+
+        <p class="note-box"><strong>Mieti tarkkaan</strong> mitä julkaiset! Etärepositorioon ei saa puskea mitään
+            salaista: ei API-avaimia, salasanoja, eikä mitään, mitä ei halua julkaista koko maailmalle.</p>
+
+        <p>Onnittelut. Nyt tiedät, miksi salaisuudet pidetään aina Gitin ulkopuolella ja miksi <code>.gitignore</code>
+            sekä
+            <code>.env</code>-mallit ovat hyödyllisiä.
+        </p>
+    </header>
+</section>

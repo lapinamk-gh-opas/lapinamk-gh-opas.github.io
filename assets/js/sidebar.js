@@ -2,6 +2,50 @@
 // and that event is used to launch/run this script.
 var sidebarState = sessionStorage.getItem("sidebar");
 
+// 0. Load table files that are included in sidebar
+document.addEventListener("sidebar-component:loaded", () => {
+  // Process any data-include elements within the sidebar (like table files)
+  const sidebarIncludes = document.querySelectorAll("#sidebar [data-include]");
+  let loadPromises = [];
+
+  sidebarIncludes.forEach(async (el) => {
+    const path = el.getAttribute("data-include");
+    const loadPromise = (async () => {
+      try {
+        const content = await fetch(path);
+        if (!content.ok) throw new Error(content.statusText);
+        const html = await content.text();
+        el.outerHTML = html;
+      } catch (err) {
+        el.innerHTML = `<p style="color:red">Sisällön lataus epäonnistui: ${path}</p>`;
+      }
+    })();
+    loadPromises.push(loadPromise);
+  });
+
+  // After all table files are loaded, set up download buttons
+  Promise.all(loadPromises).then(() => {
+    // Set up download button event listeners
+    const cmdBtn = document.getElementById("downloadListBtn");
+    if (cmdBtn) {
+      cmdBtn.addEventListener("click", () => {
+        downloadTableAsText(".cmd-table", "git-komennot.txt", "Git Komennot");
+      });
+    }
+
+    const workflowBtn = document.getElementById("downloadWorkflowBtn");
+    if (workflowBtn) {
+      workflowBtn.addEventListener("click", () => {
+        downloadTableAsText(
+          ".workflow-table",
+          "git-workflowt.txt",
+          "Git Workflowt"
+        );
+      });
+    }
+  });
+});
+
 // 1. Sidebar opening and closing functionality.
 document.addEventListener("sidebar-component:loaded", () => {
   const sidebar = document.getElementById("sidebar"); // get sidebat element
@@ -37,7 +81,6 @@ document.addEventListener("sidebar-component:loaded", () => {
 document.addEventListener("sidebar-component:loaded", () => {
   const listItems = document.querySelectorAll(".sidebar-main-item"); // gets sibebars first level list items
 
-  console.log("listItems: ", listItems);
   // listens click events to each list items dropdown button and toggles class open for sub list
   listItems.forEach((item) => {
     const toggle = item.querySelector(".dropdown-toggle"); // gets dropdown button
@@ -46,10 +89,32 @@ document.addEventListener("sidebar-component:loaded", () => {
     if (!toggle || !sublist) return; // if no toggle button or sub list, skip to next item
 
     toggle.addEventListener("click", () => {
-      console.log("clicked toggle");
+      let isOpen = item.classList.contains("open");
       toggle.classList.toggle("open");
       sublist.classList.toggle("open");
+
+      console.log("isopen: ", isOpen);
+      isOpen ? item.classList.remove("open") : item.classList.add("open");
     });
+  });
+});
+
+document.addEventListener("sidebar:changed", () => {
+  const listItems = document.querySelectorAll(
+    ".sidebar-main-item.commands, .sidebar-main-item.workfloe"
+  ); // gets sibebars notelist list items
+
+  // listens click events to each list items dropdown button and toggles class open for sub list
+  listItems.forEach((item) => {
+    let isOpen = item.classList.contains("open");
+    const toggle = item.querySelector(".dropdown-toggle"); // gets dropdown button
+    const sublist = item.querySelector(".sidebar-sub-list"); // gets sub list
+
+    if ((!isOpen && !toggle) || !sublist) return; // if no toggle button or sub list, skip to next item
+
+    item.classList.remove("open");
+    toggle.classList.remove("open");
+    sublist.classList.remove("open");
   });
 });
 
@@ -63,6 +128,7 @@ document.addEventListener("sidebar-component:loaded", () => {
     if (link.getAttribute("href") === currentPath) {
       const parentItem = link.closest(".sidebar-main-item");
       if (!parentItem) return;
+      parentItem.classList.add("open");
 
       const sublist = parentItem.querySelector(".sidebar-sub-list");
       const toggle = parentItem.querySelector(".dropdown-toggle");
@@ -74,35 +140,31 @@ document.addEventListener("sidebar-component:loaded", () => {
   });
 });
 
-// Download command list as .txt file
-// after sidebar component is loaded, adds click event listener to download button
-document.addEventListener("sidebar-component:loaded", () => {
-  const btn = document.getElementById("downloadListBtn");
-  if (!btn) return;
-
-  btn.addEventListener("click", () => {
-    // gets table rows and maps them to lines of text
-    const rows = Array.from(document.querySelectorAll(".cmd-table tbody tr"));
-    const lines = rows.map((tr) => {
-      const cmd = tr.cells[0]?.innerText?.trim() ?? "";
-      const desc = tr.cells[1]?.innerText?.trim() ?? "";
-      return `${cmd} — ${desc}`;
-    });
-
-    const content = `Git muistilista\n\n${lines.join("\n")}`;
-
-    // downloads the content as a .txt file
-    const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "git-muistilista.txt";
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    URL.revokeObjectURL(url);
+// 4. Sidebar saving a list functionality
+function downloadTableAsText(tableSelector, filename, title) {
+  const table = document.querySelector(tableSelector);
+  if (!table) return;
+  const rows = Array.from(table.querySelectorAll("tbody tr"));
+  const lines = rows.map((tr) => {
+    const cells = Array.from(tr.cells);
+    return cells.map((cell) => cell.innerText?.trim() ?? "").join(" — ");
   });
-});
+
+  const content = `${title}\n\n${lines.join("\n")}`;
+
+  // downloads the content as a .txt file
+  const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+
+// 5. Sidebar responsiveness functionality
 
 // close sidebar if screen changes to less than 1200px
 document.addEventListener("sidebar-component:loaded", () => {

@@ -19,15 +19,13 @@
 
     <h4>Käyttöoikeudet</h4>
     <p>
-        Repositorion omistaja voi kutsua muita käyttäjiä mukaan projektiin.
-        Yleisimpiä rooleja ovat <em>Read</em> (vain luku), <em>Triage</em> (issues ja pull requestien hallinta),
-        <em>Write</em> (koodin muokkaus) ja <em>Admin</em> (kaikki oikeudet).
-        Anna aina vain tarvittavat oikeudet (least privilege) projektin osallistujille.
+        Repositorion omistaja voi kutsua muita käyttäjiä mukaan projektiin. Yleisimpiä rooleja ovat <em>Read</em> 
+        (vain luku), <em>Triage</em> (issues ja pull requestien hallinta), <em>Write</em> (koodin muokkaus) ja 
+        <em>Admin</em> (kaikki oikeudet). Anna aina vain tarvittavat oikeudet (least privilege) projektin osallistujille.
     </p>
     <p>
         Tasavertaiselle tiimitoverille voi antaa <em>Write</em>-oikeudet (tai jopa <em>Admin</em>-oikeudet), jotta hän
-        voi osallistua koodin kehittämiseen,
-        kun taas arvioivalle opettajalle usein riittää <em>Read</em>-oikeus.
+        voi osallistua koodin kehittämiseen, kun taas arvioivalle opettajalle usein riittää <em>Read</em>-oikeus.
     </p>
 
     <h4>Branch protection rules</h4>
@@ -38,33 +36,36 @@
 
     <h4>Oletustiedostot</h4>
 
-    <p>
-        Uuteen repositorioon on hyvä lisätä ainakin seuraavat tiedostot:
-    </p>
-    <ul>
-        <li><strong>README.md</strong>: kertoo projektin tarkoituksen ja käytön</li>
-        <li><strong>.gitignore</strong>: sulkee pois turhat tiedostot versionhallinnasta (esim. väliaikaiset tiedostot)
-        </li>
-        <li><strong>LICENSE</strong>: määrittelee, miten muut voivat käyttää koodia (tarpeen julkisissa projekteissa)
-        </li>
-    </ul>
+    <p>Uuteen repositorioon kannattaa lisätä muutama perustiedosto. Ne selkeyttävät projektin tarkoitusta, helpottavat
+        käyttöönottoa ja pitävät versionhallinnan siistinä. Tiedostot luodaan repon juureen ja ne voi lisätä joko luonnin
+        yhteydessä tai jälkikäteen.</p>
 
-    <div
-        class="accordion"
-        data-include="../../accordion-element/accordion.html"
-        data-title="Muistilista repositorion asetuksista">
-        <div class="contentToAccordion open">
-            <ol>
-                <li>Valitse repositorion näkyvyys (public/private)</li>
-                <li>Määritä käyttöoikeudet oikein</li>
-                <li>Suojaa päähaara virheiltä</li>
-                <li>Lisää perusdokumentaatio</li>
-            </ol>
-        </div>
-    </div>
+    <h6><em>README.md</em></h6>
+    <p>Kuvaa lyhyesti mitä projekti tekee ja miten sen saa käyntiin. Aloittelijalle riittää: projektin tavoite, käytetyt
+        teknologiat ja mahdollinen lyhyt asennusohje. Hyvin kirjoitettu README tekee reposi hyödylliseksi myös
+        portfoliossa.</p>
+
+    <p>README-tiedosto kirjoitetaan Markdown-kielellä, joka mahdollistaa otsikot, listat, linkit ja koodilohkot. 
+        Lisätietoja löydät <a href="https://guides.github.com/features/mastering-markdown/" target="_blank" rel="noopener noreferrer">
+            GitHubin Markdown-oppaasta</a>.
+    </p>
+
+    <h6><em>.gitignore</em></h6>
+    <p>Rajaa pois versionhallinnasta väliaikaiset, paikalliset ja käännetyt tiedostot sekä salaisuudet. Reposta tulee
+        siistimpi ja turvallisempi. Käymme tiedoston tarkemmin kappaleessa
+        <a href="/teamwork/privacy-and-security.html#secrets">Salaisuuksien suojaaminen</a>.</p>
+
+
+    <h6><em>LICENSE</em></h6>
+    <p>Määrittää käyttöehdot koodille. Ilman lisenssiä muut eivät yleensä saa käyttää koodiasi. Valitse selkeä,
+        tarkoitukseen sopiva lisenssi etenkin julkisissa projekteissa.</p>
+
+    <p>Yleisimpiä avoimen lähdekoodin lisenssejä ovat MIT, Apache 2.0 ja GPLv3. Lisätietoja lisensseistä löydät
+        <a href="https://choosealicense.com/" target="_blank" rel="noopener noreferrer">
+            Choose a License -sivustolta</a>.</p>
+
 
     <p class="note-box">
         Muista, että repositorion asetukset voi muuttaa milloin tahansa projektin edetessä.
-        Tarkista asetukset säännöllisesti, jotta ne vastaavat tiimin tarpeita.
-    </p>
+        Tarkista asetukset säännöllisesti, jotta ne vastaavat sinun ja tiimisi tarpeita.</p>
 </section>
