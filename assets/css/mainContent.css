@@ -223,12 +223,6 @@ figcaption {
     height: 15px;
   }
 
-  ol,
-  ul {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-
   .wide-image {
     max-width: 100%;
     left: -0.5rem;
