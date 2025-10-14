@@ -99,19 +99,21 @@ document.addEventListener("sidebar-component:loaded", () => {
   });
 });
 
+// Closes notelist items when sidebar is closed by removing the open class from the necessary elements.
 document.addEventListener("sidebar:changed", () => {
+  // gets sibebars notelist elements
   const listItems = document.querySelectorAll(
     ".sidebar-main-item.commands, .sidebar-main-item.workfloe"
-  ); // gets sibebars notelist list items
+  );
 
-  // listens click events to each list items dropdown button and toggles class open for sub list
   listItems.forEach((item) => {
-    let isOpen = item.classList.contains("open");
+    let isOpen = item.classList.contains("open"); // check if element is open
     const toggle = item.querySelector(".dropdown-toggle"); // gets dropdown button
     const sublist = item.querySelector(".sidebar-sub-list"); // gets sub list
 
-    if ((!isOpen && !toggle) || !sublist) return; // if no toggle button or sub list, skip to next item
+    if ((!isOpen && !toggle) || !sublist) return; // if elements can't be found or elemet is not open return
 
+    // Remove open class from the necessary elements.
     item.classList.remove("open");
     toggle.classList.remove("open");
     sublist.classList.remove("open");
@@ -165,7 +167,6 @@ function downloadTableAsText(tableSelector, filename, title) {
 }
 
 // 5. Sidebar responsiveness functionality
-
 // close sidebar if screen changes to less than 1200px
 document.addEventListener("sidebar-component:loaded", () => {
   function checkWidth() {

@@ -20,7 +20,8 @@ h6 {
   font-weight: 600;
 }
 
-h4, h5 {
+h4,
+h5 {
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
 }
@@ -63,9 +64,13 @@ h3 {
   height: 15px;
 }
 
+.small-margin {
+  margin: 0.3rem !important;
+}
+
 /* no margin class */
 .no-margin {
-  margin: 0;
+  margin: 0 !important;
 }
 
 /* no bottom margin class */
