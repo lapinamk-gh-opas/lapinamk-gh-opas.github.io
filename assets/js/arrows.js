@@ -30,7 +30,7 @@ document.addEventListener("sidebar:loaded", () => {
 
   linkIndex = linkNames.indexOf(currentPath); // gets index of currently active link
 
-  menuItems[linkIndex].classList.add("active");
+  linkIndex >= 0 && menuItems[linkIndex].classList.add("active");
   document.dispatchEvent(new Event("links:loaded")); // fires custom event for next phase of script
 });
 
@@ -71,6 +71,10 @@ document.addEventListener("pages:loaded", () => {
     nextBtn.classList.add("hide");
   }
 
+  if (prevBtn && currentPath === "/index.html") {
+    prevBtn.classList.add("hide");
+  }
+
   // Determines texts that are rendered on prev button if button is active/shown.
   if (prevBtn) {
     const textPrev = document.getElementById("prevText"); // gets main text field
@@ -87,12 +91,6 @@ document.addEventListener("pages:loaded", () => {
     } else if (pageIndex === 0 && linkIndex === 0) {
       // Show home page arrow if on basics index page
       textPrev.textContent = "ETUSIVU";
-    } else if (
-      pageIndex === 0 &&
-      linkIndex === -1 &&
-      currentPath === "/index.html"
-    ) {
-      prevBtn.classList.add("hide");
     }
   }
 
