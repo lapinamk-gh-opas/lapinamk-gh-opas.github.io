@@ -103,7 +103,7 @@ document.addEventListener("sidebar-component:loaded", () => {
 document.addEventListener("sidebar:changed", () => {
   // gets sibebars notelist elements
   const listItems = document.querySelectorAll(
-    ".sidebar-main-item.commands, .sidebar-main-item.workfloe"
+    ".sidebar-main-item.commands, .sidebar-main-item.workflow"
   );
 
   listItems.forEach((item) => {
