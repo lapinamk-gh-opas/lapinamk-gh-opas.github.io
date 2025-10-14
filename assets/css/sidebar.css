@@ -95,10 +95,8 @@
 
 .sidebar-main-item.commands,
 .sidebar-main-item.workflow {
-  margin-left: 1rem;
-  display: flex;
-  flex-direction: column;
   margin-left: 0;
+  display: flex;
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
@@ -138,7 +136,7 @@ a.active {
 
 .sidebar-title-main.top-margin {
   margin-left: 0.5rem;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.4rem;
 }
 
 /*  Sidebar slide effect */
@@ -194,6 +192,7 @@ a.active {
 .dropdown-toggle::after {
   content: "▼";
   border-top: none;
+  top: -1px;
   transform: rotate(0deg);
   transition: transform 0.3s ease;
 }
@@ -219,8 +218,8 @@ a.active {
   content: "+";
   line-height: 1.5rem;
   font-size: 2rem;
-  position: relative;
   top: -1px;
+  position: relative;
   margin-right: 0.3rem;
   transition: transform 0.3s ease;
 }
@@ -233,7 +232,7 @@ a.active {
   top: -2px;
   left: 4.5px;
   transform: scaleY(1.1);
-  margin-right: 0.3rem;
+  margin-right: 0.5rem;
   transform: rotate(180deg);
 }
 
@@ -329,7 +328,6 @@ a.active {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  margin-left: 0;
   font-size: 0.7rem;
   table-layout: fixed;
   background-color: #ffffff;
@@ -399,4 +397,3 @@ a.active {
   cursor: pointer;
   font-size: 0.8rem;
 }
-
