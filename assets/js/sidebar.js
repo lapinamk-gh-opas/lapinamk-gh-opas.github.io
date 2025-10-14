@@ -3,6 +3,20 @@
 var sidebarState = sessionStorage.getItem("sidebar");
 
 // 0. Load table files that are included in sidebar
+/**
+ * Escape special HTML characters to prevent XSS.
+ * @param {string} unsafe
+ * @returns {string} Escaped HTML
+ */
+function escapeHTML(unsafe) {
+  return unsafe
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 document.addEventListener("sidebar-component:loaded", () => {
   // Process any data-include elements within the sidebar (like table files)
   const sidebarIncludes = document.querySelectorAll("#sidebar [data-include]");
@@ -17,7 +31,7 @@ document.addEventListener("sidebar-component:loaded", () => {
         const html = await content.text();
         el.outerHTML = html;
       } catch (err) {
-        el.innerHTML = `<p style="color:red">Sisällön lataus epäonnistui: ${path}</p>`;
+        el.innerHTML = `<p style="color:red">Sisällön lataus epäonnistui: ${escapeHTML(path)}</p>`;
       }
     })();
     loadPromises.push(loadPromise);
