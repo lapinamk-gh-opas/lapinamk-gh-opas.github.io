@@ -116,6 +116,11 @@ figure {
   display: none;
 }
 
+.page-selection.active {
+  color: rgba(0, 0, 0, 0.8);
+  text-decoration: none;
+}
+
 /*table*/
 table {
   width: 100%;

@@ -30,7 +30,7 @@ document.addEventListener("sidebar:loaded", () => {
 
   linkIndex = linkNames.indexOf(currentPath); // gets index of currently active link
 
-  linkIndex >= 0 && menuItems[linkIndex].classList.add("active");
+  linkIndex >= 0 && menuItems[linkIndex].classList.add("active"); // add class active to current sidebar a-element for highlighting current part
   document.dispatchEvent(new Event("links:loaded")); // fires custom event for next phase of script
 });
 
@@ -54,6 +54,19 @@ document.addEventListener("links:loaded", () => {
   pageIndex = currentPage ? pageNames.indexOf(currentPage) : 0;
 
   document.dispatchEvent(new Event("pages:loaded")); // fires custom event for next phase of script
+});
+
+// add class active to current subpage a-element for highlighting current page
+document.addEventListener("subContent:loaded", () => {
+  const container = document.getElementById("mainContainer"); // gets container of page links
+  const subContentPages = container.querySelectorAll("[data-page]"); // get pages from container with data-page attribute
+
+  // finds if some element has active class
+  const activeRemove = container.querySelector(".active");
+  // removes old active class
+  activeRemove && activeRemove.classList.remove("active");
+  // adds new active class
+  pageIndex >= 0 && subContentPages[pageIndex].classList.add("active");
 });
 
 // Custom event launches this after previous phase is ready.
