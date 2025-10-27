@@ -1,9 +1,229 @@
 <section class="repo-in-practice">
+  <header>
+    <h1>Repositorion asetukset käytännössä</h1>
+  </header>
 
-    <header>
-        <h1>Repositorion asetukset käytännössä</h1>
-    </header>
+  <p>
+    GitHub-repositorion <strong>asetuksista</strong> hallitaan projektin
+    näkyvyyttä, käyttäjien käyttöoikeuksia ja suojauksia. Oikein määritetyt
+    asetukset parantavat projektin tietoturvaa, ylläpidettävyyttä ja
+    yhteistyötä.
+  </p>
 
-    <!--Add here the page content-->
+  <p>
+    Tässä osiossa käydään läpi tärkeimmät asetukset, kuten repositorion
+    näkyvyyden muuttaminen, käyttäjien (<em>collaborators</em>) lisääminen,
+    haarojen suojaaminen (<em>branch protection rules</em>), sekä repositorion
+    poistaminen. <strong>Ehkä?</strong> Lisäksi tutustutaan muutamiin
+    hyödyllisiin perusasetuksiin, kuten oletushaaran määrittämiseen ja projektin
+    kuvaukseen.<strong>Ehkä?</strong>
+  </p>
 
+  <!--Accordion 1.-->
+  <div
+    class="accordion"
+    data-include="../../accordion-element/accordion.html"
+    data-title="Repositorion näkyvyyden muuttaminen"
+  >
+    <div class="contentToAccordion">
+      <div class="note-box">
+        <ul>
+          <li class="warning">
+            Kun muutat GitHub-repositorion <strong>julkiseksi (Public)</strong>,
+            koko sen sisältö ja
+            <strong>kaikki aiemmat commit-historiat</strong> tulevat kaikkien
+            nähtäville. Tämä koskee myös tiedostoja ja tietoja, jotka on
+            myöhemmin poistettu projektista.
+          </li>
+          <li class="warning">
+            Älä muuta repositoriota julkiseksi, jos se
+            <strong>sisältää tai on joskus sisältänyt</strong> arkaluontoisia
+            tietoja, kuten:
+            <ul>
+              <li>salasanoja, API-avaimia tai käyttöoikeustunnuksia,</li>
+              <li>henkilötietoja tai muuta luottamuksellista aineistoa,</li>
+              <li>maksullisia tai lisenssisuojattuja tiedostoja.</li>
+            </ul>
+          </li>
+          <li>
+            Julkiseksi muuttaminen sopii vain avoimen lähdekoodin projekteihin
+            tai työnäytteiksi tarkoitettuihin repositorioihin.
+          </li>
+          <li>
+            Julkiseksi muuttaminen sisältää monta vaihetta, joten vahingossa
+            tapahtuvaa näkyvyyden muuttamista ei tarvitse pelätä.
+          </li>
+          <li>
+            Mikäli haluat poistaa arkaluontoiset tiedot kokonaan historiasta,
+            käytä Gitin historiaan vaikuttavia työkaluja, kuten
+            <code>git filter-repo</code> tai GitHubin
+            <a
+              href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository"
+              target="_blank"
+              >virallista ohjetta tiedon poistamiseen historiasta</a
+            >.
+          </li>
+        </ul>
+      </div>
+
+      <ol>
+        <li>
+          Siirry repositorion asetuksiin klikkaamalla repositoriossa
+          <strong>settings</strong>
+          välilehteä.
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/visibility-1.webp"
+              alt="Repositorion asetukset."
+            />
+            <figcaption>Repositorion asetukset.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Varmista, että olet asetuksien general osiossa ja scrollaa ikkunan
+          alareunaan.
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/visibility-2.webp"
+              alt="Asetuksien general osio."
+            />
+            <figcaption>Asetuksien general osio.</figcaption>
+          </figure>
+          Klikkaa Danger Zone osiosta <strong>Change Visibility</strong> nappia.
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/visibility-3.webp"
+              alt="Näkyvyys asetuksen muuttaminen."
+            />
+            <figcaption>Näkyvyys asetuksen muuttaminen.</figcaption>
+          </figure>
+          Klikkaa Vielä alle avautuvaa <strong>Change to public</strong> nappia.
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/visibility-4.webp"
+              alt="Muuttaminen julkiseksi."
+            />
+            <figcaption>Muuttaminen julkiseksi.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Vahvista vielä avautuvaan ruutuun, että haluat tehdä repositoriosta
+          julkisen klikkaamalla
+          <strong>I want to make this repository public</strong> nappia.
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/visibility-5.webp"
+              alt="Vahvistus repositorion muuttamisesta julkiseksi."
+            />
+            <figcaption>
+              Vahvistus repositorion muuttamisesta julkiseksi.
+            </figcaption>
+          </figure>
+          Vahvista vielä, että olet ymmärtänyt mitä repositorion julkiseksi
+          muuttaminen tarkoittaa klikkaamalla
+          <strong>I have read and understand these effects</strong> nappia.
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/visibility-6.webp"
+              alt="Vahvistus että olet ymmärtänyt mitä repositorion julkiseksi
+              muuttaminen tarkoittaa."
+            />
+            <figcaption>
+              Vahvistus että olet ymmärtänyt mitä repositorion julkiseksi
+              muuttaminen tarkoittaa.
+            </figcaption>
+          </figure>
+          Tee repositoriosta julkinen klikkaamalla
+          <strong>Make this repository public</strong> nappia.
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/visibility-7.webp"
+              alt="Tee repositoriosta julkinen."
+            />
+            <figcaption>Tee repositoriosta julkinen.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Mikäli käytössä on kaksivaiheinen tunnistautuminen vahvista vielä
+          käyttöoikeutesi syöttämällä tunnistautumissovelluksesi antama
+          <strong>avain</strong> ja klikkaamalla <strong>verify</strong> nappia.
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/visibility-8.webp"
+              alt="Käyttöoikeuden vahvistus."
+            />
+            <figcaption>Käyttöoikeuden vahvistus.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Repositorio on nyt julkinen. Muuttaminen yksityiseksi noudattaa täysin
+          samaa kaavaa kuin muutos julkiseksi.
+          <div class="note-box"></div>
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/visibility-9.webp"
+              alt="Repositorio on nyt julkinen."
+            />
+            <figcaption>Repositorio on nyt julkinen.</figcaption>
+          </figure>
+        </li>
+      </ol>
+      <p class="note-box keep-margin">
+        Repositorion näkyvyyttä voi muuttaa myöhemmin takaisin yksityiseksi
+        (<strong>Private</strong>), jos haluat rajata sen näkyvyyttä uudelleen.
+        Muista kuitenkin, että kaikki ennen muutosta ladatut tai kloonatut
+        versiot jäävät käyttäjille, joilla ne jo olivat.
+      </p>
+    </div>
+  </div>
+  <!--Accordion 1. ends-->
+  <!--Accordion 2.-->
+  <div
+    class="accordion"
+    data-include="../../accordion-element/accordion.html"
+    data-title="Käyttäjien (Collaborators) lisääminen"
+  >
+    <div class="contentToAccordion">
+      <ol>
+        <li>sisältö tähän</li>
+      </ol>
+    </div>
+  </div>
+  <!--Accordion 2. ends-->
+  <!--Accordion 3.-->
+  <div
+    class="accordion"
+    data-include="../../accordion-element/accordion.html"
+    data-title="Haaran suojaus sääntöjen muuttaminen"
+  >
+    <div class="contentToAccordion">
+      <ol>
+        <li>sisältö tähän</li>
+      </ol>
+    </div>
+  </div>
+  <!--Accordion 3. ends-->
+  <!--Accordion 4.-->
+  <div
+    class="accordion"
+    data-include="../../accordion-element/accordion.html"
+    data-title="Repositorion poistaminen"
+  >
+    <div class="contentToAccordion">
+      <ol>
+        <li>sisältö tähän</li>
+      </ol>
+    </div>
+  </div>
+  <!--Accordion 3. ends-->
 </section>
