@@ -20,7 +20,8 @@
             class="plus-sign"
             src="../../assets/images/svg/plus.svg"
             alt="plus merkki"
-          />-painikkeella aukeavasta alasvetovalikosta
+          />
+          -painikkeella aukeavasta alasvetovalikosta
           <strong>New repository</strong>.
         </li>
       </ul>
@@ -57,6 +58,35 @@
         />
         <figcaption>Repositorion luomiseen käytettävä lomake</figcaption>
       </figure>
+      <!-- Accordion element starts -->
+      <div
+        class="accordion"
+        data-include="/accordion-element/accordion.html"
+        data-title="Repositorion oletustiedostot"
+      >
+        <div class="contentToAccordion">
+          <!-- Accordion content starts -->
+          <ul>
+            <li>
+              <strong>README.md</strong> Kuvaustiedosto, joka kertoo projektin
+              tarkoituksen, käytön ja ohjeet. Näkyy automaattisesti
+              GitHub-repositorion etusivulla.
+            </li>
+            <li>
+              <strong>LICENSE</strong> Määrittää, miten muut voivat käyttää,
+              muokata ja jakaa julkisesti saatavilla olevaa projektiasi. Esim.
+              MIT- tai GPL-lisenssi.
+            </li>
+            <li>
+              <strong>.gitignore</strong> Luettelo tiedostoista ja kansioista,
+              joita Git ei seuraa. Käytetään esim. väliaikaisten tiedostojen tai
+              salaisuuksien jättämiseen pois repositoriosta.
+            </li>
+          </ul>
+          <!-- Accordion content ends -->
+        </div>
+      </div>
+      <!-- Accordion element ends -->
     </li>
     <li>
       Repositorio on nyt luotu. Tyhjässä repositoriossa näkyy keskellä ruutua
@@ -71,19 +101,20 @@
         <figcaption>Repositorion osoite</figcaption>
       </figure>
     </li>
-  </ol>
-  <!-- Accordion element with reused content starts -->
-  <div
-    class="accordion"
-    data-include="/accordion-element/accordion.html"
-    data-title="Mistä repositoriot ja sen URL-osoite löytyvät GitHubissa?"
-  >
+
+    <!-- Accordion element with reused content starts -->
     <div
-      class="contentToAccordion reused-accordion"
-      data-include="/reused-accordion-content/repository-and-url.html"
+      class="accordion"
+      data-include="/accordion-element/accordion.html"
+      data-title="Mistä repositoriot ja sen URL-osoite löytyvät GitHubissa?"
     >
-      <!-- Accordion content starts from /reused-accordion-content/repository-and-url.html-->
+      <div
+        class="contentToAccordion reused-accordion"
+        data-include="/reused-accordion-content/repository-and-url.html"
+      >
+        <!-- Accordion content starts from /reused-accordion-content/repository-and-url.html-->
+      </div>
     </div>
-  </div>
-  <!-- Reusable accordion element ends -->
+    <!-- Reusable accordion element ends -->
+  </ol>
 </section>

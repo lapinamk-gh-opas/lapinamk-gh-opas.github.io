@@ -9,8 +9,8 @@
 
   <p>
     Tässä on yleisimmät ja hyödyllisimmät Git-komennot, jotka jokaisen
-    kehittäjän tulisi ymmärtää. Samat komennot löytyvät myös sivupalkin muistilistasta,
-  joten <em>sinun ei tarvitse opetella niitä ulkoa</em>.
+    kehittäjän tulisi ymmärtää. Samat komennot löytyvät myös sivupalkin
+    muistilistasta, joten <em>sinun ei tarvitse opetella niitä ulkoa</em>.
   </p>
 
   <h4>Kansionhallinta</h4>
@@ -39,8 +39,8 @@
   </p>
 
   <p class="note-box">
-  Älä hätkähdä komentojen määrää! Käymme ne läpi tapauskohtaisesti esimerkein
-  ja harjoituksin. 
+    Älä hätkähdä komentojen määrää! Käymme ne läpi tapauskohtaisesti esimerkein
+    ja harjoituksin.
   </p>
 
   <h4>Git Peruskomennot</h4>
@@ -51,19 +51,37 @@
   </p>
 
   <h6>
-    Kloonaa olemassa oleva repo -
+    Kloonaa olemassa oleva repositorio -
     <code>git clone https://github.com/user/projekti.git</code>
   </h6>
   <p>
-    Lataa etärepositorion sisällön paikallisesti ja luo repolle uuden kansion
-    tietokoneellesi. URLin löydät GitHubista kohdasta repo → Code → HTTPS.
+    Lataa etärepositorion sisällön paikallisesti ja luo repositorio uuden
+    kansion tietokoneellesi.
   </p>
 
-  <h6>Yhdistä paikallinen repo etärepoon - <code>git remote add origin &lt;url&gt;</code></h6>
+  <h6>
+    Yhdistä paikallinen repositorio etärepositorioon -
+    <code>git remote add origin &lt;url&gt;</code>
+  </h6>
   <p>
     Linkittää paikallisen repositorion etärepositorioon (esim. GitHubiin).
-    Tarvitaan vain kerran per repo. URLin löydät GitHubista kohdasta repo →
-    Code → HTTPS. </p>
+    Tarvitaan vain kerran per repositorio.
+  </p>
+
+  <!-- Accordion element with reused content starts -->
+  <div
+    class="accordion"
+    data-include="/accordion-element/accordion.html"
+    data-title="Mistä repositoriot ja sen URL-osoite löytyvät GitHubissa?"
+  >
+    <div
+      class="contentToAccordion reused-accordion"
+      data-include="/reused-accordion-content/repository-and-url.html"
+    >
+      <!-- Accordion content comes from /reused-accordion-content/repository-and-url.html-->
+    </div>
+  </div>
+  <!-- Accordion element with reused content ends -->
 
   <h6>Näytä muutosten tila - <code>git status</code></h6>
   <p>
@@ -84,6 +102,23 @@
     tapa valmistella commit.
   </p>
 
+  <div class="note-box margin-right">
+    <ul>
+      <li class="warning">
+        Käytä komentoa <code>git add .</code> varoen. Jos olet lisännyt samaan
+        kansioon arkaluontoistatietoa sisältäviä tiedostoja, joita et halua
+        lisätä repositioon, niin älä käytä <code>git add .</code> komentoa tai
+        lisää repositorioon <code>.gitignore</code> -tiedosto, joka estää siihen
+        nimettyjen tiedostojen lisäämisen repositorioon.
+      </li>
+      <li>
+        <code>.gitignore</code>:sta lisää tietoa osiossa:
+        <a href="/teamwork/privacy-and-security.html"
+          >2.5 yksityisyys ja tietoturva</a
+        >
+      </li>
+    </ul>
+  </div>
   <h6>
     Tallenna muutokset (commit) - <code>git commit -m "add index.html"</code>
   </h6>
@@ -92,7 +127,20 @@
     lyhyenä, mutta kuvaavana.
   </p>
 
-  <p class="note-box">Tähän asti esitellyt komennot on <em>Perusteet</em> -osion komentoja. Voit keskittyä aluksi niihin.</p>
+  <h6>
+    Tallenna keskeneräiset muutokset väliaikaisesti (stash) -
+    <code>git stash</code>
+  </h6>
+  <p>
+    Säilyttää tekemäsi muutokset tilapäisesti ja palauttaa työskentelyhakemiston
+    viimeisimpään commit-tilaan. Hyödyllinen, kun haluat vaihtaa haaraa tai
+    päivittää projektin ilman, että keskeneräiset muutokset häiritsevät.
+  </p>
+
+  <p class="note-box">
+    Tähän asti esitellyt komennot on <em>Perusteet</em> -osion komentoja. Voit
+    keskittyä aluksi niihin.
+  </p>
 
   <h4 id="haarojen-hallinta">Haarojen hallinta</h4>
   <h6>Näytä kaikki haarat - <code>git branch</code></h6>
@@ -101,45 +149,72 @@
     (<code>*</code>).
   </p>
 
-  <h6>Luo ja siirry haaraan - <code>git checkout -b dev</code></h6>
+  <h6>Luo ja siirry haaraan - <code>git checkout -b haaran-nimi</code></h6>
   <p>
     Luo uuden kehityshaaran ja vaihtaa siihen. Vaihtoehtoisesti
-    <code>git switch -c dev</code>.
+    <code>git switch -c haaran-nimi</code>.
   </p>
 
-  <h6>Siirry olemassa olevaan haaraan - <code>git checkout dev</code></h6>
+  <h6>
+    Siirry olemassa olevaan haaraan - <code>git checkout haaran-nimi</code>
+  </h6>
   <p>
     Vaihda kehitystyö toiseen haaraan. Varmista, että keskeneräiset muutokset on
-    commitoitu tai stasattu ennen vaihtoa. Vaihtoehtoisesti
-    <code>git switch dev</code>
+    commitoitu tai stashattu ennen vaihtoa. Vaihtoehtoisesti
+    <code>git switch haaran-nimi</code>
   </p>
 
-  <h6>Hae ja yhdistä etärepon muutokset - <code>git pull</code></h6>
-  <p>Hakee uusimmat commitit etärepostosta ja yhdistää ne nykyiseen haaraan.</p>
-
-  <h6>Puske muutokset etärepoon - <code>git push</code></h6>
+  <h6>
+    Hae ja yhdistä tietyn etärepositorion haaran muutokset -
+    <code>git pull origin haaran-nimi</code>
+  </h6>
   <p>
-    Julkaisee paikalliset commitit etärepositorioon (esim. GitHubiin).
-    Ensimmäisellä kerralla määritä seuranta haaralle.
+    Hakee uusimmat commitit etärepositorion haarasta ja yhdistää ne nykyiseen
+    haaraan.
   </p>
 
-  <h6>Puske dev ja aseta seuranta - <code>git push -u origin dev</code></h6>
+  <h6>
+    Puske haaran sisältö ja aseta seuranta -
+    <code>git push -u origin haaran-nimi</code>
+  </h6>
   <p>
-    Puskee <code>dev</code>-haaran ja asettaa upstreamin, eli yhdistää
-    paikallisen ja etähaaran, jolloin jatkossa riittää pelkkä
+    Luo uuden haaran etärepositorioon (esim. GitHubiin), puskee paikallisen
+    haaran sisällön sinne ja asettaa upstreamin, eli yhdistää paikallisen ja
+    etähaaran, jolloin jatkossa riittää pelkkä
     <code>git push</code>.
   </p>
 
-  <h6>Yhdistä haara nykyiseen - <code>git merge dev</code></h6>
+  <div class="note-box">
+    <code>-u</code> (tai <code>--set-upstream</code>) -lippu kertoo Gitille,
+    mikä etärepositorion haara vastaa paikallista haaraa, ja tallentaa tämän
+    tiedon. Voit ajatella asian näin: repositorio on talo ja haara on asunto; -u
+    kertoo paikalliselle haaralle, mikä etähaara on “sen asunto”, eli mihin
+    muutokset lähetetään ja mistä ne haetaan jatkossa.
+  </div>
+
+  <h6>Hae ja yhdistä etärepositorion muutokset - <code>git pull</code></h6>
   <p>
-    Yhdistää <code>dev</code>-haaran nykyiseen haaraan. Varmista, että työpuu on
-    puhdas ennen yhdistämistä, eli kaikki muutokset on commitoitu ja staging on
-    tyhjä.
+    Hakee uusimmat commitit etärepositorion paikallista haaraa vastaavasta
+    haarasta ja yhdistää ne nykyiseen paikalliseen haaraan. Toimii vain, kun git
+    on asetettu seuraamaan (<code>push -u</code>) etärepositorion haaraa.
   </p>
-  <h6>Poista haara - <code>git branch -d dev</code></h6>
+
+  <h6>Puske muutokset etärepositorioon - <code>git push</code></h6>
   <p>
-    Poistaa paikallisen <code>dev</code>-haaran. Varmista, että kaikki muutokset
-    on yhdistetty ennen poistamista. Poista etähaara komennolla
+    Julkaisee paikallisen haaran commitit etärepositorion haaraan. Toimii vain,
+    kun git on asetettu seuraamaan (<code>push -u</code>) etärepositorion
+    haaraa.
+  </p>
+
+  <h6>Yhdistä haara nykyiseen - <code>git merge haaran-nimi</code></h6>
+  <p>
+    Yhdistää haara nykyiseen haaraan. Varmista, että työpuu on puhdas ennen
+    yhdistämistä, eli kaikki muutokset on commitoitu ja staging on tyhjä.
+  </p>
+  <h6>Poista haara - <code>git branch -d haaran-nimi</code></h6>
+  <p>
+    Poistaa paikallisen haaran. Varmista, että kaikki muutokset on yhdistetty
+    ennen poistamista. Poista etähaara komennolla
     <code>git push -d origin dev</code>.
   </p>
 
@@ -173,13 +248,15 @@
   </p>
 
   <p>
-    Säännöllinen käyttö tekee komennoista rutiinia ja Gitin käytöstä sujuvaa. Kappaleiden edetessä voit aina palata
-    tähän listaan, tai sivupalkin muistilistaan kertaamaan komentoja ja niiden käyttötarkoituksia.
+    Säännöllinen käyttö tekee komennoista rutiinia ja Gitin käytöstä sujuvaa.
+    Kappaleiden edetessä voit aina palata tähän listaan, tai sivupalkin
+    muistilistaan kertaamaan komentoja ja niiden käyttötarkoituksia.
   </p>
 
   <p class="note-box">Muista, että harjoitus tekee mestarin!</p>
 
-  <p>Lisää tietoa komennoista: <a href="https://git-scm.com/docs">https://git-scm.com/docs</a>.</p>
-
+  <p>
+    Lisää tietoa komennoista:
+    <a href="https://git-scm.com/docs">https://git-scm.com/docs</a>.
   </p>
 </section>
