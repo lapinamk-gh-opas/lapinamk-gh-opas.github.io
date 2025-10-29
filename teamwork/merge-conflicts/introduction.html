@@ -1,0 +1,93 @@
+<section class="introduction">
+
+    <header>
+        <h1>Mikä on Merge-konflikti</h1>
+    </header>
+
+    <p>Merge-konflikti syntyy, kun Git ei pysty automaattisesti yhdistämään kahta eri haaraa.
+        Tämä tapahtuu silloin, kun haaroissa on ristiriitaisia muutoksia samoihin riveihin tai tiedostoihin.
+        Git ei tällöin osaa päättää, kumpi muutos tulisi säilyttää, ja pyytää sinua ratkaisemaan tilanteen
+        manuaalisesti.</p>
+
+    <p>Useimmiten konflikti syntyy, kun useampi kehittäjä muokkaa samaa tiedostoa eri tavoilla,
+        tai kun toinen poistaa tiedoston, jota toinen on muuttanut.
+        Git voi yhdistää muutokset automaattisesti, jos ne ovat eri riveillä tai eri tiedostoissa,
+        mutta ristiriitatilanteissa tarvitaan ihmisen päätös.
+    </p>
+
+    <p>Merge-konflikti on aina ratkaistava ennen kuin yhdistäminen (<em>merge</em>) voidaan viedä loppuun.</p>
+
+
+    <h4>Merge-konfliktin tunnistaminen</h4>
+
+    <p>
+        Kun yhdistäminen epäonnistuu konfliktin vuoksi, Git ilmoittaa siitä komentorivillä tai GitHubissa.
+        Konfliktin saaneet tiedostot merkitään automaattisesti, ja niiden sisällä näkyvät erityiset merkit, jotka
+        osoittavat, missä ristiriita on.
+    </p>
+    <pre><code>
+Auto-merging styleguide.md
+CONFLICT (content): Merge conflict in styleguide.md
+Automatic merge failed; fix conflicts and then commit the result.
+  </code></pre>
+
+    <p>
+        Tiedoston sisältö näyttää tältä:
+    </p>
+    <pre><code>
+<<<<<<< HEAD
+Tämä on sinun haarasi versio.
+=======
+Tämä on toisen haaran versio.
+>>>>>>> feature-branch
+  </code></pre>
+
+    <p>
+        Ristiriita on merkattu <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> ja <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>
+        -merkkien väliin.
+        Niiden avulla näet, mitä muutoksia kummassakin haarassa on tehty.
+    </p>
+
+    <h4>Merge-konfliktin ratkaiseminen</h4>
+
+    <p>
+        Konfliktit voidaan ratkaista GitHubin selaimessa, komentorivillä tai paikallisessa kehitysympäristössä, kuten VS
+        Codessa.
+        GitHubin selainversio sopii yksinkertaisiin tekstimuutoksiin, mutta monimutkaisemmissa tilanteissa ratkaisu
+        kannattaa tehdä paikallisesti.
+    </p>
+
+    <ol>
+        <li>Avaa tiedosto, jossa on konflikti. Etsi konfliktimerkit (<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>,
+            <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>).</li>
+        <li>Päätä, mitkä muutokset haluat säilyttää: oman haarasi, toisen haaran, vai yhdistelmän molemmista.</li>
+        <li>Poista konfliktimerkit tiedostosta.</li>
+        <li>Tallenna ja merkitse tiedosto ratkaistuksi <code>git add tiedosto.txt</code>.</li>
+        <li>Commitoi ratkaisu <code>git commit</code>.</li>
+    </ol>
+
+    <h4>Konfliktin ratkaiseminen GitHubissa</h4>
+
+    <p>
+        Jos konflikti on yksinkertainen (esimerkiksi vain eri teksti samassa rivissä), sen voi ratkaista suoraan
+        GitHubissa:
+    </p>
+
+    <ol>
+        <li>Avaa pull request, jossa konflikti esiintyy.</li>
+        <li>Klikkaa <strong>Resolve conflicts</strong>.</li>
+        <li>Valitse, mitkä muutokset säilytetään, ja poista konfliktimerkit.</li>
+        <li>Klikkaa <strong>Mark as resolved</strong> ja sen jälkeen <strong>Commit merge</strong>.</li>
+    </ol>
+
+    <p>
+        Jos <em>Resolve conflicts</em> -painike on harmaana, konflikti on liian monimutkainen ratkaistavaksi selaimessa.
+        Tällöin se on ratkaistava paikallisesti komentorivillä, VS Code -editorissa tai GitHub Desktopissa.
+    </p>
+
+
+    <p>On tärkeää kommunikoida tiimin jäsenten kanssa merge-konfliktien ratkaisemisesta, jotta kaikki ymmärtävät tehdyt
+        muutokset ja niiden vaikutukset projektiin.</p>
+
+
+</section>
