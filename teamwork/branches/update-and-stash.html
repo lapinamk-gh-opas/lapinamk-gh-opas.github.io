@@ -1,0 +1,82 @@
+<section class="branches">
+
+    <header>
+        <h1>Git-haaran päivitys</h1>
+    </header>
+
+    <p>Työskennellessäsi sivuhaarassa on tärkeää pitää se ajan tasalla päähaaran (<em>main</em>) kanssa. Näin varmistat,
+        että työskentelet aina projektin uusimmassa versiossa.
+    </p>
+
+    <p>On hyvä tapa hakea tuoreimmat muutokset ennen uuden osion aloittamista tai aina, kun tiimikaveri on tehnyt
+        muutoksia päähaaraan. Tämä auttaa pitämään koodin ajantasaisena ja ehkäisee yhdistämiskonflikteja.</p>
+
+    <h4>Sivuhaaran päivittäminen päähaarasta</h4>
+    <p>Voit päivittää sivuhaaraasi päähaarasta seuraavasti:</p>
+    <ol>
+        <li>Siirry ensin omaan haaraasi <code>git checkout oma-haara</code></li>
+        <li>Hae tuoreimmat muutokset päähaarasta <code>git fetch origin</code></li>
+        <li>Yhdistä päähaaran muutokset omaan haaraasi <code>git merge origin/main</code></li>
+        <li>Ratkaise mahdolliset yhdistämiskonfliktit (näistä lisää kappaleessa
+            <a href="/teamwork/merge-conflicts.html">Yhdistämiskonfliktit</a>)
+        </li>
+        <li>Commitoi ja puske päivitetyt muutokset omaan haaraasi: <code>git push origin oma-haara</code></li>
+    </ol>
+
+    <p class="note-box">Muista, että voit aina tarkistaa tärkeimmät workflowt sivupalkin muistilistasta!</p>
+
+    <h4>Muutosten väliaikainen tallennus (<em>Git stash</em>)</h4>
+
+    <p>Jos kesken työn täytyy siirtyä toiseen haaraan, esimerkiksi tarkistamaan päähaaran muutokset, mutta et halua
+        committoida keskeneräistä työtä, voit tallentaa muutokset väliaikaisesti komennolla <code>git stash</code>.</p>
+
+    <p>Komento tallentaa tekemäsi muutokset paikallisesti Gitin omaan väliaikaiseen
+        säilytyspinoon(<em>stash stack</em>), ja palauttaa työskentelyhakemiston viimeisimpään commit-tilaan. Näin voit
+        turvallisesti vaihtaa haaraa ilman, että keskeneräinen työ katoaa.
+    </p>
+    <ol>
+        <li>Stashaa muutokset komennolla: <code>git stash</code></li>
+        <li>Vaihda haluamaasi haaraan: <code>git checkout main</code></li>
+        <li>Tarkista haluamasi asiat</li>
+        <li>Vaihda takaisin omaan haaraasi: <code>git checkout oma-haara</code></li>
+        <li>Palauta stashatut muutokset: <code>git stash pop</code></li>
+    </ol>
+
+
+    <div
+        class="accordion"
+        data-include="../../accordion-element/accordion.html"
+        data-title="Git stash GitHub Desktopissa">
+        <div class="contentToAccordion">
+
+            <p>Jos käytät GitHub Desktop -sovellusta ja olet vaihtamassa haaraa, sovellus kysyy haluatko tallentaa
+                (stash) muutokset ennen vaihtamista.</p>
+
+            <figure>
+                <img class="wide-image" src="../../assets/images/teamwork/branches/stash.png" alt="Git stash GitHub Desktopissa"/>
+                <figcaption>Git stash GitHub Desktopissa</figcaption>
+            </figure>
+
+            <p>Kun olet valmis jatkamaan työtäsi stashattujen muutosten kanssa, siirry takaisin omaan haaraasi ja
+                palauta ne komennolla <code>git stash pop</code> tai GitHub Desktopin kautta alla olevan kuvan
+                mukaisesti.</p>
+
+            <figure>
+                <img class="wide-image" src="../../assets/images/teamwork/branches/stash.png" alt="Git stashin palautus GitHub Desktopissa"/>
+                <figcaption>Git stashin palautus GitHub Desktopissa (Oikea kuva tulee myöhemmin)</figcaption>
+            </figure><br/>
+
+            <p><strong>Yhteenveto:</strong> <em>Git stash</em> on kätevä työkalu keskeneräisten muutosten
+                <em>väliaikaiseen</em>
+                säilyttämiseen. Muista kuitenkin palauttaa stashatut muutokset ennen työn jatkamista.
+            </p>
+
+            <p>Opiskele lisää stash-komennosta <a href="https://git-scm.com/docs/git-stash">Gitin dokumentaatiosta</a>
+                tai esim. <a href="https://www.w3schools.com/git/git_stash.asp">W3Schoolsista</a>.</p>
+        </div>
+    </div>
+
+    <p>Git-haarojen hallinta on tärkeä osa versionhallintaa. Muista pitää haarasi ajan tasalla ja harjoittele myös stash
+        -komennon käyttöä, jotta työskentely sujuu mutkattomasti.</p>
+
+</section>
