@@ -82,15 +82,15 @@
           </figure>
         </li>
         <li>
-          Varmista, että olet asetuksien general osiossa ja scrollaa ikkunan
-          alareunaan.
+          Varmista, että olet asetuksien <strong>General</strong> osiossa ja
+          scrollaa ikkunan alareunaan.
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/visibility-2.webp"
-              alt="Asetuksien general osio."
+              alt="Asetuksien General osio."
             />
-            <figcaption>Asetuksien general osio.</figcaption>
+            <figcaption>Asetuksien General osio.</figcaption>
           </figure>
           Klikkaa Danger Zone osiosta <strong>Change Visibility</strong> nappia.
           <figure>
@@ -167,7 +167,6 @@
         <li>
           Repositorio on nyt julkinen. Muuttaminen yksityiseksi noudattaa täysin
           samaa kaavaa kuin muutos julkiseksi.
-          <div class="note-box"></div>
           <figure>
             <img
               class="wide-image"
@@ -191,11 +190,185 @@
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
-    data-title="Käyttäjien (Collaborators) lisääminen"
+    data-title="Käyttäjien (Collaborators) lisääminen ja kutsun hyväksyminen"
   >
     <div class="contentToAccordion">
+      <div class="note-box">
+        <ul>
+          <li class="warning">
+            Kun lisäät henkilökohtaisella GitHub-tilillä käyttäjän repositorion
+            <strong>collaboratoriksi</strong>, annat hänelle suoran
+            kirjoitusoikeudet (<em>write</em>) projektiin. Tämä tarkoittaa, että
+            hän voi tehdä
+            <strong>commit-, push- ja merge-toimenpiteitä</strong>
+            ilman erillistä hyväksyntää.
+          </li>
+          <li>
+            Kirjoitusoikeudet eivät kuitenkaan mahdollista repositorion
+            poistamista, asetusten muuttamista tai muiden käyttäjien hallintaa.
+            Näihin tarvitaan <strong>Admin</strong>-oikeudet, jotka ovat
+            yksityisellä tilillä perustetussa repositoriossa vain sen
+            luojalla/omistajalla.
+          </li>
+          <li>
+            Lisää collaboratoriksi kuitenkin vain henkilöitä, joihin luotat ja
+            joiden on tarkoitus työskennellä aktiivisesti projektissa.
+          </li>
+          <li>
+            Mikäli käytät <strong>organisaatiotiliä</strong>, voit määrittää
+            käyttäjille eri <strong>roolit</strong> (esimerkiksi Read, Triage,
+            Write, Maintain, Admin) riippuen siitä, mitä oikeuksia haluat antaa.
+          </li>
+        </ul>
+      </div>
       <ol>
-        <li>sisältö tähän</li>
+        <li>
+          Siirry repositorion asetuksiin klikkaamalla repositoriossa
+          <strong>settings</strong>
+          välilehteä.
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/visibility-1.webp"
+              alt="Repositorion asetukset."
+            />
+            <figcaption>Repositorion asetukset.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Siirry repositorion käyttäjä asetuksiin klikkaamalla
+          <strong>Collaborators</strong>
+          osiota.
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/collaborators-1.webp"
+              alt="Repositorion asetukset (päänäkymä)."
+            />
+            <figcaption>Repositorion asetukset (päänäkymä).</figcaption>
+          </figure>
+        </li>
+        <li>
+          Mikäli käytössä on kaksivaiheinen tunnistautuminen vahvista vielä
+          käyttöoikeutesi syöttämällä tunnistautumissovelluksesi antama
+          <strong>avain</strong> ja klikkaamalla <strong>verify</strong> nappia.
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/visibility-8.webp"
+              alt="Käyttöoikeuden vahvistus."
+            />
+            <figcaption>Käyttöoikeuden vahvistus.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Näkymä kun reposiitoriolla ei ole vielä sinun lisäksi muita käyttäjiä.
+          Aloita käyttäjän lisääminen klikkaamalla
+          <strong>Add people</strong>
+          nappia.
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/collaborators-2.webp"
+              alt="Repositorion käyttäjä asetukset ja lisäämisen aloitus."
+            />
+            <figcaption>
+              Repositorion käyttäjä asetukset ja lisäämisen aloitus.
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          Etsi lisättävä käyttäjä avautuvasta ruudusta syöttämällä
+          <strong>kenttää</strong> käyttäjän nimi, nimimerkki tai
+          sähköpostiosoite ja valitse haluttu käyttäjä klikkaamalla alle
+          avautuvasta <strong>listasta</strong>.
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/collaborators-3.webp"
+              alt="Lisättävän käyttäjän etsiminen."
+            />
+            <figcaption>Lisättävän käyttäjän etsiminen.</figcaption>
+          </figure>
+          Vahvista käyttäjän lisääminen klikkaamalla
+          <strong>Add <em>käyttäjänimi</em></strong> nappia.
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/collaborators-4.webp"
+              alt="Valitun käyttäjän lisäämisen vahvistus."
+            />
+            <figcaption>Valitun käyttäjän lisäämisen vahvistus.</figcaption>
+          </figure>
+
+          <strong>Käyttäjälle</strong> on nyt lähetetty kutsu liittyä
+          repositorion käyttäjäksi.
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/collaborators-5.webp"
+              alt="Käyttäjälle on nyt lähetetty kutsu."
+            />
+            <figcaption>Käyttäjälle on nyt lähetetty kutsu.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Käyttäjän pitää siis hyväksyä kutsu omalta tililtään, jotta lisäys on
+          onnistunut. Kutsu löytyy tilin ilmoituksista, jonne pääseen
+          klikkaamalla
+          <strong>inbox-ikonia</strong> oikelta yläreunasta.
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/collaborators-6.webp"
+              alt="Käyttäjälle tulleet viestit löytyvät inbox-kuvakketta klikkaamalla."
+            />
+            <figcaption>
+              Käyttäjälle tulleet viestit löytyvät inbox-kuvakketta
+              klikkaamalla.
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          Avaa kutsu klikkaamalla <strong>ilmoitusta</strong> viestien listasta.
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/collaborators-7.webp"
+              alt="Näkymä käyttäjälle tulleista ilmoituksista."
+            />
+            <figcaption>Näkymä käyttäjälle tulleista ilmoituksista.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Hyväksy kutsu klikkaamalla <strong>Accept invitation</strong> nappia.
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/collaborators-8.webp"
+              alt="Kutsun hyväksyminen."
+            />
+            <figcaption>Kutsun hyväksyminen.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Käyttäjä on nyt lisätty repositoriolle.
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/collaborators-9.webp"
+              alt="Käyttä lisätty repositoriolle."
+            />
+            <figcaption>Käyttä lisätty repositoriolle.</figcaption>
+          </figure>
+        </li>
       </ol>
     </div>
   </div>
@@ -204,9 +377,34 @@
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
-    data-title="Haaran suojaus sääntöjen muuttaminen"
+    data-title="Haarasuojauksen (Branch protection rules) muuttaminen"
   >
     <div class="contentToAccordion">
+      <div class="note-box">
+        <ul>
+          <li class="warning">
+            <strong>Branch protection rules</strong> suojaavat tärkeimmät haarat
+            (esim. <code>main</code>) tahattomilta muutoksilta tai virheiltä.
+            Kun suojaus on käytössä, et voi tehdä suoria muutoksia suojattuun
+            haaraan komennolla <code>git push</code> tai yhdistää muutoksia
+            ilman tarkistuksia.
+          </li>
+          <li>
+            Suojauksen asetuksista riippuen GitHub voi esimerkiksi vaatia:
+            <ul>
+              <li>Pull requestin hyväksynnän ennen yhdistämistä,</li>
+              <li>onnistuneen testin tai tarkistuksen (status check),</li>
+              <li>että haaran historia on ajan tasalla ennen mergeä,</li>
+              <li>tai estää haaran poistamisen kokonaan.</li>
+            </ul>
+          </li>
+          <li>
+            Näiden asetusten tarkoituksena on varmistaa, että
+            <strong>main-haaran</strong>
+            sisältö pysyy aina toimintakuntoisena ja virheettömänä.
+          </li>
+        </ul>
+      </div>
       <ol>
         <li>sisältö tähän</li>
       </ol>
@@ -220,6 +418,27 @@
     data-title="Repositorion poistaminen"
   >
     <div class="contentToAccordion">
+      <div class="note-box">
+        <ul>
+          <li class="warning">
+            Repositorion poistaminen (<strong>Delete this repository</strong>)
+            on <strong>pysyvä toimenpide</strong>. Kun poistat repositorion, sen
+            kaikki tiedostot, commit-historia, asetukset katoavat pysyvästi eikä
+            niitä voi palauttaa GitHubin kautta.
+          </li>
+
+          <li class="warning">
+            Älä poista repositoriota, jos et ole varma, ettei siitä tarvita enää
+            mitään sisältöä tai commit-historiaa myöhemmin. Turvallisempaa voi
+            olla ensin muuttaa repositorio <strong>Private</strong>-tilaan.
+          </li>
+          <li>
+            Jos haluat varmistaa, että sinulla on kopio projektista ennen
+            poistamista, voit kloonata sen omalle koneellesi komennolla:<br />
+            <code>git clone [repositorion-url]</code>
+          </li>
+        </ul>
+      </div>
       <ol>
         <li>sisältö tähän</li>
       </ol>
