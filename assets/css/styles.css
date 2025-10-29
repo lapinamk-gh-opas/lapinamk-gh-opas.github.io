@@ -93,8 +93,7 @@ ul.padding-left {
 }
 
 /* No line change mid link */
-.no-line-change,
-code:not(pre code) {
+.no-line-change {
   white-space: nowrap;
 }
 
