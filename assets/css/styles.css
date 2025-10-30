@@ -75,7 +75,7 @@ h3 {
 
 /* no bottom margin class */
 .no-margin-bottom {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
 
 /* Top margin class */

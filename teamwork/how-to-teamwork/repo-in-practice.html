@@ -390,34 +390,25 @@
             ilman tarkistuksia.
           </li>
           <li>
-            Suojauksen asetuksista riippuen GitHub voi esimerkiksi vaatia:
-            <ul>
-              <li>Pull requestin hyväksynnän ennen yhdistämistä,</li>
-              <li>onnistuneen testin tai tarkistuksen (status check),</li>
-              <li>että haaran historia on ajan tasalla ennen mergeä,</li>
-              <li>tai estää haaran poistamisen kokonaan.</li>
-            </ul>
+            Alla olevat säännöt soveltuvat pienryhmille ja matalamman
+            prioriteetin projekteihin, kuten koulussa tehtäviin ryhmätöihin.
+            Säännöt eivät ole kovin tiukat, mutta auttavat tutustumaan
+            haarasuojauksen asetuksiin ja niiden muokkaamiseen sallien samalla
+            joustavan työskentelyn.
           </li>
           <li>
-            Näiden asetusten tarkoituksena on varmistaa, että
-            <strong>main-haaran</strong>
-            sisältö pysyy aina toimintakuntoisena ja virheettömänä.
+            Näillä asetuksilla esimerkiksi pull requestin tekijä voi itse
+            tarvittaessa yhdistää oman työnsä päähaaraan ilman muiden
+            ryhmäläisten hyväksyntää. Näin pull request -menetelmä tulee
+            tutuksi, mutta työskentely ei pysähdy hyväksyntää odottaessa.
+          </li>
+          <li class="warning">
+            Yksityisellä tilillä suojaustoiminnot voi asettaa käyttöön vain
+            julkisena näkyville repositorioille. Jos repositorio on yksityinen
+            tai muutetaan myöhemmin yksityiseksi, nämä säännöt eivät ole
+            käytössä.
           </li>
         </ul>
-      </div>
-      <div class="note-box">
-        Alla olevat säännöt soveltuvat pienryhmille ja matalamman prioriteetin
-        projekteihin, kuten koulussa tehtäviin ryhmätöihin. Säännöt eivät ole
-        kovin tiukat, mutta auttavat tutustumaan haarasuojauksen asetuksiin ja
-        niiden muokkaamiseen sallien samalla joustavan työskentelyn.
-        <br /><br />
-        Esimerkiksi pull requestin tekijä voi yhdistää oman työnsä päähaaraan
-        ilman muiden ryhmäläisten hyväksyntää. Näin pull request -menetelmä
-        tulee tutuksi, mutta työskentely ei pysähdy hyväksyntää odottaessa.
-        <br /><br />
-        <strong>HUOM!</strong> Yksityisellä tilillä suojaustoiminnot voi asettaa
-        käyttöön vain julkisena näkyvälle repositoriolle. Jos repositorio on
-        yksityinen säännöt eivät ole käytössä. <strong>HUOM!</strong>
       </div>
       <ol>
         <li>
@@ -467,8 +458,8 @@
               Repository admin-rooli ja write-rooli.
             </li>
             <li>
-              Käyttäjille voi antaa oikeuden ohittaa pull request-säännöt
-              lisämällä kolmesta pisteestä valinta
+              Anna käyttäjille oikeuden ohittaa pull request-säännöt lisämällä
+              kolmesta pisteestä valinta
               <strong>Allow for pull requests only</strong>.
             </li>
             <li>
@@ -530,12 +521,12 @@
             <li>
               Varmista, että <strong>Block force pushes</strong> on valittuna.
               Käytännössä tämä lukitsee haaran historian niin, että sitä ei voi
-              kirjoittaa uusiksi vahingossa väkisin.
+              kirjoittaa uusiksi väkisin.
             </li>
             <li>
-              Lisäksi olisi suuri houkutus kytkeä päälle CoPilotin tekemät
+              Lisäksi olisi suuri houkutus kytkeä päälle Copilotin tekemät
               tarkistukset, mutta se ei ole yksityisen/ilmaisen tilin yhteydessä
-              mahdollista.
+              käytetävissä.
             </li>
             <li>Klikkaa lopuksi <strong>Create</strong> nappia.</li>
           </ul>
@@ -559,9 +550,9 @@
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/branch-rules-5.webp"
-              alt="Repositorion asetukset."
+              alt="Tunnistautuminen"
             />
-            <figcaption>Repositorion asetukset.</figcaption>
+            <figcaption>Tunnistautuminen</figcaption>
           </figure>
         </li>
         <li>
@@ -573,9 +564,9 @@
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/branch-rules-6.webp"
-              alt="Repositorion asetukset."
+              alt="Sääntöjoukko valmis ja käytössä."
             />
-            <figcaption>Repositorion asetukset.</figcaption>
+            <figcaption>Sääntöjoukko valmis ja käytössä.</figcaption>
           </figure>
         </li>
       </ol>
@@ -611,9 +602,132 @@
         </ul>
       </div>
       <ol>
+        <li>
+          Siirry repositorion asetuksiin klikkaamalla repositoriossa
+          <strong>settings</strong>
+          välilehteä.
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/visibility-1.webp"
+              alt="Repositorion asetukset."
+            />
+            <figcaption>Repositorion asetukset.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Varmista, että olet asetuksien <strong>General</strong> osiossa ja
+          scrollaa ikkunan alareunaan.
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/visibility-2.webp"
+              alt="Asetuksien General osio."
+            />
+            <figcaption>Asetuksien General osio.</figcaption>
+          </figure>
+          Klikkaa Danger Zone osiosta
+          <strong>Delete this repository</strong> nappia.
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/delete-1.webp"
+              alt="Repositorion poistaminen."
+            />
+            <figcaption>Repositorion poistaminen.</figcaption>
+          </figure>
+          <div class="note-box">
+            <ul>
+              <li class="warning">
+                Mikäli haluat säilyttää projektin tiedostot, varmista että olet
+                kloonannut tai ladannut ne ennen poistamista.
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          Vahvista vielä avautuvaan ruutuun, että haluat poistaa repositorion
+          klikkaamalla
+          <strong>I want to delete this repository</strong> nappia.
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/delete-2.webp"
+              alt="Vahvistus repositorion poistamisesta."
+            />
+            <figcaption>Vahvistus repositorion poistamisesta.</figcaption>
+          </figure>
+          Vahvista vielä, että olet ymmärtänyt mitä repositorion poistaminen
+          merkitsee klikkaamalla
+          <strong>I have read and understand these effects</strong> nappia.
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/delete-3.webp"
+              alt="Vahvistus että olet ymmärtänyt mitä repositorion poistaminen tarkoittaa."
+            />
+            <figcaption>
+              Vahvistus että olet ymmärtänyt mitä repositorion poistaminen
+              tarkoittaa.
+            </figcaption>
+          </figure>
+          Vahvista vielä poistaminen syöttämällä
+          <strong>käyttäjänimi/repositorion nimi</strong>
+          tekstikenttään ja klikkaamalla
+          <strong>Delete this repository</strong> nappia.
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/delete-4.webp"
+              alt="Syötä vahvistusteksti poistaaksesi repositorion."
+            />
+            <figcaption>
+              Syötä vahvistusteksti poistaaksesi repositorion.
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          Mikäli käytössä on kaksivaiheinen tunnistautuminen vahvista vielä
+          käyttöoikeutesi syöttämällä tunnistautumissovelluksesi antama
+          <strong>avain</strong> ja klikkaamalla <strong>verify</strong> nappia.
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/visibility-8.webp"
+              alt="Käyttöoikeuden vahvistus."
+            />
+            <figcaption>Käyttöoikeuden vahvistus.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Repositorio on nyt poistettu ja sitä ei voi enää palauttaa GitHubin
+          kautta.
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/delete-5.webp"
+              alt="Repositorio on nyt poistettu lopullisesti."
+            />
+            <figcaption>Repositorio on nyt poistettu lopullisesti.</figcaption>
+          </figure>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <!--Accordion 4. ends-->
+  <!--Accordion 5.-->
+  <div
+    class="accordion"
+    data-include="../../accordion-element/accordion.html"
+    data-title="Oletushaaran muuttaminen"
+  >
+    <div class="contentToAccordion">
+      <ol>
         <li>sisältö tähän</li>
       </ol>
     </div>
   </div>
-  <!--Accordion 3. ends-->
+  <!--Accordion 5. ends-->
 </section>
