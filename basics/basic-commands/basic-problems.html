@@ -2,74 +2,92 @@
   <h2>Miten selvitä ongelmatilanteesta?</h2>
 
   <p>
-    Git on tehokas työkalu, mutta aina asiat eivät mene suunnitelmien mukaan.
-    Ehkä unohdit commitata muutoksen, teit virheen komennossa tai poistit
-    vahingossa tärkeitä tiedostoja.
+    Git on tehokas työkalu, mutta aina asiat eivät mene suunnitelmien mukaan. Ehkä unohdit commitata muutoksen, teit 
+    virheen komennossa tai poistit vahingossa tärkeitä tiedostoja.
   </p>
 
   <p>
-    No problem! Versionhallinnan vahvuus on se, että virheistä voi lähes aina
-    toipua. Git myös kertoo, mikäli teet virheitä komentoja antaessasi tai
-    yrität jotain, mikä ei ole sallittua. Kokeile siis asioita vapaasti!
+    No problem! Versionhallinnan vahvuus on se, että virheistä voi lähes aina toipua. Git myös kertoo, mikäli teet 
+    virheitä komentoja antaessasi tai yrität jotain, mikä ei ole sallittua. Kokeile siis asioita rohkeasti!
   </p>
 
   <h6>Katso missä mennään</h6>
   <p>
-    Aja <code>git status</code>. Lue viesti rauhassa. Voit ajaa tämän komennon
-    joka välissä, jotta pysyt kartalla siitä mitä tapahtuu.
+    Aja <code>git status</code>. Lue viesti rauhassa. Voit ajaa tämän komennon joka välissä, jotta pysyt kartalla siitä 
+    mitä tapahtuu.
   </p>
 
   <h6>Ongelma komennon kanssa</h6>
   <p>
-    Jos jokin komento tuottaa päänvaivaa, avaa sen viralliset ohjeet selaimeen
-    komennolla <code>git help &lt;komento&gt;</code>. Tämä antaa
-    yksityiskohtaisen selityksen komennon käytöstä. Usein nopea yhteenveto
-    löytyy myös komennolla <code>git &lt;komento&gt; -h</code>. Kokeile
-    rohkeasti molempia!
+    Jos jokin komento tuottaa päänvaivaa, avaa sen viralliset ohjeet selaimeen komennolla 
+    <code>git help &lt;komento&gt;</code>. Tämä antaa yksityiskohtaisen selityksen komennon käytöstä. Usein nopea 
+    yhteenveto löytyy myös komennolla <code>git &lt;komento&gt; -h</code>. Kokeile rohkeasti molempia!
   </p>
 
   <h6>Vahingossa poistettu tiedosto</h6>
   <p>
-    Jos tiedosto on poistettu, mutta et ole vielä commitannut, voit palauttaa
-    sen helposti komennolla <code>git restore &lt;tiedosto&gt;</code>. Jos taas
-    tiedosto on poistettu ja commitattu, voit palauttaa sen aiemmasta commitista
-    komennolla <code>git checkout HEAD~1 -- &lt;tiedosto&gt;</code>.
+    Jos tiedosto on poistettu, mutta et ole vielä commitannut, voit palauttaa sen helposti komennolla 
+    <code>git restore &lt;tiedosto&gt;</code>. Jos taas tiedosto on poistettu ja commitattu, voit palauttaa sen 
+    aiemmasta commitista komennolla <code>git checkout HEAD~1 -- &lt;tiedosto&gt;</code>.
   </p>
 
-  <h6>Tiedoston historia</h6>
+  <h6>Rollback eli commitin peruuttaminen</h6>
   <p>
-    Tiedoston aiempia versioita voit selata VS Coden
-    <em>Timeline</em>-paneelissa (ala-vasen). Siellä näkyvät kaikki tekemäsi
-    tiedoston tallennukset ja voit helposti avata ja vertailla eri versioita.
-    Tämä on kätevää esimerkiksi silloin, kun haluat palauttaa vain osan koodin
-    aiemmasta versiosta. Myös GitHubin selainversiossa on
-    <em>History</em>-toiminto, jonka avulla voit tarkastella tiedoston
-    muutoshistoriaa suoraan selaimesta.
+    Joskus commit saattaa mennä pieleen tai huomaat heti sen jälkeen, että haluat muuttaa tai poistaa tekemäsi
+    muutokset. Gitissä on onneksi useita tapoja perua commit riippuen siitä, haluatko säilyttää vai poistaa tehdyt
+    muutokset kokonaan.
+  </p>
+
+  <ul>
+    <li>
+    Säilytä muutokset työtilassa:<br/>
+    Käytä komentoa <code>git reset --soft HEAD~1</code> tai <code>git reset HEAD~</code>. Tämä peruuttaa viimeisen
+    commitin, mutta jättää muutokset työtilaan, jotta voit muokata ja commitata ne uudelleen.
+    </li>
+
+    <li>
+    Poista commit ja siihen liittyvät muutokset:<br/>
+    Jos haluat kumota commitin kokonaan, käytä komentoa <code>git reset --hard HEAD~1</code>. Tämä palauttaa 
+    repositorion tilaan, jossa se oli ennen viimeisintä commitia. <strong>HUOM:</strong> kaikki sen jälkeen tehdyt 
+    muutokset katoavat pysyvästi.
+    </li>
+
+    <li>
+    Jos commit on jo puskettu etärepoon:<br/>
+    Käytä mieluummin komentoa <code>git revert &lt;commit-id&gt;</code>, joka luo uuden commitin, joka kumoaa aiemman 
+    muutoksen turvallisesti. Näin commit-historia pysyy eheänä ja muutokset näkyvät kaikille. Commit-id:n löydät
+    komennolla <code>git log</code>.
+    </li>
+  </ul>
+
+  <h6>Tiedoston historia VS Codessa</h6>
+  <p>
+    Tiedoston aiempia versioita voit selata VS Coden <em>Timeline</em>-paneelissa (ala-vasen). Siellä näkyvät kaikki
+    tekemäsi tiedoston tallennukset ja voit helposti avata ja vertailla eri versioita. Tämä on kätevää esimerkiksi 
+    silloin, kun haluat palauttaa vain osan koodin aiemmasta versiosta. Myös GitHubin selainversiossa on
+    <em>History</em>-toiminto, jonka avulla voit tarkastella tiedoston muutoshistoriaa suoraan selaimesta.
   </p>
 
   <h6>Jos kaikki menee pieleen</h6>
   <p>
-    Kopioi tärkeät tiedostot talteen → poista koko kansio → kloonaa repo
-    uudestaan <code>git clone &lt;url&gt;</code> → palauta tärkeät tiedostot
-    takaisin kansioon ja tee uusi commit.
+    Kopioi tärkeät tiedostot talteen → poista koko kansio → kloonaa repo uudestaan <code>git clone &lt;url&gt;</code> → 
+    palauta tärkeät tiedostot takaisin kansioon ja tee uusi commit.
   </p>
 
   <p class="note-box">
-    Muista, että virheitä sattuu kaikille! Tärkeintä on oppia niistä ja jatkaa
-    eteenpäin. Harjoitus tekee mestarin!
+    Muista, että virheitä sattuu kaikille! Tärkeintä on oppia niistä ja jatkaa eteenpäin. Harjoitus tekee mestarin!
   </p>
 
   <p>Lisää vinkkejä ongelmatilanteisiin:</p>
   <ul>
     <li>
-      <a href="https://ohshitgit.com">OhShitGit - Humoristinen ratkaisuopas</a>
-    </li>
-    <li>
       <a href="https://code.visualstudio.com/docs/sourcecontrol/overview">
-        Visual Studio Code - Version Control Overview</a
-      >
+        Visual Studio Code - Version Control Overview</a>
     </li>
     <li><a href="https://git-scm.com/doc">Git Documentation</a></li>
     <li><a href="https://docs.github.com/">GitHub Docs</a></li>
+    <li>
+      <a href="https://ohshitgit.com">OhShitGit - Humoristinen ratkaisuopas</a>
+    </li>
   </ul>
 </section>

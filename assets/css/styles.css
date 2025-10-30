@@ -30,6 +30,15 @@ h3 {
   padding: 1rem 0 0.5rem 0;
 }
 
+/* Reduce margin when heading follows note-box */
+p.note-box + h3,
+p.note-box + h4,
+p.note-box + h5,
+p.note-box + h6 {
+  margin-top: 0rem;
+  padding-top: 0rem;
+}
+
 /* interview section title with lines on sides */
 .interview1 h3 {
   display: flex;
