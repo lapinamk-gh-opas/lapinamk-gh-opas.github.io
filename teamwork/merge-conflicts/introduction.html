@@ -2,7 +2,6 @@
 
     <header>
         <h1>Merge-konfliktin perusteet</h1>
-        <h1>Merge-konfliktin perusteet</h1>
     </header>
 
     <p>
@@ -10,12 +9,6 @@
         yhdistää yhdeksi kokonaisuudeksi. Useimmiten Git osaa tehdä tämän automaattisesti, mutta jos haaroissa on
         ristiriitaisia muutoksia samoihin riveihin tai tiedostoihin, Git ei pysty päättämään, mikä versio tulisi
         säilyttää. Tällöin syntyy <em>merge-konflikti</em>, joka on ratkaistava manuaalisesti.
-    </p>
-
-    <p>Useimmiten konflikti syntyy, kun useampi kehittäjä muokkaa samaa tiedostoa eri tavoilla,
-        tai kun toinen poistaa tiedoston, jota toinen on muuttanut.
-        Git voi yhdistää muutokset automaattisesti, jos ne ovat eri riveillä tai eri tiedostoissa,
-        mutta ristiriitatilanteissa tarvitaan ihmisen päätös.
     </p>
 
     <p>Merge-konflikti on ratkaistava ennen kuin <em>merge</em> voidaan viedä loppuun.</p>
@@ -50,26 +43,30 @@
             <code><pre><<<<<<< HEAD
 Tässä on sinun muutoksesi.
 =======
-Tämä on yhdistettävän haaran versio, jossa on toisen tiimin jäsenen muutoksia.
 Tässä on tiimin jäsenen muutokset.
 >>>>>>> feature-branch
+
 </pre></code>
+
+            <p>
+                <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> -kohdan ja yhtäsuuruusmerkkien väliin jäävä osuus näyttää
+                sen
+                version, joka on omassa haarassasi (<em>current change</em>). Yhtäsuuruusmerkkien ja
+                <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> -merkkien
+                väliin jäävä osa taas näyttää koodin, joka on yhdistettävässä haarassa (<em>incoming change</em>).
+            </p>
 
         </div>
     </div>
 
-
-
-    <p>VS Codessa tai muussa IDE:ssä konfliktit näkyvät usein värikoodattuina, mikä helpottaa niiden tunnistamista ja
-        löytämistä.</p>
->>>>>>> 97f12cb6100555916d9b2b7038ed165997cad3ae
+    <p>VS Codessa ja muissa vastaavissa IDE:issä konfliktit näkyvät myös usein värikoodattuina, mikä helpottaa niiden 
+        tunnistamista ja löytämistä.</p>
 
     <figure>
         <img class="wide-image" src="/assets/images/teamwork/merge-conflicts/merge conflict.png" alt="Merge-konflikti VS Codessa" />
         <figcaption>Merge-konflikti VS Codessa</figcaption>
     </figure>
 
-    <h3>Merge-konfliktin ratkaiseminen</h3>
     <h3>Merge-konfliktin ratkaiseminen</h3>
 
     <p>
