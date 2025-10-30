@@ -84,7 +84,7 @@ p.note-box + h6 {
 
 /* no bottom margin class */
 .no-margin-bottom {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
 
 /* Top margin class */
@@ -102,8 +102,7 @@ ul.padding-left {
 }
 
 /* No line change mid link */
-.no-line-change,
-code:not(pre code) {
+.no-line-change {
   white-space: nowrap;
 }
 
