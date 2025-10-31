@@ -1,5 +1,5 @@
 <section class="basic-problems">
-  <h2>Miten selvitä ongelmatilanteesta?</h2>
+  <h1>Miten selvitä ongelmatilanteesta?</h1>
 
   <p>
     Git on tehokas työkalu, mutta aina asiat eivät mene suunnitelmien mukaan. Ehkä unohdit commitata muutoksen, teit 
@@ -11,36 +11,38 @@
     virheitä komentoja antaessasi tai yrität jotain, mikä ei ole sallittua. Kokeile siis asioita rohkeasti!
   </p>
 
-  <h6>Katso missä mennään</h6>
+  <h5>Katso missä mennään</h5>
   <p>
     Aja <code>git status</code>. Lue viesti rauhassa. Voit ajaa tämän komennon joka välissä, jotta pysyt kartalla siitä 
     mitä tapahtuu.
   </p>
 
-  <h6>Ongelma komennon kanssa</h6>
+  <h5>Ongelma komennon kanssa</h5>
   <p>
     Jos jokin komento tuottaa päänvaivaa, avaa sen viralliset ohjeet selaimeen komennolla 
     <code>git help &lt;komento&gt;</code>. Tämä antaa yksityiskohtaisen selityksen komennon käytöstä. Usein nopea 
     yhteenveto löytyy myös komennolla <code>git &lt;komento&gt; -h</code>. Kokeile rohkeasti molempia!
   </p>
 
-  <h6>Vahingossa poistettu tiedosto</h6>
+  <h5>Vahingossa poistettu tiedosto</h5>
   <p>
     Jos tiedosto on poistettu, mutta et ole vielä commitannut, voit palauttaa sen helposti komennolla 
     <code>git restore &lt;tiedosto&gt;</code>. Jos taas tiedosto on poistettu ja commitattu, voit palauttaa sen 
     aiemmasta commitista komennolla <code>git checkout HEAD~1 -- &lt;tiedosto&gt;</code>.
   </p>
 
-  <h6>Rollback eli commitin peruuttaminen</h6>
+  <h5>Rollback eli commitin peruuttaminen</h5>
   <p>
     Joskus commit saattaa mennä pieleen tai huomaat heti sen jälkeen, että haluat muuttaa tai poistaa tekemäsi
     muutokset. Gitissä on onneksi useita tapoja perua commit riippuen siitä, haluatko säilyttää vai poistaa tehdyt
-    muutokset kokonaan.
+    muutokset kokonaan. <strong>Käytä näitä toimintoja varoen</strong>, erityisesti jos commit on jo puskettu 
+    etärepositorioon. Gitin versiohistoria on tärkeä osa projektin eheyttä, joten harkitse aina tarkkaan,
+    ennen kuin peruutat commitin, varsinkin jos työskentelet tiimissä.
   </p>
 
   <ul>
     <li>
-    Säilytä muutokset työtilassa:<br/>
+    Poista commit ja säilytä muutokset työtilassa:<br/>
     Käytä komentoa <code>git reset --soft HEAD~1</code> tai <code>git reset HEAD~</code>. Tämä peruuttaa viimeisen
     commitin, mutta jättää muutokset työtilaan, jotta voit muokata ja commitata ne uudelleen.
     </li>
@@ -60,7 +62,7 @@
     </li>
   </ul>
 
-  <h6>Tiedoston historia VS Codessa</h6>
+  <h5>Tiedoston historia VS Codessa</h5>
   <p>
     Tiedoston aiempia versioita voit selata VS Coden <em>Timeline</em>-paneelissa (ala-vasen). Siellä näkyvät kaikki
     tekemäsi tiedoston tallennukset ja voit helposti avata ja vertailla eri versioita. Tämä on kätevää esimerkiksi 
@@ -68,7 +70,7 @@
     <em>History</em>-toiminto, jonka avulla voit tarkastella tiedoston muutoshistoriaa suoraan selaimesta.
   </p>
 
-  <h6>Jos kaikki menee pieleen</h6>
+  <h5>Jos kaikki menee pieleen</h5>
   <p>
     Kopioi tärkeät tiedostot talteen → poista koko kansio → kloonaa repo uudestaan <code>git clone &lt;url&gt;</code> → 
     palauta tärkeät tiedostot takaisin kansioon ja tee uusi commit.
