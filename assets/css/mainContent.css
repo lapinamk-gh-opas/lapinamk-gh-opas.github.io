@@ -37,6 +37,7 @@ img.zoomed.sidebar-closed:not(.no-zoom) {
 
 figure {
   height: fit-content;
+  margin: 1rem 0;
 }
 
 /* div for arrow buttons */
@@ -200,8 +201,8 @@ figcaption {
 
 /* red exclamation mark for important list items */
 .warning::marker {
-  content: "❗";
-  color: red;
+  content: "!  ";
+  color: #BD462A;
   font-weight: bold;
   font-size: 1.2em;
 }

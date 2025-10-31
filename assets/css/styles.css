@@ -27,11 +27,11 @@ header h1 {
 h4,
 h5 {
   margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 h3 {
-  padding: 1rem 0 0.5rem 0;
+  margin: 1rem 0;
 }
 
 /* Reduce margin when heading follows note-box */
