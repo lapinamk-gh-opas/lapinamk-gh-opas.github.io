@@ -14,12 +14,12 @@
     Tässä osiossa käydään läpi tärkeimmät asetukset, kuten repositorion
     näkyvyyden muuttaminen, käyttäjien (<em>collaborators</em>) lisääminen,
     haarojen suojaaminen (<em>branch protection rules</em>), sekä repositorion
-    poistaminen. <strong>Ehkä?</strong> Lisäksi tutustutaan muutamiin
-    hyödyllisiin perusasetuksiin, kuten oletushaaran määrittämiseen ja projektin
-    kuvaukseen.<strong>Ehkä?</strong>
+    poistaminen. Lisäksi tutustutaan muutamiin hyödyllisiin perusasetuksiin,
+    kuten oletushaaran uudelleen nimeäminen ja vaihtaminen sekä projektin
+    kuvauksen lisääminen
   </p>
 
-  <!--Accordion 1.-->
+  <!--Accordion 1-->
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
@@ -185,8 +185,8 @@
       </p>
     </div>
   </div>
-  <!--Accordion 1. ends-->
-  <!--Accordion 2.-->
+  <!--Accordion 1 ends-->
+  <!--Accordion 2-->
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
@@ -372,8 +372,8 @@
       </ol>
     </div>
   </div>
-  <!--Accordion 2. ends-->
-  <!--Accordion 3.-->
+  <!--Accordion 2 ends-->
+  <!--Accordion 3-->
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
@@ -572,8 +572,8 @@
       </ol>
     </div>
   </div>
-  <!--Accordion 3. ends-->
-  <!--Accordion 4.-->
+  <!--Accordion 3 ends-->
+  <!--Accordion 4-->
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
@@ -716,18 +716,329 @@
       </ol>
     </div>
   </div>
-  <!--Accordion 4. ends-->
-  <!--Accordion 5.-->
+  <!--Accordion 4 ends-->
+  <!--Accordion 5-->
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
-    data-title="Oletushaaran muuttaminen"
+    data-title="Oletushaaran uudelleen nimeäminen"
   >
     <div class="contentToAccordion">
+      <div class="note-box">
+        <ul>
+          <li class="warning">
+            Päähaaran (<strong>main</strong>) uudelleennimeäminen vaikuttaa koko
+            projektiin ja kaikkiin sen käyttäjiin. Nimen muuttamisen jälkeen
+            vanha haaranimi ei enää toimi push- tai pull-komentoihin, ennen kuin
+            käyttäjät päivittävät paikalliset asetuksensa.
+          </li>
+          <li>
+            Mikäli olet jo jakanut repositorion muille, ilmoita nimenmuutoksesta
+            tiimillesi. Jokaisen tulee päivittää paikallinen haaraviittaus
+            komennolla:<br />
+            <code>git branch -m main uusi-nimi</code><br />
+            <code>git fetch origin</code><br />
+            <code>git branch -u origin/uusi-nimi uusi-nimi</code><br />
+            <code>git remote set-head origin -a</code><br />
+          </li>
+          <li>
+            Suositeltavaa on tehdä nimenmuutos vain projektin alkuvaiheessa,
+            ennen kuin useampi henkilö on ottanut repositorion käyttöön.
+          </li>
+        </ul>
+      </div>
       <ol>
-        <li>sisältö tähän</li>
+        <li>
+          Siirry repositorion asetuksiin klikkaamalla repositoriossa
+          <strong>settings</strong>
+          välilehteä.
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/visibility-1.webp"
+              alt="Repositorion asetukset."
+            />
+            <figcaption>Repositorion asetukset.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Nimetäksesi default haaran uudelleen:
+          <ul>
+            <li>
+              Varmista, että olet asetuksien <strong>General</strong> osiossa.
+            </li>
+            <li>
+              Klikkaa Default branch-osion <strong>kynä</strong> kuvaketta
+            </li>
+          </ul>
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/default-branch-1.webp"
+              alt="Asetuksien General osio (Default branch)."
+            />
+            <figcaption>Asetuksien General osio (Default branch).</figcaption>
+          </figure>
+        </li>
+        <li>
+          Anna <strong>tekstikenttään</strong> default haaralle uusi nimi ja
+          klikkaa <strong>Rename branch</strong> nappia.
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/default-branch-2.webp"
+              alt="Uuden nimen syöttäminen."
+            />
+            <figcaption>Uuden nimen syöttäminen.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Päähaara on nyt nimetty uudelleen. Muutoksessa voi kestää hetki.
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/default-branch-3.webp"
+              alt="Näkymä muutoksen jälkeen ja ilmoitus nimenmuutoksesta."
+            />
+            <figcaption>
+              Näkymä muutoksen jälkeen ja ilmoitus nimenmuutoksesta.
+            </figcaption>
+          </figure>
+        </li>
       </ol>
     </div>
   </div>
-  <!--Accordion 5. ends-->
+  <!--Accordion 5 ends-->
+  <!--Accordion 6-->
+  <div
+    class="accordion"
+    data-include="../../accordion-element/accordion.html"
+    data-title="Oletushaaran vaihtaminen"
+  >
+    <div class="contentToAccordion">
+      <div class="note-box">
+        <ul>
+          <li class="warning">
+            Oletushaaran (<strong>default branch</strong>) vaihtaminen vaikuttaa
+            kaikkiin käyttäjiin ja automaattisiin toimintoihin, kuten
+            <strong>pull requesteihin</strong>,
+            <strong>workflow-prosesseihin</strong> ja
+            <strong>GitHub Pages -julkaisuihin</strong>.
+          </li>
+          <li>
+            Kun vaihdat oletushaaran, uusi haara korvaa aiemman (esim.
+            <em>main</em> → <em>develop</em>) GitHubin oletuskohteena. Tämä
+            tarkoittaa, että uudet pull requestit ja commitit kohdistuvat uuteen
+            oletushaaraan.
+          </li>
+          <li>
+            Aiemmin avatut pull requestit ja automaatiot, jotka viittaavat
+            vanhaan oletushaaraan, on hyvä tarkistaa ja päivittää tarvittaessa.
+          </li>
+          <li>
+            Muutokset eivät poista vanhaa haaraa. Vanhasta oletushaarasta tulee
+            tavallinen haara, jota voi käyttää edelleen, jos sitä tarvitaan.
+          </li>
+          <li>
+            Jos projektilla on useita tekijöitä, ilmoita muutoksesta kaikille
+            ennen haaran vaihtamista, jotta kukaan ei jatka työskentelyä väärään
+            haaraan.
+          </li>
+        </ul>
+      </div>
+      <ol>
+        <li>
+          Siirry repositorion asetuksiin klikkaamalla repositoriossa
+          <strong>settings</strong>
+          välilehteä.
+
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/visibility-1.webp"
+              alt="Repositorion asetukset."
+            />
+            <figcaption>Repositorion asetukset.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Vaihtaaksesi mitä hharaa käytetään default haarana:
+          <ul>
+            <li>
+              Varmista, että olet asetuksien <strong>General</strong> osiossa.
+            </li>
+            <li>
+              Klikkaa Default branch-osion <strong>vaihto</strong> kuvaketta
+            </li>
+          </ul>
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/default-branch-1.2.webp"
+              alt="Asetuksien General osio (Default branch)."
+            />
+            <figcaption>Asetuksien General osio (Default branch).</figcaption>
+          </figure>
+        </li>
+        <li>
+          klikkaa nykyisen päähaaran <strong>nimeä</strong> avataksesi
+          alasvetovaliokon ja valitse valikosta se haara mitä haaraa haluat
+          käyttää <strong>uutena päähaarana</strong>.
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/default-branch-4.webp"
+              alt="Uuden päähaaran valitseminen."
+            />
+            <figcaption>Uuden päähaaran valitseminen.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Vahvista valinta klikkaamalla <strong>Update</strong> nappia.
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/default-branch-5.webp"
+              alt="Valinnan vahvistaminen."
+            />
+            <figcaption>Valinnan vahvistaminen.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Vahvista muutos vielä klikkaamalla
+          <strong>I understand, update the default branch</strong> nappia.
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/default-branch-6.webp"
+              alt="Muutoksen vahvistaminen."
+            />
+            <figcaption>Muutoksen vahvistaminen.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Käytettävä päähaara on nyt vaihdettu.
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/default-branch-7.webp"
+              alt="Näkymä vaihdon jälkeen ja ilmoitus päähaaran vaihtumisesta."
+            />
+            <figcaption>
+              Näkymä vaihdon jälkeen ja ilmoitus päähaaran vaihtumisesta.
+            </figcaption>
+          </figure>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <!--Accordion 6 ends-->
+  <!--Accordion 7-->
+  <div
+    class="accordion"
+    data-include="../../accordion-element/accordion.html"
+    data-title="Repositorion kuvauksen lisääminen"
+  >
+    <div class="contentToAccordion">
+      <div class="note-box">
+        <ul>
+          <li>
+            Repositorion <strong>kuvaus (Description)</strong> auttaa muita
+            ymmärtämään projektin tarkoituksen yhdellä silmäyksellä. Kuvaus
+            näkyy automaattisesti repositorion etusivun yläosassa nimen
+            alapuolella.
+          </li>
+          <li>
+            Kuvaus on erityisen tärkeä julkisissa (Public) repositorioissa,
+            sillä se auttaa muita käyttäjiä ja hakukoneita ymmärtämään, mistä
+            projektissa on kyse. Hyvin kirjoitettu kuvaus tekee repositoriosta
+            helpommin löydettävän ja uskottavamman.
+          </li>
+          <li>
+            Kirjoita kuvaus lyhyesti ja ytimekkäästi. Esimerkiksi:
+            <em
+              >"Kouluprojekti, jossa harjoitellaan Git-versionhallinnan ja
+              GitHubin perustoimintoja."</em
+            >
+          </li>
+          <li class="warning">
+            Älä lisää kuvaukseen arkaluontoisia tietoja, kuten henkilön nimiä,
+            opiskelijanumeroita, sähköpostiosoitteita tai muita henkilökohtaisia
+            tietoja. Kuvaus voi näkyä julkisesti myös hakukoneissa, jos
+            repositorio on Public-tilassa.
+          </li>
+          <li>
+            Voit halutessasi lisätä myös projektin
+            <strong>verkkosivun tai GitHub Pages -osoitteen</strong>
+            kuvauskentän viereiseen kenttään.
+          </li>
+        </ul>
+      </div>
+      <ol>
+        <li>
+          Mene repositorion etusivulle klikkaamalla
+          <strong>code</strong> välilehteä, jos et ole jo siellä. Muokkaa
+          kuvausta klikkaamalla About-osion <strong>ratas</strong> kuvaketta.
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/description-1.webp"
+              alt="Repositorion etusivu ja About-osio."
+            />
+            <figcaption>Repositorion etusivu ja About-osio.</figcaption>
+          </figure>
+        </li>
+        <li>
+          Syötä repositorion kuvaukseen liittyvät tiedot:
+          <ul>
+            <li>
+              <strong>Description</strong> kenttään lyhyt ja ytimekäs kuvaus
+              projektista.
+            </li>
+            <li>
+              <strong>Website</strong> kenttään voit halutessasi lisätä
+              projektin verkkosivun, GitHub Pages -osoitteen tai vaikkapa linkin
+              projektia esittelevään videoon.
+            </li>
+            <li>
+              <strong>Topics</strong> kenttään voit lisätä avainsanoja, jotka
+              kuvaavat projektia. Avainsanat auttavat muita käyttäjiä löytämään
+              repositorion.
+            </li>
+            <li>
+              Releases, Packages ja Deployments osiot voit jättää tai piiloittaa
+              etusivulta tarpeen mukaan.
+            </li>
+            <li>Klikkaa lopuksi <strong>Save changes</strong> nappia.</li>
+          </ul>
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/description-2.webp"
+              alt="Kuvauksen ja muiden repositorioon liittyvien tietojen lisääminen."
+            />
+            <figcaption>
+              Kuvauksen jamuiden repositorioon liittyvien tietojen lisääminen.
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          Kuvauksen lisääminen on nyt valmis. Kuvaus näkyy repositorion
+          etusivulla.
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/description-3.webp"
+              alt="Näkymä ja ilmoitus kuvauksen lisäämisen jälkeen."
+            />
+            <figcaption>
+              Näkymä ja ilmoitus kuvauksen lisäämisen jälkeen.
+            </figcaption>
+          </figure>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <!--Accordion 7 ends-->
 </section>
