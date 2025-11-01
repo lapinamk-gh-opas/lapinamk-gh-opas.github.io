@@ -31,7 +31,7 @@ h5 {
 }
 
 h3 {
-  margin: 1rem 0;
+  margin: 1.5rem 0 1rem 0;
 }
 
 /* Reduce margin when heading follows note-box */
@@ -89,6 +89,10 @@ p.note-box + h6 {
 /* no bottom margin class */
 .no-margin-bottom {
   margin-bottom: 0 !important;
+}
+
+.no-margin-right {
+  margin-right: 0 !important;
 }
 
 /* Top margin class */
