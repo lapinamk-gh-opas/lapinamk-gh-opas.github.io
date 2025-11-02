@@ -1,11 +1,9 @@
 <section class="git-install">
-  <header>
-    <h1>Gitin konfigurointi</h1>
-  </header>
+  <h1>Gitin konfigurointi</h1>
 
   <ol class="edit-number sections">
     <li>
-      <h6>Avaa Git Bash tai terminaali (macOS tai Linux)</h6>
+      <h6>Avaa Git Bash tai terminaali</h6>
       <ul>
         <li>
           Git Bash asennetaan Windowsille oletuksena Gitin asennuksen yhteydessä
@@ -16,18 +14,27 @@
         <img
           class="wide-image"
           src="../../assets/images/basics/git-install/git config 1.1.webp"
-          alt="Git Bash avaaminen Windows"
+          alt="Git Bashin avaaminen Windowsilla"
         />
         <figcaption>
-          Git Bash on oletuksena Git kansiossa Windowsin aloitusvalikossa.
+          Git Bashin avaaminen Windowsilla
         </figcaption>
       </figure>
     </li>
     <li>
       <h6>Tarkasta .gitconfig tiedoston sisältö</h6>
       <ul>
+
         <li>Anna komento <code>git config --global --list</code></li>
       </ul>
+      <figure>
+        <img
+          class="wide-image"
+          src="../../assets/images/basics/git-install/git config 1.2.webp"
+          alt=".gitconfig tiedoston sisällön tarkastus"
+        />
+        <figcaption>.gitconfig tiedoston sisällön tarkastus</figcaption>
+      </figure>
       <div class="note-box">
         <p>
           Tämän tiedoston asetuksia käytetään laitteella globaalisti, eli
@@ -37,26 +44,15 @@
           <code>--global</code> lippua.
         </p>
         <p>
-          Jos et ole aikaisemmin tehnyt tiedostoon muutoksia, niin se ei sisällä
-          vielä muita asetuksia kuin asennuksen yhteydessä asetettu oletus
-          tekstieditori (core.editor). Tässä tapauksessa se on Gitin asennuksen
-          yhteydessä annettu Visual Studio Code. Oletus editoria käytetään
-          commit-viestien kirjoittamiseen, mikäli et ole lisännyt viestiä commit
-          komentoon lipulla
-          <code>-m "commit viestisi"</code>.
+          Jos et ole vielä muokannut asetustiedostoa, se sisältää vain asennuksen yhteydessä määritetyn
+          oletustekstieditorin (<code>core.editor</code>). Tässä tapauksessa oletuseditoriksi on asetettu Visual Studio
+          Code, joka valittiin Gitin asennuksen aikana.
         </p>
       </div>
-      <figure>
-        <img
-          class="wide-image"
-          src="../../assets/images/basics/git-install/git config 1.2.webp"
-          alt=".gitconfig tiedoston sisällön tarkastus"
-        />
-        <figcaption>.gitconfig tiedoston sisällön tarkastus.</figcaption>
-      </figure>
     </li>
+
     <li>
-      <h6>Lisätään tiedostoon käyttäjänimi ja sähköposti</h6>
+      <h6>Lisää tiedostoon käyttäjänimi ja sähköposti</h6>
       <ul>
         <li>
           Anna sähköposti komennolla
@@ -80,18 +76,18 @@
         <img
           class="wide-image"
           src="../../assets/images/basics/git-install/git config 2.webp"
-          alt="Lisätään .gitconfig tiedostoon käyttäjänimi ja sähköposti."
+          alt="Käyttäjänimen ja sähköpostin lisääminen .gitconfig tiedostoon"
         />
         <figcaption>
-          Lisätään .gitconfig tiedostoon käyttäjänimi ja sähköposti.
+          Käyttäjänimen ja sähköpostin lisääminen .gitconfig -tiedostoon
         </figcaption>
       </figure>
     </li>
     <li>
-      <h6>Asetetaan oletushaaran nimeksi main</h6>
+      <h6>Aseta oletushaaran nimi (main)</h6>
       <ul>
         <li>
-          Komennolla
+          Aseta nimi komennolla
           <code>git config --global init.defaultBranch main </code>
         </li>
         <li>
@@ -100,31 +96,29 @@
       </ul>
       <p class="note-box">
         Tämä tehtiin jo asennuksen yhteydessä system tasolle, mutta nimeäminen
-        voidaan varmistaa vielä käyttäjätasolla tai nimeä voi muuttaa
-        tarvittaessa myöhemmin näin.
+        kannattaa varmistaa vielä käyttäjätasolla.
       </p>
       <figure>
         <img
           class="wide-image"
           src="../../assets/images/basics/git-install/git config 3.webp"
-          alt="Asetetaan oletushaaran nimeksi main .gitconfig tiedostoon."
+          alt="Oletushaaran nimen asettaminen .gitconfig tiedostoon"
         />
         <figcaption>
-          Asetetaan oletushaaran nimeksi main .gitconfig tiedostoon.
+          Oletushaaran nimen asettaminen .gitconfig tiedostoon
         </figcaption>
       </figure>
     </li>
   </ol>
   <p>
-    Näillä asetuksilla pääsee hyvin alkuun. Lisää konfiguraatiosta voi katsoa
-    Gitin dokumentaatiosta komennolla: <br />
-    <code>git help config</code>.
+    Näillä asetuksilla pääsee hyvin alkuun. Lisää konfiguraatiosta voit katsoa
+    Gitin dokumentaatiosta komennolla
+    <code>git help config</code>
   </p>
   <div class="note-box">
     <p>
-      Dokumentaatio voi vaikuttaa alkuun aavistuksen kryptiseltä. Joten tässä
-      vielä taulukko jo käytetyistä ja muutamista muista mahdollisesti
-      hyödyllisistä asetuksista:
+      Gitin dokumentaatio voi vaikuttaa aluksi kryptiseltä, joten tässä
+      vielä taulukko jo käytetyistä ja muutamista muista hyödyllisistä asetuksista. <br>
     </p>
 
     <table>
@@ -145,11 +139,11 @@
         </tr>
         <tr>
           <td><code>core.editor</code></td>
-          <td>Oletus editorin asettaminen commit-viesteille</td>
+          <td>Oletuseditorin asettaminen</td>
         </tr>
         <tr>
           <td><code>init.defaultBranch</code></td>
-          <td>Pää/oletushaaran nimeäminen</td>
+          <td>Päähaaran nimeäminen</td>
         </tr>
         <tr>
           <td><code>core.autocrlf</code></td>

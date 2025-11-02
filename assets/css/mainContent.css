@@ -196,8 +196,13 @@ figcaption {
   background: rgba(20, 130, 125, 0.2);
   border: 2px solid rgba(20, 130, 125, 0.4);
   padding: 0.8rem 1.4rem;
-  margin: 1rem 0 2rem 0;
+  margin: 1rem 0 1rem 0;
   display: inline-block;
+}
+
+/*note-box last p no margin*/
+.note-box p:last-child {
+  margin-bottom: 0;
 }
 
 /* Keep list markers inside note-box padding */
