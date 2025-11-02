@@ -22,46 +22,50 @@
   <h5>Ongelma komennon kanssa</h5>
   <p>
     Jos jokin komento tuottaa päänvaivaa, avaa sen viralliset ohjeet selaimeen komennolla
-    <code>git help &lt;komento&gt;</code>. Tämä antaa yksityiskohtaisen selityksen komennon käytöstä. Usein nopea
-    yhteenveto löytyy myös komennolla <code>git &lt;komento&gt; -h</code>. Kokeile rohkeasti molempia!
+    <code>git help &lt;komento&gt;</code> Tämä antaa yksityiskohtaisen selityksen komennon käytöstä. Usein nopea
+    yhteenveto löytyy myös komennolla <code>git &lt;komento&gt; -h</code> Kokeile rohkeasti molempia!
   </p>
 
   <h5>Vahingossa poistettu tiedosto</h5>
   <p>
     Jos tiedosto on poistettu, mutta et ole vielä commitannut, voit palauttaa sen helposti komennolla
-    <code>git restore &lt;tiedosto&gt;</code>. Jos taas tiedosto on poistettu ja commitattu, voit palauttaa sen
+    <code>git restore &lt;tiedosto&gt;</code> Jos taas tiedosto on poistettu ja commitattu, voit palauttaa sen
     aiemmasta commitista komennolla <code>git restore --source=HEAD~1 -- &lt;tiedosto&gt;</code>
   </p>
 
   <div
-  class="accordion"
-  data-include="/accordion-element/accordion.html"
-  data-title="Mikä on HEAD~1"
->
-  <div class="contentToAccordion">
-    <p>HEAD on osoitin nykyiseen tilanteeseesi. Se merkkaa viimeisintä commitia siinä haarassa, jossa olet.</p>
-    <ul>
-      <li><code>HEAD</code> = tämä hetki</li>
-      <li><code>HEAD~1</code> = yksi commit taakse</li>
-      <li><code>HEAD~2</code> = kaksi committia taakse</li>
-    </ul>
+    class="accordion"
+    data-include="/accordion-element/accordion.html"
+    data-title="Mikä on HEAD~1">
+    <div class="contentToAccordion">
+      <p><strong>HEAD</strong> on osoitin nykyiseen tilanteeseesi. Se merkkaa viimeisintä commitia siinä haarassa, jossa
+        olet.</p>
+      <ul>
+        <li><code>HEAD</code> = tämä hetki</li>
+        <li><code>HEAD~1</code> = yksi commit taaksepäin</li>
+        <li><code>HEAD~2</code> = kaksi committia taaksepäin </li>
+      </ul>
 
-    <p><strong>Esimerkkejä</strong></p>
-    <ul>
-      <li>Palauta tiedosto edellisestä commitista: <code>git restore --source=HEAD~1 -- polku/tiedosto</code></li>
-      <li>Näytä missä mennään: <code>git log --oneline --decorate -n 5</code></li>
-    </ul>
+      <h6><strong>Esimerkkejä</strong></h6>
+      <ul>
+        <li>Palauta tiedosto edellisestä commitista <code>git restore --source=HEAD~1 -- polku/tiedosto</code></li>
+        <li>Katso edellisen commitin tiedot <code>git show HEAD~1</code></li>
+        <li>Katso koko commit-historia ja miten HEAD on liikkunut <code>git reflog</code></li>
+      </ul>
 
-    <p><strong>Detached HEAD lyhyesti</strong><br>
-      Jos avaat suoraan tiettyyn commit-id:hen, et ole haarassa. Jatka tekemällä haara: <code>git switch -c uusi-haara</code>.
-    </p>
+      <h6><strong>Detached HEAD</strong></h6>
+      <p>
+        Jos avaat suoraan tietyn commit-id:n, et ole enää haarassa vaan pelkästään kyseisessä commitissa. Tämä on
+        <em>detached HEAD</em> -tila. Muista aina palata takaisin haaraan ennen kuin teet uusia committeja, muuten ne
+        voivat kadota.
+      </p>
 
-    <p><strong>Hukassa?</strong><br>
-      <code>git reflog</code> näyttää mihin <code>HEAD</code> on liikkunut ja auttaa palaamaan takaisin.</p>
+      <h6><strong>HEAD historian tarkastelu</strong></h6>
+      <p>
+        <code>git reflog</code> näyttää mihin <code>HEAD</code> on liikkunut ja auttaa palaamaan takaisin.
+      </p>
+    </div>
   </div>
-</div>
-
-
 
   <h5>Rollback eli commitin peruuttaminen</h5>
   <p>
@@ -78,36 +82,49 @@
 
   <ul>
     <li>
-      <strong>Peru commit mutta säilytä tehdyt muutokset</strong><br>
+      <strong>Muokkaa viimeisintä committia</strong><br>
+      Komento <code>git commit --amend</code> avaa edellisen commitin muokattavaksi. Voit esimerkiksi korjata 
+      commit-viestin tai lisätä unohtuneita tiedostoja ennen kuin olet puskenut muutokset.
+      <ul>
+        <li>Esimerkiksi jos juuri teit commitin, mutta unohdit lisätä tiedoston, lisää se ensin normaalisti
+          <code>git add tiedosto.txt</code> ja aja sen jälkeen <code>git commit --amend</code> Tämä avaa editorin, jossa
+          voit muokata commit-viestiä tai jättää sen ennalleen. Kun tallennat ja suljet editorin, edellinen commit
+          päivitetään sisältämään myös uusi tiedosto. Huom! Tämä muuttaa commitin ID:tä, joten älä käytä tätä komentoa,
+          jos olet jo puskenut commitin etärepoon!
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Peru commit, mutta säilytä tehdyt muutokset</strong><br>
       <ul>
         <li>Komento <code>git reset --soft HEAD~1</code> siirtää haaran osoittimen taaksepäin ja jättää muutokset
           stagingiin.<br>
         </li>
-        <li>Komento <code>git reset HEAD~1</code> (oletus <em>--mixed</em>) siirtää osoittimen taaksepäin ja siirtää
-          muutokset työpuuhun (ei stagingissa).
+        <li>Komento <code>git reset HEAD~1</code> (oletus <em>--mixed</em>) siirtää osoittimen taaksepäin ja pudottaa
+          muutokset takaisin työpuuhun, eivätkä ne ole enää stagingissa.
         </li>
       </ul>
     </li>
 
     <li>
       <strong>Peru commit ja poista tehdyt muutokset</strong><br>
-      <code>git reset --hard HEAD~1</code> palauttaa tilan edelliseen commit-tilaan ja poistaa työpuun sekä stagingin
-      muutokset pysyvästi. <strong>Tätä komentoa ei voi perua</strong>, joten käytä sitä erittäin varovasti!
+      <code>git reset --hard HEAD~1</code> palauttaa tilan edelliseen commit-tilaan ja poistaa sekä stagingin että
+      työpuun muutokset. Tätä komentoa ei voi perua helposti, joten käytä sitä erittäin varovasti!
     </li>
 
     <li>
-      <strong>Jaetussa historiassa</strong><br>
-    Jos commit on jo puskettu, käytä mieluummin <code>git revert &lt;commit-id&gt;</code>. Se luo uuden commitin, joka
-      kumoaa edellisen säilyttäen historiasi eheänä. Commit-id:n löydät komennolla <code>git log</code>
+      <strong>Jos olet jo puskenut commitin etärepoon</strong><br>
+      Jos commit on jo jaettu muiden kanssa (esim. GitHubissa), käytä mieluummin
+      <code>git revert &lt;commit-id&gt;</code> Tämä luo uuden commitin, joka kumoaa edellisen ja säilyttää historian
+      eheänä. Commit-id:n näet komennolla <code>git log</code>
     </li>
   </ul>
 
 
   <p class="note-box">
-    <strong>Vinkki!</strong> Tee varmuuden vuoksi <code>git stash</code> tai tilapäinen haara
-    (<code>git branch backup</code>) ennen reset-komentoja, jotta voit palauttaa tilanteen, jos jokin menee pieleen!
-    Jos jokin katoaa, kokeile komentoa <code>git reflog</code> se näyttää mihin HEAD on liikkunut ja voi auttaa 
-    pelastamaan tilanteen.
+    <strong>Vinkki!</strong> Ennen reset-komentoja tee varmuuden vuoksi <code>git stash</code> tai luo tilapäinen
+    haara (esim. <code>git branch backup</code>), jotta voit palauttaa tilanteen, jos jokin menee pieleen.
   </p>
 
   <h5>Tiedoston historia VS Codessa</h5>
