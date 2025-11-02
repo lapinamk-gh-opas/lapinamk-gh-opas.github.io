@@ -2,19 +2,16 @@
   <header>
     <h1>Gitin käyttö komentorivillä</h1>
     <p>
-      Tällä sivulla käsitellään Gitin käyttöä
-      <strong>komentorivillä</strong>. Luodaan komentorivin avulla tiedosto ja
-      paikallinen repositorio. Sen jälkeen se viedään samaan etärepositorioon,
-      joka luotiin käyttöönoton yhteydessä osiossa:
-      <a href="/basics/git-install.html#create-repository"
-        >GitHub-repositorion luominen</a
-      >.
+      Tällä sivulla opit käyttämään <strong>Gittiä komentorivillä</strong>. 
+      Ensin luomme <code>README.md</code> -tiedoston ja paikallisen repositorion. Sen jälkeen 
+      yhdistämme paikallisen repositorion <a href="/basics/git-install.html#create-repository"
+        >GitHub-repositorion luominen</a> -kappaleessa luotuun etärepositorioon.
     </p>
     <!-- Accordion element with reused content starts -->
     <div
       class="accordion"
       data-include="/accordion-element/accordion.html"
-      data-title="Mistä repositoriot ja sen URL-osoite löytyvät GitHubissa?"
+      data-title="Mistä repositoriot ja sen URL-osoite löytyvät GitHubissa"
     >
       <div
         class="contentToAccordion reused-accordion"
@@ -26,6 +23,7 @@
     <!-- Reusable accordion element ends -->
   </header>
 
+  <h3>Tiedoston luonti ja repojen yhdistäminen komentorivillä</h3>
   <ol class="edit-number sections">
     <!--List item 1.-->
     <li>
@@ -40,10 +38,10 @@
         <img
           class="wide-image"
           src="../../assets/images/basics/git-install/git config 1.1.webp"
-          alt="Git Bash avaaminen Windows"
+          alt="Git Bash Windowsin aloitusvalikossa"
         />
         <figcaption>
-          Git Bash on oletuksena Git kansiossa Windowsin aloitusvalikossa.
+          Git Bash Windowsin aloitusvalikossa
         </figcaption>
       </figure>
       <!--Accordion 1.-->
@@ -67,10 +65,10 @@
             <img
               class="wide-image"
               src="../../assets/images/basics/IDE-and-usage/terminal/Git usage terminal 6.webp"
-              alt="Git Bash näkymä VS Codessa"
+              alt="Git Bashin avaaminen VS Codessa"
             />
             <figcaption>
-              Git bashin avaaminen VS Coden terminaalista.
+              Git bashin avaaminen VS Codessa
             </figcaption>
           </figure>
         </div>
@@ -79,18 +77,18 @@
     </li>
     <!--List item 2.-->
     <li>
-      <h6>Luodaan kansio ja tiedosto testausta varten.</h6>
+      <h6>Luo kansio ja tiedosto testausta varten</h6>
       <ul>
         <li>
-          Siirry kansioon, johon haluat luoda uuden kansion:<br />
+          Siirry hakemistoon, johon haluat luoda uuden kansion<br />
           <code>cd polku/valittuun/hakemistoon</code>
         </li>
         <li>
-          Luo uusi kansio testausta varten:<br />
+          Luo uusi kansio testausta varten<br />
           <code>mkdir kansion-nimi</code>
         </li>
         <li>
-          Siirry luotuun kansioon:<br />
+          Siirry luotuun kansioon<br />
           <code>cd kansion-nimi</code>
         </li>
         <li>
@@ -100,8 +98,8 @@
           <code>cd Desktop/ && mkdir git-testaus && cd git-testaus</code>
         </li>
         <li>
-          Luodaan vielä markdown (.md) tiedostomuodossa oleva
-          README-tekstitiedosto uuteen kansioon:<br />
+          Luo vielä markdown (.md) tiedostomuodossa oleva
+          README-tekstitiedosto uuteen kansioon<br />
           <code>echo Lisää tiedoston tekstisisältö tähän. >> README.md</code>
         </li>
       </ul>
@@ -110,34 +108,34 @@
         <img
           class="wide-image"
           src="../../assets/images/basics/IDE-and-usage/terminal/Git usage terminal 2.webp"
-          alt="Git Bash näkymä kansion ja tiedoston luominen."
+          alt="Kansion ja tiedoston luonti Git Bashillä"
         />
-        <figcaption>Esimerkki kansion ja tiedoston luomisesta.</figcaption>
+        <figcaption>Kansion ja tiedoston luonti Git Bashillä</figcaption>
       </figure>
     </li>
     <!--List item 3.-->
     <li>
       <h6>
-        Luodaan paikallinen repositorio ja yhdistetään se etärepositorioon.
+        Luo paikallinen repositorio ja yhdistä se etärepositorioon
       </h6>
       <ul>
         <li>
-          Luodaan paikallinen repositorio komennolla:<br />
+          Luo paikallinen repositorio komennolla<br />
           <code>git init</code>
         </li>
         <li>
-          Yhdistetään etärepositorio paikalliseen komennolla:<br />
+          Yhdistä etärepositorio paikalliseen komennolla<br />
           <code
             >git remote add origin
             https://github.com/käyttäjänimi/repositorion-nimi.git</code
           >
         </li>
         <li>
-          Lisätään tiedosto README.md välialueelle (stagin) komennolla:<br />
+          Lisää tiedosto README.md välialueelle (stagin) komennolla<br />
           <code>git add README.md</code>
         </li>
         <li>
-          Tehdään ensimmäinen commit komennolla:<br />
+          Tee ensimmäinen commit komennolla<br />
           <code>git commit -m "Ensimmäinen commit"</code>
         </li>
       </ul>
@@ -146,31 +144,31 @@
         <img
           class="wide-image"
           src="../../assets/images/basics/IDE-and-usage/terminal/Git usage terminal 3.webp"
-          alt="Git Bash näkymä repositorion luominen."
+          alt="Repon luominen, etärepoon yhdistäminen sekä
+          tiedoston lisääminen ja commit Git Bashillä"
         />
         <figcaption>
-          Esimerkki repositorion luomisesta, etärepositorion yhdistämisestä sekä
-          tiedoston lisäämisestä ja commitin tekemisestä.
+          Repon luominen, etärepoon yhdistäminen sekä
+          tiedoston lisääminen ja commit Git Bashillä
         </figcaption>
       </figure>
     </li>
     <!--List item 4.-->
     <li>
       <h6>
-        Lopuksi siirretään paikallisen repositorion muutokset etärepositorioon
-        GitHubissa.
+        Lopuksi tallenna/puske paikallisen repositorion muutokset etärepositorioon
       </h6>
       <ul>
         <li>
-          Siirto etärepositorioon tapahtuu komennolla:<br />
+          Puske muutokset komennolla<br />
           <code>git push -u origin main</code>
         </li>
         <p class="note-box margin-right keep-margin">
-          <code>-u</code> (tai <code>--set-upstream</code>) on
+          <code>-u</code> on
           <code>git push</code> -komennon lippu, joka asettaa paikallisen haaran
           seuraamaan vastaavaa etähaaraa. Jatkossa Git siis tietää etähaaran
           "kotiosoitteen" ja komennoksi riittää <code>git push</code> ja
-          <code>git pull</code>.
+          <code>git pull</code>
         </p>
       </ul>
 
@@ -178,10 +176,10 @@
         <img
           class="wide-image"
           src="../../assets/images/basics/IDE-and-usage/terminal/Git usage terminal 4.webp"
-          alt="Git Bash näkymä muutoksien vienti etärepositorioon."
+          alt="Muutosten vieminen etärepoon Git Bashillä"
         />
         <figcaption>
-          Esimerkki muutoksien viemisestä etärepositorioon.
+          Muutosten vieminen etärepoon Git Bashillä
         </figcaption>
       </figure>
       <!--Accordion 2.-->
@@ -191,12 +189,12 @@
         data-title="Ensimmäinen GitHub interaktio"
       >
         <div class="contentToAccordion">
+          <p>
+                Kun teet ensimmäisen Git toiminnon joka on yhteydessä
+                GitHubiin, pyytää GitHub kirjautumaan sisään.
+              </p>
           <ol>
             <li>
-              <p>
-                Kun teet ensimmäisen Git toiminnon, joka on yhteydessä
-                GitHubiin. Pyytää GitHub kirjautumaan sisään.
-              </p>
               <p>
                 Valitse <strong>Browser/Device</strong> ja klikkaa
                 <strong>Sign in with your browser</strong>
@@ -206,9 +204,9 @@
                 <img
                   class="wide-image"
                   src="../../assets/images/basics/IDE-and-usage/terminal/Git usage terminal 7.webp"
-                  alt="GitHub kirjautumispyyntö."
+                  alt="GitHub kirjautumispyyntö"
                 />
-                <figcaption>GitHub kirjautumispyyntö.</figcaption>
+                <figcaption>GitHub kirjautumispyyntö</figcaption>
               </figure>
             </li>
             <li>
@@ -217,7 +215,7 @@
                 selainikkuna, jonka voi sulkea ja kirjautuminen on suoritettu.
               </p>
               <p>
-                Mikäli näet alla olevan ikkunan, syötä käyttäjänimi tai
+                Jos taas näet alla olevan ikkunan, syötä käyttäjänimi tai
                 sähköpostiosoite sekä salasana ja klikkaa
                 <strong>Sign in</strong>
               </p>
@@ -225,24 +223,24 @@
                 <img
                   class="wide-image"
                   src="../../assets/images/basics/IDE-and-usage/terminal/Git usage terminal 8.webp"
-                  alt="GitHub kirjautumisikkuna."
+                  alt="GitHub kirjautumisikkuna"
                 />
-                <figcaption>GitHub kirjautumisikkuna.</figcaption>
+                <figcaption>GitHub kirjautumisikkuna</figcaption>
               </figure>
             </li>
             <li>
               <p>
                 Syötä kaksivaiheiseen tunnistautumiseen käyttämäsi sovelluksen
-                avainluku ja klikka <strong>Verify</strong>.
+                avainluku ja klikkaa <strong>Verify</strong>.
               </p>
 
               <figure>
                 <img
                   class="wide-image"
                   src="../../assets/images/basics/IDE-and-usage/terminal/Git usage terminal 9.webp"
-                  alt="GitHub kaksivaiheinen tunnistautuminen."
+                  alt="GitHub kaksivaiheinen tunnistautuminen"
                 />
-                <figcaption>GitHub kaksivaiheinen tunnistautuminen.</figcaption>
+                <figcaption>GitHub kaksivaiheinen tunnistautuminen</figcaption>
               </figure>
             </li>
             <li>
@@ -258,9 +256,9 @@
                 <img
                   class="wide-image"
                   src="../../assets/images/basics/IDE-and-usage/terminal/Git usage terminal 10.webp"
-                  alt="GitHub passkeyn lisääminen."
+                  alt="GitHub passkeyn lisääminen"
                 />
-                <figcaption>GitHub passkeyn lisääminen.</figcaption>
+                <figcaption>GitHub passkeyn lisääminen</figcaption>
               </figure>
             </li>
             <li>
@@ -273,9 +271,9 @@
                 <img
                   class="wide-image"
                   src="../../assets/images/basics/IDE-and-usage/terminal/Git usage terminal 11.webp"
-                  alt="GitHub tunnistautuminen onnistui."
+                  alt="GitHub tunnistautuminen onnistui"
                 />
-                <figcaption>GitHub tunnistautuminen onnistui.</figcaption>
+                <figcaption>GitHub tunnistautuminen onnistui</figcaption>
               </figure>
 
               <p class="note-box">
@@ -293,7 +291,7 @@
     </li>
     <!--List item 5.-->
     <li>
-      <h6>Nyt lisätty tiedosto näkyy GitHubissa.</h6>
+      <h6>Tarkista lisätty tiedosto GitHubista</h6>
       <ul>
         <li>
           Koska kyseessä oli <em>README.md</em>-tiedosto myös sen sisältö näkyy
@@ -305,15 +303,15 @@
         <img
           class="wide-image"
           src="../../assets/images/basics/IDE-and-usage/terminal/Git usage terminal 5.webp"
-          alt="Git Bash näkymä kansion ja tiedoston luominen."
+          alt="Näkymä GitHubissa tehtyjen muutosten jälkeen"
         />
         <figcaption>
-          Esimerkki näkymästä GitHubissa muutoksien jälkeen.
+          Näkymä GitHubissa tehtyjen muutosten jälkeen
         </figcaption>
       </figure>
     </li>
   </ol>
-  <h4>Muita hyödyllisiä toimintoja</h4>
+  <h3>Muita hyödyllisiä toimintoja</h3>
   <p class="no-margin-bottom">
     Teoriaa Gitin haaroihin (branches) liittyen käydään läpi tarkemmin osiossa
     <a class="no-line-change" href="/teamwork/branches.html"
@@ -321,7 +319,7 @@
     >
     ja ne kannattaa opiskella sieltä. Alla olevat ohjeet ovat tiivistetyt
     esimerkit Git haaroihin liittyvistä komennoista. Täältä löydät ne helposti
-    samasta paikasta muiden peruskomentojen kanssa.
+    samasta paikasta muiden komentokehotteesta tehtävien peruskomentojen kanssa.
   </p>
   <div class="note-box">
     <ul>
@@ -347,7 +345,7 @@
         <li>
           <ul>
             <li>
-              Luo uusi haara komennolla:<br />
+              Luo uusi haara komennolla<br />
               <code>git checkout -b haaran-nimi</code>
             </li>
             <li>
@@ -358,17 +356,17 @@
             <img
               class="wide-image"
               src="../../assets/images/basics/IDE-and-usage/terminal/Git usage terminal 12.webp"
-              alt="Uusi haara ja tiedosto muutokset Git Bashillä."
+              alt="Uusi haara ja tiedosto muutokset Git Bashillä"
             />
             <figcaption>
-              Uusi haara ja tiedosto muutokset Git Bashillä.
+              Uusi haara ja tiedosto muutokset Git Bashillä
             </figcaption>
           </figure>
         </li>
         <li>
           <ul>
             <li>
-              Lisää tiedostot stagin-tilaan komennolla:<br />
+              Lisää tiedostot stagin-tilaan komennolla<br />
               <code>git add .</code> tai
               <code
                 >git add uuden-tiedoston-nimi.md
@@ -376,12 +374,12 @@
               >
             </li>
             <li>
-              Tee commit ja lisää viesti komennolla:<br />
+              Tee commit ja lisää viesti komennolla<br />
               <code>git commit -m "commit viesti tähän"</code>
             </li>
             <li>
               Vie muutokset etärepositorioon ja luo sinne uusi haara
-              komennolla:<br />
+              komennolla<br />
               <code>git push -u origin haaran-nimi</code>
             </li>
           </ul>
@@ -390,19 +388,19 @@
             <img
               class="wide-image"
               src="../../assets/images/basics/IDE-and-usage/terminal/Git usage terminal 13.webp"
-              alt="Uuden haaran muutoksien commitointi ja vieminen etärepositorioon Git Bashillä."
+              alt="Uuden haaran muutosten commitointi ja vieminen etärepositorioon Git Bashillä"
             />
             <figcaption>
-              Uuden haaran muutoksien commitointi ja vieminen etärepositorioon
-              Git Bashillä.
+              Uuden haaran muutosten commitointi ja vieminen etärepositorioon
+              Git Bashillä
             </figcaption>
           </figure>
         </li>
         <li>
           <ul>
             <li>Mene selaimella GitHubiin</li>
-            <li>Klikkaa haaran valintaa, jossa lukee <strong>main</strong>.</li>
-            <li>Valitse uusi haara.</li>
+            <li>Klikkaa haaran valintaa, jossa lukee <strong>main</strong></li>
+            <li>Valitse uusi haara</li>
           </ul>
           <figure>
             <img
@@ -410,10 +408,10 @@
               src="../../assets/images/basics/IDE-and-usage/terminal/Git usage terminal 14.webp"
               alt="Uusi haara GitHubissa"
             />
-            <figcaption>Uusi haara GitHubissa.</figcaption>
+            <figcaption>Uusi haara GitHubissa</figcaption>
           </figure>
           <ul>
-            <li>Aukeaa näkymä luodun haaran sisällöstä.</li>
+            <li>Tarkastele uuden haaran sisältöä</li>
           </ul>
           <figure>
             <img
@@ -421,7 +419,7 @@
               src="../../assets/images/basics/IDE-and-usage/terminal/Git usage terminal 15.webp"
               alt="Muutokset GitHubissa"
             />
-            <figcaption>Muutokset GitHubissa.</figcaption>
+            <figcaption>Muutokset GitHubissa</figcaption>
           </figure>
         </li>
       </ol>
@@ -437,24 +435,24 @@
     <div class="contentToAccordion">
       <p class="keep-margin">
         Kun olet tehnyt kehitystyötäsi varten luomassasi haarassa kaikki
-        tarvittavat muutokset ja saanut valmiiksi uuden ominaisuuden, jonka
-        haluat yhdistää päähaaraan toimi näin:
+        tarvittavat muutokset ja saanut valmiiksi uuden ominaisuuden, voit 
+        yhdistää sen päähaaraan.
       </p>
       <ol>
         <li>
           <ul>
             <li>
-              Siirry main-haaraan komenolla:<br />
+              Siirry main-haaraan komenolla<br />
               <code>git checkout main</code> tai
               <code>git switch main</code>
             </li>
             <li>
-              yhdistä etärepositorion main-haaran viimeisin tila paikalliseen
-              main-haaraan komennolla:<br />
+              Yhdistä etärepositorion main-haaran viimeisin tila paikalliseen
+              main-haaraan komennolla<br />
               <code>git pull origin main</code>
               <p class="note-box margin-right keep-margin">
-                Jos käytit aiemmin komentoa:
-                <code>git push -u origin main</code> niin nyt riittää komento:
+                Jos käytit aiemmin komentoa
+                <code>git push -u origin main</code> niin nyt riittää komento
                 <code>git pull</code>
               </p>
             </li>
@@ -463,10 +461,10 @@
             <img
               class="wide-image"
               src="../../assets/images/basics/IDE-and-usage/terminal/Git usage terminal 16.webp"
-              alt="Siirry main-haaraan ja hae sen viimeisin tila Git Bashillä."
+              alt="Siirtyminen main-haaraan ja sen viimeisimmän tilan hakeminen"
             />
             <figcaption>
-              Siirry main-haaraan ja hae sen viimeisin tila Git Bashillä.
+              Siirtyminen main-haaraan ja sen viimeisimmän tilan hakeminen
             </figcaption>
           </figure>
         </li>
@@ -474,20 +472,19 @@
           <ul>
             <li>
               Tuo paikallisen feature-haaran muutokset paikilliseen main haaraan
-              komennolla:<br />
+              komennolla<br />
               <code>git merge yhdistettävän-haaran-nimi</code>
             </li>
             <p class="note-box margin-right">
-              Jos konflikteja ilmenee, Git ilmoittaa ja pyytää ratkaisemaan ne
-              tässä kohtaa. Tästä lisää osiossa
+              Jos konflikteja ilmenee Git ilmoittaa siitä ja pyytää ratkaisemaan ne. Tästä lisää osiossa
               <a href="/teamwork/merge-conflicts.html">2.4 merge-konfliktit</a>.
             </p>
             <li>
-              Viedään muutokset etärepositorioon komennolla:<br />
+              Vie muutokset etärepositorioon komennolla<br />
               <code>git push origin main</code>
             </li>
             <p class="note-box margin-right keep-margin">
-              Tässäkin riittää komento:
+              Tässäkin riittää komento
               <code>git push</code>, mikäli <code>-u</code> lippua on käytetty.
             </p>
           </ul>
@@ -496,11 +493,10 @@
             <img
               class="wide-image"
               src="../../assets/images/basics/IDE-and-usage/terminal/Git usage terminal 17.webp"
-              alt="Uuden haaran muutoksien commitointi ja vieminen etärepositorioon Git Bashillä."
+              alt="Uuden haaran muutosten commitointi ja vieminen etärepositorioon Git Bashillä"
             />
             <figcaption>
-              Uuden haaran muutoksien commitointi ja vieminen etärepositorioon
-              Git Bashillä.
+              Uuden haaran muutosten commitointi ja vieminen etärepositorioon
             </figcaption>
           </figure>
         </li>
