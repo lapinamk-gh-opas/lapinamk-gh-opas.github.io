@@ -173,6 +173,7 @@ table tr:last-child td {
 /* list item spacing */
 li {
   margin-bottom: 0.5rem;
+  margin-top: 0.3rem;
 }
 
 /*pre*/
@@ -194,9 +195,21 @@ figcaption {
 .note-box {
   background: rgba(20, 130, 125, 0.2);
   border: 2px solid rgba(20, 130, 125, 0.4);
-  padding: 0.5rem 1rem;
-  margin: 1rem 0 2rem 0;
+  padding: 0.8rem 1.4rem;
+  margin: 1rem 0 1rem 0;
   display: inline-block;
+}
+
+/*note-box last p no margin*/
+.note-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* Keep list markers inside note-box padding */
+.note-box ul,
+.note-box ol {
+  list-style-position: outside;
+  padding-left: 1rem;
 }
 
 /* red exclamation mark for important list items */

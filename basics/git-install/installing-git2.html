@@ -1,103 +1,102 @@
 <section class="git-install">
-  <h1>Gitin asennus Linuxille tai macOS:lle</h1>
+  <h1>Gitin asennus Linuxille ja macOS:lle</h1>
 
   <ol>
     <li>
-      Mene osoitteeseen:
+      Siirry osoitteeseen
       <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">
         https://git-scm.com/downloads
       </a>
     </li>
 
     <li>
-      Valitse käyttöjärjestelmä.
+      Valitse käyttöjärjestelmä
       <figure>
         <img
           class="wide-image"
           src="../../assets/images/basics/git-install/git install 6.webp"
-          alt="Gitin lataussivu verkkoselaimessa."
+          alt="Gitin lataussivu verkkoselaimessa"
         />
         <figcaption>
-          Gitin lataussivu, josta voit valita käyttöjärjestelmän.
+          Käyttöjärjestelmän valinta Gitin lataussivulla
         </figcaption>
       </figure>
     </li>
 
     <li>
-      Aukeaa sivu, jossa on ohjeet Gitin asentamiseen. Sivulla näkyvät myös
+      Seuraavalla sivulla näkyvät käyttöjärjestelmäkohtaiset asennusohjeet sekä
       paketinhallintakomennot terminaalia varten.
       <figure>
         <img
           class="wide-image"
           src="../../assets/images/basics/git-install/git install 7.webp"
-          alt="Käyttöjärjestelmän valinta Gitin lataussivulla."
+          alt="Käyttöjärjestelmäkohtaiset asennusohjeet"
         />
-        <figcaption>Komennot näkyvät sivulla näin.</figcaption>
+        <figcaption>Käyttöjärjestelmäkohtaiset asennusohjeet</figcaption>
       </figure>
     </li>
 
     <li>
       <strong>macOS (Homebrew)</strong> – asennus Homebrew-paketinhallinnan
-      avulla:
+      avulla
       <ul>
         <li>
-          Avaa Terminal: ⌘ + välilyönti → kirjoita <strong>Terminal</strong> →
+          Avaa Terminal ⌘ + välilyönti → kirjoita <strong>Terminal</strong> →
           Enter
         </li>
         <li>
-          Tarkista onko Git jo asennettu:
+          Tarkista onko Git jo asennettu
           <ul>
             <li><code>git --version</code> → Enter</li>
             <li>
-              Esimerkki tulosteesta: <code>git version 2.41.0</code> (versio voi
+              Esimerkki tulosteesta <code>git version 2.41.0</code> (versio voi
               vaihdella)
             </li>
           </ul>
         </li>
         <li>
-          Asenna Git, jos sitä ei ole tai haluat päivittää:
+          Asenna Git, jos sitä ei ole tai jos se kaipaa päivitystä
           <ul>
             <li><code>brew install git</code> → Enter</li>
             <li>
-              Tarkista, että asennus onnistui: <code>git --version</code> →
+              Tarkista että asennus onnistui <code>git --version</code> →
               Enter
             </li>
-            <li>Esimerkki tulosteesta: <code>git version 2.51.0</code></li>
+            <li>Esimerkki tulosteesta <code>git version 2.51.0</code></li>
           </ul>
         </li>
       </ul>
     </li>
 
     <li>
-      <strong>Linux (Debian/Ubuntu)</strong> – asennus pakettivaraston avulla:
+      <strong>Linux (Debian/Ubuntu)</strong> – asennus paketinhallinnan avulla
       <ul>
         <li>Avaa Terminal</li>
         <li>
-          Tarkista onko Git jo asennettu:
+          Tarkista onko Git jo asennettu
           <ul>
             <li><code>git --version</code> → Enter</li>
             <li>
-              Esimerkki tulosteesta: <code>git version 2.41.0</code> (versio voi
+              Esimerkki tulosteesta <code>git version 2.41.0</code> (versio voi
               vaihdella)
             </li>
           </ul>
         </li>
         <li>
-          Asenna Git, jos sitä ei ole tai haluat päivittää:
+          Asenna Git, jos sitä ei ole tai jos se kaipaa päivitystä
           <ul>
             <li>
-              Päivitä pakettivarastot: <code>sudo apt-get update</code> → Enter
+              Päivitä pakettilista <code>sudo apt-get update</code> → Enter
               <em
-                >(Päivittää listan uusimmista saatavilla olevista paketeista, ei
-                itse Git-ohjelmaa)</em
+                >(Päivittää tiedot uusimmista paketeista, ei vielä asenna Gittiä)</em
               >
             </li>
-            <li>Asenna Git: <code>sudo apt-get install git</code> → Enter</li>
+            <li>Asenna Git <code>sudo apt-get install git</code> → Enter</li>
             <li>
-              Tarkista, että asennus onnistui: <code>git --version</code> →
+              Tarkista että asennus onnistui <code>git --version</code> →
               Enter
             </li>
-            <li>Esimerkki tulosteesta: <code>git version 2.51.0</code></li>
+            <li>Esimerkki tulosteesta <code>git version 2.51.0</code></li>
           </ul>
         </li>
       </ul>

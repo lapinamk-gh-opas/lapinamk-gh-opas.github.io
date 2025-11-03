@@ -1,5 +1,5 @@
 <section class="document-status">
-  <h4>Git-tiedoston tilat (git status)</h4>
+  <h1>Git-tiedoston tilat (git status)</h1>
   <p>
     Tiedoston tila kertoo missä vaiheessa sen muutokset ovat. Tilat näkyvät
     esimerkiksi VS Code Explorerin hakemistorakenteessa tilakoristeilla (status
@@ -30,7 +30,7 @@
 
   <p>
     Uusi tiedosto näkyy ensin <em>Untracked (U)</em>-tilassa, kunnes lisäät sen
-    komennolla <code>git add</code>. Tällöin se siirtyy staging-alueelle,
+    komennolla <code>git add &lt;tiedosto&gt;</code>. Tällöin se siirtyy staging-alueelle,
     muuttuu tilaan <em>Added (A)</em> ja on valmiina seuraavaan committiin. Jos
     muokkaat jo seurattua tiedostoa se näkyy tilassa <em>Modified (M)</em>,
     kunnes committaat muutokset repositorioon.
@@ -60,7 +60,7 @@
           <td>Vihreä</td>
           <td>
             Uusi tiedosto, jota Git ei vielä seuraa. Lisää versiohistoriaan
-            komennolla <code>git add</code>
+            komennolla <code>git add &lt;tiedosto&gt;</code>
           </td>
         </tr>
         <tr>
@@ -80,8 +80,7 @@
           <td>Added (A)</td>
           <td>Vihreä</td>
           <td>
-            Tiedosto on lisätty stagingiin komennolla <code>git add</code> ja
-            ovat valmiina commitille
+            Tiedosto on lisätty stagingiin ja on valmis commitille
           </td>
         </tr>
         <tr>
@@ -94,7 +93,7 @@
     <figcaption>Tiedostojen tilat, värit ja selitys</figcaption>
   </figure>
   <p>
-    Tämä tarjoaa visuaalisen keinon hahmottaa projektin tilanne yhdellä
-    silmäyksellä ja seurata helposti, mitä tiedostoille on tapahtunut.
+    Tämä tarjoaa visuaalisen yleiskuvan projektin tilasta yhdellä silmäyksellä ja helpottaa seuraamaan, mitä 
+    tiedostoille on tapahtunut.
   </p>
 </section>
