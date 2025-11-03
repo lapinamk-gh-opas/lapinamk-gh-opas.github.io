@@ -19,10 +19,10 @@
     Valitse tilanteeseen ja sinulle sopivin. Yhtä ainoaa oikeaa tapaa ei ole.</p>
 
 
-  <h3>Kansionhallinta</h3>
+  <h3>Kansion hallinta</h3>
   <h6>Siirry kansioon - <code>cd Projekti</code></h6>
   <p>
-    Vaihtaa nykyisen työskentelykansion toiseen. Aja tämä ennen Git-komentoja,
+    Siirtyy nykyisestä työskentelykansiosta toiseen. Aja tämä ennen Git-komentoja,
     jotta olet oikeassa projektikansiossa.
   </p>
 
@@ -115,12 +115,13 @@
       </li>
     </ul>
   </div>
+  
   <h6>
     Tallenna muutokset (commit) - <code>git commit -m "commit-viesti"</code>
   </h6>
   <p>
     Kirjaa stagingissa olevat muutokset paikalliseen historiaan. Pidä commit-viesti lyhyenä, mutta kuvaavana. Lisää
-    commit-viesteistä luvussa <a href="/teamwork/how-to-teamwork.html#commit-messages">2.1 Selkeät commit-viestit</a>.
+    commit -viesteistä luvussa <a href="/teamwork/how-to-teamwork.html#commit-messages">2.1 Selkeät commit-viestit</a>.
   </p>
 
   <div
@@ -142,7 +143,7 @@
           riittää pelkkä <code>git push</code>/<code>git pull</code></li>
 
         <li><code>git checkout -b &lt;haara&gt;</code> - lisäämällä <code>-b</code> luot uuden haaran
-          ja siirryt siihen. Pelkkä <code>git branch &lt;haara&gt;</code> luo uuden haaran, muttei siirry siihen.</li>
+          ja siirryt siihen. Pelkkä <code>git branch &lt;haara&gt;</code> luo uuden haaran, mutta ei siirry siihen.</li>
 
         <li><code>git log --oneline</code> - lisäämällä <code>--oneline</code> saat tiiviin commit-lokin yhdellä rivillä
           per commit.</li>
@@ -209,7 +210,7 @@
 
   <div class="note-box">
     Seuranta asetetaan push-komennon lipulla <code>-u</code> (tai <code>--set-upstream</code>). Tämä määrittää
-    paikalliselle haaralle oletusvastinparin etärepositoriossa, johon muutokset lähetetään ja josta ne haetaan jatkossa.
+    paikalliselle haaralle oletus vastinparin etärepositoriossa johon muutokset lähetetään ja josta ne haetaan jatkossa.
   </div>
 
   <h6>Hae ja yhdistä etärepositorion muutokset - <code>git pull</code></h6>
@@ -244,14 +245,14 @@
     Palauta tiedosto viime commitin tilaan - <code>git restore index.html</code>
   </h6>
   <p>
-    Poistaa paikalliset muutokset valitusta tiedostosta (ei muuta commit-historiaa). Huom! Committamattomat muutokset 
+    Poistaa paikalliset muutokset valitusta tiedostosta (ei muuta commit-historiaa). Huom! Committaamattomat muutokset
     häviävät.
   </p>
 
   <h6>Peru viimeisin commit - <code>git reset HEAD~</code></h6>
   <p>
-    Siirtää haaran taaksepäin committia edeltäneeseen tilaan ja jättää muutokset työpuuhun. Käytä vain, jos commiteja 
-    ei ole pushattu etärepositorioon. Tiimiprojekteissa käytä mielummin <code>git revert &lt;commit&gt;</code>
+    Siirtää haaran taaksepäin committia edeltäneeseen tilaan ja jättää muutokset työpuuhun. Käytä vain, jos committeja 
+    ei ole puskettu etärepositorioon. Tiimiprojekteissa käytä mieluummin <code>git revert &lt;commit&gt;</code>
   </p>
 
   <h6>Näytä commit-historia - <code>git log</code></h6>
