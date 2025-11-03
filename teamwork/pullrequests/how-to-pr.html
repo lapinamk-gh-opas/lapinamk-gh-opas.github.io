@@ -1,9 +1,45 @@
 <section class="how-to-pr">
+  <header>
+    <h1>Kuinka tehdä Pull Request</h1>
+    <p>
+      Tässä osiossa opitaan, miten <strong>pull request</strong> -toimintoa
+      käytetään GitHubissa, eli miten omassa haarassa (branchissa) tehdyt
+      muutokset voidaan ehdottaa yhdistettäväksi päähaaraan. Pull requestin
+      avulla muutokset voidaan tarkistaa, kommentoida ja hyväksyä ennen kuin ne
+      tulevat osaksi varsinaista projektia.
+    </p>
 
-    <header>
-        <h1>Kuinka tehdä Pull Request</h1>
-    </header>
+    <p>
+      Pull requestin käyttäminen on mahdollista myös henkilökohtaisella
+      <strong>ilmaisella GitHub-tilillä</strong> yksityisessä repositoriossa,
+      vaikka <strong>haarasuojausta (branch protection rules)</strong> ei voi
+      tällöin ottaa käyttöön. Tämä tarkoittaa, että suojaukset, kuten pakolliset
+      tarkistukset tai rajoitukset suoraan päähaaraan viemiselle (push), eivät
+      ole käytössä, mutta pull request -menetelmää voi silti hyödyntää työn
+      tarkasteluun ja yhdistämiseen hallitusti.
+    </p>
 
-
-
+    <p>
+      Jos käytät <strong>julkista</strong> repositoriota, on suositeltavaa ottaa
+      myös <strong>haarasuojaus</strong> käyttöön. Se estää vahingossa tehtyjä
+      muutoksia päähaaraan ja varmistaa, että kaikki muutokset kulkevat pull
+      request -prosessin kautta.
+    </p>
+    <!-- Accordion element 1 starts -->
+    <div
+      class="accordion"
+      data-include="/accordion-element/accordion.html"
+      data-title="Haarasuojauksen (Branch protection rules) käyttöönotto"
+    >
+      <!-- Reused accordion content starts -->
+      <div
+        class="contentToAccordion reused-accordion"
+        data-include="/reused-accordion-content/protection-rules.html"
+      >
+        <!-- Accordion content starts from /reused-accordion-content/protection-rules.html-->
+      </div>
+      <!-- Reused accordion content ends -->
+    </div>
+    <!-- Accordion element 1 ends -->
+  </header>
 </section>

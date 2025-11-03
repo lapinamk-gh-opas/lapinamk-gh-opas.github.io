@@ -31,6 +31,7 @@ document.addEventListener("accordion:loaded", (e) => {
   const buttonArea = item.querySelector(".header-icon");
   const content = item.querySelector(".content");
   const header = item.querySelector(".header");
+  const closeButton = item.querySelector(".close-button");
   const title = item.dataset.title;
 
   if (header && title) header.textContent = title;
@@ -49,6 +50,9 @@ document.addEventListener("accordion:loaded", (e) => {
     content.style.maxHeight = content.scrollHeight + "px";
     imgOpen.classList.add("hidden");
     imgClose.classList.remove("hidden");
+    if (content.scrollHeight > window.innerHeight) {
+      closeButton.classList.toggle("hidden", !hidden);
+    }
   }
 
   buttonArea.onclick = () => {
@@ -74,6 +78,10 @@ document.addEventListener("accordion:loaded", (e) => {
     content.classList.toggle("open", !hidden);
     imgOpen.classList.toggle("hidden", hidden);
     imgClose.classList.toggle("hidden", !hidden);
+
+    if (content.scrollHeight > window.innerHeight) {
+      closeButton.classList.toggle("hidden", !hidden);
+    }
   };
 });
 
@@ -128,4 +136,47 @@ const initializeAccordionFigures = () => {
 
 ["accordion:loaded", "reusedAccordion:loaded"].forEach((eventName) => {
   document.addEventListener(eventName, initializeAccordionFigures);
+});
+
+// Close functionality for accordion from bottom button of accordion.
+document.addEventListener("accordion:loaded", (e) => {
+  const item = e.detail;
+  const closeButton = item.querySelector(".close-button");
+  const placeholderDiv = item.querySelector(".contentToAccordion");
+
+  const content = item.querySelector(".content");
+  const imgOpen = item.querySelector(".bookButton.open");
+  const imgClose = item.querySelector(".bookButton.close");
+
+  closeButton.onclick = () => {
+    content.style.minHeight = "0px";
+    content.style.maxHeight = "0px";
+    content.classList.add("hidden");
+    content.classList.remove("open");
+    imgOpen.classList.toggle("hidden");
+    imgClose.classList.toggle("hidden");
+    placeholderDiv.classList.remove("open");
+    closeButton.classList.add("hidden");
+
+    content.addEventListener("transitionend", function handler() {
+      const buttonArea = item.querySelector(".header-icon");
+      const rect = buttonArea.getBoundingClientRect();
+
+      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+      if (!isVisible) {
+        window.scrollBy({
+          top: rect.top - 40,
+          behavior: "smooth",
+        });
+      } else {
+        window.scrollBy({
+          top: -10,
+          behavior: "smooth",
+        });
+      }
+
+      content.removeEventListener("transitionend", handler);
+    });
+  };
 });

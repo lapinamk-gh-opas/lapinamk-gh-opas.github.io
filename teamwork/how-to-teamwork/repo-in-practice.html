@@ -29,33 +29,35 @@
       <div class="note-box">
         <ul>
           <li class="warning">
-            Kun muutat GitHub-repositorion <strong>julkiseksi (Public)</strong>,
-            koko sen sisältö ja
-            <strong>kaikki aiemmat commit-historiat</strong> tulevat kaikkien
-            nähtäville. Tämä koskee myös tiedostoja ja tietoja, jotka on
-            myöhemmin poistettu projektista.
+            GitHub-repositorion<strong>julkiseksi (Public)</strong> muuttaminen
+            tuo koko sen sisällön ja
+            <strong>kaikki aiemmat commit-historiat</strong> nimensä mukaisesti
+            julkisesti nähtäville. Tämä koskee myös tiedostoja ja tietoja, jotka
+            ovat aikaisemmin olleet repositoriossa, mutta poistettu projektista.
           </li>
           <li class="warning">
             Älä muuta repositoriota julkiseksi, jos se
             <strong>sisältää tai on joskus sisältänyt</strong> arkaluontoisia
             tietoja, kuten:
             <ul>
-              <li>salasanoja, API-avaimia tai käyttöoikeustunnuksia,</li>
+              <li>salasanoja, API-avaimia tai käyttöoikeus-tunnuksia,</li>
               <li>henkilötietoja tai muuta luottamuksellista aineistoa,</li>
-              <li>maksullisia tai lisenssisuojattuja tiedostoja.</li>
+              <li>maksullisia tai lisenssi suojattuja tiedostoja.</li>
             </ul>
           </li>
           <li>
             Julkiseksi muuttaminen sopii vain avoimen lähdekoodin projekteihin
-            tai työnäytteiksi tarkoitettuihin repositorioihin.
+            tai työnäyte käyttöön tarkoitettuihin repositorioihin.
           </li>
           <li>
             Julkiseksi muuttaminen sisältää monta vaihetta, joten vahingossa
             tapahtuvaa näkyvyyden muuttamista ei tarvitse pelätä.
           </li>
           <li>
-            Mikäli haluat poistaa arkaluontoiset tiedot kokonaan historiasta,
-            käytä Gitin historiaan vaikuttavia työkaluja, kuten
+            Arkaluontoisten tietojen poistaminen repositorion historiasta on
+            kuitenkin mahdollista. Mikäli haluat poistaa arkaluontoiset tiedot
+            kokonaan historiasta, käytä Gitin historiaan vaikuttavia työkaluja,
+            kuten
             <code>git filter-repo</code> tai GitHubin
             <a
               href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository"
@@ -83,7 +85,7 @@
         </li>
         <li>
           Varmista, että olet asetuksien <strong>General</strong> osiossa ja
-          scrollaa ikkunan alareunaan.
+          vieritä ikkunan alareunaan.
           <figure>
             <img
               class="wide-image"
@@ -165,8 +167,8 @@
           </figure>
         </li>
         <li>
-          Repositorio on nyt julkinen. Muuttaminen yksityiseksi noudattaa täysin
-          samaa kaavaa kuin muutos julkiseksi.
+          Repositorio on nyt julkinen. Muuttaminen yksityiseksi noudattaa samaa
+          kaavaa kuin muutos julkiseksi.
           <figure>
             <img
               class="wide-image"
@@ -196,8 +198,9 @@
       <div class="note-box">
         <ul>
           <li class="warning">
-            Kun lisäät henkilökohtaisella GitHub-tilillä käyttäjän repositorion
-            <strong>collaboratoriksi</strong>, annat hänelle suoran
+            Kun käyttäjä lisätään henkilökohtaisella GitHub-tilillä olevan
+            repositorion
+            <strong>collaboratoriksi</strong>, annetaan hänelle suoraan
             kirjoitusoikeudet (<em>write</em>) projektiin. Tämä tarkoittaa, että
             hän voi tehdä
             <strong>commit-, push- ja merge-toimenpiteitä</strong>
@@ -211,13 +214,14 @@
             luojalla/omistajalla.
           </li>
           <li>
-            Lisää collaboratoriksi kuitenkin vain henkilöitä, joihin luotat ja
-            joiden on tarkoitus työskennellä aktiivisesti projektissa.
+            Lisää collaboratoriksi kuitenkin ainoastaan henkilöitä, joihin
+            luotat ja joiden on tarkoitus työskennellä aktiivisesti projektissa.
           </li>
           <li>
-            Mikäli käytät <strong>organisaatiotiliä</strong>, voit määrittää
-            käyttäjille eri <strong>roolit</strong> (esimerkiksi Read, Triage,
-            Write, Maintain, Admin) riippuen siitä, mitä oikeuksia haluat antaa.
+            Mikäli käytössä on <strong>organisaatiotili</strong>, voi
+            reposirotion käyttäjille määrittää eri
+            <strong>roolit</strong> (esimerkiksi Read, Write, Maintain tai
+            Admin) riippuen siitä, mitä oikeuksia käyttäjälle halutaan antaa.
           </li>
         </ul>
       </div>
@@ -252,7 +256,7 @@
         </li>
         <li>
           Mikäli käytössä on kaksivaiheinen tunnistautuminen vahvista vielä
-          käyttöoikeutesi syöttämällä tunnistautumissovelluksesi antama
+          käyttöoikeus syöttämällä tunnistautumissovelluksen antama
           <strong>avain</strong> ja klikkaamalla <strong>verify</strong> nappia.
           <figure>
             <img
@@ -264,8 +268,8 @@
           </figure>
         </li>
         <li>
-          Näkymä kun reposiitoriolla ei ole vielä sinun lisäksi muita käyttäjiä.
-          Aloita käyttäjän lisääminen klikkaamalla
+          Näkymä kun repositoriolla ei ole vielä omistajan lisäksi muita
+          käyttäjiä. Aloita uuden käyttäjän lisääminen klikkaamalla
           <strong>Add people</strong>
           nappia.
 
@@ -276,7 +280,7 @@
               alt="Repositorion käyttäjä asetukset ja lisäämisen aloitus."
             />
             <figcaption>
-              Repositorion käyttäjä asetukset ja lisäämisen aloitus.
+              Repositorion käyttäjä asetukset ja käyttäjän lisäämisen aloitus.
             </figcaption>
           </figure>
         </li>
@@ -376,201 +380,17 @@
   <!--Accordion 3-->
   <div
     class="accordion"
-    data-include="../../accordion-element/accordion.html"
-    data-title="Haarasuojauksen (Branch protection rules) muuttaminen"
+    data-include="/accordion-element/accordion.html"
+    data-title="Haarasuojauksen (Branch protection rules) käyttöönotto"
   >
-    <div class="contentToAccordion">
-      <div class="note-box">
-        <ul>
-          <li class="warning">
-            <strong>Branch protection rules</strong> suojaavat tärkeimmät haarat
-            (esim. <code>main</code>) tahattomilta muutoksilta tai virheiltä.
-            Kun suojaus on käytössä, et voi tehdä suoria muutoksia suojattuun
-            haaraan komennolla <code>git push</code> tai yhdistää muutoksia
-            ilman tarkistuksia.
-          </li>
-          <li>
-            Alla olevat säännöt soveltuvat pienryhmille ja matalamman
-            prioriteetin projekteihin, kuten koulussa tehtäviin ryhmätöihin.
-            Säännöt eivät ole kovin tiukat, mutta auttavat tutustumaan
-            haarasuojauksen asetuksiin ja niiden muokkaamiseen sallien samalla
-            joustavan työskentelyn.
-          </li>
-          <li>
-            Näillä asetuksilla esimerkiksi pull requestin tekijä voi itse
-            tarvittaessa yhdistää oman työnsä päähaaraan ilman muiden
-            ryhmäläisten hyväksyntää. Näin pull request -menetelmä tulee
-            tutuksi, mutta työskentely ei pysähdy hyväksyntää odottaessa.
-          </li>
-          <li class="warning">
-            Yksityisellä tilillä suojaustoiminnot voi asettaa käyttöön vain
-            julkisena näkyville repositorioille. Jos repositorio on yksityinen
-            tai muutetaan myöhemmin yksityiseksi, nämä säännöt eivät ole
-            käytössä.
-          </li>
-        </ul>
-      </div>
-      <ol>
-        <li>
-          Siirry repositorion asetuksiin klikkaamalla repositoriossa
-          <strong>settings</strong>
-          välilehteä.
-
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/teamwork/repo-settings/visibility-1.webp"
-              alt="Repositorion asetukset."
-            />
-            <figcaption>Repositorion asetukset.</figcaption>
-          </figure>
-        </li>
-        <li>
-          Siirry repositorion haaroihin liittyviin asetuksiin klikkaamalla
-          <strong>Branches</strong> osiota. Lisää uusi haarasuojaus klikkaamalla
-          <strong>Add branch ruleset</strong> nappia. (<em
-            >Tämän voi tehdä myös asetusten <strong>Rules</strong> osiosta.</em
-          >)
-
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/teamwork/repo-settings/branch-rules-1.webp"
-              alt="Repositorion haarojen asetukset."
-            />
-            <figcaption>Repositorion haarojen asetukset.</figcaption>
-          </figure>
-        </li>
-        <li>
-          Suojausasutuksein määrittäminen:
-          <ul>
-            <li>
-              Aloita suojausasetusten määrittäminen antamalla sääntöjoukolle
-              <strong>nimi</strong>.
-            </li>
-            <li>
-              Muuta <strong>Enforcement statuksen</strong> asetukseksi
-              <strong>active</strong>, jotta suojaus tulee voimaan.
-            </li>
-            <li>
-              Valitse Bypass-listaan
-              <strong>Add bypass</strong> alasvetovalokosta käyttäjät, joilla on
-              Repository admin-rooli ja write-rooli.
-            </li>
-            <li>
-              Anna käyttäjille oikeuden ohittaa pull request-säännöt lisämällä
-              kolmesta pisteestä valinta
-              <strong>Allow for pull requests only</strong>.
-            </li>
-            <li>
-              Lisää haara jota säännöt koskevat valitsemalla
-              <strong>Add target</strong> alasvetovalikosta
-              <strong>Inlude default branch</strong>. Näin säännöt koskevat
-              main-haaraa, mikäli et ole muuttanut repositorion pää- tai
-              default-haaraksi jotain muuta haaraa.
-            </li>
-          </ul>
-
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/teamwork/repo-settings/branch-rules-2.webp"
-              alt="Suojausasetuksien määrittäminen"
-            />
-            <figcaption>Suojausasetuksien määrittäminen</figcaption>
-          </figure>
-        </li>
-        <li>
-          Anna varsinaiset suojausasetukset:
-          <ul>
-            <li>
-              Varmista, että <strong>Restrict deletions</strong> on valittuna.
-              Tämä estää main haaran poistamisen vahingossa.
-            </li>
-            <li>
-              Valitse <strong>Require a pull request before merging</strong>.
-              Näin haarojen yhdistäminen päähaaraan pakotetaan menemään pull
-              request toiminnon kautta.
-            </li>
-            <li>
-              <strong>Required approvalsin</strong> voi jättää nollaksi. Tällöin
-              pullrequestin tekijä voi yhdistää oman työnsä päähaaraan ilman
-              muiden ryhmäläisten hyväksyntää, mutta pull request
-              toiminnallisuus tulee tutuksi.
-            </li>
-            <li>
-              Mikäli ryhmä haluua tutustua koodikatselmointiin, voi
-              <strong>Required approvalsille</strong>
-              asettaa arvon 1 tai enemmän ja jonkun ryhmäläisistä on tehtävä
-              katselmointi, jotta haarat voi yhdistää sääntöjen mukaisesti.
-              Kuitenkin bypass-listaan käyttäjille annettu lupa ohittaa pull
-              request-sääntöjä mahdollistaa tässäkin yhteydessä katselmoinnin
-              ohituksen ja haarojen yhdistämisen ilman sitä.
-            </li>
-          </ul>
-
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/teamwork/repo-settings/branch-rules-3.webp"
-              alt="Suojausasetukset ja niiden säännöt 1."
-            />
-            <figcaption>Suojausasetukset ja niiden säännöt 1.</figcaption>
-          </figure>
-          <ul>
-            <li>
-              Varmista, että <strong>Block force pushes</strong> on valittuna.
-              Käytännössä tämä lukitsee haaran historian niin, että sitä ei voi
-              kirjoittaa uusiksi väkisin.
-            </li>
-            <li>
-              Lisäksi olisi suuri houkutus kytkeä päälle Copilotin tekemät
-              tarkistukset, mutta se ei ole yksityisen/ilmaisen tilin yhteydessä
-              käytetävissä.
-            </li>
-            <li>Klikkaa lopuksi <strong>Create</strong> nappia.</li>
-          </ul>
-
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/teamwork/repo-settings/branch-rules-4.webp"
-              alt="Suojausasetukset ja niiden säännöt 2."
-            />
-            <figcaption>Suojausasetukset ja niiden säännöt 2.</figcaption>
-          </figure>
-        </li>
-        <li>
-          Mikäli käytössä on kaksivaiheinen tunnistautuminen tässä yhteydessä
-          GitHub saatta pyytää vahvistamaan vielä käyttöoikeutesi syöttämällä
-          tunnistautumissovelluksesi antaman avaimen ja klikkaamalla verify
-          nappia.
-
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/teamwork/repo-settings/branch-rules-5.webp"
-              alt="Tunnistautuminen"
-            />
-            <figcaption>Tunnistautuminen</figcaption>
-          </figure>
-        </li>
-        <li>
-          Nyt suojausasetukset on luotu ja ne ovat
-          <strong>aktiivisena</strong> eli voimassa määritellylle
-          <strong>haaralle</strong>.
-
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/teamwork/repo-settings/branch-rules-6.webp"
-              alt="Sääntöjoukko valmis ja käytössä."
-            />
-            <figcaption>Sääntöjoukko valmis ja käytössä.</figcaption>
-          </figure>
-        </li>
-      </ol>
+    <!-- Reused accordion content starts -->
+    <div
+      class="contentToAccordion reused-accordion"
+      data-include="/reused-accordion-content/protection-rules.html"
+    >
+      <!-- Accordion content starts from /reused-accordion-content/protection-rules.html-->
     </div>
+    <!-- Reused accordion content ends -->
   </div>
   <!--Accordion 3 ends-->
   <!--Accordion 4-->
