@@ -24,9 +24,9 @@ document.addEventListener('sidebar:loaded', () => {
   currentPath = window.location.pathname; // gets current path from URL
   const menuItems = document.querySelectorAll('.sidebar-menu a'); // gets menu items
 
-  linkNames = Array.from(menuItems).map((el) => el.getAttribute('href')); // makes array of link href atributes
+  linkNames = Array.from(menuItems).map(el => el.getAttribute('href')); // makes array of link href atributes
 
-  linkNamesFin = Array.from(menuItems).map((el) => el.textContent); // makes array of links text content
+  linkNamesFin = Array.from(menuItems).map(el => el.textContent); // makes array of links text content
 
   linkIndex = linkNames.indexOf(currentPath); // gets index of currently active link
 
@@ -43,12 +43,12 @@ document.addEventListener('links:loaded', () => {
   const subContentPages = container.querySelectorAll('[data-page]'); // get pages from container with data-page attribute
 
   // makes array of page names from date-page atributes
-  pageNames = Array.from(subContentPages).map((el) =>
+  pageNames = Array.from(subContentPages).map(el =>
     el.getAttribute('data-page')
   );
 
   // makes array of page names from text content atributes
-  pageNamesFin = Array.from(subContentPages).map((el) => el.textContent);
+  pageNamesFin = Array.from(subContentPages).map(el => el.textContent);
 
   // gets current page index or 0 if there are no sub pages/current page
   pageIndex = currentPage ? pageNames.indexOf(currentPage) : 0;
