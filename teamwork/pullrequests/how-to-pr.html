@@ -2,34 +2,38 @@
   <header>
     <h1>Kuinka tehdä Pull Request</h1>
     <p>
-      Tässä osiossa opitaan, miten <strong>pull request</strong> -toimintoa
-      käytetään GitHubissa, eli miten omassa haarassa (branchissa) tehdyt
-      muutokset voidaan ehdottaa yhdistettäväksi päähaaraan. Pull requestin
-      avulla muutokset voidaan tarkistaa, kommentoida ja hyväksyä ennen kuin ne
-      tulevat osaksi varsinaista projektia.
+      Tässä osiossa opitaan, miten
+      <strong>pull request</strong>
+      -toimintoa käytetään GitHubissa, eli miten omassa haarassa (branchissa)
+      tehdyt muutokset voidaan ehdottaa yhdistettäväksi päähaaraan. Pull
+      requestin avulla muutokset voidaan tarkistaa, kommentoida ja hyväksyä
+      ennen kuin ne tulevat osaksi varsinaista projektia.
     </p>
 
     <p>
       Pull requestin käyttäminen on mahdollista myös henkilökohtaisella
-      <strong>ilmaisella GitHub-tilillä</strong> yksityisessä repositoriossa,
-      vaikka <strong>haarasuojausta (branch protection rules)</strong> ei voi
-      tällöin ottaa käyttöön. Tämä tarkoittaa, että suojaukset, kuten pakolliset
-      tarkistukset tai rajoitukset suoraan päähaaraan viemiselle (push), eivät
-      ole käytössä, mutta pull request -menetelmää voi silti hyödyntää työn
-      tarkasteluun ja yhdistämiseen hallitusti.
+      <strong>ilmaisella GitHub-tilillä</strong>
+      yksityisessä repositoriossa, vaikka
+      <strong>git-haaran suojausta (branch protection rules)</strong>
+      ei voi tällöin ottaa käyttöön. Tämä tarkoittaa, että suojaukset, kuten
+      pakolliset tarkistukset tai rajoitukset suoraan päähaaraan viemiselle
+      (push), eivät ole käytössä, mutta pull request -menetelmää voi silti
+      hyödyntää työn tarkasteluun ja yhdistämiseen hallitusti.
     </p>
 
     <p>
-      Jos käytät <strong>julkista</strong> repositoriota, on suositeltavaa ottaa
-      myös <strong>haarasuojaus</strong> käyttöön. Se estää vahingossa tehtyjä
-      muutoksia päähaaraan ja varmistaa, että kaikki muutokset kulkevat pull
-      request -prosessin kautta.
+      Jos käytät
+      <strong>julkista</strong>
+      repositoriota, on suositeltavaa ottaa myös
+      <strong>git-haaran suojaus</strong>
+      käyttöön. Se estää vahingossa tehtyjä muutoksia päähaaraan ja varmistaa,
+      että kaikki muutokset kulkevat pull request -prosessin kautta.
     </p>
     <!-- Accordion element 1 starts -->
     <div
       class="accordion"
       data-include="/accordion-element/accordion.html"
-      data-title="Haarasuojauksen (Branch protection rules) käyttöönotto"
+      data-title="git-haaran suojauksen (Branch protection rules) käyttöönotto"
     >
       <!-- Reused accordion content starts -->
       <div
@@ -42,4 +46,55 @@
     </div>
     <!-- Accordion element 1 ends -->
   </header>
+  <main>
+    <h2>Pull Requestin luominen</h2>
+    <ol class="edit-number sections">
+      <li>
+        <h6>Siirry GitHub-repositoriosi sivulle</h6>
+        <p>
+          Avaa selain ja mene siihen GitHub-repositorioon, johon haluat tehdä
+          pull requestin.
+        </p>
+      </li>
+      <li>
+        <h6>Avaa "Pull requests" -välilehti</h6>
+        <p>
+          Klikkaa repositoriosi yläosassa olevaa "Pull requests" -välilehteä.
+        </p>
+      </li>
+      <li>
+        <h6>Luo uusi Pull Request</h6>
+        <p>
+          Klikkaa vihreää "New pull request" -painiketta oikeassa yläkulmassa.
+        </p>
+      </li>
+      <li>
+        <h6>Valitse haarat (branches)</h6>
+        <p>
+          Vertaile haaroja valitsemalla "base" (yleensä päähaara, esim. main) ja
+          "compare" (oma haara, josta teit muutokset).
+        </p>
+      </li>
+      <li>
+        <h6>Tarkista muutokset</h6>
+        <p>
+          GitHub näyttää tekemäsi muutokset. Varmista, että kaikki näyttää
+          oikealta.
+        </p>
+      </li>
+      <li>
+        <h6>Kirjoita otsikko ja kuvaus</h6>
+        <p>
+          Anna pull requestillesi selkeä otsikko ja kuvaa tekemäsi muutokset.
+        </p>
+      </li>
+      <li>
+        <h6>Lähetä Pull Request</h6>
+        <p>
+          Klikkaa vihreää "Create pull request" -painiketta lähettääksesi pull
+          requestin tarkistettavaksi.
+        </p>
+      </li>
+    </ol>
+  </main>
 </section>

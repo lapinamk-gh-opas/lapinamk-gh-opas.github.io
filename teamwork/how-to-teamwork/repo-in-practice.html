@@ -16,7 +16,7 @@
     haarojen suojaaminen (<em>branch protection rules</em>), sekä repositorion
     poistaminen. Lisäksi tutustutaan muutamiin hyödyllisiin perusasetuksiin,
     kuten oletushaaran uudelleen nimeäminen ja vaihtaminen sekä projektin
-    kuvauksen lisääminen
+    kuvauksen lisääminen.
   </p>
 
   <!--Accordion 1-->
@@ -29,11 +29,12 @@
       <div class="note-box">
         <ul>
           <li class="warning">
-            GitHub-repositorion<strong>julkiseksi (Public)</strong> muuttaminen
-            tuo koko sen sisällön ja
+            GitHub-repositorion <strong>julkiseksi</strong> (<em>public</em>)
+            muuttaminen tuo koko sen sisällön ja
             <strong>kaikki aiemmat commit-historiat</strong> nimensä mukaisesti
-            julkisesti nähtäville. Tämä koskee myös tiedostoja ja tietoja, jotka
-            ovat aikaisemmin olleet repositoriossa, mutta poistettu projektista.
+            julkisesti nähtäville. Tämä siis koskee myös tiedostoja ja tietoja,
+            jotka ovat aikaisemmin olleet repositoriossa, mutta poistettu
+            projektista.
           </li>
           <li class="warning">
             Älä muuta repositoriota julkiseksi, jos se
@@ -54,10 +55,10 @@
             tapahtuvaa näkyvyyden muuttamista ei tarvitse pelätä.
           </li>
           <li>
-            Arkaluontoisten tietojen poistaminen repositorion historiasta on
-            kuitenkin mahdollista. Mikäli haluat poistaa arkaluontoiset tiedot
-            kokonaan historiasta, käytä Gitin historiaan vaikuttavia työkaluja,
-            kuten
+            Arkaluontoisten tietojen poistaminen repositorion historiasta ennen
+            julkiseksi muuttamista on mahdollista. Mikäli haluat poistaa
+            arkaluontoisia tietoja kokonaan historiasta, käytä Gitin historiaan
+            vaikuttavia työkaluja, kuten
             <code>git filter-repo</code> tai GitHubin
             <a
               href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository"
@@ -71,7 +72,7 @@
       <ol>
         <li>
           Siirry repositorion asetuksiin klikkaamalla repositoriossa
-          <strong>settings</strong>
+          <strong>Settings</strong>
           välilehteä.
 
           <figure>
@@ -94,7 +95,7 @@
             />
             <figcaption>Asetuksien General osio.</figcaption>
           </figure>
-          Klikkaa Danger Zone osiosta <strong>Change Visibility</strong> nappia.
+          Klikkaa Danger Zone osiosta <strong>Change visibility</strong> nappia.
           <figure>
             <img
               class="wide-image"
@@ -114,8 +115,8 @@
           </figure>
         </li>
         <li>
-          Vahvista vielä avautuvaan ruutuun, että haluat tehdä repositoriosta
-          julkisen klikkaamalla
+          Vahvista avautuvaan ruutuun, että haluat tehdä repositoriosta julkisen
+          klikkaamalla
           <strong>I want to make this repository public</strong> nappia.
           <figure>
             <img
@@ -154,9 +155,9 @@
           </figure>
         </li>
         <li>
-          Mikäli käytössä on kaksivaiheinen tunnistautuminen vahvista vielä
-          käyttöoikeutesi syöttämällä tunnistautumissovelluksesi antama
-          <strong>avain</strong> ja klikkaamalla <strong>verify</strong> nappia.
+          Mikäli käytössä on kaksivaiheinen tunnistautuminen, niin vahvista
+          vielä käyttöoikeutesi syöttämällä tunnistautumissovelluksesi antama
+          <strong>avain</strong> ja klikkaamalla <strong>Verify</strong> nappia.
           <figure>
             <img
               class="wide-image"
@@ -180,10 +181,11 @@
         </li>
       </ol>
       <p class="note-box keep-margin">
-        Repositorion näkyvyyttä voi muuttaa myöhemmin takaisin yksityiseksi
-        (<strong>Private</strong>), jos haluat rajata sen näkyvyyttä uudelleen.
-        Muista kuitenkin, että kaikki ennen muutosta ladatut tai kloonatut
-        versiot jäävät käyttäjille, joilla ne jo olivat.
+        Repositorion näkyvyyttä voi muuttaa myöhemmin takaisin
+        <strong>yksityiseksi</strong>
+        (<em>private</em>), jos haluat rajata sen näkyvyyttä uudelleen. Muista
+        kuitenkin, että kaikki ennen muutosta ladatut tai kloonatut versiot
+        jäävät käyttäjille, joilla ne jo olivat.
       </p>
     </div>
   </div>
@@ -198,11 +200,11 @@
       <div class="note-box">
         <ul>
           <li class="warning">
-            Kun käyttäjä lisätään henkilökohtaisella GitHub-tilillä olevan
+            Kun kehittäjä lisätään henkilökohtaisella GitHub-tilillä olevan
             repositorion
-            <strong>collaboratoriksi</strong>, annetaan hänelle suoraan
-            kirjoitusoikeudet (<em>write</em>) projektiin. Tämä tarkoittaa, että
-            hän voi tehdä
+            <strong>käyttäjäksi</strong> (<em>collaborator</em>), annetaan
+            hänelle suoraan kirjoitusoikeudet (<em>write</em>) projektiin. Tämä
+            tarkoittaa, että hän voi tehdä
             <strong>commit-, push- ja merge-toimenpiteitä</strong>
             ilman erillistä hyväksyntää.
           </li>
@@ -214,21 +216,23 @@
             luojalla/omistajalla.
           </li>
           <li>
-            Lisää collaboratoriksi kuitenkin ainoastaan henkilöitä, joihin
-            luotat ja joiden on tarkoitus työskennellä aktiivisesti projektissa.
+            Lisää repositorion käyttäjiksi kuitenkin ainoastaan henkilöitä,
+            joihin luotat ja joiden on tarkoitus työskennellä aktiivisesti
+            projektissa.
           </li>
           <li>
             Mikäli käytössä on <strong>organisaatiotili</strong>, voi
-            reposirotion käyttäjille määrittää eri
-            <strong>roolit</strong> (esimerkiksi Read, Write, Maintain tai
-            Admin) riippuen siitä, mitä oikeuksia käyttäjälle halutaan antaa.
+            repositorion käyttäjille määrittää eri
+            <strong>roolit</strong> (esimerkiksi <em>Read</em>, <em>Write</em>,
+            <em>Maintain</em> tai <em>Admin</em>) riippuen siitä, mitä oikeuksia
+            käyttäjälle halutaan antaa.
           </li>
         </ul>
       </div>
       <ol>
         <li>
           Siirry repositorion asetuksiin klikkaamalla repositoriossa
-          <strong>settings</strong>
+          <strong>Settings</strong>
           välilehteä.
 
           <figure>
@@ -257,7 +261,7 @@
         <li>
           Mikäli käytössä on kaksivaiheinen tunnistautuminen vahvista vielä
           käyttöoikeus syöttämällä tunnistautumissovelluksen antama
-          <strong>avain</strong> ja klikkaamalla <strong>verify</strong> nappia.
+          <strong>avain</strong> ja klikkaamalla <strong>Verify</strong> nappia.
           <figure>
             <img
               class="wide-image"
@@ -321,19 +325,18 @@
         </li>
         <li>
           Käyttäjän pitää siis hyväksyä kutsu omalta tililtään, jotta lisäys on
-          onnistunut. Kutsu löytyy tilin ilmoituksista, jonne pääseen
+          onnistunut. Kutsu löytyy tilin ilmoituksista, jonne pääsee
           klikkaamalla
-          <strong>inbox-ikonia</strong> oikelta yläreunasta.
+          <strong>inbox-ikonia</strong> oikealta yläreunasta.
 
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/collaborators-6.webp"
-              alt="Käyttäjälle tulleet viestit löytyvät inbox-kuvakketta klikkaamalla."
+              alt="Käyttäjälle tulleet viestit löytyvät inbox-kuvaketta klikkaamalla."
             />
             <figcaption>
-              Käyttäjälle tulleet viestit löytyvät inbox-kuvakketta
-              klikkaamalla.
+              Käyttäjälle tulleet viestit löytyvät inbox-kuvaketta klikkaamalla.
             </figcaption>
           </figure>
         </li>
@@ -368,9 +371,9 @@
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/collaborators-9.webp"
-              alt="Käyttä lisätty repositoriolle."
+              alt="Käyttäjä lisätty repositoriolle."
             />
-            <figcaption>Käyttä lisätty repositoriolle.</figcaption>
+            <figcaption>Käyttäjä lisätty repositoriolle.</figcaption>
           </figure>
         </li>
       </ol>
@@ -381,7 +384,7 @@
   <div
     class="accordion"
     data-include="/accordion-element/accordion.html"
-    data-title="Haarasuojauksen (Branch protection rules) käyttöönotto"
+    data-title="Git-haaran suojauksen (Branch protection rules) käyttöönotto"
   >
     <!-- Reused accordion content starts -->
     <div
@@ -411,20 +414,21 @@
 
           <li class="warning">
             Älä poista repositoriota, jos et ole varma, ettei siitä tarvita enää
-            mitään sisältöä tai commit-historiaa myöhemmin. Turvallisempaa voi
-            olla ensin muuttaa repositorio <strong>Private</strong>-tilaan.
+            mitään sisältöä tai commit-historiaa myöhemmin.
           </li>
           <li>
             Jos haluat varmistaa, että sinulla on kopio projektista ennen
             poistamista, voit kloonata sen omalle koneellesi komennolla:<br />
-            <code>git clone [repositorion-url]</code>
+            <code
+              >git clone https://github.com/repositorion/url-osoite.git</code
+            >
           </li>
         </ul>
       </div>
       <ol>
         <li>
           Siirry repositorion asetuksiin klikkaamalla repositoriossa
-          <strong>settings</strong>
+          <strong>Settings</strong>
           välilehteä.
 
           <figure>
@@ -438,7 +442,7 @@
         </li>
         <li>
           Varmista, että olet asetuksien <strong>General</strong> osiossa ja
-          scrollaa ikkunan alareunaan.
+          vieritä ikkunan alareunaan.
           <figure>
             <img
               class="wide-image"
@@ -467,7 +471,7 @@
           </div>
         </li>
         <li>
-          Vahvista vielä avautuvaan ruutuun, että haluat poistaa repositorion
+          Vahvista avautuvaan ruutuun, että haluat poistaa repositorion
           klikkaamalla
           <strong>I want to delete this repository</strong> nappia.
 
@@ -493,18 +497,18 @@
               tarkoittaa.
             </figcaption>
           </figure>
-          Vahvista vielä poistaminen syöttämällä
-          <strong>käyttäjänimi/repositorion nimi</strong>
+          Vahvista poistaminen syöttämällä
+          <code>käyttäjänimi/repositorion nimi</code>
           tekstikenttään ja klikkaamalla
           <strong>Delete this repository</strong> nappia.
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/delete-4.webp"
-              alt="Syötä vahvistusteksti poistaaksesi repositorion."
+              alt="Syötä annettu teksti poistaaksesi repositorion."
             />
             <figcaption>
-              Syötä vahvistusteksti poistaaksesi repositorion.
+              Syötä annettu teksti poistaaksesi repositorion.
             </figcaption>
           </figure>
         </li>
@@ -549,13 +553,13 @@
           <li class="warning">
             Päähaaran (<strong>main</strong>) uudelleennimeäminen vaikuttaa koko
             projektiin ja kaikkiin sen käyttäjiin. Nimen muuttamisen jälkeen
-            vanha haaranimi ei enää toimi push- tai pull-komentoihin, ennen kuin
-            käyttäjät päivittävät paikalliset asetuksensa.
+            vanha haaran nimi ei enää toimi push- tai pull-komentoihin, ennen
+            kuin käyttäjät päivittävät paikalliset asetuksensa.
           </li>
           <li>
             Mikäli olet jo jakanut repositorion muille, ilmoita nimenmuutoksesta
-            tiimillesi. Jokaisen tulee päivittää paikallinen haaraviittaus
-            komennolla:<br />
+            tiimillesi. Jokaisen tulee päivittää oma paikallinen viittaus
+            haaraan komennolla:<br />
             <code>git branch -m main uusi-nimi</code><br />
             <code>git fetch origin</code><br />
             <code>git branch -u origin/uusi-nimi uusi-nimi</code><br />
@@ -570,7 +574,7 @@
       <ol>
         <li>
           Siirry repositorion asetuksiin klikkaamalla repositoriossa
-          <strong>settings</strong>
+          <strong>Settings</strong>
           välilehteä.
 
           <figure>
@@ -583,7 +587,7 @@
           </figure>
         </li>
         <li>
-          Nimetäksesi default haaran uudelleen:
+          Aloita default haaran uudelleen nimeäminen:
           <ul>
             <li>
               Varmista, että olet asetuksien <strong>General</strong> osiossa.
@@ -641,8 +645,8 @@
         <ul>
           <li class="warning">
             Oletushaaran (<strong>default branch</strong>) vaihtaminen vaikuttaa
-            kaikkiin käyttäjiin ja automaattisiin toimintoihin, kuten
-            <strong>pull requesteihin</strong>,
+            kaikkiin käyttäjiin ja toimintoihin, kuten
+            <strong>pull requestit</strong>,
             <strong>workflow-prosesseihin</strong> ja
             <strong>GitHub Pages -julkaisuihin</strong>.
           </li>
@@ -670,7 +674,7 @@
       <ol>
         <li>
           Siirry repositorion asetuksiin klikkaamalla repositoriossa
-          <strong>settings</strong>
+          <strong>Settings</strong>
           välilehteä.
 
           <figure>
@@ -683,7 +687,7 @@
           </figure>
         </li>
         <li>
-          Vaihtaaksesi mitä hharaa käytetään default haarana:
+          Vaihtaaksesi mitä haraa käytetään default haarana:
           <ul>
             <li>
               Varmista, että olet asetuksien <strong>General</strong> osiossa.
@@ -703,8 +707,8 @@
         </li>
         <li>
           klikkaa nykyisen päähaaran <strong>nimeä</strong> avataksesi
-          alasvetovaliokon ja valitse valikosta se haara mitä haaraa haluat
-          käyttää <strong>uutena päähaarana</strong>.
+          alasvetovalikon ja valitse valikosta se haara, jota haluat käyttää
+          <strong>uutena oletushaarana</strong>.
           <figure>
             <img
               class="wide-image"
@@ -777,21 +781,21 @@
           </li>
           <li>
             Kirjoita kuvaus lyhyesti ja ytimekkäästi. Esimerkiksi:
-            <em
+            <code
               >"Kouluprojekti, jossa harjoitellaan Git-versionhallinnan ja
-              GitHubin perustoimintoja."</em
+              GitHubin perustoimintoja."</code
             >
           </li>
           <li class="warning">
-            Älä lisää kuvaukseen arkaluontoisia tietoja, kuten henkilön nimiä,
-            opiskelijanumeroita, sähköpostiosoitteita tai muita henkilökohtaisia
+            Älä lisää kuvaukseen arkaluontoisia tietoja, kuten henkilön nimeä,
+            opiskelijanumeroa, sähköpostiosoitetta tai muita henkilökohtaisia
             tietoja. Kuvaus voi näkyä julkisesti myös hakukoneissa, jos
             repositorio on Public-tilassa.
           </li>
           <li>
             Voit halutessasi lisätä myös projektin
             <strong>verkkosivun tai GitHub Pages -osoitteen</strong>
-            kuvauskentän viereiseen kenttään.
+            näkymään kuvauskentässä.
           </li>
         </ul>
       </div>
@@ -827,7 +831,7 @@
               repositorion.
             </li>
             <li>
-              Releases, Packages ja Deployments osiot voit jättää tai piiloittaa
+              Releases, Packages ja Deployments osiot voit jättää tai piilottaa
               etusivulta tarpeen mukaan.
             </li>
             <li>Klikkaa lopuksi <strong>Save changes</strong> nappia.</li>
@@ -839,7 +843,7 @@
               alt="Kuvauksen ja muiden repositorioon liittyvien tietojen lisääminen."
             />
             <figcaption>
-              Kuvauksen jamuiden repositorioon liittyvien tietojen lisääminen.
+              Kuvauksen ja muiden repositorioon liittyvien tietojen lisääminen.
             </figcaption>
           </figure>
         </li>
