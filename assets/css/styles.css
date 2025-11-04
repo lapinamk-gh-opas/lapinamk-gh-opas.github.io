@@ -17,13 +17,14 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 header h1 {
   margin-bottom: 1rem;
 }
 
+h3,
 h4,
 h5, 
 h6 {
@@ -31,8 +32,8 @@ h6 {
   margin-bottom: 1rem;
 }
 
-h3 {
-  margin: 1.5rem 0 1rem 0;
+h6, li, p {
+  font-size: 1rem;
 }
 
 /* Reduce margin when heading follows note-box */
