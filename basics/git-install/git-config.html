@@ -16,16 +16,16 @@
           src="../../assets/images/basics/git-install/git config 1.1.webp"
           alt="Git Bashin avaaminen Windowsilla"
         />
-        <figcaption>
-          Git Bashin avaaminen Windowsilla
-        </figcaption>
+        <figcaption>Git Bashin avaaminen Windowsilla</figcaption>
       </figure>
     </li>
     <li>
       <h6>Tarkasta .gitconfig tiedoston sisältö</h6>
       <ul>
-
-        <li>Anna komento <code>git config --global --list</code></li>
+        <li>
+          Anna komento
+          <code>git config --global --list</code>
+        </li>
       </ul>
       <figure>
         <img
@@ -41,12 +41,15 @@
           kaikissa Git-repositorioissa. Asetuksia on mahdollista muuttaa
           tarvittaessa myös repositorio kohtaisesti. Tämä tapahtuu siirtymällä
           kansioon, jossa repositorio on ja antamalla komennot ilman
-          <code>--global</code> lippua.
+          <code>--global</code>
+          lippua.
         </p>
         <p>
-          Jos et ole vielä muokannut asetustiedostoa, se sisältää vain asennuksen yhteydessä määritetyn
-          oletustekstieditorin (<code>core.editor</code>). Tässä tapauksessa oletuseditoriksi on asetettu Visual Studio
-          Code, joka valittiin Gitin asennuksen aikana.
+          Jos et ole vielä muokannut asetustiedostoa, se sisältää vain
+          asennuksen yhteydessä määritetyn oletustekstieditorin (
+          <code>core.editor</code>
+          ). Tässä tapauksessa oletuseditoriksi on asetettu Visual Studio Code,
+          joka valittiin Gitin asennuksen aikana.
         </p>
       </div>
     </li>
@@ -63,7 +66,8 @@
           <code>git config --global user.name "Sinun Nimi"</code>
         </li>
         <li>
-          Tarkasta muutokset komennolla <code>git config --global --list</code>
+          Tarkasta muutokset komennolla
+          <code>git config --global --list</code>
         </li>
       </ul>
       <p class="note-box">
@@ -88,10 +92,11 @@
       <ul>
         <li>
           Aseta nimi komennolla
-          <code>git config --global init.defaultBranch main </code>
+          <code>git config --global init.defaultBranch main</code>
         </li>
         <li>
-          Tarkasta muutokset komennolla <code>git config --global --list</code>
+          Tarkasta muutokset komennolla
+          <code>git config --global --list</code>
         </li>
       </ul>
       <p class="note-box">
@@ -117,8 +122,9 @@
   </p>
   <div class="note-box">
     <p>
-      Gitin dokumentaatio voi vaikuttaa aluksi kryptiseltä, joten tässä
-      vielä taulukko jo käytetyistä ja muutamista muista hyödyllisistä asetuksista. <br>
+      Gitin dokumentaatio voi vaikuttaa aluksi kryptiseltä, joten tässä vielä
+      taulukko jo käytetyistä ja muutamista muista hyödyllisistä asetuksista.
+      <br />
     </p>
 
     <table>
@@ -156,9 +162,15 @@
         <tr>
           <td><code>alias.*</code></td>
           <td>
-            Lyhenteiden (alias) luominen usein käytetyille komennoille <br />
-            (esim. <code>git config --global alias.ci commit</code> luo
-            komennolle <code>commit</code> lyhenteen <code>ci</code>)
+            Lyhenteiden (alias) luominen usein käytetyille komennoille
+            <br />
+            (esim.
+            <code>git config --global alias.ci commit</code>
+            luo komennolle
+            <code>commit</code>
+            lyhenteen
+            <code>ci</code>
+            )
           </td>
         </tr>
       </tbody>

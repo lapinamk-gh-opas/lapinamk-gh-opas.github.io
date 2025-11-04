@@ -1,85 +1,110 @@
 <div class="table-wrap">
-    <table class="workflow-table">
-        <tbody>
-            <tr class="section-header">
-                <!-- 1) update repository -->
-                <th colspan="2">Muutosten tallentaminen etärepoon</th>
-            </tr>
-            <tr>
-                <td><code>git status</code></td>
-                <td>Tarkista tilanne</td>
-            </tr>
-            <tr>
-                <td><code>git add .</code> tai <code>git add &lt;tiedosto&gt;</code></td>
-                <td>Lisää muutokset stagingiin</td>
-            </tr>
-            <tr>
-                <td><code>git commit -m "viesti"</code></td>
-                <td>Tallenna muutokset (commit)</td>
-            </tr>
-            <tr>
-                <td><code>git push</code></td>
-                <td>Puske muutokset etärepoon</td>
-            </tr>
-            <!-- 2) create new feature branch -->
-            <tr class="section-header">
-                <th colspan="2">Uuden sivuhaaran luonti</th>
-            </tr>
-            <tr>
-                <td><code>git checkout main</code></td>
-                <td>Siirry päähaaraan</td>
-            </tr>
-            <tr>
-                <td><code>git pull</code></td>
-                <td>Hae tuoreimmat muutokset</td>
-            </tr>
-            <tr>
-                <td><code>git checkout -b dev</code></td>
-                <td>Luo ja siirry haaraan <code>dev</code></td>
-            </tr>
-            <tr>
-                <td><code>git push -u origin dev</code></td>
-                <td>Puske haara ja aseta seuranta</td>
-            </tr>
-            <!-- 3) merge feature branch to main -->
-            <tr class="section-header">
-                <th colspan="2">Yhdistä muutokset päähaaraan</th>
-            </tr>
-            <tr>
-                <td><code>git checkout main</code></td>
-                <td>Siirry päähaaraan <code>main</code></td>
-            </tr>
-            <tr>
-                <td><code>git merge dev</code></td>
-                <td>Yhdistä sivuhaara <code>dev</code> päähaaraan</td>
-            </tr>
+  <table class="workflow-table">
+    <tbody>
+      <tr class="section-header">
+        <!-- 1) update repository -->
+        <th colspan="2">Muutosten tallentaminen etärepoon</th>
+      </tr>
+      <tr>
+        <td><code>git status</code></td>
+        <td>Tarkista tilanne</td>
+      </tr>
+      <tr>
+        <td>
+          <code>git add .</code>
+          tai
+          <code>git add &lt;tiedosto&gt;</code>
+        </td>
+        <td>Lisää muutokset stagingiin</td>
+      </tr>
+      <tr>
+        <td><code>git commit -m "viesti"</code></td>
+        <td>Tallenna muutokset (commit)</td>
+      </tr>
+      <tr>
+        <td><code>git push</code></td>
+        <td>Puske muutokset etärepoon</td>
+      </tr>
+      <!-- 2) create new feature branch -->
+      <tr class="section-header">
+        <th colspan="2">Uuden sivuhaaran luonti</th>
+      </tr>
+      <tr>
+        <td><code>git checkout main</code></td>
+        <td>Siirry päähaaraan</td>
+      </tr>
+      <tr>
+        <td><code>git pull</code></td>
+        <td>Hae tuoreimmat muutokset</td>
+      </tr>
+      <tr>
+        <td><code>git checkout -b dev</code></td>
+        <td>
+          Luo ja siirry haaraan
+          <code>dev</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>git push -u origin dev</code></td>
+        <td>Puske haara ja aseta seuranta</td>
+      </tr>
+      <!-- 3) merge feature branch to main -->
+      <tr class="section-header">
+        <th colspan="2">Yhdistä muutokset päähaaraan</th>
+      </tr>
+      <tr>
+        <td><code>git checkout main</code></td>
+        <td>
+          Siirry päähaaraan
+          <code>main</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>git merge dev</code></td>
+        <td>
+          Yhdistä sivuhaara
+          <code>dev</code>
+          päähaaraan
+        </td>
+      </tr>
 
-            <!-- 3) update feature branch with main changes -->
-            <tr class="section-header">
-                <th colspan="2">Päivitä sivuhaara päähaarasta (main ➜ dev)</th>
-            </tr>
-            <tr>
-                <td><code>git checkout dev</code></td>
-                <td>Siirry sivuhaaraan <code>dev</code></td>
-            </tr>
-            <tr>
-                <td><code>git fetch origin</code></td>
-                <td>Hae tuoreimmat muutokset päähaarasta (<code>origin/main</code>)</td>
-            </tr>
-            <tr>
-                <td><code>git merge origin/main</code></td>
-                <td>Yhdistä päähaaran muutokset sivuhaaraan</td>
-            </tr>
-            <tr>
-                <td><code>git push origin dev</code></td>
-                <td>Puske päivitetty <code>dev</code> etärepoon</td>
-            </tr>
-        </tbody>
-    </table>
+      <!-- 3) update feature branch with main changes -->
+      <tr class="section-header">
+        <th colspan="2">Päivitä sivuhaara päähaarasta (main ➜ dev)</th>
+      </tr>
+      <tr>
+        <td><code>git checkout dev</code></td>
+        <td>
+          Siirry sivuhaaraan
+          <code>dev</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>git fetch origin</code></td>
+        <td>
+          Hae tuoreimmat muutokset päähaarasta (
+          <code>origin/main</code>
+          )
+        </td>
+      </tr>
+      <tr>
+        <td><code>git merge origin/main</code></td>
+        <td>Yhdistä päähaaran muutokset sivuhaaraan</td>
+      </tr>
+      <tr>
+        <td><code>git push origin dev</code></td>
+        <td>
+          Puske päivitetty
+          <code>dev</code>
+          etärepoon
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <div class="download-wrap">
-    <button id="downloadWorkflowBtn" type="button" class="download-btn">
+  <button id="downloadWorkflowBtn" type="button" class="download-btn">
     Lataa workflowt (.txt)
   </button>
 </div>

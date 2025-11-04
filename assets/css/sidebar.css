@@ -1,6 +1,6 @@
 /* for layout of side bar and main content */
 
-/* takes available screen heigt as default */
+/* takes available screen height as default */
 .page-layout {
   display: flex;
   flex: 1;
@@ -44,7 +44,7 @@
   z-index: 20;
 }
 
-/* turns arrow aroun when sidebar is closed */
+/* turns arrow around when sidebar is closed */
 .toggle-btn.closed {
   transform: rotate(180deg);
   left: 1px;
@@ -146,7 +146,7 @@ a.active {
   white-space: nowrap;
 }
 
-/* sidebas position when closed */
+/* sidebar position when closed */
 .sidebar.closed .menu-items {
   transform: translateX(-280px);
 }
@@ -190,7 +190,7 @@ a.active {
 
 /* Dropdown arrow when dropdown is closed */
 .dropdown-toggle::after {
-  content: "▼";
+  content: '▼';
   border-top: none;
   top: -1px;
   transform: rotate(0deg);
@@ -203,7 +203,7 @@ a.active {
   border-top: none;
 }
 
-/* sublist is hidden by default */
+/* sub list is hidden by default */
 .sidebar-sub-list:not(.commands-table) {
   padding-left: 1rem;
 }
@@ -215,7 +215,7 @@ a.active {
 
 /* Dropdown arrow when dropdown is closed */
 .dropdown-toggle.commands::after {
-  content: "+";
+  content: '+';
   line-height: 1.5rem;
   font-size: 2rem;
   top: -1px;
@@ -226,7 +226,7 @@ a.active {
 
 /* Dropdown arrow when dropdown is open */
 .dropdown-toggle.commands.open::after {
-  content: "–";
+  content: '–';
   border-top: none;
   position: relative;
   top: -2px;
@@ -247,7 +247,7 @@ a.active {
 
 /* lay out changes for mobile */
 @media (max-width: 1200px) {
-  /* maincontent area for mobile */
+  /* main content area for mobile */
   .page-layout {
     position: relative;
     height: fit-content;
@@ -271,7 +271,7 @@ a.active {
     transform: translateX(-300px) !important;
   }
 
-  /* sidebar after togglebutton is clicked */
+  /* sidebar after toggle button is clicked */
   .sidebar.closed .menu-items {
     transform: translateX(0) !important;
   }
