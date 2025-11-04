@@ -2,154 +2,233 @@
   <h1>Miten selvitä ongelmatilanteesta</h1>
 
   <p>
-    Git on tehokas työkalu, mutta aina asiat eivät mene suunnitelmien mukaan. Ehkä unohdit commitata muutoksen, teit
-    virheen komennossa tai poistit vahingossa tärkeitä tiedostoja.
+    Git on tehokas työkalu, mutta aina asiat eivät mene suunnitelmien mukaan.
+    Ehkä unohdit commitata muutoksen, teit virheen komennossa tai poistit
+    vahingossa tärkeitä tiedostoja.
   </p>
 
   <p>
-    No problem! Versionhallinnan vahvuus on se, että <strong>virheistä voi lähes aina toipua</strong>. Git myös kertoo,
-    mikäli teet
-    virheitä komentoja antaessasi tai yrität jotain, mikä ei ole sallittua. Kokeile siis asioita rohkeasti!
+    No problem! Versionhallinnan vahvuus on se, että
+    <strong>virheistä voi lähes aina toipua</strong>
+    . Git myös kertoo, mikäli teet virheitä komentoja antaessasi tai yrität
+    jotain, mikä ei ole sallittua. Kokeile siis asioita rohkeasti!
   </p>
 
   <h5>Katso missä mennään</h5>
   <p>
-    Aja <code>git status</code> ja lue viesti rauhassa. Voit ajaa tämän komennon joka välissä, jotta pysyt kartalla
-    siitä
-    mitä tapahtuu.
+    Aja
+    <code>git status</code>
+    ja lue viesti rauhassa. Voit ajaa tämän komennon joka välissä, jotta pysyt
+    kartalla siitä mitä tapahtuu.
   </p>
 
   <h5>Ongelma komennon kanssa</h5>
   <p>
-    Jos jokin komento tuottaa päänvaivaa, avaa sen viralliset ohjeet selaimeen komennolla
-    <code>git help &lt;komento&gt;</code> Tämä antaa yksityiskohtaisen selityksen komennon käytöstä. Usein nopea
-    yhteenveto löytyy myös komennolla <code>git &lt;komento&gt; -h</code> Kokeile rohkeasti molempia!
+    Jos jokin komento tuottaa päänvaivaa, avaa sen viralliset ohjeet selaimeen
+    komennolla
+    <code>git help &lt;komento&gt;</code>
+    Tämä antaa yksityiskohtaisen selityksen komennon käytöstä. Usein nopea
+    yhteenveto löytyy myös komennolla
+    <code>git &lt;komento&gt; -h</code>
+    Kokeile rohkeasti molempia!
   </p>
 
   <h5>Vahingossa poistettu tiedosto</h5>
   <p>
-    Jos tiedosto on poistettu, mutta et ole vielä commitannut, voit palauttaa sen helposti komennolla
-    <code>git restore &lt;tiedosto&gt;</code> Jos taas tiedosto on poistettu ja commitattu, voit palauttaa sen
-    aiemmasta commitista komennolla <code>git restore --source=HEAD~1 -- &lt;tiedosto&gt;</code>
+    Jos tiedosto on poistettu, mutta et ole vielä commitannut, voit palauttaa
+    sen helposti komennolla
+    <code>git restore &lt;tiedosto&gt;</code>
+    Jos taas tiedosto on poistettu ja commitattu, voit palauttaa sen aiemmasta
+    commitista komennolla
+    <code>git restore --source=HEAD~1 -- &lt;tiedosto&gt;</code>
   </p>
 
   <div
     class="accordion"
     data-include="/accordion-element/accordion.html"
-    data-title="Mikä on HEAD~1">
+    data-title="Mikä on HEAD~1"
+  >
     <div class="contentToAccordion">
-      <p><strong>HEAD</strong> on osoitin nykyiseen tilanteeseesi. Se merkkaa viimeisintä committia siinä haarassa, jossa
-        olet.</p>
+      <p>
+        <strong>HEAD</strong>
+        on osoitin nykyiseen tilanteeseesi. Se merkkaa viimeisintä committia
+        siinä haarassa, jossa olet.
+      </p>
       <ul>
-        <li><code>HEAD</code> = tämä hetki</li>
-        <li><code>HEAD~1</code> = yksi commit taaksepäin</li>
-        <li><code>HEAD~2</code> = kaksi committia taaksepäin </li>
+        <li>
+          <code>HEAD</code>
+          = tämä hetki
+        </li>
+        <li>
+          <code>HEAD~1</code>
+          = yksi commit taaksepäin
+        </li>
+        <li>
+          <code>HEAD~2</code>
+          = kaksi committia taaksepäin
+        </li>
       </ul>
 
       <h6><strong>Esimerkkejä</strong></h6>
       <ul>
-        <li>Palauta tiedosto edellisestä commitista <code>git restore --source=HEAD~1 -- polku/tiedosto</code></li>
-        <li>Katso edellisen commitin tiedot <code>git show HEAD~1</code></li>
-        <li>Katso koko commit-historia ja miten HEAD on liikkunut <code>git reflog</code></li>
+        <li>
+          Palauta tiedosto edellisestä commitista
+          <code>git restore --source=HEAD~1 -- polku/tiedosto</code>
+        </li>
+        <li>
+          Katso edellisen commitin tiedot
+          <code>git show HEAD~1</code>
+        </li>
+        <li>
+          Katso koko commit-historia ja miten HEAD on liikkunut
+          <code>git reflog</code>
+        </li>
       </ul>
 
       <h6><strong>Detached HEAD</strong></h6>
       <p>
-        Jos avaat suoraan tietyn commit-id:n, et ole enää haarassa vaan pelkästään kyseisessä commitissa. Tämä on
-        <em>detached HEAD</em> -tila. Muista aina palata takaisin haaraan ennen kuin teet uusia committeja, muuten ne
-        voivat kadota.
+        Jos avaat suoraan tietyn commit-id:n, et ole enää haarassa vaan
+        pelkästään kyseisessä commitissa. Tämä on
+        <em>detached HEAD</em>
+        -tila. Muista aina palata takaisin haaraan ennen kuin teet uusia
+        committeja, muuten ne voivat kadota.
       </p>
 
       <h6><strong>HEAD historian tarkastelu</strong></h6>
       <p>
-        <code>git reflog</code> näyttää mihin <code>HEAD</code> on liikkunut ja auttaa palaamaan takaisin.
+        <code>git reflog</code>
+        näyttää mihin
+        <code>HEAD</code>
+        on liikkunut ja auttaa palaamaan takaisin.
       </p>
     </div>
   </div>
 
   <h5>Rollback eli commitin peruuttaminen</h5>
   <p>
-    Joskus commit saattaa mennä pieleen tai huomaat heti sen jälkeen, että haluat muuttaa tai poistaa tekemäsi
-    muutokset. Gitissä on useita tapoja perua commit riippuen tilanteesta ja siitä, haluatko säilyttää vai poistaa
-    tehdyt muutokset kokonaan. </p>
+    Joskus commit saattaa mennä pieleen tai huomaat heti sen jälkeen, että
+    haluat muuttaa tai poistaa tekemäsi muutokset. Gitissä on useita tapoja
+    perua commit riippuen tilanteesta ja siitä, haluatko säilyttää vai poistaa
+    tehdyt muutokset kokonaan.
+  </p>
 
   <div class="note-box">
     <ul>
-      <li class="warning"><strong>Käytä näitä toimintoja varoen!</strong> Gitin versiohistoria on tärkeä osa projektin
-        eheyttä, joten harkitse aina tarkkaan ennen kuin peruutat commitin.</li>
+      <li class="warning">
+        <strong>Käytä näitä toimintoja varoen!</strong>
+        Gitin versiohistoria on tärkeä osa projektin eheyttä, joten harkitse
+        aina tarkkaan ennen kuin peruutat commitin.
+      </li>
     </ul>
   </div>
 
   <ul>
     <li>
-      <strong>Muokkaa viimeisintä committia</strong><br>
-      Komento <code>git commit --amend</code> avaa edellisen commitin muokattavaksi. Voit esimerkiksi korjata 
-      commit-viestin tai lisätä unohtuneita tiedostoja ennen kuin olet puskenut muutokset.
+      <strong>Muokkaa viimeisintä committia</strong>
+      <br />
+      Komento
+      <code>git commit --amend</code>
+      avaa edellisen commitin muokattavaksi. Voit esimerkiksi korjata
+      commit-viestin tai lisätä unohtuneita tiedostoja ennen kuin olet puskenut
+      muutokset.
       <ul>
-        <li>Esimerkiksi jos juuri teit commitin, mutta unohdit lisätä tiedoston, lisää se ensin normaalisti
-          <code>git add tiedosto.txt</code> ja aja sen jälkeen <code>git commit --amend</code> Tämä avaa editorin, jossa
-          voit muokata commit-viestiä tai jättää sen ennalleen. Kun tallennat ja suljet editorin, edellinen commit
-          päivitetään sisältämään myös uusi tiedosto. Huom! Tämä muuttaa commitin ID:tä, joten älä käytä tätä komentoa,
-          jos olet jo puskenut commitin etärepoon!
+        <li>
+          Esimerkiksi jos juuri teit commitin, mutta unohdit lisätä tiedoston,
+          lisää se ensin normaalisti
+          <code>git add tiedosto.txt</code>
+          ja aja sen jälkeen
+          <code>git commit --amend</code>
+          Tämä avaa editorin, jossa voit muokata commit-viestiä tai jättää sen
+          ennalleen. Kun tallennat ja suljet editorin, edellinen commit
+          päivitetään sisältämään myös uusi tiedosto. Huom! Tämä muuttaa
+          commitin ID:tä, joten älä käytä tätä komentoa, jos olet jo puskenut
+          commitin etärepoon!
         </li>
       </ul>
     </li>
 
     <li>
-      <strong>Peru commit, mutta säilytä tehdyt muutokset</strong><br>
+      <strong>Peru commit, mutta säilytä tehdyt muutokset</strong>
+      <br />
       <ul>
-        <li>Komento <code>git reset --soft HEAD~1</code> siirtää haaran osoittimen taaksepäin ja jättää muutokset
-          stagingiin.<br>
+        <li>
+          Komento
+          <code>git reset --soft HEAD~1</code>
+          siirtää haaran osoittimen taaksepäin ja jättää muutokset stagingiin.
+          <br />
         </li>
-        <li>Komento <code>git reset HEAD~1</code> (oletus <em>--mixed</em>) siirtää osoittimen taaksepäin ja pudottaa
-          muutokset takaisin työpuuhun, eivätkä ne ole enää stagingissa.
+        <li>
+          Komento
+          <code>git reset HEAD~1</code>
+          (oletus
+          <em>--mixed</em>
+          ) siirtää osoittimen taaksepäin ja pudottaa muutokset takaisin
+          työpuuhun, eivätkä ne ole enää stagingissa.
         </li>
       </ul>
     </li>
 
     <li>
-      <strong>Peru commit ja poista tehdyt muutokset</strong><br>
-      <code>git reset --hard HEAD~1</code> palauttaa tilan edelliseen commit-tilaan ja poistaa sekä stagingin että
-      työpuun muutokset. Tätä komentoa ei voi perua helposti, joten käytä sitä erittäin varovasti!
+      <strong>Peru commit ja poista tehdyt muutokset</strong>
+      <br />
+      <code>git reset --hard HEAD~1</code>
+      palauttaa tilan edelliseen commit-tilaan ja poistaa sekä stagingin että
+      työpuun muutokset. Tätä komentoa ei voi perua helposti, joten käytä sitä
+      erittäin varovasti!
     </li>
 
     <li>
-      <strong>Jos olet jo puskenut commitin etärepoon</strong><br>
+      <strong>Jos olet jo puskenut commitin etärepoon</strong>
+      <br />
       Jos commit on jo jaettu muiden kanssa (esim. GitHubissa), käytä mieluummin
-      <code>git revert &lt;commit-id&gt;</code> Tämä luo uuden commitin, joka kumoaa edellisen ja säilyttää historian
-      eheänä. Commit-id:n näet komennolla <code>git log</code>
+      <code>git revert &lt;commit-id&gt;</code>
+      Tämä luo uuden commitin, joka kumoaa edellisen ja säilyttää historian
+      eheänä. Commit-id:n näet komennolla
+      <code>git log</code>
     </li>
   </ul>
 
-
   <p class="note-box">
-    <strong>Vinkki!</strong> Ennen reset-komentoja tee varmuuden vuoksi <code>git stash</code> tai luo tilapäinen
-    haara (esim. <code>git branch backup</code>), jotta voit palauttaa tilanteen, jos jokin menee pieleen.
+    <strong>Vinkki!</strong>
+    Ennen reset-komentoja tee varmuuden vuoksi
+    <code>git stash</code>
+    tai luo tilapäinen haara (esim.
+    <code>git branch backup</code>
+    ), jotta voit palauttaa tilanteen, jos jokin menee pieleen.
   </p>
 
   <h5>Tiedoston historia VS Codessa</h5>
   <p>
-    Tiedoston aiempia versioita voit selata VS Coden <em>Timeline</em>-paneelissa (ala-vasen). Siellä näkyvät kaikki
-    tekemäsi tiedoston tallennukset ja voit helposti avata ja vertailla eri versioita. Tämä on kätevää esimerkiksi
-    silloin, kun haluat palauttaa vain osan koodin aiemmasta versiosta. Myös GitHubin selainversiossa on
-    <em>History</em>-toiminto, jonka avulla voit tarkastella tiedoston muutoshistoriaa suoraan selaimesta.
+    Tiedoston aiempia versioita voit selata VS Coden
+    <em>Timeline</em>
+    -paneelissa (ala-vasen). Siellä näkyvät kaikki tekemäsi tiedoston
+    tallennukset ja voit helposti avata ja vertailla eri versioita. Tämä on
+    kätevää esimerkiksi silloin, kun haluat palauttaa vain osan koodin aiemmasta
+    versiosta. Myös GitHubin selainversiossa on
+    <em>History</em>
+    -toiminto, jonka avulla voit tarkastella tiedoston muutoshistoriaa suoraan
+    selaimesta.
   </p>
 
   <h5>Jos kaikki menee pieleen</h5>
   <p>
-    Kopioi tärkeät tiedostot talteen → poista koko kansio → kloonaa repo uudestaan <code>git clone &lt;url&gt;</code> →
-    palauta tärkeät tiedostot takaisin kansioon ja tee uusi commit.
+    Kopioi tärkeät tiedostot talteen → poista koko kansio → kloonaa repo
+    uudestaan
+    <code>git clone &lt;url&gt;</code>
+    → palauta tärkeät tiedostot takaisin kansioon ja tee uusi commit.
   </p>
 
   <p class="note-box">
-    Muista, että virheitä sattuu kaikille! Tärkeintä on oppia niistä ja jatkaa eteenpäin. Harjoitus tekee mestarin! 😊
+    Muista, että virheitä sattuu kaikille! Tärkeintä on oppia niistä ja jatkaa
+    eteenpäin. Harjoitus tekee mestarin! 😊
   </p>
 
   <p>Lisää vinkkejä ongelmatilanteisiin</p>
   <ul>
     <li>
       <a href="https://code.visualstudio.com/docs/sourcecontrol/overview">
-        Visual Studio Code - Version Control Overview</a>
+        Visual Studio Code - Version Control Overview
+      </a>
     </li>
     <li><a href="https://git-scm.com/doc">Git Documentation</a></li>
     <li><a href="https://docs.github.com/">GitHub Docs</a></li>

@@ -24,7 +24,7 @@
   user-select: none;
 }
 
-/* button for togling content */
+/* button for toggling content */
 .bookButton {
   margin-right: 2em;
   cursor: pointer;
@@ -80,4 +80,22 @@
 /* margin for header div */
 .header {
   margin: 0 0 1rem 1rem;
+}
+
+.close-button {
+  position: absolute;
+  bottom: 0px;
+  right: 35px;
+  background-color: rgba(20, 130, 125);
+  color: white;
+  border: none;
+  border-radius: 0 0 5px 5px;
+  padding: 3px 15px;
+  cursor: pointer;
+  content: '▼';
+  transform: rotate(180deg);
+}
+
+.close-button.hidden {
+  display: none;
 }
