@@ -1,5 +1,5 @@
 // This JS file enables functionality to content pages arrow buttons (next/prev).
-// user can navigate trugh sub pages and different parts by pressing arrowbuttons.
+// user can navigate trough sub pages and different parts by pressing arrow buttons.
 import { getPageFromHash, getBasePath, loadPage } from '/assets/js/helpers.js';
 
 // Variables
@@ -24,7 +24,7 @@ document.addEventListener('sidebar:loaded', () => {
   currentPath = window.location.pathname; // gets current path from URL
   const menuItems = document.querySelectorAll('.sidebar-menu a'); // gets menu items
 
-  linkNames = Array.from(menuItems).map(el => el.getAttribute('href')); // makes array of link href atributes
+  linkNames = Array.from(menuItems).map(el => el.getAttribute('href')); // makes array of link href attributes
 
   linkNamesFin = Array.from(menuItems).map(el => el.textContent); // makes array of links text content
 
@@ -42,12 +42,12 @@ document.addEventListener('links:loaded', () => {
   const container = document.getElementById('mainContainer'); // gets container of page links
   const subContentPages = container.querySelectorAll('[data-page]'); // get pages from container with data-page attribute
 
-  // makes array of page names from date-page atributes
+  // makes array of page names from date-page attributes
   pageNames = Array.from(subContentPages).map(el =>
     el.getAttribute('data-page')
   );
 
-  // makes array of page names from text content atributes
+  // makes array of page names from text content attributes
   pageNamesFin = Array.from(subContentPages).map(el => el.textContent);
 
   // gets current page index or 0 if there are no sub pages/current page
@@ -94,7 +94,7 @@ document.addEventListener('pages:loaded', () => {
     const additionalTextPrev = document.getElementById('prevPart'); // gets sub text field
 
     // if there is prev page then main field renders EDELLINEN SIVU and sub field has pages finnish name as text
-    // else main fild has text EDELLINEN OSA and subfield renders previous links finnish name
+    // else main field has text EDELLINEN OSA and subfield renders previous links finnish name
     if (pageIndex > 0) {
       textPrev.textContent = 'EDELLINEN SIVU'; // main field is set here
       additionalTextPrev.textContent = pageNamesFin[pageIndex - 1]; // sub field comes dynamically from variable
@@ -113,7 +113,7 @@ document.addEventListener('pages:loaded', () => {
     const additionalTextNext = document.getElementById('nextPart'); // gets sub text field
 
     // if there is next page then main field renders SEURAAVA SIVU and sub field has pages finnish name as text
-    // else main fild has text SEURAAVA OSA and subfield renders next links finnish name
+    // else main field has text SEURAAVA OSA and subfield renders next links finnish name
     if (pageIndex < pageNames.length - 1) {
       textNext.textContent = 'SEURAAVA SIVU'; // main field is set here
       additionalTextNext.textContent = pageNamesFin[pageIndex + 1]; // sub field comes dynamically from variable
@@ -153,7 +153,7 @@ async function getLastSubPageName(sectionPath) {
       throw new Error(`Tiedostoa tai polkua: ${sectionPath}, ei löytynyt`); //throws error is part is not found
     const html = await part.text(); //loads temporary html dom from part
 
-    const tmp = document.createElement('div'); //creates temportary div element
+    const tmp = document.createElement('div'); //creates temporary div element
     tmp.innerHTML = html; //set loaded dom inside div
     const pages = [...tmp.querySelectorAll('[data-page]')]; //looks for sub pages
     return pages.length ? pages[pages.length - 1].dataset.page : null; // if sub pages exists returns last pages name
@@ -216,7 +216,7 @@ async function navPrev() {
   } else if (pageIndex === 0) {
     const prevPage = await getLastSubPageName(linkNames[linkIndex - 1]); // gets previous parts last subpage
 
-    //if previous part has subpages navigates to last subpare or else navigates to previous part
+    //if previous part has sub pages navigates to last sub page or else navigates to previous part
     if (prevPage) {
       window.location.href = `${linkNames[linkIndex - 1]}#${prevPage}`; // navigates to previous parts last subpage
     } else {
