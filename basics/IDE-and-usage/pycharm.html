@@ -11,8 +11,7 @@
     <div
       class="accordion"
       data-include="../../accordion-element/accordion.html"
-      data-title="Gitin ja GitHubin käyttöönotto PyCharmissa"
-    >
+      data-title="Gitin ja GitHubin käyttöönotto PyCharmissa">
       <div class="contentToAccordion">
         <p class="keep-margin">
           Gitin ja GitHubin käyttöönottamiseksi PyCharmissa käy ensin läpi
@@ -41,12 +40,12 @@
                 <strong>Test</strong> nappia
               </li>
               <li>
-                Mikäli Git löytyy näkyy sen
+                Mikäli Git löytyy näykyy sen
                 <strong>versio numero</strong> polun alla
               </li>
               <li>
-                Mikäli Gittiä ei löytynyt anna PyCharmille polku johon olet
-                Gitin asentanut
+                Mikäli Gitiä ei löytynyt anna PyCharmille polku johon olet Gitin
+                asentanut
               </li>
             </ul>
 
@@ -63,7 +62,7 @@
           </li>
           <li>
             Valitse asetusvalikon vasemmalta puolelta listasta
-            <strong>Version Control</strong> ja sen alta <strong>GitHub</strong>
+            <strong>Version Controlin</strong> alta <strong>GitHub</strong>
             <ul>
               <li>
                 Yhdistä GitHub tilisi PyCharmiin klikkaamalla
@@ -117,7 +116,8 @@
               <ul>
                 <li class="warning">
                   Mikäli sinulla on jo GitHub auki selaimessa ja olet
-                  kirjautunut sisään, voit siirtyä suoraan kohtaan
+                  kirjautunut
+                  sisään, voit siirtyä suoraan kohtaan
                   <strong>7. Luvananto PyCharmille</strong>
                 </li>
               </ul>
@@ -166,8 +166,9 @@
 
             <p class="note-box">
               Jos olit kirjautuneena GitHubiin selaimessa ja käytät
-              kaksivaiheista tunnistautumista, GitHub saattaa pyytää syöttämään
-              vielä tunnistautumissovelluksen avainkoodin (katso kohta 6).
+              kaksivaiheista
+              tunnistautumista, GitHub saattaa pyytää syöttämään vielä
+              tunnistautumissovelluksen avainkoodin (katso kohta 6).
             </p>
           </li>
           <li>
@@ -206,14 +207,13 @@
     </p>
   </header>
 
-  <h3>Tiedoston luonti ja repositorioiden yhdistäminen PyCharmissa</h3>
+  <h3>Tiedoston luonti ja repojen yhdistäminen PyCharmissa</h3>
   <ol class="edit-number sections">
     <li>
       <h6>
         Luo uusi repositorio gitin testaamista varten
         <a href="/basics/git-install.html#create-repository"
-          >1.4 Käyttöönotto/GitHub-repositorion luominen</a
-        >
+          >1.4 Käyttöönotto/GitHub-repositorion luominen</a>
         ohjeen mukaan
       </h6>
     </li>
@@ -223,8 +223,8 @@
         <li>
           Klikkaa projects valikossa <strong>Clone Repository</strong>, joko
           <em>Welcome to PyCharm</em> tekstin alta tai mikäli sinulla on
-          aikaisempia projekteja niin niiden yläpuolelta oikeanpuolimmaisesta
-          napista.
+          aikaisempia
+          projekteja niin niiden yläpuolelta oikeanpuolimmaisesta napista.
         </li>
       </ul>
       <figure>
@@ -279,8 +279,7 @@
       <div
         class="accordion"
         data-include="../../accordion-element/accordion.html"
-        data-title="Trust and Open Project? -varoitus"
-      >
+        data-title="Trust and Open Project? -varoitus">
         <div class="contentToAccordion">
           <!-- Accordion content starts -->
           <ul>
@@ -316,10 +315,11 @@
       <ul>
         <li>
           PyCharm loi projektille <strong>main.py</strong> -tiedoston ja kysyy
-          haluatko lisätä tiedoston versionhallintaan. Lisää se painamalla
+          haluatko
+          lisätä tiedoston versionhallintaan. Lisää se painamalla
           <strong>Add</strong> -painiketta tai peru lisäys
-          <strong>Cancel</strong> -napista ja lisää sen myöhemmin esitetyllä
-          tavalla.
+          <strong>Cancel</strong> -napista
+          ja lisää sen myöhemmin esitetyllä tavalla.
         </li>
       </ul>
 
@@ -373,20 +373,17 @@
       <div class="note-box">
         <ul>
           <li class="warning">
-            Voit taas valita lisäätkö tiedoston heti versionhallintaan, kuten
-            kohdassa 4, vai jätätkö sen myöhempään.
+            Voit taas valita lisäätkö tiedoston heti versionhallintaan,
+            kuten kohdassa 4, vai jätätkö sen myöhempään.
           </li>
         </ul>
       </div>
 
       <ul>
         <li>
-          Lisää tiedostolle sopiva sisältö, kuten <br />
-          <code
-            >Tämä on PyCharmilla luotu README.md tekstitiedosto testausta
-            varten</code
-          >
-          <br />
+          Lisää tiedostolle sopiva sisältö, kuten <br>
+          <code>Tämä on PyCharmilla luotu README.md tekstitiedosto testausta varten</code>
+          <br>
           ja tallenna tiedosto
           <strong>CTRL + S</strong>
         </li>
@@ -424,10 +421,8 @@
           Valitse päävalikosta välilehti <strong>Git</strong>, sen alta
           <strong>Selected Directory</strong> ja klikkaa <strong>Add</strong>
         </li>
-        <li>
-          Tämä vastaa komentoa <code>git add .</code> ja lisää kaikki kansion
-          tiedostot välialueelle (staging)
-        </li>
+        <li>Tämä vastaa komentoa <code>git add .</code> ja lisää kaikki kansion
+          tiedostot välialueelle (staging)</li>
         <li>
           Vaihtoehtoisesti voit tehdä lisäämisen pikanäppäimillä painamalla
           kansion valitsemisen jälkeen
@@ -441,12 +436,10 @@
         <ul>
           <li class="warning">
             Käytä komentoa <code>git add .</code> varoen. Varsinkin jos projekti
-            sisältää arkaluontoista tietoa. Harkitse myös
+            sisältää arkaluontoista tietoa. Harkitse myös 
             <code>.gitignore</code> -tiedoston lisäämistä projektiin. Lisää
             tietoa gitignoresta luvussa
-            <a href="/teamwork/privacy-and-security.html"
-              >2.5 Yksityisyys ja tietoturva</a
-            >.
+            <a href="/teamwork/privacy-and-security.html">2.5 Yksityisyys ja tietoturva</a>.
           </li>
         </ul>
       </div>
@@ -474,7 +467,9 @@
       </figure>
     </li>
     <li>
-      <h6>Tee commit ja vie etärepositorioon</h6>
+      <h6>
+        Tee commit ja vie etärepositorioon
+      </h6>
       <ul>
         <li>
           Avaa Commit valikko ylävalikosta
@@ -527,8 +522,8 @@
       <ul>
         <li>
           Teitpä pushin millä tavalla tahansa, avautuu seuraavaksi
-          viimeistelyikkuna, jossa näkyvät commitin viesti, haara ja siihen
-          sisältyvät tiedostot
+          viimeistelyikkuna, jossa näkyvät commitin viesti, haara ja
+          siihen sisältyvät tiedostot
         </li>
         <li>
           Klikkaa <strong>Push</strong> nappia viedäksesi muutokset
@@ -548,7 +543,9 @@
     <li>
       <h6>Tarkista tuodut muutokset GitHubissa</h6>
       <ul>
-        <li>Siirry selaimessa kyseiseen repositorioon</li>
+        <li>
+          Siirry selaimessa kyseiseen repositorioon
+        </li>
         <li>Tarkista PyCharmissa lisäämäsi tiedostot</li>
       </ul>
 

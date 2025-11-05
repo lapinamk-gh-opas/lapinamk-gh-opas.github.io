@@ -24,7 +24,7 @@
   user-select: none;
 }
 
-/* button for toggling content */
+/* button for togling content */
 .bookButton {
   margin-right: 2em;
   cursor: pointer;
@@ -92,7 +92,7 @@
   border-radius: 0 0 5px 5px;
   padding: 3px 15px;
   cursor: pointer;
-  content: '▼';
+  content: "▼";
   transform: rotate(180deg);
 }
 
