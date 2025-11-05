@@ -38,6 +38,14 @@ p {
   font-size: 1rem;
 }
 
+code {
+  color: #ae2e6e;
+  font-size: 0.95rem;
+  font-family: 'Fira Code', 'JetBrains Mono', ui-monospace, SFMono-Regular,
+    Menlo, Consolas, monospace;
+  font-weight: 500;
+}
+
 /* Reduce margin when heading follows note-box */
 p.note-box + h3,
 p.note-box + h4,
