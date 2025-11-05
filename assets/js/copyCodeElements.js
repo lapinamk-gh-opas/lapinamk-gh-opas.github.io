@@ -4,14 +4,14 @@ document.addEventListener('subContent:loaded', async () => {
       return;
     }
     codeElement.style.cursor = 'pointer';
-    codeElement.title = 'Klikkaa kopioidaksesi';
+    codeElement.title = 'Kopioi 📋';
 
     codeElement.addEventListener('click', () => {
       const code = codeElement.textContent;
       navigator.clipboard
         .writeText(code)
-        .then(() => showNotification(' kopioitu leikepöydälle', code))
-        .catch((err) => showNotification('Kopiointi epäonnistui', err));
+        .then(() => showNotification(' kopioitu leikepöydälle ✅', code))
+        .catch((err) => showNotification('Kopiointi epäonnistui ❌', err));
     });
   });
 });
@@ -27,5 +27,5 @@ const showNotification = (message, code) => {
 
   setTimeout(() => {
     notification.classList.remove('show');
-  }, 2000);
+  }, 1500);
 };
