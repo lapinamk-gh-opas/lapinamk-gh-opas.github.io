@@ -43,9 +43,7 @@ document.addEventListener('links:loaded', () => {
   const subContentPages = container.querySelectorAll('[data-page]'); // get pages from container with data-page attribute
 
   // makes array of page names from date-page atributes
-  pageNames = Array.from(subContentPages).map((el) =>
-    el.getAttribute('data-page')
-  );
+  pageNames = Array.from(subContentPages).map((el) => el.getAttribute('data-page'));
 
   // makes array of page names from text content atributes
   pageNamesFin = Array.from(subContentPages).map((el) => el.textContent);
@@ -66,7 +64,9 @@ document.addEventListener('subContent:loaded', () => {
   // removes old active class
   activeRemove && activeRemove.classList.remove('active');
   // adds new active class
-  pageIndex >= 0 && subContentPages[pageIndex].classList.add('active');
+  if (subContentPages.length > 0 && pageIndex >= 0) {
+    subContentPages[pageIndex].classList.add('active');
+  }
 });
 
 // Custom event launches this after previous phase is ready.
@@ -149,8 +149,7 @@ document.addEventListener('pages:loaded', () => {
 async function getLastSubPageName(sectionPath) {
   try {
     const part = await fetch(sectionPath); //gets part by path given as parameter
-    if (!part.ok)
-      throw new Error(`Tiedostoa tai polkua: ${sectionPath}, ei löytynyt`); //throws error is part is not found
+    if (!part.ok) throw new Error(`Tiedostoa tai polkua: ${sectionPath}, ei löytynyt`); //throws error is part is not found
     const html = await part.text(); //loads temporary html dom from part
 
     const tmp = document.createElement('div'); //creates temportary div element
@@ -170,11 +169,7 @@ document.addEventListener('keyup', function (event) {
         window.location.href = '/index.html';
         break;
       }
-      if (
-        pageIndex === 0 &&
-        linkIndex === -1 &&
-        currentPath === '/index.html'
-      ) {
+      if (pageIndex === 0 && linkIndex === -1 && currentPath === '/index.html') {
         break;
       } else {
         navPrev();

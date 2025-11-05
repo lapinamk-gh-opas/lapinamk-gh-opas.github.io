@@ -31,9 +31,7 @@ document.addEventListener('sidebar-component:loaded', () => {
         const html = await content.text();
         el.outerHTML = html;
       } catch (err) {
-        el.innerHTML = `<p style="color:red">Sisällön lataus epäonnistui: ${escapeHTML(
-          path
-        )}</p>`;
+        el.innerHTML = `<p style="color:red">Sisällön lataus epäonnistui: ${escapeHTML(path)}</p>`;
       }
     })();
     loadPromises.push(loadPromise);
@@ -52,11 +50,7 @@ document.addEventListener('sidebar-component:loaded', () => {
     const workflowBtn = document.getElementById('downloadWorkflowBtn');
     if (workflowBtn) {
       workflowBtn.addEventListener('click', () => {
-        downloadTableAsText(
-          '.workflow-table',
-          'git-workflowt.txt',
-          'Git Workflowt'
-        );
+        downloadTableAsText('.workflow-table', 'git-workflowt.txt', 'Git Workflowt');
       });
     }
   });
@@ -109,7 +103,6 @@ document.addEventListener('sidebar-component:loaded', () => {
       toggle.classList.toggle('open');
       sublist.classList.toggle('open');
 
-      console.log('isopen: ', isOpen);
       isOpen ? item.classList.remove('open') : item.classList.add('open');
     });
   });
