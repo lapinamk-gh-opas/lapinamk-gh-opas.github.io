@@ -2,13 +2,11 @@
   <div class="note-box">
     <ul>
       <li class="warning">
-        <strong>Branch protection rules</strong>
-        suojaavat tärkeimmät haarat (esim.
-        <code>main</code>
-        ) tahattomilta muutoksilta tai virheiltä. Kun suojaus on käytössä, et
-        voi tehdä suoria muutoksia suojattuun haaraan komennolla
-        <code>git push</code>
-        tai yhdistää muutoksia ilman tarkistuksia.
+        <strong>Branch protection rules</strong> suojaavat tärkeimmät haarat
+        (esim. <code>main</code>) tahattomilta muutoksilta tai virheiltä. Kun
+        suojaus on käytössä, et voi tehdä suoria muutoksia suojattuun haaraan
+        komennolla <code>git push</code> tai yhdistää muutoksia ilman
+        tarkistuksia.
       </li>
       <li>
         Alla olevat säännöt soveltuvat pienryhmille ja matalamman prioriteetin
@@ -46,16 +44,10 @@
     </li>
     <li>
       Siirry repositorion haaroihin liittyviin asetuksiin klikkaamalla
-      <strong>Branches</strong>
-      osiota. Lisää uusi haarasuojaus klikkaamalla
-      <strong>Add branch ruleset</strong>
-      nappia. (
-      <em>
-        Tämän voi tehdä myös asetusten
-        <strong>Rules</strong>
-        osiosta.
-      </em>
-      )
+      <strong>Branches</strong> osiota. Lisää uusi haarasuojaus klikkaamalla
+      <strong>Add branch ruleset</strong> nappia. (<em
+        >Tämän voi tehdä myös asetusten <strong>Rules</strong> osiosta.</em
+      >)
 
       <figure>
         <img
@@ -71,35 +63,28 @@
       <ul>
         <li>
           Aloita suojausasetusten määrittäminen antamalla sääntöjoukolle
-          <strong>nimi</strong>
-          .
+          <strong>nimi</strong>.
         </li>
         <li>
-          Muuta
-          <strong>Enforcement statuksen</strong>
-          asetukseksi
-          <strong>active</strong>
-          , jotta suojaus tulee voimaan.
+          Muuta <strong>Enforcement statuksen</strong> asetukseksi
+          <strong>active</strong>, jotta suojaus tulee voimaan.
         </li>
         <li>
           Valitse Bypass-listaan
-          <strong>Add bypass</strong>
-          alasvetovalokosta käyttäjät, joilla on Repository admin-rooli ja
-          write-rooli.
+          <strong>Add bypass</strong> alasvetovalokosta käyttäjät, joilla on
+          Repository admin-rooli ja write-rooli.
         </li>
         <li>
           Anna käyttäjille oikeuden ohittaa pull request-säännöt lisämällä
           kolmesta pisteestä valinta
-          <strong>Allow for pull requests only</strong>
-          .
+          <strong>Allow for pull requests only</strong>.
         </li>
         <li>
           Lisää haara jota säännöt koskevat valitsemalla
-          <strong>Add target</strong>
-          alasvetovalikosta
-          <strong>Inlude default branch</strong>
-          . Näin säännöt koskevat main-haaraa, mikäli et ole muuttanut
-          repositorion pää- tai default-haaraksi jotain muuta haaraa.
+          <strong>Add target</strong> alasvetovalikosta
+          <strong>Inlude default branch</strong>. Näin säännöt koskevat
+          main-haaraa, mikäli et ole muuttanut repositorion pää- tai
+          default-haaraksi jotain muuta haaraa.
         </li>
       </ul>
 
@@ -116,21 +101,19 @@
       Anna varsinaiset suojausasetukset:
       <ul>
         <li>
-          Varmista, että
-          <strong>Restrict deletions</strong>
-          on valittuna. Tämä estää main haaran poistamisen vahingossa.
+          Varmista, että <strong>Restrict deletions</strong> on valittuna. Tämä
+          estää main haaran poistamisen vahingossa.
         </li>
         <li>
-          Valitse
-          <strong>Require a pull request before merging</strong>
-          . Näin haarojen yhdistäminen päähaaraan pakotetaan menemään pull
-          request toiminnon kautta.
+          Valitse <strong>Require a pull request before merging</strong>. Näin
+          haarojen yhdistäminen päähaaraan pakotetaan menemään pull request
+          toiminnon kautta.
         </li>
         <li>
-          <strong>Required approvalsin</strong>
-          voi jättää nollaksi. Tällöin pullrequestin tekijä voi yhdistää oman
-          työnsä päähaaraan ilman muiden ryhmäläisten hyväksyntää, mutta pull
-          request toiminnallisuus tulee tutuksi.
+          <strong>Required approvalsin</strong> voi jättää nollaksi. Tällöin
+          pullrequestin tekijä voi yhdistää oman työnsä päähaaraan ilman muiden
+          ryhmäläisten hyväksyntää, mutta pull request toiminnallisuus tulee
+          tutuksi.
         </li>
         <li>
           Mikäli ryhmä haluua tutustua koodikatselmointiin, voi
@@ -153,21 +136,16 @@
       </figure>
       <ul>
         <li>
-          Varmista, että
-          <strong>Block force pushes</strong>
-          on valittuna. Käytännössä tämä lukitsee haaran historian niin, että
-          sitä ei voi kirjoittaa uusiksi väkisin.
+          Varmista, että <strong>Block force pushes</strong> on valittuna.
+          Käytännössä tämä lukitsee haaran historian niin, että sitä ei voi
+          kirjoittaa uusiksi väkisin.
         </li>
         <li>
           Lisäksi olisi suuri houkutus kytkeä päälle Copilotin tekemät
           tarkistukset, mutta se ei ole yksityisen/ilmaisen tilin yhteydessä
           käytetävissä.
         </li>
-        <li>
-          Klikkaa lopuksi
-          <strong>Create</strong>
-          nappia.
-        </li>
+        <li>Klikkaa lopuksi <strong>Create</strong> nappia.</li>
       </ul>
 
       <figure>
@@ -195,10 +173,8 @@
     </li>
     <li>
       Nyt suojausasetukset on luotu ja ne ovat
-      <strong>aktiivisena</strong>
-      eli voimassa määritellylle
-      <strong>haaralle</strong>
-      .
+      <strong>aktiivisena</strong> eli voimassa määritellylle
+      <strong>haaralle</strong>.
 
       <figure>
         <img

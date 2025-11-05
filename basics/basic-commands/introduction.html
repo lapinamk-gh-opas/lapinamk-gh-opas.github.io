@@ -9,67 +9,39 @@
 
   <p>
     Tässä on yleisimmät ja hyödyllisimmät Git-komennot, jotka jokaisen
-    kehittäjän tulisi ymmärtää. Samat komennot löytyvät myös
-    <strong>sivupalkin komennot -muistilistasta</strong>
-    , joten sinun ei tarvitse opetella niitä ulkoa.
-  </p>
+    kehittäjän tulisi ymmärtää. Samat komennot löytyvät myös <strong>sivupalkin
+    komennot -muistilistasta</strong>, joten sinun ei tarvitse opetella niitä ulkoa.</p>
 
-  <p>
-    Sivupalkista löydät lisäksi
-    <strong>muistilistan yleisimmistä workflow-työnkuluista</strong>
-    , jotka auttavat muistamaan, missä järjestyksessä komennot kannattaa ajaa.
-  </p>
+  <p>Sivupalkista löydät lisäksi <strong>muistilistan yleisimmistä workflow-työnkuluista</strong>,
+    jotka auttavat muistamaan, missä järjestyksessä komennot kannattaa ajaa.</p>
 
-  <p class="note-box">
-    On tärkeä myös tiedostaa, että Gitissä samaan lopputulokseen pääsee usein
-    monella eri tavalla. Valitse tilanteeseen ja sinulle sopivin. Yhtä ainoaa
-    oikeaa tapaa ei ole.
-  </p>
+  <p class="note-box">On tärkeä myös tiedostaa, että Gitissä samaan lopputulokseen pääsee usein monella eri tavalla.
+    Valitse tilanteeseen ja sinulle sopivin. Yhtä ainoaa oikeaa tapaa ei ole.</p>
+
 
   <h3>Kansion hallinta</h3>
-  <h6>
-    Siirry kansioon -
-    <code>cd Projekti</code>
-  </h6>
+  <h6>Siirry kansioon - <code>cd Projekti</code></h6>
   <p>
-    Siirtyy nykyisestä työskentelykansiosta toiseen. Aja tämä ennen
-    Git-komentoja, jotta olet oikeassa projektikansiossa.
+    Siirtyy nykyisestä työskentelykansiosta toiseen. Aja tämä ennen Git-komentoja,
+    jotta olet oikeassa projektikansiossa.
   </p>
 
-  <h6>
-    Siirry yksi taso ylemmäs -
-    <code>cd ..</code>
-  </h6>
+  <h6>Siirry yksi taso ylemmäs - <code>cd ..</code></h6>
   <p>
     Liikkuu hakemistopuussa ylöspäin. Eli esimerkiksi kansiosta
-    <code>Projekti</code>
-    kansioon, jossa
-    <code>Projekti</code>
-    sijaitsee.
+    <code>Projekti</code> kansioon, jossa <code>Projekti</code> sijaitsee.
   </p>
 
-  <h6>
-    Näytä kansion sisältö -
-    <code>dir</code>
-    /
-    <code>ls</code>
-  </h6>
+  <h6>Näytä kansion sisältö - <code>dir</code> / <code>ls</code></h6>
   <p>
-    Listaa nykyisen kansion tiedostot ja kansiot (Windows:
-    <code>dir</code>
-    , macOS/Linux:
-    <code>ls</code>
-    ). Varmistat nopeasti mitä kansiossa on.
+    Listaa nykyisen kansion tiedostot ja kansiot (Windows: <code>dir</code>,
+    macOS/Linux: <code>ls</code>). Varmistat nopeasti mitä kansiossa on.
   </p>
 
-  <h6>
-    Luo uusi kansio -
-    <code>mkdir harjoitus-1</code>
-  </h6>
+  <h6>Luo uusi kansio - <code>mkdir harjoitus-1</code></h6>
   <p>
     Luo tyhjän kansion esimerkiksi uutta harjoitusta tai projektia varten.
-    Siirry sitten kansioon komennolla
-    <code>cd harjoitus-1</code>
+    Siirry sitten kansioon komennolla <code>cd harjoitus-1</code>
   </p>
 
   <p class="note-box">
@@ -78,14 +50,10 @@
   </p>
 
   <h3>Git peruskomennot</h3>
-  <h6>
-    Alusta uusi Git-repositorio -
-    <code>git init</code>
-  </h6>
+  <h6>Alusta uusi Git-repositorio - <code>git init</code></h6>
   <p>
     Käynnistää versionhallinnan nykyisessä kansiossa luomalla
-    <code>.git</code>
-    -hakemiston. Aja vain projektin juuressa.
+    <code>.git</code>-hakemiston. Aja vain projektin juuressa.
   </p>
 
   <h6>
@@ -110,42 +78,29 @@
   <div
     class="accordion"
     data-include="/accordion-element/accordion.html"
-    data-title="Mistä repositoriot ja sen URL-osoite löytyvät GitHubissa"
-  >
+    data-title="Mistä repositoriot ja sen URL-osoite löytyvät GitHubissa">
     <div
       class="contentToAccordion reused-accordion"
-      data-include="/reused-accordion-content/repository-and-url.html"
-    >
+      data-include="/reused-accordion-content/repository-and-url.html">
       <!-- Accordion content comes from /reused-accordion-content/repository-and-url.html-->
     </div>
   </div>
   <!-- Accordion element with reused content ends -->
 
-  <h6>
-    Näytä muutosten tila -
-    <code>git status</code>
-  </h6>
+  <h6>Näytä muutosten tila - <code>git status</code></h6>
   <p>
     Näyttää uudet, muokatut ja stagingiin lisätyt tiedostot, sekä nykyisen
-    haaran. Ensimmäinen komento, kun mietit
-    <em>missä mennään</em>
-    . Tiivis versio
+    haaran. Ensimmäinen komento, kun mietit <em>missä mennään</em>. Tiivis versio
     <code>git status -sb</code>
   </p>
 
-  <h6>
-    Lisää tiedosto stagingiin -
-    <code>git add index.html</code>
-  </h6>
+  <h6>Lisää tiedosto stagingiin - <code>git add index.html</code></h6>
   <p>
     Valmistelee yksittäisen tiedoston seuraavaan committiin. Toista useille
     tiedostoille tarpeen mukaan.
   </p>
 
-  <h6>
-    Lisää kaikki muutokset stagingiin -
-    <code>git add .</code>
-  </h6>
+  <h6>Lisää kaikki muutokset stagingiin - <code>git add .</code></h6>
   <p>
     Kerää kaikki kansion ja alikansioiden muutokset kerralla stagingiin. Nopea
     tapa valmistella commit.
@@ -154,81 +109,44 @@
   <div class="note-box">
     <ul>
       <li class="warning">
-        Käytä komentoa
-        <code>git add .</code>
-        varoen. Varsinkin jos projekti sisältää arkaluontoista tietoa. Harkitse
-        myös
-        <code>.gitignore</code>
-        -tiedoston lisäämistä projektiin. Lisää tietoa gitignoresta luvussa
-        <a href="/teamwork/privacy-and-security.html">
-          2.5 Yksityisyys ja tietoturva
-        </a>
-        .
+        Käytä komentoa <code>git add .</code> varoen. Varsinkin jos projekti sisältää arkaluontoista tietoa. Harkitse
+        myös <code>.gitignore</code> -tiedoston lisäämistä projektiin. Lisää tietoa gitignoresta luvussa
+        <a href="/teamwork/privacy-and-security.html">2.5 Yksityisyys ja tietoturva</a>.
       </li>
     </ul>
   </div>
-
+  
   <h6>
-    Tallenna muutokset (commit) -
-    <code>git commit -m "commit-viesti"</code>
+    Tallenna muutokset (commit) - <code>git commit -m "commit-viesti"</code>
   </h6>
   <p>
-    Kirjaa stagingissa olevat muutokset paikalliseen historiaan. Pidä
-    commit-viesti lyhyenä, mutta kuvaavana. Lisää commit -viesteistä luvussa
-    <a href="/teamwork/how-to-teamwork.html#commit-messages">
-      2.1 Selkeät commit-viestit
-    </a>
-    .
+    Kirjaa stagingissa olevat muutokset paikalliseen historiaan. Pidä commit-viesti lyhyenä, mutta kuvaavana. Lisää
+    commit -viesteistä luvussa <a href="/teamwork/how-to-teamwork.html#commit-messages">2.1 Selkeät commit-viestit</a>.
   </p>
 
   <div
     class="accordion"
     data-include="/accordion-element/accordion.html"
-    data-title="Mitä tarkoittaa komentojen liput (flags)"
-  >
+    data-title="Mitä tarkoittaa komentojen liput (flags)">
     <div class="contentToAccordion">
+
+      <p>Git-komentojen lipuilla voidaan muokata komennon toimintaa ja tarkkuutta. Jokaisella lipulla on oma 
+        tarkoituksensa.</p>
       <p>
-        Git-komentojen lipuilla voidaan muokata komennon toimintaa ja
-        tarkkuutta. Jokaisella lipulla on oma tarkoituksensa.
-      </p>
-      <p>
-        Liput ovat usein lyhenteitä tai symboleita, jotka helpottavat komentojen
-        kirjoittamista, kuten -m, -u, --soft, --hard, jne.
-      </p>
+        Liput ovat usein lyhenteitä tai symboleita, jotka helpottavat komentojen kirjoittamista, kuten -m, -u, 
+        --soft, --hard, jne.</p>
       <ul>
-        <li>
-          <code>git commit -m "viesti"</code>
-          - lipun
-          <code>-m</code>
-          avulla voit liittää commit-viestin suoraan komentoon. Ilman -m -lippua
-          komennossa, Git avaa tekstieditorin, johon voit kirjoittaa commit
-          viestin.
-        </li>
+        <li><code>git commit -m "viesti"</code> - lipun <code>-m</code> avulla voit liittää commit-viestin suoraan komentoon.
+          Ilman -m -lippua komennossa, Git avaa tekstieditorin, johon voit kirjoittaa commit viestin.</li>
 
-        <li>
-          <code>git push -u origin &lt;haara&gt;</code>
-          - lisäämällä -u asetat seurannan etähaaraan, jolloin jatkossa riittää
-          pelkkä
-          <code>git push</code>
-          /
-          <code>git pull</code>
-        </li>
+        <li><code>git push -u origin &lt;haara&gt;</code> - lisäämällä -u asetat seurannan etähaaraan, jolloin jatkossa 
+          riittää pelkkä <code>git push</code>/<code>git pull</code></li>
 
-        <li>
-          <code>git checkout -b &lt;haara&gt;</code>
-          - lisäämällä
-          <code>-b</code>
-          luot uuden haaran ja siirryt siihen. Pelkkä
-          <code>git branch &lt;haara&gt;</code>
-          luo uuden haaran, mutta ei siirry siihen.
-        </li>
+        <li><code>git checkout -b &lt;haara&gt;</code> - lisäämällä <code>-b</code> luot uuden haaran
+          ja siirryt siihen. Pelkkä <code>git branch &lt;haara&gt;</code> luo uuden haaran, mutta ei siirry siihen.</li>
 
-        <li>
-          <code>git log --oneline</code>
-          - lisäämällä
-          <code>--oneline</code>
-          saat tiiviin commit-lokin yhdellä rivillä per commit.
-        </li>
+        <li><code>git log --oneline</code> - lisäämällä <code>--oneline</code> saat tiiviin commit-lokin yhdellä rivillä
+          per commit.</li>
       </ul>
     </div>
   </div>
@@ -241,39 +159,29 @@
     Säilyttää tekemäsi muutokset tilapäisesti ja palauttaa työskentelyhakemiston
     viimeisimpään commit-tilaan. Hyödyllinen, kun haluat vaihtaa haaraa tai
     päivittää projektin ilman, että keskeneräiset muutokset häiritsevät. Palauta
-    muutokset komennolla
-    <code>git stash pop</code>
+    muutokset komennolla <code>git stash pop</code>
   </p>
 
   <p class="note-box">
-    Tähän asti esitellyt komennot on
-    <em>Perusteet</em>
-    -luvun komentoja. Voit keskittyä aluksi niihin.
+    Tähän asti esitellyt komennot on <em>Perusteet</em> -luvun komentoja. Voit
+    keskittyä aluksi niihin.
   </p>
 
-  <h3 id="haarojen-hallinta">Git-haarojen hallinta</h3>
-  <h6>
-    Näytä kaikki haarat -
-    <code>git branch</code>
-  </h6>
+  <h3 id="haarojen-hallinta"> Git-haarojen hallinta</h3>
+  <h6>Näytä kaikki haarat - <code>git branch</code></h6>
   <p>
-    Listaa paikalliset haarat. Nykyinen haara on merkitty tähdellä (
-    <code>*</code>
-    ).
+    Listaa paikalliset haarat. Nykyinen haara on merkitty tähdellä
+    (<code>*</code>).
   </p>
 
-  <h6>
-    Luo ja siirry haaraan -
-    <code>git checkout -b haaran-nimi</code>
-  </h6>
+  <h6>Luo ja siirry haaraan - <code>git checkout -b haaran-nimi</code></h6>
   <p>
     Luo uuden kehityshaaran ja vaihtaa siihen. Vaihtoehtoisesti
     <code>git switch -c haaran-nimi</code>
   </p>
 
   <h6>
-    Siirry olemassa olevaan haaraan -
-    <code>git checkout haaran-nimi</code>
+    Siirry olemassa olevaan haaraan - <code>git checkout haaran-nimi</code>
   </h6>
   <p>
     Vaihda kehitystyö toiseen haaraan. Varmista, että keskeneräiset muutokset on
@@ -295,93 +203,61 @@
     <code>git push -u origin haaran-nimi</code>
   </h6>
   <p>
-    Komento luo vastaavan etähaaran, lähettää nykyisen haaran sisällön ja
-    asettaa seurannan (upstream). Tämän jälkeen jatkossa riittää pelkkä
+    Komento luo vastaavan etähaaran, lähettää nykyisen haaran sisällön ja asettaa seurannan (upstream). Tämän jälkeen
+    jatkossa riittää pelkkä
     <code>git push</code>
   </p>
 
   <div class="note-box">
-    Seuranta asetetaan push-komennon lipulla
-    <code>-u</code>
-    (tai
-    <code>--set-upstream</code>
-    ). Tämä määrittää paikalliselle haaralle oletus vastinparin
-    etärepositoriossa johon muutokset lähetetään ja josta ne haetaan jatkossa.
+    Seuranta asetetaan push-komennon lipulla <code>-u</code> (tai <code>--set-upstream</code>). Tämä määrittää
+    paikalliselle haaralle oletus vastinparin etärepositoriossa johon muutokset lähetetään ja josta ne haetaan jatkossa.
   </div>
 
-  <h6>
-    Hae ja yhdistä etärepositorion muutokset -
-    <code>git pull</code>
-  </h6>
+  <h6>Hae ja yhdistä etärepositorion muutokset - <code>git pull</code></h6>
   <p>
-    Hakee uusimmat commitit etärepositorion vastaavasta haarasta ja yhdistää ne
-    nykyiseen haaraan.
+    Hakee uusimmat commitit etärepositorion vastaavasta haarasta ja yhdistää ne nykyiseen haaraan.
   </p>
 
-  <h6>
-    Puske muutokset etärepositorioon -
-    <code>git push</code>
-  </h6>
-  <p>Lähettää nykyisen haaran commitit etärepositorion vastaavaan haaraan.</p>
-
-  <h6>
-    Yhdistä haara nykyiseen -
-    <code>git merge haaran-nimi</code>
-  </h6>
+  <h6>Puske muutokset etärepositorioon - <code>git push</code></h6>
   <p>
-    Yhdistää komennossa mainitun haaran nykyiseen haaraan. Varmista, että työpuu
-    on puhdas ennen yhdistämistä, eli kaikki muutokset on commitoitu ja staging
-    on tyhjä.
+    Lähettää nykyisen haaran commitit etärepositorion vastaavaan haaraan.
   </p>
-  <h6>
-    Poista haara -
-    <code>git branch -d haaran-nimi</code>
-  </h6>
+
+  <h6>Yhdistä haara nykyiseen - <code>git merge haaran-nimi</code></h6>
+  <p>
+    Yhdistää komennossa mainitun haaran nykyiseen haaraan. Varmista, että työpuu on puhdas ennen
+    yhdistämistä, eli kaikki muutokset on commitoitu ja staging on tyhjä.
+  </p>
+  <h6>Poista haara - <code>git branch -d haaran-nimi</code></h6>
   <p>
     Poistaa paikallisen haaran. Varmista, että kaikki muutokset on yhdistetty
-    ennen poistamista. Poista etähaara komennolla
-    <code>git push -d origin haaran-nimi</code>
+    ennen poistamista. Poista etähaara komennolla <code>git push -d origin haaran-nimi</code>
   </p>
 
   <h3>Lisäkomennot</h3>
-  <h6>
-    Näytä erot muutosten välillä -
-    <code>git diff</code>
-  </h6>
+  <h6>Näytä erot muutosten välillä - <code>git diff</code></h6>
   <p>
     Vertaa työpuuta viimeisimpään commit-tilaan. Tarkista stagingiin lisätyt
-    erot lisäämällä
-    <code>--staged</code>
+    erot lisäämällä <code>--staged</code>
   </p>
 
   <h6>
-    Palauta tiedosto viime commitin tilaan -
-    <code>git restore index.html</code>
+    Palauta tiedosto viime commitin tilaan - <code>git restore index.html</code>
   </h6>
   <p>
-    Poistaa paikalliset muutokset valitusta tiedostosta (ei muuta
-    commit-historiaa). Huom! Committaamattomat muutokset häviävät.
+    Poistaa paikalliset muutokset valitusta tiedostosta (ei muuta commit-historiaa). Huom! Committaamattomat muutokset
+    häviävät.
   </p>
 
-  <h6>
-    Peru viimeisin commit -
-    <code>git reset HEAD~</code>
-  </h6>
+  <h6>Peru viimeisin commit - <code>git reset HEAD~</code></h6>
   <p>
-    Siirtää haaran taaksepäin committia edeltäneeseen tilaan ja jättää muutokset
-    työpuuhun. Käytä vain, jos committeja ei ole puskettu etärepositorioon.
-    Tiimiprojekteissa käytä mieluummin
-    <code>git revert &lt;commit&gt;</code>
+    Siirtää haaran taaksepäin committia edeltäneeseen tilaan ja jättää muutokset työpuuhun. Käytä vain, jos committeja 
+    ei ole puskettu etärepositorioon. Tiimiprojekteissa käytä mieluummin <code>git revert &lt;commit&gt;</code>
   </p>
 
-  <h6>
-    Näytä commit-historia -
-    <code>git log</code>
-  </h6>
+  <h6>Näytä commit-historia - <code>git log</code></h6>
   <p>
-    Listaa commitit nykyisessä haarassa uusimmasta vanhimpaan. Lisää
-    <code>--oneline</code>
-    tiiviimpään näkymään.
+    Listaa commitit nykyisessä haarassa uusimmasta vanhimpaan. Lisää <code>--oneline</code> tiiviimpään näkymään.
   </p>
 
   <p>
@@ -394,7 +270,6 @@
 
   <p>
     Lisää tietoa komennoista löydät
-    <a href="https://git-scm.com/docs">Gitin dokumentaatiosta</a>
-    .
+    <a href="https://git-scm.com/docs">Gitin dokumentaatiosta</a>.
   </p>
 </section>

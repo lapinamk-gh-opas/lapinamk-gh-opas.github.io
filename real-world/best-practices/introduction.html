@@ -1,99 +1,57 @@
 <section class="introduction">
-  <header>
-    <h2>Git ja GitHub - parhaat käytännöt</h2>
-  </header>
 
-  <p>
-    Tässä osiossa kootaan yhteen Gitin ja GitHubin parhaat käytännöt. Ne
-    toimivat muistilistana tiimityön sujuvoittamiseen ja koodin hallinnan
-    parantamiseen. Hyvien käytäntöjen noudattaminen auttaa pitämään repositorion
-    selkeänä, yhteistyön tehokkaana ja projektin laadukkaana.
-  </p>
+    <header>
+        <h2>Git ja GitHub - parhaat käytännöt</h2>
+    </header>
 
-  <h4>Repositorio</h4>
-  <ul>
-    <li>Pidä repositorio siistinä ja järjestettynä</li>
-    <li>Lisää README-tiedosto, joka kuvaa projektin tarkoituksen</li>
-    <li>
-      Käytä .gitignore-tiedostoa turhien tiedostojen poistamiseen
-      versionhallinnasta
-    </li>
-    <li>
-      Huomioi yksityisyysasetukset (private/public) ja varmista, että projektiin
-      osallistuvilla henkilöillä on tarvittavat käyttöoikeudet
-    </li>
-  </ul>
-  <h4>Haarat</h4>
-  <ul>
-    <li>
-      Käytä haaroja erillisiin ominaisuuksiin, bugien korjauksiin tai
-      kokeiluihin
-    </li>
-    <li>Pidä päähaara (main) aina käyttökelpoisena ja valmiina tuotantoon</li>
-    <li>
-      Poista haarat, jotka on valmiita ja yhdistetty (merged) päähaaraan, jotta
-      repositorio pysyy siistinä
-    </li>
-  </ul>
-  <h4>Commitit</h4>
-  <ul>
-    <li>
-      Kirjoita selkeät ja informatiiviset commit-viestit, jotka kuvaavat
-      muutoksia
-    </li>
-    <li>
-      Commitoi pienissä, loogisissa erissä, jotta muutokset on helppo ymmärtää
-      ja tarvittaessa perua
-    </li>
-    <li>
-      Varmista, että työpuu on puhdas ennen commitointia (kaikki muutokset on
-      commitoitu tai stashattu)
-    </li>
-  </ul>
-  <h4>Push ja Pull</h4>
-  <ul>
-    <li>
-      Vedä (pull) uusimmat muutokset ennen työn aloittamista ja ennen
-      push-komentoa
-    </li>
-    <li>
-      Push-komento kannattaa tehdä säännöllisesti, jotta muutokset tallentuvat
-      etärepositorioon
-    </li>
-    <li>
-      Vältä suuria push-komentoja, jotka sisältävät paljon muutoksia kerralla
-    </li>
-  </ul>
 
-  <h4>Tiimityö</h4>
-  <ul>
-    <li>Sovi tiimin kanssa yhtenäinen branch-strategia ja nimeämiskäytännöt</li>
-    <li>
-      Käytä pull requesteja ja koodikatselmointeja ennen muutosten yhdistämistä
-    </li>
-    <li>
-      Hyödynnä GitHub Projects työn organisointiin ja seurantaan (tästä lisää
-      seuraavassa osiossa)
-    </li>
-  </ul>
+    <p>Tässä osiossa kootaan yhteen Gitin ja GitHubin parhaat käytännöt. Ne toimivat muistilistana
+        tiimityön sujuvoittamiseen ja koodin hallinnan parantamiseen. Hyvien käytäntöjen noudattaminen
+        auttaa pitämään repositorion selkeänä, yhteistyön tehokkaana ja projektin laadukkaana.
+    </p>
 
-  <h4>Turvallisuus</h4>
-  <ul>
-    <li>
-      Käytä vahvoja salasanoja ja kaksivaiheista tunnistautumista
-      GitHub-tililläsi
-    </li>
-    <li>
-      Älä tallenna salasanoja tai arkaluontoisia tietoja versionhallintaan
-    </li>
-    <li>
-      Hyödynnä GitHubin tarjoamia työkaluja, kuten Dependabottia,
-      haavoittuvuuksien hallintaan
-    </li>
-  </ul>
+    <h4>Repositorio</h4>
+    <ul>
 
-  <p class="note-box">
-    Gitin ja GitHubin parhaiden käytäntöjen noudattaminen tekee työstä sujuvaa,
-    vähentää virheitä ja parantaa sekä yhteistyötä että koodin laatua.
-  </p>
+        <li>Pidä repositorio siistinä ja järjestettynä</li>
+        <li>Lisää README-tiedosto, joka kuvaa projektin tarkoituksen</li>
+        <li>Käytä .gitignore-tiedostoa turhien tiedostojen poistamiseen versionhallinnasta</li>
+        <li>Huomioi yksityisyysasetukset (private/public) ja varmista, että projektiin osallistuvilla henkilöillä on tarvittavat käyttöoikeudet</li>
+    </ul>
+    <h4>Haarat</h4>
+    <ul>
+        <li>Käytä haaroja erillisiin ominaisuuksiin, bugikorjauksiin tai kokeiluihin</li>
+        <li>Pidä päähaara (main) aina käyttökelpoisena ja tuotantovalmiina</li>
+        <li>Poista haarat, jotka on valmiita ja yhdistetty (merged) päähaaraan, jotta repositorio pysyy siistinä</li>
+    </ul>
+    <h4>Commitit</h4>
+    <ul>
+        <li>Kirjoita selkeät ja informatiiviset commit-viestit, jotka kuvaavat muutoksia</li>
+        <li>Commitoi pienissä, loogisissa erissä, jotta muutokset on helppo ymmärtää ja tarvittaessa perua</li>
+        <li>Varmista, että työpuu on puhdas ennen commitointia (kaikki muutokset on commitoitu tai stashattu)</li>
+    </ul>
+    <h4>Push ja Pull</h4>
+    <ul>
+        <li>Vedä (pull) uusimmat muutokset ennen työn aloittamista ja ennen push-komentoa</li>
+        <li>Push-komento kannattaa tehdä säännöllisesti, jotta muutokset tallentuvat etärepositorioon</li>
+        <li>Vältä suuria push-komentoja, jotka sisältävät paljon muutoksia kerralla</li>
+    </ul>
+
+    <h4>Tiimityö</h4>
+    <ul>
+        <li>Sovi tiimin kanssa yhtenäinen branch-strategia ja nimeämiskäytännöt</li>
+        <li>Käytä pull requesteja ja koodikatselmointeja ennen muutosten yhdistämistä</li>
+        <li>Hyödynnä GitHub Projects työn organisointiin ja seurantaan (tästä lisää seuraavassa osiossa)</li>
+    </ul>
+
+    <h4>Turvallisuus</h4>
+    <ul>
+        <li>Käytä vahvoja salasanoja ja kaksivaiheista tunnistautumista GitHub-tililläsi</li>
+        <li>Älä tallenna salasanoja tai arkaluontoisia tietoja versionhallintaan</li>
+        <li>Hyödynnä GitHubin tarjoamia työkaluja, kuten Dependabotia, haavoittuvuuksien hallintaan</li>
+    </ul>
+
+    <p class="note-box">Gitin ja GitHubin parhaiden käytäntöjen noudattaminen tekee työstä sujuvaa, vähentää virheitä ja
+        parantaa sekä yhteistyötä että koodin laatua.</p>
+
 </section>

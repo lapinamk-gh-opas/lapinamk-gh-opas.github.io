@@ -1,26 +1,20 @@
 <!DOCTYPE html>
 <html lang="fi">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <!-- Muuta tähän kappaleen otsikko-->
     <title>Tiimityöskentely</title>
 
     <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
     <!-- Bootstrap scripts -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-      defer
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"
+        defer></script>
 
     <!-- Custom CSS stylefiles -->
     <link rel="stylesheet" href="../assets/css/styles.css" />
@@ -36,30 +30,27 @@
     <script src="../assets/js/includeSubContent.js" defer></script>
     <script src="../assets/js/arrows.js" defer></script>
     <script src="../assets/js/accordion.js" defer></script>
-  </head>
+</head>
 
-  <body>
+<body>
     <div data-include="../navbar/nav.html"></div>
 
     <div class="page-layout" id="pageLayout">
-      <div data-include="../sidebar/sidebar.html"></div>
+        <div data-include="../sidebar/sidebar.html"></div>
 
-      <main class="main-container" id="mainContainer">
-        <!-- Muuta tätän otsikko ja numero! -->
-        <h1>2.2 Git-haarat</h1>
-        <!--Tähän tulee linkit kappaleen ala-sivuille -->
-        <a class="page-selection" href="#" data-page="introduction">
-          Perusteet
-        </a>
-        /
-        <a class="page-selection" href="#" data-page="how-to-branches">
-          Toiminta
-        </a>
-        <main id="content" class="content-screen"></main>
-        <div data-include="../arrows/arrows.html"></div>
-      </main>
+        <main class="main-container" id="mainContainer">
+            <!-- Muuta tätän otsikko ja numero! -->
+            <h1>2.2 Git-haarat</h1> 
+            <!--Tähän tulee linkit kappaleen ala-sivuille -->
+            <a class="page-selection" href="#" data-page="introduction">Perusteet</a>
+            /
+            <a class="page-selection" href="#" data-page="how-to-branches">Toiminta</a>
+            <main id="content" class="content-screen"></main>
+            <div data-include="../arrows/arrows.html"></div>
+        </main>
     </div>
 
     <div data-include="../footer/footer.html"></div>
-  </body>
+</body>
+
 </html>

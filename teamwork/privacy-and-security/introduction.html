@@ -1,108 +1,58 @@
 <section class="privacy-and-security">
-  <header>
-    <h1>GitHubin turvallinen käyttö</h1>
-  </header>
 
-  <p>
-    GitHub on maailman laajimmin käytetty versionhallintapalvelu, ja suurin osa
-    ohjelmistoprojekteista hyödyntää sitä tavalla tai toisella. Tämä tekee siitä
-    myös houkuttelevan kohteen hyökkäyksille ja tietomurroille.
-    GitHub-repositorioissa voi olla arkaluontoisia tietoja, kuten salasanoja,
-    API-avaimia, konfiguraatioita tai yhteystietoja. Siksi jokaisen kehittäjän
-    on tärkeää osata huolehtia tietoturvasta ja yksityisyydestä.
-  </p>
+    <header>
+        <h1>GitHubin turvallinen käyttö</h1>
+    </header>
 
-  <h4>Käytä vahvaa tunnistautumista</h4>
-  <p>Yksi tehokkaimmista keinoista suojata oma GitHub-tili on käyttää:</p>
-  <ul>
-    <li>vahvaa, uniikkia salasanaa</li>
-    <li>ja ottaa käyttöön kaksivaiheinen tunnistus (2FA)</li>
-  </ul>
-  <p>Tämä suojaa tiliäsi, vaikka salasana vuotaisi.</p>
+    <p>GitHub on maailman laajimmin käytetty versionhallintapalvelu, ja suurin osa ohjelmistoprojekteista hyödyntää
+        sitä tavalla tai toisella. Tämä tekee siitä myös houkuttelevan kohteen hyökkäyksille ja tietomurroille.
+        GitHub-repositorioissa voi olla arkaluontoisia tietoja, kuten salasanoja, API-avaimia, konfiguraatioita tai
+        yhteystietoja. Siksi jokaisen kehittäjän on tärkeää osata huolehtia tietoturvasta ja yksityisyydestä.</p>
 
-  <p>
-    Kaksivaiheisen tunnistautumisen lisäksi GitHub tukee myös muita turvallisia
-    kirjautumistapoja, kuten autentikaatiosovelluksia, turva-avaimia (
-    <em>security key</em>
-    ), sekä komentorivillä käytettäviä
-    <em>Personal Access Tokeneita</em>
-    ja
-    <em>SSH-avaimia</em>
-    .
-  </p>
+    <h4>Käytä vahvaa tunnistautumista </h4>
+    <p>Yksi tehokkaimmista keinoista suojata oma GitHub-tili on käyttää:</p>
+    <ul>
+        <li>vahvaa, uniikkia salasanaa</li>
+        <li>ja ottaa käyttöön kaksivaiheinen tunnistus (2FA)</li>
+    </ul>
+    <p>Tämä suojaa tiliäsi, vaikka salasana vuotaisi. </p>
 
-  <h4>Pidä ohjelmistot ja työkalut ajan tasalla</h4>
-  <p>
-    Varmista, että käytät aina ajantasaisia versioita Gitistä, GitHubin
-    työpöytäsovelluksesta ja muista kehitystyökaluista. Päivitykset sisältävät
-    usein tietoturvakorjauksia, jotka suojaavat sinua tunnetuilta
-    haavoittuvuuksilta.
-  </p>
-  <p>
-    Voit tarkistaa Gitin version komennolla
-    <code>git --version</code>
-    ja päivittää sen Gitin viralliselta sivulta, käyttöjärjestelmäsi
-    pakettihallinnasta tai komennolla
-    <code>git update-git-for-windows</code>
-    /vastaavalla.
-  </p>
-  <p>
-    Lisäksi, jos käytät kolmannen osapuolen työkaluja tai laajennuksia, tarkista
-    niiden luotettavuus ja päivitä ne säännöllisesti.
-  </p>
+    <p>Kaksivaiheisen tunnistautumisen lisäksi GitHub tukee myös muita turvallisia kirjautumistapoja, kuten
+        autentikaatiosovelluksia, turva-avaimia (<em>security key</em>), sekä komentorivillä käytettäviä
+        <em>Personal Access Tokeneita</em> ja <em>SSH-avaimia</em>.
+    </p>
 
-  <h4>Huolehdi repositorion asetuksista</h4>
-  <p>
-    Varmista, että repositorion yksityisyysasetukset vastaavat projektin
-    tarpeita. Käytä yksityisiä repositorioita, kun työskentelet
-    luottamuksellisten projektien parissa.
-  </p>
-  <p>
-    Huolehdi myös käyttöoikeuksista. Anna tiimin jäsenille vain ne oikeudet,
-    joita he tarvitsevat työssään, ja poista tarpeettomat käyttöoikeudet
-    säännöllisesti.
-  </p>
+    <h4>Pidä ohjelmistot ja työkalut ajan tasalla</h4>
+    <p>Varmista, että käytät aina ajantasaisia versioita Gitistä, GitHubin työpöytäsovelluksesta ja muista
+        kehitystyökaluista. Päivitykset sisältävät usein tietoturvakorjauksia, jotka suojaavat sinua tunnetuilta
+        haavoittuvuuksilta.</p>
+    <p>Voit tarkistaa Gitin version komennolla <code>git --version</code> ja päivittää sen Gitin viralliselta sivulta,
+        käyttöjärjestelmäsi pakettihallinnasta tai komennolla <code>git update-git-for-windows</code>/vastaavalla.</p>
+    <p>Lisäksi, jos käytät kolmannen osapuolen työkaluja tai laajennuksia, tarkista niiden luotettavuus ja
+        päivitä ne säännöllisesti.</p>
 
-  <h4>Ole tarkkana, mitä tietoja jaat</h4>
-  <p>
-    Älä koskaan lisää versiohallintaan salaisia tietoja, kuten salasanoja,
-    tunnuksia tai henkilötietoja. Muista, että kaikki, mitä tallennat Gitin
-    historiaan, säilyy siellä pysyvästi.
-  </p>
-  <p>
-    Jos projekti voi joskus päätyä julkiseksi, vältä lisäämästä sinne mitään
-    luottamuksellista. Git tallentaa kaiken, myös sen, minkä olet myöhemmin
-    poistanut.
-  </p>
+    <h4>Huolehdi repositorion asetuksista</h4>
+    <p>Varmista, että repositorion yksityisyysasetukset vastaavat projektin tarpeita. Käytä yksityisiä
+        repositorioita, kun työskentelet luottamuksellisten projektien parissa.</p>
+    <p>Huolehdi myös käyttöoikeuksista. Anna tiimin jäsenille vain ne oikeudet, joita he tarvitsevat
+        työssään, ja poista tarpeettomat käyttöoikeudet säännöllisesti.</p>
 
-  <h4>Käytä GitHubin tietoturvaominaisuuksia</h4>
-  <p>
-    GitHub tarjoaa myös useita työkaluja, jotka auttavat suojaamaan
-    projektejasi. Esimerkiksi:
-  </p>
+    <h4>Ole tarkkana, mitä tietoja jaat</h4>
+    <p>Älä koskaan lisää versiohallintaan salaisia tietoja, kuten salasanoja, tunnuksia tai henkilötietoja. Muista, että
+        kaikki, mitä tallennat Gitin historiaan, säilyy siellä pysyvästi.</p>
+    <p> Jos projekti voi joskus päätyä julkiseksi, vältä lisäämästä sinne mitään luottamuksellista.
+        Git tallentaa kaiken, myös sen, minkä olet myöhemmin poistanut.</p>
 
-  <ul>
-    <li>
-      Dependabot, joka tarkistaa riippuvuudet haavoittuvuuksien varalta ja
-      ehdottaa päivityksiä
-    </li>
-    <li>
-      Code Scanning (
-      <em>CodeQL</em>
-      ), joka analysoi koodia mahdollisten virheiden ja turvallisuusongelmien
-      varalta
-    </li>
-  </ul>
-  <p>
-    Voit ottaa nämä työkalut käyttöön repositorioissasi ja seurata niiden
-    ilmoituksia säännöllisesti.
-  </p>
+    <h4>Käytä GitHubin tietoturvaominaisuuksia</h4>
+    <p>GitHub tarjoaa myös useita työkaluja, jotka auttavat suojaamaan projektejasi. Esimerkiksi:</p>
 
-  <p class="note-box">
-    <strong>Vinkki:</strong>
-    Löydät GitHubin tietoturva- ja analytiikkaominaisuudet repositorion
-    asetuksista kohdasta
-    <em>Settings → Advanced Security</em>
-    . Kokeile niitä rohkeasti!
-  </p>
+    <ul>
+        <li>Dependabot, joka tarkistaa riippuvuudet haavoittuvuuksien varalta ja ehdottaa päivityksiä</li>
+        <li>Code Scanning (<em>CodeQL</em>), joka analysoi koodia mahdollisten virheiden ja turvallisuusongelmien
+            varalta</li>
+    </ul>
+    <p>Voit ottaa nämä työkalut käyttöön repositorioissasi ja seurata niiden ilmoituksia säännöllisesti.</p>
+
+    <p class="note-box"><strong>Vinkki:</strong> Löydät GitHubin tietoturva- ja analytiikkaominaisuudet repositorion
+        asetuksista kohdasta <em>Settings → Advanced Security</em>. Kokeile niitä rohkeasti!</p>
 </section>
