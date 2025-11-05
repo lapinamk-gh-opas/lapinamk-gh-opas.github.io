@@ -24,9 +24,9 @@ document.addEventListener('sidebar:loaded', () => {
   currentPath = window.location.pathname; // gets current path from URL
   const menuItems = document.querySelectorAll('.sidebar-menu a'); // gets menu items
 
-  linkNames = Array.from(menuItems).map(el => el.getAttribute('href')); // makes array of link href attributes
+  linkNames = Array.from(menuItems).map((el) => el.getAttribute('href')); // makes array of link href atributes
 
-  linkNamesFin = Array.from(menuItems).map(el => el.textContent); // makes array of links text content
+  linkNamesFin = Array.from(menuItems).map((el) => el.textContent); // makes array of links text content
 
   linkIndex = linkNames.indexOf(currentPath); // gets index of currently active link
 
@@ -42,6 +42,7 @@ document.addEventListener('links:loaded', () => {
   const container = document.getElementById('mainContainer'); // gets container of page links
   const subContentPages = container.querySelectorAll('[data-page]'); // get pages from container with data-page attribute
 
+<<<<<<< HEAD
   // makes array of page names from date-page attributes
   pageNames = Array.from(subContentPages).map(el =>
     el.getAttribute('data-page')
@@ -49,6 +50,15 @@ document.addEventListener('links:loaded', () => {
 
   // makes array of page names from text content attributes
   pageNamesFin = Array.from(subContentPages).map(el => el.textContent);
+=======
+  // makes array of page names from date-page atributes
+  pageNames = Array.from(subContentPages).map((el) =>
+    el.getAttribute('data-page')
+  );
+
+  // makes array of page names from text content atributes
+  pageNamesFin = Array.from(subContentPages).map((el) => el.textContent);
+>>>>>>> parent of 9d2eab8 (add preettier confiq file for unified code formatting)
 
   // gets current page index or 0 if there are no sub pages/current page
   pageIndex = currentPage ? pageNames.indexOf(currentPage) : 0;
