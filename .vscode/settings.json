@@ -208,5 +208,8 @@
     "viimeistelyikkuna",
     "workflowta",
     "yhdistämiskonfliktien"
-  ]
+  ],
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.eol": "\n"
 }

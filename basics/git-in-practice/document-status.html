@@ -1,48 +1,42 @@
 <section class="document-status">
   <h1>Git-tiedoston tilat (git status)</h1>
   <p>
-    Tiedoston tila kertoo missä vaiheessa sen muutokset ovat. Tilat näkyvät
-    esimerkiksi VS Code Explorerin hakemistorakenteessa tilakoristeilla (status
-    decorations), eli eri väreillä ja lyhenteillä, sekä
+    Tiedoston tila kertoo missä vaiheessa sen muutokset ovat. Tilat näkyvät esimerkiksi VS Code
+    Explorerin hakemistorakenteessa tilakoristeilla (status decorations), eli eri väreillä ja
+    lyhenteillä, sekä
     <code>git status</code> -komennon tulosteessa.
   </p>
 
   <figure>
-    <img
-      class="wide-image"
-      src="/assets/images/basics/status.png"
-      alt="Git-tiedoston tilat"
-    />
+    <img class="wide-image" src="/assets/images/basics/status.png" alt="Git-tiedoston tilat" />
     <figcaption>Git-tiedoston tilat VS Code -näkymässä</figcaption>
   </figure>
   <p>
-    Komento <code>git status</code> näyttää aina ajantasaisen yhteenvedon
-    repositorion tiedostoista poikkeavien tiedostojen tilanteesta.
+    Komento <code>git status</code> näyttää aina ajantasaisen yhteenvedon repositorion tiedostoista
+    poikkeavien tiedostojen tilanteesta.
   </p>
   <figure>
     <img
       class="wide-image"
       src="/assets/images/basics/status2.png"
-      alt="git status -komennon tulos"
-    />
+      alt="git status -komennon tulos" />
     <figcaption>Komennon 'git status' tulos</figcaption>
   </figure>
 
   <p>
-    Uusi tiedosto näkyy ensin <em>Untracked (U)</em>-tilassa, kunnes lisäät sen
-    komennolla <code>git add &lt;tiedosto&gt;</code>. Tällöin se siirtyy staging-alueelle,
-    muuttuu tilaan <em>Added (A)</em> ja on valmiina seuraavaan committiin. Jos
-    muokkaat jo seurattua tiedostoa se näkyy tilassa <em>Modified (M)</em>,
-    kunnes committaat muutokset repositorioon.
+    Uusi tiedosto näkyy ensin <em>Untracked (U)</em>-tilassa, kunnes lisäät sen komennolla
+    <code>git add &lt;tiedosto&gt;</code>. Tällöin se siirtyy staging-alueelle, muuttuu tilaan
+    <em>Added (A)</em> ja on valmiina seuraavaan committiin. Jos muokkaat jo seurattua tiedostoa se
+    näkyy tilassa <em>Modified (M)</em>, kunnes committaat muutokset repositorioon.
   </p>
   <p>
-    Kun commit on tehty, tiedostojen tilakoristeet katoavat, eikä commitattuja
-    tiedostoja enää näy <code>git status</code> -komennolla.
+    Kun commit on tehty, tiedostojen tilakoristeet katoavat, eikä commitattuja tiedostoja enää näy
+    <code>git status</code> -komennolla.
   </p>
 
   <p>
-    Taulukossa on esitetty yleisimmät tilat, niiden värit, sekä lyhyt kuvaus
-    siitä, mitä tila tarkoittaa käytännössä.
+    Taulukossa on esitetty yleisimmät tilat, niiden värit, sekä lyhyt kuvaus siitä, mitä tila
+    tarkoittaa käytännössä.
   </p>
 
   <figure>
@@ -59,17 +53,14 @@
           <td>Untracked (U)</td>
           <td>Vihreä</td>
           <td>
-            Uusi tiedosto, jota Git ei vielä seuraa. Lisää versiohistoriaan
-            komennolla <code>git add &lt;tiedosto&gt;</code>
+            Uusi tiedosto, jota Git ei vielä seuraa. Lisää versiohistoriaan komennolla
+            <code>git add &lt;tiedosto&gt;</code>
           </td>
         </tr>
         <tr>
           <td>Unmodified (-)</td>
           <td>Ei väriä</td>
-          <td>
-            Ei muutoksia edellisen commitin jälkeen, synkassa repositorion
-            kanssa
-          </td>
+          <td> Ei muutoksia edellisen commitin jälkeen, synkassa repositorion kanssa </td>
         </tr>
         <tr>
           <td>Modified (M)</td>
@@ -79,9 +70,7 @@
         <tr>
           <td>Added (A)</td>
           <td>Vihreä</td>
-          <td>
-            Tiedosto on lisätty stagingiin ja on valmis commitille
-          </td>
+          <td> Tiedosto on lisätty stagingiin ja on valmis commitille </td>
         </tr>
         <tr>
           <td>Deleted (D)</td>
@@ -98,7 +87,7 @@
     <figcaption>Tiedostojen tilat, värit ja selitys</figcaption>
   </figure>
   <p>
-    Tämä tarjoaa visuaalisen yleiskuvan projektin tilasta yhdellä silmäyksellä ja helpottaa seuraamaan, mitä 
-    tiedostoille on tapahtunut.
+    Tämä tarjoaa visuaalisen yleiskuvan projektin tilasta yhdellä silmäyksellä ja helpottaa
+    seuraamaan, mitä tiedostoille on tapahtunut.
   </p>
 </section>

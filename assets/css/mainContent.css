@@ -113,6 +113,10 @@ figure {
   text-align: end;
 }
 
+.page-selection {
+  white-space: nowrap !important;
+}
+
 .page-selection.hide {
   display: none;
 }
@@ -214,8 +218,8 @@ figcaption {
 
 /* red exclamation mark for important list items */
 .warning::marker {
-  content: "!  ";
-  color: #BD462A;
+  content: '!  ';
+  color: #bd462a;
   font-weight: bold;
   font-size: 1.2em;
 }

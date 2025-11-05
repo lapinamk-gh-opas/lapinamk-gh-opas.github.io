@@ -6,20 +6,26 @@ let sidebarLoaded = false;
 let arrowsLoaded = false;
 // Escapes HTML metacharacters in a string
 function escapeHTML(str) {
-  return str.replace(/[&<>"']/g, function(m) {
+  return str.replace(/[&<>"']/g, function (m) {
     switch (m) {
-      case "&": return "&amp;";
-      case "<": return "&lt;";
-      case ">": return "&gt;";
-      case '"': return "&quot;";
-      case "'": return "&#39;";
-      default: return m;
+      case '&':
+        return '&amp;';
+      case '<':
+        return '&lt;';
+      case '>':
+        return '&gt;';
+      case '"':
+        return '&quot;';
+      case "'":
+        return '&#39;';
+      default:
+        return m;
     }
   });
 }
 
-document.querySelectorAll("[data-include]").forEach(async (el) => {
-  const path = el.getAttribute("data-include"); // gets path from divs data-include attribute
+document.querySelectorAll('[data-include]').forEach(async (el) => {
+  const path = el.getAttribute('data-include'); // gets path from divs data-include attribute
 
   try {
     const content = await fetch(path); // fetches the content from the path
@@ -29,15 +35,15 @@ document.querySelectorAll("[data-include]").forEach(async (el) => {
     el.outerHTML = html; // sets the content inside the div
 
     // dispatches event when sidebar is loaded (this is used to launch sidebar.js)
-    if (path.includes("/sidebar/sidebar.html")) {
-      document.dispatchEvent(new Event("sidebar-component:loaded"));
+    if (path.includes('/sidebar/sidebar.html')) {
+      document.dispatchEvent(new Event('sidebar-component:loaded'));
       sidebarLoaded = true;
     }
-    if (path.includes("/arrows/arrows.html")) {
+    if (path.includes('/arrows/arrows.html')) {
       arrowsLoaded = true;
     }
     if (sidebarLoaded && arrowsLoaded) {
-      document.dispatchEvent(new Event("sidebar:loaded"));
+      document.dispatchEvent(new Event('sidebar:loaded'));
     }
   } catch (err) {
     // in case of error, shows error message inside the div

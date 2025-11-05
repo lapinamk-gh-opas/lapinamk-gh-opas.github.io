@@ -1,5 +1,5 @@
 document.addEventListener('subContent:loaded', async () => {
-  document.querySelectorAll('code').forEach(codeElement => {
+  document.querySelectorAll('code').forEach((codeElement) => {
     if (codeElement.classList.contains('notification-code')) {
       return;
     }
@@ -11,7 +11,7 @@ document.addEventListener('subContent:loaded', async () => {
       navigator.clipboard
         .writeText(code)
         .then(() => showNotification(' kopioitu leikepöydälle', code))
-        .catch(err => showNotification('Kopiointi epäonnistui', err));
+        .catch((err) => showNotification('Kopiointi epäonnistui', err));
     });
   });
 });

@@ -5,10 +5,10 @@
 export function getPageFromHash() {
   const content = location.hash.substring(1); // gets hash part of URL and removes #
   if (!content) {
-    const container = document.getElementById("mainContainer"); // gets main container div
-    const first = container.querySelectorAll("[data-page]")[0]; // gets first link with data-page attribute
+    const container = document.getElementById('mainContainer'); // gets main container div
+    const first = container.querySelectorAll('[data-page]')[0]; // gets first link with data-page attribute
     if (first) {
-      const firstSubContent = first.getAttribute("data-page"); // gets value of data-page attribute
+      const firstSubContent = first.getAttribute('data-page'); // gets value of data-page attribute
       location.hash = firstSubContent; // sets URL hash to that value
       return firstSubContent; // returns that value
     }
@@ -33,7 +33,7 @@ export function getBasePath() {
 // ** 1. subContent is content to show (eg. installing-git.html)
 // ** 2. basePath is folder where content can be found (eg. git-install)
 export async function loadPage(subContent, basePath) {
-  const container = document.getElementById("content"); // looks for div by id
+  const container = document.getElementById('content'); // looks for div by id
   try {
     if (basePath && subContent) {
       const content = await fetch(`${basePath}/${subContent}.html`); // fetches the content to show
@@ -41,8 +41,8 @@ export async function loadPage(subContent, basePath) {
       container.innerHTML = await content.text(); // sets content to container div
       location.hash = subContent;
     }
-    document.dispatchEvent(new Event("links:loaded"));
-    document.dispatchEvent(new Event("subContent:loaded"));
+    document.dispatchEvent(new Event('links:loaded'));
+    document.dispatchEvent(new Event('subContent:loaded'));
   } catch (err) {
     container.innerHTML = `<p>Virhe ladattaessa: ${err}</p>`; // incase of error, show error message
   }

@@ -3,41 +3,36 @@
     <h1>Miten haarat toimivat Gitissä</h1>
   </header>
   <p>
-    Tässä osiossa opit, kuinka luodaan uusi haara paikallisesti, miten muutokset
-    tallennetaan ja siirretään etärepositorioon, sekä lopuksi kuinka yhdistät
-    (merge) valmiin <em>feature</em>-haaran takaisin
-    <strong>main</strong>-haaraan. Menetelmät soveltuvat erityisesti pieniin
-    projekteihin ja henkilökohtaiseen kehitystyöhön. Tiimityössä on kuitenkin
-    suositeltavaa hyödyntää
-    <a href="/teamwork/pullrequests.html">Pull Requestejä</a> koodikantojen
+    Tässä osiossa opit, kuinka luodaan uusi haara paikallisesti, miten muutokset tallennetaan ja
+    siirretään etärepositorioon, sekä lopuksi kuinka yhdistät (merge) valmiin
+    <em>feature</em>-haaran takaisin <strong>main</strong>-haaraan. Menetelmät soveltuvat
+    erityisesti pieniin projekteihin ja henkilökohtaiseen kehitystyöhön. Tiimityössä on kuitenkin
+    suositeltavaa hyödyntää <a href="/teamwork/pullrequests.html">Pull Requestejä</a> koodikantojen
     yhdistämiseen.
   </p>
   <!--Accordion 1.-->
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
-    data-title="Uuden haaran luominen komentokehottella"
-  >
+    data-title="Uuden haaran luominen komentokehottella">
     <div class="contentToAccordion">
       <ol>
         <li>
           <ul>
             <li>
-              Siirry kansioon johon olet luonut git paikallisen repositorion
-              komennolla<br />
+              Siirry kansioon johon olet luonut git paikallisen repositorion komennolla<br />
               <code>cd polku/kansioon/jossa/git-projekti/on</code>
             </li>
             <li>
-              Git Bash osaa näyttää myös haaran jossa parhaillaan
-              työskennellään, kuten esimerkissä <code>main</code>
+              Git Bash osaa näyttää myös haaran jossa parhaillaan työskennellään, kuten esimerkissä
+              <code>main</code>
             </li>
           </ul>
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/branches/git branches 1.webp"
-              alt="Siirtyminen oikeaan kansioon"
-            />
+              alt="Siirtyminen oikeaan kansioon" />
             <figcaption>Siirtyminen oikeaan kansioon</figcaption>
           </figure>
         </li>
@@ -53,9 +48,7 @@
             </li>
             <li>
               Lisää uusi tiedosto komennolla<br />
-              <code
-                >echo "Teksti sisältö tähän" >> tiedoston-nimi-tähän.md</code
-              >
+              <code>echo "Teksti sisältö tähän" >> tiedoston-nimi-tähän.md</code>
             </li>
             <li>
               Muokkaa olemassa olevaa README.md tiedostoa komennolla<br />
@@ -66,11 +59,8 @@
             <img
               class="wide-image"
               src="../../assets/images/basics/IDE-and-usage/terminal/Git usage terminal 12.webp"
-              alt="Uusi haara ja tiedostomuutokset Git Bashillä"
-            />
-            <figcaption>
-              Uusi haara ja tiedostomuutokset Git Bashillä
-            </figcaption>
+              alt="Uusi haara ja tiedostomuutokset Git Bashillä" />
+            <figcaption> Uusi haara ja tiedostomuutokset Git Bashillä </figcaption>
           </figure>
         </li>
         <li>
@@ -83,27 +73,21 @@
               <ul>
                 <li>
                   Tämän voisi tehdä myös komennolla <br />
-                  <code>
-                    git add uuden-tiedoston-nimi.md muutetun-tiedoston-nimi.md
-                  </code>
+                  <code> git add uuden-tiedoston-nimi.md muutetun-tiedoston-nimi.md </code>
                 </li>
                 <li>
-                  Jos muutokset koskevat useita tiedostoja, on helpompi lisätä
-                  kaikki tiedostot kerralla käyttäen komentoa
+                  Jos muutokset koskevat useita tiedostoja, on helpompi lisätä kaikki tiedostot
+                  kerralla käyttäen komentoa
                   <code>git add .</code>
                 </li>
 
                 <li class="warning">
                   Käytä komentoa
                   <code>git add .</code>
-                  varoen. Varsinkin jos projekti sisältää arkaluontoista tietoa.
-                  Harkitse myös
+                  varoen. Varsinkin jos projekti sisältää arkaluontoista tietoa. Harkitse myös
                   <code>.gitignore</code>
-                  -tiedoston lisäämistä projektiin. Lisää tietoa gitignoresta
-                  luvussa
-                  <a href="/teamwork/privacy-and-security.html"
-                    >2.5 Yksityisyys ja tietoturva</a
-                  >.
+                  -tiedoston lisäämistä projektiin. Lisää tietoa gitignoresta luvussa
+                  <a href="/teamwork/privacy-and-security.html">2.5 Yksityisyys ja tietoturva</a>.
                 </li>
               </ul>
             </div>
@@ -119,8 +103,8 @@
               <code>push</code> vie muutokset etärepositorioon<br />
               <code>-u</code> asettaa paikallisen haaran seuraamaan etähaaraa
               <br />
-              <code>origin</code> etärepositorion nimi (oletus nimi origin),
-              viite repon url-osoitteeseen<br />
+              <code>origin</code> etärepositorion nimi (oletus nimi origin), viite repon
+              url-osoitteeseen<br />
               <code>haaran-nimi</code> eli haara jossa olet
             </p>
           </ul>
@@ -129,11 +113,9 @@
             <img
               class="wide-image"
               src="../../assets/images/basics/IDE-and-usage/terminal/Git usage terminal 13.webp"
-              alt="Uuden haaran muutosten commitointi ja vieminen etärepositorioon Git Bashillä"
-            />
+              alt="Uuden haaran muutosten commitointi ja vieminen etärepositorioon Git Bashillä" />
             <figcaption>
-              Uuden haaran muutosten commitointi ja vieminen etärepositorioon
-              Git Bashillä
+              Uuden haaran muutosten commitointi ja vieminen etärepositorioon Git Bashillä
             </figcaption>
           </figure>
         </li>
@@ -147,8 +129,7 @@
             <img
               class="wide-image"
               src="../../assets/images/basics/IDE-and-usage/terminal/Git usage terminal 14.webp"
-              alt="Uusi haara GitHubissa"
-            />
+              alt="Uusi haara GitHubissa" />
             <figcaption>Uusi haara GitHubissa</figcaption>
           </figure>
           <ul>
@@ -158,8 +139,7 @@
             <img
               class="wide-image"
               src="../../assets/images/basics/IDE-and-usage/terminal/Git usage terminal 15.webp"
-              alt="Muutokset GitHubissa"
-            />
+              alt="Muutokset GitHubissa" />
             <figcaption>Muutokset GitHubissa</figcaption>
           </figure>
         </li>
@@ -171,18 +151,15 @@
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
-    data-title="Feature-haaran yhdistäminen main-haaraan komentokehottella"
-  >
+    data-title="Feature-haaran yhdistäminen main-haaraan komentokehottella">
     <div class="contentToAccordion">
       <div class="note-box">
         <ul>
           <li class="warning">
-            Haarojen yhdistämistä tässä esitellyllä tavalla voi käyttää pienissä
-            projekteissa ja kehitystyötä yksin tehdessä, mutta tiiminä
-            työskennellessä ja isompien projektien parissa kannattaa soveltaa
-            osion
-            <a class="no-line-change" href="/teamwork/pullrequests.html">
-              2.3 Pull Request </a
+            Haarojen yhdistämistä tässä esitellyllä tavalla voi käyttää pienissä projekteissa ja
+            kehitystyötä yksin tehdessä, mutta tiiminä työskennellessä ja isompien projektien
+            parissa kannattaa soveltaa osion
+            <a class="no-line-change" href="/teamwork/pullrequests.html"> 2.3 Pull Request </a
             >oppeja.
           </li>
         </ul>
@@ -199,8 +176,8 @@
               <strong>mainiksi</strong>
             </li>
             <li>
-              yhdistä etärepositorion main-haaran viimeisin tila paikalliseen
-              main-haaraan komennolla<br />
+              yhdistä etärepositorion main-haaran viimeisin tila paikalliseen main-haaraan
+              komennolla<br />
               <code>git pull origin main</code>
               <p class="note-box margin-right keep-margin">
                 Jos käytit aiemmin komentoa
@@ -213,23 +190,19 @@
             <img
               class="wide-image"
               src="../../assets/images/basics/IDE-and-usage/terminal/Git usage terminal 16.webp"
-              alt="Siirry main-haaraan ja hae sen viimeisin tila Git Bashillä"
-            />
-            <figcaption>
-              Siirry main-haaraan ja hae sen viimeisin tila Git Bashillä
-            </figcaption>
+              alt="Siirry main-haaraan ja hae sen viimeisin tila Git Bashillä" />
+            <figcaption> Siirry main-haaraan ja hae sen viimeisin tila Git Bashillä </figcaption>
           </figure>
         </li>
         <li>
           <ul>
             <li>
-              Tuo paikallisen feature-haaran muutokset paikalliseen main haaraan
-              komennolla<br />
+              Tuo paikallisen feature-haaran muutokset paikalliseen main haaraan komennolla<br />
               <code>git merge yhdistettävän-haaran-nimi</code>
             </li>
             <p class="note-box margin-right">
-              Jos konflikteja ilmenee, Git ilmoittaa ja pyytää ratkaisemaan ne
-              tässä kohtaa. Tästä lisää osiossa
+              Jos konflikteja ilmenee, Git ilmoittaa ja pyytää ratkaisemaan ne tässä kohtaa. Tästä
+              lisää osiossa
               <a href="/teamwork/merge-conflicts.html">2.4 Merge-konfliktit</a>
             </p>
             <li>
@@ -246,19 +219,16 @@
             <img
               class="wide-image"
               src="../../assets/images/basics/IDE-and-usage/terminal/Git usage terminal 17.webp"
-              alt="Uuden haaran muutosten commitointi ja vieminen etärepositorioon Git Bashillä"
-            />
+              alt="Uuden haaran muutosten commitointi ja vieminen etärepositorioon Git Bashillä" />
             <figcaption>
-              Uuden haaran muutosten commitointi ja vieminen etärepositorioon
-              Git Bashillä
+              Uuden haaran muutosten commitointi ja vieminen etärepositorioon Git Bashillä
             </figcaption>
           </figure>
         </li>
         <li>
           <ul>
             <li>
-              Siirry selaimella GitHubiin ja klikkaa haaran valintaan
-              käytettävää alasvetovalikkoa
+              Siirry selaimella GitHubiin ja klikkaa haaran valintaan käytettävää alasvetovalikkoa
             </li>
             <li>Valitse listasta <strong>main</strong> haara</li>
           </ul>
@@ -266,22 +236,20 @@
             <img
               class="wide-image"
               src="../../assets/images/teamwork/branches/git branches 2.webp"
-              alt="Uusi haara GitHubissa"
-            />
+              alt="Uusi haara GitHubissa" />
             <figcaption>Haarat GitHubissa</figcaption>
           </figure>
           <ul>
             <li>
-              Tarkastele näkymää <strong>main</strong> haaran sisällöstä, joka
-              vastaa yhdistetyn haaran sisältöä
+              Tarkastele näkymää <strong>main</strong> haaran sisällöstä, joka vastaa yhdistetyn
+              haaran sisältöä
             </li>
           </ul>
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/branches/git branches 3.webp"
-              alt="Muutokset GitHubissa"
-            />
+              alt="Muutokset GitHubissa" />
             <figcaption>Muutokset GitHubissa</figcaption>
           </figure>
         </li>

@@ -1,94 +1,93 @@
 <section class="branches">
+  <header>
+    <h1>Git-haarojen perusteet</h1>
+  </header>
 
-    <header>
-        <h1>Git-haarojen perusteet</h1>
-    </header>
+  <p>
+    Helpoin tapa aloittaa Gitin käyttö on työskennellä
+    <strong>suoraan päähaarassa</strong> (<em>main</em>). Tällöin kaikki muutokset tehdään samaan
+    haaraan. Muutokset kannattaa pitää pieninä ja commitoida ne säännöllisesti, jotta historia pysyy
+    selkeänä ja luotettavana. Usein Gitin opettelu aloitetaan näin ennen siirtymistä erillisten
+    kehityshaarojen käyttöön.
+  </p>
 
-    <p>Helpoin tapa aloittaa Gitin käyttö on työskennellä <strong>suoraan 
-        päähaarassa</strong> (<em>main</em>). Tällöin kaikki muutokset
-        tehdään samaan haaraan. Muutokset kannattaa pitää pieninä ja commitoida
-        ne säännöllisesti, jotta historia pysyy
-        selkeänä ja luotettavana. Usein Gitin opettelu aloitetaan näin ennen
-        siirtymistä erillisten kehityshaarojen
-        käyttöön.</p>
+  <p>
+    Haarat (tuttavallisemmin <em>branchit</em>) ovat Gitin keskeinen ominaisuus, joka mahdollistaa
+    <strong>samanaikaisen kehitystyön</strong> ilman, että päähaara (<em>main</em>) häiriintyy.
+    Päähaarasta voidaan <em>forkata</em> eli haarauttaa erillinen <em>kehityshaara</em> (feature
+    branch). Kehityshaarassa voidaan tehdä muutoksia, kokeilla uusia ominaisuuksia tai korjata
+    bugeja ilman, että ne vaikuttavat suoraan päähaaraan.
+  </p>
 
-    <p>Haarat (tuttavallisemmin <em>branchit</em>) ovat Gitin keskeinen
-        ominaisuus, joka mahdollistaa <strong>samanaikaisen
-        kehitystyön</strong> ilman, että päähaara (<em>main</em>) häiriintyy. Päähaarasta
-        voidaan <em>forkata</em> eli haarauttaa
-        erillinen <em>kehityshaara</em> (feature branch). Kehityshaarassa
-        voidaan tehdä muutoksia,
-        kokeilla uusia ominaisuuksia tai korjata bugeja ilman, että ne
-        vaikuttavat suoraan päähaaraan.</p>
+  <figure>
+    <img class="wide-image" src="/assets/images/teamwork/flow.webp" alt="Git haaramalli" />
+    <figcaption>Git workflow kehityshaaran hallintaan tiimityössä </figcaption>
+  </figure>
+  <h3>Workflow kehityshaaran hallintaan</h3>
+  <ol>
+    <li>
+      Luo erillinen kehityshaara <em>mainista</em> ja nimeä se kuvaavasti (esim. login), jotta
+      muutokset pysyvät erillään päähaarasta <code>git checkout -b login</code>
+    </li>
+    <li>
+      Tee muutokset ja commitoi ne pienissä paloissa selkeillä viesteillä. Muista myös testata, että
+      muutos toimii tuotantoa vastaavassa ympäristössä <code>git push origin login</code>
+    </li>
+    <li>Avaa pull request <em>GitHub-portaalissa</em> selaimessa, kuvaa mitä teit ja miksi</li>
+    <li>Keskustele tiimin kanssa ja tee tarvittavat muutokset </li>
+    <li>Hanki hyväksyntä ja yhdistä main-haaraan <code>git merge login</code></li>
+    <li>Poista haara, jotta ympäristö pysyy hallittuna <code>git branch -d login</code></li>
+  </ol>
+  <p>
+    Tarkemmat selitykset koodeista voit katsoa kappaleesta
+    <a href="/basics/basic-commands.html#introduction">Perusteet / 1.3 Keskeiset komennot</a>
+  </p>
 
-    <figure>
-        <img class="wide-image" src="/assets/images/teamwork/flow.webp" alt="Git haaramalli" />
-        <figcaption>Git workflow kehityshaaran hallintaan tiimityössä
-        </figcaption>
-    </figure>
-    <h3>Workflow kehityshaaran hallintaan</h3>
-    <ol>
-        <li>Luo erillinen kehityshaara <em>mainista</em> ja nimeä se kuvaavasti
-            (esim. login), jotta muutokset pysyvät
-            erillään päähaarasta <code>git checkout -b login</code></li>
-        <li>Tee muutokset ja commitoi ne pienissä paloissa selkeillä viesteillä.
-            Muista myös testata, että muutos toimii
-            tuotantoa vastaavassa ympäristössä
-            <code>git push origin login</code></li>
-        <li>Avaa pull request <em>GitHub-portaalissa</em> selaimessa, kuvaa mitä
-            teit ja miksi</li>
-        <li>Keskustele tiimin kanssa ja tee tarvittavat muutokset </li>
-        <li>Hanki hyväksyntä ja yhdistä main-haaraan
-            <code>git merge login</code></li>
-        <li>Poista haara, jotta ympäristö pysyy hallittuna
-            <code>git branch -d login</code></li>
-    </ol>
-    <p>Tarkemmat selitykset koodeista voit katsoa kappaleesta <a
-            href="/basics/basic-commands.html#introduction">Perusteet / 1.3 Keskeiset
-            komennot</a></p>
+  <div
+    class="accordion"
+    data-include="../../accordion-element/accordion.html"
+    data-title="Git-haarojen plussat ja miinukset">
+    <div class="contentToAccordion">
+      <h6>Plussat</h6>
+      <ul>
+        <li>
+          Jokainen tiimin jäsen voi työskennellä omassa haarassaan ilman, että muiden työ keskeytyy
+        </li>
+        <li>
+          Useiden ominaisuuksien kehitys onnistuu rinnakkain, mikä lisää tuottavuutta ja vähentää
+          konflikteja
+        </li>
+        <li>
+          Koodin tarkastaminen ja hyväksyntä onnistuvat pull requestien kautta ennen kuin muutokset
+          tulevat päähaaraan
+        </li>
+        <li>
+          Haarat tarjoavat turvallisen testiympäristön, jossa uusia ideoita voi kokeilla ilman
+          päähaaran rikkomisen riskiä
+        </li>
+      </ul>
 
-
-    <div
-        class="accordion"
-        data-include="../../accordion-element/accordion.html"
-        data-title="Git-haarojen plussat ja miinukset">
-        <div class="contentToAccordion">
-            <h6>Plussat</h6>
-            <ul>
-                <li>Jokainen tiimin jäsen voi työskennellä omassa haarassaan
-                    ilman, että muiden työ keskeytyy</li>
-                <li>Useiden ominaisuuksien kehitys onnistuu rinnakkain, mikä
-                    lisää tuottavuutta ja vähentää konflikteja
-                </li>
-                <li>Koodin tarkastaminen ja hyväksyntä onnistuvat pull
-                    requestien kautta ennen kuin muutokset tulevat
-                    päähaaraan</li>
-                <li>Haarat tarjoavat turvallisen testiympäristön, jossa uusia
-                    ideoita voi kokeilla ilman päähaaran
-                    rikkomisen riskiä</li>
-            </ul>
-
-            <h6>Miinukset</h6>
-            <ul>
-                <li>Haarojen hallinta vaatii kurinalaisuutta: selkeät nimet,
-                    säännöllinen päivittäminen ja turhien
-                    haarojen poistaminen</li>
-                <li>Yhdistäminen (merge) voi aiheuttaa konflikteja, jotka on
-                    ratkaistava huolellisesti ennen jatkamista
-                </li>
-            </ul>
-        </div>
+      <h6>Miinukset</h6>
+      <ul>
+        <li>
+          Haarojen hallinta vaatii kurinalaisuutta: selkeät nimet, säännöllinen päivittäminen ja
+          turhien haarojen poistaminen
+        </li>
+        <li>
+          Yhdistäminen (merge) voi aiheuttaa konflikteja, jotka on ratkaistava huolellisesti ennen
+          jatkamista
+        </li>
+      </ul>
     </div>
+  </div>
 
-    <p>
-        Yhteenvetona voidaan todeta, että haarat ovat <strong>välttämätön 
-        työkalu</strong> tehokkaaseen tiimityöhön Gitin kanssa. Ne
-        mahdollistavat joustavan ja järjestelmällisen kehitystyön, tehostavat
-        työntekoa ja edistävät yhteistyötä
-        tiimin jäsenten välillä.
-    </p>
+  <p>
+    Yhteenvetona voidaan todeta, että haarat ovat <strong>välttämätön työkalu</strong> tehokkaaseen
+    tiimityöhön Gitin kanssa. Ne mahdollistavat joustavan ja järjestelmällisen kehitystyön,
+    tehostavat työntekoa ja edistävät yhteistyötä tiimin jäsenten välillä.
+  </p>
 
-    <p class="note-box"><strong>Vinkki!</strong> Muista hyödyntää sivupalkin
-        muistilistoja tarpeen mukaan!</p>
-
+  <p class="note-box">
+    <strong>Vinkki!</strong> Muista hyödyntää sivupalkin muistilistoja tarpeen mukaan!
+  </p>
 </section>
