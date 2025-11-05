@@ -1,5 +1,5 @@
 // This JS file enables functionality to content pages arrow buttons (next/prev).
-// user can navigate trough sub pages and different parts by pressing arrow buttons.
+// user can navigate trugh sub pages and different parts by pressing arrowbuttons.
 import { getPageFromHash, getBasePath, loadPage } from '/assets/js/helpers.js';
 
 // Variables
@@ -24,9 +24,9 @@ document.addEventListener('sidebar:loaded', () => {
   currentPath = window.location.pathname; // gets current path from URL
   const menuItems = document.querySelectorAll('.sidebar-menu a'); // gets menu items
 
-  linkNames = Array.from(menuItems).map(el => el.getAttribute('href')); // makes array of link href attributes
+  linkNames = Array.from(menuItems).map((el) => el.getAttribute('href')); // makes array of link href atributes
 
-  linkNamesFin = Array.from(menuItems).map(el => el.textContent); // makes array of links text content
+  linkNamesFin = Array.from(menuItems).map((el) => el.textContent); // makes array of links text content
 
   linkIndex = linkNames.indexOf(currentPath); // gets index of currently active link
 
@@ -35,20 +35,18 @@ document.addEventListener('sidebar:loaded', () => {
 });
 
 //Custom event launches this after previous phase is ready. Also launces if user navigates from
-// top navigation links. In that case custom event launches from includeSubContent.js
+// top part page navigationla links. In that case custom event launches from includeSubContent.js
 // Here sub pages are set to variables for later navigational and text rendering purposes.
 document.addEventListener('links:loaded', () => {
   currentPage = getPageFromHash(); // gets current page from URL hash
   const container = document.getElementById('mainContainer'); // gets container of page links
   const subContentPages = container.querySelectorAll('[data-page]'); // get pages from container with data-page attribute
 
-  // makes array of page names from date-page attributes
-  pageNames = Array.from(subContentPages).map(el =>
-    el.getAttribute('data-page')
-  );
+  // makes array of page names from date-page atributes
+  pageNames = Array.from(subContentPages).map((el) => el.getAttribute('data-page'));
 
-  // makes array of page names from text content attributes
-  pageNamesFin = Array.from(subContentPages).map(el => el.textContent);
+  // makes array of page names from text content atributes
+  pageNamesFin = Array.from(subContentPages).map((el) => el.textContent);
 
   // gets current page index or 0 if there are no sub pages/current page
   pageIndex = currentPage ? pageNames.indexOf(currentPage) : 0;
@@ -66,7 +64,9 @@ document.addEventListener('subContent:loaded', () => {
   // removes old active class
   activeRemove && activeRemove.classList.remove('active');
   // adds new active class
-  pageIndex >= 0 && subContentPages[pageIndex].classList.add('active');
+  if (subContentPages.length > 0 && pageIndex >= 0) {
+    subContentPages[pageIndex].classList.add('active');
+  }
 });
 
 // Custom event launches this after previous phase is ready.
@@ -149,11 +149,10 @@ document.addEventListener('pages:loaded', () => {
 async function getLastSubPageName(sectionPath) {
   try {
     const part = await fetch(sectionPath); //gets part by path given as parameter
-    if (!part.ok)
-      throw new Error(`Tiedostoa tai polkua: ${sectionPath}, ei löytynyt`); //throws error is part is not found
+    if (!part.ok) throw new Error(`Tiedostoa tai polkua: ${sectionPath}, ei löytynyt`); //throws error is part is not found
     const html = await part.text(); //loads temporary html dom from part
 
-    const tmp = document.createElement('div'); //creates temporary div element
+    const tmp = document.createElement('div'); //creates temportary div element
     tmp.innerHTML = html; //set loaded dom inside div
     const pages = [...tmp.querySelectorAll('[data-page]')]; //looks for sub pages
     return pages.length ? pages[pages.length - 1].dataset.page : null; // if sub pages exists returns last pages name
@@ -170,11 +169,7 @@ document.addEventListener('keyup', function (event) {
         window.location.href = '/index.html';
         break;
       }
-      if (
-        pageIndex === 0 &&
-        linkIndex === -1 &&
-        currentPath === '/index.html'
-      ) {
+      if (pageIndex === 0 && linkIndex === -1 && currentPath === '/index.html') {
         break;
       } else {
         navPrev();

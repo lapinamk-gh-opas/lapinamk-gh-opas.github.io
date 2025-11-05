@@ -44,6 +44,6 @@ export async function loadPage(subContent, basePath) {
     document.dispatchEvent(new Event('links:loaded'));
     document.dispatchEvent(new Event('subContent:loaded'));
   } catch (err) {
-    container.innerHTML = `<p>Virhe ladattaessa: ${err}</p>`; // in case of error, show error message
+    container.innerHTML = `<p>Virhe ladattaessa: ${err}</p>`; // incase of error, show error message
   }
 }

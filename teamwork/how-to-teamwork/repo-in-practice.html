@@ -4,48 +4,36 @@
   </header>
 
   <p>
-    GitHub-repositorion
-    <strong>asetuksista</strong>
-    hallitaan projektin näkyvyyttä, käyttäjien käyttöoikeuksia ja suojauksia.
-    Oikein määritetyt asetukset parantavat projektin tietoturvaa,
+    GitHub-repositorion <strong>asetuksista</strong> hallitaan projektin näkyvyyttä, käyttäjien
+    käyttöoikeuksia ja suojauksia. Oikein määritetyt asetukset parantavat projektin tietoturvaa,
     ylläpidettävyyttä ja yhteistyötä.
   </p>
 
   <p>
-    Tässä osiossa käydään läpi tärkeimmät asetukset, kuten repositorion
-    näkyvyyden muuttaminen, käyttäjien (
-    <em>collaborators</em>
-    ) lisääminen, haarojen suojaaminen (
-    <em>branch protection rules</em>
-    ), sekä repositorion poistaminen. Lisäksi tutustutaan muutamiin hyödyllisiin
-    perusasetuksiin, kuten oletushaaran uudelleen nimeäminen ja vaihtaminen sekä
-    projektin kuvauksen lisääminen.
+    Tässä osiossa käydään läpi tärkeimmät asetukset, kuten repositorion näkyvyyden muuttaminen,
+    käyttäjien (<em>collaborators</em>) lisääminen, haarojen suojaaminen (<em
+      >branch protection rules</em
+    >), sekä repositorion poistaminen. Lisäksi tutustutaan muutamiin hyödyllisiin perusasetuksiin,
+    kuten oletushaaran uudelleen nimeäminen ja vaihtaminen sekä projektin kuvauksen lisääminen
   </p>
 
   <!--Accordion 1-->
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
-    data-title="Repositorion näkyvyyden muuttaminen"
-  >
+    data-title="Repositorion näkyvyyden muuttaminen">
     <div class="contentToAccordion">
       <div class="note-box">
         <ul>
           <li class="warning">
-            GitHub-repositorion
-            <strong>julkiseksi</strong>
-            (
-            <em>public</em>
-            ) muuttaminen tuo koko sen sisällön ja
-            <strong>kaikki aiemmat commit-historiat</strong>
-            nimensä mukaisesti julkisesti nähtäville. Tämä siis koskee myös
-            tiedostoja ja tietoja, jotka ovat aikaisemmin olleet repositoriossa,
-            mutta poistettu projektista.
+            GitHub-repositorion<strong>julkiseksi (Public)</strong> muuttaminen tuo koko sen
+            sisällön ja <strong>kaikki aiemmat commit-historiat</strong> nimensä mukaisesti
+            julkisesti nähtäville. Tämä koskee myös tiedostoja ja tietoja, jotka ovat aikaisemmin
+            olleet repositoriossa, mutta poistettu projektista.
           </li>
           <li class="warning">
             Älä muuta repositoriota julkiseksi, jos se
-            <strong>sisältää tai on joskus sisältänyt</strong>
-            arkaluontoisia tietoja, kuten:
+            <strong>sisältää tai on joskus sisältänyt</strong> arkaluontoisia tietoja, kuten:
             <ul>
               <li>salasanoja, API-avaimia tai käyttöoikeus-tunnuksia,</li>
               <li>henkilötietoja tai muuta luottamuksellista aineistoa,</li>
@@ -53,28 +41,24 @@
             </ul>
           </li>
           <li>
-            Julkiseksi muuttaminen sopii vain avoimen lähdekoodin projekteihin
-            tai työnäyte käyttöön tarkoitettuihin repositorioihin.
+            Julkiseksi muuttaminen sopii vain avoimen lähdekoodin projekteihin tai työnäyte käyttöön
+            tarkoitettuihin repositorioihin.
           </li>
           <li>
-            Julkiseksi muuttaminen sisältää monta vaihetta, joten vahingossa
-            tapahtuvaa näkyvyyden muuttamista ei tarvitse pelätä.
+            Julkiseksi muuttaminen sisältää monta vaihetta, joten vahingossa tapahtuvaa näkyvyyden
+            muuttamista ei tarvitse pelätä.
           </li>
           <li>
-            Arkaluontoisten tietojen poistaminen repositorion historiasta ennen
-            julkiseksi muuttamista on mahdollista. Mikäli haluat poistaa
-            arkaluontoisia tietoja kokonaan historiasta, käytä Gitin historiaan
+            Arkaluontoisten tietojen poistaminen repositorion historiasta on kuitenkin mahdollista.
+            Mikäli haluat poistaa arkaluontoiset tiedot kokonaan historiasta, käytä Gitin historiaan
             vaikuttavia työkaluja, kuten
-            <code>git filter-repo</code>
-            tai GitHubin
+            <code>git filter-repo</code> tai GitHubin
             <a
               href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository"
               target="_blank"
               rel="noopener noreferrer"
-            >
-              virallista ohjetta tiedon poistamiseen historiasta
-            </a>
-            .
+              >virallista ohjetta tiedon poistamiseen historiasta</a
+            >.
           </li>
         </ul>
       </div>
@@ -82,133 +66,106 @@
       <ol>
         <li>
           Siirry repositorion asetuksiin klikkaamalla repositoriossa
-          <strong>Settings</strong>
+          <strong>settings</strong>
           välilehteä.
 
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/visibility-1.webp"
-              alt="Repositorion asetukset."
-            />
+              alt="Repositorion asetukset." />
             <figcaption>Repositorion asetukset.</figcaption>
           </figure>
         </li>
         <li>
-          Varmista, että olet asetuksien
-          <strong>General</strong>
-          osiossa ja vieritä ikkunan alareunaan.
+          Varmista, että olet asetuksien <strong>General</strong> osiossa ja vieritä ikkunan
+          alareunaan.
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/visibility-2.webp"
-              alt="Asetuksien General osio."
-            />
+              alt="Asetuksien General osio." />
             <figcaption>Asetuksien General osio.</figcaption>
           </figure>
-          Klikkaa Danger Zone osiosta
-          <strong>Change visibility</strong>
-          nappia.
+          Klikkaa Danger Zone osiosta <strong>Change Visibility</strong> nappia.
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/visibility-3.webp"
-              alt="Näkyvyys asetuksen muuttaminen."
-            />
+              alt="Näkyvyys asetuksen muuttaminen." />
             <figcaption>Näkyvyys asetuksen muuttaminen.</figcaption>
           </figure>
-          Klikkaa Vielä alle avautuvaa
-          <strong>Change to public</strong>
-          nappia.
+          Klikkaa Vielä alle avautuvaa <strong>Change to public</strong> nappia.
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/visibility-4.webp"
-              alt="Muuttaminen julkiseksi."
-            />
+              alt="Muuttaminen julkiseksi." />
             <figcaption>Muuttaminen julkiseksi.</figcaption>
           </figure>
         </li>
         <li>
-          Vahvista avautuvaan ruutuun, että haluat tehdä repositoriosta julkisen
-          klikkaamalla
-          <strong>I want to make this repository public</strong>
-          nappia.
+          Vahvista vielä avautuvaan ruutuun, että haluat tehdä repositoriosta julkisen klikkaamalla
+          <strong>I want to make this repository public</strong> nappia.
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/visibility-5.webp"
-              alt="Vahvistus repositorion muuttamisesta julkiseksi."
-            />
-            <figcaption>
-              Vahvistus repositorion muuttamisesta julkiseksi.
-            </figcaption>
+              alt="Vahvistus repositorion muuttamisesta julkiseksi." />
+            <figcaption> Vahvistus repositorion muuttamisesta julkiseksi. </figcaption>
           </figure>
-          Vahvista vielä, että olet ymmärtänyt mitä repositorion julkiseksi
-          muuttaminen tarkoittaa klikkaamalla
-          <strong>I have read and understand these effects</strong>
-          nappia.
+          Vahvista vielä, että olet ymmärtänyt mitä repositorion julkiseksi muuttaminen tarkoittaa
+          klikkaamalla
+          <strong>I have read and understand these effects</strong> nappia.
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/visibility-6.webp"
               alt="Vahvistus että olet ymmärtänyt mitä repositorion julkiseksi
-              muuttaminen tarkoittaa."
-            />
+              muuttaminen tarkoittaa." />
             <figcaption>
-              Vahvistus että olet ymmärtänyt mitä repositorion julkiseksi
-              muuttaminen tarkoittaa.
+              Vahvistus että olet ymmärtänyt mitä repositorion julkiseksi muuttaminen tarkoittaa.
             </figcaption>
           </figure>
           Tee repositoriosta julkinen klikkaamalla
-          <strong>Make this repository public</strong>
-          nappia.
+          <strong>Make this repository public</strong> nappia.
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/visibility-7.webp"
-              alt="Tee repositoriosta julkinen."
-            />
+              alt="Tee repositoriosta julkinen." />
             <figcaption>Tee repositoriosta julkinen.</figcaption>
           </figure>
         </li>
         <li>
-          Mikäli käytössä on kaksivaiheinen tunnistautuminen, niin vahvista
-          vielä käyttöoikeutesi syöttämällä tunnistautumissovelluksesi antama
-          <strong>avain</strong>
-          ja klikkaamalla
-          <strong>Verify</strong>
-          nappia.
+          Mikäli käytössä on kaksivaiheinen tunnistautuminen vahvista vielä käyttöoikeutesi
+          syöttämällä tunnistautumissovelluksesi antama
+          <strong>avain</strong> ja klikkaamalla <strong>verify</strong> nappia.
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/visibility-8.webp"
-              alt="Käyttöoikeuden vahvistus."
-            />
+              alt="Käyttöoikeuden vahvistus." />
             <figcaption>Käyttöoikeuden vahvistus.</figcaption>
           </figure>
         </li>
         <li>
-          Repositorio on nyt julkinen. Muuttaminen yksityiseksi noudattaa samaa
-          kaavaa kuin muutos julkiseksi.
+          Repositorio on nyt julkinen. Muuttaminen yksityiseksi noudattaa samaa kaavaa kuin muutos
+          julkiseksi.
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/visibility-9.webp"
-              alt="Repositorio on nyt julkinen."
-            />
+              alt="Repositorio on nyt julkinen." />
             <figcaption>Repositorio on nyt julkinen.</figcaption>
           </figure>
         </li>
       </ol>
       <p class="note-box keep-margin">
-        Repositorion näkyvyyttä voi muuttaa myöhemmin takaisin
-        <strong>yksityiseksi</strong>
-        (
-        <em>private</em>
-        ), jos haluat rajata sen näkyvyyttä uudelleen. Muista kuitenkin, että
-        kaikki ennen muutosta ladatut tai kloonatut versiot jäävät käyttäjille,
-        joilla ne jo olivat.
+        Repositorion näkyvyyttä voi muuttaa myöhemmin takaisin yksityiseksi
+        (<strong>Private</strong>), jos haluat rajata sen näkyvyyttä uudelleen. Muista kuitenkin,
+        että kaikki ennen muutosta ladatut tai kloonatut versiot jäävät käyttäjille, joilla ne jo
+        olivat.
       </p>
     </div>
   </div>
@@ -217,65 +174,45 @@
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
-    data-title="Käyttäjien (Collaborators) lisääminen ja kutsun hyväksyminen"
-  >
+    data-title="Käyttäjien (Collaborators) lisääminen ja kutsun hyväksyminen">
     <div class="contentToAccordion">
       <div class="note-box">
         <ul>
           <li class="warning">
-            Kun kehittäjä lisätään henkilökohtaisella GitHub-tilillä olevan
-            repositorion
-            <strong>käyttäjäksi</strong>
-            (
-            <em>collaborator</em>
-            ), annetaan hänelle suoraan kirjoitusoikeudet (
-            <em>write</em>
-            ) projektiin. Tämä tarkoittaa, että hän voi tehdä
+            Kun käyttäjä lisätään henkilökohtaisella GitHub-tilillä olevan repositorion
+            <strong>collaboratoriksi</strong>, annetaan hänelle suoraan kirjoitusoikeudet
+            (<em>write</em>) projektiin. Tämä tarkoittaa, että hän voi tehdä
             <strong>commit-, push- ja merge-toimenpiteitä</strong>
             ilman erillistä hyväksyntää.
           </li>
           <li>
-            Kirjoitusoikeudet eivät kuitenkaan mahdollista repositorion
-            poistamista, asetusten muuttamista tai muiden käyttäjien hallintaa.
-            Näihin tarvitaan
-            <strong>Admin</strong>
-            -oikeudet, jotka ovat yksityisellä tilillä perustetussa
+            Kirjoitusoikeudet eivät kuitenkaan mahdollista repositorion poistamista, asetusten
+            muuttamista tai muiden käyttäjien hallintaa. Näihin tarvitaan
+            <strong>Admin</strong>-oikeudet, jotka ovat yksityisellä tilillä perustetussa
             repositoriossa vain sen luojalla/omistajalla.
           </li>
           <li>
-            Lisää repositorion käyttäjiksi kuitenkin ainoastaan henkilöitä,
-            joihin luotat ja joiden on tarkoitus työskennellä aktiivisesti
-            projektissa.
+            Lisää collaboratoriksi kuitenkin ainoastaan henkilöitä, joihin luotat ja joiden on
+            tarkoitus työskennellä aktiivisesti projektissa.
           </li>
           <li>
-            Mikäli käytössä on
-            <strong>organisaatiotili</strong>
-            , voi repositorion käyttäjille määrittää eri
-            <strong>roolit</strong>
-            (esimerkiksi
-            <em>Read</em>
-            ,
-            <em>Write</em>
-            ,
-            <em>Maintain</em>
-            tai
-            <em>Admin</em>
-            ) riippuen siitä, mitä oikeuksia käyttäjälle halutaan antaa.
+            Mikäli käytössä on <strong>organisaatiotili</strong>, voi reposirotion käyttäjille
+            määrittää eri <strong>roolit</strong> (esimerkiksi Read, Write, Maintain tai Admin)
+            riippuen siitä, mitä oikeuksia käyttäjälle halutaan antaa.
           </li>
         </ul>
       </div>
       <ol>
         <li>
           Siirry repositorion asetuksiin klikkaamalla repositoriossa
-          <strong>Settings</strong>
+          <strong>settings</strong>
           välilehteä.
 
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/visibility-1.webp"
-              alt="Repositorion asetukset."
-            />
+              alt="Repositorion asetukset." />
             <figcaption>Repositorion asetukset.</figcaption>
           </figure>
         </li>
@@ -288,30 +225,25 @@
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/collaborators-1.webp"
-              alt="Repositorion asetukset (päänäkymä)."
-            />
+              alt="Repositorion asetukset (päänäkymä)." />
             <figcaption>Repositorion asetukset (päänäkymä).</figcaption>
           </figure>
         </li>
         <li>
-          Mikäli käytössä on kaksivaiheinen tunnistautuminen vahvista vielä
-          käyttöoikeus syöttämällä tunnistautumissovelluksen antama
-          <strong>avain</strong>
-          ja klikkaamalla
-          <strong>Verify</strong>
-          nappia.
+          Mikäli käytössä on kaksivaiheinen tunnistautuminen vahvista vielä käyttöoikeus syöttämällä
+          tunnistautumissovelluksen antama
+          <strong>avain</strong> ja klikkaamalla <strong>verify</strong> nappia.
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/visibility-8.webp"
-              alt="Käyttöoikeuden vahvistus."
-            />
+              alt="Käyttöoikeuden vahvistus." />
             <figcaption>Käyttöoikeuden vahvistus.</figcaption>
           </figure>
         </li>
         <li>
-          Näkymä kun repositoriolla ei ole vielä omistajan lisäksi muita
-          käyttäjiä. Aloita uuden käyttäjän lisääminen klikkaamalla
+          Näkymä kun repositoriolla ei ole vielä omistajan lisäksi muita käyttäjiä. Aloita uuden
+          käyttäjän lisääminen klikkaamalla
           <strong>Add people</strong>
           nappia.
 
@@ -319,8 +251,7 @@
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/collaborators-2.webp"
-              alt="Repositorion käyttäjä asetukset ja lisäämisen aloitus."
-            />
+              alt="Repositorion käyttäjä asetukset ja lisäämisen aloitus." />
             <figcaption>
               Repositorion käyttäjä asetukset ja käyttäjän lisäämisen aloitus.
             </figcaption>
@@ -328,88 +259,68 @@
         </li>
         <li>
           Etsi lisättävä käyttäjä avautuvasta ruudusta syöttämällä
-          <strong>kenttää</strong>
-          käyttäjän nimi, nimimerkki tai sähköpostiosoite ja valitse haluttu
-          käyttäjä klikkaamalla alle avautuvasta
-          <strong>listasta</strong>
-          .
+          <strong>kenttää</strong> käyttäjän nimi, nimimerkki tai sähköpostiosoite ja valitse
+          haluttu käyttäjä klikkaamalla alle avautuvasta <strong>listasta</strong>.
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/collaborators-3.webp"
-              alt="Lisättävän käyttäjän etsiminen."
-            />
+              alt="Lisättävän käyttäjän etsiminen." />
             <figcaption>Lisättävän käyttäjän etsiminen.</figcaption>
           </figure>
           Vahvista käyttäjän lisääminen klikkaamalla
-          <strong>
-            Add
-            <em>käyttäjänimi</em>
-          </strong>
-          nappia.
+          <strong>Add <em>käyttäjänimi</em></strong> nappia.
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/collaborators-4.webp"
-              alt="Valitun käyttäjän lisäämisen vahvistus."
-            />
+              alt="Valitun käyttäjän lisäämisen vahvistus." />
             <figcaption>Valitun käyttäjän lisäämisen vahvistus.</figcaption>
           </figure>
 
-          <strong>Käyttäjälle</strong>
-          on nyt lähetetty kutsu liittyä repositorion käyttäjäksi.
+          <strong>Käyttäjälle</strong> on nyt lähetetty kutsu liittyä repositorion käyttäjäksi.
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/collaborators-5.webp"
-              alt="Käyttäjälle on nyt lähetetty kutsu."
-            />
+              alt="Käyttäjälle on nyt lähetetty kutsu." />
             <figcaption>Käyttäjälle on nyt lähetetty kutsu.</figcaption>
           </figure>
         </li>
         <li>
-          Käyttäjän pitää siis hyväksyä kutsu omalta tililtään, jotta lisäys on
-          onnistunut. Kutsu löytyy tilin ilmoituksista, jonne pääsee
-          klikkaamalla
-          <strong>inbox-ikonia</strong>
-          oikealta yläreunasta.
+          Käyttäjän pitää siis hyväksyä kutsu omalta tililtään, jotta lisäys on onnistunut. Kutsu
+          löytyy tilin ilmoituksista, jonne pääseen klikkaamalla
+          <strong>inbox-ikonia</strong> oikelta yläreunasta.
 
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/collaborators-6.webp"
-              alt="Käyttäjälle tulleet viestit löytyvät inbox-kuvaketta klikkaamalla."
-            />
+              alt="Käyttäjälle tulleet viestit löytyvät inbox-kuvakketta klikkaamalla." />
             <figcaption>
-              Käyttäjälle tulleet viestit löytyvät inbox-kuvaketta klikkaamalla.
+              Käyttäjälle tulleet viestit löytyvät inbox-kuvakketta klikkaamalla.
             </figcaption>
           </figure>
         </li>
         <li>
-          Avaa kutsu klikkaamalla
-          <strong>ilmoitusta</strong>
-          viestien listasta.
+          Avaa kutsu klikkaamalla <strong>ilmoitusta</strong> viestien listasta.
 
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/collaborators-7.webp"
-              alt="Näkymä käyttäjälle tulleista ilmoituksista."
-            />
+              alt="Näkymä käyttäjälle tulleista ilmoituksista." />
             <figcaption>Näkymä käyttäjälle tulleista ilmoituksista.</figcaption>
           </figure>
         </li>
         <li>
-          Hyväksy kutsu klikkaamalla
-          <strong>Accept invitation</strong>
-          nappia.
+          Hyväksy kutsu klikkaamalla <strong>Accept invitation</strong> nappia.
 
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/collaborators-8.webp"
-              alt="Kutsun hyväksyminen."
-            />
+              alt="Kutsun hyväksyminen." />
             <figcaption>Kutsun hyväksyminen.</figcaption>
           </figure>
         </li>
@@ -420,9 +331,8 @@
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/collaborators-9.webp"
-              alt="Käyttäjä lisätty repositoriolle."
-            />
-            <figcaption>Käyttäjä lisätty repositoriolle.</figcaption>
+              alt="Käyttä lisätty repositoriolle." />
+            <figcaption>Käyttä lisätty repositoriolle.</figcaption>
           </figure>
         </li>
       </ol>
@@ -433,13 +343,11 @@
   <div
     class="accordion"
     data-include="/accordion-element/accordion.html"
-    data-title="Git-haaran suojauksen (Branch protection rules) käyttöönotto"
-  >
+    data-title="Haarasuojauksen (Branch protection rules) käyttöönotto">
     <!-- Reused accordion content starts -->
     <div
       class="contentToAccordion reused-accordion"
-      data-include="/reused-accordion-content/protection-rules.html"
-    >
+      data-include="/reused-accordion-content/protection-rules.html">
       <!-- Accordion content starts from /reused-accordion-content/protection-rules.html-->
     </div>
     <!-- Reused accordion content ends -->
@@ -449,152 +357,123 @@
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
-    data-title="Repositorion poistaminen"
-  >
+    data-title="Repositorion poistaminen">
     <div class="contentToAccordion">
       <div class="note-box">
         <ul>
           <li class="warning">
-            Repositorion poistaminen (
-            <strong>Delete this repository</strong>
-            ) on
-            <strong>pysyvä toimenpide</strong>
-            . Kun poistat repositorion, sen kaikki tiedostot, commit-historia,
-            asetukset katoavat pysyvästi eikä niitä voi palauttaa GitHubin
-            kautta.
+            Repositorion poistaminen (<strong>Delete this repository</strong>) on
+            <strong>pysyvä toimenpide</strong>. Kun poistat repositorion, sen kaikki tiedostot,
+            commit-historia, asetukset katoavat pysyvästi eikä niitä voi palauttaa GitHubin kautta.
           </li>
 
           <li class="warning">
-            Älä poista repositoriota, jos et ole varma, ettei siitä tarvita enää
-            mitään sisältöä tai commit-historiaa myöhemmin.
+            Älä poista repositoriota, jos et ole varma, ettei siitä tarvita enää mitään sisältöä tai
+            commit-historiaa myöhemmin. Turvallisempaa voi olla ensin muuttaa repositorio
+            <strong>Private</strong>-tilaan.
           </li>
           <li>
-            Jos haluat varmistaa, että sinulla on kopio projektista ennen
-            poistamista, voit kloonata sen omalle koneellesi komennolla:
-            <br />
-            <code>
-              git clone https://github.com/repositorion/url-osoite.git
-            </code>
+            Jos haluat varmistaa, että sinulla on kopio projektista ennen poistamista, voit kloonata
+            sen omalle koneellesi komennolla:<br />
+            <code>git clone [repositorion-url]</code>
           </li>
         </ul>
       </div>
       <ol>
         <li>
           Siirry repositorion asetuksiin klikkaamalla repositoriossa
-          <strong>Settings</strong>
+          <strong>settings</strong>
           välilehteä.
 
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/visibility-1.webp"
-              alt="Repositorion asetukset."
-            />
+              alt="Repositorion asetukset." />
             <figcaption>Repositorion asetukset.</figcaption>
           </figure>
         </li>
         <li>
-          Varmista, että olet asetuksien
-          <strong>General</strong>
-          osiossa ja vieritä ikkunan alareunaan.
+          Varmista, että olet asetuksien <strong>General</strong> osiossa ja scrollaa ikkunan
+          alareunaan.
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/visibility-2.webp"
-              alt="Asetuksien General osio."
-            />
+              alt="Asetuksien General osio." />
             <figcaption>Asetuksien General osio.</figcaption>
           </figure>
           Klikkaa Danger Zone osiosta
-          <strong>Delete this repository</strong>
-          nappia.
+          <strong>Delete this repository</strong> nappia.
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/delete-1.webp"
-              alt="Repositorion poistaminen."
-            />
+              alt="Repositorion poistaminen." />
             <figcaption>Repositorion poistaminen.</figcaption>
           </figure>
           <div class="note-box">
             <ul>
               <li class="warning">
-                Mikäli haluat säilyttää projektin tiedostot, varmista että olet
-                kloonannut tai ladannut ne ennen poistamista.
+                Mikäli haluat säilyttää projektin tiedostot, varmista että olet kloonannut tai
+                ladannut ne ennen poistamista.
               </li>
             </ul>
           </div>
         </li>
         <li>
-          Vahvista avautuvaan ruutuun, että haluat poistaa repositorion
-          klikkaamalla
-          <strong>I want to delete this repository</strong>
-          nappia.
+          Vahvista vielä avautuvaan ruutuun, että haluat poistaa repositorion klikkaamalla
+          <strong>I want to delete this repository</strong> nappia.
 
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/delete-2.webp"
-              alt="Vahvistus repositorion poistamisesta."
-            />
+              alt="Vahvistus repositorion poistamisesta." />
             <figcaption>Vahvistus repositorion poistamisesta.</figcaption>
           </figure>
-          Vahvista vielä, että olet ymmärtänyt mitä repositorion poistaminen
-          merkitsee klikkaamalla
-          <strong>I have read and understand these effects</strong>
-          nappia.
+          Vahvista vielä, että olet ymmärtänyt mitä repositorion poistaminen merkitsee klikkaamalla
+          <strong>I have read and understand these effects</strong> nappia.
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/delete-3.webp"
-              alt="Vahvistus että olet ymmärtänyt mitä repositorion poistaminen tarkoittaa."
-            />
+              alt="Vahvistus että olet ymmärtänyt mitä repositorion poistaminen tarkoittaa." />
             <figcaption>
-              Vahvistus että olet ymmärtänyt mitä repositorion poistaminen
-              tarkoittaa.
+              Vahvistus että olet ymmärtänyt mitä repositorion poistaminen tarkoittaa.
             </figcaption>
           </figure>
-          Vahvista poistaminen syöttämällä
-          <code>käyttäjänimi/repositorion nimi</code>
+          Vahvista vielä poistaminen syöttämällä
+          <strong>käyttäjänimi/repositorion nimi</strong>
           tekstikenttään ja klikkaamalla
-          <strong>Delete this repository</strong>
-          nappia.
+          <strong>Delete this repository</strong> nappia.
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/delete-4.webp"
-              alt="Syötä annettu teksti poistaaksesi repositorion."
-            />
-            <figcaption>
-              Syötä annettu teksti poistaaksesi repositorion.
-            </figcaption>
+              alt="Syötä vahvistusteksti poistaaksesi repositorion." />
+            <figcaption> Syötä vahvistusteksti poistaaksesi repositorion. </figcaption>
           </figure>
         </li>
         <li>
-          Mikäli käytössä on kaksivaiheinen tunnistautuminen vahvista vielä
-          käyttöoikeutesi syöttämällä tunnistautumissovelluksesi antama
-          <strong>avain</strong>
-          ja klikkaamalla
-          <strong>verify</strong>
-          nappia.
+          Mikäli käytössä on kaksivaiheinen tunnistautuminen vahvista vielä käyttöoikeutesi
+          syöttämällä tunnistautumissovelluksesi antama
+          <strong>avain</strong> ja klikkaamalla <strong>verify</strong> nappia.
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/visibility-8.webp"
-              alt="Käyttöoikeuden vahvistus."
-            />
+              alt="Käyttöoikeuden vahvistus." />
             <figcaption>Käyttöoikeuden vahvistus.</figcaption>
           </figure>
         </li>
         <li>
-          Repositorio on nyt poistettu ja sitä ei voi enää palauttaa GitHubin
-          kautta.
+          Repositorio on nyt poistettu ja sitä ei voi enää palauttaa GitHubin kautta.
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/delete-5.webp"
-              alt="Repositorio on nyt poistettu lopullisesti."
-            />
+              alt="Repositorio on nyt poistettu lopullisesti." />
             <figcaption>Repositorio on nyt poistettu lopullisesti.</figcaption>
           </figure>
         </li>
@@ -606,89 +485,65 @@
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
-    data-title="Oletushaaran uudelleen nimeäminen"
-  >
+    data-title="Oletushaaran uudelleen nimeäminen">
     <div class="contentToAccordion">
       <div class="note-box">
         <ul>
           <li class="warning">
-            Päähaaran (
-            <strong>main</strong>
-            ) uudelleennimeäminen vaikuttaa koko projektiin ja kaikkiin sen
-            käyttäjiin. Nimen muuttamisen jälkeen vanha haaran nimi ei enää
-            toimi push- tai pull-komentoihin, ennen kuin käyttäjät päivittävät
-            paikalliset asetuksensa.
+            Päähaaran (<strong>main</strong>) uudelleennimeäminen vaikuttaa koko projektiin ja
+            kaikkiin sen käyttäjiin. Nimen muuttamisen jälkeen vanha haaranimi ei enää toimi push-
+            tai pull-komentoihin, ennen kuin käyttäjät päivittävät paikalliset asetuksensa.
           </li>
           <li>
-            Mikäli olet jo jakanut repositorion muille, ilmoita nimenmuutoksesta
-            tiimillesi. Jokaisen tulee päivittää oma paikallinen viittaus
-            haaraan komennolla:
-            <br />
-            <code>git branch -m main uusi-nimi</code>
-            <br />
-            <code>git fetch origin</code>
-            <br />
-            <code>git branch -u origin/uusi-nimi uusi-nimi</code>
-            <br />
-            <code>git remote set-head origin -a</code>
-            <br />
+            Mikäli olet jo jakanut repositorion muille, ilmoita nimenmuutoksesta tiimillesi.
+            Jokaisen tulee päivittää paikallinen haaraviittaus komennolla:<br />
+            <code>git branch -m main uusi-nimi</code><br />
+            <code>git fetch origin</code><br />
+            <code>git branch -u origin/uusi-nimi uusi-nimi</code><br />
+            <code>git remote set-head origin -a</code><br />
           </li>
           <li>
-            Suositeltavaa on tehdä nimenmuutos vain projektin alkuvaiheessa,
-            ennen kuin useampi henkilö on ottanut repositorion käyttöön.
+            Suositeltavaa on tehdä nimenmuutos vain projektin alkuvaiheessa, ennen kuin useampi
+            henkilö on ottanut repositorion käyttöön.
           </li>
         </ul>
       </div>
       <ol>
         <li>
           Siirry repositorion asetuksiin klikkaamalla repositoriossa
-          <strong>Settings</strong>
+          <strong>settings</strong>
           välilehteä.
 
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/visibility-1.webp"
-              alt="Repositorion asetukset."
-            />
+              alt="Repositorion asetukset." />
             <figcaption>Repositorion asetukset.</figcaption>
           </figure>
         </li>
         <li>
-          Aloita default haaran uudelleen nimeäminen:
+          Nimetäksesi default haaran uudelleen:
           <ul>
-            <li>
-              Varmista, että olet asetuksien
-              <strong>General</strong>
-              osiossa.
-            </li>
-            <li>
-              Klikkaa Default branch-osion
-              <strong>kynä</strong>
-              kuvaketta
-            </li>
+            <li> Varmista, että olet asetuksien <strong>General</strong> osiossa. </li>
+            <li> Klikkaa Default branch-osion <strong>kynä</strong> kuvaketta </li>
           </ul>
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/default-branch-1.webp"
-              alt="Asetuksien General osio (Default branch)."
-            />
+              alt="Asetuksien General osio (Default branch)." />
             <figcaption>Asetuksien General osio (Default branch).</figcaption>
           </figure>
         </li>
         <li>
-          Anna
-          <strong>tekstikenttään</strong>
-          default haaralle uusi nimi ja klikkaa
-          <strong>Rename branch</strong>
-          nappia.
+          Anna <strong>tekstikenttään</strong> default haaralle uusi nimi ja klikkaa
+          <strong>Rename branch</strong> nappia.
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/default-branch-2.webp"
-              alt="Uuden nimen syöttäminen."
-            />
+              alt="Uuden nimen syöttäminen." />
             <figcaption>Uuden nimen syöttäminen.</figcaption>
           </figure>
         </li>
@@ -698,11 +553,8 @@
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/default-branch-3.webp"
-              alt="Näkymä muutoksen jälkeen ja ilmoitus nimenmuutoksesta."
-            />
-            <figcaption>
-              Näkymä muutoksen jälkeen ja ilmoitus nimenmuutoksesta.
-            </figcaption>
+              alt="Näkymä muutoksen jälkeen ja ilmoitus nimenmuutoksesta." />
+            <figcaption> Näkymä muutoksen jälkeen ja ilmoitus nimenmuutoksesta. </figcaption>
           </figure>
         </li>
       </ol>
@@ -713,122 +565,91 @@
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
-    data-title="Oletushaaran vaihtaminen"
-  >
+    data-title="Oletushaaran vaihtaminen">
     <div class="contentToAccordion">
       <div class="note-box">
         <ul>
           <li class="warning">
-            Oletushaaran (
-            <strong>default branch</strong>
-            ) vaihtaminen vaikuttaa kaikkiin käyttäjiin ja toimintoihin, kuten
-            <strong>pull requestit</strong>
-            ,
-            <strong>workflow-prosesseihin</strong>
-            ja
-            <strong>GitHub Pages -julkaisuihin</strong>
-            .
+            Oletushaaran (<strong>default branch</strong>) vaihtaminen vaikuttaa kaikkiin käyttäjiin
+            ja automaattisiin toimintoihin, kuten <strong>pull requesteihin</strong>,
+            <strong>workflow-prosesseihin</strong> ja <strong>GitHub Pages -julkaisuihin</strong>.
           </li>
           <li>
             Kun vaihdat oletushaaran, uusi haara korvaa aiemman (esim.
-            <em>main</em>
-            →
-            <em>develop</em>
-            ) GitHubin oletuskohteena. Tämä tarkoittaa, että uudet pull
-            requestit ja commitit kohdistuvat uuteen oletushaaraan.
+            <em>main</em> → <em>develop</em>) GitHubin oletuskohteena. Tämä tarkoittaa, että uudet
+            pull requestit ja commitit kohdistuvat uuteen oletushaaraan.
           </li>
           <li>
-            Aiemmin avatut pull requestit ja automaatiot, jotka viittaavat
-            vanhaan oletushaaraan, on hyvä tarkistaa ja päivittää tarvittaessa.
+            Aiemmin avatut pull requestit ja automaatiot, jotka viittaavat vanhaan oletushaaraan, on
+            hyvä tarkistaa ja päivittää tarvittaessa.
           </li>
           <li>
-            Muutokset eivät poista vanhaa haaraa. Vanhasta oletushaarasta tulee
-            tavallinen haara, jota voi käyttää edelleen, jos sitä tarvitaan.
+            Muutokset eivät poista vanhaa haaraa. Vanhasta oletushaarasta tulee tavallinen haara,
+            jota voi käyttää edelleen, jos sitä tarvitaan.
           </li>
           <li>
-            Jos projektilla on useita tekijöitä, ilmoita muutoksesta kaikille
-            ennen haaran vaihtamista, jotta kukaan ei jatka työskentelyä väärään
-            haaraan.
+            Jos projektilla on useita tekijöitä, ilmoita muutoksesta kaikille ennen haaran
+            vaihtamista, jotta kukaan ei jatka työskentelyä väärään haaraan.
           </li>
         </ul>
       </div>
       <ol>
         <li>
           Siirry repositorion asetuksiin klikkaamalla repositoriossa
-          <strong>Settings</strong>
+          <strong>settings</strong>
           välilehteä.
 
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/visibility-1.webp"
-              alt="Repositorion asetukset."
-            />
+              alt="Repositorion asetukset." />
             <figcaption>Repositorion asetukset.</figcaption>
           </figure>
         </li>
         <li>
-          Vaihtaaksesi mitä haraa käytetään default haarana:
+          Vaihtaaksesi mitä hharaa käytetään default haarana:
           <ul>
-            <li>
-              Varmista, että olet asetuksien
-              <strong>General</strong>
-              osiossa.
-            </li>
-            <li>
-              Klikkaa Default branch-osion
-              <strong>vaihto</strong>
-              kuvaketta
-            </li>
+            <li> Varmista, että olet asetuksien <strong>General</strong> osiossa. </li>
+            <li> Klikkaa Default branch-osion <strong>vaihto</strong> kuvaketta </li>
           </ul>
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/default-branch-1.2.webp"
-              alt="Asetuksien General osio (Default branch)."
-            />
+              alt="Asetuksien General osio (Default branch)." />
             <figcaption>Asetuksien General osio (Default branch).</figcaption>
           </figure>
         </li>
         <li>
-          klikkaa nykyisen päähaaran
-          <strong>nimeä</strong>
-          avataksesi alasvetovalikon ja valitse valikosta se haara, jota haluat
-          käyttää
-          <strong>uutena oletushaarana</strong>
-          .
+          klikkaa nykyisen päähaaran <strong>nimeä</strong> avataksesi alasvetovaliokon ja valitse
+          valikosta se haara mitä haaraa haluat käyttää <strong>uutena päähaarana</strong>.
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/default-branch-4.webp"
-              alt="Uuden päähaaran valitseminen."
-            />
+              alt="Uuden päähaaran valitseminen." />
             <figcaption>Uuden päähaaran valitseminen.</figcaption>
           </figure>
         </li>
         <li>
-          Vahvista valinta klikkaamalla
-          <strong>Update</strong>
-          nappia.
+          Vahvista valinta klikkaamalla <strong>Update</strong> nappia.
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/default-branch-5.webp"
-              alt="Valinnan vahvistaminen."
-            />
+              alt="Valinnan vahvistaminen." />
             <figcaption>Valinnan vahvistaminen.</figcaption>
           </figure>
         </li>
         <li>
           Vahvista muutos vielä klikkaamalla
-          <strong>I understand, update the default branch</strong>
-          nappia.
+          <strong>I understand, update the default branch</strong> nappia.
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/default-branch-6.webp"
-              alt="Muutoksen vahvistaminen."
-            />
+              alt="Muutoksen vahvistaminen." />
             <figcaption>Muutoksen vahvistaminen.</figcaption>
           </figure>
         </li>
@@ -838,11 +659,8 @@
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/default-branch-7.webp"
-              alt="Näkymä vaihdon jälkeen ja ilmoitus päähaaran vaihtumisesta."
-            />
-            <figcaption>
-              Näkymä vaihdon jälkeen ja ilmoitus päähaaran vaihtumisesta.
-            </figcaption>
+              alt="Näkymä vaihdon jälkeen ja ilmoitus päähaaran vaihtumisesta." />
+            <figcaption> Näkymä vaihdon jälkeen ja ilmoitus päähaaran vaihtumisesta. </figcaption>
           </figure>
         </li>
       </ol>
@@ -853,112 +671,88 @@
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
-    data-title="Repositorion kuvauksen lisääminen"
-  >
+    data-title="Repositorion kuvauksen lisääminen">
     <div class="contentToAccordion">
       <div class="note-box">
         <ul>
           <li>
-            Repositorion
-            <strong>kuvaus (Description)</strong>
-            auttaa muita ymmärtämään projektin tarkoituksen yhdellä
-            silmäyksellä. Kuvaus näkyy automaattisesti repositorion etusivun
+            Repositorion <strong>kuvaus (Description)</strong> auttaa muita ymmärtämään projektin
+            tarkoituksen yhdellä silmäyksellä. Kuvaus näkyy automaattisesti repositorion etusivun
             yläosassa nimen alapuolella.
           </li>
           <li>
-            Kuvaus on erityisen tärkeä julkisissa (Public) repositorioissa,
-            sillä se auttaa muita käyttäjiä ja hakukoneita ymmärtämään, mistä
-            projektissa on kyse. Hyvin kirjoitettu kuvaus tekee repositoriosta
-            helpommin löydettävän ja uskottavamman.
+            Kuvaus on erityisen tärkeä julkisissa (Public) repositorioissa, sillä se auttaa muita
+            käyttäjiä ja hakukoneita ymmärtämään, mistä projektissa on kyse. Hyvin kirjoitettu
+            kuvaus tekee repositoriosta helpommin löydettävän ja uskottavamman.
           </li>
           <li>
             Kirjoita kuvaus lyhyesti ja ytimekkäästi. Esimerkiksi:
-            <code>
-              "Kouluprojekti, jossa harjoitellaan Git-versionhallinnan ja
-              GitHubin perustoimintoja."
-            </code>
+            <em
+              >"Kouluprojekti, jossa harjoitellaan Git-versionhallinnan ja GitHubin
+              perustoimintoja."</em
+            >
           </li>
           <li class="warning">
-            Älä lisää kuvaukseen arkaluontoisia tietoja, kuten henkilön nimeä,
-            opiskelijanumeroa, sähköpostiosoitetta tai muita henkilökohtaisia
-            tietoja. Kuvaus voi näkyä julkisesti myös hakukoneissa, jos
-            repositorio on Public-tilassa.
+            Älä lisää kuvaukseen arkaluontoisia tietoja, kuten henkilön nimiä, opiskelijanumeroita,
+            sähköpostiosoitteita tai muita henkilökohtaisia tietoja. Kuvaus voi näkyä julkisesti
+            myös hakukoneissa, jos repositorio on Public-tilassa.
           </li>
           <li>
             Voit halutessasi lisätä myös projektin
             <strong>verkkosivun tai GitHub Pages -osoitteen</strong>
-            näkymään kuvauskentässä.
+            kuvauskentän viereiseen kenttään.
           </li>
         </ul>
       </div>
       <ol>
         <li>
           Mene repositorion etusivulle klikkaamalla
-          <strong>code</strong>
-          välilehteä, jos et ole jo siellä. Muokkaa kuvausta klikkaamalla
-          About-osion
-          <strong>ratas</strong>
-          kuvaketta.
+          <strong>code</strong> välilehteä, jos et ole jo siellä. Muokkaa kuvausta klikkaamalla
+          About-osion <strong>ratas</strong> kuvaketta.
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/description-1.webp"
-              alt="Repositorion etusivu ja About-osio."
-            />
+              alt="Repositorion etusivu ja About-osio." />
             <figcaption>Repositorion etusivu ja About-osio.</figcaption>
           </figure>
         </li>
         <li>
           Syötä repositorion kuvaukseen liittyvät tiedot:
           <ul>
+            <li> <strong>Description</strong> kenttään lyhyt ja ytimekäs kuvaus projektista. </li>
             <li>
-              <strong>Description</strong>
-              kenttään lyhyt ja ytimekäs kuvaus projektista.
+              <strong>Website</strong> kenttään voit halutessasi lisätä projektin verkkosivun,
+              GitHub Pages -osoitteen tai vaikkapa linkin projektia esittelevään videoon.
             </li>
             <li>
-              <strong>Website</strong>
-              kenttään voit halutessasi lisätä projektin verkkosivun, GitHub
-              Pages -osoitteen tai vaikkapa linkin projektia esittelevään
-              videoon.
-            </li>
-            <li>
-              <strong>Topics</strong>
-              kenttään voit lisätä avainsanoja, jotka kuvaavat projektia.
+              <strong>Topics</strong> kenttään voit lisätä avainsanoja, jotka kuvaavat projektia.
               Avainsanat auttavat muita käyttäjiä löytämään repositorion.
             </li>
             <li>
-              Releases, Packages ja Deployments osiot voit jättää tai piilottaa
-              etusivulta tarpeen mukaan.
+              Releases, Packages ja Deployments osiot voit jättää tai piiloittaa etusivulta tarpeen
+              mukaan.
             </li>
-            <li>
-              Klikkaa lopuksi
-              <strong>Save changes</strong>
-              nappia.
-            </li>
+            <li>Klikkaa lopuksi <strong>Save changes</strong> nappia.</li>
           </ul>
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/description-2.webp"
-              alt="Kuvauksen ja muiden repositorioon liittyvien tietojen lisääminen."
-            />
+              alt="Kuvauksen ja muiden repositorioon liittyvien tietojen lisääminen." />
             <figcaption>
-              Kuvauksen ja muiden repositorioon liittyvien tietojen lisääminen.
+              Kuvauksen jamuiden repositorioon liittyvien tietojen lisääminen.
             </figcaption>
           </figure>
         </li>
         <li>
-          Kuvauksen lisääminen on nyt valmis. Kuvaus näkyy repositorion
-          etusivulla.
+          Kuvauksen lisääminen on nyt valmis. Kuvaus näkyy repositorion etusivulla.
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/teamwork/repo-settings/description-3.webp"
-              alt="Näkymä ja ilmoitus kuvauksen lisäämisen jälkeen."
-            />
-            <figcaption>
-              Näkymä ja ilmoitus kuvauksen lisäämisen jälkeen.
-            </figcaption>
+              alt="Näkymä ja ilmoitus kuvauksen lisäämisen jälkeen." />
+            <figcaption> Näkymä ja ilmoitus kuvauksen lisäämisen jälkeen. </figcaption>
           </figure>
         </li>
       </ol>

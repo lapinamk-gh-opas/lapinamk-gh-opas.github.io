@@ -1,8 +1,12 @@
-document.addEventListener('subContent:loaded', async () => {
-  document.querySelectorAll('code').forEach(codeElement => {
-    if (codeElement.classList.contains('notification-code')) {
-      return;
-    }
+document.addEventListener('subContent:loaded', () => {
+  enableCodeCopy();
+});
+document.addEventListener('pages:loaded', () => {
+  enableCodeCopy();
+});
+
+const enableCodeCopy = () => {
+  document.querySelectorAll('code').forEach((codeElement) => {
     codeElement.style.cursor = 'pointer';
     codeElement.title = 'Kopioi 📋';
 
@@ -10,11 +14,11 @@ document.addEventListener('subContent:loaded', async () => {
       const code = codeElement.textContent;
       navigator.clipboard
         .writeText(code)
-        .then(() => showNotification(' kopioitu leikepöydälle ✅', code))
-        .catch(err => showNotification('Kopiointi epäonnistui ❌', err));
+        .then(() => showNotification('kopioitu leikepöydälle ✅', code))
+        .catch((err) => showNotification('Kopiointi epäonnistui ❌', err));
     });
   });
-});
+};
 
 const showNotification = (message, code) => {
   const notification = document.querySelector('.notification');

@@ -1,8 +1,8 @@
 let images = [];
 
-const initImageZoom = img => {
+const initImageZoom = (img) => {
   img.setAttribute('draggable', 'false');
-  img.addEventListener('contextmenu', e => e.preventDefault(), false);
+  img.addEventListener('contextmenu', (e) => e.preventDefault(), false);
 
   let pressTimer;
   let longPressed = false;
@@ -28,7 +28,7 @@ const initImageZoom = img => {
     window.removeEventListener('touchmove', preventScroll, { passive: false });
   };
 
-  const preventScroll = e => e.preventDefault();
+  const preventScroll = (e) => e.preventDefault();
 
   window.addEventListener('touchmove', () => {
     noTouchZoom = true;
@@ -37,7 +37,7 @@ const initImageZoom = img => {
     }, 500);
   });
 
-  img.addEventListener('touchstart', e => {
+  img.addEventListener('touchstart', (e) => {
     longPressed = false;
     const touch = e.touches[0];
     pressTimer = setTimeout(() => {
@@ -59,7 +59,7 @@ const initImageZoom = img => {
 
 function updateImages(selector) {
   const newImages = document.querySelectorAll(selector);
-  newImages.forEach(img => {
+  newImages.forEach((img) => {
     if (!images.includes(img)) {
       images.push(img);
       initImageZoom(img);
@@ -83,7 +83,7 @@ function updateWideImages() {
   const allImages = document.querySelectorAll('.wide-image');
   const isClosed = sidebar.classList.contains('closed');
 
-  allImages.forEach(image => {
+  allImages.forEach((image) => {
     image.classList.toggle('sidebar-closed', isClosed);
   });
 }

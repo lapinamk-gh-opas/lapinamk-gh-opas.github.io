@@ -1,29 +1,21 @@
 // Accordion functionality
 // Fetches content from external HTML file if data-include attribute is present
 document.addEventListener('subContent:loaded', () => {
-  document.querySelectorAll('.accordion[data-include]').forEach(async acc => {
+  document.querySelectorAll('.accordion[data-include]').forEach(async (acc) => {
     const path = acc.dataset.include;
     const placeholder = acc.querySelector('.contentToAccordion');
     const original = placeholder ? placeholder.outerHTML : '';
 
-    let x = 5;
-    if (x == 5) console.log('Test');
-
-    console.log(`Loading accordion content from: ${path}`);
     try {
       const resp = await fetch(path);
-      if (!resp.ok) {
-        throw new Error(resp.statusText);
-      }
+      if (!resp.ok) throw new Error(resp.statusText);
 
       const html = await resp.text();
 
       acc.innerHTML = html;
 
       acc.dataset.originalContent = original;
-      document.dispatchEvent(
-        new CustomEvent('accordion:loaded', { detail: acc })
-      );
+      document.dispatchEvent(new CustomEvent('accordion:loaded', { detail: acc }));
     } catch (err) {
       acc.innerHTML = `<p style="color:red">Sisällön lataus epäonnistui: ${path}</p>`;
     }
@@ -32,7 +24,7 @@ document.addEventListener('subContent:loaded', () => {
 
 // Sets up accordion open/close functionality
 // also handles default open state if "open" class is present for accordion element
-document.addEventListener('accordion:loaded', e => {
+document.addEventListener('accordion:loaded', (e) => {
   const item = e.detail;
   const buttonArea = item.querySelector('.header-icon');
   const content = item.querySelector('.content');
@@ -98,7 +90,7 @@ const initializeAccordionFigures = () => {
   let resizeTimeout;
 
   const updateFigureHeights = () => {
-    images.forEach(img => {
+    images.forEach((img) => {
       const figure = img.closest('figure');
       if (figure) {
         figure.dataset.normalHeight = figure.clientHeight;
@@ -106,7 +98,7 @@ const initializeAccordionFigures = () => {
     });
   };
 
-  images.forEach(img => {
+  images.forEach((img) => {
     img.addEventListener('load', updateFigureHeights);
   });
 
@@ -118,7 +110,7 @@ const initializeAccordionFigures = () => {
   document.addEventListener('sidebar:changed', () => scheduleHeightUpdate(350));
   window.addEventListener('resize', () => scheduleHeightUpdate(150));
 
-  images.forEach(img => {
+  images.forEach((img) => {
     const figure = img.closest('figure');
     if (!figure) return;
 
@@ -131,21 +123,19 @@ const initializeAccordionFigures = () => {
       figure.style.height = 'fit-content';
     };
 
-    ['mousedown', 'touchstart'].forEach(evt =>
-      img.addEventListener(evt, lockHeight)
-    );
-    ['mouseup', 'touchend', 'touchcancel'].forEach(evt =>
+    ['mousedown', 'touchstart'].forEach((evt) => img.addEventListener(evt, lockHeight));
+    ['mouseup', 'touchend', 'touchcancel'].forEach((evt) =>
       img.addEventListener(evt, releaseHeight)
     );
   });
 };
 
-['accordion:loaded', 'reusedAccordion:loaded'].forEach(eventName => {
+['accordion:loaded', 'reusedAccordion:loaded'].forEach((eventName) => {
   document.addEventListener(eventName, initializeAccordionFigures);
 });
 
 // Close functionality for accordion from bottom button of accordion.
-document.addEventListener('accordion:loaded', e => {
+document.addEventListener('accordion:loaded', (e) => {
   const item = e.detail;
   const closeButton = item.querySelector('.close-button');
   const placeholderDiv = item.querySelector('.contentToAccordion');

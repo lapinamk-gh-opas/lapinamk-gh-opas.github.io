@@ -6,192 +6,150 @@
 
   <h5>Miksi valitsitte juuri Gitin ja GitHubin?</h5>
   <p>
-    Yrityksessä käytetään Gittiä, koska se on yleisesti hyväksytty ja alalla
-    laajamittaisesti käytetty standardityökalu. Se on yksi
-    <strong>ohjelmointityön peruspilari</strong>
-    , jonka avulla voidaan hallita muutoksia ja palata tarvittaessa taaksepäin.
-    Lisäksi sen käyttö helpottaa uusien työntekijöiden perehdytystä, sillä Gitin
-    perusteet ovat useimmille tuttuja.
+    Yrityksessä käytetään Gittiä, koska se on yleisesti hyväksytty ja alalla laajamittaisesti
+    käytetty standardityökalu. Se on yksi <strong>ohjelmointityön peruspilari</strong>, jonka avulla
+    voidaan hallita muutoksia ja palata tarvittaessa taaksepäin. Lisäksi sen käyttö helpottaa uusien
+    työntekijöiden perehdytystä, sillä Gitin perusteet ovat useimmille tuttuja.
   </p>
   <p>
-    GitHubin vahvuutena Gitin rinnalla on sen
-    <strong>pull request -toiminto</strong>
-    , jonka avulla voidaan katselmoida toisen tekemät koodimuutokset, sekä ajaa
-    automaattisesti testit ja käännös ennen koodin yhdistämistä.
+    GitHubin vahvuutena Gitin rinnalla on sen <strong>pull request -toiminto</strong>, jonka avulla
+    voidaan katselmoida toisen tekemät koodimuutokset, sekä ajaa automaattisesti testit ja käännös
+    ennen koodin yhdistämistä.
   </p>
 
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
-    data-title="Commit-viestit"
-  >
+    data-title="Commit-viestit">
     <div class="contentToAccordion">
       <h5>Mitä kannattaa huomioida commit-viestejä kirjoittaessa?</h5>
       <p>
-        Hyvä commit-viesti on usein jopa tärkeämpi kuin koodin sisäiset
-        kommentit, sillä hyvin laadittuna se kertoo,
-        <strong>miksi muutos on tehty</strong>
-        ja muodostaa tärkeän osan projektin historiaa. Olen itsekin päässyt
-        ”arkeologina” selvittämään vuosien takaisia muutoksia vanhojen
-        commit-viestien perusteella onnistuneesti ja siksi jokainen viesti on
+        Hyvä commit-viesti on usein jopa tärkeämpi kuin koodin sisäiset kommentit, sillä hyvin
+        laadittuna se kertoo, <strong>miksi muutos on tehty</strong> ja muodostaa tärkeän osan
+        projektin historiaa. Olen itsekin päässyt ”arkeologina” selvittämään vuosien takaisia
+        muutoksia vanhojen commit-viestien perusteella onnistuneesti ja siksi jokainen viesti on
         arvokas osa projektin dokumentaatiota.
       </p>
       <p>
-        Commitit kannattaa pitää
-        <strong>selkeinä ja rajattuina</strong>
-        niin, että yksi commit kuvaa yhtä kokonaisuutta tai muutosta. Tärkeintä
-        on, että viestistä käy ilmi muutoksen syy, esimerkiksi “Päivitä napin
-        väri saavutettavuuden parantamiseksi”. Viestin otsikossa suositellaan
-        käytettäväksi imperatiivimuotoa (esim. Lisää, Korjaa, Poista), jotta
-        commitin tarkoitus on heti selvä.
+        Commitit kannattaa pitää <strong>selkeinä ja rajattuina</strong> niin, että yksi commit
+        kuvaa yhtä kokonaisuutta tai muutosta. Tärkeintä on, että viestistä käy ilmi muutoksen syy,
+        esimerkiksi “Päivitä napin väri saavutettavuuden parantamiseksi”. Viestin otsikossa
+        suositellaan käytettäväksi imperatiivimuotoa (esim. Lisää, Korjaa, Poista), jotta commitin
+        tarkoitus on heti selvä.
       </p>
       <p>
-        Kaikilla commiteilla
-        <strong>tulee olla selkeä syy</strong>
-        . Jos et pysty perustelemaan, miksi teet tietyn muutoksen, sitä ei
-        todennäköisesti tarvitse tai kannata tehdä. Oma suositus suomenkielisen
-        otsaketekstin pituudeksi on 80-100 merkkiä ja sen jälkeen voi
-        halutessaan lisätä tyhjän rivin ja vapaamuotoisemman ”pullatekstin”,
-        jossa voi esimerkiksi perustella muutosta tai tuoda esiin tunnelmia
-        ”Vihdoinkin korjattiin tämä monta vuotta kestänyt bugi!”. Liiallista
-        tekstiä kannattaa kuitenkin välttää, kuten myös koodin sisäisten
-        kommenttien kohdalla. Jos commit liittyy tiettyyn pull requestiin tai
-        tikettiin (
-        <em>
-          Mikä ihmeen tiketti? Lisätietoa kohdasta
-          <a href="/advanced/projects.html#">4.1 Projektinhallinta</a>
-        </em>
-        ), otsikkoon voi lisätä myös sen numeron.
+        Kaikilla commiteilla <strong>tulee olla selkeä syy</strong>. Jos et pysty perustelemaan,
+        miksi teet tietyn muutoksen, sitä ei todennäköisesti tarvitse tai kannata tehdä. Oma
+        suositus suomenkielisen otsaketekstin pituudeksi on 80-100 merkkiä ja sen jälkeen voi
+        halutessaan lisätä tyhjän rivin ja vapaamuotoisemman ”pullatekstin”, jossa voi esimerkiksi
+        perustella muutosta tai tuoda esiin tunnelmia ”Vihdoinkin korjattiin tämä monta vuotta
+        kestänyt bugi!”. Liiallista tekstiä kannattaa kuitenkin välttää, kuten myös koodin sisäisten
+        kommenttien kohdalla. Jos commit liittyy tiettyyn pull requestiin tai tikettiin (<em
+          >Mikä ihmeen tiketti? Lisätietoa kohdasta
+          <a href="/advanced/projects.html#">4.1 Projektinhallinta</a></em
+        >), otsikkoon voi lisätä myös sen numeron.
       </p>
     </div>
   </div>
 
   <h5>Onko tiimissä kaikilla sama IDE vai saako valita itse?</h5>
   <p>
-    Useimmissa tiimeissä kehittäjät saavat valita
-    <strong>itselleen sopivimman työkalun</strong>
-    . Tärkeintä on, että työn tulos vastaa yhteisiä käytäntöjä ja projektin
-    koodityyliä. IDE:n tai editorin valinta on usein henkilökohtainen
-    mieltymyskysymys, kunhan sillä pystyy suoriutumaan työtehtävistä tehokkaasti
-    ja yhtenäisesti muiden kanssa.
+    Useimmissa tiimeissä kehittäjät saavat valita <strong>itselleen sopivimman työkalun</strong>.
+    Tärkeintä on, että työn tulos vastaa yhteisiä käytäntöjä ja projektin koodityyliä. IDE:n tai
+    editorin valinta on usein henkilökohtainen mieltymyskysymys, kunhan sillä pystyy suoriutumaan
+    työtehtävistä tehokkaasti ja yhtenäisesti muiden kanssa.
   </p>
   <p>
-    Meillä käyttöliittymäkehityksessä on sovittu yhteisestä työkalusta, jotta
-    yhteistyö pysyy sujuvana. Git-repositorioon on myös
-    <strong>määritetty yhteiset konfiguraatiot</strong>
-    (tutustu
+    Meillä käyttöliittymäkehityksessä on sovittu yhteisestä työkalusta, jotta yhteistyö pysyy
+    sujuvana. Git-repositorioon on myös <strong>määritetty yhteiset konfiguraatiot</strong> (tutustu
     <a
       href="https://learn.microsoft.com/en-us/visualstudio/ide/create-portable-custom-editor-options?view=vs-2022"
       target="_blank"
       rel="noopener noreferrer"
-    >
-      <em>.editorconfig</em>
-    </a>
-    ), jotka varmistavat, että automaattiset tasaukset, sisennykset ja koodin
-    linjaukset pysyvät yhtenäisinä kaikilla kehittäjillä.
+      ><em>.editorconfig</em></a
+    >), jotka varmistavat, että automaattiset tasaukset, sisennykset ja koodin linjaukset pysyvät
+    yhtenäisinä kaikilla kehittäjillä.
   </p>
 
   <h5>Mitä työkaluja käytät Gitin kanssa?</h5>
   <p>
-    Vaihtelen työkalua tilanteen mukaan. Esimerkiksi haaran luon usein suoraan
-    IDE:ssä muutamalla klikkauksella, mutta committaan, pushaan ja teen rebaset
-    komentokehotteessa, koska ne tuntuvat luontevammilta siellä. Tapa riippuu
-    paljon tekijästä. Joillekin graafiset työkalut, kuten GitHub Desktop, ovat
-    kätevimpiä, toiset taas viihtyvät komentorivillä. Minusta tärkeintä on, että
-    <strong>ymmärtää mitä peruskomennot tekevät taustalla</strong>
-    , sillä silloin tietää myös mitä käyttöliittymä oikeasti tekee ja pystyy
-    korjaamaan virheet, jos jokin menee pieleen.
+    Vaihtelen työkalua tilanteen mukaan. Esimerkiksi haaran luon usein suoraan IDE:ssä muutamalla
+    klikkauksella, mutta committaan, pushaan ja teen rebaset komentokehotteessa, koska ne tuntuvat
+    luontevammilta siellä. Tapa riippuu paljon tekijästä. Joillekin graafiset työkalut, kuten GitHub
+    Desktop, ovat kätevimpiä, toiset taas viihtyvät komentorivillä. Minusta tärkeintä on, että
+    <strong>ymmärtää mitä peruskomennot tekevät taustalla</strong>, sillä silloin tietää myös mitä
+    käyttöliittymä oikeasti tekee ja pystyy korjaamaan virheet, jos jokin menee pieleen.
   </p>
 
   <h3>Tiimityöskentely</h3>
 
   <h5>Miten usein kannattaa viedä muutokset etärepoon?</h5>
   <p>
-    Jos päivän työ on vain omalla koneellasi, sitä ei ole oikeasti tehty.
-    Versionhallinnan ulkopuolella oleva työ on kuin olisit istunut koko päivän
-    käsien päällä. Tarkkaa aikarajaa ei ole, mutta kirjoittamattomana sääntönä
-    voidaan pitää, että
-    <strong>on parempi puskea usein kuin harvoin</strong>
-    . Mitä pidempään muutokset pysyvät vain paikallisesti, sitä suurempi riski
-    on menettää tehty työ esimerkiksi laitevian tai virheen vuoksi.
+    Jos päivän työ on vain omalla koneellasi, sitä ei ole oikeasti tehty. Versionhallinnan
+    ulkopuolella oleva työ on kuin olisit istunut koko päivän käsien päällä. Tarkkaa aikarajaa ei
+    ole, mutta kirjoittamattomana sääntönä voidaan pitää, että
+    <strong>on parempi puskea usein kuin harvoin</strong>. Mitä pidempään muutokset pysyvät vain
+    paikallisesti, sitä suurempi riski on menettää tehty työ esimerkiksi laitevian tai virheen
+    vuoksi.
   </p>
   <p>
-    Puskemisen tiheys vaihtelee kehittäjän mukaan. Jotkut commitoivat työn
-    edetessä useita kertoja päivässä ja puskevat muutokset GitHubiin vasta
-    päivän päätteeksi, mutta tässä otetaan riski menettää kaikki. Itse pusken
-    aina, kun tulee
-    <strong>luonnollinen pysähdys</strong>
-    , esimerkiksi silloin kun jokin pieni osa toiminnallisuudesta on valmis.
-    Tärkeintä on, että puskeminen tapahtuu säännöllisesti, mutta ei keskeytä
-    työn flowta.
+    Puskemisen tiheys vaihtelee kehittäjän mukaan. Jotkut commitoivat työn edetessä useita kertoja
+    päivässä ja puskevat muutokset GitHubiin vasta päivän päätteeksi, mutta tässä otetaan riski
+    menettää kaikki. Itse pusken aina, kun tulee <strong>luonnollinen pysähdys</strong>, esimerkiksi
+    silloin kun jokin pieni osa toiminnallisuudesta on valmis. Tärkeintä on, että puskeminen
+    tapahtuu säännöllisesti, mutta ei keskeytä työn flowta.
   </p>
   <p>
-    Jos työskentelet omassa haarassasi, voit puskea myös keskeneräistä koodia,
-    jotta työ pysyy tallessa ja palautettavissa. Yhteiseen haaraan, kuten main
-    tai dev, sen sijaan pusketaan
-    <strong>vain toimivaa ja testattua koodia</strong>
-    , joka ei riko muiden tekemää työtä.
+    Jos työskentelet omassa haarassasi, voit puskea myös keskeneräistä koodia, jotta työ pysyy
+    tallessa ja palautettavissa. Yhteiseen haaraan, kuten main tai dev, sen sijaan pusketaan
+    <strong>vain toimivaa ja testattua koodia</strong>, joka ei riko muiden tekemää työtä.
   </p>
 
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
-    data-title="Haarat ja 'pularit'"
-  >
+    data-title="Haarat ja 'pularit'">
     <div class="contentToAccordion">
       <h5>Miten käytätte haaroja?</h5>
       <p>
-        Haarojen käyttö riippuu paljon
-        <strong>projektista ja tiimistä</strong>
-        . Joissakin tiimeissä kaikki kehitys tehdään yhteisessä dev-haarassa ja
-        tuotantohaara (main) pidetään erillään vain valmiille, testatulle
-        koodille. Toiset taas kehittävät jokaisen toiminnallisuuden täysin
-        omassa haarassaan muilta ja erillään. On kuitenkin hyvä tiedostaa, että
-        nämä haarat ovat muilta piilossa, jolloin muut eivät näe työn etenemistä
-        ennen kuin se pusketaan näkyville tai yhdistetään takaisin yhteiseen
-        haaraan. Tärkeintä on löytää tapa,
-        <strong>joka tuottaa mahdollisimman vähän kitkaa</strong>
-        ja tukee tiimin työskentelyä.
+        Haarojen käyttö riippuu paljon <strong>projektista ja tiimistä</strong>. Joissakin tiimeissä
+        kaikki kehitys tehdään yhteisessä dev-haarassa ja tuotantohaara (main) pidetään erillään
+        vain valmiille, testatulle koodille. Toiset taas kehittävät jokaisen toiminnallisuuden
+        täysin omassa haarassaan muilta ja erillään. On kuitenkin hyvä tiedostaa, että nämä haarat
+        ovat muilta piilossa, jolloin muut eivät näe työn etenemistä ennen kuin se pusketaan
+        näkyville tai yhdistetään takaisin yhteiseen haaraan. Tärkeintä on löytää tapa,
+        <strong>joka tuottaa mahdollisimman vähän kitkaa</strong> ja tukee tiimin työskentelyä.
       </p>
       <p>
-        Haaroitusta ei kannata tehdä liian monimutkaiseksi. Hyväksi todettu tapa
-        on esim., että bugikorjaukselle luodaan oma haara, jossa virhe korjataan
-        ja testataan ennen yhdistämistä takaisin. Uudet toiminnallisuudet
-        kannattaa jakaa
-        <strong>loogisiin kokonaisuuksiin</strong>
-        ja esimerkiksi frontend ja backend voidaan kehittää omissa haaroissaan,
-        jos se helpottaa työtä. Toisaalta, jos toiminnallisuus on selkeä ja
-        hallittavissa, myös yksi yhteinen feature-haara voi riittää. Yleisenä
-        ohjenuorana:
-        <strong>älä haaroittele liikaa</strong>
-        . Mitä yksinkertaisempi rakenne, sitä helpompi projektia on hallita ja
-        seurata.
+        Haaroitusta ei kannata tehdä liian monimutkaiseksi. Hyväksi todettu tapa on esim., että
+        bugikorjaukselle luodaan oma haara, jossa virhe korjataan ja testataan ennen yhdistämistä
+        takaisin. Uudet toiminnallisuudet kannattaa jakaa
+        <strong>loogisiin kokonaisuuksiin</strong> ja esimerkiksi frontend ja backend voidaan
+        kehittää omissa haaroissaan, jos se helpottaa työtä. Toisaalta, jos toiminnallisuus on
+        selkeä ja hallittavissa, myös yksi yhteinen feature-haara voi riittää. Yleisenä ohjenuorana:
+        <strong>älä haaroittele liikaa</strong>. Mitä yksinkertaisempi rakenne, sitä helpompi
+        projektia on hallita ja seurata.
       </p>
 
       <h5>Miksi pull request on tärkeä osa tiimityötä?</h5>
       <p>
         Pull request on GitHubin tarjoama tapa pyytää koodille
-        <strong>toisen kehittäjän tarkistus ennen sen yhdistämistä</strong>
-        . Se toimii laadunvarmistuksena, kun joku tekee muutoksia, toinen
-        varmistaa, että ne vastaavat sitä, mitä oli tarkoitus toteuttaa.
-        Koodikatselmointi on tärkeä osa tätä prosessia. Esimerkkinä eräässä
-        projektissa uutta toiminnallisuutta lisättäessä olin tehnyt yhdestä
-        elementistä vilkkuvan, mitä ei ollut mainittu tehtävän kuvauksessa.
-        Katselmoinnissa toinen kehittäjä huomasi asian ja kysyi: “Oliko tämä se,
-        mitä haluttiin?”. Tämän ansiosta pieni väärinymmärrys korjaantui ennen
-        kuin se ehti tuotantoon.
+        <strong>toisen kehittäjän tarkistus ennen sen yhdistämistä</strong>. Se toimii
+        laadunvarmistuksena, kun joku tekee muutoksia, toinen varmistaa, että ne vastaavat sitä,
+        mitä oli tarkoitus toteuttaa. Koodikatselmointi on tärkeä osa tätä prosessia. Esimerkkinä
+        eräässä projektissa uutta toiminnallisuutta lisättäessä olin tehnyt yhdestä elementistä
+        vilkkuvan, mitä ei ollut mainittu tehtävän kuvauksessa. Katselmoinnissa toinen kehittäjä
+        huomasi asian ja kysyi: “Oliko tämä se, mitä haluttiin?”. Tämän ansiosta pieni
+        väärinymmärrys korjaantui ennen kuin se ehti tuotantoon.
       </p>
       <p>
-        Pull requesteistä lähtee automaattisesti ilmoitus tiimille ja
-        tavoitteena on, että ne
-        <strong>käsitellään mahdollisimman nopeasti</strong>
-        . Jos koodi odottaa viikkoja hyväksyntää, se saattaa “hapantua”, eli
-        pohjakoodiin voi olla jo tehty muutoksia, jolloin yhdistäminen vaikeutuu
-        ja vie enemmän aikaa. Työskentelytavat vaihtelevat, joissain tiimeissä
-        pull requestit käsitellään tunneissa, toisissa päivissä. GitHub tekee
-        prosessista kuitenkin helpon, koska mergen voi tehdä suoraan
-        koodikatselmoinnin yhteydessä, kunhan tarkistus on valmis ja kaikki
-        toimii.
+        Pull requesteistä lähtee automaattisesti ilmoitus tiimille ja tavoitteena on, että ne
+        <strong>käsitellään mahdollisimman nopeasti</strong>. Jos koodi odottaa viikkoja
+        hyväksyntää, se saattaa “hapantua”, eli pohjakoodiin voi olla jo tehty muutoksia, jolloin
+        yhdistäminen vaikeutuu ja vie enemmän aikaa. Työskentelytavat vaihtelevat, joissain
+        tiimeissä pull requestit käsitellään tunneissa, toisissa päivissä. GitHub tekee prosessista
+        kuitenkin helpon, koska mergen voi tehdä suoraan koodikatselmoinnin yhteydessä, kunhan
+        tarkistus on valmis ja kaikki toimii.
       </p>
     </div>
   </div>
@@ -199,37 +157,29 @@
   <h5>Miten välttää merge-konflikteja?</h5>
   <p>
     Merge-konfliktit kuuluvat versionhallinnan arkeen, mutta hyvällä
-    <strong>projektinhallinnalla ja suunnittelulla</strong>
-    niitä voi vähentää merkittävästi. Kun projekti on jaettu
-    <strong>loogisiin, selkeisiin toiminnallisuuksiin</strong>
-    , eri kehittäjät voivat työskennellä omilla alueillaan ilman, että koodi
-    menee jatkuvasti ristiin.
+    <strong>projektinhallinnalla ja suunnittelulla</strong> niitä voi vähentää merkittävästi. Kun
+    projekti on jaettu <strong>loogisiin, selkeisiin toiminnallisuuksiin</strong>, eri kehittäjät
+    voivat työskennellä omilla alueillaan ilman, että koodi menee jatkuvasti ristiin.
   </p>
   <p>
     Konflikteja syntyy harvoin, jos ohjelmoijat
-    <strong>ohjaavat omaa tekemistään fiksusti</strong>
-    , eli eivät muokkaa toistensa osioita ilman syytä. Useimmat haluavat välttää
-    turhaa “mudassa rämpimistä”, sillä merge-konfliktien selvittäminen vie
-    helposti aikaa ja hermoja.
-  </p>
+    <strong>ohjaavat omaa tekemistään fiksusti</strong>, eli eivät muokkaa toistensa osioita ilman
+    syytä. Useimmat haluavat välttää turhaa “mudassa rämpimistä”, sillä merge-konfliktien
+    selvittäminen vie helposti aikaa ja hermoja.</p
+  >
   <p>
-    Mitä suurempi tiimi on, sitä todennäköisemmin konflikteja syntyy. Tärkeintä
-    on oppia
-    <strong>ratkaisemaan ne rauhallisesti ja yhteistyössä</strong>
-    . Käykää yhdessä läpi, mitkä osiot otetaan kenenkin koodista ja miksi.
-    Varaudu siihen, että selvitys ei aina onnistu puolessa tunnissa, mutta
-    jokainen kerta opettaa lisää Gitin käytöstä ja tiimityöstä. Merge-konfliktit
-    ovat asia mitä
-    <strong>ei kannata pelätä, mutta suosittelen välttämään</strong>
-    .
+    Mitä suurempi tiimi on, sitä todennäköisemmin konflikteja syntyy. Tärkeintä on oppia
+    <strong>ratkaisemaan ne rauhallisesti ja yhteistyössä</strong>. Käykää yhdessä läpi, mitkä osiot
+    otetaan kenenkin koodista ja miksi. Varaudu siihen, että selvitys ei aina onnistu puolessa
+    tunnissa, mutta jokainen kerta opettaa lisää Gitin käytöstä ja tiimityöstä. Merge-konfliktit
+    ovat asia mitä <strong>ei kannata pelätä, mutta suosittelen välttämään</strong>.
   </p>
 
   <p class="note-box">
     <em>
-      ”Gitin käyttäminen on vähän kuin vesi, se soljuu taustalla
-      huomaamattomasti. Kun työskentely on sujuvaa ja rutiinit kunnossa, Gittiä
-      ei tarvitse edes ajatella, kaikki vaan toimii. Kunnes taas pitää ajatella
-      ja alkaa selvittää merge-konfliktia.”
+      ”Gitin käyttäminen on vähän kuin vesi, se soljuu taustalla huomaamattomasti. Kun työskentely
+      on sujuvaa ja rutiinit kunnossa, Gittiä ei tarvitse edes ajatella, kaikki vaan toimii. Kunnes
+      taas pitää ajatella ja alkaa selvittää merge-konfliktia.”
     </em>
   </p>
 
@@ -238,85 +188,66 @@
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
-    data-title="GitHub Projects ja Actions"
-  >
+    data-title="GitHub Projects ja Actions">
     <div class="contentToAccordion">
-      <h5>
-        Hyödynnättekö GitHub Projectsia?
-        <small>
-          <small>
-            (
-            <em>Käsittelemme aihetta kappaleessa 4.1</em>
-            )
-          </small>
+      <h5
+        >Hyödynnättekö GitHub Projectsia?
+        <small
+          ><small>(<em>Käsittelemme aihetta kappaleessa 4.1</em>)</small>
         </small>
       </h5>
       <p>
-        Ei juuri sitä, mutta vastaava projektinhallintajärjestelmä on käytössä
-        lähes kaikissa ohjelmistoprojekteissa, ja sen hallitseminen on tärkeää
-        työn sujumisen kannalta. Projektinhallintatyökalut tarjoaa hyvän näkymän
-        siihen, kuka tekee mitäkin ja missä vaiheessa eri asiat etenevät, eli
-        toisin sanoen siihen, minkä ympärillä arki oikeasti pyörii. Kun
-        hallitset projektinhallinnan ja versionhallinnan työkalut, hallitset
-        <strong>ohjelmistokehityksen ytimen</strong>
-        , sen jälkeen kaikki on pitkälti teknistä osaamista.
+        Ei juuri sitä, mutta vastaava projektinhallintajärjestelmä on käytössä lähes kaikissa
+        ohjelmistoprojekteissa, ja sen hallitseminen on tärkeää työn sujumisen kannalta.
+        Projektinhallintatyökalut tarjoaa hyvän näkymän siihen, kuka tekee mitäkin ja missä
+        vaiheessa eri asiat etenevät, eli toisin sanoen siihen, minkä ympärillä arki oikeasti
+        pyörii. Kun hallitset projektinhallinnan ja versionhallinnan työkalut, hallitset
+        <strong>ohjelmistokehityksen ytimen</strong>, sen jälkeen kaikki on pitkälti teknistä
+        osaamista.
       </p>
       <p>
-        On tärkeää ymmärtää, miksi tiketti siirtyy vaiheesta toiseen, miksi
-        jokin on ”on hold”, miksi joku on merkitty punaisella lipulla, tai miksi
-        kommenttikentässä on huomautuksia. Tämä on se paikka,
-        <strong>josta työ haalitaan</strong>
-        ja jossa näet, miksi asioita tehdään juuri nyt ja tietyllä tavalla.
+        On tärkeää ymmärtää, miksi tiketti siirtyy vaiheesta toiseen, miksi jokin on ”on hold”,
+        miksi joku on merkitty punaisella lipulla, tai miksi kommenttikentässä on huomautuksia. Tämä
+        on se paikka, <strong>josta työ haalitaan</strong> ja jossa näet, miksi asioita tehdään
+        juuri nyt ja tietyllä tavalla.
       </p>
       <p>
-        GitHub Projectsiin tutustuminen tarjoaa hyvän intron siihen, miten
-        kehitysprosessia johdetaan käytännössä. On hyvä tietää, mitä tarkoittaa
-        <strong>tiketti</strong>
-        , mikä on
-        <strong>Kanban-taulu</strong>
-        , ja miten niiden avulla seurataan työn etenemistä ja prioriteetteja.
+        GitHub Projectsiin tutustuminen tarjoaa hyvän intron siihen, miten kehitysprosessia
+        johdetaan käytännössä. On hyvä tietää, mitä tarkoittaa <strong>tiketti</strong>, mikä on
+        <strong>Kanban-taulu</strong>, ja miten niiden avulla seurataan työn etenemistä ja
+        prioriteetteja.
       </p>
 
-      <h5>
-        Hyödynnättekö GitHub Actionsia?
-        <small>
-          <small>
-            (
-            <em>Käsittelemme aihetta kappaleessa 4.2</em>
-            )
-          </small>
-        </small>
+      <h5
+        >Hyödynnättekö GitHub Actionsia?
+        <small
+          ><small>(<em>Käsittelemme aihetta kappaleessa 4.2</em>)</small></small
+        >
       </h5>
       <p>
-        Kyllä, GitHub Actions on käytössä. Se on tärkeä osa kehitysprosessia,
-        koska sen avulla voidaan automatisoida asioita, jotka tapahtuvat pull
-        requestin aikana ja sen jälkeen. Actions on laaja ja monipuolinen
-        työkalu, jolla voidaan automatisoida suuri osa toistuvista tehtävistä.
-        Esimerkiksi
-        <strong>koodin kääntäminen, testaus, analysointi ja julkaisu</strong>
-        tapahtuvat runnereiden avulla ilman manuaalista työtä. Tärkeintä on
-        ymmärtää kokonaisuus: mitä tapahtuu, kun koodi pusketaan ja miten
-        automaatio vie työn loppuun asti. Kun hallitsee Actionsin periaatteet,
+        Kyllä, GitHub Actions on käytössä. Se on tärkeä osa kehitysprosessia, koska sen avulla
+        voidaan automatisoida asioita, jotka tapahtuvat pull requestin aikana ja sen jälkeen.
+        Actions on laaja ja monipuolinen työkalu, jolla voidaan automatisoida suuri osa toistuvista
+        tehtävistä. Esimerkiksi
+        <strong>koodin kääntäminen, testaus, analysointi ja julkaisu</strong> tapahtuvat runnereiden
+        avulla ilman manuaalista työtä. Tärkeintä on ymmärtää kokonaisuus: mitä tapahtuu, kun koodi
+        pusketaan ja miten automaatio vie työn loppuun asti. Kun hallitsee Actionsin periaatteet,
         ymmärtää samalla myös muiden CI/CD-järjestelmien toimintalogiikan.
       </p>
       <p>
-        Kaikki nämä automaatiot tallennetaan git-repositorioon, jolloin voidaan
-        tarkastella putken
-        <strong>infrastruktuuria koodina</strong>
-        . Tämä tekee prosesseista läpinäkyviä ja hallittavia, ja hyvin
-        kirjoitettu commit-viesti auttaa muita ymmärtämään pipelineen tehdyt
+        Kaikki nämä automaatiot tallennetaan git-repositorioon, jolloin voidaan tarkastella putken
+        <strong>infrastruktuuria koodina</strong>. Tämä tekee prosesseista läpinäkyviä ja
+        hallittavia, ja hyvin kirjoitettu commit-viesti auttaa muita ymmärtämään pipelineen tehdyt
         muutokset ja niiden syyt.
       </p>
     </div>
   </div>
 
   <p>
-    On hyvä pohtia myös
-    <strong>sidonnaisuuksia</strong>
-    . GitHubin tuotteet ovat kaikki Microsoftin omistuksessa, joten jokainen
-    tiimi tekee oman ratkaisunsa sen suhteen, haluaako sitoa automaation,
-    projektinhallinnan ja versionhallinnan täysin GitHubiin vai hyödyntää
-    avoimen lähdekoodin vaihtoehtoja tai muita palveluita.
+    On hyvä pohtia myös <strong>sidonnaisuuksia</strong>. GitHubin tuotteet ovat kaikki Microsoftin
+    omistuksessa, joten jokainen tiimi tekee oman ratkaisunsa sen suhteen, haluaako sitoa
+    automaation, projektinhallinnan ja versionhallinnan täysin GitHubiin vai hyödyntää avoimen
+    lähdekoodin vaihtoehtoja tai muita palveluita.
   </p>
 
   <h3>Lopuksi</h3>
@@ -324,96 +255,73 @@
   <h5>Millaisilla termeillä versionhallinnasta puhutaan IT-arjessa?</h5>
   <p>
     Meidän suomalaisessa tiimissä puhe on usein sekoitus
-    <strong>suomennoksia ja alkuperäisiä termejä</strong>
-    . Esimerkiksi merge on lähes aina
-    <em>merge</em>
-    , kun taas haarat on
-    <em>haaroja</em>
-    . Push on yleensä
-    <em>puskemista</em>
-    , kun taas pull request on lyhennetty
-    <em>pulariksi</em>
-    . Commit-viestin otsaketekstin alla kirjattava pidempi selitys on
-    tuttavallisemmin
-    <em>pullateksti</em>
-    . Arkikieliset ilmaukset vaihtelevat tiimeittäin ja tekijöittäin, mutta
-    tärkeintä on, että kaikki tiimissä ymmärtävät mistä puhutaan.
+    <strong>suomennoksia ja alkuperäisiä termejä</strong>. Esimerkiksi merge on lähes aina
+    <em>merge</em>, kun taas haarat on <em>haaroja</em>. Push on yleensä <em>puskemista</em>, kun
+    taas pull request on lyhennetty <em>pulariksi</em>. Commit-viestin otsaketekstin alla kirjattava
+    pidempi selitys on tuttavallisemmin <em>pullateksti</em>. Arkikieliset ilmaukset vaihtelevat
+    tiimeittäin ja tekijöittäin, mutta tärkeintä on, että kaikki tiimissä ymmärtävät mistä puhutaan.
   </p>
 
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
-    data-title="Uusi työntekijä"
-  >
+    data-title="Uusi työntekijä">
     <div class="contentToAccordion">
       <h5>Mitä uuden työntekijän pitäisi osata Gitistä?</h5>
       <p>
         Uudelta työntekijältä ei odoteta täydellistä Gitin hallintaa, vaan
-        <strong>perusasioiden varmaa ymmärrystä</strong>
-        . Riittävällä tasolla osaamista on silloin, kun osaat luoda haaran,
-        puskea muutokset ja luoda pull requestin. Tärkeintä on, että pystyt
-        työskentelemään osana tiimiä ja hallitsemaan oman osuutensa
-        versionhallinnassa. Alussa on luonnollista, että työskentely on
-        hitaampaa. Gitin taidot kehittyvät käytännön kautta, johon päivittäinen
-        tekeminen on paras opettaja.
+        <strong>perusasioiden varmaa ymmärrystä</strong>. Riittävällä tasolla osaamista on silloin,
+        kun osaat luoda haaran, puskea muutokset ja luoda pull requestin. Tärkeintä on, että pystyt
+        työskentelemään osana tiimiä ja hallitsemaan oman osuutensa versionhallinnassa. Alussa on
+        luonnollista, että työskentely on hitaampaa. Gitin taidot kehittyvät käytännön kautta, johon
+        päivittäinen tekeminen on paras opettaja.
       </p>
       <p>
-        Kannattaa panostaa myös commit-viestien laatuun. Hyvä viesti kertoo,
-        miksi teit muutoksen ja mihin ratkaisuun päädyit. Tällaiset viestit
-        <strong>herättävät luottamusta</strong>
-        , koska ne osoittavat, että tekijä on ajatellut työnsä läpi ja osaa
-        perustella valintansa.
+        Kannattaa panostaa myös commit-viestien laatuun. Hyvä viesti kertoo, miksi teit muutoksen ja
+        mihin ratkaisuun päädyit. Tällaiset viestit <strong>herättävät luottamusta</strong>, koska
+        ne osoittavat, että tekijä on ajatellut työnsä läpi ja osaa perustella valintansa.
       </p>
       <h5>Voiko odottaa perehdytystä Git-käytänteistä?</h5>
       <p>
-        Voi odottaa, mutta odotukset kannattaa pitää maltillisina. Kun liityt
-        uuteen projektiin, saatat saada käyttöösi dokumentteja, joita ei ole
-        päivitetty vuosiin. Usein projektin todelliset käytännöt selviävät
-        parhaiten
-        <strong>commit-historiaa lukemalla</strong>
-        . Jo 50 viimeisintä committia voi antaa hyvän kuvan siitä, miten
-        tiimissä oikeasti toimitaan.
+        Voi odottaa, mutta odotukset kannattaa pitää maltillisina. Kun liityt uuteen projektiin,
+        saatat saada käyttöösi dokumentteja, joita ei ole päivitetty vuosiin. Usein projektin
+        todelliset käytännöt selviävät parhaiten <strong>commit-historiaa lukemalla</strong>. Jo 50
+        viimeisintä committia voi antaa hyvän kuvan siitä, miten tiimissä oikeasti toimitaan.
       </p>
       <p>
-        Älä säikähdä, jos työpaikalla käytetyt tavat poikkeavat siitä, mitä
-        koulussa on opetettu. Jokaisella tiimillä on omat käytäntönsä ja ne
-        voivat olla muotoutuneet vuosien varrella ilman, että kukaan on enää
-        pysähtynyt arvioimaan niitä uudelleen. Jos huomaat kehityskohteita, voit
-        rohkeasti ehdottaa parannuksia siitä, miten asioita voisi tehdä
+        Älä säikähdä, jos työpaikalla käytetyt tavat poikkeavat siitä, mitä koulussa on opetettu.
+        Jokaisella tiimillä on omat käytäntönsä ja ne voivat olla muotoutuneet vuosien varrella
+        ilman, että kukaan on enää pysähtynyt arvioimaan niitä uudelleen. Jos huomaat
+        kehityskohteita, voit rohkeasti ehdottaa parannuksia siitä, miten asioita voisi tehdä
         selkeämmin tai tehokkaammin.
       </p>
       <p>
-        Joissain projekteissa Git-käytännöt ovat erittäin hyvin dokumentoituja
-        ja säännöt on kirjattu tarkasti. Toisinaan taas perehdytys tarkoittaa
-        käytännössä sitä, että
-        <strong>kysyt ja opit tiimiltä</strong>
-        . Älä epäröi kysyä kokeneemmilta kehittäjiltä, miksi asioita tehdään
-        tietyllä tavalla.
+        Joissain projekteissa Git-käytännöt ovat erittäin hyvin dokumentoituja ja säännöt on
+        kirjattu tarkasti. Toisinaan taas perehdytys tarkoittaa käytännössä sitä, että
+        <strong>kysyt ja opit tiimiltä</strong>. Älä epäröi kysyä kokeneemmilta kehittäjiltä, miksi
+        asioita tehdään tietyllä tavalla.
       </p>
     </div>
   </div>
 
   <h5>Mitä muuta sanottavaa sinulla on Gitin käytön aloittelijoille?</h5>
   <p>
-    Gittiä ei kannata pelätä. Parhaimmillaan se on
-    <strong>suojaverkko</strong>
-    , joka kulkee mukanasi ja tallentaa kaikki koodiin tekemäsi muutokset. Jos
-    jokin muutos rikkoo koodin tai projekti alkaa tuntua kaoottiselta, Git antaa
-    mahdollisuuden palata taaksepäin, hengähtää syvään ja tehdä asia uudelleen.
-    Yksittäinen virhe ei kaada koko työtä, vaan aina on olemassa aiempi, toimiva
-    versio.
+    Gittiä ei kannata pelätä. Parhaimmillaan se on <strong>suojaverkko</strong>, joka kulkee
+    mukanasi ja tallentaa kaikki koodiin tekemäsi muutokset. Jos jokin muutos rikkoo koodin tai
+    projekti alkaa tuntua kaoottiselta, Git antaa mahdollisuuden palata taaksepäin, hengähtää syvään
+    ja tehdä asia uudelleen. Yksittäinen virhe ei kaada koko työtä, vaan aina on olemassa aiempi,
+    toimiva versio.
   </p>
   <p>
-    Ajattele Gittiä
-    <strong>kertomuksena projektistasi</strong>
-    se näyttää, mitä olet tehnyt ja miten olet edennyt. Sen ansiosta voit
-    seurata omaa kehitystäsi ja ymmärtää paremmin työn kokonaiskuvaa.
+    Ajattele Gittiä <strong>kertomuksena projektistasi</strong> se näyttää, mitä olet tehnyt ja
+    miten olet edennyt. Sen ansiosta voit seurata omaa kehitystäsi ja ymmärtää paremmin työn
+    kokonaiskuvaa.
   </p>
 
   <p class="note-box">
     <em>
-      "Älä kammoa Gittiä. Se on vaan työkalu millä tehdä asioita turvallisemmin
-      ja paremmin. Git antaa mielenrauhan."
+      "Älä kammoa Gittiä. Se on vaan työkalu millä tehdä asioita turvallisemmin ja paremmin. Git
+      antaa mielenrauhan."
     </em>
   </p>
 </section>

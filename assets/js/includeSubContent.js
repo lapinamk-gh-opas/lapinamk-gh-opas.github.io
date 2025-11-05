@@ -12,8 +12,8 @@ document.addEventListener('content:loaded', async () => {
   const container = document.getElementById('mainContainer'); // gets main container div
 
   // listens clicks for links and load new sub content accordingly
-  container.querySelectorAll('[data-page]').forEach(link => {
-    link.addEventListener('click', e => {
+  container.querySelectorAll('[data-page]').forEach((link) => {
+    link.addEventListener('click', (e) => {
       e.preventDefault();
       const subContent = link.getAttribute('data-page');
       loadPage(subContent, basePath);

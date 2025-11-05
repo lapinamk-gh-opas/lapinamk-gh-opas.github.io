@@ -1,6 +1,6 @@
 /* for layout of side bar and main content */
 
-/* takes available screen height as default */
+/* takes available screen heigt as default */
 .page-layout {
   display: flex;
   flex: 1;
@@ -44,7 +44,7 @@
   z-index: 20;
 }
 
-/* turns arrow around when sidebar is closed */
+/* turns arrow aroun when sidebar is closed */
 .toggle-btn.closed {
   transform: rotate(180deg);
   left: 1px;
@@ -146,7 +146,7 @@ a.active {
   white-space: nowrap;
 }
 
-/* sidebar position when closed */
+/* sidebas position when closed */
 .sidebar.closed .menu-items {
   transform: translateX(-280px);
 }
@@ -203,7 +203,7 @@ a.active {
   border-top: none;
 }
 
-/* sub list is hidden by default */
+/* sublist is hidden by default */
 .sidebar-sub-list:not(.commands-table) {
   padding-left: 1rem;
 }
@@ -247,7 +247,7 @@ a.active {
 
 /* lay out changes for mobile */
 @media (max-width: 1200px) {
-  /* main content area for mobile */
+  /* maincontent area for mobile */
   .page-layout {
     position: relative;
     height: fit-content;
@@ -271,7 +271,7 @@ a.active {
     transform: translateX(-300px) !important;
   }
 
-  /* sidebar after toggle button is clicked */
+  /* sidebar after togglebutton is clicked */
   .sidebar.closed .menu-items {
     transform: translateX(0) !important;
   }

@@ -12,7 +12,7 @@ document.addEventListener('accordion:loaded', () => {
   const reusedAccordion = document.querySelectorAll('.reused-accordion');
 
   // listens clicks for links and load new sub content accordingly
-  reusedAccordion.forEach(async accordion => {
+  reusedAccordion.forEach(async (accordion) => {
     const path = accordion.getAttribute('data-include');
     try {
       const reusedContent = await fetch(path); // fetches the content from the path
