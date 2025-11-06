@@ -1,14 +1,7 @@
-document.addEventListener('links:loaded', () => {
-  console.log('links content loaded');
-  enableCodeCopy();
-});
-document.addEventListener('sidebarContent:loaded', () => {
-  console.log('sidebar content loaded');
-  enableCodeCopy();
-});
-
-const enableCodeCopy = () => {
-  document.querySelectorAll('code').forEach((codeElement) => {
+const enableCodeCopy = async () => {
+  const codeElements = document.querySelectorAll('code');
+  console.log('enabling code copy for', codeElements.length, 'elements');
+  codeElements.forEach((codeElement) => {
     codeElement.style.cursor = 'pointer';
     codeElement.title = 'Kopioi 📋';
 
@@ -35,3 +28,9 @@ const showNotification = (message, code) => {
     notification.classList.remove('show');
   }, 1500);
 };
+
+const observer = new MutationObserver(() => {
+  enableCodeCopy();
+});
+
+observer.observe(document.body, { childList: true, subtree: true });
