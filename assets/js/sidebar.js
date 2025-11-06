@@ -35,6 +35,7 @@ document.addEventListener('sidebar-component:loaded', () => {
       }
     })();
     loadPromises.push(loadPromise);
+    document.dispatchEvent(new Event('sidebarContent:loaded'));
   });
 
   // After all table files are loaded, set up download buttons

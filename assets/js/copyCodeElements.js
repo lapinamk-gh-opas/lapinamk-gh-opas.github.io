@@ -1,4 +1,9 @@
 document.addEventListener('links:loaded', () => {
+  console.log('links content loaded');
+  enableCodeCopy();
+});
+document.addEventListener('sidebarContent:loaded', () => {
+  console.log('sidebar content loaded');
   enableCodeCopy();
 });
 
