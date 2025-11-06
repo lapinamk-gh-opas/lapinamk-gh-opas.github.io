@@ -2,30 +2,29 @@
   <header>
     <h1>Projektinhallinta ohjelmistokehityksessä</h1>
 
-    <p>Versionhallinnan kanssa toinen tärkeä osa-alue ohjelmistokehityksessä on
-      <strong>projektinhallinta</strong>. Projektinhallinta kattaa kaikki ne
-      toimenpiteet ja prosessit, jotka varmistavat, että projekti etenee
-      suunnitellusti ja saavuttaa asetetut tavoitteensa aikataulussa ja
-      budjetissa.
+    <p>Toinen ohjelmistokehityksen keskeisin osa-alue versionhallinnan kanssa
+      on <strong>projektinhallinta</strong>. Sen tavoitteena on varmistaa, että
+      projekti etenee suunnitellusti ja saavuttaa tavoitteensa sovitussa
+      aikataulussa.
     </p>
 
     <p>
-      Ohjelmistokehityksessä tämä tarkoittaa työn jakamista hallittaviin osiin,
-      tehtävien organisointia ja kokonaisuuden seuraamista läpi
+      Tämä tarkoittaa työn
+      <strong>jakamista hallittaviin osiin</strong>,
+      <strong>tehtävien organisointia</strong> ja
+      <strong>kokonaisuuden seuraamista</strong> läpi
       kehitysprosessin. Hyvä projektinhallinta tekee työstä läpinäkyvää ja
       auttaa tiimiä pysymään aikataulussa sekä hahmottamaan selvästi, mitä on
       vielä tekemättä.
     </p>
 
-    <p>Nykyaikaisessa ohjelmistokehitysprojekteissa käytetään pääsääntöisesti
+    <p>Nykyaikaisissa ohjelmistokehitysprojekteissa käytetään usein
       <strong>ketteriä menetelmiä</strong> (<em>agile</em>), kuten esimerkiksi
-      <em>Scrumia</em>, joiden avulla tiimit voivat <strong>reagoida muutoksiin
-      joustavasti</strong> ja
-      <strong>parantaa jatkuvasti toimintatapojaan</strong>. Työtä ei tehdä
-      kerralla valmiiksi, vaan se etenee vaiheittain eli <em>iteraatioissa</em>,
-      esimerkiksi viikoittaisissa <em>sprinteissä</em>, joiden aikana
-      keskitytään rajattuun joukkoon tehtäviä. Sprintin lopussa pidetään usein
-      <em>sprint review</em>- palaveri, jossa arvioidaan edistymistä ja
+      <em>Scrumia</em> tai <em>Kanbania</em>. Näiden avulla tiimit voivat
+      <strong>reagoida muutoksiin nopeasti</strong> ja
+      <strong>kehittää toimintaansa jatkuvasti</strong>.
+      Työ etenee vaiheittain eli <em>iteraatioissa</em>, usein viikoittaisina
+      <em>sprintteinä</em>, joiden lopuksi arvioidaan edistymistä ja
       suunnitellaan seuraavat askeleet.
     </p>
   </header>
@@ -34,55 +33,182 @@
     class="accordion"
     data-include="../../accordion-element/accordion.html"
     data-title="Ketterän ohjelmistokehityksen plussat ja miinukset">
-    <div class="contentToAccordion open">
-      <h5>Plussat</h5>
-      <ul>
-        <li>Joustavuus muuttuvissa tilanteissa ja vaatimuksissa</li>
-        <li>Tiivis yhteistyö tiimin jäsenten välillä</li>
-        <li>Nopea palaute ja palautteen hyödyntäminen kehitysprosessissa</li>
-        <li>Selkeä näkyvyys projektin etenemiseen</li>
-      </ul>
-      <h5>Miinukset</h5>
-      <ul>
-        <li>Tarve tiiviille kommunikaatiolle ja sitoutumiselle</li>
-        <li>Mahdollinen hallinnan puute, jos prosessia ei seurata tarkasti</li>
-        <li>Vaatii kokeneita tiimin jäseniä ja hyvää itseohjautuvuutta</li>
-      </ul>
+    <div class="contentToAccordion">
+      <table class="pros-cons-table">
+        <thead>
+          <tr>
+            <th>Plussat</th>
+            <th>Miinukset</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Joustavuus muuttuvissa tilanteissa</td>
+            <td>Tarve tiiviille kommunikaatiolle ja sitoutumiselle</td>
+          </tr>
+          <tr>
+            <td>Tiivis yhteistyö tiimin jäsenten välillä</td>
+            <td>Hallinnan puute, jos prosessia ei seurata tarkasti
+            </td>
+          </tr>
+          <tr>
+            <td>Nopea palaute ja jatkuva parantaminen</td>
+            <td>Vaatii hyvää itseohjautuvuutta</td>
+          </tr>
+          <tr>
+            <td>Selkeä ymmärrys projektin tilasta</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
   <h3>Kanban-taulut ketterissä ohjelmistoprojekteissa</h3>
-  <p>Yksi keskeisimmistä työkaluista on <strong>Kanban-taulu</strong>, joka
-    tarjoaa visuaalisen näkymän tehtävistä ja niiden tilasta. Kanban-tauluja
-    tarjoaa moni eri palvelu, kuten GitHub, Jira ja Trello. </p>
-  <h5>
-    Yksinkertaisimmillaan Kanban-taulu koostuu kolmesta sarakkeesta
-  </h5>
+
+  <p>Ketterän projektinhallinnan periaatteita sovelletaan käytännössä
+    erilaisilla työkaluilla, joista yksi keskeisimmistä on
+    <strong>Kanban-taulu</strong>. Se tarjoaa visuaalisen näkymän tehtävien
+    tilaan
+    ja työn etenemiseen.
+  </p>
+
+  <p>
+    Kanban-tauluja tarjoaa moni eri palvelu, kuten
+    <strong>GitHub Projects</strong>, <strong>Jira</strong>,
+    <strong>Trello</strong> ja <strong>Azure Boards</strong>.
+  </p>
+
+
+  <p>Yksinkertaisimmillaan Kanban-taulu koostuu kolmesta pääsarakkeesta</p>
   <ul>
     <li><strong>To Do</strong> - Tehtävät, jotka odottavat aloittamista</li>
-    <li><strong>In Progress</strong> - Käynnissä olevat tehtävät</li>
+    <li><strong>In Progress</strong> (tai <em>Doing</em>) - Käynnissä
+      olevat tehtävät</li>
     <li><strong>Done</strong> - Valmiit tehtävät</li>
   </ul>
+  <figure>
+    <img
+        class="wide-image"
+        src="../../assets/images/advanced/kanbanboard-github.png"
+        alt="Kanban-taulu prosessi"/>
+    <figcaption>Yksinkertainen kanban-taulu GitHub Projects:issa
+    </figcaption>
+  </figure>
 
   <p>Jokainen tehtävä eli <strong>tiketti</strong> (<em>issue/task</em>)
-    edustaa yhtä työtehtävää tai ominaisuutta. Tiketit siirretään taululla
-    vaiheesta toiseen sen edistymisen mukaan. Tämä tekee projektin etenemisestä
-    helposti seurattavaa ja auttaa havaitsemaan mahdolliset pullonkaulat, kuten
-    tehtävät, jotka jäävät pitkäksi aikaa kesken.</p>
+    edustaa yhtä työtehtävää tai ominaisuutta. Tiketit siirtyvät taululla
+    vasemmalta oikealle tehtävän edistyessä, mikä tekee projektin tilasta
+    helposti seurattavan ja paljastaa mahdolliset pullonkaulat.</p>
 
-  <p>Tiimityössä selkeä työnjako ja näkyvä eteneminen ovat erityisen tärkeitä.
-    Kun kaikki näkevät, mitä kukin tekee, päällekkäistä työtä ja
-    väärinkäsityksiä syntyy vähemmän. Projektinhallinta ei siis ole vain
-    aikataulujen hallintaa, vaan ennen kaikkea yhteistyön väline, joka tukee
-    kommunikaatiota, vastuunjakoa ja yhteistä tavoitetta.</p>
+  <h3>Tiketit projektinhallinnassa</h3>
 
-  <p>Opiskelijaprojekteissa projektinhallinnan työkalut auttavat pitämään
-    kokonaisuuden hallittavana myös pienissä tiimeissä. Esimerkiksi
-    viikoittaiset sprintit, yhteinen Kanban-taulu ja selkeät tiketit auttavat
-    seuraamaan työn etenemistä ja varmistavat, että tiimin jäsenet
-    tietävät, mitä on vielä tekemättä.</p>
+  <p>Tikettien avulla tiimi voi
+    jakaa työn <strong>pienempiin osiin</strong>, mikä tekee
+    kokonaisuudesta hallittavamman. Ne tukevat yhteistyötä ja viestintää,
+    sillä jokainen näkee, mitä tehtäviä on avoinna, kuka niistä
+    vastaa ja missä vaiheessa projekti etenee.
+  </p>
 
-  <p class="note-box">Kun opit hallitsemaan sekä versionhallinnan että
-    projektinhallinnan työkalut, voit keskittyä koodaamiseen.</p>
+  <p>Ohjelmistokehityksessä tiketti ei tarkoita ainoastaan
+    yksittäistä tehtävää. Se voi olla myös <strong>bugi</strong>,
+    <strong>parannusehdotus</strong> tai
+    esimerkiksi <strong>käyttäjän antama palaute</strong>. Tikettien avulla
+    voidaan hallita koko kehitysprosessia yhdestä näkymästä.
+  </p>
+
+  <div
+    class="accordion"
+    data-include="../../accordion-element/accordion.html"
+    data-title="Tiketin sisältämät tiedot">
+    <div class="contentToAccordion">
+
+      <p>
+        Jokaisella tiketillä (<em>issue/task</em>) on useita <strong>tärkeitä
+        määrityksiä ja tietoja</strong>, jotka auttavat sen hallinnassa ja
+        toteutuksessa. Eri projektinhallintatyökaluissa tiedot voivat vaihdella
+        hieman, mutta yleensä tiketti sisältää ainakin seuraavat asiat.
+      </p>
+
+      <ul>
+        <li><strong>Otsikko (<em>title</em>)</strong> – Tiivis kuvaus tehtävän
+          aiheesta</li>
+        <li><strong>Kuvaus (<em>description</em>)</strong> – Tarkemmat ohjeet ja
+          tavoitteet</li>
+        <li><strong>Vastuuhenkilö (<em>assignee</em>)</strong> – Tehtävästä
+          vastaava henkilö</li>
+        <li><strong>Tunnisteet (<em>labels / tags</em>)</strong> – Tehtävän
+          tyyppi
+        </li>
+        <li><strong>Prioriteetti (<em>priority</em>)</strong> – Tehtävän
+          tärkeysjärjestys
+        </li>
+        <li><strong>Tila (<em>status</em>)</strong> – Missä vaiheessa tehtävä on
+          (To Do, In Progress, Done)</li>
+        <li><strong>Määräaika (<em>due date</em>)</strong> – Tavoitepäivämäärä
+          tehtävän valmistumiselle</li>
+        <li><strong>Koko (<em>size</em>)</strong> – Tehtävän laajuus, esim.
+          <em>xs</em>, <em>s</em>, <em>m</em>,
+          <em>l</em> tai <em>xl</em>
+        </li>
+        <li><strong>Kommentit</strong> – Tiimin välinen viestintä tehtävään
+          liittyen</li>
+      </ul>
+
+      <p>
+        Nämä tiedot tekevät tiketistä selkeän kokonaisuuden, jota on helppo
+        seurata ja priorisoida Kanban-taululla.
+      </p>
+    </div>
+  </div>
+
+  <h5>Työn jakaminen sopivan kokoisiin tiketteihin</h5>
+
+  <p>
+    Kun projektia suunnitellaan, työ kannattaa jakaa tiketteihin, jotka ovat
+    <strong>riittävän pieniä</strong> jotta ne voidaan toteuttaa yhdessä
+    sprintissä, mutta tarpeeksi merkityksellisiä kokonaisuuden kannalta.
+    Hyvä tiketti kuvaa yhden
+    <strong>selkeän tehtävän tai tavoitteen</strong>.
+  </p>
+
+  <p>
+    <strong>Esimerkiksi</strong> verkkosivuston kehitysprojektissa isot
+    kokonaisuudet, kuten <em>FrontEnd</em> -kehitys, voidaan jakaa pienempiin
+    tiketteihin seuraavasti.
+  </p>
+
+  <ul>
+    <li>Suunnittele kotisivun layout</li>
+    <li>Rakenna navigaatiopalkki</li>
+    <li>Toteuta etusivun HTML- ja CSS-rakenne</li>
+    <li>Lisää yhteydenottolomake</li>
+    <li>Optimoi sivuston latausnopeus, jne.</li>
+  </ul>
+
+  <p>
+    Tällainen jaottelu tekee työn etenemisestä konkreettista ja mahdollistaa
+    useiden kehittäjien työskentelyn rinnakkain ilman päällekkäisyyksiä.
+  </p>
+
+  <h3>Product backlog ja tikettien hallinta</h3>
+
+  <p>
+    Kaikki projektin tehtävät, ideat ja parannusehdotukset kootaan
+    yhteen paikkaan, jota kutsutaan <strong>product backlogiksi</strong>.
+    Joissain Kanban-tauluissa backlog on erillinen sarake, jossa
+    säilytetään kaikkia tulevia tehtäviä ennen kuin ne siirretään seuraaviin
+    vaiheisiin.
+  </p>
+
+  <p>
+    Backlogia ylläpidetään ja priorisoidaan jatkuvasti.
+    Tärkeimmät ja aikasidonnaiset tehtävät nostetaan listan kärkeen,
+    kun taas pitkän aikavälin ideat voivat odottaa vuoroaan alempana.
+    Tämä varmistaa, että tiimi työskentelee aina tärkeimpien tehtävien parissa.
+  </p>
+
+  <p class="note-box">Versionhallinta ja projektinhallinta muodostavat <strong>
+    ohjelmistokehityksen kulmakivet</strong>. Kun ne ovat hallussa, voit keskittyä
+    itse tekemiseen, eli ohjelmointiin.</p>
 
 </section>
