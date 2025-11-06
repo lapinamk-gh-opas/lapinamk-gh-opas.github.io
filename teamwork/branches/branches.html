@@ -77,40 +77,52 @@
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
-    data-title="Git-haarojen plussat ja miinukset"
-  >
+    data-title="Git-haarojen plussat ja miinukset">
     <div class="contentToAccordion">
-      <h6>Plussat</h6>
-      <ul>
-        <li>
-          Jokainen tiimin jäsen voi työskennellä omassa haarassaan ilman, että
-          muiden työ keskeytyy
-        </li>
-        <li>
-          Useiden ominaisuuksien kehitys onnistuu rinnakkain, mikä lisää
-          tuottavuutta ja vähentää konflikteja
-        </li>
-        <li>
-          Koodin tarkastaminen ja hyväksyntä onnistuvat pull requestien kautta
-          ennen kuin muutokset tulevat päähaaraan
-        </li>
-        <li>
-          Haarat tarjoavat turvallisen testiympäristön, jossa uusia ideoita voi
-          kokeilla ilman päähaaran rikkomisen riskiä
-        </li>
-      </ul>
-
-      <h6>Miinukset</h6>
-      <ul>
-        <li>
-          Haarojen hallinta vaatii kurinalaisuutta: selkeät nimet, säännöllinen
-          päivittäminen ja turhien haarojen poistaminen
-        </li>
-        <li>
-          Yhdistäminen (merge) voi aiheuttaa konflikteja, jotka on ratkaistava
-          huolellisesti ennen jatkamista
-        </li>
-      </ul>
+      <table class="pros-cons-table">
+        <thead>
+          <tr>
+            <th>Plussat</th>
+            <th>Miinukset</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Jokainen tiimin jäsen voi työskennellä omassa haarassaan ilman,
+              että muiden työ keskeytyy
+            </td>
+            <td>
+              Haarojen hallinta vaatii kurinalaisuutta: selkeät nimet,
+              säännöllinen päivittäminen ja turhien haarojen poistaminen
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Useiden ominaisuuksien kehitys onnistuu rinnakkain, mikä lisää
+              tuottavuutta ja vähentää konflikteja
+            </td>
+            <td>
+              Yhdistäminen (merge) voi aiheuttaa konflikteja, jotka on
+              ratkaistava huolellisesti ennen jatkamista
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Koodin tarkastaminen ja hyväksyntä onnistuvat pull requestien
+              kautta ennen kuin muutokset tulevat päähaaraan
+            </td>
+            <td>Liian monien haarojen käyttö voi tehdä projektin rakenteesta
+              sekavan ja vaikeuttaa kokonaisuuden hallintaa</td>
+          </tr>
+          <tr>
+            <td>
+              Haarat tarjoavat turvallisen testiympäristön, jossa uusia ideoita
+              voi kokeilla ilman päähaaran rikkomisen riskiä
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
