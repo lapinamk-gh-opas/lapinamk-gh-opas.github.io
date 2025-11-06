@@ -123,7 +123,9 @@ const initializeAccordionFigures = () => {
       figure.style.height = 'fit-content';
     };
 
-    ['mousedown', 'touchstart'].forEach((evt) => img.addEventListener(evt, lockHeight));
+    ['mousedown', 'touchstart'].forEach((evt) =>
+      img.addEventListener(evt, lockHeight, { passive: true })
+    );
     ['mouseup', 'touchend', 'touchcancel'].forEach((evt) =>
       img.addEventListener(evt, releaseHeight)
     );

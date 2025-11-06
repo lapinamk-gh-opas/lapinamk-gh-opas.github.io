@@ -1,5 +1,7 @@
 // This JS file enables functionality to content pages arrow buttons (next/prev).
 // user can navigate trugh sub pages and different parts by pressing arrowbuttons.
+
+//imports helper functions
 import { getPageFromHash, getBasePath, loadPage } from '/assets/js/helpers.js';
 
 // Variables
@@ -13,6 +15,7 @@ let linkNamesFin = [];
 let pageIndex = 0;
 let linkIndex = 0;
 
+//Gets values for current page and base path on initial load
 document.addEventListener('content:loaded', () => {
   currentPage = getPageFromHash();
   basePath = getBasePath();
