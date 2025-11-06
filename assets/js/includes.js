@@ -2,8 +2,11 @@
 // Example usage on html file:
 // <div data-include="/path/to/file.html"></div> looks for file.html and includes its content inside this div
 // This enables modularitys to the site by allowing HTML snippets to be reused across multiple pages
+
+// Variables to track if sidebar and arrows components are loaded
 let sidebarLoaded = false;
 let arrowsLoaded = false;
+
 // Escapes HTML metacharacters in a string
 function escapeHTML(str) {
   return str.replace(/[&<>"']/g, function (m) {
@@ -24,6 +27,7 @@ function escapeHTML(str) {
   });
 }
 
+// Loops through all elements with data-include attribute and fetches their content
 document.querySelectorAll('[data-include]').forEach(async (el) => {
   const path = el.getAttribute('data-include'); // gets path from divs data-include attribute
 

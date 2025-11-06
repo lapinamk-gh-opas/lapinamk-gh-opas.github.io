@@ -1,7 +1,4 @@
-document.addEventListener('subContent:loaded', () => {
-  enableCodeCopy();
-});
-document.addEventListener('pages:loaded', () => {
+document.addEventListener('links:loaded', () => {
   enableCodeCopy();
 });
 

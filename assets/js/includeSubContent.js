@@ -1,4 +1,6 @@
 // This is JS script to dynamically load sub content into a HTML page based on URL hash and link clicks.
+
+// imports helper functions
 import { getPageFromHash, getBasePath, loadPage } from '/assets/js/helpers.js';
 
 // This manipulates dom after it has been loaded and uses
