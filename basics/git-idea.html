@@ -7,26 +7,19 @@
       initLoader('Perusteet');
     </script>
   </head>
-
   <body class="basics">
     <!-- Loader -->
     <div id="loader">Ladataan...</div>
-
     <!-- main content -->
     <div data-include="../navbar/nav.html"></div>
-
     <div class="page-layout" id="pageLayout">
       <div data-include="../sidebar/sidebar.html"></div>
-
       <main class="main-container" id="mainContainer">
         <h1>1.1 Git ja GitHub</h1>
-        <a
-          class="page-selection hide"
-          href="#introduction"
-          data-page="introduction"
+        <a class="page-selection hide" href="#introduction" data-page="introduction"
+          >Git ja GitHub</a
         >
-          Git ja GitHub
-        </a>
+
         <!-- Tähän kohti lisätään osiossa näytettävät alisivut linkkien <a> avulla. 
          Alisivujen tiedostot laitetaan saman nimiseen kansioon kuin tiedosto, 
          jossa ne halutaan näyttää. 
@@ -50,8 +43,8 @@
          </a>
 
          Eli jos halutaan näyttää tiedosto: 
-         6. introduction.html niin laitetaan data-page attribuuttiin vain introduction
-        -->
+         6. introduction.html niin laitetaan data-page attribuuttiin vain introduction-->
+
         <main id="content" class="content-screen"></main>
         <div data-include="../arrows/arrows.html"></div>
       </main>

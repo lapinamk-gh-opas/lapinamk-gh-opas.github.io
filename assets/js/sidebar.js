@@ -22,7 +22,7 @@ document.addEventListener('sidebar-component:loaded', () => {
   const sidebarIncludes = document.querySelectorAll('#sidebar [data-include]');
   let loadPromises = [];
 
-  sidebarIncludes.forEach(async el => {
+  sidebarIncludes.forEach(async (el) => {
     const path = el.getAttribute('data-include');
     const loadPromise = (async () => {
       try {
@@ -31,9 +31,7 @@ document.addEventListener('sidebar-component:loaded', () => {
         const html = await content.text();
         el.outerHTML = html;
       } catch (err) {
-        el.innerHTML = `<p style="color:red">Sisällön lataus epäonnistui: ${escapeHTML(
-          path
-        )}</p>`;
+        el.innerHTML = `<p style="color:red">Sisällön lataus epäonnistui: ${escapeHTML(path)}</p>`;
       }
     })();
     loadPromises.push(loadPromise);
@@ -52,11 +50,7 @@ document.addEventListener('sidebar-component:loaded', () => {
     const workflowBtn = document.getElementById('downloadWorkflowBtn');
     if (workflowBtn) {
       workflowBtn.addEventListener('click', () => {
-        downloadTableAsText(
-          '.workflow-table',
-          'git-workflowt.txt',
-          'Git Workflowt'
-        );
+        downloadTableAsText('.workflow-table', 'git-workflowt.txt', 'Git Workflowt');
       });
     }
   });
@@ -64,7 +58,7 @@ document.addEventListener('sidebar-component:loaded', () => {
 
 // 1. Sidebar opening and closing functionality.
 document.addEventListener('sidebar-component:loaded', () => {
-  const sidebar = document.getElementById('sidebar'); // get sidebar element
+  const sidebar = document.getElementById('sidebar'); // get sidebat element
   const toggleBtn = document.getElementById('toggleBtn'); // get toggle button element
   const mainContainer = document.getElementById('mainContainer'); // get main container element
 
@@ -95,10 +89,10 @@ document.addEventListener('sidebar-component:loaded', () => {
 
 // 2. Sidebar dropdown functionality
 document.addEventListener('sidebar-component:loaded', () => {
-  const listItems = document.querySelectorAll('.sidebar-main-item'); // gets sidebars first level list items
+  const listItems = document.querySelectorAll('.sidebar-main-item'); // gets sibebars first level list items
 
   // listens click events to each list items dropdown button and toggles class open for sub list
-  listItems.forEach(item => {
+  listItems.forEach((item) => {
     const toggle = item.querySelector('.dropdown-toggle'); // gets dropdown button
     const sublist = item.querySelector('.sidebar-sub-list'); // gets sub list
 
@@ -109,25 +103,24 @@ document.addEventListener('sidebar-component:loaded', () => {
       toggle.classList.toggle('open');
       sublist.classList.toggle('open');
 
-      console.log('isopen: ', isOpen);
       isOpen ? item.classList.remove('open') : item.classList.add('open');
     });
   });
 });
 
-// Closes note list items when sidebar is closed by removing the open class from the necessary elements.
+// Closes notelist items when sidebar is closed by removing the open class from the necessary elements.
 document.addEventListener('sidebar:changed', () => {
-  // gets sidebars note list elements
+  // gets sibebars notelist elements
   const listItems = document.querySelectorAll(
     '.sidebar-main-item.commands, .sidebar-main-item.workflow'
   );
 
-  listItems.forEach(item => {
+  listItems.forEach((item) => {
     let isOpen = item.classList.contains('open'); // check if element is open
     const toggle = item.querySelector('.dropdown-toggle'); // gets dropdown button
     const sublist = item.querySelector('.sidebar-sub-list'); // gets sub list
 
-    if ((!isOpen && !toggle) || !sublist) return; // if elements can't be found or element is not open return
+    if ((!isOpen && !toggle) || !sublist) return; // if elements can't be found or elemet is not open return
 
     // Remove open class from the necessary elements.
     item.classList.remove('open');
@@ -142,7 +135,7 @@ document.addEventListener('sidebar-component:loaded', () => {
   const menuItems = document.querySelectorAll('.sidebar-menu a'); // gets all sidebar menu links
 
   // loops through all menu links and checks if any matches current path
-  menuItems.forEach(link => {
+  menuItems.forEach((link) => {
     if (link.getAttribute('href') === currentPath) {
       const parentItem = link.closest('.sidebar-main-item');
       if (!parentItem) return;
@@ -163,9 +156,9 @@ function downloadTableAsText(tableSelector, filename, title) {
   const table = document.querySelector(tableSelector);
   if (!table) return;
   const rows = Array.from(table.querySelectorAll('tbody tr'));
-  const lines = rows.map(tr => {
+  const lines = rows.map((tr) => {
     const cells = Array.from(tr.cells);
-    return cells.map(cell => cell.innerText?.trim() ?? '').join(' — ');
+    return cells.map((cell) => cell.innerText?.trim() ?? '').join(' — ');
   });
 
   const content = `${title}\n\n${lines.join('\n')}`;

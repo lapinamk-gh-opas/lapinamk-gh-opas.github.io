@@ -1,4 +1,6 @@
 // This is JS script to dynamically load sub content into a HTML page based on URL hash and link clicks.
+
+// imports helper functions
 import { getPageFromHash, getBasePath, loadPage } from '/assets/js/helpers.js';
 
 // This manipulates dom after it has been loaded and uses
@@ -12,8 +14,8 @@ document.addEventListener('content:loaded', async () => {
   const container = document.getElementById('mainContainer'); // gets main container div
 
   // listens clicks for links and load new sub content accordingly
-  container.querySelectorAll('[data-page]').forEach(link => {
-    link.addEventListener('click', e => {
+  container.querySelectorAll('[data-page]').forEach((link) => {
+    link.addEventListener('click', (e) => {
       e.preventDefault();
       const subContent = link.getAttribute('data-page');
       loadPage(subContent, basePath);

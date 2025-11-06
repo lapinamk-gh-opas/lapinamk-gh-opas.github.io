@@ -113,6 +113,10 @@ figure {
   text-align: end;
 }
 
+.page-selection {
+  white-space: nowrap !important;
+}
+
 .page-selection.hide {
   display: none;
 }

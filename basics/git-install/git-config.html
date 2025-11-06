@@ -5,51 +5,41 @@
     <li>
       <h6>Avaa Git Bash tai terminaali</h6>
       <ul>
-        <li>
-          Git Bash asennetaan Windowsille oletuksena Gitin asennuksen yhteydessä
-        </li>
+        <li> Git Bash asennetaan Windowsille oletuksena Gitin asennuksen yhteydessä </li>
         <li>Avaa Git Bash Windowsin aloitusvalikosta tai etsi Git Bash</li>
       </ul>
       <figure>
         <img
           class="wide-image"
           src="../../assets/images/basics/git-install/git config 1.1.webp"
-          alt="Git Bashin avaaminen Windowsilla"
-        />
-        <figcaption>Git Bashin avaaminen Windowsilla</figcaption>
+          alt="Git Bashin avaaminen Windowsilla" />
+        <figcaption> Git Bashin avaaminen Windowsilla </figcaption>
       </figure>
     </li>
     <li>
       <h6>Tarkasta .gitconfig tiedoston sisältö</h6>
       <ul>
-        <li>
-          Anna komento
-          <code>git config --global --list</code>
-        </li>
+        <li>Anna komento <code>git config --global --list</code></li>
       </ul>
       <figure>
         <img
           class="wide-image"
           src="../../assets/images/basics/git-install/git config 1.2.webp"
-          alt=".gitconfig tiedoston sisällön tarkastus"
-        />
+          alt=".gitconfig tiedoston sisällön tarkastus" />
         <figcaption>.gitconfig tiedoston sisällön tarkastus</figcaption>
       </figure>
       <div class="note-box">
         <p>
-          Tämän tiedoston asetuksia käytetään laitteella globaalisti, eli
-          kaikissa Git-repositorioissa. Asetuksia on mahdollista muuttaa
-          tarvittaessa myös repositorio kohtaisesti. Tämä tapahtuu siirtymällä
-          kansioon, jossa repositorio on ja antamalla komennot ilman
-          <code>--global</code>
-          lippua.
+          Tämän tiedoston asetuksia käytetään laitteella globaalisti, eli kaikissa
+          Git-repositorioissa. Asetuksia on mahdollista muuttaa tarvittaessa myös repositorio
+          kohtaisesti. Tämä tapahtuu siirtymällä kansioon, jossa repositorio on ja antamalla
+          komennot ilman
+          <code>--global</code> lippua.
         </p>
         <p>
-          Jos et ole vielä muokannut asetustiedostoa, se sisältää vain
-          asennuksen yhteydessä määritetyn oletustekstieditorin (
-          <code>core.editor</code>
-          ). Tässä tapauksessa oletuseditoriksi on asetettu Visual Studio Code,
-          joka valittiin Gitin asennuksen aikana.
+          Jos et ole vielä muokannut asetustiedostoa, se sisältää vain asennuksen yhteydessä
+          määritetyn oletustekstieditorin (<code>core.editor</code>). Tässä tapauksessa
+          oletuseditoriksi on asetettu Visual Studio Code, joka valittiin Gitin asennuksen aikana.
         </p>
       </div>
     </li>
@@ -65,26 +55,19 @@
           Anna nimi komennolla
           <code>git config --global user.name "Sinun Nimi"</code>
         </li>
-        <li>
-          Tarkasta muutokset komennolla
-          <code>git config --global --list</code>
-        </li>
+        <li> Tarkasta muutokset komennolla <code>git config --global --list</code> </li>
       </ul>
       <p class="note-box">
-        Git käyttää nimeä ja sähköpostia commitin ns. tekijätietoina. Mikäli
-        käytät GitHub-tilillä olevaa sähköpostiosoitetta, osaa GitHub yhdistää
-        commitin sinun tiliisi. Tätä tiedostoa ei kuitenkaan käytetä GitHubissa
-        tunnistautumiseen.
+        Git käyttää nimeä ja sähköpostia commitin ns. tekijätietoina. Mikäli käytät GitHub-tilillä
+        olevaa sähköpostiosoitetta, osaa GitHub yhdistää commitin sinun tiliisi. Tätä tiedostoa ei
+        kuitenkaan käytetä GitHubissa tunnistautumiseen.
       </p>
       <figure>
         <img
           class="wide-image"
           src="../../assets/images/basics/git-install/git config 2.webp"
-          alt="Käyttäjänimen ja sähköpostin lisääminen .gitconfig tiedostoon"
-        />
-        <figcaption>
-          Käyttäjänimen ja sähköpostin lisääminen .gitconfig -tiedostoon
-        </figcaption>
+          alt="Käyttäjänimen ja sähköpostin lisääminen .gitconfig tiedostoon" />
+        <figcaption> Käyttäjänimen ja sähköpostin lisääminen .gitconfig -tiedostoon </figcaption>
       </figure>
     </li>
     <li>
@@ -92,39 +75,32 @@
       <ul>
         <li>
           Aseta nimi komennolla
-          <code>git config --global init.defaultBranch main</code>
+          <code>git config --global init.defaultBranch main </code>
         </li>
-        <li>
-          Tarkasta muutokset komennolla
-          <code>git config --global --list</code>
-        </li>
+        <li> Tarkasta muutokset komennolla <code>git config --global --list</code> </li>
       </ul>
       <p class="note-box">
-        Tämä tehtiin jo asennuksen yhteydessä system tasolle, mutta nimeäminen
-        kannattaa varmistaa vielä käyttäjätasolla.
+        Tämä tehtiin jo asennuksen yhteydessä system tasolle, mutta nimeäminen kannattaa varmistaa
+        vielä käyttäjätasolla.
       </p>
       <figure>
         <img
           class="wide-image"
           src="../../assets/images/basics/git-install/git config 3.webp"
-          alt="Oletushaaran nimen asettaminen .gitconfig tiedostoon"
-        />
-        <figcaption>
-          Oletushaaran nimen asettaminen .gitconfig tiedostoon
-        </figcaption>
+          alt="Oletushaaran nimen asettaminen .gitconfig tiedostoon" />
+        <figcaption> Oletushaaran nimen asettaminen .gitconfig tiedostoon </figcaption>
       </figure>
     </li>
   </ol>
   <p>
-    Näillä asetuksilla pääsee hyvin alkuun. Lisää konfiguraatiosta voit katsoa
-    Gitin dokumentaatiosta komennolla
+    Näillä asetuksilla pääsee hyvin alkuun. Lisää konfiguraatiosta voit katsoa Gitin
+    dokumentaatiosta komennolla
     <code>git help config</code>
   </p>
   <div class="note-box">
     <p>
-      Gitin dokumentaatio voi vaikuttaa aluksi kryptiseltä, joten tässä vielä
-      taulukko jo käytetyistä ja muutamista muista hyödyllisistä asetuksista.
-      <br />
+      Gitin dokumentaatio voi vaikuttaa aluksi kryptiseltä, joten tässä vielä taulukko jo
+      käytetyistä ja muutamista muista hyödyllisistä asetuksista. <br />
     </p>
 
     <table>
@@ -162,15 +138,9 @@
         <tr>
           <td><code>alias.*</code></td>
           <td>
-            Lyhenteiden (alias) luominen usein käytetyille komennoille
-            <br />
-            (esim.
-            <code>git config --global alias.ci commit</code>
-            luo komennolle
-            <code>commit</code>
-            lyhenteen
-            <code>ci</code>
-            )
+            Lyhenteiden (alias) luominen usein käytetyille komennoille <br />
+            (esim. <code>git config --global alias.ci commit</code> luo komennolle
+            <code>commit</code> lyhenteen <code>ci</code>)
           </td>
         </tr>
       </tbody>

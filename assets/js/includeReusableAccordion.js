@@ -8,11 +8,13 @@ function escapeHTML(str) {
     .replace(/'/g, '&#39;');
 }
 
+// Fetches and replaces reused accordion content from external HTML file.
+// Location of reused content is defined in HTML-files accordion elements data-include attribute
 document.addEventListener('accordion:loaded', () => {
   const reusedAccordion = document.querySelectorAll('.reused-accordion');
 
-  // listens clicks for links and load new sub content accordingly
-  reusedAccordion.forEach(async accordion => {
+  // loops through all reused accordion elements found and fetches their content
+  reusedAccordion.forEach(async (accordion) => {
     const path = accordion.getAttribute('data-include');
     try {
       const reusedContent = await fetch(path); // fetches the content from the path
