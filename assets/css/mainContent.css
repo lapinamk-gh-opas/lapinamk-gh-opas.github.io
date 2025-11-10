@@ -113,6 +113,10 @@ figure {
   text-align: end;
 }
 
+.page-selection {
+  white-space: nowrap !important;
+}
+
 .page-selection.hide {
   display: none;
 }
@@ -139,6 +143,60 @@ table td {
   vertical-align: top;
   text-align: left;
   border-bottom: 1px solid #ccc;
+}
+
+/* pros and cons table specific styles */
+.pros-cons-table {
+  margin-top: -0.5rem;
+  border: none;
+  border-bottom: none;
+  width: 100%;
+}
+
+.pros-cons-table th {
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.pros-cons-table td {
+  font-size: 0.9rem;
+}
+
+.pros-cons-table th:first-child,
+.pros-cons-table td:first-child {
+  width: 50%;
+  border-right: 1px solid #ccc;
+}
+
+.pros-cons-table td:first-child {
+  position: relative;
+  padding-left: 1.4rem;
+}
+
+.pros-cons-table td:first-child::before {
+  content: '+';
+  color: #14827d;
+  font-weight: bold;
+  font-size: 1rem;
+  position: absolute;
+  left: 0.5rem;
+  top: 0.55rem;
+}
+
+.pros-cons-table td:nth-child(2) {
+  position: relative;
+  padding-left: 1.4rem;
+}
+
+.pros-cons-table td:nth-child(2)::before {
+  content: '–';
+  color: #bd462a;
+  font-weight: bold;
+  font-size: 1rem;
+  position: absolute;
+  left: 0.5rem;
+  top: 0.55rem;
 }
 
 /* Edits ol's li's marker number to match h6 text size */
@@ -173,6 +231,7 @@ table tr:last-child td {
 /* list item spacing */
 li {
   margin-bottom: 0.5rem;
+  margin-top: 0.3rem;
 }
 
 /*pre*/
@@ -194,15 +253,27 @@ figcaption {
 .note-box {
   background: rgba(20, 130, 125, 0.2);
   border: 2px solid rgba(20, 130, 125, 0.4);
-  padding: 0.5rem 1rem;
-  margin: 1rem 0 2rem 0;
+  padding: 0.8rem 1.4rem;
+  margin: 1rem 0 1rem 0;
   display: inline-block;
+}
+
+/*note-box last p no margin*/
+.note-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* Keep list markers inside note-box padding */
+.note-box ul,
+.note-box ol {
+  list-style-position: outside;
+  padding-left: 1rem;
 }
 
 /* red exclamation mark for important list items */
 .warning::marker {
-  content: "!  ";
-  color: #BD462A;
+  content: '!  ';
+  color: #bd462a;
   font-weight: bold;
   font-size: 1.2em;
 }

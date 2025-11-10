@@ -2,158 +2,133 @@
   <header>
     <h1>Gitin käyttötapojen esittely</h1>
     <p>
-      Tässä osiossa käsitellään seuraavat kolme yleistä tapaa käyttää
-      <strong>Gitiä</strong>
+      Tässä osiossa käsitellään kolme yleistä tapaa käyttää
+      <strong>Gittiä</strong>.
     </p>
   </header>
   <div>
     <div
       class="accordion"
       data-include="../../accordion-element/accordion.html"
-      data-title="1. Komentorivi"
-    >
+      data-title="1. Komentorivi">
       <div class="contentToAccordion">
         <p class="keep-margin">
-          <strong>Yleistä:</strong> Komentorivi on Gitin alkuperäinen
-          käyttöympäristö ja tarjoaa täydellisen hallinnan. Kaikki toiminnot,
-          kuten haarat, yhdistely, etärepositorioiden hallinta, ovat
-          käytettävissä välittömästi.
+          Komentorivi on Gitin alkuperäinen käyttöympäristö ja tarjoaa täyden hallinnan sen
+          toimintoihin. Kaikki keskeiset ominaisuudet, kuten haarojen luonti, yhdistely sekä
+          etärepositorioiden hallinta, ovat käytettävissä heti.
         </p>
-        <h6>Tyypilliset ympäristöt</h6>
+        <h5>Tyypilliset ympäristöt</h5>
         <ul>
+          <li> <strong>Git Bash</strong> (Windows) on Linux-tyylinen komentorivi Windowsille </li>
           <li>
-            <strong>Git Bash</strong> (Windows) on Linux-tyylinen komentorivi
-            Windowsille.
+            <strong>Terminal</strong> (macOS/Linux) tukee git komentoja kun git on asennettu
           </li>
           <li>
-            <strong>Terminal</strong> (macOS/Linux) tukee git komentoja kun git
-            on asennettu.
-          </li>
-          <li>
-            <strong>Koodieditorien sisäinen terminaali</strong> esim. VS Coden
-            terminal toimii ilman erillisen komentorivi-ikkunan käyttöä.
+            <strong>Koodieditorien sisäinen terminaali</strong> esim. VS Coden terminal toimii ilman
+            erillisen komentorivi-ikkunan käyttöä
           </li>
         </ul>
-        <h6>Käyttö</h6>
+        <h5>Käyttö</h5>
         <ul>
           <li>
-            Käytetään tekstikomennoin, kuten <code>git init</code>,
-            <code>git add</code>, <code>git commit</code>,
-            <code>git push</code> jne.
+            Käytetään tekstikomennoin, kuten <code>git init</code>, <code>git add</code>,
+            <code>git commit</code>,
+            <code>git push</code>
           </li>
         </ul>
-        <h6>Plussat</h6>
+        <h5>Plussat</h5>
         <ul>
-          <li>Kaikkein joustavin ja hyvin hallittuna tehokkain tapa.</li>
-          <li>
-            Ei rajoituksia ympäristöstä riippuen (sopii myös
-            palvelinympäristöihin).
-          </li>
+          <li>Kaikkein joustavin ja hyvin hallittuna tehokkain tapa</li>
+          <li> Ei rajoituksia ympäristöstä riippuen (sopii myös palvelinympäristöihin) </li>
         </ul>
-        <h6>Miinukset</h6>
+        <h5>Miinukset</h5>
         <ul>
-          <li>Jyrkempi opettelukynnys.</li>
-          <li>Komentojen muistaminen vaatii harjoittelua.</li>
+          <li>Jyrkempi oppimiskäyrä</li>
+          <li>Komentojen muistaminen vaatii harjoittelua</li>
         </ul>
       </div>
     </div>
     <div
       class="accordion"
       data-include="../../accordion-element/accordion.html"
-      data-title="2. Koodieditori (IDE)"
-    >
+      data-title="2. Koodieditori (IDE)">
       <div class="contentToAccordion">
         <p class="keep-margin">
-          <strong>Yleistä:</strong> Monet nykyaikaiset IDE:t ja editorit
-          tarjoavat sisäänrakennetun Git-tuen kuten yhdistely, haarojen hallinta
-          ja konfliktityökalut suoraan samassa käyttöliittymässä.
+          Monet nykyaikaiset kehitysympäristöt (IDE:t) ja editorit tarjoavat sisäänrakennetun
+          Git-tuen. Niiden avulla voit hallita haaroja, yhdistää muutoksia ja ratkaista konflikteja
+          suoraan käyttöliittymässä.
         </p>
-        <h6>Ympäristöjä</h6>
+        <h5>Ympäristöjä</h5>
+        <ul>
+          <li> Visual Studio Code (Microsoft) </li>
+          <li> PyCharm (JetBrains) </li>
+          <li> Android Studio (Google / JetBrains) </li>
+        </ul>
+        <h5>Käyttö</h5>
         <ul>
           <li>
-            <strong>Microsoft, Visual Studio Codessa</strong> on Source
-            Control-paneeli ja integroitu terminaali versionhallintaan.
-          </li>
-          <li>
-            <strong>JetBrains, PyCharm</strong> tarjoaa integraation Gitin ja
-            GitHubin hallintaan.
-          </li>
-          <li>
-            <strong>Google(JetBrains), Android Studio</strong> versionhallinta
-            integraation käyttöönotto mahdollistaa Git toiminnallisuudet.
+            Voit ajaa Git-komennot käyttäen graafista käyttöliittymää tai editorin integroidussa
+            terminaalissa
           </li>
         </ul>
-        <h6>Käyttö</h6>
+        <h5>Plussat</h5>
         <ul>
           <li>
-            Voit ajaa Git-komennot käyttäen graafista käyttöliittymää tai
-            editorin terminaalista.
+            Ei tarvetta vaihtaa sovellusta, kun koodaus ja versionhallinta ovat samassa paikassa
           </li>
+          <li> Muutoshistoria ja konfliktit on helppo hahmottaa ja ratkaista visuaalisesti </li>
         </ul>
-        <h6>Plussat</h6>
+        <h5>Miinukset</h5>
         <ul>
-          <li>
-            Ei tarvetta vaihtaa sovellusta, kun koodaus ja versionhallinta ovat
-            samassa paikassa.
-          </li>
-          <li>
-            Helppo käsitellä muutoksia ja ratkaista merge-konflikteja
-            visuaalisesti.
-          </li>
-        </ul>
-        <h6>Miinukset</h6>
-        <ul>
-          <li>Joissain tapauksissa rajoittuneempi kuin komentorivi.</li>
+          <li>Joissain tapauksissa rajoittuneempi kuin komentorivi</li>
         </ul>
       </div>
     </div>
     <div
       class="accordion"
       data-include="../../accordion-element/accordion.html"
-      data-title="3. Erillinen graafinen sovellus (GitHub Desktop)"
-    >
+      data-title="3. Erillinen graafinen sovellus (GitHub Desktop)">
       <div class="contentToAccordion">
         <p class="keep-margin">
-          <strong>Yleistä:</strong> GitHub Desktop on käyttäjäystävällinen
-          sovellus, joka keskittyy GitHubin kanssa työskentelyyn. Se tarjoaa
-          graafisen käyttöliittymän tavallisille Git-työkuluille.
+          GitHub Desktop on käyttäjäystävällinen sovellus, joka on kehitetty helpottamaan GitHubin
+          ja Gitin käyttöä. Se tarjoaa graafisen käyttöliittymän yleisimmille Git-työnkuluille,
+          kuten commiteille, haarojen hallinnalle ja muutosten yhdistämiselle.
         </p>
-        <h6>Ominaisuuksia</h6>
+        <h5>Ominaisuuksia</h5>
         <ul>
-          <li>Visuaalinen commit-historia ja haara-/merge-näkymä.</li>
-          <li>Helppo kloonaus GitHubista ja synkronointi.</li>
+          <li>Visuaalinen commit-historia ja haara-/merge-näkymä</li>
+          <li>Helppo repositorioiden kloonaus GitHubista ja muutosten synkronointi</li>
           <li>
-            Drag &amp; drop -tiedostojen lisäys ja pull requestien nopea luonti.
+            Drag & drop -toiminto tiedostojen lisäämiseen ja pull requestien nopeaan luontiin
           </li>
         </ul>
-        <h6>Käyttö</h6>
+        <h5>Käyttö</h5>
         <ul>
-          <li>
-            Käytetään täysin graafisella käyttöliittymällä eikä vaadi
-            komentorivikäskyjä.
-          </li>
+          <li> Toimii täysin graafisella käyttöliittymällä eikä vaadi komentorivin käyttöä </li>
         </ul>
-        <h6>Plussat</h6>
+        <h5>Plussat</h5>
         <ul>
-          <li>Erittäin aloittelijaystävällinen.</li>
-          <li>Sujuva GitHub-integraatio.</li>
+          <li>Erittäin aloittelijaystävällinen</li>
+          <li>Sujuva ja saumaton GitHub-integraatio</li>
         </ul>
-        <h6>Miinukset</h6>
+        <h5>Miinukset</h5>
         <ul>
-          <li>Vähemmän joustava monimutkaisissa projekteissa.</li>
-          <li>Suunniteltu vain GitHubin käyttöön.</li>
+          <li
+            >Vähemmän joustava monimutkaisissa tai useita etärepositorioita käyttävissä
+            projekteissa</li
+          >
+          <li>Suunniteltu ensisijaisesti GitHubin kanssa työskentelyyn</li>
         </ul>
       </div>
     </div>
   </div>
   <div>
-    <h4>Suositus opiskelijalle</h4>
+    <h3>Suositus opiskelijalle</h3>
     <p>
-      Aloita komentoriviltä, jotta ymmärrät Gitin perusperiaatteet. Kun
-      perusteet ovat selvät, opettele saman työnkulun tekeminen omassa IDE:ssäsi
-      (esim. VS Code tai PyCharm) ja tarvittaessa käytä GitHub Desktopia nopeana
-      apuvälineenä. Lopullinen ja sinulle sopivin työnkulku voi olla myös
-      yhdistelmä näistä työkaluista.
+      Aloita komentoriviltä, jotta ymmärrät Gitin perusperiaatteet. Kun perusteet ovat selvät,
+      opettele saman työnkulun tekeminen omassa IDE:ssäsi (esim. VS Code tai PyCharm) ja
+      tarvittaessa käytä myös GitHub Desktopia nopeana apuvälineenä. Monille paras työnkulku
+      muodostuu näiden työkalujen yhdistelmästä.
     </p>
   </div>
 </section>

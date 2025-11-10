@@ -3,8 +3,8 @@
   <head>
     <link rel="stylesheet" href="/assets/css/loading.css" />
     <script type="module">
-      import { initLoader } from "/assets/js/loaderInit.js";
-      initLoader("Lisätoiminnot");
+      import { initLoader } from '/assets/js/loaderInit.js';
+      initLoader('Lisätoiminnot');
     </script>
   </head>
 
@@ -19,14 +19,17 @@
       <div data-include="../sidebar/sidebar.html"></div>
 
       <main class="main-container" id="mainContainer">
-        <h1>4.2. Projektinhallinta (Projects)</h1>
-        <!-- <a class="page-selection" href="#" data-page="installing-git"
-          >Tähän ala osiot</a> -->
+        <h1>4.1 Projektinhallinta</h1>
+        <a class="page-selection" href="#" data-page="introduction">Projektinhallinta</a>
+        /
+        <a class="page-selection" href="#" data-page="github-projects">GitHub Projects</a>
+        /
+        <a class="page-selection" href="#" data-page="practice-projects">Harjoitus</a>
         <main id="content" class="content-screen"></main>
         <div data-include="../arrows/arrows.html"></div>
       </main>
     </div>
-
+    <div data-include="../notification/notification.html"></div>
     <div data-include="../footer/footer.html"></div>
   </body>
 </html>

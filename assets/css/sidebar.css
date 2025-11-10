@@ -190,7 +190,7 @@ a.active {
 
 /* Dropdown arrow when dropdown is closed */
 .dropdown-toggle::after {
-  content: "▼";
+  content: '▼';
   border-top: none;
   top: -1px;
   transform: rotate(0deg);
@@ -215,7 +215,7 @@ a.active {
 
 /* Dropdown arrow when dropdown is closed */
 .dropdown-toggle.commands::after {
-  content: "+";
+  content: '+';
   line-height: 1.5rem;
   font-size: 2rem;
   top: -1px;
@@ -226,7 +226,7 @@ a.active {
 
 /* Dropdown arrow when dropdown is open */
 .dropdown-toggle.commands.open::after {
-  content: "–";
+  content: '–';
   border-top: none;
   position: relative;
   top: -2px;

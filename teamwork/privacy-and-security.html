@@ -3,8 +3,8 @@
   <head>
     <link rel="stylesheet" href="/assets/css/loading.css" />
     <script type="module">
-      import { initLoader } from "/assets/js/loaderInit.js";
-      initLoader("Tiimityöskentely");
+      import { initLoader } from '/assets/js/loaderInit.js';
+      initLoader('Tiimityöskentely');
     </script>
   </head>
 
@@ -20,16 +20,20 @@
 
       <main class="main-container" id="mainContainer">
         <h1>2.5 Tietoturva ja yksityisyys</h1>
-        <a class="page-selection" href="#introduction" data-page="introduction">Turvallinen käyttö</a>
+        <a class="page-selection" href="#introduction" data-page="introduction"
+          >Turvallinen käyttö</a
+        >
         /
         <a class="page-selection" href="#secrets" data-page="secrets">Salaisuuksien suojaaminen</a>
         /
-        <a class="page-selection" href="#practice-secrets" data-page="practice-secrets">Harjoitus</a>
+        <a class="page-selection" href="#practice-secrets" data-page="practice-secrets"
+          >Harjoitus</a
+        >
         <main id="content" class="content-screen"></main>
         <div data-include="../arrows/arrows.html"></div>
       </main>
     </div>
-
+    <div data-include="../notification/notification.html"></div>
     <div data-include="../footer/footer.html"></div>
   </body>
 </html>

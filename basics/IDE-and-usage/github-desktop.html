@@ -3,48 +3,51 @@
     <h1>Gitin käyttö GitHub Desktopilla</h1>
     <p>
       Tällä sivulla käsitellään Gitin käyttöä
-      <strong>GitHub Desktopin</strong> avulla. GitHub Desktop ei ole
-      koodieditori, joten sen kautta ei voi muokata tiedostoja. Työkalu on
-      tarkoitettu Git-toimintoihin, kuten tiedosotjen lisääminen, vieminen ja
-      tuominenm repositorion haaroittamiseen (branching) ja yhdistämiseen
-      (merging). Koodieditorien käyttöä käsitellään erikseen aiemmilla sivuilla.
-      Haitari-elementistä voit katsoa tarvittaessa ohjeet GitHub Desktopin
-      käyttöönottoon.
+      <strong>GitHub Desktopin</strong> avulla. GitHub Desktop ei ole koodieditori, joten sen kautta
+      ei voi muokata tiedostoja. Työkalu on luotu varta vasten helpottamaan Gitin ja GitHubin
+      käyttöä graafisella käyttöliittymällä.
+    </p>
+    <p>
+      GitHub Desktopilla voit hallita Git-toimintoja, kuten tiedostojen lisäämistä, haarojen
+      luomista ja yhdistämistä sekä muutosten viemistä ja tuomista.
     </p>
     <div
       class="accordion"
       data-include="../../accordion-element/accordion.html"
-      data-title="GitHub Desktopin käyttöönotto"
-    >
+      data-title="GitHub Desktopin käyttöönotto">
       <div class="contentToAccordion">
         <p class="keep-margin">
-          GitHub Desktopin käyttöönottamiseksi käy läpi,
-          <a href="/basics/git-install.html">1.4 käyttöönotto</a> osiossa
-          tehtyjen toimien lisäksi, seuraavat vaiheet:
+          GitHub Desktopin käyttöönottamiseksi käy ensin läpi
+          <a href="/basics/git-install.html">1.4 Käyttöönotto</a>
+          osiossa käydyt asennusohjeet ja sen jälkeen seuraa alla olevia ohjeita.
         </p>
+
         <ol>
           <li>
             Lataa
-            <a href="https://desktop.github.com/download/" target="_blank"
-              >GitHub Desktopin</a
-            >
-            asennusohjelma ja aloita asennus.
+            <a
+              href="https://desktop.github.com/download/"
+              target="_blank"
+              rel="noopener noreferrer">
+              GitHub Desktopin
+            </a>
+            asennusohjelma ja aloita asennus
             <figure>
               <img
                 class="wide-image"
                 src="../../assets/images/basics/IDE-and-usage/githubDesktop/github desktop 0.webp"
-                alt="GitHub Desktop lataus."
-              />
-              <figcaption>GitHub Desktop lataus.</figcaption>
+                alt="GitHub Desktopin lataus" />
+              <figcaption>GitHub Desktopin lataus</figcaption>
             </figure>
           </li>
           <li>
             Asennuksen yhteydessä sinua pyydetään kirjautumaan
-            <strong>GitHub-tilillesi</strong>.
+            <strong>GitHub-tilillesi</strong>
             <ul>
               <li>
                 klikkaa
-                <strong>Sing in to GitHub.com</strong> nappia.
+                <strong>Sign in to GitHub.com</strong>
+                nappia
               </li>
             </ul>
 
@@ -52,25 +55,25 @@
               <img
                 class="wide-image"
                 src="../../assets/images/basics/IDE-and-usage/githubDesktop/github desktop 1.webp"
-                alt="Asennus ja kirjautuminen GitHub Desktopiin."
-              />
-              <figcaption>
-                Asennus ja kirjautuminen GitHub Desktopiin.
-              </figcaption>
+                alt="Kirjautuminen GitHub Desktopiin" />
+              <figcaption>Kirjautuminen GitHub Desktopiin</figcaption>
             </figure>
             <div class="note-box">
               <ul>
                 <li class="warning">
-                  Mikäli sinulla on jo GitHub auki selaimessa ja olet kirjatunut
-                  sisään, voit siirtyä suoraan kohtaan:
-                  <strong>4. Käyttäjän valitseminen</strong>.
+                  Mikäli sinulla on jo GitHub auki selaimessa ja olet kirjautunut sisään, voit
+                  siirtyä suoraan kohtaan
+                  <strong>4. Käyttäjän valitseminen</strong>
                 </li>
               </ul>
             </div>
           </li>
           <li>
             Syötä aukeavaan selainikkunaan GitHub-tilin
-            <strong>käyttäjänimi</strong> tai <strong>sähköposti</strong> ja
+            <strong>käyttäjänimi</strong>
+            tai
+            <strong>sähköposti</strong>
+            ja
             <strong>salasana</strong>
             <strong></strong>
             <ul>
@@ -83,19 +86,14 @@
               <img
                 class="wide-image"
                 src="../../assets/images/basics/IDE-and-usage/githubDesktop/github desktop 2.webp"
-                alt="GitHub-tilille kirjautuminen."
-              />
-              <figcaption>GitHub-tilille kirjautuminen.</figcaption>
+                alt="GitHub-tilille kirjautuminen" />
+              <figcaption>GitHub-tilille kirjautuminen</figcaption>
             </figure>
 
             <ul>
               <li>
-                Mikäli olet ottanut käyttöön kaksivaiheisen tunnistautumisen
-                tilillesi, pyttää GitHub sinua syöttämään tunnistautumisen
-                avainkoodin.
-              </li>
-              <li>
-                Anna avainkoodi tunnistautumissovelluksestasi ja klikkaa
+                Anna kaksivaiheisen tunnistautumisen avainkoodi tunnistautumissovelluksestasi ja
+                klikkaa
                 <strong>Verify</strong>
               </li>
             </ul>
@@ -104,67 +102,64 @@
               <img
                 class="wide-image"
                 src="../../assets/images/basics/IDE-and-usage/githubDesktop/github desktop 3.webp"
-                alt="GitHub-tilin kaksivaiheinen tunnistautuminen."
-              />
-              <figcaption>
-                GitHub-tilin kaksivaiheinen tunnistautuminen.
-              </figcaption>
+                alt="GitHub-tilin kaksivaiheinen tunnistautuminen" />
+              <figcaption> GitHub-tilin kaksivaiheinen tunnistautuminen </figcaption>
             </figure>
           </li>
           <li>
             Valitse käytettävä tili klikkaamalla
-            <strong>Continue</strong> käyttäjänimen vierestä
+            <strong>Continue</strong>
+            käyttäjänimen vierestä
 
             <figure>
               <img
                 class="wide-image"
                 src="../../assets/images/basics/IDE-and-usage/githubDesktop/github desktop 4.webp"
-                alt="Tilin valinnan vahvistus."
-              />
-              <figcaption>Tilin valinnan vahvistus.</figcaption>
+                alt="Tilin valinnan vahvistus" />
+              <figcaption>Tilin valinnan vahvistus</figcaption>
             </figure>
           </li>
           <li>
             Anna GitHub Desktopille lupa päästä GitHub-tilillesi klikkaamalla
-            <strong>Authorize Desktop</strong> nappia
+            <strong>Authorize Desktop</strong>
+            nappia
             <figure>
               <img
                 class="wide-image"
                 src="../../assets/images/basics/IDE-and-usage/githubDesktop/github desktop 5.webp"
-                alt="Luvan antaminen GitHub Desktopille."
-              />
-              <figcaption>Luvan antaminen GitHub Desktopille.</figcaption>
+                alt="Luvan antaminen GitHub Desktopille" />
+              <figcaption>Luvan antaminen GitHub Desktopille</figcaption>
             </figure>
           </li>
           <li>
             Siirry takaisin GitHub Desktopiin klikkaamalla
-            <strong>Avaa GitHubDesktop</strong> nappia
+            <strong>Avaa GitHubDesktop</strong>
+            nappia
 
             <figure>
               <img
                 class="wide-image"
                 src="../../assets/images/basics/IDE-and-usage/githubDesktop/github desktop 6.webp"
-                alt="Siirtyminen takaisin  GitHub Desktopiin."
-              />
-              <figcaption>Siirtyminen takaisin GitHub Desktopiin.</figcaption>
+                alt="Siirtyminen takaisin  GitHub Desktopiin" />
+              <figcaption>Siirtyminen takaisin GitHub Desktopiin</figcaption>
             </figure>
           </li>
           <li>
-            GitHub Desktop ehdottaa, Gitin konfigurointia käyttäjänimen ja
-            sähköpostin osalta. Tämä muokkaa osiossa
-            <a href="/basics/git-install.html#git-config"
-              >Git:n konfigurointi</a
-            >
-            käsiteltyä .gitconfig tiedostoa. Nämä tiedot liitetään kaikkiin Git
-            committeihin.
+            GitHub Desktop ehdottaa Gitin konfigurointia käyttäjänimen ja sähköpostin osalta. Tämä
+            muokkaa osiossa
+            <a href="/basics/git-install.html#git-config"> Git:n konfigurointi </a>
+            käsiteltyä .gitconfig tiedostoa. Nämä tiedot liitetään kaikkiin Git committeihin.
             <ul>
               <li>
-                Tarkasta ehdotetut <strong>käyttäjänimi</strong> ja
+                Tarkasta ehdotetut
+                <strong>käyttäjänimi</strong>
+                ja
                 <strong>sähköposti</strong>
               </li>
               <li>
                 Klikkaa
-                <strong>Finish</strong> nappia.
+                <strong>Finish</strong>
+                nappia
               </li>
             </ul>
 
@@ -172,18 +167,17 @@
               <img
                 class="wide-image"
                 src="../../assets/images/basics/IDE-and-usage/githubDesktop/github desktop 7.webp"
-                alt="Gitin konfigurointi."
-              />
-              <figcaption>Gitin konfigurointi.</figcaption>
+                alt="Gitin konfigurointi" />
+              <figcaption>Gitin konfigurointi</figcaption>
             </figure>
           </li>
           <li>
-            Nyt GitHub Desktop on yhdistetty GitHub tiliisi ja käyttövalmis.
+            Nyt GitHub Desktop on yhdistetty GitHub tiliisi ja käyttövalmis
 
             <ul>
               <li>
                 Etusivulla näkyvät mm. GitHub tilisi
-                <strong>repositoriot</strong>.
+                <strong>repositoriot</strong>
               </li>
             </ul>
 
@@ -191,74 +185,69 @@
               <img
                 class="wide-image"
                 src="../../assets/images/basics/IDE-and-usage/githubDesktop/github desktop 8.webp"
-                alt="Vahvistus ja sulje selainikkuna"
-              />
-              <figcaption>Yhditäminen GitHub-tiliin valmis.</figcaption>
+                alt="Vahvistus ja sulje selainikkuna" />
+              <figcaption>Yhdistäminen GitHub-tiliin valmis</figcaption>
             </figure>
           </li>
         </ol>
       </div>
     </div>
     <p>
-      Tässä osiossa luodaan komentorivi osion ohjeiden malliin uusi kansio,
-      tiedosto. Kloonataan etärepositorio, jota käytettiin edellisissä osiossa
-      paikalliseksi. Sen jälkeen tälle osiolle luodaan oma haara (branch) ja
-      lopuksi muutokset viedään etärepositorioon. Tiedostojen muutokset tehdään
-      tässä ohjeessa Git Bashilla, jotta samalla tulee harjoiteltua komentorivin
-      peruskomentoja.
+      Tässä osiossa luodaan uusi kansio ja tiedosto komentorivi-osion ohjeiden mukaisesti. Sen
+      jälkeen kloonataan sama etärepositorio, jota on käytetty myös aiemmissa osioissa. Tämän
+      jälkeen luodaan osiolle oma haara ja lopuksi muutokset viedään etärepositorioon. Tiedostojen
+      muokkaukset tehdään <strong>Git Bashilla</strong>, jotta samalla pääsee harjoittelemaan
+      komentorivin peruskomentoja.
     </p>
     <!-- Accordion element with reused content starts -->
     <div
       class="accordion"
       data-include="/accordion-element/accordion.html"
-      data-title="Mistä repositoriot ja sen URL-osoite löytyvät GitHubissa?"
-    >
+      data-title="Mistä repositoriot ja sen URL-osoite löytyvät GitHubissa">
       <div
         class="contentToAccordion reused-accordion"
-        data-include="/reused-accordion-content/repository-and-url.html"
-      >
+        data-include="/reused-accordion-content/repository-and-url.html">
         <!-- Accordion content comes from /reused-accordion-content/repository-and-url.html-->
       </div>
     </div>
     <!-- Accordion element with reused content ends -->
   </header>
+
+  <h3>Tiedoston luonti ja repositorioiden yhdistäminen GitHub Desktopilla</h3>
   <ol class="edit-number sections">
     <!--List item 1.-->
     <li>
-      <h6>Avaa Git Bash tai terminaali (macOS tai Linux).</h6>
+      <h6>Avaa Git Bash tai terminaali (macOS tai Linux)</h6>
       <ul>
-        <li>
-          Git Bash asennetaan Windowsille oletuksena Gitin asennuksen
-          yhteydessä.
-        </li>
-        <li>Avaa Git Bash Windowsin aloitusvalikosta tai etsi Git Bash.</li>
+        <li> Git Bash asennetaan Windowsille oletuksena Gitin asennuksen yhteydessä </li>
+        <li>Avaa Git Bash Windowsin aloitusvalikosta tai etsi Git Bash</li>
       </ul>
       <figure>
         <img
           class="wide-image"
           src="../../assets/images/basics/git-install/git config 1.1.webp"
-          alt="Git Bash avaaminen Windows."
-        />
-        <figcaption>
-          Git Bash on oletuksena Git kansiossa Windowsin aloitusvalikossa.
-        </figcaption>
+          alt="Git Bash Windowsin aloitusvalikossa" />
+        <figcaption>Git Bash Windowsin aloitusvalikossa</figcaption>
       </figure>
     </li>
     <!--List item 2.-->
     <li>
-      <h6>Luo uusi kansio testausta varten.</h6>
+      <h6>Luo uusi kansio testausta varten</h6>
       <ul>
         <li>
-          Siirry kansioon minne haluat luoda uuden kansion:<br />
+          Siirry hakemistoon, johon haluat luoda uuden kansion:
+          <br />
           <code>cd polku/valittuun/hakemistoon</code>
         </li>
         <li>
-          Luo uusi kansio projektia varten:<br />
+          Luo uusi kansio projektia varten
+          <br />
           <code>mkdir kansion-nimi</code>
         </li>
         <li>
-          Voit ketjuttaa komentoja käyttämällä niiden välissä <code>&&</code
-          ><br />
+          Voit ketjuttaa komentoja käyttämällä niiden välissä
+          <code>&&</code>
+          <br />
           esim.
           <code>cd Desktop/ && mkdir git-testaus-github-desktop</code>
         </li>
@@ -268,17 +257,17 @@
         <img
           class="wide-image"
           src="../../assets/images/basics/IDE-and-usage/githubDesktop/github desktop 9.webp"
-          alt="Git Bash näkymä kansion ja tiedoston luominen."
-        />
-        <figcaption>Esimerkki kansion ja tiedoston luomisesta.</figcaption>
+          alt="Git Bash näkymä kansion luominen" />
+        <figcaption>Kansion luominen Git Bashilla</figcaption>
       </figure>
     </li>
     <!--List item 3.-->
     <li>
-      <h6>Kloonataan etärepositorioon luotuun kansioon.</h6>
+      <h6>Kloonaa etärepositorio luotuun kansioon</h6>
       <ul>
         <li>
-          Klikkaa <strong>Clone a repository from the internet</strong> nappia.
+          Klikkaa GitHub Desktopista
+          <strong>Clone a repository from the internet</strong> nappia
         </li>
       </ul>
 
@@ -286,38 +275,42 @@
         <img
           class="wide-image"
           src="../../assets/images/basics/IDE-and-usage/githubDesktop/github desktop 10.webp"
-          alt="GitHub Desktop - etärepositorion kloonaaminen luotuun kansioon."
-        />
-        <figcaption>
-          GitHub Desktop - etärepositorion kloonaaminen luotuun kansioon.
-        </figcaption>
+          alt="GitHub Desktop - etärepositorion kloonaaminen luotuun kansioon" />
+        <figcaption> GitHub Desktop - etärepositorion kloonaaminen luotuun kansioon </figcaption>
       </figure>
       <ul>
-        <li>Valitse <strong>testi repositoriosi</strong>.</li>
         <li>
-          Anna local path kohtaan polku <strong>luomaasi kansioon</strong>.
+          Valitse
+          <strong>testi repositoriosi</strong>
         </li>
-        <li>Klikkaa <strong>Clone</strong> nappia.</li>
+        <li>
+          Anna local path kohtaan polku
+          <strong>luomaasi kansioon</strong>
+        </li>
+        <li>
+          Klikkaa
+          <strong>Clone</strong>
+          nappia
+        </li>
       </ul>
 
       <figure>
         <img
           class="wide-image"
           src="../../assets/images/basics/IDE-and-usage/githubDesktop/github desktop 11.webp"
-          alt="GitHub Desktop - paikallisen kansion polun antaminen."
-        />
-        <figcaption>
-          GitHub Desktop - paikallisen kansion polun antaminen.
-        </figcaption>
+          alt="GitHub Desktop - paikallisen kansion polun antaminen" />
+        <figcaption> GitHub Desktop - paikallisen kansion polun antaminen </figcaption>
       </figure>
     </li>
     <!--List item 4.-->
     <li>
-      <h6>GitHub Desktopissa on nyt valittuna kloonaamasi repositorio.</h6>
+      <h6>Tarkasta GitHub Desktopista kloonaamasi repositorion tiedot</h6>
       <ul>
         <li>
-          Yläpalkista näet nykyisen <strong>repositorion</strong> ja
-          <strong>haaran</strong>.
+          Yläpalkista näet nykyisen
+          <strong>repositorion</strong>
+          ja
+          <strong>haaran</strong>
         </li>
       </ul>
 
@@ -325,42 +318,41 @@
         <img
           class="wide-image"
           src="../../assets/images/basics/IDE-and-usage/githubDesktop/github desktop 12.webp"
-          alt="GitHub Desktop - nykyinen repositorio."
-        />
-        <figcaption>GitHub Desktop - nykyinen repositorio.</figcaption>
+          alt="GitHub Desktop - nykyinen repositorio" />
+        <figcaption>GitHub Desktop - nykyinen repositorio</figcaption>
       </figure>
     </li>
     <!--List item 5.-->
     <li>
-      <h6>
-        Lisätään tiedosto ja tehdään muutos olemassa olevaan tiedostoon Git
-        Bashillä.
-      </h6>
+      <h6> Lisää tiedosto ja tee muutos olemassa olevaan tiedostoon Git Bashillä </h6>
       <ul>
         <li>
-          Siirry luotuun kansioon:<br />
+          Siirry luotuun kansioon
+          <br />
           <code>cd kansion-nimi</code>
         </li>
         <li>
-          Huomataan, että Git Bash tunnistaa, että kansiossa on repositorio ja
-          näet että olet <strong>main-haarassa</strong>.
+          Huomaa, että Git Bash tunnistaa, että kansiossa on repositorio ja näet että olet
+          <strong>main-haarassa</strong>
         </li>
         <li>
           Komennolla
-          <code>dir</code> nähdään että kansioon on ilmestynyt etärepositorion
-          main.haaraan aikaisemmin lisätyt tiedostot.
+          <code>dir</code> näet että kansioon on ilmestynyt etärepositorion main -haaraan
+          aikaisemmin lisäämäsi tiedostot
         </li>
         <li>
-          Muokkaa olemassa olevaa README.md tiedostoa komennolla:<br />
+          Muokkaa olemassa olevaa README.md tiedostoa komennolla
+          <br />
           <code>echo "Lisättävä muutos tähän" >> README.md</code>
         </li>
         <li>
-          Lisää uusi tiedosto komennolla:<br />
+          Lisää uusi tiedosto komennolla
+          <br />
           <code>echo "Teksti sisältö tähän" >> tiedoston-nimi-tähän.md</code>
         </li>
         <li>
-          Jos teit saman virheen kuin minä, niin muutetaan uuden tiedoston nimi
-          komennolla:<br />
+          Jos teit saman virheen kuin minä, niin muutetaan uuden tiedoston nimi komennolla
+          <br />
           <code>mv vanha-nimi.md uusi-nimi.md</code>
         </li>
       </ul>
@@ -369,25 +361,24 @@
         <img
           class="wide-image"
           src="../../assets/images/basics/IDE-and-usage/githubDesktop/github desktop 13.webp"
-          alt="Git Bash näkymä tiedoston luominen ja muuttaminen (sekä uudelleen nimeäminen)."
-        />
+          alt="Git Bash näkymä tiedoston luominen ja muuttaminen (sekä uudelleen nimeäminen)" />
         <figcaption>
-          Git Bash näkymä tiedoston luominen ja muuttaminen (sekä uudelleen
-          nimeäminen).
+          Git Bash näkymä tiedoston luominen ja muuttaminen (sekä uudelleen nimeäminen)
         </figcaption>
       </figure>
     </li>
     <!--List item 6.-->
     <li>
-      <h6>Nyt muutokset näkyvät GitHub dektopissa.</h6>
+      <h6>Tarkista muutokset GitHub Desktopissa</h6>
       <ul>
         <li>
-          Vasemmalla sivupalkissa on <strong>lista</strong> muutetuista
-          tiedostoista.
+          Vasemmalla sivupalkissa on
+          <strong>lista</strong>
+          muutetuista tiedostoista
         </li>
         <li>
-          Klikkaamalla tiedostoa pää ruudussa voi tarkastella kyseisen tiedoston
-          <strong>muutoksia</strong>.
+          Klikkaamalla tiedostoa pääruudussa voi tarkastella kyseisen tiedoston
+          <strong>muutoksia</strong>
         </li>
       </ul>
 
@@ -395,95 +386,107 @@
         <img
           class="wide-image"
           src="../../assets/images/basics/IDE-and-usage/githubDesktop/github desktop 14.webp"
-          alt="GitHub Desktop - näkymä muutetuista tiedostoista."
-        />
-        <figcaption>
-          GitHub Desktop - näkymä muutetuista tiedostoista.
-        </figcaption>
+          alt="GitHub Desktop - näkymä muutetuista tiedostoista" />
+        <figcaption> GitHub Desktop - näkymä muutetuista tiedostoista </figcaption>
       </figure>
     </li>
     <!--List item 6.-->
     <li>
-      <h6>Uuden Git-haaran luominen.</h6>
+      <h6>Luo uusi Git-haara</h6>
       <ul>
         <li>
           Avaa alasvetovalikko klikkaamalla nykyisen haaran
-          <strong>nimeä</strong>.
+          <strong>nimeä</strong>
         </li>
-        <li>Klikkaa <strong>New branch</strong> nappia.</li>
+        <li>
+          Klikkaa
+          <strong>New branch</strong>
+          nappia
+        </li>
       </ul>
 
       <figure>
         <img
           class="wide-image"
           src="../../assets/images/basics/IDE-and-usage/githubDesktop/github desktop 14.1.webp"
-          alt="GitHub Desktop - uuden haaran luominen."
-        />
-        <figcaption>GitHub Desktop - uuden haaran luominen.</figcaption>
+          alt="GitHub Desktop - uuden haaran luominen" />
+        <figcaption>GitHub Desktop - uuden haaran luominen</figcaption>
       </figure>
       <ul>
         <li>
           Anna uudelle haaralle nimi
-          <strong>nimi</strong>.
+          <strong>nimi</strong>
         </li>
-        <li>klikkaa <strong>Create branch</strong> nappia.</li>
+        <li>
+          klikkaa
+          <strong>Create branch</strong>
+          nappia
+        </li>
       </ul>
       <figure>
         <img
           class="wide-image"
           src="../../assets/images/basics/IDE-and-usage/githubDesktop/github desktop 14.2.webp"
-          alt="GitHub Desktop - haaran nimeäminen."
-        />
-        <figcaption>GitHub Desktop - haaran nimeäminen.</figcaption>
+          alt="GitHub Desktop - haaran nimeäminen" />
+        <figcaption>GitHub Desktop - haaran nimeäminen</figcaption>
       </figure>
       <ul>
         <li>
-          Valitse, että <strong>nykyiset muutokset</strong> tuodaan luotavaan
-          haaraan.
+          Valitse, että
+          <strong>nykyiset muutokset</strong>
+          tuodaan luotavaan haaraan
         </li>
-        <li>klikkaa <strong>Switch branch</strong> nappia.</li>
+        <li>
+          klikkaa
+          <strong>Switch branch</strong>
+          nappia
+        </li>
       </ul>
       <figure>
         <img
           class="wide-image"
           src="../../assets/images/basics/IDE-and-usage/githubDesktop/github desktop 14.3.webp"
-          alt="GitHub Desktop - tiedostojen tuonti uuteen haaraan."
-        />
-        <figcaption>
-          GitHub Desktop - tiedostojen tuonti uuteen haaraan.
-        </figcaption>
+          alt="GitHub Desktop - tiedostojen tuonti uuteen haaraan" />
+        <figcaption> GitHub Desktop - tiedostojen tuonti uuteen haaraan </figcaption>
       </figure>
     </li>
     <!--List item 7.-->
     <li>
-      <h6>Tiedostojen lisääminen ja commitointi.</h6>
+      <h6>Tiedostojen lisääminen ja commitointi</h6>
       <ul>
         <li>
-          GitHub Desktopissa <code>git add tiedosto.md</code> komentoa vastaa
-          <strong>valinnan</strong> tekeminen listaan tiedoston nimen viereen.
+          GitHub Desktopissa
+          <code>git add tiedosto.md</code>
+          komentoa vastaa checkboxin klikkaaminen tiedoston nimen vierestä
         </li>
-        <li>Lisää commit-viesti <strong>Summary</strong> tekstikenttään.</li>
-        <li>Klikkaa <strong>Commit 2 files to...</strong> nappia.</li>
+        <li>
+          Lisää commit-viesti
+          <strong>Summary</strong>
+          tekstikenttään
+        </li>
+        <li>
+          Klikkaa
+          <strong>Commit 2 files to...</strong>
+          nappia
+        </li>
       </ul>
 
       <figure>
         <img
           class="wide-image"
           src="../../assets/images/basics/IDE-and-usage/githubDesktop/github desktop 15.webp"
-          alt="GitHub Desktop - tiedostojen lisääminen ja commitointi."
-        />
-        <figcaption>
-          GitHub Desktop - tiedostojen lisääminen ja commitointi.
-        </figcaption>
+          alt="GitHub Desktop - tiedostojen lisääminen ja commitointi" />
+        <figcaption> GitHub Desktop - tiedostojen lisääminen ja commitointi </figcaption>
       </figure>
     </li>
     <!--List item 7.-->
     <li>
-      <h6>Muutoksien vieminen etärepositorioon.</h6>
+      <h6>Vie muutokset etärepositorioon</h6>
       <ul>
         <li>
-          Klikkaa <strong>Publis branch</strong> nappia ylävalikosta tai
-          pääruudusta.
+          Klikkaa
+          <strong>Publish branch</strong>
+          nappia ylävalikosta tai pääruudusta
         </li>
       </ul>
 
@@ -491,40 +494,38 @@
         <img
           class="wide-image"
           src="../../assets/images/basics/IDE-and-usage/githubDesktop/github desktop 16.webp"
-          alt="GitHub Desktop - muutoksien vieminen etärepositorioon."
-        />
-        <figcaption>
-          GitHub Desktop - muutoksien vieminen etärepositorioon.
-        </figcaption>
+          alt="GitHub Desktop - muutoksien vieminen etärepositorioon" />
+        <figcaption> GitHub Desktop - muutoksien vieminen etärepositorioon </figcaption>
       </figure>
     </li>
     <li>
-      <h6>Uusi haara ja tuodut muutokset GitHubissa</h6>
+      <h6>Tarkista uusi haara ja tuodut muutokset GitHubissa</h6>
       <ul>
-        <li>Mene selaimella GitHubiin ja avaa repositorio</li>
-        <li>Klikkaa haaran valintaa jossa lukee <strong>Main</strong></li>
-        <li>Valitse uusi haara</li>
+        <li>Siirry selaimella GitHubiin ja avaa repositorio</li>
+        <li>
+          Klikkaa haaran valintaa jossa lukee
+          <strong>main</strong>
+        </li>
+        <li>Valitse luomasi uusi haara</li>
       </ul>
 
       <figure>
         <img
           class="wide-image"
           src="../../assets/images/basics/IDE-and-usage/githubDesktop/github desktop 17.webp"
-          alt="Uusi haara GitHubissa"
-        />
+          alt="Uusi haara GitHubissa" />
         <figcaption>Uusi haara GitHubissa</figcaption>
       </figure>
 
       <ul>
-        <li>Aukeaa näkymä luodun haaran sisällöstä.</li>
+        <li>Tarkastele uuden haaran sisältöä</li>
       </ul>
 
       <figure>
         <img
           class="wide-image"
           src="../../assets/images/basics/IDE-and-usage/githubDesktop/github desktop 18.webp"
-          alt="Muutokset GitHubissa"
-        />
+          alt="Muutokset GitHubissa" />
         <figcaption>Muutokset GitHubissa</figcaption>
       </figure>
     </li>

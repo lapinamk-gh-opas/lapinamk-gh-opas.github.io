@@ -3,8 +3,8 @@
   <head>
     <link rel="stylesheet" href="/assets/css/loading.css" />
     <script type="module">
-      import { initLoader } from "/assets/js/loaderInit.js";
-      initLoader("GitHub tositoimissa");
+      import { initLoader } from '/assets/js/loaderInit.js';
+      initLoader('GitHub tositoimissa');
     </script>
   </head>
 
@@ -21,15 +21,17 @@
       <main class="main-container" id="mainContainer">
         <h1>3.3 Avoin lähdekoodi</h1>
         <a class="page-selection" href="#" data-page="introduction">Perusteet</a>
-        / 
-        <a class="page-selection" href="#how-to-contribute" data-page="how-to-contribute">Osallistuminen</a>
         /
-          <a class="page-selection" href="#practice-os" data-page="practice-os">Harjoitus</a>
+        <a class="page-selection" href="#how-to-contribute" data-page="how-to-contribute"
+          >Osallistuminen</a
+        >
+        /
+        <a class="page-selection" href="#practice-os" data-page="practice-os">Harjoitus</a>
         <main id="content" class="content-screen"></main>
         <div data-include="../arrows/arrows.html"></div>
       </main>
     </div>
-
+    <div data-include="../notification/notification.html"></div>
     <div data-include="../footer/footer.html"></div>
   </body>
 </html>

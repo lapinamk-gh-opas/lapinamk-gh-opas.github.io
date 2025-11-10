@@ -1,26 +1,19 @@
 <section class="git-install">
-  <header>
-    <h1>Gitin konfigurointi</h1>
-  </header>
+  <h1>Gitin konfigurointi</h1>
 
   <ol class="edit-number sections">
     <li>
-      <h6>Avaa Git Bash tai terminaali (macOS tai Linux)</h6>
+      <h6>Avaa Git Bash tai terminaali</h6>
       <ul>
-        <li>
-          Git Bash asennetaan Windowsille oletuksena Gitin asennuksen yhteydessä
-        </li>
+        <li> Git Bash asennetaan Windowsille oletuksena Gitin asennuksen yhteydessä </li>
         <li>Avaa Git Bash Windowsin aloitusvalikosta tai etsi Git Bash</li>
       </ul>
       <figure>
         <img
           class="wide-image"
           src="../../assets/images/basics/git-install/git config 1.1.webp"
-          alt="Git Bash avaaminen Windows"
-        />
-        <figcaption>
-          Git Bash on oletuksena Git kansiossa Windowsin aloitusvalikossa.
-        </figcaption>
+          alt="Git Bashin avaaminen Windowsilla" />
+        <figcaption> Git Bashin avaaminen Windowsilla </figcaption>
       </figure>
     </li>
     <li>
@@ -28,35 +21,31 @@
       <ul>
         <li>Anna komento <code>git config --global --list</code></li>
       </ul>
-      <div class="note-box">
-        <p>
-          Tämän tiedoston asetuksia käytetään laitteella globaalisti, eli
-          kaikissa Git-repositorioissa. Asetuksia on mahdollista muuttaa
-          tarvittaessa myös repositorio kohtaisesti. Tämä tapahtuu siirtymällä
-          kansioon, jossa repositorio on ja antamalla komennot ilman
-          <code>--global</code> lippua.
-        </p>
-        <p>
-          Jos et ole aikaisemmin tehnyt tiedostoon muutoksia, niin se ei sisällä
-          vielä muita asetuksia kuin asennuksen yhteydessä asetettu oletus
-          tekstieditori (core.editor). Tässä tapauksessa se on Gitin asennuksen
-          yhteydessä annettu Visual Studio Code. Oletus editoria käytetään
-          commit-viestien kirjoittamiseen, mikäli et ole lisännyt viestiä commit
-          komentoon lipulla
-          <code>-m "commit viestisi"</code>.
-        </p>
-      </div>
       <figure>
         <img
           class="wide-image"
           src="../../assets/images/basics/git-install/git config 1.2.webp"
-          alt=".gitconfig tiedoston sisällön tarkastus"
-        />
-        <figcaption>.gitconfig tiedoston sisällön tarkastus.</figcaption>
+          alt=".gitconfig tiedoston sisällön tarkastus" />
+        <figcaption>.gitconfig tiedoston sisällön tarkastus</figcaption>
       </figure>
+      <div class="note-box">
+        <p>
+          Tämän tiedoston asetuksia käytetään laitteella globaalisti, eli kaikissa
+          Git-repositorioissa. Asetuksia on mahdollista muuttaa tarvittaessa myös repositorio
+          kohtaisesti. Tämä tapahtuu siirtymällä kansioon, jossa repositorio on ja antamalla
+          komennot ilman
+          <code>--global</code> lippua.
+        </p>
+        <p>
+          Jos et ole vielä muokannut asetustiedostoa, se sisältää vain asennuksen yhteydessä
+          määritetyn oletustekstieditorin (<code>core.editor</code>). Tässä tapauksessa
+          oletuseditoriksi on asetettu Visual Studio Code, joka valittiin Gitin asennuksen aikana.
+        </p>
+      </div>
     </li>
+
     <li>
-      <h6>Lisätään tiedostoon käyttäjänimi ja sähköposti</h6>
+      <h6>Lisää tiedostoon käyttäjänimi ja sähköposti</h6>
       <ul>
         <li>
           Anna sähköposti komennolla
@@ -66,65 +55,52 @@
           Anna nimi komennolla
           <code>git config --global user.name "Sinun Nimi"</code>
         </li>
-        <li>
-          Tarkasta muutokset komennolla <code>git config --global --list</code>
-        </li>
+        <li> Tarkasta muutokset komennolla <code>git config --global --list</code> </li>
       </ul>
       <p class="note-box">
-        Git käyttää nimeä ja sähköpostia commitin ns. tekijätietoina. Mikäli
-        käytät GitHub-tilillä olevaa sähköpostiosoitetta, osaa GitHub yhdistää
-        commitin sinun tiliisi. Tätä tiedostoa ei kuitenkaan käytetä GitHubissa
-        tunnistautumiseen.
+        Git käyttää nimeä ja sähköpostia commitin ns. tekijätietoina. Mikäli käytät GitHub-tilillä
+        olevaa sähköpostiosoitetta, osaa GitHub yhdistää commitin sinun tiliisi. Tätä tiedostoa ei
+        kuitenkaan käytetä GitHubissa tunnistautumiseen.
       </p>
       <figure>
         <img
           class="wide-image"
           src="../../assets/images/basics/git-install/git config 2.webp"
-          alt="Lisätään .gitconfig tiedostoon käyttäjänimi ja sähköposti."
-        />
-        <figcaption>
-          Lisätään .gitconfig tiedostoon käyttäjänimi ja sähköposti.
-        </figcaption>
+          alt="Käyttäjänimen ja sähköpostin lisääminen .gitconfig tiedostoon" />
+        <figcaption> Käyttäjänimen ja sähköpostin lisääminen .gitconfig -tiedostoon </figcaption>
       </figure>
     </li>
     <li>
-      <h6>Asetetaan oletushaaran nimeksi main</h6>
+      <h6>Aseta oletushaaran nimi (main)</h6>
       <ul>
         <li>
-          Komennolla
+          Aseta nimi komennolla
           <code>git config --global init.defaultBranch main </code>
         </li>
-        <li>
-          Tarkasta muutokset komennolla <code>git config --global --list</code>
-        </li>
+        <li> Tarkasta muutokset komennolla <code>git config --global --list</code> </li>
       </ul>
       <p class="note-box">
-        Tämä tehtiin jo asennuksen yhteydessä system tasolle, mutta nimeäminen
-        voidaan varmistaa vielä käyttäjätasolla tai nimeä voi muuttaa
-        tarvittaessa myöhemmin näin.
+        Tämä tehtiin jo asennuksen yhteydessä system tasolle, mutta nimeäminen kannattaa varmistaa
+        vielä käyttäjätasolla.
       </p>
       <figure>
         <img
           class="wide-image"
           src="../../assets/images/basics/git-install/git config 3.webp"
-          alt="Asetetaan oletushaaran nimeksi main .gitconfig tiedostoon."
-        />
-        <figcaption>
-          Asetetaan oletushaaran nimeksi main .gitconfig tiedostoon.
-        </figcaption>
+          alt="Oletushaaran nimen asettaminen .gitconfig tiedostoon" />
+        <figcaption> Oletushaaran nimen asettaminen .gitconfig tiedostoon </figcaption>
       </figure>
     </li>
   </ol>
   <p>
-    Näillä asetuksilla pääsee hyvin alkuun. Lisää konfiguraatiosta voi katsoa
-    Gitin dokumentaatiosta komennolla: <br />
-    <code>git help config</code>.
+    Näillä asetuksilla pääsee hyvin alkuun. Lisää konfiguraatiosta voit katsoa Gitin
+    dokumentaatiosta komennolla
+    <code>git help config</code>
   </p>
   <div class="note-box">
     <p>
-      Dokumentaatio voi vaikuttaa alkuun aavistuksen kryptiseltä. Joten tässä
-      vielä taulukko jo käytetyistä ja muutamista muista mahdollisesti
-      hyödyllisistä asetuksista:
+      Gitin dokumentaatio voi vaikuttaa aluksi kryptiseltä, joten tässä vielä taulukko jo
+      käytetyistä ja muutamista muista hyödyllisistä asetuksista. <br />
     </p>
 
     <table>
@@ -145,11 +121,11 @@
         </tr>
         <tr>
           <td><code>core.editor</code></td>
-          <td>Oletus editorin asettaminen commit-viesteille</td>
+          <td>Oletuseditorin asettaminen</td>
         </tr>
         <tr>
           <td><code>init.defaultBranch</code></td>
-          <td>Pää/oletushaaran nimeäminen</td>
+          <td>Päähaaran nimeäminen</td>
         </tr>
         <tr>
           <td><code>core.autocrlf</code></td>
@@ -163,8 +139,8 @@
           <td><code>alias.*</code></td>
           <td>
             Lyhenteiden (alias) luominen usein käytetyille komennoille <br />
-            (esim. <code>git config --global alias.ci commit</code> luo
-            komennolle <code>commit</code> lyhenteen <code>ci</code>)
+            (esim. <code>git config --global alias.ci commit</code> luo komennolle
+            <code>commit</code> lyhenteen <code>ci</code>)
           </td>
         </tr>
       </tbody>

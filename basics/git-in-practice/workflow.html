@@ -1,59 +1,51 @@
 <section class="workflow">
   <header>
-    <h4>Työnkulku eli Git Workflow</h4>
+    <h1>Työnkulku eli Git Workflow</h1>
   </header>
   <p>
-    Git käyttää hajautettua työnkulkua, joka mahdollistaa koodin muokkaamisen,
-    muutosten lisäämisen välialueelle (stage) ja niiden committaamisen
-    paikalliseen repositorioon ennen niiden lisäämistä etärepositorioon.
+    Git käyttää hajautettua työnkulkua, joka mahdollistaa koodin muokkaamisen, muutosten lisäämisen
+    välialueelle (stage) ja niiden committaamisen paikalliseen repositorioon ennen niiden lisäämistä
+    etärepositorioon.
   </p>
-  <p>
-    Tämän työnkulun ymmärtäminen on tärkeää onnistuneen versionhallinnan
-    kannalta.
-  </p>
+  <p> Tämän työnkulun ymmärtäminen on tärkeää onnistuneen versionhallinnan kannalta. </p>
+
   <figure>
     <img
       class="wide-image"
       src="../../assets/images/basics/workflow.png"
-      alt="GitHubin tilityypit ja hinnoittelu"
-    />
+      alt="GitHubin tilityypit ja hinnoittelu" />
     <figcaption>Git työnkulun kaavio</figcaption>
   </figure>
   <p class="note-box">
-    Vinkki! Painamalla kuvaa pohjassa, se aukeaa suuremmaksi. Tämä toimii
-    kaikissa oppaan kuvissa.
+    Vinkki! Painamalla kuvaa pohjassa, se aukeaa suuremmaksi. Tämä toimii kaikissa oppaan kuvissa.
   </p>
-  <p><strong>Työnkulku</strong> koostuu seuraavista vaiheista:</p>
+  <h5>Workflow koostuu seuraavista vaiheista</h5>
   <ol>
     <li>
-      <strong>Työhakemisto (Working Directory)</strong>
+      <strong>Työhakemisto (working directory)</strong>
       <ul>
-        <li>Tämä on kansio, jossa työskentelet Git-projektin kanssa.</li>
+        <li>Tämä on kansio, jossa työskentelet Git-projektin kanssa</li>
         <li>
-          Se syntyy, kun alustat kansion komennolla <code>git init</code> tai
-          kloonaat sen etävarastosta komennolla <code>git clone</code>
+          Syntyy, kun alustat kansion komennolla <code>git init</code> tai kloonaat sen etäreposta
+          komennolla <code>git clone</code>
         </li>
         <li>
-          Git seuraa tässä kansiossa tehtyjä muutoksia ja kertoo tilanteen
-          komennolla
+          Git seuraa tässä kansiossa tehtyjä muutoksia ja kertoo tilanteen komennolla
           <code>git status</code>
         </li>
       </ul>
     </li>
     <li>
-      <strong>Git Add ja Välialue (Staging Area)</strong>
+      <strong>Git add ja välialue (staging area)</strong>
       <ul>
         <li>
-          Välialue toimii “odotusalueena”, johon kerätään commit-pakettiin
-          otettavat muutokset.
+          Välialue toimii <em>odotustilana</em>, johon kerätään commit-pakettiin otettavat muutokset
         </li>
         <li>
           Yksittäinen tiedosto lisätään välialueelle komennolla
           <code>git add tiedosto.txt</code>
         </li>
-        <li>
-          Kaikki muutokset puolestaan lisätään komennolla <code>git add .</code>
-        </li>
+        <li> Kaikki muutokset puolestaan lisätään komennolla <code>git add .</code> </li>
         <li>
           Commit-pakettiin lisättyjen tiedostojen tilanne selviää komennolla
           <code>git status</code>
@@ -61,71 +53,48 @@
       </ul>
     </li>
     <li>
-      <strong>Git Commit ja Paikallinen repositorio (Repository)</strong>
+      <strong>Git commit ja paikallinen repositorio (local repository)</strong>
       <ul>
         <li>
           Kun haluamasi muutokset ovat välialueella, tee commit komennolla
           <code>git commit -m "kuvaava viesti"</code>
         </li>
-        <li>
-          Tämä tallentaa välialueella olleet muutokset pysyvästi paikalliseen
-          repositorioon.
-        </li>
-        <li>
-          Hyvän commit-viestin tulisi olla lyhyt mutta kuvaava, esimerkiksi
-          "fixed bug X" tai "added feature Y".
-        </li>
+        <li> Tämä tallentaa välialueella olleet muutokset pysyvästi paikalliseen repositorioon </li>
       </ul>
     </li>
     <li>
-      <strong>Git Push ja Etärepositorio (Remote Repository, esim GitHub)</strong>.
+      <strong>Git push ja etärepositorio (esim. GitHub)</strong>
       <ul>
-        <li>
-          Commitit tallentuvat aluksi vain paikallisesti omalle koneellesi.
-        </li>
-        <li>
-          Jotta muutokset tallentuvat GitHubiin, lähetä ne komennolla
-          <code>git push -u origin &lt;haaran-nimi&gt;</code>.
-        </li>
-        <li>
-          Kun muutoksien lähettämiseen on kerran käytetty git push -komennon
-          lippua <code>-u</code> (tai <code>--set-upstream</code>), joka asettaa
-          paikallisen haaran seuraamaan vastaavaa etähaaraa voi jatkossa käyttää
-          lyhyempää komentoa <code>git push</code>.
-        </li>
+        <li>Commitit tallentuvat ensin vain paikallisesti omalle koneellesi</li>
+        <li>Lähetä muutokset GitHubiin komennolla <code>git push</code></li>
       </ul>
     </li>
     <li>
-      <strong>Git Pull</strong>
+      <strong>Git pull</strong>
       <ul>
-        <li>
-          Jos työskentelet tiimissä, on tärkeää säännöllisesti hakea
-          etärepositoriosta uusimmat muutokset komennolla <code>git pull</code>.
+        <li
+          >Tiimissä työskennellessä paikallinen repositorio kannattaa aina päivittää ennen työn
+          aloittamista
         </li>
-        <li>
-          Tämä komento hakee ja yhdistää muutokset siitä etähaarasta, joka
-          vastaa paikallista haaraa jossa olet tällä hetkellä. Toimii vain, kun
-          git on aikaisemmin asetettu seuraamaan (<code>push -u</code>) kyseistä
-          etärepositorion haaraa.
-        </li>
-        <li>
-          Jos haluat hakea muutokset jostain toisesta haarasta, voit käyttää
-          komentoa <code>git pull origin haaran-nimi</code>.
-        </li>
-        <li>
-          Tämä varmistaa, että paikallinen repositoriosi on ajan tasalla ja
-          auttaa välttämään yhdistämiskonflikteja (merge conflict).
-        </li>
+        <li
+          >Hae etärepositorion uusimmat muutokset komennolla <code>git pull</code> siihen haaraan,
+          jossa olet parhaillaan</li
+        >
+        <li
+          >Näin pidät repositorion ajan tasalla ja vähennät yhdistämiskonfliktien (merge conflict)
+          riskiä</li
+        >
       </ul>
     </li>
   </ol>
+
   <p>
-    Ymmärtämällä ja noudattamalla tätä työnkulkua voit hallita koodimuutoksia
-    järjestelmällisesti ja tehdä yhteistyötä muiden kehittäjien kanssa
-    sujuvasti.
+    Ymmärtämällä ja noudattamalla tätä työnkulkua voit hallita koodimuutoksia järjestelmällisesti ja
+    tehdä yhteistyötä sujuvasti muiden kehittäjien kanssa.
   </p>
 
-  <p class="note-box"><strong>Huom!</strong> Gitin perus workflowt löytyy myös sivupalkin muistilistasta! Voit aina
-    tarkistaa seuraavan vaiheen
-    sieltä.</p>
+  <p class="note-box"
+    >Gitin yleisimmät workflowt löytyvät myös sivupalkin muistilistasta! Voit aina tarkistaa
+    seuraavan vaiheen sieltä.</p
+  >
 </section>
