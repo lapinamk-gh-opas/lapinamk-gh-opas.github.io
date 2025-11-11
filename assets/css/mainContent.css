@@ -145,6 +145,60 @@ table td {
   border-bottom: 1px solid #ccc;
 }
 
+/* pros and cons table specific styles */
+.pros-cons-table {
+  margin-top: -0.5rem;
+  border: none;
+  border-bottom: none;
+  width: 100%;
+}
+
+.pros-cons-table th {
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.pros-cons-table td {
+  font-size: 0.9rem;
+}
+
+.pros-cons-table th:first-child,
+.pros-cons-table td:first-child {
+  width: 50%;
+  border-right: 1px solid #ccc;
+}
+
+.pros-cons-table td:first-child {
+  position: relative;
+  padding-left: 1.4rem;
+}
+
+.pros-cons-table td:first-child::before {
+  content: '+';
+  color: #14827d;
+  font-weight: bold;
+  font-size: 1rem;
+  position: absolute;
+  left: 0.5rem;
+  top: 0.55rem;
+}
+
+.pros-cons-table td:nth-child(2) {
+  position: relative;
+  padding-left: 1.4rem;
+}
+
+.pros-cons-table td:nth-child(2)::before {
+  content: '–';
+  color: #bd462a;
+  font-weight: bold;
+  font-size: 1rem;
+  position: absolute;
+  left: 0.5rem;
+  top: 0.55rem;
+}
+
 /* Edits ol's li's marker number to match h6 text size */
 ol.edit-number {
   list-style-type: decimal;

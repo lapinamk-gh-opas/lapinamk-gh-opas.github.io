@@ -2,20 +2,73 @@
   <header>
     <h1>Merge-konfliktit</h1>
     <p>
-      Branchit on hallussa, mutta entä jos kaksi tiimiläistä muokkaa samaa koodiriviä samaan aikaan?
-      Seuraavaksi kerrataan merge-konfliktien käsittelyä.
+      Tässä harjoituksessa kerrataan merge-konfliktin ratkaiseminen.
     </p>
 
-    <h5>Harjoitus 5 - Merge-konfliktin ratkaiseminen</h5>
+    <h5>Harjoitus 5 – Merge-konfliktin ratkaiseminen</h5>
+
     <ol>
-      <li>Avaa edellisessä tehtävässäsi käyttämä repositorio. </li>
+      <li>Avaa harjoituksissa käyttämäsi repositorio</li>
+
+      <li>Luo uusi kehityshaara päähaarasta (esim. <em>konflikti</em>)
+      </li>
+
+      <li>
+        Avaa <code>index.html</code> ja lisää uusi &lt;p&gt;-kappale juuri ennen
+        &lt;/body&gt;-merkkiä
+        <pre><code>
+&lt;p&gt;...ja ratkaisin sen.&lt;/p&gt;
+      </code></pre>
+        <p>Tallenna tiedosto ja tee commit muutoksesta</p>
+      </li>
+
+      <li>Julkaise haara GitHubiin</li>
+
+      <li>Vaihda takaisin päähaaraan (<code>main</code>)</li>
+
+      <li>
+        Lisää saman tiedoston samaan kohtaan juuri ennen &lt;/body&gt;-merkkiä
+        eri &lt;p&gt;-kappale
+        <pre><code>
+&lt;p&gt;Loin merge-konfliktin...&lt;/p&gt;
+      </code></pre>
+        <p>Tallenna tiedosto ja tee commit myös tälle muutokselle</p>
+      </li>
+
+      <li>Yhdistä kehityshaara päähaaraan komennolla
+        <code>git merge konflikti</code>
+      </li>
+
+      <li>
+        Avaa konflikti ja tarkastele Gitin lisäämiä
+        merkintöjä
+      </li>
+
+      <li>
+        Ratkaise konflikti pitämällä molemmat muutokset
+        (<em>Accept Both Changes</em>)
+      </li>
+
+      <li>Tallenna tiedosto ja tee uusi commit ratkaistusta konfliktista</li>
+
+      <li>Varmista, että yhdistäminen onnistui ja projektin tilanne on
+        ajantasainen</li>
+
+      <li>Työnnä muutokset GitHubiin ja tarkista, että päähaaran sisältö on
+        päivittynyt oikein</li>
     </ol>
 
     <p class="note-box">
-      <strong>Ongelmatilanteessa</strong> tarkista ensin nykytila (status) ja kurkkaa sivupalkin
-      muistilistasta oikeat komennot. Tarvittaessa voit myös palata edellisiin osioihin kertaamaan.
+      <strong>Ongelmatilanteessa</strong> tarkista ensin nykytila (status) ja
+      kurkkaa sivupalkin muistilistasta oikeat komennot. Tarvittaessa voit myös
+      palata edellisiin
+      osioihin kertaamaan.
     </p>
 
-    <p> Onnistuiko? Mahtavaa! Olet oppinut tiimityön perusasiat Gitissä! </p>
+    <p>Onnistuiko tehtävä? Mahtavaa! </p>
+    <p>
+      <strong>Olet nyt oppinut
+      tiimityön perusasiat Gitissä</strong>!
+    </p>
   </header>
 </section>
