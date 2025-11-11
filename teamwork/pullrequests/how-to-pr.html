@@ -84,31 +84,13 @@
           class="accordion"
           data-include="../../accordion-element/accordion.html"
           data-title="Do you trust the authors of the files in this folder? -varoitus">
-          <div class="contentToAccordion">
-            <!-- Accordion content starts -->
-            <ul>
-              <li>
-                Jos tiedät, että kansio on luotettava (esim. oma projektisi), valitse
-                <strong>Yes, I trust the authors</strong>.
-              </li>
-              <li>
-                Jos et ole varma kansion tai projektin sisällöstä tai luotettavuudesta, voit avata
-                kansion “Restricted Mode” -tilassa, jolloin mm. laajennukset ja koodin suoritus
-                estetään.
-              </li>
-            </ul>
-
-            <figure>
-              <img
-                class="wide-image"
-                src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 1.1.webp"
-                alt="Do you trust the authors of the files in this folder? -varoitus" />
-              <figcaption>
-                Do you trust the authors of the files in this folder? -varoitus
-              </figcaption>
-            </figure>
-            <!-- Accordion content ends -->
+          <!-- Reused accordion content starts -->
+          <div
+            class="contentToAccordion reused-accordion"
+            data-include="/reused-accordion-content/trust-the-authors.html">
+            <!-- Accordion content starts from /reused-accordion-content/trust-the-authors.html-->
           </div>
+          <!-- Reused accordion content ends -->
         </div>
         <!-- Accordion element ends -->
       </li>
@@ -118,7 +100,7 @@
           <li>Avaa Git Bash VS Coden terminaaliin.</li>
 
           <li>
-            Anna komento
+            Kloonaa repositorio palvelimelta omalle koneelle komennolla
             <code>git clone https://github.com/repositorion/url-osoite.git</code>
             ja paina Enter.
           </li>
@@ -130,28 +112,22 @@
             alt="VS Coden terminaali ja kloonaus komento." />
           <figcaption>VS Coden terminaali ja kloonaus komento.</figcaption>
         </figure>
+
         <!--Accordion starts-->
         <div
           class="accordion"
           data-include="../../accordion-element/accordion.html"
           data-title="Huomio Git Bashin käytöstä VS Codella">
-          <div class="contentToAccordion">
-            <p class="keep-margin">
-              Avaa terminaali tarvittaessa yläpalkista <strong>View</strong> +
-              <strong>Terminal</strong>. Git Bashin saa käyttöön terminaaliin
-              <img class="plus-sign" src="../../assets/images/svg/plus.svg" alt="plus merkki" />
-              -painikkeen vierestä avattavasta alasvetovalikosta.
-            </p>
-            <figure>
-              <img
-                class="wide-image"
-                src="../../assets/images/basics/IDE-and-usage/terminal/Git usage terminal 6.webp"
-                alt="Git Bashin avaaminen VS Codessa" />
-              <figcaption>Git bashin avaaminen VS Codessa</figcaption>
-            </figure>
+          <!-- Reused accordion content starts -->
+          <div
+            class="contentToAccordion reused-accordion"
+            data-include="/reused-accordion-content/git-bash-on-vscode.html">
+            <!-- Accordion content starts from /reused-accordion-content/git-bash-on-vscode.html-->
           </div>
+          <!-- Reused accordion content ends -->
         </div>
         <!-- Accordion ends-->
+
         <ul>
           <li>Etärepositorion tiedosto on nyt kloonattu paikalliseen kansioon.</li>
         </ul>
@@ -221,7 +197,7 @@
         </figure>
       </li>
       <li>
-        <h6>Pull requestin luominen.</h6>
+        <h6 id="createPR">Pull requestin luominen.</h6>
         <ul>
           <li>Pull requestin luomisen voi aloittaa usealla eri tavalla.</li>
           <li>Esim. mene selaimella repositorion etusivulle.</li>
