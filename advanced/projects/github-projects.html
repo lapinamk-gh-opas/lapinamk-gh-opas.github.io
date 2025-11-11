@@ -1,89 +1,438 @@
 <section class="github-projects">
     <header>
         <h1>GitHub Projects</h1>
+        <p>
+            GitHub Projects on GitHubin <strong>sisäänrakennettu työkalu
+            projektinhallintaan</strong>. Se on suhteellisen uusi ominaisuus,
+            jonka käyttö on yleistymässä nopeasti ohjelmistokehitystiimeissä ja
+            pienemmissä projekteissa. Työkalun avulla voi suunnitella, seurata
+            ja organisoida kehitystyötä suoraan
+            <strong>samassa ympäristössä</strong>, jossa
+            lähdekoodi sijaitsee.
+        </p>
+        <p>
+            GitHub Projects perustuu samaan ideaan kuin muut ketterät työkalut,
+            kuten <em>Trello</em> tai <em>Jira</em>, mutta se on tiiviisti
+            sidottu GitHubin toimintoihin, kuten esimerkiksi
+            <strong>issueisiin</strong> (GitHubin tiketti) ja
+            <strong>pull requesteihin</strong>.
+        </p>
     </header>
 
-    <p>
-        GitHub Projects on GitHubin <strong>sisäänrakennettu työkalu</strong>
-        projektinhallintaan. Sen avulla voit suunnitella, seurata ja
-        organisoida kehitystyötä suoraan samassa ympäristössä, jossa lähdekoodi
-        sijaitsee. GitHub Projects toimii kuten muutkin digitaaliset
-        <em>Kanban-taulut</em>, mutta tarjoaa lisäksi
-        <strong>integraatioita</strong>, <strong>automaatiota</strong> ja
-        <strong>suoran yhteyden</strong>
-        committeihin, brancheihin ja pull requesteihin.
+    <h3>GitHub Projects projektitaulun luominen</h3>
+
+    <p>Projektitaulun voi luoda joko <strong>omalle käyttäjätilille</strong>
+        tai <strong>organisaatiokohtaisesti</strong>. Luomisen jälkeen sen voi
+        yhdistää tiettyyn repositorioon tai käyttää yleisenä
+        projektinhallintatyökaluna.
     </p>
-
-    <h3>Projektin luominen</h3>
-
-    <p>Sisältö tulossa myöhemmin</p>
-
-    <!--     <p>GitHub Projectsin voi luoda joko omalle käyttäjätilille, repositorioon
-        tai
-        organisaatio kohtaisesti.</p>
+    <h5>Projektin luominen omalle käyttäjätilille</h5>
     <ol>
-        <li>Avaa GitHub-repositorio</li>
-        <li>Siirry yläpalkin <strong>Projects</strong>-välilehdelle</li>
-        <li>Valitse <strong>New Project</strong> ja nimeä projekti esimerkiksi
-            <em>“Git-harjoitukset”</em>
+        <li>Siirry GitHubiin ja kirjaudu sisään</li>
+        <li>Klikkaa profiilikuvakettasi oikeassa yläkulmassa ja valitse
+            <strong>Profile</strong>
         </li>
+        <li>Valitse yläpalkista <strong>Projects</strong>-välilehti</li>
+        <li>Valitse <strong>New Project</strong>
         </li>
-    </ol> 
+        <li>Valitse haluamasi mallipohja (esim. <em>Kanban</em>)</li>
+        <li>Anna projektille nimi (esim. <em>Git-harjoitukset</em>)</li>
+        <li>Klikkaa <strong>Create project</strong> nappia</li>
+        <li>Tarkista, että projekti on luotu onnistuneesti</li>
+    </ol>
 
 
-    <h3>Tehtävien lisääminen ja seuranta</h3>
+    <div
+        class="accordion"
+        data-include="../../accordion-element/accordion.html"
+        data-title="GitHub Projects mallipohjat (templates)">
+        <div class="contentToAccordion">
+            <p>
+                GitHub Projects tarjoaa useita valmiita mallipohjia,
+                jotka on suunniteltu erilaisiin projektinhallinnan tarpeisiin.
+                Uutta projektia luodessa voit valita valmiin mallipohjan tai
+                luoda
+                oman taulun tyhjästä.
+            </p>
+            <figure>
+                <img
+        class="wide-image"
+        src="../../assets/images/advanced/projects templates.png"
+        alt="GitHub Projects templates -valikko"/>
+                <figcaption>GitHub Projects mallipohjat</figcaption>
+            </figure>
+
+            <ul>
+                <li>
+                    <strong>Kanban</strong> – yksinkertainen Kanban-taulu, jossa
+                    on sarakkeet <em>Backlog</em>, <em>To do</em>,
+                    <em>In progress</em>, <em>In review</em> ja
+                    <em>Done</em>. Sopii projekteihin, joissa
+                    halutaan seurata työn etenemistä usean vaiheen kautta tai
+                    hallita
+                    laajempia kokonaisuuksia.
+                </li>
+                <li>
+                    <strong>Team planning</strong> – sisältää sarakkeet
+                    <em>To do</em>, <em>In progress</em> ja
+                    <em>Done</em>. Sopii tiimeille, jotka haluavat
+                    yksinkertaisen
+                    rakenteen tehtävien perusseurantaan ja sprinttien
+                    suunnitteluun.
+                </li>
+                <li>
+                    <strong>Bug tracking</strong> – suunniteltu virheiden ja
+                    ongelmien seurantaan, sisältää sarakkeet
+                    <em>Prioritized bugs</em>, <em>Triage</em>,
+                    <em>In review</em> ja <em>My items</em>. Sopii
+                    erityisesti tilanteisiin, joissa halutaan hallita useita
+                    bugiraportteja, palautteita tai korjaustehtäviä yhdessä
+                    näkymässä.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>GitHub Projects -näkymät (<em>views</em>)</h3>
+
     <p>
-        Projektiin voidaan lisätä tehtäviä kahdella tavalla
+        GitHub Projects tarjoaa useita eri näkymiä, joiden
+        avulla tehtäviä voi hallita ja visualisoida eri tavoilla. Ne on jaettu
+        kolmeen kategoriaan, joita ovat
+        <strong>board</strong>, <strong>table</strong> ja
+        <strong>roadmap</strong>. Valmiissa mallipohjissa
+        (<em>project templates</em>) on esiasetetut
+        näkymät, mutta voit myös luoda omia näkymiä tarpeidesi mukaan.
     </p>
+
+    <p>
+        Näkymien avulla voidaan esimerkiksi suunnitella sprinttejä,
+        seurata työn etenemistä ja priorisoida ominaisuuksia ennen julkaisua.
+        Näkymiä voi <strong>muokata omien tarpeiden mukaan</strong>, sekä
+        <strong>tallentaa ja jakaa tiimin sisällä</strong>, jolloin eri roolit
+        näkevät juuri heille tärkeimmän tiedon.
+    </p>
+
     <ul>
         <li>
-            <strong>Issueina</strong> – luodaan uusi tehtävä tai liitetään
-            olemassa oleva issue tauluun
+            <strong>Board</strong> – visuaalinen Kanban-näkymä, jossa tehtävät
+            etenevät sarakkeiden välillä
+            <figure>
+                <img
+        class="wide-image"
+        src="../../assets/images/advanced/board view.png"
+        alt="Board-näkymä GitHub Projectsissa"/>
+                <figcaption>Board -näkymä GitHub Projectsissa</figcaption>
+            </figure>
         </li>
         <li>
-            <strong>Draft itemeina</strong> – lisätään nopeita tehtäviä suoraan
-            taululle ilman issuea
+            <strong>Table</strong> – taulukkonäkymä, johon voidaan lisätä
+            sarakkeita, suodatuksia ja järjestyksiä tehtävien seurantaan
+            <figure>
+                <img
+        class="wide-image"
+        src="../../assets/images/advanced/taulukko view.png"
+        alt="Table-näkymä GitHub Projectsissa"/>
+                <figcaption>Table -näkymä GitHub Projectsissa</figcaption>
+            </figure>
+        </li>
+        <li>
+            <strong>Roadmap</strong> – aikajananäkymä, joka näyttää tehtävien
+            etenemisen ja yhteydet aikataulussa (käytetään erityisesti isoissa
+            projekteissa)
+            <figure>
+                <img
+        class="wide-image"
+        src="../../assets/images/advanced/roadmap view.png"
+        alt="Roadmap-näkymä GitHub Projectsissa"/>
+                <figcaption>Roadmap-näkymä GitHub Projectsissa</figcaption>
+            </figure>
         </li>
     </ul>
 
     <p>
-        Jokaiselle tehtävälle voidaan määrittää vastuuhenkilö, prioriteetti ja
-        deadline. Kun tehtävä etenee, se siirretään seuraavaan sarakkeeseen.
-        GitHub päivittää taulua automaattisesti, jos tehtävä liitetään
-        <strong>pull requestiin</strong> tai jos sen tila muuttuu
-        issue-näkymässä
+        GitHub Projectsissa jokaisella näkymällä (<em>view</em>) on omat
+        asetuksensa, joita voi muokata helposti suoraan näkymän yläreunasta.
+        Avaa asetukset klikkaamalla näkymän otsikon oikealla puolella olevaa
+        pientä nuolta (<em>▼</em>).
+    </p>
+
+    <ul>
+        <li><strong>Layout</strong> – valitse näkymäksi <em>Table</em>,
+            <em>Board</em> tai <em>Roadmap</em>
+        </li>
+        <li><strong>Fields</strong> – määritä, mitä kenttiä tai sarakkeita
+            näkymässä näytetään</li>
+        <li><strong>Group by</strong> – ryhmittele tehtävät esimerkiksi
+            vastuuhenkilön, statuksen tai prioriteetin mukaan</li>
+        <li><strong>Sort by</strong> – järjestä tehtävät esimerkiksi
+            päivämäärän, prioriteetin tai koon perusteella</li>
+        <li><strong>Slice by</strong> – rajaa näkymää esimerkiksi sprintin,
+            aikajakson tai muun kentän perusteella</li>
+        <li><strong>Charts</strong> – luo kaavio, joka visualisoi valitun
+            näkymän tilanteen (esim. tehtävien jakauman eri tilojen välillä)
+        </li>
+    </ul>
+
+    <p>
+        Näkymän eri kenttien (<em>fields</em>) järjestystä ja näkyvyyttä voi
+        muokata helposti. Sarakkeita voi siirtää
+        <strong>vetämällä ja pudottamalla</strong> tai
+        klikkaamalla kentän otsikon kolmen pisteen valikkoa ja valitsemalla
+        <em>Move left</em> tai <em>Move right</em>.
+        Samasta valikosta voi myös <strong>piilottaa</strong> kentän,
+        valita järjestyksen <strong>nousevaksi tai laskevaksi</strong>,
+        sekä avata tarkemmat <strong>Field settings </strong>-asetukset.
+    </p>
+
+    <figure>
+        <img
+        class="wide-image"
+        src="../../assets/images/advanced/taulun layoutin asetukset.png"
+        alt="Taulukon layoutin säädöt"/>
+        <figcaption>Taulukon layoutin säädöt GitHub Projectsissa
+        </figcaption>
+    </figure>
+
+    <p>
+        Näkymän voi myös nimetä uudelleen, siirtää tai poistaa kokonaan.
+        Muista painaa <strong>Save changes</strong> ennen kuin poistut
+        näkymästä, koska muuten tekemäsi muutokset eivät tallennu.
     </p>
 
     <div
         class="accordion"
         data-include="../../accordion-element/accordion.html"
-        data-title="Automaatiot ja näkymät">
+        data-title="GitHub Projects -projektikohtaiset asetukset">
         <div class="contentToAccordion">
-            <p>
-                GitHub Projectsissa voi hyödyntää <strong>automaatiota</strong>
-                ja
-                <strong>näkymien suodatusta</strong> tehokkaaseen seurantaan
+            <p>Voit muokata projektikohtaisia asetuksia suoraan GitHubissa. Avaa
+                projektinäkymässä oikeasta yläkulmasta
+                <strong>kolmen pisteen valikko</strong> ja
+                valitse <strong>Settings</strong>, jolloin pääset määrittämään
+                projektin tietoja.
             </p>
             <ul>
                 <li>
-                    <strong>Views</strong> Luo erilaisia näkymiä (esim.
-                    taulukko, lista tai aikajana) projektin eri tarpeisiin
+                    <strong>Name</strong> – projektin nimi
+                </li>
+                <li><strong>Default Repository</strong> – oletusrepositorio
                 </li>
                 <li>
-                    <strong>Filters</strong> Suodata tehtäviä vastuuhenkilön,
-                    tilan tai sprintin mukaan
+                    <strong>Description</strong> – lyhyt kuvaus projektista
+                </li>
+                <li><strong>ReadMe</strong> – projektin README-tiedosto</li>
+                <li>
+                    <strong>Visibility</strong> – projektin näkyvyys (julkinen
+                    tai yksityinen)
                 </li>
                 <li>
-                    <strong>Automation</strong> Määritä säännöt, kuten “Siirrä
-                    Done-sarakkeeseen, kun issue suljetaan”
+                    <strong>Manage access</strong> – projektin käyttöoikeudet
+                </li>
+                <li>
+                    <strong>Custom fields</strong> – taulun eri kenttien
+                    määritykset (kuten eri kokovaihtoehdot), sekä uusien
+                    kenttien luominen
                 </li>
             </ul>
+            <figure>
+                <img
+        class="wide-image"
+        src="../../assets/images/advanced/custom fields.png"
+        alt="Custom fields asetusvalikko"/>
+                <figcaption>Custom fields -asetukset GitHub Projectsissa
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <h3>Tikettien lisääminen ja seuranta</h3>
+    <p>
+        GitHub Projectsin ydinominaisuus on tikettien eli
+        <strong>issueiden</strong> hallinta.
+    </p>
+    <p>
+        Projektiin voidaan lisätä tehtäviä monella eri tavalla. Yksi niistä on
+        painaa pikanäppäimiä <strong>CTRL + Space</strong>, jolloin aukeaa
+        tekstikenttä johon
+        voit kirjoittaa tehtävän nimen ja painaa Enter lisätäksesi sen tauluun.
+        Voit myös kirjoittaa # ja valita repositorion, jolloin saat listan sen
+        issueista, joita voit lisätä projektitauluun, tai luoda
+        repositoriokohtaisen uuden tehtävän.
+    </p>
+    <p> Tehtäviä voi lisätä joko <strong>issueina</strong> tai kevyempinä
+        hahmotelmina eli <strong>drafteinä</strong>.
+    </p>
+
+    <figure>
+        <img
+        class="wide-image"
+        src="../../assets/images/advanced/add item 4.png"
+        alt="Issuen ja drafteinä lisääminen GitHub Projectsissa"/>
+        <figcaption>Issuen ja drafteinä lisääminen GitHub Projectsissa
+        </figcaption>
+    </figure>
+
+    <p>
+        Jokaiselle lisätylle tehtävälle voidaan määrittää edellisessä
+        kappaleessa käsiteltyjä tietoja, kuten
+        <strong>prioriteetti</strong>, <strong>vastuuhenkilö</strong>,
+        <strong>koko</strong>, <strong>tagit</strong>, jne. Tehtäviä voi
+        myös <strong>suodattaa</strong> ja <strong>ryhmitellä</strong> näiden
+        määritysten mukaan, jolloin isommankin projektin hallinta on
+        helpompaa.
+    </p>
+
+    <div
+        class="accordion"
+        data-include="../../accordion-element/accordion.html"
+        data-title="Automaatiot GitHub Projectsissa">
+        <div class="contentToAccordion">
+            <p>
+                GitHub Projects sisältää sisäänrakennettuja
+                <strong>automaatiotyökaluja</strong>, joiden avulla voit
+                vähentää
+                manuaalista työtä ja pitää projektin ajan tasalla ilman jatkuvaa
+                päivittämistä. Automaatiot voivat esimerkiksi lisätä uusia
+                tehtäviä
+                tauluun automaattisesti, siirtää tehtäviä seuraavaan
+                sarakkeeseen
+                tai arkistoida valmiit tehtävät, kun tietyt ehdot täyttyvät.
+            </p>
+
+            <p>
+                GitHub Projects tarjoaa useita valmiiksi määritettyjä
+                <strong>automaatiotyönkulkuja</strong>, mutta voit myös luoda
+                omia
+                tarpeidesi mukaan. Automaatiot löytyvät projektin asetusten
+                vasemmalta
+                puolelta kohdasta <strong>Workflows</strong>. Sieltä voit ottaa
+                käyttöön
+                valmiita automaatioita tai määrittää täysin uusia sääntöjä
+                projektin
+                hallintaan.
+            </p>
+
+            <figure>
+                <img
+        class="wide-image"
+        src="../../assets/images/advanced/automaatio.png"
+        alt="Workflows-asetusvalikko GitHub Projectsissa"/>
+                <figcaption>Workflows-asetusvalikko GitHub Projectsissa
+                </figcaption>
+            </figure>
+
+
+            <h5>Esimerkkejä valmiista automaatioista</h5>
+            <ul>
+                <li>
+                    Lisää uusia <strong>issueita</strong> tai
+                    <strong>pull requesteja</strong>
+                    automaattisesti projektiin, kun ne täyttävät tietyt ehdot
+                    (esim.
+                    <em>label:bug</em>)
+                </li>
+                <li>
+                    Päivittää tehtävän tilan automaattisesti, kun siihen
+                    liittyvä pull request suljetaan tai issue merkitään
+                    valmiiksi
+                </li>
+                <li>
+                    Arkistoi valmiit tehtävät automaattisesti, kun ne ovat
+                    olleet
+                    “Done”-tilassa tietyn ajan
+                </li>
+                <li>
+                    Asettaa oletusarvoja, kuten prioriteetin, vastuuhenkilön tai
+                    sprintin,
+                    uusille tehtäville
+                </li>
+            </ul>
+
+            <h5>Issuen sulkeminen pull requestin avulla</h5>
+            <p>
+                GitHubissa voit sulkea <strong>issuet automaattisesti</strong>
+                tekemällä sen
+                suoraan pull requestin kautta. Kun kirjoitat PR:n kuvaukseen
+                tietyt
+                avainsanat ja viittaat issuen numeroon, GitHub sulkee sen
+                automaattisesti,
+                kun pull request mergetään.
+            </p>
+
+            <p>
+                Käytä jotain seuraavista muodoista PR:n kuvauksessa, jossa
+                <code>#12</code> on suljettavan issuen numero.
+            </p>
+
+            <ul>
+                <li><code>Closes #12</code></li>
+                <li><code>Fixes #12</code></li>
+                <li><code>Resolves #12</code></li>
+            </ul>
+
+            <p>
+                Kun pull request yhdistetään (<em>merge</em>), GitHub tunnistaa
+                komennon ja sulkee viitatun issuen automaattisesti, eli siirtää
+                sen Kanban-taululla tilaan <em>Done</em>. Tämä helpottaa
+                projektin seurantaa ja pitää sekä issue-listan että
+                projektitaulun ajan tasalla ilman manuaalista työtä.
+            </p>
+
+            <figure>
+                <img
+        class="wide-image"
+        src="../../assets/images/advanced/PR-close-issue.png"
+        alt="Issuen sulkeminen pull requestin avulla GitHubissa"/>
+                <figcaption>
+                    Esimerkki issuen sulkemisesta automaattisesti pull requestin
+                    avulla
+                </figcaption>
+            </figure>
 
         </div>
     </div>
 
-    <p>Lisätietoja löydät
-        <a href="https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/quickstart-for-projects">Quickstart for GitHub Projects</a>
+    <h3>Tilastot ja analytiikka</h3>
+
+    <p>
+        GitHub Projectsin <strong>Insights</strong> -toiminto tarjoaa
+        visuaalisia
+        <strong>kaavioita ja tilastoja</strong>, jotka päivittyvät
+        automaattisesti projektin datan perusteella. Niiden avulla voit seurata
+        projektin etenemistä, työkuormaa ja kokonaisuuden tilaa yhdellä
+        silmäyksellä.
     </p>
--->
+
+    <p>
+        Insights-näkymässä voit luoda omia kaavioita ja mukauttaa niitä
+        valitsemalla,
+        mitä tietoja niissä näytetään. Esimerkiksi voit tarkastella
+    </p>
+
+    <ul>
+        <li>Tehtävien jakaumaa eri tiloissa (<em>To do</em>,
+            <em>In progress</em>, <em>Done</em>)
+        </li>
+        <li>Tiimin työmäärän kehitystä ajan myötä</li>
+        <li>Sprinttien valmistumisastetta tai backlogissa makaavien tehtävien
+            määrää</li>
+    </ul>
+    <figure>
+        <img
+        class="wide-image"
+        src="../../assets/images/advanced/insights view.png"
+        alt="Insights-näkymä GitHub Projectsissa"/>
+        <figcaption>Insights-näkymä GitHub Projectsissa</figcaption>
+    </figure>
+
+
+
+    <p class="note-box">
+        GitHub Projectsin tarkoitus on tarjota ketterä ja mukautuva tapa hallita
+        kehitystyötä suoraan siellä, missä koodi asuu, eli GitHubissa.
+    </p>
+
+    <p>Lisätietoja aiheesta löydät
+        <a href="https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/" target="_blank" rel="noopener noreferrer">GitHub Projects -dokumentaatiosta</a>.
+    </p>
 </section>
