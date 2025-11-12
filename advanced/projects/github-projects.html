@@ -138,8 +138,7 @@
         </li>
         <li>
             <strong>Roadmap</strong> – aikajananäkymä, joka näyttää tehtävien
-            etenemisen ja yhteydet aikataulussa (käytetään erityisesti isoissa
-            projekteissa)
+            etenemisen ja yhteydet aikataulussa
             <figure>
                 <img
         class="wide-image"
@@ -251,7 +250,7 @@
         <strong>issueiden</strong> hallinta.
     </p>
     <p>
-        Projektiin voidaan lisätä tehtäviä monella eri tavalla. Yksi niistä on
+        Projektiin voidaan lisätä tikettejä monella eri tavalla. Yksi niistä on
         painaa pikanäppäimiä <strong>CTRL + Space</strong>, jolloin aukeaa
         tekstikenttä johon
         voit kirjoittaa tehtävän nimen ja painaa Enter lisätäksesi sen tauluun.
@@ -259,7 +258,7 @@
         issueista, joita voit lisätä projektitauluun, tai luoda
         repositoriokohtaisen uuden tehtävän.
     </p>
-    <p> Tehtäviä voi lisätä joko <strong>issueina</strong> tai kevyempinä
+    <p> Tikettejä voi lisätä joko <strong>issueina</strong> tai kevyempinä
         hahmotelmina eli <strong>drafteinä</strong>.
     </p>
 
@@ -389,6 +388,82 @@
                 </figcaption>
             </figure>
 
+        </div>
+    </div>
+
+    <h3>Projektin yhdistäminen repositorioon</h3>
+
+    <p>
+        Kun olet luonut projektitaulun, voit halutessasi
+        <strong>linkittää sen tiettyyn repositorioon</strong>.
+        Klikkaa projektin alapalkista samaa kenttää, jota käytetään
+        yksittäisten tikettien lisäämiseen, kirjoita <code>#</code> ja
+        valitse listasta oikea repositorio.
+        Linkityksen jälkeen luomasi tiketit voidaan liittää suoraan kyseiseen
+        repositorioon, jolloin niiden hallinta helpottuu.
+        Linkityksen voi tarvittaessa myös poistaa.
+    </p>
+    <p> Jos olet luomassa projektitaulua tietylle
+        repositoriolle, voit tehdä sen suoraan kyseisen repositorion
+        <strong>Projects</strong>-välilehdeltä.
+        Tällöin taulu linkittyy automaattisesti kyseiseen repositorioon, ja voit
+        lisätä siihen suoraan sen issueita.
+    </p>
+    <p> Yksittäinen projekti voi myös sisältää <strong>useiden eri repositorioiden
+        issueita</strong>, jos se on luotu käyttäjä- tai organisaatiotasolle.
+    </p>
+
+    <div
+        class="accordion"
+        data-include="../../accordion-element/accordion.html"
+        data-title="GitHub Issues -välilehti">
+        <div class="contentToAccordion open">
+
+            <p>
+                Jokaisessa GitHub-repositoriossa on oma
+                <strong>Issues</strong>-välilehti, jota käytetään projektin
+                tehtävien ja
+                kehitysehdotusten hallintaan. Jokainen <em>issue</em> eli
+                tiketti toimii
+                keskusteluketjuna, jossa voidaan kuvata tehtävä, raportoida
+                virhe tai
+                ehdottaa parannusta.
+            </p>
+
+            <p>
+                Issues-välilehdellä näet kaikki avoimet ja suljetut tiketit,
+                voit suodattaa
+                niitä e sekä luoda
+                uusia painamalla <strong>New issue</strong>. Jokaisella
+                tiketillä on oma
+                numeronsa (esim. <code>#12</code>), jonka avulla siihen voidaan
+                viitata
+                helposti esimerkiksi <em>commiteissa</em> tai
+                <em>pull requesteissa</em>.
+            </p>
+
+            <p>
+                Käytännössä <strong>Issues</strong>-välilehti on se paikka,
+                jossa tiketit
+                eli <em>issuet</em> luodaan ja kirjoitetaan tekstimuodossa, kun
+                taas
+                <strong>Projects-taulu</strong> toimii näiden samojen tehtävien
+                visuaalisena seurantatauluna.
+                Jos luot tehtävän Projects-taululla ja projekti on linkitetty
+                repositorioon,
+                GitHub luo automaattisesti uuden issuen myös
+                Issues-välilehdelle.
+            </p>
+
+            <p>
+                Kun <strong>Projects-taulu</strong> on linkitetty tiettyyn
+                repositorioon,
+                sen tiketit voidaan liittää suoraan kyseisen repositorion
+                issueihin.
+                Näin Issues-välilehti toimii projektitaulun tehtävälistana, ja
+                Projects
+                puolestaan tarjoaa niille visuaalisen seurantataulun.
+            </p>
         </div>
     </div>
 

@@ -3,35 +3,66 @@
         <h1>Projektitaulun luominen</h1>
     </header>
 
-    <p>Tässä harjoituksessa luot oman GitHub Projects -taulun tietylle
-        repositoriolle ja harjoittelet sen avulla projektin tehtävien hallintaa.
+    <p>Tässä harjoituksessa harjoitellaan GitHub Projects -työkalun käyttöä
+        tehtävien hallinnan tukena. Tarkoituksena on nähdä, miten
+        tehtäviä seurataan projektitaululla sekä miten ne
+        linkittyvät käytännön Git-työvaiheisiin.
     </p>
 
     <h5>Harjoitus 8 - GitHub Projects repositoriokohtaisen projektitaulun
         luominen</h5>
     <ol>
         <li>Luo GitHub-repositorio tai hyödynnä olemassa olevaa</li>
-        <li>Siirry repositorion Projects -välilehdelle</li>
-        <li>Luo uusi taulu nimeltä <em>Git-harjoitukset</em></li>
+        <li>Tarkista repositorion asetuksista, että Projects ominaisuus on
+            käytössä (Settings → General → Features)</li>
+        <li>Siirry repositorion <strong>Projects</strong> -välilehdelle</li>
         <li>Valitse <strong>Team Planning</strong> -template</li>
-        <li>Tarkasta että sen <em>Board</em>-näkymä sisältää sarakkeet
+        <li>Nimeä taulu <em>Harjoitus Team Planning</em> ja älä importtaa
+            vanhoja tikettejä</li>
+        <li>Varmista, että <em>Board</em> -näkymässä on sarakkeet
             <strong>To do</strong>, <strong>In progress</strong>,
             <strong>Done</strong>
         </li>
-        <li>Luo kolme tehtävää To do -sarakkeeseen (esim.<em>Tee branch</em>,
-            <em>Tee muutokset</em> <em>Tee PR</em>)
+        <li>Luo kolme tikettiä: <em>Tee haara</em>,
+            <em>Tee muutokset</em> ja <em>Tee PR</em>
         </li>
-        <li>Määritä itsesi tehtävien <em>vastuuhenkilöksi</em> ja määritä
-            <em>prioriteetti</em>,
-            <em>koko</em>, sekä <em>target date</em>
+        <li>Lisää tiketeille prioriteetti, koko, iteraatio ja vastuuhenkilö</li>
+        <li><strong>Toteuta tehtävät käytännössä</strong>
+            <ol>
+                <li><em>Tee haara</em> - Tee uusi haara repositorioon</li>
+                <li><em>Tee muutokset</em> - Lisää haaraan uusi tiedosto tai
+                    muokkaa olemassa olevaa tiedostoa</li>
+                <li>Commitoi ja puske muutokset GitHubiin</li>
+                <li><em>Tee PR</em> - Tee Pull Request ja lisää sen kuvaukseen
+                    linkitys tikettiin: <em>Tee PR</em> (esim.
+                    <em>Closes #3</em>)
+                </li>
+            </ol>
         </li>
-        <li>Liitä yksi tiketti uuteen pull requestiin, jotta sen tila
-            päivittyy automaattisesti kun lisäät pull requestiin tarvittavat
-            tiedot</li>
-        <li>Lopuksi tarkista että tiketti siirtyi oikeaan sarakkeeseen</li>
+        <li>Tarkista että <em>Tee PR</em> -tiketin status päivittyi
+            automaattisesti tilaan <em>Done</em>
+        </li>
+        <li>Lopuksi järjestä <em>Backlog</em> -näkymän sarakkeet ja luodut
+            tiketit, sekä niiden tiedot niin, että se vastaa alla olevaa kuvaa
+            <figure>
+                <img
+        class="wide-image"
+        src="../../assets/images/advanced/harjoitus projects mallikuva.png"
+        alt="Esimerkkikuva valmiista projektitaulusta"/>
+                <figcaption>Esimerkkikuva valmiista projektitaulusta
+                </figcaption>
+            </figure>
+        </li>
     </ol>
 
+    <p>Jos sait harjoituksen tehtyä onnistuneesti, hyvä sinä! Osaat käyttää
+        GitHub Projects -työkalun perustoimintoja ja hallita tehtäviä
+        visuaalisesti projektitaululla.</p>
+
     <p class="note-box">
-        Kokeile rohkeasti GitHub Projectsin eri toimintoja ja ominaisuuksia!
+        <strong>Vinkki!</strong> Voit hyödyntää GitHub Projects -taulua
+        myös henkilökohtaisten tehtäviesi hallintaan tai pienissä tiimeissä
+        työskentelyyn. Kokeile erilaisia näkymiä ja mukauta taulua
+        tarpeidesi mukaan!
     </p>
 </section>
