@@ -1,48 +1,42 @@
 <section class="how-to-teamwork">
   <header>
     <h1>Selkeät commit-viestit</h1>
+
+    <p> Selkeä commit-viesti kertoo tiimin jäsenille,
+      <strong>mitä muutoksia on tehty ja miksi</strong>. Hyvin kirjoitettu
+      viesti
+      helpottaa projektin historian seuraamista sekä yksittäisten muutosten
+      löytämistä myöhemmin.
+    </p>
+
+    <div class="accordion" data-include="../../accordion-element/accordion.html"
+      data-title="Mikä on commit">
+      <div class="contentToAccordion">
+        <p> Commit on Gitin perusyksikkö, joka <strong>paketoi koodiin
+          tehdyt muutokset ja niille annetun commit-viestin yhteen</strong>.
+          Näin syntyy selkeä tallenne, joka kertoo mitä on tehty ja milloin.
+          Useista commiteista muodostuu projektin historia, jota voidaan
+          tarkastella ja palata tarvittaessa aiempiin versioihin. </p>
+      </div>
+    </div>
   </header>
 
-  <p>
-    Selkeä commit-viesti kertoo tiimin jäsenille, mitä muutoksia on tehty ja miksi. Hyvin
-    kirjoitettu viesti helpottaa projektin historian seuraamista sekä yksittäisten muutosten
-    löytämistä myöhemmin.
-  </p>
-
-  <div
-    class="accordion"
-    data-include="../../accordion-element/accordion.html"
-    data-title="Mikä on commit?">
-    <div class="contentToAccordion">
-      <p>
-        Commit on Gitin perusyksikkö, joka paketoi koodiin tehdyt muutokset ja niille annetun
-        commit-viestin yhteen. Näin syntyy selkeä tallenne, joka kertoo mitä on tehty ja milloin.
-        Useista commiteista muodostuu projektin historia, jota voidaan tarkastella ja palata
-        tarvittaessa aiempiin versioihin.
-      </p>
-    </div>
-  </div>
-
   <h3>Vinkkejä hyvän commit-viestin kirjoittamiseen</h3>
+
   <ul>
-    <li>
-      Käytä selkeää ja kuvaavaa kieltä, joka kertoo
+    <li> Käytä selkeää ja kuvaavaa kieltä, joka kertoo
       <strong>mitä muutoksia on tehty ja miksi</strong>
     </li>
-    <li>
-      Käytä <strong>englanninkieltä</strong> (oletuskieli ohjelmistokehityksessä), ellei muuta
-      erikseen sovita
+    <li> Käytä <strong>englanninkieltä</strong> (oletuskieli
+      ohjelmistokehityksessä) ellei muuta erikseen sovita </li>
+    <li>Kirjoita viesti <strong>imperatiivimuodossa</strong>
+      (esim. "Add new feature"), eli kuvaa mitä muutos tekee</li>
+    <li> Jos olet tehnyt useita muutoksia, harkitse niiden
+      <strong>jakamista useampaan committiin</strong> (esim. UI-korjaukset
+      omaansa ja uuden toiminnon lisääminen omaansa)
     </li>
-    <li>Kirjoita viesti <strong>imperatiivimuodossa</strong> (esim. "Add new feature")</li>
-    <li>
-      Jos olet tehnyt useita muutoksia, harkitse niiden
-      <strong>jakamista useampaan committiin</strong> (esim. UI-korjaukset omaansa ja uuden
-      toiminnon lisääminen omaansa)
-    </li>
-    <li>
-      Ensimmäisen rivin tulisi olla <strong>lyhyt yhteenveto</strong> (max. 50 merkkiä),
-      tarvittaessa lisää tarkempi kuvaus tyhjän rivin jälkeen
-    </li>
+    <li> Ensimmäisen rivin tulisi olla <strong>lyhyt yhteenveto</strong> (max.
+      50 merkkiä), tarvittaessa lisää tarkempi kuvaus tyhjän rivin jälkeen </li>
   </ul>
 
   <h5>Esimerkkejä hyvistä commit-viesteistä</h5>
@@ -59,14 +53,11 @@
     <li>"asdasd" (merkityksetön)</li>
     <li>"final version" (ei kerro mitä muutettiin)</li>
     <li>"added new feature but its still broken" (epäselvä)</li>
-    <li>
-      "Fix login, update styles, change database schema, remove old tests, add new feature" (liian
-      monta asiaa yhdessä)
-    </li>
+    <li> "Fix login, update styles, change database schema, remove old tests,
+      add new feature" (liian monta asiaa yhdessä) </li>
   </ul>
 
-  <p class="note-box">
-    Hyvä commit-viesti kertoo mitä muutettiin ja miksi. Kirjoita se niin, että myös kuukauden päästä
-    ymmärrät viestin sisällön.
-  </p>
+  <p class="note-box"> Hyvä commit-viesti kertoo mitä muutettiin ja miksi.
+    Kirjoita se niin, että myös kuukauden päästä ymmärrät viestin sisällön. </p>
+
 </section>

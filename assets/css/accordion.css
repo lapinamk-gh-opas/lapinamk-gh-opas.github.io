@@ -44,8 +44,8 @@
   max-height: 0;
   overflow: hidden;
   margin-bottom: 0;
-  transition: max-height 0.3s ease, margin-bottom 0.3s linear,
-    border-radius 0.3s linear, width 0.3s ease;
+  transition: max-height 0.3s ease, margin-bottom 0.3s linear, border-radius 0.3s linear,
+    width 0.3s ease;
   user-select: auto;
 }
 
