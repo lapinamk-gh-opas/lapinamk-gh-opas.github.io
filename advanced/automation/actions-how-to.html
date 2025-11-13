@@ -1,0 +1,23 @@
+<header>
+  <h1>GitHub Actions käytännössä</h1>
+  <p>
+    Tässä osiossa tehdään pieni yksinkertainen GitHub Action workflow. Lisäksi tarkastellaan mistä
+    Actionsiin liittyvät asetukset ja muut tiedot löytyvät GitHubissa. Tämän osion kannalta ei ole
+    tarkoituksen mukaista käydä läpi workflow kirjoittamista kohtakohdalta. Voit ladata oppaassa
+    käytetyn YAML-tiedoston tästä:
+    <a href="/advanced/automation/example-workflow/example.yaml" download>example.yaml</a>.
+    Tiedostossa on pyritty kommentoimaan tarkasti mitä eri vaiheissa tapahtuu. Myös edellisellä
+    sivulla on avattu tarkemmin workflow tiedoston sisältöä ja rakennetta.
+  </p>
+  <p>
+    Tässä osiossa käytetään samaa repositoriota kuin aikaisemmissakin ohjeissa. Työnkulku
+    tiedostossa example.yaml automatisoi jo aikaisemminkin oppaassa paljon käytetyn README.md
+    tiedoston muokkaamisen. Tiedostoon tallennetaan versionumero, jota kasvatetaan jokaisen commitin
+    yhteydessä yhdellä. Lisäksi haetaan Gitin lokitiedostosta viimeisimmän commitin tietoja. jotka
+    kirjataan README-tiedostoon ns. tekijätiedoiksi. Lopuksi tehdään automaattinen Commit, joka
+    tallentaa README tiedoston muutokset repositorion päähaaraan.
+  </p>
+</header>
+<section>
+  <h2>Merge-konfliktien ratkaiseminen</h2>
+</section>

@@ -1,0 +1,88 @@
+#Työnkulun (workflow) nimi.
+name: README.md tiedoston tietojen päivitys
+
+# Milloin työnkulku suoritetaan.
+# Tässä tapauksessa, kun tehdään push main haaraan.
+on:
+  push:
+    branches:
+      - main
+
+# Työkulun aikana suoritettava tehtävät
+jobs:
+  # Tehtävän nimi (vapaasti nimettävissä tässä update-readme)
+  update-readme:
+    # Millä käyttöjärjestelmällä suoritetaan
+    runs-on: ubuntu-latest
+
+    # Tehtävän askeleet
+    steps:
+      # askeleen nimi (vapaasti nimettävissä)
+      - name: Checkout
+        # jos käytetään valmiita actioneja sen suoritus nimetään: uses: julkaisija/paketin-nimi.
+        # esim. uses: actions/checkout@v4, jolla ladataan repositorion sisältö workflow’n suoritusympäristöön,
+        # jotta muut stepit voivat käsitellä tiedostoja.
+        uses: actions/checkout@v4
+
+      # askeleen nimi (vapaasti nimettävissä), joka näkyy workflown lokitiedoissa
+      - name: Hae commitin tiedot
+        # id:n avulla tämä askel (step) tunnistetaan myöhemmin workflowssa
+        # ja sen tietoihin päästään käsiksi sen kautta
+        id: author
+        # jos käytetään komentorivikomentoja (scriptejä) sen suoritus nimetään: run: komento.
+        # pystyviivan| avulla voidaan komennot jakaa useammalle riville.
+        # esim. tässä tallennetaan tietoja Gitin lokitiedoista "muuttujiin" name, email, message ja date
+        run: |
+          echo "name=$(git log -1 --pretty=format:'%an')" >> $GITHUB_OUTPUT
+          echo "email=$(git log -1 --pretty=format:'%ae')" >> $GITHUB_OUTPUT
+          echo "message=$(git log -1 --pretty=format:'%s')" >> $GITHUB_OUTPUT
+          echo "date=$(git log -1 --pretty=format:'%cd')" >> $GITHUB_OUTPUT
+          echo "hash=$(git log -1 --pretty=format:'%h')" >> $GITHUB_OUTPUT
+
+      # Päivitetään README.md-tiedostoon sovelluksen versio sekä commitin tiedot
+      - name: Päivitä README
+        run: |
+          # --- Tallennetaan tiedoston nimi muuttujaan ---
+          FILE="README.md"
+
+          # --- Workflown lokiin merkintä päivityksestä ---
+          echo "🔄 Päivitetään $FILE..."
+
+          # --- Päivitetään versio numero ---
+          if grep -q '^Sovelluksen versio:' "$FILE"; then
+            # --- Haetaan nykyinen versio ja kasvatetaan sitä yhdellä ---
+            VERSION=$(grep -Eo '^Sovelluksen versio: *[0-9]+' "$FILE" | grep -Eo '[0-9]+')
+            NEW_VERSION=$((VERSION + 1))
+            sed -i'' -e "s/^Sovelluksen versio:.*/Sovelluksen versio: ${NEW_VERSION}/" "$FILE"
+          else
+            # --- Jos versiota ei vielä ole tiedostossa, lisätään se ---
+            echo "## 📬 Versio" >> "$FILE"
+            echo "" >> "$FILE"
+            echo "Sovelluksen versio: 1" >> "$FILE"
+            echo "" >> "$FILE"
+            NEW_VERSION=1
+          fi
+
+          # --- Poistetaan vanhat commitin tekijätiedot ---
+          sed -i'' -e '/^Viimeisin commit/d' "$FILE"
+          sed -i'' -e '/^- Tekijä:/d' "$FILE"
+          sed -i'' -e '/^- Email:/d' "$FILE"
+          sed -i'' -e '/^- Pvm:/d' "$FILE"
+
+          # --- Lisätään uudet tekijätiedot ---
+          echo "Viimeisin commit (#${{ steps.author.outputs.hash }})" >> "$FILE"
+          echo "- Tekijä: ${{ steps.author.outputs.name }}" >> "$FILE"
+          echo "- Email: ${{ steps.author.outputs.email }}" >> "$FILE"
+          echo "- Pvm: ${{ steps.author.outputs.date }}" >> "$FILE"
+
+          # --- Workflown lokiin merkintä päivityksen onnistumisesta ---
+          echo "✅ README päivitetty versiolle ${NEW_VERSION}"
+
+      # Commitoidaan README.md tiedoston muutokset ja viedään ne päähaaraan.
+      - name: Commit ja push
+        run: |
+          git config user.name ${{ steps.author.outputs.name }}
+          git config user.email ${{ steps.author.outputs.email }}
+          git add README.md
+          git commit -m "${{ steps.author.outputs.message }}"
+          git push origin main
