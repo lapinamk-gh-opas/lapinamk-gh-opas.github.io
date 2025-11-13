@@ -54,13 +54,129 @@
   <h3>Mitä hyötyä CI/CD-menetelmistä on?</h3>
 
   <p
-    >Selkeästi suurin hyöty on julkaisu nopeus. Ne kehitystiimit, jotka hyödyntävät CI/CD-menetelmiä
-    tekevät julkaisuja useammin, läpimenoajan ollessa selkeästi nopeampi. Nopeuden lisäksi
+    >Selvästi suurin hyöty on julkaisu nopeus. Kehitystiimit, jotka hyödyntävät CI/CD-menetelmiä
+    tekevät julkaisuja useammin, läpimenoajan ollessa samalla selkeästi nopeampi. Nopeuden lisäksi
     menetelmällä on myös muita hyötyjä, kuten sovelluksen kehitys nopeus (antaa kehittäjille
-    mahdollisuuden tehdä pienempiä muutoksia useammin), koodin luotettavuus ja vakaus
-    (testiautomaation ansiosta pysyy varmemmin ns. julkaisukunnossa) sekä liiketoiminnan kasvu
-    (automaatio vapautta aikaa muihin tehtäviin).
+    mahdollisuuden tehdä muutoksia useammin ja pienempinä kokonaisuuksina.), koodin luotettavuus ja
+    vakaus (testiautomaation ansiosta sovellus pysyy varmemmin julkaisukunnossa) sekä liiketoiminnan
+    kasvu (automaatio vapautta aikaa muihin tehtäviin).
   </p>
 
   <h3>Esimerkki CI/CD-työnkulusta</h3>
+  <p>
+    Työnkulku (workflow) määrittää, mitä tapahtuu aina, kun projektiin tehdään muutos, kuten koodin
+    push päähaaraan. Tavoitteena on varmistaa, että uusi versio rakennetaan ja julkaistaan
+    luotettavasti, samaa prosessia noudattaen ja ilman manuaalisia toimenpiteitä. Seuraavassa
+    esimerkissä on yksinkertainen työnkulku, joka voisi automatisoida esim verkkosivuston tai
+    web-sovelluksen muutosten julkaisemisen.
+  </p>
+
+  <h5>Esimerkkiprosessi: Verkkosivun CI/CD-vaiheet</h5>
+  <figure>
+    <img
+      class="wide-image"
+      src="../../assets/images/advanced/cicd/CICD-kaavio.webp"
+      alt="Kaaviokuva CI/CD-työnkulun vaiheista" />
+    <figcaption>Kaaviossa kuvataan visuaalisesti CI/CD-työnkulun etenemistä ja vaiheita</figcaption>
+  </figure>
+  <ol>
+    <li>
+      <h6>Muutoksien tekeminen ja versiohallinta</h6>
+      <ul>
+        <li>Tehdään koodi muutoksia esim. uusi toiminnallisuus.</li>
+        <li>Muutettu koodi tallennetaan GitHub-repositorioon.</li>
+        <li
+          >Muutos on tehty omassa haarassa (branch) ja yhdistetään päähaaraan (main) pull requestin
+          kautta.
+        </li>
+        <li>Tämä käynnistää automaattisesti CI/CD-prosessin.</li>
+      </ul>
+    </li>
+    <li>
+      <h6>Continuous Integration (CI)</h6>
+      <p
+        >Tässä vaiheessa tarkistetaan, että uusi koodi toimii ja täyttää vaatimukset. CI-prosessille
+        tyypillisiä alavaiheita ovat:</p
+      >
+      <ol>
+        <li><strong>Checkout:</strong> Haetaan projektin koodi CI-työnkulun käyttöön.</li>
+        <li>
+          <strong>Asennukset:</strong> Mikäli projekti käyttää paketinhallintaa (esim. npm)
+          asennetaan riippuvuudet.
+        </li>
+        <li>
+          <strong>Testaus ja laadunvarmistus:</strong> Tehdään koodin laaduntarkastus (esim. ESLint)
+          ajetaan automaattiset testit (yksikkötestit, end-to-end-testit, yms.).
+        </li>
+        <li>
+          <strong>Käännös (Build):</strong> Tarvittaessa käännetään tai generoidaan sivustosta
+          tuotantoon valmis versio.
+        </li>
+      </ol>
+    </li>
+    <li>
+      <h6>Continuous Deployment (CD)</h6>
+      <p
+        >Kun koodi on testattu sekä hyväksytty CI-vaiheen mukaisesti (ja mikäli julkaisu on täysin
+        automatisoitu eli continuous deployment), se viedään tuotantoon esimerkiksi seuraavien
+        vaiheiden kautta:</p
+      >
+      <ol>
+        <li>
+          <strong>Muutoksien vieminen palvelimelle:</strong> Tehdään tarvittavat muutokset
+          palvelimella oleviin HTML/CSS/JS tiedostojen julkaisuversioihin. Tämä voi tarkoittaa
+          useampia eri vaiheita, kuten vanhojen tiedostojen poistoa ja uusien kopioimista tilalle.
+          Tiedostojen siirto voi tapahtua esimerkiksi Secure Shellin (SSH) avulla.
+        </li>
+        <li>
+          <strong>Sovelluksen käynnistäminen:</strong> Web-sovellus voi vaatia uudelleen
+          käynnistämisen muutoksien jälkeen. Tämä varmistaa, että sovellus toimii oikein uusilla
+          muutoksilla. Uudelleen käynnistys voidaan toteuttaa automaattisesti SHH avulla
+          suoritettavien skriptien tai prosessinhallinta-työkalujen (PM2) avulla.
+        </li>
+        <li>
+          <strong>Käyttöönoton validointi:</strong> Tarkistetaan, että sivusto latautuu ja vastaa
+          oikein (palauttaa esim. koodin HTTP 200).
+        </li>
+        <li
+          ><strong>Versionumerointi:</strong> Sovelluksen versionumero voidaan päivittää prosessissa
+          automaattisesti (esim. v1.0.3 → v1.0.4).</li
+        >
+        <li>
+          <strong>Ilmoitukset:</strong> Automaattisesti lähetettävällä “Deployment successful
+          ✅”-viestillä kehitystiimille voidaan ilmoittaa uudesta versiosta tuotannossa esim.
+          sähköpostin, Slackin, discordin tms. viestintäkanavan kautta.
+        </li>
+      </ol>
+    </li>
+    <li>
+      <h6>Muita mahdollisia vaiheita:</h6>
+      <ul>
+        <li>
+          <strong>Tulosten raportointi:</strong> Mikäli jokin edeltäneistä vaiheista epäonnistuu,
+          työnkulku keskeytyy ja kehittäjälle ilmoitetaan virheestä, jotta ongelmiin voidaan
+          reagoida.
+        </li>
+        <li>
+          <strong>Rollback:</strong> Mikäli jokin erityisesti julkaisuun (CD) liittyvistä vaiheista
+          epäonnistuu ja työnkulku keskeytyy voi tulla tarve palata edelliseen tuotannossa olleeseen
+          toimivaan versioon.
+        </li>
+      </ul>
+    </li>
+  </ol>
+  <div class="note-box">
+    Tämä esimerkki on vain yksi kuvitteellinen ja yksinkertaistettu tapa toteuttaa CI/CD-prosessi.
+    Käytännössä työnkulkujen rakenne ja työkalut vaihtelevat paljon projektin, teknologian ja tiimin
+    tarpeiden mukaan. CI/CD voidaan toteuttaa monin eri tavoilla. Tärkeintä prosessin kannalta on,
+    että se ottaa projektin vaatimukset huomioon sekä tukee luotettavaa, turvallista, toistettavaa
+    ja järkevästi automatisoitua julkaisua.
+  </div>
+
+  <strong>Lähde:</strong>
+  <em
+    ><a target="_blank" rel="noopener noreferrer" href="https://github.com/resources/articles/ci-cd"
+      >What is CI/CD?</a
+    ></em
+  >
 </section>
