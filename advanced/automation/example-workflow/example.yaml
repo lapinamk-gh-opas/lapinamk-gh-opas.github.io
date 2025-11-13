@@ -1,4 +1,4 @@
-#Työnkulun (workflow) nimi.
+# Työnkulun (workflow) nimi (vapaasti nimettävissä).
 name: README.md tiedoston tietojen päivitys
 
 # Milloin työnkulku suoritetaan.
@@ -8,30 +8,30 @@ on:
     branches:
       - main
 
-# Työkulun aikana suoritettava tehtävät
+# Työkulun aikana suoritettavat tehtävän
 jobs:
-  # Tehtävän nimi (vapaasti nimettävissä tässä update-readme)
+  # Tehtävän nimi (vapaasti nimettävissä)
   update-readme:
-    # Millä käyttöjärjestelmällä suoritetaan
+    # Millä käyttöjärjestelmällä (runner) suoritetaan
     runs-on: ubuntu-latest
 
     # Tehtävän askeleet
     steps:
-      # askeleen nimi (vapaasti nimettävissä)
+      # Askeleen nimi (vapaasti nimettävissä), joka näkyy workflown lokitiedoissa
       - name: Checkout
-        # jos käytetään valmiita actioneja sen suoritus nimetään: uses: julkaisija/paketin-nimi.
-        # esim. uses: actions/checkout@v4, jolla ladataan repositorion sisältö workflow’n suoritusympäristöön,
+        # Jos käytetään valmiita actioneja sen suoritus nimetään: uses: julkaisija/paketin-nimi.
+        # Esim. uses: actions/checkout@v4, jolla ladataan repositorion sisältö workflow’n suoritusympäristöön,
         # jotta muut stepit voivat käsitellä tiedostoja.
         uses: actions/checkout@v4
 
-      # askeleen nimi (vapaasti nimettävissä), joka näkyy workflown lokitiedoissa
+      # Askeleen nimi (vapaasti nimettävissä), joka näkyy workflown lokitiedoissa
       - name: Hae commitin tiedot
         # id:n avulla tämä askel (step) tunnistetaan myöhemmin workflowssa
-        # ja sen tietoihin päästään käsiksi sen kautta
+        # ja sen tietoihin päästään käsiksi sen kautta esim. ${{ steps.author.outputs.name }}
         id: author
-        # jos käytetään komentorivikomentoja (scriptejä) sen suoritus nimetään: run: komento.
-        # pystyviivan| avulla voidaan komennot jakaa useammalle riville.
-        # esim. tässä tallennetaan tietoja Gitin lokitiedoista "muuttujiin" name, email, message ja date
+        # Jos käytetään komentorivikomentoja (scriptejä) sen suoritus nimetään: run: komento.
+        # pystyviivan | avulla voidaan komennot jakaa useammalle riville.
+        # esim. tässä tallennetaan tietoja Gitin lokitiedoista "muuttujiin" name, email, message, date ja hash
         run: |
           echo "name=$(git log -1 --pretty=format:'%an')" >> $GITHUB_OUTPUT
           echo "email=$(git log -1 --pretty=format:'%ae')" >> $GITHUB_OUTPUT
@@ -42,20 +42,18 @@ jobs:
       # Päivitetään README.md-tiedostoon sovelluksen versio sekä commitin tiedot
       - name: Päivitä README
         run: |
-          # --- Tallennetaan tiedoston nimi muuttujaan ---
           FILE="README.md"
-
           # --- Workflown lokiin merkintä päivityksestä ---
           echo "🔄 Päivitetään $FILE..."
 
-          # --- Päivitetään versio numero ---
+          # --- Päivitetään versio ---
           if grep -q '^Sovelluksen versio:' "$FILE"; then
-            # --- Haetaan nykyinen versio ja kasvatetaan sitä yhdellä ---
+            # Haetaan nykyinen versio ja kasvatetaan sitä yhdellä
             VERSION=$(grep -Eo '^Sovelluksen versio: *[0-9]+' "$FILE" | grep -Eo '[0-9]+')
             NEW_VERSION=$((VERSION + 1))
             sed -i'' -e "s/^Sovelluksen versio:.*/Sovelluksen versio: ${NEW_VERSION}/" "$FILE"
           else
-            # --- Jos versiota ei vielä ole tiedostossa, lisätään se ---
+            # --- Jos versiota ei vielä ole, luodaan se ---
             echo "## 📬 Versio" >> "$FILE"
             echo "" >> "$FILE"
             echo "Sovelluksen versio: 1" >> "$FILE"
@@ -63,13 +61,13 @@ jobs:
             NEW_VERSION=1
           fi
 
-          # --- Poistetaan vanhat commitin tekijätiedot ---
+          # --- Poistetaan vanhat commitin tekijän tiedot ---
           sed -i'' -e '/^Viimeisin commit/d' "$FILE"
           sed -i'' -e '/^- Tekijä:/d' "$FILE"
           sed -i'' -e '/^- Email:/d' "$FILE"
           sed -i'' -e '/^- Pvm:/d' "$FILE"
 
-          # --- Lisätään uudet tekijätiedot ---
+          # --- Lisätään uudet tiedot ---
           echo "Viimeisin commit (#${{ steps.author.outputs.hash }})" >> "$FILE"
           echo "- Tekijä: ${{ steps.author.outputs.name }}" >> "$FILE"
           echo "- Email: ${{ steps.author.outputs.email }}" >> "$FILE"
@@ -78,7 +76,7 @@ jobs:
           # --- Workflown lokiin merkintä päivityksen onnistumisesta ---
           echo "✅ README päivitetty versiolle ${NEW_VERSION}"
 
-      # Commitoidaan README.md tiedoston muutokset ja viedään ne päähaaraan.
+      # Commitoidaan README.md tiedoston muutokset ja viedään ne päähaaraan
       - name: Commit ja push
         run: |
           git config user.name ${{ steps.author.outputs.name }}
