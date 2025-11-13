@@ -41,8 +41,8 @@ p {
 code {
   color: #ae2e6e;
   font-size: 0.95rem;
-  font-family: 'Fira Code', 'JetBrains Mono', ui-monospace, SFMono-Regular,
-    Menlo, Consolas, monospace;
+  font-family: 'Fira Code', 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas,
+    monospace;
   font-weight: 500;
 }
 
@@ -50,9 +50,12 @@ code {
 p.note-box + h3,
 p.note-box + h4,
 p.note-box + h5,
-p.note-box + h6 {
-  margin-top: 0rem;
-  padding-top: 0rem;
+p.note-box + h6,
+.note-box + h3,
+.note-box + h4,
+.note-box + h5,
+.note-box + h6 {
+  margin-top: 0.5rem;
 }
 
 /* interview section title with lines on sides */

@@ -335,6 +335,11 @@ a.active {
   border-radius: 10px;
 }
 
+.cmd-table th,
+.workflow-table th {
+  background-color: #ffffff;
+}
+
 .sidebar .cmd-table th:first-child,
 .sidebar .workflow-table th:first-child,
 .sidebar .cmd-table td:first-child,
