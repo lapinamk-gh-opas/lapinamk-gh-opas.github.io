@@ -1,98 +1,162 @@
 <section class="how-to-teamwork">
   <header>
     <h1>Tärkeimmät GitHub-repositorion asetukset</h1>
-    <p>
-      GitHub-repositorion asetukset määrittävät sen, <strong>miten repo toimii </strong> ja
-      <strong>kuka siihen voi osallistua</strong>. Tärkeintä on varmistaa, että repositorio on
-      oikein perustettu ja että sen näkyvyys, käyttöoikeudet ja suojaus tukevat tiimin työskentelyä.
+
+    <p>GitHub-repositorion asetukset määrittävät sen,
+      <strong>miten repositorio toimii</strong> ja
+      <strong>kuka siihen voi osallistua</strong>. Tärkeintä on varmistaa, että
+      repositorio on oikein perustettu ja että sen näkyvyys, käyttöoikeudet ja
+      suojaus tukevat tiimin työskentelyä.
     </p>
   </header>
 
-  <h4>Repositorion näkyvyys</h4>
-  <p>
-    Uutta repositoriota luodessa valitaan, onko se <em>public</em> (julkinen) vai
-    <em>private</em> (yksityinen). Julkinen repositorio on kaikkien nähtävissä, kun taas yksityisen
-    näkevät vain projektin jäsenet. Aloittelijan on hyvä aloittaa yksityisellä repositoriolla, ellei
-    tarkoitus ole jakaa projektia avoimesti.
+  <h3>Repositorion näkyvyys</h3>
+
+  <p>Uutta repositoriota luodessa valitaan, onko sen näkyvyys
+    <strong>julkinen</strong> (<em>public</em>)
+    vai <strong>yksityinen</strong> (<em>private</em>). Julkinen repositorio on
+    kaikkien
+    nähtävissä, kun taas yksityisen näkevät vain projektin jäsenet. Aloittelijan
+    on hyvä aloittaa yksityisellä repositoriolla, ellei tarkoitus ole jakaa
+    projektia avoimesti.
   </p>
 
-  <h4>Käyttöoikeudet</h4>
-  <p>
-    Repositorion omistaja voi kutsua muita käyttäjiä mukaan projektiin. Yleisimpiä rooleja ovat
-    <em>Read</em> (vain luku), <em>Triage</em> (issues ja pull requestien hallinta),
-    <em>Write</em> (koodin muokkaus) ja <em>Admin</em> (kaikki oikeudet). Anna aina
-    <strong>vain tarvittavat oikeudet</strong>
-    (<em>least privilege</em>) projektin osallistujille.
-  </p>
-  <p>
-    Tasavertaiselle tiimiläiselle voi antaa <em>Write</em>-oikeudet (tai jopa
-    <em>Admin</em>-oikeudet), jotta hän voi osallistua koodin kehittämiseen, kun taas arvioivalle
-    opettajalle usein riittää <em>Read</em>-oikeus.
+  <h3>Käyttöoikeudet</h3>
+
+  <p>Repositorion omistaja voi kutsua muita käyttäjiä mukaan projektiin ja
+    antaa <strong>heille sopivat käyttöoikeudet</strong>. GitHubissa
+    käyttöoikeudet
+    määrittelevät, mitä kukin käyttäjä voi tehdä projektissa ja miten laajasti
+    he voivat muokata repositoriota.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Käyttöoikeus</th>
+        <th>Mitä käyttäjä voi tehdä</th>
+        <th>Kenelle sopii</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Read</strong></td>
+        <td>Nähdä repositorion sisällön, issues ja PR:t, ei voi tehdä muutoksia
+        </td>
+        <td>Sidosryhmät ja henkilöt jotka vain seuraavat projektia</td>
+      </tr>
+      <tr>
+        <td><strong>Triage</strong></td>
+        <td>Hallita issueita ja pull requesteja (luoda, muokata, priorisoida),
+          ei voi muokata koodia</td>
+        <td>Tiimivastaava, projektipäällikkö</td>
+      </tr>
+      <tr>
+        <td><strong>Write</strong></td>
+        <td>Puskea ja muokata koodia, luoda haaroja, avata PR:iä, hallita
+          issueita</td>
+        <td>Tasavertaiset tiimin jäsenet, kehittäjät</td>
+      </tr>
+      <tr>
+        <td><strong>Admin</strong></td>
+        <td>Kaikki oikeudet, voi poistaa repositorion, muuttaa asetuksia ja
+          hallita käyttöoikeuksia</td>
+        <td>Repositorion omistaja, vastuuhenkilö</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p> Tasavertaiselle tiimiläiselle voi antaa <em>Write</em>-oikeudet (tai jopa
+    <em>Admin</em>-oikeudet), jotta hän voi osallistua koodin kehittämiseen, kun
+    taas arvioivalle opettajalle usein riittää pelkkä <em>Read</em>-oikeus. Anna
+    aina <strong>vain tarvittavat oikeudet</strong> (<em>least privilege</em>)
+    projektiin osallistujille.
   </p>
 
-  <h4>Branch protection rules</h4>
-  <p>
-    Varsinkin isommissa ryhmäprojekteissa päähaara (<em>main</em>) kannattaa suojata niin, että
-    muutokset täytyy hyväksyä pull requestin kautta ennen yhdistämistä. Tämä estää vahingossa tehdyt
-    virheet ja parantaa koodin laatua.
+  <h3>Branch protection rules</h3>
+
+  <p> Isommissa projekteissa päähaara (<em>main</em>) kannattaa suojata
+    <strong>branch protection -säännöillä</strong>, jotta sinne ei voi
+    vahingossa puskea keskeneräistä tai rikkinäistä koodia. Suojauksen avulla
+    varmistetaan, että kaikki muutokset kulkevat
+    <strong>pull requestien</strong> kautta ja joku tarkistaa ne ennen
+    yhdistämistä.
+  </p>
+  <h6> Suojaukset voivat esimerkiksi </h6>
+  <ul>
+    <li>Estää suorat pushit päähaaraan</li>
+    <li>Vaatii tiimitoverin hyväksynnän ennen yhdistämistä</li>
+    <li>Estää PR:n yhdistämisen, jos siinä on konflikteja</li>
+  </ul>
+  <p> Näin tiimi saa varmistettua, että
+    <strong>päähaara pysyy aina toimivana</strong> ja muutokset tarkastetaan
+    ennen käyttöönottoa.
   </p>
 
-  <div
-    class="accordion"
-    data-include="../../accordion-element/accordion.html"
+  <div class="accordion" data-include="../../accordion-element/accordion.html"
     data-title="Repositorion perustiedostot">
     <div class="contentToAccordion">
-      <p>
-        Uuteen repositorioon kannattaa lisätä muutama perustiedosto. Ne selkeyttävät projektin
-        tarkoitusta, helpottavat käyttöönottoa ja pitävät versionhallinnan siistinä. Tiedostot
-        luodaan repon juureen ja ne voi lisätä joko luonnin yhteydessä tai jälkikäteen.
-      </p>
+
+      <h3>Repositorion perustiedostot</h3>
+
+      <p> Uuteen repositorioon kannattaa lisätä muutama perustiedosto. Ne
+        selkeyttävät projektin tarkoitusta, helpottavat käyttöönottoa ja pitävät
+        versionhallinnan siistinä. Tiedostot luodaan repon juureen ja ne voi
+        lisätä joko luonnin yhteydessä tai jälkikäteen. </p>
 
       <h5><em>README.md</em></h5>
-      <p>
-        Kuvaa lyhyesti mitä projekti tekee ja miten sen saa käyntiin. Aloittelijalle riittää:
-        projektin tavoite, käytetyt teknologiat ja mahdollinen lyhyt asennusohje. Hyvin kirjoitettu
-        README tekee reposi hyödylliseksi myös portfoliossa.
+
+      <p>Kuvaa lyhyesti mitä projekti tekee ja miten sen saa käyntiin.
+        Aloittelijalle riittää: projektin tavoite, käytetyt teknologiat ja
+        mahdollinen lyhyt asennusohje.
+      </p>
+      <p class="note-box">Hyvin kirjoitettu
+        <em>README</em>-tiedosto tekee reposi hyödylliseksi myös portfoliossa!
       </p>
 
-      <p>
-        README-tiedosto kirjoitetaan Markdown-kielellä, joka mahdollistaa otsikot, listat, linkit ja
-        koodilohkot. Lisätietoja löydät
-        <a
-          href="https://guides.github.com/features/mastering-markdown/"
-          target="_blank"
-          rel="noopener noreferrer">
-          GitHubin Markdown-oppaasta</a
-        >.
+      <p>README-tiedosto kirjoitetaan Markdown-kielellä, joka mahdollistaa
+        otsikot, listat, linkit ja koodilohkot. Lisätietoja löydät
+        <a href="https://guides.github.com/features/mastering-markdown/" target="_blank" rel="noopener noreferrer"> GitHubin Markdown-oppaasta</a>.
       </p>
 
       <h5><em>.gitignore</em></h5>
-      <p>
-        Rajaa pois versionhallinnasta väliaikaiset, paikalliset ja käännetyt tiedostot sekä
-        salaisuudet. Reposta tulee siistimpi ja turvallisempi. Käymme tiedoston tarkemmin
-        kappaleessa
+
+      <p>Rajaa pois versionhallinnasta väliaikaiset ja paikalliset tiedostot,
+        sekä salaisuudet. Reposta tulee siistimpi ja turvallisempi.
+        Käymme tiedoston tarkemmin kappaleessa
         <a href="/teamwork/privacy-and-security.html#secrets">Salaisuuksien suojaaminen</a>.
       </p>
 
       <h5><em>LICENSE</em></h5>
+
+      <p>Määrittää käyttöehdot koodille. Ilman lisenssiä muut eivät yleensä saa
+        käyttää koodiasi. Valitse selkeä, tarkoitukseen sopiva lisenssi etenkin
+        julkisissa projekteissa. </p>
+
+      <p>Yleisimpiä avoimen lähdekoodin lisenssejä ovat MIT, Apache 2.0 ja
+        GPLv3. Lisätietoja lisensseistä löydät
+        <a href="https://choosealicense.com/" target="_blank" rel="noopener noreferrer"> Choose a License -sivustolta</a>.
+      </p>
+
+      <h3>GitHub Wiki</h3>
+
       <p>
-        Määrittää käyttöehdot koodille. Ilman lisenssiä muut eivät yleensä saa käyttää koodiasi.
-        Valitse selkeä, tarkoitukseen sopiva lisenssi etenkin julkisissa projekteissa.
+        GitHub Wiki on repositorion oma <strong>dokumentaatioalue</strong>,
+        jonne voi kirjoittaa
+        laajempia ohjeita, suunnitelmia ja teknisiä dokumentaatioita.
+        Toisin kuin README, Wiki voi sisältää useita sivuja ja toimia projektin
+        käsikirjana.
       </p>
 
       <p>
-        Yleisimpiä avoimen lähdekoodin lisenssejä ovat MIT, Apache 2.0 ja GPLv3. Lisätietoja
-        lisensseistä löydät
-        <a href="https://choosealicense.com/" target="_blank" rel="noopener noreferrer">
-          Choose a License -sivustolta</a
-        >.
+        Wiki otetaan käyttöön repon <em>Settings</em>-välilehdeltä
+        kohdasta <em>Features → Wikis</em>. Jos se on päällä, sivuja voi luoda
+        ja muokata suoraan repositorion <em>Wiki</em>-välilehdessä.
       </p>
+
     </div>
   </div>
-  <h4></h4>
 
-  <p class="note-box">
-    Muista, että repositorion asetukset voi muuttaa milloin tahansa projektin edetessä. Tarkista
-    asetukset säännöllisesti, jotta ne vastaavat sinun ja tiimisi tarpeita.
-  </p>
+  <p class="note-box"> Muista, että repositorion asetukset voi muuttaa milloin
+    tahansa projektin edetessä. Tarkista asetukset säännöllisesti, jotta ne
+    vastaavat sinun ja tiimisi tarpeita. </p>
 </section>

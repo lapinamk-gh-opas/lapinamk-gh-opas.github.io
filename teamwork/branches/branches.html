@@ -49,64 +49,59 @@
     <li>Hanki hyväksyntä ja yhdistä main-haaraan <code>git merge login</code>
     </li>
     <li>Poista haara, jotta ympäristö pysyy hallittuna
-      <code>git branch -d login</code></li>
+      <code>git branch -d login</code>
+    </li>
   </ol>
   <p>
     Tarkemmat selitykset koodeista voit katsoa kappaleesta
-    <a href="/basics/basic-commands.html#introduction">Perusteet / 1.3 Keskeiset komennot</a>
+    <a href="/basics/basic-commands.html#introduction">Perusteet / 1.3 Keskeiset komennot</a>.
   </p>
 
-  <div
-    class="accordion"
-    data-include="../../accordion-element/accordion.html"
-    data-title="Git-haarojen plussat ja miinukset">
-    <div class="contentToAccordion">
-      <table class="pros-cons-table">
-        <thead>
-          <tr>
-            <th>Plussat</th>
-            <th>Miinukset</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              Jokainen tiimin jäsen voi työskennellä omassa haarassaan ilman,
-              että muiden työ keskeytyy
-            </td>
-            <td>
-              Haarojen hallinta vaatii kurinalaisuutta: selkeät nimet,
-              säännöllinen päivittäminen ja turhien haarojen poistaminen
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Useiden ominaisuuksien kehitys onnistuu rinnakkain, mikä lisää
-              tuottavuutta ja vähentää konflikteja
-            </td>
-            <td>
-              Yhdistäminen (merge) voi aiheuttaa konflikteja, jotka on
-              ratkaistava huolellisesti ennen jatkamista
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Koodin tarkastaminen ja hyväksyntä onnistuvat pull requestien
-              kautta ennen kuin muutokset tulevat päähaaraan
-            </td>
-            <td>Liian monien haarojen käyttö voi tehdä projektin rakenteesta
-              sekavan ja vaikeuttaa kokonaisuuden hallintaa</td>
-          </tr>
-          <tr>
-            <td>
-              Haarat tarjoavat turvallisen testiympäristön, jossa uusia ideoita
-              voi kokeilla ilman päähaaran rikkomisen riskiä
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+  <h5>Git-haarojen vahvuudet ja heikkoudet</h5>
+  <table class="pros-cons-table">
+    <thead>
+      <tr>
+        <th>Vahvuudet</th>
+        <th>Heikkoudet</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Jokainen tiimin jäsen voi työskennellä omassa haarassaan ilman,
+          että muiden työ keskeytyy
+        </td>
+        <td>
+          Haarojen hallinta vaatii kurinalaisuutta: selkeät nimet,
+          säännöllinen päivittäminen ja turhien haarojen poistaminen
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Useiden ominaisuuksien kehitys onnistuu rinnakkain, mikä lisää
+          tuottavuutta ja vähentää konflikteja
+        </td>
+        <td>
+          Yhdistäminen (merge) voi aiheuttaa konflikteja, jotka on
+          ratkaistava huolellisesti ennen jatkamista
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Koodin tarkastaminen ja hyväksyntä onnistuvat pull requestien
+          kautta ennen kuin muutokset tulevat päähaaraan
+        </td>
+        <td>Liian monien haarojen käyttö voi tehdä projektin rakenteesta
+          sekavan ja vaikeuttaa kokonaisuuden hallintaa</td>
+      </tr>
+      <tr>
+        <td>
+          Haarat tarjoavat turvallisen testiympäristön, jossa uusia ideoita
+          voi kokeilla ilman päähaaran rikkomisen riskiä
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
   <p>
     Yhteenvetona voidaan todeta, että haarat ovat
