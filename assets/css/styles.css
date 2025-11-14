@@ -115,7 +115,12 @@ p.note-box + h6,
   margin-top: 2rem;
 }
 
-/* Top margin class */
+/* no top margin class */
+.no-margin-top {
+  margin-top: 0;
+}
+
+/* right margin class */
 .margin-right {
   margin-right: 5rem !important;
 }

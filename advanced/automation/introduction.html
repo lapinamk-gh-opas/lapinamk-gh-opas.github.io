@@ -1,0 +1,185 @@
+<section class="introduction">
+  <header>
+    <h1>CI/CD-automaatio</h1>
+
+    <p
+      >CI/CD kirjainyhdistelmä tulee sanoista <strong>Continuous Integration</strong> ja
+      <strong>Continuous Deployment</strong> (tai Continuous Delivery). Käsitteenä se tarkoittaa
+      menetelmiä ja työkaluja, jotka ovat tarkoitettu auttamaan ohjelmistokehitystä automatisoimalla
+      laadunvarmistusta, testaamista, lähdekoodin käännöksen suorittamisen (<em>build</em>) sekä
+      sovelluksen käyttöönoton.
+    </p>
+
+    <ul>
+      <li>
+        <strong>Jatkuva integraatio (CI):</strong> automatisoi testaamisen ja laadunvarmistuksen,
+        lähdekoodin käännökset (<em>build</em>) sekä koodiin tehtyjen muutoksien yhdistämisen
+        repositorioon
+      </li>
+      <li>
+        <strong>Jatkuva käyttöönotto (CD):</strong> automatisoi sovellukseen tulleiden muutoksien
+        viemisen käyttöön lopulliseen tuotantoympäristöön tai asiakkaalle.
+      </li>
+    </ul>
+
+    <p>
+      Yhdessä ne muodostavat <strong>CI/CD-putken</strong> eli sarjan automatisoituja työnkulkuja,
+      jotka auttavat kehittäjiä vähentämään manuaalisia tehtäviä.
+    </p>
+  </header>
+
+  <div
+    class="accordion"
+    data-include="../../accordion-element/accordion.html"
+    data-title="Continuous delivery vs. Continuous deployment">
+    <div class="contentToAccordion">
+      <p>
+        Kun puhutaan CI/CD:stä, lyhenne CD voi tarkoittaa joko jatkuvaa toimitusta (Continuous
+        Delivery), tai jatkuvaa käyttöönottoa (Continuous Deployment). Näiden ero on siinä, kuinka
+        pitkälle automaatio viedään:
+      </p>
+      <ul>
+        <li>
+          <strong>Jatkuvassa toimituksessa</strong> automaatio pysähtyy ennen tuotantoon vientiä.
+          Julkaisu vaatii vielä ihmisen hyväksynnän, esimerkiksi testaus-, tai ylläpitotiimiltä.
+        </li>
+        <li>
+          <strong>Jatkuvassa käyttöönotossa</strong> prosessi on täysin automatisoitu koodi
+          julkaistaan käyttäjille heti, kun se läpäisee kaikki automaattiset testit.
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Mitä hyötyä CI/CD-menetelmistä on?</h3>
+
+  <p
+    >Suurin hyöty CI/CD-menetelmistä on <strong>julkaisunopeus</strong>: kehitystiimit voivat
+    julkaista useammin ja nopeammin. Julkaisnuopeuden lisäksi menetelmällä on myös muita hyötyjä,
+    kuten sovelluksen <strong>kehitysnopeus</strong> (antaa kehittäjille mahdollisuuden tehdä
+    muutoksia useammin ja pienempinä kokonaisuuksina.), koodin <strong>luotettavuus</strong> ja
+    <strong>vakaus</strong> (testiautomaation ansiosta sovellus pysyy varmemmin julkaisukunnossa)
+    sekä <strong>tuottavuuden kasvu</strong> (automaatio vapautta aikaa muihin tehtäviin).
+  </p>
+
+  <h3>Esimerkki CI/CD-putkesta</h3>
+  <p>
+    CI/CD-putki (workflow) voi määrittää esimerkiksi, mitä tapahtuu, kun projektiin tehdään muutos
+    ja se yhdistetään päähaaraan. Tavoitteena on varmistaa, että uusi versio rakennetaan ja
+    julkaistaan luotettavasti, samaa prosessia noudattaen ja ilman manuaalisia toimenpiteitä.
+    Seuraavassa esimerkissä on esitettynä pääpiirteittäin yksinkertainen työnkulku, joka voisi
+    automatisoida esim. verkkosivuston tai web-sovelluksen muutosten julkaisemisen.
+  </p>
+
+  <h5>Esimerkkiprosessi: Verkkosivun CI/CD-vaiheet</h5>
+  <figure>
+    <img
+      class="wide-image"
+      src="../../assets/images/advanced/cicd/CICD-kaavio.webp"
+      alt="Kaaviokuva CI/CD-työnkulun vaiheista" />
+    <figcaption>
+      Kaaviossa kuvataan CI/CD-prosessin etenemistä kehittäjän tekemästä muutoksesta aina tuotantoon
+      saakka
+    </figcaption>
+  </figure>
+  <ol>
+    <li>
+      <h6>Muutoksien tekeminen ja versiohallinta</h6>
+      <ul>
+        <li>Tehdään koodi muutoksia esim. uusi toiminnallisuus.</li>
+        <li>Muutettu koodi tallennetaan GitHub-repositorioon.</li>
+        <li
+          >Muutos on tehty omassa haarassa (branch) ja yhdistetään päähaaraan (main) pull requestin
+          kautta.
+        </li>
+        <li>Tämä käynnistää automaattisesti CI/CD-prosessin.</li>
+      </ul>
+    </li>
+    <li>
+      <h6>Continuous Integration (CI)</h6>
+      <p
+        >Tässä vaiheessa tarkistetaan, että uusi koodi toimii ja täyttää vaatimukset. CI-prosessille
+        tyypillisiä alavaiheita ovat:</p
+      >
+      <ol>
+        <li><strong>Checkout:</strong> Haetaan projektin koodi CI-työnkulun käyttöön.</li>
+        <li>
+          <strong>Asennukset:</strong> Mikäli projekti käyttää paketinhallintaa (esim. npm)
+          asennetaan riippuvuudet.
+        </li>
+        <li>
+          <strong>Testaus ja laadunvarmistus:</strong> Tehdään koodin laaduntarkastus (esim. ESLint)
+          ajetaan automaattiset testit (yksikkötestit, komponenttitestit ja end-to-end-testit yms.).
+        </li>
+        <li>
+          <strong>Käännös (Build):</strong> Tarvittaessa käännetään tai generoidaan sivustosta
+          tuotantoon valmis versio.
+        </li>
+      </ol>
+    </li>
+    <li>
+      <h6>Continuous Deployment (CD)</h6>
+      <p
+        >Kun koodi on testattu sekä hyväksytty CI-vaiheen mukaisesti (ja mikäli julkaisu on täysin
+        automatisoitu eli continuous deployment), se viedään tuotantoon esimerkiksi seuraavien
+        vaiheiden kautta:</p
+      >
+      <ol>
+        <li>
+          <strong>Muutoksien vieminen palvelimelle:</strong> Tehdään tarvittavat muutokset
+          palvelimella oleviin HTML/CSS/JS tiedostojen julkaisuversioihin. Tämä voi tarkoittaa
+          useita eri vaiheita, kuten sovelluksen eri osien vanhojen tiedostojen poistoa ja uusien
+          kopioimista tilalle vaikkapa Secure Shellin (SSH) avulla.
+        </li>
+        <li>
+          <strong>Sovelluksen käynnistäminen:</strong> Web-sovellus voi vaatia uudelleen
+          käynnistämisen muutoksien jälkeen. Tämä varmistaa, että sovellus toimii oikein uusilla
+          muutoksilla. Uudelleen käynnistys voidaan toteuttaa automaattisesti SSH avulla
+          palvelimella suoritettavien skriptien tai prosessinhallinta-työkalujen (PM2) avulla.
+        </li>
+        <li>
+          <strong>Käyttöönoton validointi:</strong> Tarkistetaan, että sivusto latautuu ja vastaa
+          oikein.
+        </li>
+        <li
+          ><strong>Versionumerointi:</strong> Sovelluksen versionumero voidaan päivittää prosessissa
+          automaattisesti (esim. v1.0.3 → v1.0.4).</li
+        >
+        <li>
+          <strong>Ilmoitukset:</strong> Automaattisesti lähetettävällä “Deployment successful
+          ✅”-viestillä kehitystiimille voidaan ilmoittaa uudesta versiosta tuotannossa esim.
+          sähköpostin, Slackin, discordin tms. viestintäkanavan kautta.
+        </li>
+      </ol>
+    </li>
+    <li>
+      <h6>Muita mahdollisia vaiheita:</h6>
+      <ul>
+        <li>
+          <strong>Tulosten raportointi:</strong> Erityisesti jos jokin vaiheista epäonnistuu ja
+          työnkulku keskeytyy, on kehittäjälle ilmoitetaan virheestä, jotta ongelmiin voidaan
+          reagoida.
+        </li>
+        <li>
+          <strong>Rollback:</strong> Jos jokin julkaisuun (CD) liittyvistä vaiheista epäonnistuu ja
+          työnkulku keskeytyy, voi syntyä tarve palata edelliseen, tuotannossa olevaan toimivaan
+          versioon eli tehdään rollback.
+        </li>
+      </ul>
+    </li>
+  </ol>
+  <div class="note-box">
+    Tämä esimerkki on vain yksi kuvitteellinen ja yksinkertaistettu tapa toteuttaa CI/CD-prosessi.
+    Käytännössä työnkulkujen rakenne ja työkalut vaihtelevat paljon projektin, teknologian ja tiimin
+    tarpeiden mukaan. CI/CD voidaan toteuttaa monin eri tavoin. Tärkeintä prosessin kannalta on,
+    että se ottaa projektin vaatimukset huomioon sekä tukee luotettavaa, turvallista, toistettavaa
+    ja järkevästi automatisoitua julkaisua.
+  </div>
+
+  <strong>Lähde:</strong>
+  <em
+    ><a target="_blank" rel="noopener noreferrer" href="https://github.com/resources/articles/ci-cd"
+      >What is CI/CD?</a
+    ></em
+  >
+</section>
