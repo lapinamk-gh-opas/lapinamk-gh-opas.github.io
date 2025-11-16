@@ -1,0 +1,91 @@
+<section class="practice-projects">
+  <header>
+    <h1>GitHub Actions – ensimmäinen workflow</h1>
+  </header>
+
+  <p>
+    Tässä harjoituksessa otetaan käyttöön yksinkertainen GitHub Actions -työnkulku, joka suoritetaan
+    automaattisesti aina, kun teet muutoksia repositorion päähaaraan ja workflown työ kirjoittaa
+    Actions lokiin tekstin "Hello World!". Tavoitteena on ymmärtää, mistä kohdasta workflowt
+    löytyvät GitHubissa, miten ne käynnistyvät ja miten lopputulosta tulkitaan. Harjoituksen
+    tekemiseen riittää oppaan example.yaml–tiedoston pohjan ymmärtäminen ja repositoriossa
+    työskentelyn perustaidot.
+  </p>
+
+  <h5>Harjoitus 9 – Ensimmäisen GitHub Actions -workflow’n luominen</h5>
+
+  <ol>
+    <li>
+      <strong>Luo repositorioon kansiot .github/workflows</strong>
+      <ul>
+        <li>Avaa repositorio paikallisesti</li>
+        <li>Luo juureen tarvittavat kansiot</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Luo workflow-tiedosto</strong>
+      <ul>
+        <li>Luo tiedosto nimellä <code>tervehdys-workflow.yml</code></li>
+        <li
+          >Lisää tiedostoon sisältö jolla:
+          <ul>
+            <li>Workflown nimeksi annetaan Harjoitus 9</li>
+            <li>Workflow käynnistyy päähaaraan suoritettavalla push toiminnolla</li>
+            <li>Lisättään työ (<em>jobs</em>), jonka nimi on tervehdys-lokiin</li>
+            <li>Työ ajetaan uusimmalla Linux Ubuntu -käyttöjärjestelmällä</li>
+            <li>Lisää askel, joka suorittaa scriptin <code>echo "Hello world!"</code></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Vie workflow GitHubiin</strong>
+      <ul>
+        <li>Commitoi ja puske muutokset päähaaraan (<code>git push origin main</code>)</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Tarkista GitHubissa että workflow on ajettu onnistuneesti</strong>
+      <ul>
+        <li>Mene repositoriosi <strong>Actions</strong> -välilehdelle</li>
+        <li>Varmista, että workflown suoritus onnistui ja näkyy vihreänä</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Tarkastele lokia</strong>
+      <ul>
+        <li>Avaa workflown loki</li>
+        <li>Etsi lokissa rivi: <code>Hello World!</code></li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Muokkaa workflowta ja käynnistä se uudelleen</strong>
+      <ul>
+        <li>
+          Lisää toinen askel, joka suorittaa scriptin esim.:
+          <code>echo "Näin suoritetaan GitHub Actions workflow!"</code>
+        </li>
+        <li>Puske muutos ja tarkista taas Actionsin lokista tulostus</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Varmista, että ymmärrät workflown toiminnan</strong>
+      <ul>
+        <li>Käynnistyykö workflow aina pushin yhteydessä?</li>
+        <li>Näkyvätkö muutokset lokissa?</li>
+        <li>Osaatko muuttaa komentoja ja nähdä eron?</li>
+      </ul>
+    </li>
+  </ol>
+
+  <p>
+    Jos sait workflow'n toimimaan ja näet tulokset lokissa, osaat tehdä GitHub Action -työnkulun
+    perustason asetukset ja tarkistaa sen toiminnan. Hienoa työtä!
+  </p>
+</section>
