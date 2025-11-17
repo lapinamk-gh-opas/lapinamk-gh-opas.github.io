@@ -22,15 +22,19 @@
   </header>
   <main>
     <h2>Merge-konfliktien ratkaiseminen</h2>
+
+    <p>
+      Luodaan taas aluksi paikallisesti uusi kansio tätä osiota varten ja kloonataan etärepositorio
+      sinne uudeksi paikalliseksi repositorioksi. Tehdään muutoksia samaan tiedostoon selaimella
+      GitHubin päähaarassa sekä paikallisesti omassa haarassa ja yhdistetään ne, jotta saadaan
+      aikaan merge-konflikti.
+    </p>
     <div class="note-box">
-      <p>
-        Luodaan taas aluksi paikallisesti uusi kansio tätä osiota varten ja kloonataan
-        etärepositorio sinne uudeksi paikalliseksi repositorioksi.
-      </p>
-      <p>
-        Tehdään muutoksia samaan tiedostoon GitHubissa päähaarassa ja paikallisesti omassa haarassa,
-        jotta saadaan aikaan merge-konflikti.
-      </p>
+      <strong>Huomio:</strong> Mergekonfliktit voidaan ratkaista useilla eri tavoilla ja eri
+      työkaluilla. Tässä oppaassa näytetään vain yksi yksinkertainen esimerkki, jotta konfliktien
+      ratkaisemisen perusmekanismi tulee selväksi. Käytännössä konfliktit voivat olla
+      monimutkaisempia ja niiden ratkaisuun voi käyttää myös graafisia työkaluja, kuten GitHubin
+      omaa editoria, VS Coden merge-näkymää tai komentoriville tarjolla olevia työkaluja.
     </div>
     <ol>
       <li>
@@ -139,10 +143,9 @@
         <h6>Mene selaimella GitHubiin ja valitse käyttämäsi repositorio.</h6>
         <ul>
           <li>Varmista, että olet <strong>päähaarassa</strong>.</li>
-          <li
-            >Avaa sama tiedosto, johon teit muutokset paikallisesti klikkaamalla tiedoston
-            nimeä.</li
-          >
+          <li>
+            Avaa sama tiedosto, johon teit muutokset paikallisesti klikkaamalla tiedoston nimeä.
+          </li>
         </ul>
         <figure>
           <img
@@ -198,17 +201,17 @@
             Lisää paikalliset muutokset staging-alueelle komennolla
             <code>git add .</code> ja paina <strong>Enter</strong>.
           </li>
-          <li
-            >> Commitoi muutokset paikalliseen repositorioon komennolla
+          <li>
+            Commitoi muutokset paikalliseen repositorioon komennolla
             <code>git commit -m "commit-viesti"</code> ja paina <strong>Enter</strong>.
           </li>
           <li>
             Tuo etärepositoriossa tehdyt muutokset paikalliseen repositorioon komennolla
             <code>git pull origin päähaara</code> ja paina <strong>Enter</strong>.
           </li>
-          <li
-            >Tässä vaiheessa pitäisi syntyä merge-konflikti. Git ilmoittaa terminaalissa
-            <strong>konfliktista ja että tiedostoa ei voida yhdistää automaattisesti.</strong>
+          <li>
+            Tässä vaiheessa pitäisi syntyä merge-konflikti. Git ilmoittaa terminaalissa
+            <strong>konfliktista ja tiedostoa ei voida yhdistää automaattisesti.</strong>
           </li>
         </ul>
 
@@ -236,10 +239,10 @@
             osa tarkoittaa paikallisia muutoksia, kun taas sininen osa näyttää etärepositoriosta
             tulevia muutoksia.
           </li>
-          <li
-            >Ratkaise konflikti klikkaamalla <strong>Current</strong>, <strong>Incoming</strong> tai
-            <strong>Both</strong>-nappia riippuen siitä mitkä muutokset haluat säilyttää.</li
-          >
+          <li>
+            Ratkaise konflikti klikkaamalla <strong>Current</strong>, <strong>Incoming</strong> tai
+            <strong>Both</strong>-nappia riippuen siitä mitkä muutokset haluat säilyttää.
+          </li>
           <li>Tallenna tiedosto <strong>CTRL</strong> + <strong>S</strong> pikanäppäimillä.</li>
         </ul>
         <figure>

@@ -40,9 +40,57 @@
       >branch protection rule</em
     >), jonka avulla voidaan esimerkiksi vaatia, että päähaaraan (<em>main</em>) ei voi tehdä suoria
     muutoksia, vaan kaikki päivitykset on tehtävä pull requestin kautta. Asetuksista voi lisäksi
-    määrittää muita ehtoja, kuten että PR täytyy hyväksyä vähintään yhden muun tiimiläisen toimesta
-    ennen kuin se voidaan yhdistää.
+    määrittää muita ehtoja, kuten että pull requestille täytyy tehdä koodikatselmointi ja hyväksyä
+    muutokset vähintään yhden muun tiimiläisen toimesta, ennen kuin se voidaan yhdistää.
   </p>
+
+  <!--Accordion starts-->
+  <div
+    class="accordion"
+    data-include="../../accordion-element/accordion.html"
+    data-title="Koodikatselmointi (Code Review)">
+    <!-- Reused accordion content starts -->
+    <div class="contentToAccordion">
+      <p>
+        Koodikatselmointi tarkoittaa toisen kehittäjän tekemää muutosten läpikäyntiä Pull
+        Requestissa ennen niiden yhdistämistä päähaaraan. Tavoitteena on parantaa koodin laatua,
+        yhtenäisyyttä ja turvallisuutta sekä jakaa tietoa tiimin sisällä.
+      </p>
+
+      <ul>
+        <li>
+          <strong>Tarkistettavia seikkoja:</strong> selkeys, tyyli, testit, suorituskyky ja
+          turvallisuus
+        </li>
+        <li>
+          <strong>Katselmoinnin tavoitteet:</strong> löytää virheet varhain, yhdenmukaistaa koodi ja
+          parantaa koodin tuntemusta
+        </li>
+        <li>
+          <strong>Hyvä palaute:</strong> rakentavaa, perusteltua, ehdottaa parannuksia ja ei
+          syyllistä.
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <strong>PR:n tekijän</strong>on hyvä kirjoittaa selkeät kuvaukset ja kommentoinnit sekä
+          pitää muutokset kohtuullisen pieninä.
+        </li>
+        <li>
+          <strong>Katselmoijan</strong> kannalta on tärkeää antaa konkreettisia, selkeitä
+          kommentteja ja tarvittaessa ehdottaa vaihtoehtoja.
+        </li>
+      </ul>
+      <p>
+        Katselmointi ei ole kilpailu, vastakkainasettelua tai henkilökohtaista. Se on tilaisuus
+        mennä kohti yhteistä tavoitetta eli parempaa lopputulosta. Koodikatselmoinnin tarkoitus ei
+        ole arvioida kehittäjää, vaan itse koodia ja auttaa tekemään siitä parempaa.
+      </p>
+    </div>
+    <!-- Reused accordion content ends -->
+  </div>
+  <!-- Accordion ends-->
 
   <p class="note-box">
     Pull requestia voi hyödyntää myös yksin työskennellessä, sillä se auttaa seuraamaan muutoksia ja
