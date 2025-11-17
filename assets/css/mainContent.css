@@ -179,6 +179,12 @@ table tr:last-child td {
   padding-bottom: 0.75rem;
 }
 
+/*lists in a table*/
+table ul {
+  padding-left: 1.2rem;
+  margin: -0.2rem 0;
+}
+
 /* pros and cons table specific styles */
 .pros-cons-table {
   width: 100%;
@@ -285,7 +291,7 @@ figcaption {
   border-right: 5px solid #14827d;
   background-color: #f0f8f8;
   padding: 1rem 1.5rem;
-  margin: 1.3rem 0 1.4rem 0;
+  margin: 1rem 0;
   border-radius: 5px;
   display: inline-block;
 }
@@ -295,10 +301,12 @@ figcaption {
   margin-bottom: 0;
 }
 
-p + .note-box {
-  margin-top: 0.8rem;
+/* remove margin bottom from p before note-box */
+p:has(+ .note-box) {
+  margin-bottom: 0;
 }
 
+/* spacing for elements after note-box */
 ul + .note-box,
 ol + .note-box {
   margin-top: 0.8rem;
@@ -309,6 +317,8 @@ ol + .note-box {
 .note-box ol {
   list-style-position: outside;
   padding-left: 1rem;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /* note box inside accordion has no dark side borders*/
