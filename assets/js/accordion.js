@@ -79,12 +79,13 @@ document.addEventListener('accordion:loaded', (e) => {
 
     if (content.scrollHeight > window.innerHeight) {
       closeButton.classList.toggle('hidden', !hidden);
+      hidden ? (content.style.paddingBottom = '1em') : (content.style.paddingBottom = '0em');
     }
   };
 });
 
-// Image zoom effect specialt tweaks for images that are inside accordion.
-// This helpsh keeping other elements in place when image is zoomed.
+// Image zoom effect special tweaks for images that are inside accordion.
+// This helps keeping other elements in place when image is zoomed.
 const initializeAccordionFigures = () => {
   const images = document.querySelectorAll('.accordion figure img');
   let resizeTimeout;
@@ -149,6 +150,7 @@ document.addEventListener('accordion:loaded', (e) => {
   closeButton.onclick = () => {
     content.style.minHeight = '0px';
     content.style.maxHeight = '0px';
+    content.style.paddingBottom = '0em';
     content.classList.add('hidden');
     content.classList.remove('open');
     imgOpen.classList.toggle('hidden');
