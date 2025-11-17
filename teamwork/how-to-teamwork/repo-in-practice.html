@@ -3,19 +3,105 @@
     <h1>Repositorion asetukset käytännössä</h1>
   </header>
 
-  <p>
-    Tässä osiossa käydään läpi repositorion näkyvyyden muuttaminen,
-    käyttäjien (<em>collaborators</em>) lisääminen, haarojen suojaaminen (<em
-      >branch protection rules</em>), sekä repositorion poistaminen.
-  </p>
-  <p>
-    Lisäksi
-    tutustutaan muutamiin hyödyllisiin perusasetuksiin,
-    kuten oletushaaran uudelleen nimeäminen ja vaihtaminen, sekä projektin
-    kuvauksen lisääminen.
-  </p>
+  <h3>Perusasetukset ja käyttäjänhallinta</h3>
 
-  <!--Accordion 1-->
+  <p>Tässä osiossa käydään läpi, miten repositorion kuvaus lisätään, näkyvyys
+    muutetaan ja käyttäjiä (collaborators) lisätään projektiin.</p>
+  <!--Accordion Repository description starts-->
+  <div
+    class="accordion"
+    data-include="../../accordion-element/accordion.html"
+    data-title="Repositorion kuvauksen lisääminen">
+    <div class="contentToAccordion">
+      <p>
+        Repositorion kuvaus (<em>Description</em>) auttaa muita ymmärtämään
+        <strong>projektin tarkoituksen</strong> yhdellä silmäyksellä. Se näkyy
+        automaattisesti repositorion etusivulla nimen alapuolella.
+      </p>
+
+      <p>
+        Kuvaus on erityisen tärkeä julkisissa (<em>Public</em>) repositorioissa,
+        sillä se auttaa käyttäjiä ja hakukoneita hahmottamaan, mistä projektissa
+        on kyse. Hyvin kirjoitettu kuvaus tekee repositoriosta helpommin
+        löydettävän ja uskottavan.
+      </p>
+
+      <p>
+        Kirjoita kuvaus lyhyesti ja ytimekkäästi. Esimerkiksi:
+        <em>Kouluprojekti, jossa harjoitellaan Git-versionhallinnan ja GitHubin perustoimintoja.</em>
+      </p>
+
+      <div class="note-box">
+        <ul>
+          <li class="warning">
+            Älä lisää kuvaukseen arkaluontoisia tietoja, kuten nimiä,
+            opiskelijanumeroita, sähköpostiosoitteita tai muita henkilökohtaisia
+            tietoja. Kuvaus voi näkyä julkisesti myös hakukoneissa.
+          </li>
+        </ul>
+      </div>
+
+      <h5>Kuvauksen lisääminen</h5>
+
+      <ol>
+        <li>
+          Siirry repositorion etusivulle klikkaamalla
+          <strong>Code</strong>-välilehteä ja muokkaa projektin kuvausta
+          klikkaamalla About-osion <strong>ratas</strong>-kuvaketta
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/description-1.webp"
+              alt="Repositorion etusivu ja About-osio" />
+            <figcaption>Repositorion etusivu ja About-osio</figcaption>
+          </figure>
+        </li>
+        <li>
+          Syötä repositorion kuvaukseen liittyvät tiedot
+          <ul>
+            <li> <strong>Description</strong> - lyhyt ja ytimekäs kuvaus
+              projektista </li>
+            <li>
+              <strong>Website</strong> - linkki projektin verkkosivulle, GitHub
+              Pages -osoitteeseen tai esimerkiksi projektia esittelevään videoon
+            </li>
+            <li>
+              <strong>Topics</strong> - projektia kuvaavia avainsanoja, jotka
+              auttavat muita löytämään repositorion
+            </li>
+            <li>
+              Releases, Packages ja Deployments osiot voit jättää tai piilottaa
+              etusivulta tarpeen mukaan
+            </li>
+            <li>Klikkaa lopuksi <strong>Save changes</strong></li>
+          </ul>
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/description-2.webp"
+              alt="Kuvauksen ja muiden repositorioon liittyvien tietojen lisääminen" />
+            <figcaption>
+              Kuvauksen ja muiden repositorioon liittyvien tietojen lisääminen
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          Tarkista, että kuvaus ja muut tiedot on lisätty onnistuneesti
+          <figure>
+            <img
+              class="wide-image"
+              src="../../assets/images/teamwork/repo-settings/description-3.webp"
+              alt="Näkymä ja ilmoitus kuvauksen lisäämisen jälkeen" />
+            <figcaption> Näkymä ja ilmoitus kuvauksen lisäämisen jälkeen
+            </figcaption>
+          </figure>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <!--Accordion Repository description ends-->
+
+  <!--Accordion Repository visibility change starts-->
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
@@ -160,8 +246,9 @@
       </p>
     </div>
   </div>
-  <!--Accordion 1 ends-->
-  <!--Accordion 2-->
+  <!--Accordion Repository visibility change ends-->
+
+  <!--Accordion Collaborators starts-->
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
@@ -310,8 +397,17 @@
       </ol>
     </div>
   </div>
-  <!--Accordion 2 ends-->
-  <!--Accordion 3-->
+  <!--Accordion Collaborators ends-->
+
+
+  <h3>Haarojen hallinta ja turvallisuus</h3>
+
+  <p>Seuraavissa haitareissa käsitellään päähaaran suojausasetuksia,
+    repositorion pysyvää poistamista, sekä päähaaran uudelleennimeämistä ja
+    vaihtamista.</p>
+
+
+  <!--Accordion Git branch protection starts-->
   <div
     class="accordion"
     data-include="/accordion-element/accordion.html"
@@ -324,14 +420,15 @@
     </div>
     <!-- Reused accordion content ends -->
   </div>
-  <!--Accordion 3 ends-->
-  <!--Accordion 4-->
+  <!--Accordion Git branch protection ends-->
+
+
+  <!--Accordion Repository deletion starts-->
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
-    data-title="Repositorion poistaminen pysyvästi">
+    data-title="Repositorion poistaminen pysyvästi (Danger Zone)">
     <div class="contentToAccordion">
-
       <p>
         Repositorion poistaminen (<strong>Delete this repository</strong>) on
         <strong>pysyvä toimenpide</strong>. Kun poistat repositorion kaikki sen
@@ -457,8 +554,15 @@
       </ol>
     </div>
   </div>
-  <!--Accordion 4 ends-->
-  <!--Accordion 5-->
+  <!--Accordion Repository deletion ends-->
+
+
+  <p class="note-box">Oletushaaran uudelleennimeäminen ja
+    vaihtaminen eivät ole välttämättömiä toimenpiteitä. Käytä niitä vain, jos
+    niille on selkeä tarve projektissasi. Ohjeisiin kannattaa kuitenkin
+    tutustua, jotta tiedät miten toimia, jos tarve joskus ilmenee.</p>
+
+  <!--Accordion Default branch name change starts-->
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
@@ -535,8 +639,11 @@
       </ol>
     </div>
   </div>
-  <!--Accordion 5 ends-->
-  <!--Accordion 6-->
+  <!--Accordion Default branch name change ends-->
+
+
+
+  <!--Accordion Default branch change starts-->
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
@@ -636,98 +743,6 @@
       </ol>
     </div>
   </div>
-  <!--Accordion 6 ends-->
-  <!--Accordion 7-->
-  <div
-    class="accordion"
-    data-include="../../accordion-element/accordion.html"
-    data-title="Repositorion kuvauksen lisääminen">
-    <div class="contentToAccordion">
-      <p>
-        Repositorion kuvaus (<em>Description</em>) auttaa muita ymmärtämään
-        <strong>projektin tarkoituksen</strong> yhdellä silmäyksellä. Se näkyy
-        automaattisesti repositorion etusivulla nimen alapuolella.
-      </p>
+  <!--Accordion Default branch change ends-->
 
-      <p>
-        Kuvaus on erityisen tärkeä julkisissa (<em>Public</em>) repositorioissa,
-        sillä se auttaa käyttäjiä ja hakukoneita hahmottamaan, mistä projektissa
-        on kyse. Hyvin kirjoitettu kuvaus tekee repositoriosta helpommin
-        löydettävän ja uskottavan.
-      </p>
-
-      <p>
-        Kirjoita kuvaus lyhyesti ja ytimekkäästi. Esimerkiksi:
-        <em>Kouluprojekti, jossa harjoitellaan Git-versionhallinnan ja GitHubin perustoimintoja.</em>
-      </p>
-
-      <div class="note-box">
-        <ul>
-          <li class="warning">
-            Älä lisää kuvaukseen arkaluontoisia tietoja, kuten nimiä,
-            opiskelijanumeroita, sähköpostiosoitteita tai muita henkilökohtaisia
-            tietoja. Kuvaus voi näkyä julkisesti myös hakukoneissa.
-          </li>
-        </ul>
-      </div>
-
-      <h5>Kuvauksen lisääminen</h5>
-
-      <ol>
-        <li>
-          Siirry repositorion etusivulle klikkaamalla
-          <strong>Code</strong>-välilehteä ja muokkaa projektin kuvausta
-          klikkaamalla About-osion <strong>ratas</strong>-kuvaketta
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/teamwork/repo-settings/description-1.webp"
-              alt="Repositorion etusivu ja About-osio" />
-            <figcaption>Repositorion etusivu ja About-osio</figcaption>
-          </figure>
-        </li>
-        <li>
-          Syötä repositorion kuvaukseen liittyvät tiedot
-          <ul>
-            <li> <strong>Description</strong> - lyhyt ja ytimekäs kuvaus
-              projektista </li>
-            <li>
-              <strong>Website</strong> - linkki projektin verkkosivulle, GitHub
-              Pages -osoitteeseen tai esimerkiksi projektia esittelevään videoon
-            </li>
-            <li>
-              <strong>Topics</strong> - projektia kuvaavia avainsanoja, jotka
-              auttavat muita löytämään repositorion
-            </li>
-            <li>
-              Releases, Packages ja Deployments osiot voit jättää tai piilottaa
-              etusivulta tarpeen mukaan
-            </li>
-            <li>Klikkaa lopuksi <strong>Save changes</strong></li>
-          </ul>
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/teamwork/repo-settings/description-2.webp"
-              alt="Kuvauksen ja muiden repositorioon liittyvien tietojen lisääminen" />
-            <figcaption>
-              Kuvauksen ja muiden repositorioon liittyvien tietojen lisääminen
-            </figcaption>
-          </figure>
-        </li>
-        <li>
-          Tarkista, että kuvaus ja muut tiedot on lisätty onnistuneesti
-          <figure>
-            <img
-              class="wide-image"
-              src="../../assets/images/teamwork/repo-settings/description-3.webp"
-              alt="Näkymä ja ilmoitus kuvauksen lisäämisen jälkeen" />
-            <figcaption> Näkymä ja ilmoitus kuvauksen lisäämisen jälkeen
-            </figcaption>
-          </figure>
-        </li>
-      </ol>
-    </div>
-  </div>
-  <!--Accordion 7 ends-->
 </section>
