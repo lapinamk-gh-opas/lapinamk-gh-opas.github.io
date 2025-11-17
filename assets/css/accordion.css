@@ -54,13 +54,18 @@
 }
 
 .contentToAccordion {
-  margin: 1rem;
+  margin: 1.2rem;
+}
+
+/* note box inside accordion has no dark side borders*/
+.accordion .note-box {
+  border: 2px solid rgba(20, 130, 125, 0.4);
 }
 
 /* removing bottom margin from paragraphs inside accordion-content area */
-.accordion-content p:last-of-type,
-.accordion-content ul:last-of-type,
-.accordion-content figure:last-of-type {
+.accordion-content > p:last-child,
+.accordion-content > ul:last-child,
+.accordion-content > figure:last-child {
   margin-bottom: 0;
 }
 
