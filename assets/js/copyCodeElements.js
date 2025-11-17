@@ -1,48 +1,80 @@
-// function to enable click-to-copy functionality on all <code> elements
-const enableCodeCopy = async () => {
-  const codeElements = document.querySelectorAll('code'); // looks for all code elements
+let notificationTimeout = null;
 
-  // loops through each code element and adds click event listener
-  codeElements.forEach((codeElement) => {
-    // adds styles and title to indicate copy functionality
-    codeElement.style.cursor = 'pointer';
-    codeElement.title = 'Kopioi 📋';
-
-    // adds click event listener to copy code content to clipboard
-    // and calls showNotification function to show feedback to user.
-    codeElement.addEventListener('click', () => {
-      const code = codeElement.textContent;
-      navigator.clipboard
-        .writeText(code)
-        .then(() => showNotification('kopioitu leikepöydälle ✅', code))
-        .catch((err) => showNotification('Kopiointi epäonnistui ❌', err));
-    });
-  });
-};
-
-// function to show notification message for copy action feedback
-const showNotification = (message, code) => {
+// show notification with message and code content
+function showNotification(message, code) {
   const notification = document.querySelector('.notification');
-  const notificationText = notification.querySelector('.notification-text');
-  const notificationCode = notification.querySelector('.notification-code');
+  if (!notification) return; // if no notification element, do nothing
 
-  notificationText.textContent = message;
-  notificationCode.textContent = code;
+  const textEl = notification.querySelector('.notification-text');
+  const codeEl = notification.querySelector('.notification-code');
+
+  if (textEl) textEl.textContent = message;
+  if (codeEl) codeEl.textContent = code;
+
+  // perutaan edellinen timeout
+  if (notificationTimeout) {
+    clearTimeout(notificationTimeout);
+    notificationTimeout = null;
+  }
+
+  // restart CSS-animation
+  notification.classList.remove('show');
+  void notification.offsetWidth; // force reflow
   notification.classList.add('show');
 
-  // uses timeout to hide notification after 1.5 seconds
-  setTimeout(() => {
+  notificationTimeout = setTimeout(() => {
     notification.classList.remove('show');
+    notificationTimeout = null;
   }, 1500);
-};
+}
 
-// uses MutationObserver to watch for changes in the DOM
-// and re-applies copy functionality to newly added code elements.
-// This way there is no need to use custom events to trigger the function because it
-// automatically detects added elements.
-const observer = new MutationObserver(() => {
-  enableCodeCopy();
+// handles click on a single code element
+function handleCodeClick(codeElement) {
+  // set style and tooltip once
+  if (!codeElement.dataset.copyInit) {
+    codeElement.style.cursor = 'pointer';
+    codeElement.title = 'Kopioi 📋';
+    codeElement.dataset.copyInit = 'true';
+  }
+
+  // debounce clicks
+  const now = Date.now();
+  const last = Number(codeElement.dataset.lastCopyTs || 0);
+
+  // if less than 300 ms since last click, do nothing
+  if (now - last < 300) {
+    return;
+  }
+  codeElement.dataset.lastCopyTs = String(now);
+
+  const code = codeElement.textContent || '';
+
+  navigator.clipboard
+    .writeText(code)
+    .then(() => {
+      showNotification('kopioitu leikepöydälle ✅', code);
+    })
+    .catch((err) => {
+      showNotification('Kopiointi epäonnistui ❌', String(err));
+    });
+}
+
+// global click listener for the whole page
+document.addEventListener('click', (event) => {
+  const codeElement = event.target.closest('code');
+  if (!codeElement) return;
+
+  handleCodeClick(codeElement);
 });
 
-// starts observing the document body for added elements
-observer.observe(document.body, { childList: true, subtree: true });
+// clean up notification and timeout when leaving the page
+window.addEventListener('beforeunload', () => {
+  if (notificationTimeout) {
+    clearTimeout(notificationTimeout);
+    notificationTimeout = null;
+  }
+  const notification = document.querySelector('.notification');
+  if (notification) {
+    notification.classList.remove('show');
+  }
+});

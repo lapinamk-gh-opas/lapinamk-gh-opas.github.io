@@ -44,6 +44,12 @@ figure {
   margin: 1rem 0;
 }
 
+/* cursor pointer for code blocks */
+pre,
+code {
+  cursor: pointer !important;
+}
+
 /* div for arrow buttons */
 .page-arrows {
   display: flex;
