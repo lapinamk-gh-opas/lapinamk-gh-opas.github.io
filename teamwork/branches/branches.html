@@ -4,33 +4,45 @@
   </header>
 
   <p>
-    Helpoin tapa aloittaa Gitin käyttö on työskennellä
-    <strong>suoraan päähaarassa</strong> (<em>main</em>). Tällöin kaikki
-    muutokset tehdään samaan
-    haaraan. Muutokset kannattaa pitää pieninä ja commitoida ne säännöllisesti,
-    jotta historia pysyy
-    selkeänä ja luotettavana. Usein Gitin opettelu aloitetaan näin ennen
-    siirtymistä erillisten
-    kehityshaarojen käyttöön.
+    Haarat (<em>branch</em>, eli tuttavallisesti <em>branchit</em>) ovat Gitin
+    keskeinen ominaisuus,
+    joka mahdollistaa <strong>samanaikaisen kehitystyön</strong> ilman, että
+    päähaara (<em>main</em>) häiriintyy. Päähaarasta voidaan <em>forkata</em>
+    eli haarauttaa erillinen <em>kehityshaara</em> (feature branch).
+  </p>
+  <p>
+    Kehityshaarassa voidaan tehdä muutoksia, kokeilla uusia ominaisuuksia tai
+    korjata bugeja ilman, että ne vaikuttavat suoraan päähaaraan. Kun
+    kehityshaara on valmis, se voidaan yhdistää takaisin päähaaraan (merge),
+    jolloin muutokset tulevat osaksi projektia.
   </p>
 
+  <h3>Haarojen käyttö tiimityössä</h3>
   <p>
-    Haarat (tuttavallisemmin <em>branchit</em>) ovat Gitin keskeinen ominaisuus,
-    joka mahdollistaa
-    <strong>samanaikaisen kehitystyön</strong> ilman, että päähaara
-    (<em>main</em>) häiriintyy.
-    Päähaarasta voidaan <em>forkata</em> eli haarauttaa erillinen
-    <em>kehityshaara</em> (feature
-    branch). Kehityshaarassa voidaan tehdä muutoksia, kokeilla uusia
-    ominaisuuksia tai korjata
-    bugeja ilman, että ne vaikuttavat suoraan päähaaraan.
+    On olemassa erilaisia työtapoja haarojen hallintaan tiimityössä. Yksi
+    yleisimmistä on <strong>Git-flow</strong>, jossa kehitystyö tapahtuu
+    erillisissä kehityshaaroissa, jotka yhdistetään päähaaraan vasta, kun ne on
+    testattu ja hyväksytty. Toinen suosittu malli on
+    <strong>trunk-based development</strong>, jossa kaikki tiimin jäsenet
+    työskentelevät suoraan päähaarassa, mutta tekevät pienempiä ja
+    säännöllisempiä committeja.
   </p>
+  <p>
+    Helpoin tapa aloittaa Gitin käyttö on työskennellä
+    <strong>suoraan päähaarassa</strong> (<em>main</em>). Tällöin kaikki
+    muutokset tehdään samaan haaraan. Muutokset kannattaa pitää pieninä ja
+    commitoida säännöllisesti, jotta historia pysyy selkeänä ja luotettavana.
+  </p>
+
+  <h3>Git-workflow kehityshaaran hallintaan</h3>
 
   <figure>
     <img class="wide-image" src="/assets/images/teamwork/flow.webp" alt="Git haaramalli" />
-    <figcaption>Git workflow kehityshaaran hallintaan tiimityössä </figcaption>
+    <figcaption>Git-workflow kehityshaaran hallintaan tiimityössä </figcaption>
   </figure>
-  <h3>Workflow kehityshaaran hallintaan</h3>
+  <p>Kaavassa on kuvattu normaali kehityshaaran hallinnan prosessi. Tässä vielä
+    vaiheet selitettynä tarkemmin, sekä komennot. </p>
+
   <ol>
     <li>
       Luo erillinen kehityshaara <em>mainista</em> ja nimeä se kuvaavasti (esim.
