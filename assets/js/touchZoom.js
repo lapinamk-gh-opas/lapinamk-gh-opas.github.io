@@ -8,9 +8,6 @@ const initImageZoom = (img) => {
   img.setAttribute('draggable', 'false');
   img.addEventListener('contextmenu', (e) => e.preventDefault(), false);
 
-  // Function to prevent scrolling during touch zoom
-  const preventScroll = (e) => e.preventDefault();
-
   // Variables for touch zoom handling
   let pressTimer; // timer for long press detection
   let longPressed = false; // flag to track if long press zoom is active
@@ -32,55 +29,95 @@ const initImageZoom = (img) => {
     img.style.transformOrigin = `${offsetX}% ${offsetY}%`;
 
     // Apply zoom class, zoom amount is handled in CSS
-    img.classList.add('zoomed');
+    if (!img.classList.contains('zoomed')) {
+      img.classList.add('zoomed');
+    }
   };
 
   // Function to remove zoom effect
   const removeZoom = () => {
-    // clears timer that determines if touch was long and intended for zoom functionality
     clearTimeout(pressTimer);
+    clearTimeout(dragBlockTimer);
 
-    img.classList.remove('zoomed'); // Remove zoom class
-    longPressed = false; // reset long press flag that tracks if touch zoom was activated
-    document.body.style.overflow = ''; // Re-enable scrolling
-    window.removeEventListener('touchmove', preventScroll, { passive: false }); // Remove scroll prevention for touch
+    longPressed = false;
+    noTouchZoom = false;
+
+    img.classList.remove('zoomed');
+    img.style.transformOrigin = 'center center';
   };
 
   // Prevents unwanted zoom if finger is moved during touch
+  let dragBlockTimer;
+
   window.addEventListener('touchmove', () => {
     noTouchZoom = true;
-    pressTimer = setTimeout(() => {
+    clearTimeout(dragBlockTimer);
+    dragBlockTimer = setTimeout(() => {
       noTouchZoom = false;
-    }, 500);
+    }, 150);
   });
 
+  let isDragging = false;
   // Touch event listeners for touch zoom functionality
-  img.addEventListener(
-    'touchstart',
-    (e) => {
-      // reset timer and touch point
-      longPressed = false;
-      const touch = e.touches[0];
+  img.addEventListener('touchstart', (e) => {
+    longPressed = false;
+    noTouchZoom = false;
 
-      // starts timer to determine if touch is long enough for zoom functionality
-      pressTimer = setTimeout(() => {
-        // finger has been held long enough, add zoom if touch hasn't moved
-        if (!noTouchZoom) {
-          addZoom(touch.clientX, touch.clientY); // zoom in at touch point with addZoom function
-          longPressed = true; // set flag to indicate long press zoom is active
-          window.addEventListener('touchmove', preventScroll, { passive: false }); // Prevent scrolling when zoomed
-        }
-      }, 200);
+    const touch = e.touches[0];
+
+    clearTimeout(pressTimer);
+    pressTimer = setTimeout(() => {
+      if (!noTouchZoom) {
+        longPressed = true;
+        addZoom(touch.clientX, touch.clientY);
+      }
+    }, 150);
+  });
+
+  img.addEventListener(
+    'touchmove',
+    (e) => {
+      if (!longPressed) return;
+
+      e.preventDefault();
+      const touch = e.touches[0];
+      addZoom(touch.clientX, touch.clientY);
     },
-    { passive: true } // passive true to allow scrolling unless prevented
+    { passive: false }
   );
 
-  img.addEventListener('touchend', removeZoom); // remove zoom on touch end with removeZoom function
-  img.addEventListener('touchcancel', removeZoom); // remove zoom on touch cancel with removeZoom function
+  // remove zoom on touch end with removeZoom function
+  img.addEventListener('touchend', () => {
+    removeZoom();
+  });
 
-  img.addEventListener('mousedown', addZoom); // add zoom on mouse down (centered, because no coordinates provided)
-  img.addEventListener('mouseup', removeZoom); // remove zoom on mouse up
-  img.addEventListener('mouseleave', removeZoom); // remove zoom on mouse leave
+  // remove zoom on touch cancel with removeZoom function
+  img.addEventListener('touchcancel', () => {
+    removeZoom();
+  });
+
+  // add zoom on mouse down
+  img.addEventListener('mousedown', (e) => {
+    addZoom(e.clientX, e.clientY);
+    isDragging = true;
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    addZoom(e.clientX, e.clientY);
+  });
+
+  // remove zoom on mouse up
+  window.addEventListener('mouseup', () => {
+    isDragging = false;
+    removeZoom();
+  });
+
+  // remove zoom on mouse leave
+  window.addEventListener('mouseleave', () => {
+    isDragging = false;
+    removeZoom();
+  });
 };
 
 // function for looking for images in the document and initializing zoom functionality for those images
@@ -108,16 +145,3 @@ document.addEventListener('accordion:loaded', () => {
 document.addEventListener('reusedAccordion:loaded', () => {
   updateImages('.accordion figure img');
 });
-
-//Zooming tweaks for wide images when sidebar is opened or closed
-function updateWideImages() {
-  const isClosed = sidebar.classList.contains('closed');
-
-  images.forEach((image) => {
-    image.classList.toggle('sidebar-closed', isClosed); // Toggles class to images if sidebar is closed or open
-  });
-}
-
-document.addEventListener('sidebar:changed', updateWideImages); // Update images on sidebar change
-document.addEventListener('accordion:loaded', updateWideImages); // Update images on accordion load so that wide images inside accordion get correct class on refresh
-document.addEventListener('reusedAccordion:loaded', updateWideImages); // Update images on accordion load so that wide images inside reused accordion get correct class on refresh

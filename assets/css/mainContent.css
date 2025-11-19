@@ -16,7 +16,6 @@
 
 img {
   position: relative;
-  left: 0;
   transform: scale(1);
 }
 
@@ -25,10 +24,6 @@ img.zoomed:not(.no-zoom) {
   transform: scale(1.5);
   z-index: 15;
   transition: transform 0.25s ease, left 0.25s ease;
-}
-
-img.zoomed.sidebar-closed:not(.no-zoom) {
-  left: 150px;
 }
 
 .accordion img.zoomed:not(.no-zoom) {
@@ -342,11 +337,7 @@ ol + .note-box {
   }
 
   img.zoomed:not(.no-zoom) {
-    transform: scale(2.5);
-  }
-
-  img.zoomed.sidebar-closed:not(.no-zoom) {
-    left: 0;
+    transform: scale(2);
   }
 
   /* button text size */
