@@ -1,130 +1,191 @@
 <section class="branches">
   <header>
     <h1>Git-haarojen perusteet</h1>
-  </header>
 
-  <p>
-    Haarat (<em>branch</em>, eli tuttavallisesti <em>branchit</em>) ovat Gitin
-    keskeinen ominaisuus,
-    joka mahdollistaa <strong>samanaikaisen kehitystyön</strong> ilman, että
-    päähaara (<em>main</em>) häiriintyy. Päähaarasta voidaan <em>forkata</em>
-    eli haarauttaa erillinen <em>kehityshaara</em> (feature branch).
-  </p>
-  <p>
-    Kehityshaarassa voidaan tehdä muutoksia, kokeilla uusia ominaisuuksia tai
-    korjata bugeja ilman, että ne vaikuttavat suoraan päähaaraan. Kun
-    kehityshaara on valmis, se voidaan yhdistää takaisin päähaaraan (merge),
-    jolloin muutokset tulevat osaksi projektia.
-  </p>
+    <p>
+      Haarat (<em>branch</em>, eli tuttavallisesti <em>branchit</em>) ovat Gitin
+      keskeinen ominaisuus,
+      joka mahdollistaa <strong>samanaikaisen kehitystyön</strong> ilman, että
+      päähaara (<em>main</em>) häiriintyy. Päähaarasta voidaan <em>forkata</em>
+      eli haarauttaa erillinen <em>kehityshaara</em> (feature branch).
+    </p>
+    <p>
+      Kehityshaarassa voidaan <strong>tehdä muutoksia</strong>,
+      <strong>kokeilla uusia ominaisuuksia</strong> tai
+      <strong>korjata bugeja turvallisesti</strong>. Kun kehityshaara on valmis,
+      se voidaan yhdistää takaisin päähaaraan (merge), jolloin muutokset tulevat
+      osaksi projektia.
+    </p>
+
+    <p>
+      Seuraavassa taulukossa on koottuna haarojen käytön
+      vahvuudet ja heikkoudet tiimityössä.
+    </p>
+    <table class="pros-cons-table">
+      <thead>
+        <tr>
+          <th>Vahvuudet</th>
+          <th>Heikkoudet</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Tiimin jäsenet voivat työskennellä omissa haaroissaan ilman, että
+            työskentely häiritsee muita
+          </td>
+          <td>
+            Haarojen hallinta vaatii kurinalaisuutta: selkeät nimet,
+            säännöllinen
+            päivittäminen ja turhien haarojen poistaminen
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Useita ominaisuuksia voidaan kehittää rinnakkain, mikä parantaa
+            tiimin
+            tehokkuutta
+          </td>
+          <td>
+            Yhdistäminen (merge) voi aiheuttaa konflikteja, jotka on ratkaistava
+            huolellisesti
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Koodin tarkastaminen ja hyväksyntä onnistuvat pull requestien
+            kautta ennen kuin muutokset tulevat päähaaraan
+          </td>
+          <td>Liian usean haaran käyttö voi tehdä projektin rakenteesta
+            sekavan ja vaikeuttaa kokonaisuuden hallintaa</td>
+        </tr>
+        <tr>
+          <td>
+            Haarat tarjoavat turvallisen testiympäristön, jossa uusia ideoita
+            voi kokeilla ilman päähaaran rikkomisen riskiä
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </header>
 
   <h3>Haarojen käyttö tiimityössä</h3>
   <p>
-    On olemassa erilaisia työtapoja haarojen hallintaan tiimityössä. Yksi
-    yleisimmistä on <strong>Git-flow</strong>, jossa kehitystyö tapahtuu
-    erillisissä kehityshaaroissa, jotka yhdistetään päähaaraan vasta, kun ne on
-    testattu ja hyväksytty. Toinen suosittu malli on
-    <strong>trunk-based development</strong>, jossa kaikki tiimin jäsenet
-    työskentelevät suoraan päähaarassa, mutta tekevät pienempiä ja
-    säännöllisempiä committeja.
+    Tiimityössä haarojen hallintaan voidaan käyttää erilaisia
+    <strong>toimintamalleja</strong>.
+    Yksi yleisimmistä on <strong>Git-flow</strong>, jossa kehitystyö tehdään
+    omissa kehityshaaroissaan ja muutokset yhdistetään päähaaraan vasta, kun ne
+    on testattu ja hyväksytty. Toinen laajasti käytetty malli on
+    <strong>trunk-based development</strong>, jossa kaikki työ tehdään
+    päähaaraan. Muutokset pidetään pieninä ja ne integroidaan tiheästi, jotta
+    koodi pysyy hallittavana ja yhteensopivana.
   </p>
+
+  <h5>Git-flow kehityshaaran hallintaan</h5>
   <p>
-    Helpoin tapa aloittaa Gitin käyttö on työskennellä
-    <strong>suoraan päähaarassa</strong> (<em>main</em>). Tällöin kaikki
-    muutokset tehdään samaan haaraan. Muutokset kannattaa pitää pieninä ja
-    commitoida säännöllisesti, jotta historia pysyy selkeänä ja luotettavana.
+    Git-flow on <strong>laajasti käytetty malli</strong>, jossa kehitystyö
+    tehdään omissa haaroissaan ja yhdistetään päähaaraan vasta, kun muutos
+    on valmis ja testattu.
   </p>
 
-  <h3>Git-workflow kehityshaaran hallintaan</h3>
+  <p>
+    Git-flow sopii projekteihin, joissa on
+    <strong>selkeät julkaisuversiot</strong> ja
+    <strong>laajempia ominaisuuksia</strong>, joita kehitetään useamman viikon
+    ajan. Mallin etuna on, että <strong>päähaara pysyy vakaana</strong> ja
+    kehitystä voidaan tehdä rauhassa erillisissä haaroissa. Tämän vuoksi
+    Git-flow on toimiva valinta sekä pienille tiimeille että projekteihin,
+    joissa työskennellään monimutkaisten kokonaisuuksien parissa ja julkaisut
+    tehdään harvemmin.
+  </p>
 
+  <p>
+    Seuraavassa kaaviossa on esitetty Git-flow-mallin perusvaiheet tiimityössä.
+  </p>
   <figure>
-    <img class="wide-image" src="/assets/images/teamwork/flow.webp" alt="Git haaramalli" />
-    <figcaption>Git-workflow kehityshaaran hallintaan tiimityössä </figcaption>
+    <img class="wide-image" src="/assets/images/teamwork/flow.webp" alt="Git-flow haaramalli" />
+    <figcaption>Git-flow kehityshaaran hallintaan tiimityössä</figcaption>
   </figure>
-  <p>Kaavassa on kuvattu normaali kehityshaaran hallinnan prosessi. Tässä vielä
-    vaiheet selitettynä tarkemmin, sekä komennot. </p>
-
   <ol>
     <li>
-      Luo erillinen kehityshaara <em>mainista</em> ja nimeä se kuvaavasti (esim.
+      Luo erillinen <strong>kehityshaara</strong> <em>mainista</em> ja nimeä se
+      kuvaavasti (esim.
       login), jotta
       muutokset pysyvät erillään päähaarasta <code>git checkout -b login</code>
     </li>
     <li>
-      Tee muutokset ja commitoi ne pienissä paloissa selkeillä viesteillä.
+      Tee <strong>muutokset ja commitoi</strong> ne pienissä paloissa selkeillä
+      viesteillä.
       Muista myös testata, että
       muutos toimii tuotantoa vastaavassa ympäristössä
       <code>git push origin login</code>
     </li>
-    <li>Avaa pull request <em>GitHub-portaalissa</em> selaimessa, kuvaa mitä
+    <li>Avaa <strong>pull request</strong> <em>GitHub-portaalissa</em>
+      selaimessa, kuvaa mitä
       teit ja miksi</li>
-    <li>Keskustele tiimin kanssa ja tee tarvittavat muutokset </li>
-    <li>Hanki hyväksyntä ja yhdistä main-haaraan <code>git merge login</code>
+    <li><strong>Keskustele</strong> tiimin kanssa ja
+      <strong>tee tarvittavat korjaukset</strong>
     </li>
-    <li>Poista haara, jotta ympäristö pysyy hallittuna
+    <li>Hanki hyväksyntä ja <strong>yhdistä</strong> <em>main</em>-haaraan
+      <code>git merge login</code>
+    </li>
+    <li>Lopuksi poista haara, jotta ympäristö pysyy hallittuna
       <code>git branch -d login</code>
     </li>
   </ol>
-  <p>
-    Tarkemmat selitykset koodeista voit katsoa kappaleesta
+  <p> Lisätietoja käytetyistä komennoista löydät kappaleesta
     <a href="/basics/basic-commands.html#introduction">Perusteet / 1.3 Keskeiset komennot</a>.
   </p>
 
-  <h5>Git-haarojen vahvuudet ja heikkoudet</h5>
-  <table class="pros-cons-table">
+  <h5>Trunk-based development tiimityössä</h5>
+  <p>
+    Trunk-based development on <strong>kevyt ja suoraviivainen
+    työtapa</strong>, jossa muutokset integroidaan
+    <strong>nopeasti päähaaraan</strong>, joko suoraan
+    tai hyvin lyhytikäisten kehityshaarojen kautta. Muutokset pidetään
+    tarkoituksella <strong>pieninä ja ne integroidaan usein</strong>, jotta
+    koodi pysyy ajantasaisena ja helposti yhteensopivana. Keskeneräiset
+    ominaisuudet voidaan tarvittaessa piilottaa <em>feature flagien</em>, eli
+    ohjelmallisten <em>on/off</em> -kytkinten avulla, jotka ohjaavat näkyykö
+    ominaisuus vai ei.
+  </p>
+
+  <table>
     <thead>
       <tr>
-        <th>Vahvuudet</th>
-        <th>Heikkoudet</th>
+        <th>Git-flow</th>
+        <th>Trunk-based development</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>
-          Jokainen tiimin jäsen voi työskennellä omassa haarassaan ilman,
-          että muiden työ keskeytyy
-        </td>
-        <td>
-          Haarojen hallinta vaatii kurinalaisuutta: selkeät nimet,
-          säännöllinen päivittäminen ja turhien haarojen poistaminen
-        </td>
+        <td>Työ tehdään erillisissä kehityshaaroissa</td>
+        <td>Haaroja käytetään yleensä lyhyisiin tehtäviin ja yhdistetään
+          päähaaraan nopeasti </td>
       </tr>
       <tr>
-        <td>
-          Useiden ominaisuuksien kehitys onnistuu rinnakkain, mikä lisää
-          tuottavuutta ja vähentää konflikteja
-        </td>
-        <td>
-          Yhdistäminen (merge) voi aiheuttaa konflikteja, jotka on
-          ratkaistava huolellisesti ennen jatkamista
-        </td>
+        <td>Sopii projekteihin, joissa on selkeät julkaisuversiot</td>
+        <td>Sopii jatkuvaan integraatioon ja tiheisiin julkaisuihin</td>
       </tr>
       <tr>
-        <td>
-          Koodin tarkastaminen ja hyväksyntä onnistuvat pull requestien
-          kautta ennen kuin muutokset tulevat päähaaraan
-        </td>
-        <td>Liian monien haarojen käyttö voi tehdä projektin rakenteesta
-          sekavan ja vaikeuttaa kokonaisuuden hallintaa</td>
+        <td>Pidemmät kehityssyklit ja selkeät vaiheet</td>
+        <td>Lyhyet kehityssyklit ja nopeat palautteet</td>
       </tr>
       <tr>
-        <td>
-          Haarat tarjoavat turvallisen testiympäristön, jossa uusia ideoita
-          voi kokeilla ilman päähaaran rikkomisen riskiä
-        </td>
+        <td>Pull request -prosessit ovat keskeinen osa työnkulkua</td>
+        <td>Muutokset integroidaan useita kertoja viikossa tai päivässä</td>
       </tr>
     </tbody>
   </table>
 
-  <p>
-    Yhteenvetona voidaan todeta, että haarat ovat
-    <strong>välttämätön työkalu</strong> tehokkaaseen
-    tiimityöhön Gitin kanssa. Ne mahdollistavat joustavan ja järjestelmällisen
-    kehitystyön,
-    tehostavat työntekoa ja edistävät yhteistyötä tiimin jäsenten välillä.
+  <p class="note-box">
+    Yhteenvetona voidaan todeta, että haarat ovat tärkeä työkalu useimmissa
+    Git-työnkuluissa. Ne mahdollistavat samanaikaisen kehitystyön ja sen, että
+    uusia ominaisuuksia voidaan rakentaa ja testata turvallisesti ennen
+    päähaaran yhdistämistä. Eri tiimityötavoissa haarojen käyttö voi vaihdella,
+    mutta suunnitelmallinen haarojen hallinta selkeyttää kehitystä ja vähentää
+    virheitä.
   </p>
 
-  <p class="note-box">
-    <strong>Vinkki!</strong> Muista hyödyntää sivupalkin muistilistoja tarpeen
-    mukaan!
-  </p>
 </section>
