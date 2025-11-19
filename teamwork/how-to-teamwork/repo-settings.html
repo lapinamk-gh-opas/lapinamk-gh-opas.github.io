@@ -8,11 +8,14 @@
       repositorio on oikein perustettu ja että sen näkyvyys, käyttöoikeudet ja
       suojaus tukevat tiimin työskentelyä.
     </p>
+
+    <p>Oikein määritetyt asetukset parantavat projektin tietoturvaa,
+      ylläpidettävyyttä ja yhteistyötä.</p>
   </header>
 
   <h3>Repositorion näkyvyys</h3>
 
-  <p>Uutta repositoriota luodessa valitaan, onko sen näkyvyys
+  <p>Uutta repositoriota luodessa valitaan onko sen näkyvyys
     <strong>julkinen</strong> (<em>public</em>)
     vai <strong>yksityinen</strong> (<em>private</em>). Julkinen repositorio on
     kaikkien
@@ -21,18 +24,55 @@
     projektia avoimesti.
   </p>
 
+  <p>
+    Julkinen repositorio sopii erityisesti
+    <strong>avoimen lähdekoodin projekteihin</strong>,
+    tai kun halutaan jakaa <strong>työnäyte</strong> tai
+    <strong>portfolio</strong> muiden
+    nähtäväksi.
+  </p>
+
   <h3>Käyttöoikeudet</h3>
 
-  <p>Repositorion omistaja voi kutsua muita käyttäjiä mukaan projektiin ja
-    antaa <strong>heille sopivat käyttöoikeudet</strong>. GitHubissa
-    käyttöoikeudet
-    määrittelevät, mitä kukin käyttäjä voi tehdä projektissa ja miten laajasti
-    he voivat muokata repositoriota.</p>
+  <p>Repositorion omistaja voi kutsua muita käyttäjiä mukaan projektiin
+    <strong>collaboratoreiksi</strong>, eli yhteistyökumppaniksi. GitHubissa
+    käyttöoikeudet määrittelevät mitä käyttäjä voi tehdä projektissa ja miten
+    laajasti he voivat muokata repositoriota.
+  </p>
 
+  <h5>Käyttöoikeudet henkilökohtaisessa repositoriossa</h5>
+
+  <p>
+    Henkilökohtaisessa repositoriossa on käytössä vain yksi käyttöoikeustaso:
+    <strong>Write</strong>. Kun käyttäjä lisätään tällaisen repositorion
+    <strong>collaboratoriksi</strong>, hän saa automaattisesti
+    kirjoitusoikeudet (<em>Write</em>), mikä tarkoittaa, että hän voi tehdä
+    <strong>commit-, push- ja merge-toimenpiteitä</strong> ilman erillistä
+    hyväksyntää.
+  </p>
+
+  <p>
+    Kirjoitusoikeudet eivät kuitenkaan mahdollista repositorion
+    poistamista, asetusten muuttamista tai muiden käyttäjien hallintaa. Näihin
+    tarvitaan <strong>Admin</strong> -oikeudet, jotka ovat yksityisellä tilillä
+    perustetussa repositoriossa vain sen luojalla/omistajalla.
+  </p>
+
+  <p class="note-box">
+    Lisää collaboratoriksi <strong>ainoastaan</strong> henkilöitä, joihin
+    luotat ja joiden on tarkoitus työskennellä aktiivisesti projektissa.
+  </p>
+
+
+  <h5>Käyttöoikeudet organisaation repositorioissa</h5>
+
+  <p>Organisaatiotasolla käyttöoikeudet ovat tarkemmin määriteltävissä, ja ne
+    voidaan jakaa rooleihin, jotka määrittävät käyttäjän toimivaltuudet
+    repositoriossa.</p>
   <table>
     <thead>
       <tr>
-        <th>Käyttöoikeus</th>
+        <th>Käyttöoikeus </th>
         <th>Mitä käyttäjä voi tehdä</th>
         <th>Kenelle sopii</th>
       </tr>
@@ -40,36 +80,64 @@
     <tbody>
       <tr>
         <td><strong>Read</strong></td>
-        <td>Nähdä repositorion sisällön, issues ja PR:t, ei voi tehdä muutoksia
+        <td>
+          <ul>
+            <li>Nähdä repositorion sisällön, issuet ja PR:t</li>
+            <li>Ei voi tehdä muutoksia</li>
+          </ul>
         </td>
-        <td>Sidosryhmät ja henkilöt jotka vain seuraavat projektia</td>
+        <td>Sidosryhmät ja henkilöt, jotka vain seuraavat projektia</td>
       </tr>
       <tr>
         <td><strong>Triage</strong></td>
-        <td>Hallita issueita ja pull requesteja (luoda, muokata, priorisoida),
-          ei voi muokata koodia</td>
+        <td>
+          <ul>
+            <li>Hallita issueita ja pull requesteja</li>
+            <li>Ei voi muokata koodia</li>
+          </ul>
+        </td>
         <td>Tiimivastaava, projektipäällikkö</td>
       </tr>
       <tr>
         <td><strong>Write</strong></td>
-        <td>Puskea ja muokata koodia, luoda haaroja, avata PR:iä, hallita
-          issueita</td>
+        <td>
+          <ul>
+            <li>Tehdä muutoksia koodiin, luoda haaroja ja PR:iä</li>
+            <li>Hallita issueita</li>
+          </ul>
+        </td>
         <td>Tasavertaiset tiimin jäsenet, kehittäjät</td>
       </tr>
       <tr>
+        <td><strong>Maintain</strong></td>
+        <td>
+          <ul>
+            <li>Kaikki Write-oikeudet</li>
+            <li>Hallita repositorion asetuksia</li>
+          </ul>
+        </td>
+        <td>Tiimin vetäjä, tekninen johtaja</td>
+      </tr>
+      <tr>
         <td><strong>Admin</strong></td>
-        <td>Kaikki oikeudet, voi poistaa repositorion, muuttaa asetuksia ja
-          hallita käyttöoikeuksia</td>
-        <td>Repositorion omistaja, vastuuhenkilö</td>
+        <td>
+          <ul>
+            <li>Kaikki Write-oikeudet</li>
+            <li>Muokata repositorion asetuksia, käyttöoikeuksia, sekä poistaa
+              repon</li>
+          </ul>
+        </td>
+        <td>Repositorion omistaja ja muut vastuuhenkilöt</td>
       </tr>
     </tbody>
   </table>
 
-  <p> Tasavertaiselle tiimiläiselle voi antaa <em>Write</em>-oikeudet (tai jopa
-    <em>Admin</em>-oikeudet), jotta hän voi osallistua koodin kehittämiseen, kun
-    taas arvioivalle opettajalle usein riittää pelkkä <em>Read</em>-oikeus. Anna
-    aina <strong>vain tarvittavat oikeudet</strong> (<em>least privilege</em>)
-    projektiin osallistujille.
+  <p>Käyttöoikeudet kannattaa pitää mahdollisimman rajattuina ja antaa
+    vain tehtäviin tarvittavat oikeudet (<em>least privilege</em>).</p>
+
+  <p class="note-box">
+    Organisaatio-tilin voi luoda ilmaiseksi GitHubissa. Kokeile rohkeasti oman
+    organisaation perustamista ja hallintaa!
   </p>
 
   <h3>Branch protection rules</h3>
@@ -78,13 +146,14 @@
     <strong>branch protection -säännöillä</strong>, jotta sinne ei voi
     vahingossa puskea keskeneräistä tai rikkinäistä koodia. Suojauksen avulla
     varmistetaan, että kaikki muutokset kulkevat
-    <strong>pull requestien</strong> kautta ja joku tarkistaa ne ennen
+    <strong>pull requestien</strong> kautta ja että ne tarkistetaan ennen
     yhdistämistä.
   </p>
+
   <h6> Suojaukset voivat esimerkiksi </h6>
   <ul>
     <li>Estää suorat pushit päähaaraan</li>
-    <li>Vaatii tiimitoverin hyväksynnän ennen yhdistämistä</li>
+    <li>Vaatia tiimitoverin hyväksynnän ennen yhdistämistä</li>
     <li>Estää PR:n yhdistämisen, jos siinä on konflikteja</li>
   </ul>
   <p> Näin tiimi saa varmistettua, että
@@ -92,25 +161,30 @@
     ennen käyttöönottoa.
   </p>
 
+  <p>Yksityisissä repositorioissa haarasuojausasetukset eivät ole käytössä kuin
+    julkisissa repositorioissa.</p>
+
+  <h3>Repositorion perustiedostot</h3>
+
+  <p> Uuteen repositorioon kannattaa lisätä
+    muutama <strong>perustiedosto</strong>. Ne
+    selkeyttävät projektin tarkoitusta, helpottavat käyttöönottoa ja pitävät
+    versionhallinnan siistinä. Tiedostot luodaan repositorion juureen ja ne
+    voi lisätä joko luonnin yhteydessä tai jälkikäteen. </p>
+
   <div class="accordion" data-include="../../accordion-element/accordion.html"
     data-title="Repositorion perustiedostot">
     <div class="contentToAccordion">
 
-      <h3>Repositorion perustiedostot</h3>
-
-      <p> Uuteen repositorioon kannattaa lisätä muutama perustiedosto. Ne
-        selkeyttävät projektin tarkoitusta, helpottavat käyttöönottoa ja pitävät
-        versionhallinnan siistinä. Tiedostot luodaan repon juureen ja ne voi
-        lisätä joko luonnin yhteydessä tai jälkikäteen. </p>
-
       <h5><em>README.md</em></h5>
 
-      <p>Kuvaa lyhyesti mitä projekti tekee ja miten sen saa käyntiin.
-        Aloittelijalle riittää: projektin tavoite, käytetyt teknologiat ja
-        mahdollinen lyhyt asennusohje.
+      <p>Kuvaa lyhyesti mikä projekti on ja miten se on rakennettu. Usein myös
+        sisältää ohjeet käyttöönottoon ja peruskäyttöön. Aloittelijalle
+        kuitenkin riittää projektin tavoite ja käytetyt teknologiat.
       </p>
       <p class="note-box">Hyvin kirjoitettu
-        <em>README</em>-tiedosto tekee reposi hyödylliseksi myös portfoliossa!
+        <em>README</em>-tiedosto tekee repositoriosi hyödylliseksi myös
+        työnhaussa!
       </p>
 
       <p>README-tiedosto kirjoitetaan Markdown-kielellä, joka mahdollistaa
@@ -120,9 +194,9 @@
 
       <h5><em>.gitignore</em></h5>
 
-      <p>Rajaa pois versionhallinnasta väliaikaiset ja paikalliset tiedostot,
-        sekä salaisuudet. Reposta tulee siistimpi ja turvallisempi.
-        Käymme tiedoston tarkemmin kappaleessa
+      <p>Gitignore tiedosto rajaa versionhallinnasta pois väliaikaiset ja
+        paikalliset tiedostot, sekä salaisuudet. Repositoriosta tulee siistimpi
+        ja turvallisempi. Tiedostoa käsitellään tarkemmin kappaleessa
         <a href="/teamwork/privacy-and-security.html#secrets">Salaisuuksien suojaaminen</a>.
       </p>
 
@@ -148,7 +222,7 @@
       </p>
 
       <p>
-        Wiki otetaan käyttöön repon <em>Settings</em>-välilehdeltä
+        Wiki otetaan käyttöön repositorion <em>Settings</em>-välilehdeltä
         kohdasta <em>Features → Wikis</em>. Jos se on päällä, sivuja voi luoda
         ja muokata suoraan repositorion <em>Wiki</em>-välilehdessä.
       </p>

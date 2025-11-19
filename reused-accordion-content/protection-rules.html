@@ -1,84 +1,88 @@
 <div class="contentToAccordion">
+
+  <p><strong>Branch protection rules</strong> suojaavat tärkeimmät haarat (esim.
+    <code>main</code>) tahattomilta muutoksilta tai virheiltä. Kun suojaus on
+    käytössä, et voi tehdä suoria muutoksia suojattuun haaraan komennolla
+    <code>git push</code> tai yhdistää muutoksia ilman tarkistuksia.
+  </p>
+
   <div class="note-box">
     <ul>
       <li class="warning">
-        <strong>Branch protection rules</strong> suojaavat tärkeimmät haarat (esim.
-        <code>main</code>) tahattomilta muutoksilta tai virheiltä. Kun suojaus on käytössä, et voi
-        tehdä suoria muutoksia suojattuun haaraan komennolla <code>git push</code> tai yhdistää
-        muutoksia ilman tarkistuksia.
-      </li>
-      <li>
-        Alla olevat säännöt soveltuvat pienryhmille ja matalamman prioriteetin projekteihin, kuten
-        koulussa tehtäviin ryhmätöihin. Säännöt eivät ole kovin tiukat, mutta auttavat tutustumaan
-        haarasuojauksen asetuksiin ja niiden muokkaamiseen sallien samalla joustavan työskentelyn.
-      </li>
-      <li>
-        Näillä asetuksilla esimerkiksi pull requestin tekijä voi itse tarvittaessa yhdistää oman
-        työnsä päähaaraan ilman muiden ryhmäläisten hyväksyntää. Näin pull request -menetelmä tulee
-        tutuksi, mutta työskentely ei pysähdy hyväksyntää odottaessa.
-      </li>
-      <li class="warning">
-        Yksityisellä tilillä suojaustoiminnot voi asettaa käyttöön vain julkisena näkyville
-        repositorioille. Jos repositorio on yksityinen tai muutetaan myöhemmin yksityiseksi, nämä
-        säännöt eivät ole käytössä.
+        Yksityisellä tilillä suojaustoiminnot voi asettaa käyttöön vain
+        julkisille repositorioille. Jos repositorio on yksityinen tai
+        muutetaan myöhemmin yksityiseksi, nämä säännöt eivät ole käytössä.
       </li>
     </ul>
   </div>
+
+  <p>
+    Alla olevat säännöt soveltuvat pienryhmille ja matalamman prioriteetin
+    projekteihin, kuten koulussa tehtäviin ryhmätöihin. Säännöt eivät ole kovin
+    tiukat, mutta auttavat tutustumaan haarasuojauksen asetuksiin ja niiden
+    muokkaamiseen sallien samalla joustavan työskentelyn.
+  </p>
+  <p>
+    Näillä asetuksilla esimerkiksi pull requestin tekijä voi itse tarvittaessa
+    yhdistää oman työnsä päähaaraan ilman muiden ryhmäläisten hyväksyntää. Näin
+    pull request -menetelmä tulee tutuksi, mutta työskentely ei pysähdy
+    hyväksyntää odottaessa.
+  </p>
+
+  <h5>Suojauksen määrittäminen</h5>
   <ol>
     <li>
-      Siirry repositorion asetuksiin klikkaamalla repositoriossa
-      <strong>settings</strong>
-      välilehteä.
+      Siirry repositorion asetuksiin klikkaamalla repositoriossa välilehteä
+      <strong>Settings</strong>
 
       <figure>
         <img
           class="wide-image"
           src="../../assets/images/teamwork/repo-settings/visibility-1.webp"
-          alt="Repositorion asetukset." />
-        <figcaption>Repositorion asetukset.</figcaption>
+          alt="Repositorion asetukset" />
+        <figcaption>Repositorion asetukset</figcaption>
       </figure>
     </li>
     <li>
       Siirry repositorion haaroihin liittyviin asetuksiin klikkaamalla
-      <strong>Branches</strong> osiota. Lisää uusi haarasuojaus klikkaamalla
-      <strong>Add branch ruleset</strong> nappia. (<em
-        >Tämän voi tehdä myös asetusten <strong>Rules</strong> osiosta.</em
-      >)
+      <strong>Branches</strong> osiota ja lisää uusi haarasuojaus klikkaamalla
+      <strong>Add branch ruleset</strong> -nappia
 
       <figure>
         <img
           class="wide-image"
           src="../../assets/images/teamwork/repo-settings/branch-rules-1.webp"
-          alt="Repositorion haarojen asetukset." />
-        <figcaption>Repositorion haarojen asetukset.</figcaption>
+          alt="Repositorion haarojen asetukset" />
+        <figcaption>Repositorion haarojen asetukset</figcaption>
       </figure>
     </li>
     <li>
-      Suojausasutuksein määrittäminen:
+      Suojausasetusten määrittäminen
       <ul>
         <li>
           Aloita suojausasetusten määrittäminen antamalla sääntöjoukolle
-          <strong>nimi</strong>.
+          <strong>nimi</strong>
         </li>
         <li>
-          Muuta <strong>Enforcement statuksen</strong> asetukseksi <strong>active</strong>, jotta
-          suojaus tulee voimaan.
+          Muuta <strong>Enforcement statuksen</strong> asetukseksi
+          <strong>active</strong>, jotta
+          suojaus tulee voimaan
         </li>
         <li>
           Valitse Bypass-listaan
-          <strong>Add bypass</strong> alasvetovalokosta käyttäjät, joilla on Repository admin-rooli
-          ja write-rooli.
+          <strong>Add bypass</strong> alasvetovalikosta käyttäjät, joilla on
+          Repository admin-rooli ja write-rooli
         </li>
         <li>
-          Anna käyttäjille oikeuden ohittaa pull request-säännöt lisämällä kolmesta pisteestä
-          valinta
-          <strong>Allow for pull requests only</strong>.
+          Anna käyttäjille oikeuden ohittaa pull request-säännöt lisäämällä
+          kolmesta pisteestä valinta
+          <strong>Allow for pull requests only</strong>
         </li>
         <li>
           Lisää haara jota säännöt koskevat valitsemalla
-          <strong>Add target</strong> alasvetovalikosta <strong>Inlude default branch</strong>. Näin
-          säännöt koskevat main-haaraa, mikäli et ole muuttanut repositorion pää- tai
-          default-haaraksi jotain muuta haaraa.
+          <strong>Add target</strong> alasvetovalikosta
+          <strong>Include default branch</strong>, jolloin säännöt koskevat
+          päähaaraa (esim. main)
         </li>
       </ul>
 
@@ -86,33 +90,33 @@
         <img
           class="wide-image"
           src="../../assets/images/teamwork/repo-settings/branch-rules-2.webp"
-          alt="Suojausasetuksien määrittäminen" />
-        <figcaption>Suojausasetuksien määrittäminen</figcaption>
+          alt="Suojausasetusten määrittäminen" />
+        <figcaption>Suojausasetusten määrittäminen</figcaption>
       </figure>
     </li>
     <li>
-      Anna varsinaiset suojausasetukset:
+      Määritä varsinaiset suojausasetukset
       <ul>
         <li>
-          Varmista, että <strong>Restrict deletions</strong> on valittuna. Tämä estää main haaran
-          poistamisen vahingossa.
+          Varmista, että <strong>Restrict deletions</strong> on valittuna (estää
+          päähaaran poistamisen vahingossa)
         </li>
         <li>
-          Valitse <strong>Require a pull request before merging</strong>. Näin haarojen yhdistäminen
-          päähaaraan pakotetaan menemään pull request toiminnon kautta.
+          Valitse <strong>Require a pull request before merging</strong>,
+          jolloin haarojen yhdistäminen päähaaraan pakotetaan menemään pull
+          request -toiminnon kautta
         </li>
         <li>
-          <strong>Required approvalsin</strong> voi jättää nollaksi. Tällöin pullrequestin tekijä
-          voi yhdistää oman työnsä päähaaraan ilman muiden ryhmäläisten hyväksyntää, mutta pull
-          request toiminnallisuus tulee tutuksi.
+          <strong>Required approvals</strong> voi jättää nollaksi, jolloin
+          pull requestin tekijä
+          voi yhdistää oman työnsä päähaaraan ilman muiden ryhmäläisten
+          hyväksyntää, mutta pull request -toiminnallisuus tulee tutuksi
         </li>
         <li>
-          Mikäli ryhmä haluua tutustua koodikatselmointiin, voi
-          <strong>Required approvalsille</strong>
-          asettaa arvon 1 tai enemmän ja jonkun ryhmäläisistä on tehtävä katselmointi, jotta haarat
-          voi yhdistää sääntöjen mukaisesti. Kuitenkin bypass-listaan käyttäjille annettu lupa
-          ohittaa pull request-sääntöjä mahdollistaa tässäkin yhteydessä katselmoinnin ohituksen ja
-          haarojen yhdistämisen ilman sitä.
+          Jos ryhmä haluaa harjoitella koodikatselmointia,
+          <strong>Required approvals</strong> -arvoksi voidaan asettaa 1 tai
+          enemmän (bypass-listaan lisätyillä käyttäjillä on edelleen
+          mahdollisuus ohittaa tämä vaatimus)
         </li>
       </ul>
 
@@ -120,33 +124,30 @@
         <img
           class="wide-image"
           src="../../assets/images/teamwork/repo-settings/branch-rules-3.webp"
-          alt="Suojausasetukset ja niiden säännöt 1." />
-        <figcaption>Suojausasetukset ja niiden säännöt 1.</figcaption>
+          alt="Suojausasetukset ja niiden säännöt 1" />
+        <figcaption>Suojausasetukset ja niiden säännöt 1</figcaption>
       </figure>
       <ul>
         <li>
-          Varmista, että <strong>Block force pushes</strong> on valittuna. Käytännössä tämä lukitsee
-          haaran historian niin, että sitä ei voi kirjoittaa uusiksi väkisin.
+          Varmista, että <strong>Block force pushes</strong> on valittuna (tämä
+          lukitsee haaran historian niin, että sitä ei voi kirjoittaa uusiksi
+          väkisin)
         </li>
-        <li>
-          Lisäksi olisi suuri houkutus kytkeä päälle Copilotin tekemät tarkistukset, mutta se ei ole
-          yksityisen/ilmaisen tilin yhteydessä käytetävissä.
-        </li>
-        <li>Klikkaa lopuksi <strong>Create</strong> nappia.</li>
+        <li>Klikkaa lopuksi <strong>Create</strong>-nappia</li>
       </ul>
 
       <figure>
         <img
           class="wide-image"
           src="../../assets/images/teamwork/repo-settings/branch-rules-4.webp"
-          alt="Suojausasetukset ja niiden säännöt 2." />
-        <figcaption>Suojausasetukset ja niiden säännöt 2.</figcaption>
+          alt="Suojausasetukset ja niiden säännöt 2" />
+        <figcaption>Suojausasetukset ja niiden säännöt 2</figcaption>
       </figure>
     </li>
     <li>
-      Mikäli käytössä on kaksivaiheinen tunnistautuminen tässä yhteydessä GitHub saatta pyytää
-      vahvistamaan vielä käyttöoikeutesi syöttämällä tunnistautumissovelluksesi antaman avaimen ja
-      klikkaamalla verify nappia.
+      Jos käytössäsi on kaksivaiheinen tunnistautuminen, GitHub saattaa pyytää
+      vahvistamaan käyttöoikeutesi syöttämällä tunnistautumissovelluksen koodin
+      ja klikkaamalla <strong>Verify</strong>
 
       <figure>
         <img
@@ -157,15 +158,15 @@
       </figure>
     </li>
     <li>
-      Nyt suojausasetukset on luotu ja ne ovat
-      <strong>aktiivisena</strong> eli voimassa määritellylle <strong>haaralle</strong>.
+      Tarkista lopuksi, että sääntöjoukko on määritetty oikein ja se on
+      <strong>aktiivisena</strong>
 
       <figure>
         <img
           class="wide-image"
           src="../../assets/images/teamwork/repo-settings/branch-rules-6.webp"
-          alt="Sääntöjoukko valmis ja käytössä." />
-        <figcaption>Sääntöjoukko valmis ja käytössä.</figcaption>
+          alt="Sääntöjoukko valmis ja käytössä" />
+        <figcaption>Sääntöjoukko valmis ja käytössä</figcaption>
       </figure>
     </li>
   </ol>
