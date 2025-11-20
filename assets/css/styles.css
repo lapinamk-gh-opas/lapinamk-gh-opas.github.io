@@ -1,4 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* Regular 400 */
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Medium 500 */
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bold 700 */
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 body {
   min-height: 100vh;
@@ -6,8 +31,8 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
-  font-family: 'Roboto', Arial;
-  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
 }
 
 /*header styles*/
@@ -36,6 +61,14 @@ h6,
 li,
 p {
   font-size: 1rem;
+}
+
+a {
+  color: #106057;
+}
+
+a:hover {
+  color: #14827d;
 }
 
 code {
