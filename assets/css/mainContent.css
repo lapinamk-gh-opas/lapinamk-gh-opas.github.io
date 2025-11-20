@@ -21,7 +21,7 @@ img {
 
 /* image zoom effect on click */
 img.zoomed:not(.no-zoom) {
-  transform: scale(1.5);
+  transform: scale(1.7);
   z-index: 15;
   transition: transform 0.25s ease, left 0.25s ease;
 }
@@ -329,6 +329,10 @@ ol + .note-box {
   font-size: 1.2em;
 }
 
+ul {
+  padding-left: 1em;
+}
+
 /* layout changes for mobile */
 @media (max-width: 1000px) {
   /* content width */
@@ -357,16 +361,13 @@ ol + .note-box {
 
   .wide-image {
     max-width: 100%;
-    left: -0.5rem;
   }
 
   figcaption {
     position: relative;
-    left: -0.5rem;
   }
 
   .note-box {
     position: relative;
-    left: -0.5rem;
   }
 }

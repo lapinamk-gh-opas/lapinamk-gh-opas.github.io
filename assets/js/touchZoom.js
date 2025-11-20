@@ -59,20 +59,25 @@ const initImageZoom = (img) => {
 
   let isDragging = false;
   // Touch event listeners for touch zoom functionality
-  img.addEventListener('touchstart', (e) => {
-    longPressed = false;
-    noTouchZoom = false;
+  img.addEventListener(
+    'touchstart',
+    (e) => {
+      longPressed = false;
+      noTouchZoom = false;
 
-    const touch = e.touches[0];
+      const touch = e.touches[0];
 
-    clearTimeout(pressTimer);
-    pressTimer = setTimeout(() => {
-      if (!noTouchZoom) {
-        longPressed = true;
-        addZoom(touch.clientX, touch.clientY);
-      }
-    }, 150);
-  });
+      clearTimeout(pressTimer);
+      pressTimer = setTimeout(() => {
+        if (!noTouchZoom) {
+          e.preventDefault();
+          longPressed = true;
+          addZoom(touch.clientX, touch.clientY);
+        }
+      }, 150);
+    },
+    { passive: false }
+  );
 
   img.addEventListener(
     'touchmove',

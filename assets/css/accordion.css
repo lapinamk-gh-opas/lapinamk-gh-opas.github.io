@@ -80,6 +80,9 @@
 /* margin for header div */
 .header {
   margin: 0 0 1rem 1rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.2;
 }
 
 .close-button {

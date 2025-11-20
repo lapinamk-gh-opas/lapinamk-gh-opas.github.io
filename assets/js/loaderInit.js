@@ -21,6 +21,8 @@ import { loadHead } from '/assets/js/includeHead.js';
 // This function is used to determine if head content is loaded and fonts are ready
 // before showing the page content to user. This one needs to be exported and called
 // from HTML file.
+let loaderDelay = false;
+
 export async function initLoader(pageTitle) {
   const loader = document.getElementById('loader');
   loader.style.display = 'flex';
@@ -34,6 +36,9 @@ export async function initLoader(pageTitle) {
 
   await document.fonts.ready;
 
-  loader.classList.add('fade-out');
-  document.dispatchEvent(new Event('content:loaded'));
+  clearTimeout(loaderDelay);
+  loaderDelay = setTimeout(() => {
+    loader.classList.add('fade-out');
+    document.dispatchEvent(new Event('content:loaded'));
+  }, 100);
 }

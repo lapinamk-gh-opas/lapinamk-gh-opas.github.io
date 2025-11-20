@@ -2,6 +2,7 @@
 .navbar {
   background-color: #ffffff !important;
   border-bottom: #14827d 2px solid;
+  min-height: 96px;
 }
 
 /* navbar logo and text area */
@@ -17,6 +18,7 @@
   color: #000000 !important;
   white-space: normal;
   word-break: break-word;
+  min-height: 28px;
 }
 
 /* navbar items right padding */
