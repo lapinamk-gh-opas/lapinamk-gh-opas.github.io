@@ -329,10 +329,6 @@ ol + .note-box {
   font-size: 1.2em;
 }
 
-ul {
-  padding-left: 1em;
-}
-
 /* layout changes for mobile */
 @media (max-width: 1000px) {
   /* content width */
@@ -351,6 +347,10 @@ ul {
   #nextText {
     font-size: 0.7em;
     white-space: nowrap;
+  }
+
+  ul {
+    padding-left: 1em;
   }
 
   /* button arrow size */
