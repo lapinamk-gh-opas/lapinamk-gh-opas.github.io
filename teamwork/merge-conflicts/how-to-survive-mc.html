@@ -1,41 +1,34 @@
 <section class="how-to-survive-mc">
   <header>
-    <h1>Merge-konfliktien ratkaiseminen käytännössä</h1>
+    <h1>Merge-konfliktin ratkaiseminen käytännössä</h1>
+
     <p>
-      Merge-konflikti syntyy tilanteessa, jossa kahdessa eri haarassa (branchissa) on muokattu samaa
-      tiedoston kohtaa eri tavoin, eikä Git pysty automaattisesti yhdistämään muutoksia. Konfliktit
-      ovat luonnollinen osa tiimityöskentelyä ja haarojen yhdistämistä, eivätkä yleensä merkki
-      virheestä.
+      Tässä ohjeessa opit, miten <strong>merge-konflikti syntyy</strong> ja
+      <strong>kuinka se ratkaistaan käytännössä.</strong>
     </p>
 
     <p>
-      Tämän ohjeen tarkoituksena on kuvata, mitä merge-konfliktit ovat, miksi ne syntyvät ja kuinka
-      ne ratkaistaan käytännössä. Ohje auttaa tunnistamaan konfliktit, ymmärtämään niiden rakenteen
-      Gitin näkökulmasta sekä valitsemaan sopivan ratkaisun.
+      Harjoituksessa simuloidaan konfliktia ja sen korjaamista hyödyntäen
+      VS Codea, terminaalia sekä GitHubia.
     </p>
 
-    <p>
-      Ohjeessa simuloidaan virhettä ja sen korjaamista VS Coden ja sen terminaalin sekä GitHubin
-      avulla. Tämä ohje keskittyy erityisesti tilanteisiin, joissa kaksi kehittäjää työskentelee
-      samassa tiedostossa ja tekee päällekkäisiä muutoksia.
-    </p>
+    <div class="note-box">
+      <strong>Huom!</strong> Merge-konflikteja voidaan ratkaista myös monilla
+      muilla eri tavoilla ja työkaluilla, esimerkiksi GitHubin editorilla, VS
+      Coden merge-näkymällä tai komentorivipohjaisilla ratkaisuilla.
+    </div>
+
   </header>
   <main>
     <h2>Merge-konfliktien ratkaiseminen</h2>
 
     <p>
-      Luodaan taas aluksi paikallisesti uusi kansio tätä osiota varten ja kloonataan etärepositorio
-      sinne uudeksi paikalliseksi repositorioksi. Tehdään muutoksia samaan tiedostoon selaimella
-      GitHubin päähaarassa sekä paikallisesti omassa haarassa ja yhdistetään ne, jotta saadaan
-      aikaan merge-konflikti.
+      Aluksi luodaan paikallinen kansio ja kloonataan siihen
+      etärepositorio <strong>git-opas</strong>. Sen jälkeen muokataan samaa
+      tiedostoa GitHubin päähaarassa sekä paikallisesti omassa haarassa, ja
+      lopuksi yhdistetään muutokset, jolloin syntyy merge-konflikti.
     </p>
-    <div class="note-box">
-      <strong>Huomio:</strong> Mergekonfliktit voidaan ratkaista useilla eri tavoilla ja eri
-      työkaluilla. Tässä oppaassa näytetään vain yksi yksinkertainen esimerkki, jotta konfliktien
-      ratkaisemisen perusmekanismi tulee selväksi. Käytännössä konfliktit voivat olla
-      monimutkaisempia ja niiden ratkaisuun voi käyttää myös graafisia työkaluja, kuten GitHubin
-      omaa editoria, VS Coden merge-näkymää tai komentoriville tarjolla olevia työkaluja.
-    </div>
+
     <ol>
       <li>
         <h6>Luo uusi kansio testausta varten</h6>
@@ -46,12 +39,15 @@
           <img
             class="wide-image"
             src="../../assets/images/teamwork/pull-request/clone-1.webp"
-            alt="Aloitus näkymä VS Codessa." />
-          <figcaption>Aloitus näkymä VS Codessa.</figcaption>
+            alt="Aloitusnäkymä VS Codessa" />
+          <figcaption>Aloitusnäkymä VS Codessa</figcaption>
         </figure>
         <ul>
-          <li>Navigoi haluamaasi kansioon ja klikkaa <strong>Uusi kansio</strong></li>
-          <li>Anna kansiolle nimi ja klikkaa <strong>Valitse kansio</strong></li>
+          <li>Navigoi haluamaasi kansioon ja klikkaa
+            <strong>Uusi kansio</strong>
+          </li>
+          <li>Anna kansiolle nimi ja klikkaa <strong>Valitse kansio</strong>
+          </li>
         </ul>
         <figure>
           <img
@@ -77,39 +73,40 @@
         <!-- Accordion element ends -->
       </li>
       <li>
-        <h6>Kloonaa (<em>Clone</em>) etärepositorio ja luo uusi haara</h6>
+        <h6>Kloonaa (<em>clone</em>) etärepositorio ja luo uusi haara</h6>
         <ul>
-          <li>Avaa Git Bash VS Coden terminaaliin.</li>
+          <li>Avaa Git Bash VS Coden terminaaliin</li>
 
           <li>
-            Kloonaa repositorio palvelimelta omalle koneelle komennolla
+            Kloonaa repositorio <strong>git-opas</strong> pilvestä omalle
+            koneelle komennolla
             <code>git clone https://github.com/repositorion/url-osoite.git</code>
-            ja paina <strong>Enter</strong>.
           </li>
 
           <li>
             Siirry repositorion sisältävään kansioon komennolla
             <code>cd kansion-nimi</code>
-            ja paina <strong>Enter</strong>.
           </li>
 
           <li>
             Luo uusi git-haara ja siirry uuteen haaraan komennolla
-            <code>git checkout -b haaran-nimi</code> ja paina <strong>Enter</strong>.
+            <code>git checkout -b haaran-nimi</code>
           </li>
         </ul>
         <figure>
           <img
             class="wide-image"
             src="../../assets/images/teamwork/merge-conflicts/merge-konflikti-2.webp"
-            alt="VS Coden terminaali ja komennot." />
-          <figcaption>Kuvassa merkattuna terminaalissa käytetyt komennot.</figcaption>
+            alt="VS Coden terminaali ja komennot" />
+          <figcaption>Repositorion kloonaus ja uuden haaran luominen
+            komennoilla
+          </figcaption>
         </figure>
         <!--Accordion starts-->
         <div
           class="accordion"
           data-include="../../accordion-element/accordion.html"
-          data-title="Huomio Git Bashin käytöstä VS Codella">
+          data-title="Git Bashin avaaminen VS Codessa">
           <!-- Reused accordion content starts -->
           <div
             class="contentToAccordion reused-accordion"
@@ -121,30 +118,32 @@
         <!-- Accordion ends-->
       </li>
       <li>
-        <h6>Muutoksen tekeminen tiedostoon paikallisesti.</h6>
+        <h6>Tee muutokset tiedostoon</h6>
         <ul>
           <li>
-            Tee haluamasi <strong>muutokset</strong> tiedostoon testi-tiedosto.md (tai johonkin
-            muuhun tiedostoon kunhan teet muutokset myöhemmin samaan tiedostoon GitHubissa).
+            Tee haluamasi <strong>muutokset</strong> tiedostoon
+            testi-tiedosto.md (tai johonkin
+            muuhun tiedostoon kunhan teet muutokset myöhemmin samaan tiedostoon
+            GitHubissa)
           </li>
-          <li>Tallenna muutokset <strong>CTRL</strong> + <strong>S</strong> pikanäppäimillä.</li>
+          <li>Tallenna muutokset <strong>CTRL</strong> + <strong>S</strong>
+            pikanäppäimillä</li>
         </ul>
         <figure>
           <img
             class="wide-image"
             src="../../assets/images/teamwork/merge-conflicts/merge-konflikti-3.webp"
-            alt="Muutoksien tekeminen testi-tiedosto.md tiedostoon." />
-          <figcaption
-            >Valittu tiedosto ja muutoksien tekeminen tiedostoon merkattu punaisella.</figcaption
-          >
+            alt="Muutosten tekeminen testi-tiedosto.md tiedostoon" />
+          <figcaption>Valittu tiedosto ja muutokset tiedostoon</figcaption>
         </figure>
       </li>
       <li>
-        <h6>Mene selaimella GitHubiin ja valitse käyttämäsi repositorio.</h6>
+        <h6>Siirry selaimella GitHubiin ja valitse käyttämäsi repositorio</h6>
         <ul>
-          <li>Varmista, että olet <strong>päähaarassa</strong>.</li>
+          <li>Varmista, että olet <strong>päähaarassa</strong></li>
           <li>
-            Avaa sama tiedosto, johon teit muutokset paikallisesti klikkaamalla tiedoston nimeä.
+            Avaa sama tiedosto, johon teit muutokset paikallisesti klikkaamalla
+            tiedoston nimeä
           </li>
         </ul>
         <figure>
@@ -152,66 +151,78 @@
             class="wide-image"
             src="../../assets/images/teamwork/merge-conflicts/merge-konflikti-4.webp"
             alt="Tiedostot GitHib repositoriossa" />
-          <figcaption>Valitun git-haaran varmistaminen ja tiedoston valitseminen.</figcaption>
+          <figcaption>Valitun git-haaran varmistaminen ja tiedoston
+            valitseminen</figcaption>
         </figure>
       </li>
       <li>
-        <h6>Muutoksen tekeminen tiedostoon GitHubissa.</h6>
+        <h6>Tee muutokset tiedostoon GitHubissa</h6>
         <ul>
-          <li>Klikkaa <strong>kynä-ikonia</strong> avataksesi muokkausikkunan.</li>
+          <li>Klikkaa <strong>kynä-ikonia</strong> avataksesi muokkausikkunan
+          </li>
         </ul>
         <figure>
           <img
             class="wide-image"
             src="../../assets/images/teamwork/merge-conflicts/merge-konflikti-5.webp"
             alt="Tiedosto ja muokkausikkunan avaaminen" />
-          <figcaption>Kynä-ikonista saa avattua muokkaus ikkunan.</figcaption>
+          <figcaption>Tiedosto ja muokkausikkunan avaaminen</figcaption>
         </figure>
         <ul>
-          <li>Tee haluamasi <strong>muutos</strong> tiedostoon.</li>
-          <li>Ja klikkaa <strong>Commit changes...</strong>-nappia.</li>
+          <li>Tee haluamasi <strong>muutos</strong> tiedostoon</li>
+          <li>Ja klikkaa <strong>Commit changes...</strong>-nappia</li>
         </ul>
         <figure>
           <img
             class="wide-image"
             src="../../assets/images/teamwork/merge-conflicts/merge-konflikti-6.webp"
             alt="Muokkausikkuna ja muutokset" />
-          <figcaption>Muutoksien tekeminen tiedostoon ja Commit changes... -nappi.</figcaption>
+          <figcaption>Muutosten tekeminen tiedostoon ja Commit changes...
+            -nappi</figcaption>
         </figure>
         <ul>
-          <li>Anna commit-viesti <strong>Commit message</strong> tekstikenttään.</li>
-          <li
-            >Ja klikkaa <strong>Commit changes</strong> -nappia tallentaaksesi muutokset
-            päähaaraan.</li
-          >
+          <li>Anna commit-viesti <strong>Commit message</strong> -tekstikenttään
+          </li>
+          <li>Ja klikkaa <strong>Commit changes</strong> -nappia tallentaaksesi
+            muutokset
+            päähaaraan</li>
         </ul>
         <figure>
           <img
             class="wide-image"
             src="../../assets/images/teamwork/merge-conflicts/merge-konflikti-7.webp"
-            alt="Näkymä muutoksien tallentamiseen (commit)" />
-          <figcaption>Commit-viestin lisääminen ja Commit changes -nappi.</figcaption>
+            alt="Näkymä muutosten tallentamiseen (commit)" />
+          <figcaption>Commit-viestin lisääminen ja Commit changes -nappi
+          </figcaption>
         </figure>
       </li>
       <li>
-        <h6>Paikallisten muutoksien commitointi ja muutoksien tuominen etärepositoriosta.</h6>
+        <h6>Commitoi paikalliset muutokset ja </h6>
         <ul>
-          <li>Siirry takaisin VS Codeen ja sen terminaaliin.</li>
+          <li>Siirry takaisin VS Codeen ja avaa terminaali</li>
           <li>
             Lisää paikalliset muutokset staging-alueelle komennolla
-            <code>git add .</code> ja paina <strong>Enter</strong>.
+            <code>git add .</code>
           </li>
           <li>
             Commitoi muutokset paikalliseen repositorioon komennolla
-            <code>git commit -m "commit-viesti"</code> ja paina <strong>Enter</strong>.
+            <code>git commit -m "commit-viesti"</code>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h6>Tuo etärepositoriosta tehdyt muutokset</h6>
+        <ul>
+          <li>
+            Tuo etärepositoriossa tehdyt muutokset paikalliseen repositorioon
+            komennolla
+            <code>git pull origin main</code>
           </li>
           <li>
-            Tuo etärepositoriossa tehdyt muutokset paikalliseen repositorioon komennolla
-            <code>git pull origin päähaara</code> ja paina <strong>Enter</strong>.
-          </li>
+            Tässä vaiheessa pitäisi syntyä <strong>merge-konflikti</strong></li>
           <li>
-            Tässä vaiheessa pitäisi syntyä merge-konflikti. Git ilmoittaa terminaalissa
-            <strong>konfliktista ja tiedostoa ei voida yhdistää automaattisesti.</strong>
+            Git ilmoittaa terminaalissa konfliktista, eikä tiedostoa voida
+            yhdistää automaattisesti
           </li>
         </ul>
 
@@ -219,90 +230,90 @@
           <img
             class="wide-image"
             src="../../assets/images/teamwork/merge-conflicts/merge-konflikti-8.webp"
-            alt="Paikallisten muutoksien commitointi ja etärepositorion muutoksien tuominen ja yhdistäminen." />
-          <figcaption
-            >Paikallisten muutoksien commitointi komennot ja muutoksien tuonti
-            etärepositoriosta.</figcaption
-          >
+            alt="Paikallisten muutosten commitointi ja muutosten tuonti
+            etärepositoriosta" />
+          <figcaption>Paikallisten muutosten commitointi ja muutosten tuonti
+            etärepositoriosta</figcaption>
         </figure>
       </li>
       <li>
-        <h6>Merge-konfliktin ratkaiseminen.</h6>
+        <h6>Ratkaise merge-konflikti</h6>
         <ul>
           <li>
             Avaa konfliktit sisältävä tiedosto VS Codessa klikkaamalla
-            <strong>tiedoston nimeä</strong>. Tiedosto on merkitty punaisella värillä ja
-            huutomerkillä.
+            <strong>tiedoston nimeä</strong> (tiedosto on merkitty punaisella
+            värillä ja huutomerkillä)
           </li>
           <li>
-            Konfliktit on merkitty erikoismerkeillä, jotka erottavat eri haarojen muutokset. Vihreä
-            osa tarkoittaa paikallisia muutoksia, kun taas sininen osa näyttää etärepositoriosta
-            tulevia muutoksia.
+            Konfliktit on merkitty erikoismerkeillä ja väreillä: vihreä näyttää
+            paikalliset muutokset ja sininen etärepositoriosta tulevat muutokset
           </li>
           <li>
-            Ratkaise konflikti klikkaamalla <strong>Current</strong>, <strong>Incoming</strong> tai
-            <strong>Both</strong>-nappia riippuen siitä mitkä muutokset haluat säilyttää.
+            Ratkaise konflikti klikkaamalla <em>Accept</em>
+            <strong>Current</strong>,
+            <strong>Incoming</strong> tai
+            <strong>Both</strong> <em>Changes</em> -nappia riippuen siitä mitkä
+            muutokset haluat säilyttää
           </li>
-          <li>Tallenna tiedosto <strong>CTRL</strong> + <strong>S</strong> pikanäppäimillä.</li>
+          <li>Tallenna tiedosto <strong>CTRL</strong> + <strong>S</strong>
+            pikanäppäimillä</li>
         </ul>
         <figure>
           <img
             class="wide-image"
             src="../../assets/images/teamwork/merge-conflicts/merge-konflikti-9.webp"
-            alt="Merge-konfliktin ratkaiseminen VS Codessa." />
-          <figcaption>Merge-konfliktin ratkaiseminen VS Codessa.</figcaption>
+            alt="Merge-konfliktin ratkaiseminen VS Codessa" />
+          <figcaption>Merge-konfliktin ratkaiseminen VS Codessa</figcaption>
         </figure>
         <ul>
           <li>
             Lisää ratkaistut tiedostot staging-alueelle komennolla
-            <code>git add .</code> ja paina <strong>Enter</strong>.
+            <code>git add .</code>
           </li>
           <li>
-            Viimeistele haarojen yhdistäminen (merge) commitoimalla ratkaistu konflikti komennolla
-            <code>git commit -m "Sopiva commit-viesti"</code> ja paina <strong>Enter</strong>.
+            Viimeistele haarojen yhdistäminen (merge) commitoimalla ratkaistu
+            konflikti komennolla
+            <code>git commit -m "Sopiva commit-viesti"</code>
           </li>
         </ul>
         <figure>
           <img
             class="wide-image"
             src="../../assets/images/teamwork/merge-conflicts/merge-konflikti-10.webp"
-            alt="yhdistämisen viimeistely ratkaisun jälkeen." />
-          <figcaption
-            >Komennot haarojen yhdistämisen (merge) viimeistelyyn konfliktin ratkaisun
-            jälkeen.</figcaption
-          >
+            alt="Mergen viimeistely konfliktin ratkaisun jälkeen" />
+          <figcaption>Mergen viimeistely konfliktin ratkaisun jälkeen
+          </figcaption>
         </figure>
       </li>
       <li>
-        <h6>Vie muutokset etärepositorioon.</h6>
+        <h6>Vie muutokset etärepositorioon</h6>
         <ul>
           <li>
             Vie paikalliset muutokset etärepositorioon komennolla
-            <code>git push -u origin haaran-nimi</code> ja paina <strong>Enter</strong>.
+            <code>git push -u origin haaran-nimi</code>
           </li>
         </ul>
         <figure>
           <img
             class="wide-image"
             src="../../assets/images/teamwork/merge-conflicts/merge-konflikti-11.webp"
-            alt="Haaran muutoksien vieminen etärepositorioon." />
-          <figcaption>Komento haaran muutoksien viemiselle etärepositorioon.</figcaption>
+            alt="Haaran muutosten vieminen etärepositorioon" />
+          <figcaption>Haaran muutosten vieminen etärepositorioon
+          </figcaption>
         </figure>
       </li>
       <li>
         <h6>Viimeistele yhdistämällä muutokset päähaaraan</h6>
         <ol>
           <li>
-            Pull Requestilla noudattaen
+            Tee pull request noudattaen
             <a href="/teamwork/pullrequests.html#how-to-pr">Pull Request -ohjetta</a>
             kohdasta 5. eteenpäin.
           </li>
-          <li
-            >Tai yhdistämällä ohjeen:
+          <li>Tai yhdistä haarat komennoilla ohjeen
             <a href="/teamwork/branches.html#how-to-branches"
-              >Feature-haaran yhdistäminen main-haaraan komentokehottella</a
-            >
-            mukaisesti.
+              >Feature-haaran yhdistäminen main-haaraan komentokehottella</a>
+            mukaisesti
           </li>
         </ol>
       </li>

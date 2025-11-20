@@ -1,14 +1,13 @@
 <section class="tips-to-avoid-conflicts">
   <header>
     <h1>Vinkkejä merge-konfliktien välttämiseen</h1>
+    <p>
+      Merge-konflikteilta ei voi aina välttyä, mutta niitä voidaan ehkäistä
+      hyvillä
+      toimintatavoilla ja tiimityöllä. Seuraavat vinkit auttavat pitämään
+      versionhallinnan sujuvana ja konfliktit minimissä.
+    </p>
   </header>
-
-  <p>
-    Merge-konflikteja ei voi aina välttää, mutta niitä voidaan ehkäistä hyvillä
-    toimintatavoilla ja tiimityöllä. Seuraavat vinkit auttavat pitämään
-    versionhallinnan sujuvana ja konfliktit minimissä.
-  </p>
-
   <ul>
     <li>
       <strong>Kommunikoi tiimin kanssa.</strong> Pidä tiimiläiset ajan tasalla
@@ -23,33 +22,21 @@
     </li>
 
     <li>
-      <strong>Päivitä paikallinen repositoriosi usein.</strong> Käytä komentoa
-      <code>git pull</code> säännöllisesti, jotta paikallinen kopiosi pysyy ajan
-      tasalla etärepositorion kanssa.
+      <strong>Käytä haaroja järkevästi.</strong> Luo jokaiselle uudelle
+      ominaisuudelle tai korjaukselle oma kehityshaara, ja yhdistä se päähaaraan
+      kun työ on testattu ja valmis.
+    </li>
+
+    <li>
+      <strong>Pidä kehityshaara ajan tasalla.</strong> Tuo päähaaran muutokset
+      kehityshaaraan säännöllisesti, jotta haara ei erkaannu liikaa ennen
+      yhdistämistä.
     </li>
 
     <li>
       <strong>Tee pieniä ja selkeitä committeja.</strong> Usein tehdyt pienet
       commitit on helpompi hallita kuin suuret paketit. Tämä myös vähentää
       konfliktien todennäköisyyttä.
-    </li>
-
-    <li>
-      <strong>Käytä haaroja järkevästi.</strong> Luo jokaiselle uudelle
-      ominaisuudelle tai korjaukselle oma kehityshaara, ja yhdistä se päähaaraan
-      vasta, kun työ on testattu ja valmis.
-    </li>
-
-    <li>
-      <strong>Pidä haarat lyhytikäisinä.</strong> Mitä kauemmin haara elää
-      erillään päähaarasta, sitä todennäköisemmin siihen kertyy konflikteja.
-      Päivitä ja yhdistä haarat säännöllisesti.
-    </li>
-
-    <li>
-      <strong>Ratkaise konfliktit heti.</strong> Jos kohtaat merge-konfliktin,
-      korjaa se mahdollisimman pian. Näin muistat paremmin, mitä muutoksia olet
-      tehnyt ja miksi.
     </li>
 
     <li>
@@ -60,8 +47,8 @@
   </ul>
 
   <p class="note-box">
-    Muista, että merge-konflikteja tulee väistämättä syntymään, mutta niiden
-    selättäminen onnistuu kyllä rauhallisella asenteella ja yhteistyöllä tiimin
-    jäsenten kanssa.
+    Muista, että merge-konflikti ei ole epäonnistuminen, virhe tai merkki
+    huonosta työstä. Konflikteja syntyy väistämättä, ja niistä selviää
+    rauhallisesti ja yhteistyöllä.
   </p>
 </section>
