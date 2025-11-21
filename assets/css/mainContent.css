@@ -24,6 +24,7 @@ img.zoomed:not(.no-zoom) {
   transform: scale(1.7);
   z-index: 15;
   transition: transform 0.25s ease, left 0.25s ease;
+  touch-action: none;
 }
 
 .accordion img.zoomed:not(.no-zoom) {

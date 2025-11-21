@@ -1,5 +1,5 @@
 // This JS file enables functionality to content pages arrow buttons (next/prev).
-// user can navigate trugh sub pages and different parts by pressing arrowbuttons.
+// user can navigate trough sub pages and different parts by pressing arrow buttons.
 
 //imports helper functions
 import { getPageFromHash, getBasePath, loadPage } from '/assets/js/helpers.js';
@@ -27,7 +27,7 @@ document.addEventListener('sidebar:loaded', () => {
   currentPath = window.location.pathname; // gets current path from URL
   const menuItems = document.querySelectorAll('.sidebar-menu a'); // gets menu items
 
-  linkNames = Array.from(menuItems).map((el) => el.getAttribute('href')); // makes array of link href atributes
+  linkNames = Array.from(menuItems).map((el) => el.getAttribute('href')); // makes array of link href attributes
 
   linkNamesFin = Array.from(menuItems).map((el) => el.textContent); // makes array of links text content
 
@@ -38,17 +38,17 @@ document.addEventListener('sidebar:loaded', () => {
 });
 
 //Custom event launches this after previous phase is ready. Also launces if user navigates from
-// top part page navigationla links. In that case custom event launches from includeSubContent.js
+// top part page navigation links. In that case custom event launches from includeSubContent.js
 // Here sub pages are set to variables for later navigational and text rendering purposes.
 document.addEventListener('links:loaded', () => {
   currentPage = getPageFromHash(); // gets current page from URL hash
   const container = document.getElementById('mainContainer'); // gets container of page links
   const subContentPages = container.querySelectorAll('[data-page]'); // get pages from container with data-page attribute
 
-  // makes array of page names from date-page atributes
+  // makes array of page names from date-page attributes
   pageNames = Array.from(subContentPages).map((el) => el.getAttribute('data-page'));
 
-  // makes array of page names from text content atributes
+  // makes array of page names from text content attributes
   pageNamesFin = Array.from(subContentPages).map((el) => el.textContent);
 
   // gets current page index or 0 if there are no sub pages/current page
@@ -79,15 +79,23 @@ document.addEventListener('pages:loaded', () => {
   const nextBtn = document.getElementById('nextBtn'); // gets next  button
 
   // hides next button if there are no next links or pages
-  if (
-    nextBtn &&
-    (pageIndex === pageNames.length - 1 || pageIndex === 0) &&
-    linkIndex === linkNames.length - 1
-  ) {
-    nextBtn.classList.add('hide');
+  if (nextBtn) {
+    const noMorePages = pageIndex === pageNames.length - 1;
+    const noMoreLinks = linkIndex === linkNames.length - 1;
+
+    if (noMorePages || noMoreLinks) {
+      nextBtn.classList.add('hide');
+    }
   }
 
-  if (prevBtn && currentPath === '/index.html') {
+  // hides previous button if user is on home page
+  const isHome =
+    currentPath === '/' ||
+    currentPath === '/index.html' ||
+    currentPath.startsWith('/index.html?') ||
+    currentPath.startsWith('/index.html#');
+
+  if (prevBtn && isHome) {
     prevBtn.classList.add('hide');
   }
 
@@ -155,7 +163,7 @@ async function getLastSubPageName(sectionPath) {
     if (!part.ok) throw new Error(`Tiedostoa tai polkua: ${sectionPath}, ei löytynyt`); //throws error is part is not found
     const html = await part.text(); //loads temporary html dom from part
 
-    const tmp = document.createElement('div'); //creates temportary div element
+    const tmp = document.createElement('div'); //creates temporary div element
     tmp.innerHTML = html; //set loaded dom inside div
     const pages = [...tmp.querySelectorAll('[data-page]')]; //looks for sub pages
     return pages.length ? pages[pages.length - 1].dataset.page : null; // if sub pages exists returns last pages name
