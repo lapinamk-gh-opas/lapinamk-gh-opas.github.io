@@ -33,7 +33,6 @@ function handleCodeClick(codeElement) {
   // set style and tooltip once
   if (!codeElement.dataset.copyInit) {
     codeElement.style.cursor = 'pointer';
-    codeElement.title = 'Kopioi 📋';
     codeElement.dataset.copyInit = 'true';
   }
 
@@ -58,6 +57,13 @@ function handleCodeClick(codeElement) {
       showNotification('Kopiointi epäonnistui ❌', String(err));
     });
 }
+
+// add copy title for all elements with <code>-tag on the document
+document.addEventListener('subContent:loaded', () => {
+  document.querySelectorAll('code').forEach((code) => {
+    code.title = 'Kopioi 📋';
+  });
+});
 
 // global click listener for the whole page
 document.addEventListener('click', (event) => {
