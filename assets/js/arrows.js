@@ -83,7 +83,6 @@ document.addEventListener('pages:loaded', () => {
     const noMorePages = pageIndex === pageNames.length - 1;
     const noMoreLinks = linkIndex === linkNames.length - 1;
 
-    console.log(noMoreLinks, noMorePages);
     if (noMorePages && noMoreLinks) {
       nextBtn.classList.add('hide');
     }
