@@ -31,6 +31,7 @@ const initImageZoom = (img) => {
     // Apply zoom class, zoom amount is handled in CSS
     if (!img.classList.contains('zoomed')) {
       img.classList.add('zoomed');
+      document.body.classList.add('lock-screen');
     }
   };
 
@@ -43,6 +44,7 @@ const initImageZoom = (img) => {
     noTouchZoom = false;
 
     img.classList.remove('zoomed');
+    document.body.classList.remove('lock-screen');
     img.style.transformOrigin = 'center center';
   };
 
