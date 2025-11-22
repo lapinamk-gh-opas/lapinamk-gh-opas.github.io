@@ -184,7 +184,7 @@ a.active {
   cursor: pointer;
   font-size: 1.2rem;
   position: relative;
-  top: 2px;
+  top: -2px;
   margin-right: 1.5rem;
 }
 
@@ -192,7 +192,7 @@ a.active {
 .dropdown-toggle::after {
   content: '▼';
   border-top: none;
-  top: -1px;
+  top: -3px;
   transform: rotate(0deg);
   transition: transform 0.3s ease;
 }
@@ -218,7 +218,7 @@ a.active {
   content: '+';
   line-height: 1.5rem;
   font-size: 2rem;
-  top: -1px;
+  top: -5px;
   position: relative;
   margin-right: 0.3rem;
   transition: transform 0.3s ease;
@@ -229,7 +229,7 @@ a.active {
   content: '–';
   border-top: none;
   position: relative;
-  top: -2px;
+  top: -6px;
   left: 4.5px;
   transform: scaleY(1.1);
   margin-right: 0.5rem;
