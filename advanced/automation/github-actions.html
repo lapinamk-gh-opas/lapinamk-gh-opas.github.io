@@ -2,42 +2,130 @@
   <header>
     <h1>GitHub Actions</h1>
     <p>
-      GitHub Actions on GitHubiin sisäänrakennettu <strong>CI/CD-alusta</strong>, jonka avulla
-      voidaan automatisoida ohjelmiston käännökseen, testaukseen ja käyttöönottoon liittyviä
-      prosesseja. GitHub Actions ei varsinaisesti itse suorita kaikkia työnkulkujen tehtäviä. Vaan
-      sen avulla suoritetaan virtuaalikoneella (runner) työnkulkuja (workflow), jotka käyttävät
-      YAML-tiedostossa määritettyjä työkaluja ja scriptejä haluttujen tehtävien automaattiseen
-      suorittamiseen.
+      GitHub Actions on GitHubiin
+      <strong>sisäänrakennettu CI/CD-alusta</strong>, jonka avulla voidaan
+      automatisoida ohjelmiston käännös-, testaus- ja käyttöönottoprosesseja.
+      GitHub Actions ei suorita kaikkia tehtäviä itse, vaan ajaa määriteltyjä
+      työnkulkuja (<em>workflows</em>) virtuaalikoneella (<em>runner</em>).
+      Työnkulut määritellään YAML-tiedostoissa, joissa kuvataan, mitä työkaluja
+      ja komentoja automaation tulee suorittaa.
     </p>
     <p>
-      Työnkulku käynnistyy aina, kun tietyt tapahtumat, kuten koodin push, pull request tai uuden
-      issuen luonti, tapahtuvat repositoriossa. GitHub Actionsin avulla voidaan automatisoida monia
-      toistuvia kehitys- ja ylläpitotehtäviä, myös sellaisia, jotka eivät suoraan liity
-      CI/CD-putkeen, kuten vaikkapa dokumentaatioon liittyvien tiedostojen automaattinen päivitys.
+      Työnkulku käynnistyy aina, kun
+      <strong>ennalta määritelty tapahtuma</strong>
+      (<em>event</em>) <strong>toteutuu
+      repositoriossa</strong>, kuten koodin
+      <em>push</em>, <em>pull
+      request</em> tai <em>uuden issuen luonti</em>.
+      GitHub
+      Actionsin avulla voidaan automatisoida monia toistuvia kehitys- ja
+      ylläpitotehtäviä, myös sellaisia, jotka eivät suoraan liity CI/CD-putkeen,
+      kuten esimerkiksi dokumentaation automaattiset päivitykset.
     </p>
   </header>
   <main>
+
+    <h3>Miksi GitHub Actions</h3>
+    <p>
+      GitHub Actions tarjoaa helpon tavan automatisoida toistuvat työvaiheet
+      ilman erillisiä CI/CD-työkaluja. Se vähentää manuaalista työtä, nopeuttaa
+      kehitysprosessia ja parantaa työn toistettavuutta. Työnkulut voidaan
+      rakentaa hyvin kevyistä yksittäisistä testiajoista aina monivaiheisiin
+      julkaisuprosesseihin, joten ratkaisu skaalautuu sekä pieniin
+      opiskelijaprojekteihin että laajoihin yrityssovelluksiin.
+    </p>
+
+    <h3>Keskeiset ominaisuudet</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Ominaisuus</th>
+          <th>Kuvaus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CI/CD-alusta</td>
+          <td>Automatisoi sovelluksen käännökset, testit ja julkaisut</td>
+        </tr>
+        <tr>
+          <td>Tapahtumapohjainen</td>
+          <td>Workflowt käynnistyvät esim. pushista, pull requestista,
+            aikataulusta tai manuaalisesti</td>
+        </tr>
+        <tr>
+          <td>Rinnakkaiset ja ketjutetut jobit</td>
+          <td>Nopeammat ajot ja tarkka kontrolli suoritusjärjestyksestä</td>
+        </tr>
+        <tr>
+          <td>Salaisuuksien hallinta (Secrets)</td>
+          <td>Turvallinen tapa
+            tallentaa API-avaimia,
+            tunnuksia ja muita arkaluontoisia muuttujia</td>
+        </tr>
+        <tr>
+          <td>Useat ympäristöt</td>
+          <td>Linux, Windows ja macOS -runnerit, sekä mahdollisuus ajaa sama
+            workflow
+            eri versioilla</td>
+        </tr>
+        <tr>
+          <td>Self-hosted runnerit</td>
+          <td>Workflowt voidaan ajaa myös omalla laitteella tai palvelimessa
+          </td>
+        </tr>
+        <tr>
+          <td>Marketplace-toiminnot</td>
+          <td>Valmiita actioneita, joiden avulla
+            workflowt on helpompi toteuttaa</td>
+        </tr>
+        <tr>
+          <td>Käyttörajoitukset</td>
+          <td>Ilmaisella tilillä 2000 minuuttia/kk ja 500 MB tallennustilaa
+            artifakteille ja paketeille</td>
+        </tr>
+      </tbody>
+    </table>
+
     <h3>GitHub Actions - Keskeiset käsitteet ja komponentit</h3>
 
-    <h6>Työnkulut (Workflows)</h6>
+    <p>
+      GitHub Actions -työnkulku muodostuu neljästä peruselementistä:
+      <strong>tapahtumasta (event)</strong>,
+      <strong>tehtävistä (jobs)</strong>,
+      <strong>suoritusympäristöstä (runner)</strong> ja
+      <strong>askeleista (steps)</strong>.
+      Näitä hyödyntämällä määritellään, milloin työnkulku käynnistyy,
+      mitä siinä tehdään, missä ympäristössä se ajetaan ja mitä komentoja
+      suoritetaan.
+    </p>
+
+    <h5>Työnkulut (Workflows)</h5>
+
+    <p>
+      GitHub Actions -työnkulku määritellään YAML-tiedostossa, joka sijaitsee
+      repositorion juurihakemistossa polussa
+      <code>.github/workflows/</code>. Jokainen työnkulku tallennetaan omaan
+      tiedostoonsa, esimerkiksi <code>.github/workflows/deploy.yaml</code>.
+    </p>
+
     <figure>
       <img
         class="wide-image"
         src="../../assets/images/advanced/cicd/workflow.png"
-        alt="GitHub Actions työkulun määrittävän .yaml-tiedoston aloitus" />
+        alt="GitHub Actions -työkulun määrittävän .yaml-tiedoston aloitus" />
       <figcaption>
-        GitHub Actions työkulun määrittävän .yaml-tiedosto aloitetaan nimeämällä työnkulku.
+        GitHub Actions -työkulun määrittävän .yaml-tiedosto aloitus
       </figcaption>
     </figure>
-    <ul>
-      <li
-        >Työnkulku määritellään YAML-tiedostossa, joka sijaitsee repositorion juuressa hakemistossa:
-        <code>.github/workflows/</code> eli tiedoston kanssa esim.
-        <code>.github/workflows/deploy.yaml</code>
-      </li>
-      <li>Workflow koostuu yhdestä tai useammasta tehtävästä (jobs)</li>
-      <li>Työnkulku voi käynnistyä automaattisesti, manuaalisesti tai aikataulun perusteella</li>
-    </ul>
+
+    <p>
+      Workflow toimii työnkulun <em>pääohjeena</em>: se määrittelee, milloin
+      automaatio käynnistyy ja
+      mitkä tehtävät siinä suoritetaan. Käynnistys voi tapahtua tapahtumasta,
+      manuaalisesti tai
+      ajastetusti, projektin tarpeiden mukaan.
+    </p>
 
     <div
       class="accordion"
@@ -45,197 +133,191 @@
       data-title="YAML merkintäkieli ja sisennyskäytäntö">
       <div class="contentToAccordion">
         <p>
-          <strong>YAML</strong> (YAML Ain’t Markup Language) on rakenteinen tiedostomuoto, jossa
-          sisennys kertoo tiedon hierarkian (kuten koodissa lohkot ilmaistaan sisennyksillä). GitHub
-          Actionsin workflow-tiedostot (.yml tai .yaml) perustuvat YAML-syntaksiin, joten
-          sisennyksen merkitys niissä on erittäin tärkeä. Sisennystaso kertoo, mihin avaimeen rivi
-          kuuluu. Jos rivi on väärällä tasolla voi se estää GitHub Actions työnkulun toiminnan
+          <strong>YAML</strong> (YAML Ain't Markup Language) on rakenteinen
+          tiedostomuoto, jossa sisennys kertoo tiedon hierarkian (kuten koodissa
+          lohkot ilmaistaan sisennyksillä). GitHub Actionsin workflow-tiedostot
+          (.yml tai .yaml) perustuvat YAML-syntaksiin, joten sisennyksen
+          merkitys niissä on erittäin tärkeä. Sisennystaso kertoo, mihin
+          avaimeen rivi kuuluu. Jos rivi on väärässä kohdassa, työnkulku ei
+          välttämättä toimi lainkaan.
         </p>
         <h6>Perusperiaatteet:</h6>
         <ul>
           <li>YAML käyttää rakenteen määrittelyyn sisennystä</li>
-          <li>Sisennys tehdään aina välilyönneillä, ei sarkaimilla (Tab)</li>
+          <li>Sisennys tehdään aina välilyönneillä, ei sarkaimella (Tab)</li>
           <li>
-            Suositus on käyttää 2 välilyöntiä per sisennystaso (GitHub Actions -tiedostoissa tämä on
-            yleisin tapa)
+            Yleinen käytäntö GitHub Actions -tiedostoissa on käyttää kahta
+            välilyöntiä
+            per sisennystaso
           </li>
-          <li
-            >Lisää tietoa kielestä ja syntaksista
+          <li>Lisätietoa YAML-syntaksista löydät
             <a
               target="_blank"
               rel="noopener noreferrer"
               href="https://docs.ansible.com/projects/ansible/latest/reference_appendices/YAMLSyntax.html"
-              >täällä</a
-            >.</li
-          >
+              >täältä</a>.
+          </li>
         </ul>
         <figure>
           <img
             class="wide-image"
             src="../../assets/images/advanced/cicd/yaml.png"
-            alt="Esimerkki sisennystasojen käytöstä YAML-merkintäkielessä." />
-          <figcaption> Esimerkki sisennystasojen käytöstä YAML-merkintäkielessä. </figcaption>
+            alt="Esimerkki sisennystasojen käytöstä YAML-merkintäkielessä" />
+          <figcaption> Esimerkki sisennystasojen käytöstä YAML-merkintäkielessä
+          </figcaption>
         </figure>
       </div>
     </div>
 
-    <h6>Tapahtumat (Events)</h6>
+    <h5>Tapahtumat (Events)</h5>
+    <p>
+      Event määrittelee, milloin työnkulku käynnistyy. Se voi olla koodimuutos,
+      pull requestin avaus, issuen luonti tai ajastettu suoritus
+      (<code>push</code>, <code>pull_request</code>, <code>issues</code>,
+      <code>schedule</code>). Event määritellään työnkulun YAML-tiedostossa, ja
+      sen
+      perusteella GitHub käynnistää workflow'n automaattisesti silloin, kun
+      määritelty tapahtuma toteutuu.
+    </p>
     <figure>
       <img
         class="wide-image"
         src="../../assets/images/advanced/cicd/events.png"
         alt="Työkulun laukaisevan tapahtuman määrittäminen .yaml-tiedostossa" />
       <figcaption>
-        Työkulun laukaiseva tapahtuma (events) määritetään .yaml-tiedostossa näin.
+        Työkulun laukaisevan tapahtuman (events) määrittäminen .yaml-tiedostossa
       </figcaption>
     </figure>
-    <ul>
-      <li>Työnkulku tiedostossa määritetty toiminto, joka käynnistää työnkulun</li>
-      <li
-        >Yleisimpiä esimerkkejä tapahtumista, jotka käynnistävät työkulun: push, pull_request,
-        issues, schedule</li
-      >
-    </ul>
 
-    <h6>Tehtävät (Jobs)</h6>
+
+    <h5>Tehtävät (Jobs)</h5>
+    <p>
+      Tehtävä (job) on työnkulun itsenäinen kokonaisuus, joka suoritetaan omassa
+      runner-virtuaaliympäristössään. Runneri määritellään tehtävän alussa,
+      esimerkiksi <code>ubuntu-latest</code>. Job määrittelee, mitä vaiheita
+      (steps) sen tulee suorittaa yhden ajon aikana, ja kaikki stepit ajetaan
+      samassa runnerissa.
+    </p>
     <figure>
       <img
         class="wide-image"
         src="../../assets/images/advanced/cicd/jobs.png"
         alt="Tehtävän ja runnerin määrittäminen .yaml-tiedostossa" />
       <figcaption>
-        Työnkulussa suoritettavan tehtävän (jobs) ja runnerin (ubuntu-latest) määrittäminen
-        .yaml-tiedostossa.
+        Työnkulussa suoritettavan tehtävän (jobs) ja runnerin (ubuntu-latest)
+        määrittäminen
+        .yaml-tiedostossa
       </figcaption>
     </figure>
-    <ul>
-      <li>
-        Jokainen tehtävä suoritetaan omassa runnerissa (virtuaaliympäristössä), joka määritetään
-        tehtävän alussa
-      </li>
-      <li> Tehtävä koostuu askelista (steps)</li>
-    </ul>
+
     <div class="note-box">
       <h6 class="no-margin-top">Suoritusympäristö (runner)</h6>
       <ul class="no-margin-bottom">
         <li>Runner on virtuaalikone, joka suorittaa työnkulun tehtävät</li>
-        <li>GitHub tarjoaa valmiit Linux, Windows ja macOS -virtuaaliympäristöt</li>
-        <li>Jokainen työnkulku ajetaan uudessa ja alustetussa (puhtaassa) virtuaalikoneessa</li>
+        <li>GitHub tarjoaa valmiit Linux, Windows ja macOS -virtuaaliympäristöt
+        </li>
+        <li>Jokainen työnkulku ajetaan uudessa ja alustetussa (puhtaassa)
+          virtuaalikoneessa</li>
       </ul>
     </div>
 
-    <h6>Askeleet (Steps)</h6>
+    <h5>Askeleet (Steps)</h5>
 
-    <ul>
-      <li>Tehtävän koostavat askeleet voivat olla:</li>
-      <li>Valmiita toimintoja eli actionseja</li>
-    </ul>
+    <p>
+      Askeleet (steps) ovat jobin sisällä suoritettavia komentoja tai
+      toimintoja. Ne ajetaan siinä järjestyksessä kuin ne on määritelty, ja ne
+      voivat olla joko valmiita actioneita (kuten
+      <code>actions/checkout@v4</code>) tai komentorivikomentoja.
+    </p>
     <figure>
       <img
         class="wide-image"
         src="../../assets/images/advanced/cicd/steps.png"
         alt="Askeleiden ja valmiin actionin määrittäminen .yaml-tiedostossa" />
       <figcaption>
-        Askeleiden (steps) ja valmiin actionin (actions/checkout@v4) määrittäminen .yaml-tiedostossa
+        Askeleiden (steps) ja valmiin actionin (actions/checkout@v4)
+        määrittäminen .yaml-tiedostossa
       </figcaption>
     </figure>
-    <ul>
-      <li>Tai komentorivikomentoja eli skriptejä</li>
-    </ul>
+
+    <p>Steppejä voidaan määrittää myös suoraan komentoina. Tätä käytetään
+      esimerkiksi riippuvuuksien asentamiseen, testien suorittamiseen tai muihin
+      tehtäviin.
+    </p>
+
     <figure>
       <img
         class="wide-image"
         src="../../assets/images/advanced/cicd/scripts.png"
-        alt="Scripteillä määritettyjä askeleita .yaml-tiedostossa" />
+        alt="Skripteillä määritettyjä askeleita .yaml-tiedostossa" />
       <figcaption>
-        Kuvassa on lisää .yaml-tiedostossa määritettyjä askeleita (steps), jotka ovat tässä
-        tapauksessa komentorivillä suoritettavia scriptejä.
+        Skripteillä määritettyjä askeleita .yaml-tiedostossa
       </figcaption>
     </figure>
-    <ul>
-      <li>
-        Tehtävät voivat olla riippuvaisia toisistaan (ajo järjestyksessä) tai niitä voidaan ajaa
-        rinnakkain
-      </li>
-    </ul>
-
-    <div class="note-box">
-      <h6 class="no-margin-top">Toiminnot (Actions)</h6>
-      <ul class="no-margin-bottom">
-        <li>
-          Action on uudelleenkäytettävä tehtävä, joka suorittaa tietyn toiminnon työnkulussa
-        </li>
-        <li>
-          Esimerkkejä:
-          <ul>
-            <li
-              >Koodin checkout GitHubista (actions/checkout), hakee lähdekoodi runnerin käyttöön
-            </li>
-            <li>Julkaisun (release) tekeminen GitHubiin (actions/create-release@v1)</li>
-          </ul>
-        </li>
-        <li
-          >Action voi olla valmis toiminto GitHub
-          <a target="_blank" rel="noopener noreferrer" href="https://github.com/marketplace">
-            Marketplace </a
-          >-kirjastosta tai kehittäjän itse tekemä
-        </li>
-      </ul></div
-    >
-
-    <h6>Miksi GitHub Actions?</h6>
     <p>
-      GitHub Actions mahdollistaa kehitysprosessien kattavan automaation: Rakennus, testaus ja
-      julkaisu tapahtuvat CI/CD-prosessin tavoittelemalla tavalla toistettavasti ja luotettavasti.
-      Sen mahdollistaman automaation avulla tiimit voivat keskittyä manuaalisen työn sijaan
-      kehitykseen. GitHub Actionsin mahdollistaman skaalautuvuuden ansiosta työnkulkujen laajuus voi
-      vaihdella hyvin yksinkertaisista testiajoista monimutkaisiin julkaisuprosesseihin kehittäjän
-      tarpeiden mukaisesti.
+      Stepit muodostavat jobin varsinaisen toiminnallisuuden: ne määrittelevät
+      kaikki toiminnot, jotka workflow'n aikana suoritetaan.
     </p>
 
     <div class="note-box">
-      <strong>GitHub Actions – keskeiset ominaisuudet</strong>
+      <h6 class="no-margin-top">Toiminnot (Actions)</h6>
+      <p>Action on uudelleenkäytettävä tehtävä, joka suorittaa tietyn toiminnon
+        työnkulun aikana. Se voi olla valmis toiminto GitHub
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/marketplace">
+            Marketplace </a>-kirjastosta tai kehittäjän itse tekemä ratkaisu.
+      </p>
       <ul>
         <li>
-          <strong>CI/CD-alusta:</strong> Automatisoi sovelluksen käännökset, testit ja julkaisut
-        </li>
-        <li>
-          <strong>Tapahtumapohjainen:</strong> Workflowt käynnistyvät esim. pushista, pull
-          requestista, aikataulusta tai manuaalisesta käynnistyksestä
-        </li>
-        <li>
-          <strong>Rinnakkaiset ja riippuvuudelliset jobit:</strong> Nopeammat pipeline-suoritukset
-          ja tarkka kontrolli suoritusjärjestyksestä
-        </li>
-        <li>
-          <strong>Salaisuuksien hallinta (Secrets):</strong> Turvallinen tapa tallentaa API-avaimia,
-          tunnuksia ja muita arkaluontoisia muuttujia
-        </li>
-        <li>
-          <strong>Tukee useita ympäristöjä:</strong> Linux-, Windows- ja macOS-runnerit. Lisäksi
-          saman työn voi ajaa eri ympäristöissä (esim. Ubuntu/Windows/macOS tai Node 16/18/20)
-        </li>
-        <li>
-          <strong>Self-hosted runnerit:</strong> Workflowt voidaan ajaa myös omassa laitteessa tai
-          palvelimessa
-        </li>
-        <li>
-          <strong>Marketplace-toiminnot:</strong> Tarjoaa valmiita actioneita, joiden avulla
-          workflowt on helpompi toteuttaa
-        </li>
-        <li>
-          <strong>Käyttörajoitukset:</strong> Ilmaisella GitHub-tilillä on käytettävissä
-          veloituksetta Actions runnerin suoritus aikaa <strong>2000 minuuttia/kk</strong> ja
-          <strong>tallennustilaa 500 MB/kk</strong> artifakteille ja paketeille
+          Esimerkkejä:
+          <ul>
+            <li>Koodin checkout GitHubista (actions/checkout), hakee lähdekoodi
+              runnerin käyttöön
+            </li>
+            <li>Julkaisun (release) tekeminen GitHubiin
+              (actions/create-release@v1)</li>
+          </ul>
         </li>
       </ul>
+    </div>
+
+    <div
+      class="accordion"
+      data-include="../../accordion-element/accordion.html"
+      data-title="GitHub Actions vielä pähkinänkuoressa">
+      <div class="contentToAccordion">
+        GitHub Actions -työnkulku rakentuu neljästä peruselementistä: event,
+        jobs,
+        runner ja steps.
+        </p>
+
+        <h6>Esimerkki työnkulun rakenteesta</h6>
+        <pre><code>on: 
+  push                                # Event - mikä käynnistää workflow'n
+
+jobs:                                 # Jobs - mitä workflow tekee
+  build:                              # - tässä vain yksi job 'build'
+    runs-on: ubuntu-latest            # Runner - missä jobi ajetaan
+
+    steps:                            # Steps - mitä komentoja suoritetaan
+      - uses: actions/checkout@v4     # Step 1 - ensin ajetaan valmis action
+      - run: npm install              # Step 2 - sitten komentorivikomento
+</code></pre><br>
+
+        <p>Tämä työnkulku käynnistyy aina <code>push</code>-tapahtumasta. Se
+          ajaa
+          <code>build</code>-nimisen tehtävän <code>ubuntu-latest</code>
+          -ympäristössä,
+          hakee projektin koodin käyttöön ja asentaa riippuvuudet komennolla
+          <code>npm install</code>.
+        </p>
+      </div>
     </div>
 
     <strong>Lähde:</strong>
     <em
       ><a target="_blank" rel="noopener noreferrer" href="https://docs.github.com/en/actions"
         >GitHub Actions documentation</a
-      ></em
-    >
+      ></em>
+
   </main>
 </section>
