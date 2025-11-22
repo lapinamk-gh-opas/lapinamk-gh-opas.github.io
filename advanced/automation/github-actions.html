@@ -11,8 +11,10 @@
       ja komentoja automaation tulee suorittaa.
     </p>
     <p>
-      Työnkulku käynnistyy aina, kun ennalta määritelty tapahtuma toteutuu
-      repositoriossa, kuten koodin
+      Työnkulku käynnistyy aina, kun
+      <strong>ennalta määritelty tapahtuma</strong>
+      (<em>event</em>) <strong>toteutuu
+      repositoriossa</strong>, kuten koodin
       <em>push</em>, <em>pull
       request</em> tai <em>uuden issuen luonti</em>.
       GitHub
@@ -28,7 +30,7 @@
       GitHub Actions tarjoaa helpon tavan automatisoida toistuvat työvaiheet
       ilman erillisiä CI/CD-työkaluja. Se vähentää manuaalista työtä, nopeuttaa
       kehitysprosessia ja parantaa työn toistettavuutta. Työnkulut voidaan
-      rakentaa hyvin kevyiksi yksittäisistä testiajoista aina monivaiheisiin
+      rakentaa hyvin kevyistä yksittäisistä testiajoista aina monivaiheisiin
       julkaisuprosesseihin, joten ratkaisu skaalautuu sekä pieniin
       opiskelijaprojekteihin että laajoihin yrityssovelluksiin.
     </p>
@@ -87,6 +89,17 @@
 
     <h3>GitHub Actions - Keskeiset käsitteet ja komponentit</h3>
 
+    <p>
+      GitHub Actions -työnkulku muodostuu neljästä peruselementistä:
+      <strong>tapahtumasta (event)</strong>,
+      <strong>tehtävistä (jobs)</strong>,
+      <strong>suoritusympäristöstä (runner)</strong> ja
+      <strong>askeleista (steps)</strong>.
+      Näitä hyödyntämällä määritellään, milloin työnkulku käynnistyy,
+      mitä siinä tehdään, missä ympäristössä se ajetaan ja mitä komentoja
+      suoritetaan.
+    </p>
+
     <h5>Työnkulut (Workflows)</h5>
 
     <p>
@@ -94,8 +107,6 @@
       repositorion juurihakemistossa polussa
       <code>.github/workflows/</code>. Jokainen työnkulku tallennetaan omaan
       tiedostoonsa, esimerkiksi <code>.github/workflows/deploy.yaml</code>.
-      Työnkulku sisältää kuvauksen siitä, mitä automaattisia tehtäviä GitHubin
-      pitää suorittaa ja missä tilanteissa ne käynnistyvät.
     </p>
 
     <figure>
@@ -109,10 +120,11 @@
     </figure>
 
     <p>
-      Työnkulku koostuu yhdestä tai useammasta tehtävästä (jobs), jotka voivat
-      sisältää useita vaiheita. Se voidaan käynnistää automaattisesti
-      tapahtuman perusteella, manuaalisesti tai ennalta määritellyn aikataulun
-      mukaan.
+      Workflow toimii työnkulun <em>pääohjeena</em>: se määrittelee, milloin
+      automaatio käynnistyy ja
+      mitkä tehtävät siinä suoritetaan. Käynnistys voi tapahtua tapahtumasta,
+      manuaalisesti tai
+      ajastetusti, projektin tarpeiden mukaan.
     </p>
 
     <div
@@ -159,11 +171,13 @@
 
     <h5>Tapahtumat (Events)</h5>
     <p>
-      Tapahtuma (event) määrittelee sen, mikä saa työnkulun käynnistymään.
-      Tyypillisiä tapahtumia ovat esimerkiksi <code>push</code>,
-      <code>pull_request</code>, <code>issues</code> ja <code>schedule</code>.
-      Tapahtuma asetetaan työnkulun YAML-tiedostossa, ja sen perusteella GitHub
-      tietää milloin työnkulku suoritetaan.
+      Event määrittelee, milloin työnkulku käynnistyy. Se voi olla koodimuutos,
+      pull requestin avaus, issuen luonti tai ajastettu suoritus
+      (<code>push</code>, <code>pull_request</code>, <code>issues</code>,
+      <code>schedule</code>). Event määritellään työnkulun YAML-tiedostossa, ja
+      sen
+      perusteella GitHub käynnistää workflow'n automaattisesti silloin, kun
+      määritelty tapahtuma toteutuu.
     </p>
     <figure>
       <img
@@ -178,10 +192,11 @@
 
     <h5>Tehtävät (Jobs)</h5>
     <p>
-      Tehtävä (job) on työnkulun osa, joka suoritetaan omassa erillisessä
-      runner-ympäristössään. Runneri määritellään tehtävän alussa, esimerkiksi
-      <code>ubuntu-latest</code>. Jokainen tehtävä koostuu useista askelista
-      (steps), jotka suoritetaan määritetyssä järjestyksessä.
+      Tehtävä (job) on työnkulun itsenäinen kokonaisuus, joka suoritetaan omassa
+      runner-virtuaaliympäristössään. Runneri määritellään tehtävän alussa,
+      esimerkiksi <code>ubuntu-latest</code>. Job määrittelee, mitä vaiheita
+      (steps) sen tulee suorittaa yhden ajon aikana, ja kaikki stepit ajetaan
+      samassa runnerissa.
     </p>
     <figure>
       <img
@@ -209,11 +224,10 @@
     <h5>Askeleet (Steps)</h5>
 
     <p>
-      Askeleet (steps) muodostavat tehtävän sisäisen toiminnallisuuden.
-      Jokainen askel suoritetaan siinä järjestyksessä, jossa se on määritelty.
-      Askeliin voi sisältyä valmiita toimintoja eli actionseja, kuten
-      <code>actions/checkout@v4</code>.
-    </p>
+      Askeleet (steps) ovat jobin sisällä suoritettavia komentoja tai
+      toimintoja. Ne ajetaan siinä järjestyksessä kuin ne on määritelty, ja ne
+      voivat olla joko valmiita actioneita (kuten
+      <code>actions/checkout@v4</code>) tai komentorivikomentoja.
     </p>
     <figure>
       <img
@@ -225,11 +239,12 @@
         määrittäminen .yaml-tiedostossa
       </figcaption>
     </figure>
-    <p>
-      Askeliin voi sisältyä myös komentorivikomentoja eli skriptejä, jotka
-      suoritetaan suoraan runner-ympäristössä. Näitä käytetään esimerkiksi
-      asentamiseen, testaamiseen tai projektin rakentamiseen.
+
+    <p>Steppejä voidaan määrittää myös suoraan komentoina. Tätä käytetään
+      esimerkiksi riippuvuuksien asentamiseen, testien suorittamiseen tai muihin
+      tehtäviin.
     </p>
+
     <figure>
       <img
         class="wide-image"
@@ -240,9 +255,8 @@
       </figcaption>
     </figure>
     <p>
-      Askeleiden avulla määritetään yksityiskohtaisesti, mitä tehtävän aikana
-      tapahtuu. Tehtävät voivat olla toisistaan riippuvaisia ja ne voidaan ajaa
-      tietyssä järjestyksessä tai rinnakkain työnkulun tarpeiden mukaan.
+      Stepit muodostavat jobin varsinaisen toiminnallisuuden: ne määrittelevät
+      kaikki toiminnot, jotka workflow'n aikana suoritetaan.
     </p>
 
     <div class="note-box">
@@ -296,12 +310,14 @@ jobs:                                 # Jobs - mitä workflow tekee
           hakee projektin koodin käyttöön ja asentaa riippuvuudet komennolla
           <code>npm install</code>.
         </p>
+      </div>
+    </div>
 
-
-        <strong>Lähde:</strong>
-        <em
+    <strong>Lähde:</strong>
+    <em
       ><a target="_blank" rel="noopener noreferrer" href="https://docs.github.com/en/actions"
         >GitHub Actions documentation</a
       ></em>
+
   </main>
 </section>
