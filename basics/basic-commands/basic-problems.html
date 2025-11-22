@@ -9,7 +9,7 @@
   </p>
 
   <p>
-    No problem! Versionhallinnan vahvuus on se, että
+    <em>No problem!</em> Versionhallinnan vahvuus on se, että
     <strong>virheistä voi lähes aina toipua</strong>. Git myös kertoo, mikäli
     teet virheitä
     komentoja antaessasi tai yrität jotain, mikä ei ole sallittua. Kokeile siis
@@ -65,8 +65,9 @@
           <code>git restore --source=HEAD~1 -- polku/tiedosto</code>
         </li>
         <li>Katso edellisen commitin tiedot <code>git show HEAD~1</code></li>
-        <li>Katso koko commit-historia ja miten HEAD on liikkunut
-          <code>git reflog</code>
+        <li>
+          Vertaa nykyistä tilannetta edelliseen commit-tilaan
+          <code>git diff HEAD~1</code>
         </li>
       </ul>
 
