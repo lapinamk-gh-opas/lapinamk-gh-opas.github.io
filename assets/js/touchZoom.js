@@ -32,7 +32,14 @@ const initImageZoom = (img) => {
     if (!img.classList.contains('zoomed')) {
       img.classList.add('zoomed');
       document.body.classList.add('lock-screen');
+
+      window.addEventListener('touchmove', blockTouchScroll, { passive: false });
     }
+  };
+
+  //function for blocking scroll on touch screen
+  const blockTouchScroll = (e) => {
+    e.preventDefault();
   };
 
   // Function to remove zoom effect
@@ -46,6 +53,8 @@ const initImageZoom = (img) => {
     img.classList.remove('zoomed');
     document.body.classList.remove('lock-screen');
     img.style.transformOrigin = 'center center';
+
+    window.removeEventListener('touchmove', blockTouchScroll);
   };
 
   // Prevents unwanted zoom if finger is moved during touch
