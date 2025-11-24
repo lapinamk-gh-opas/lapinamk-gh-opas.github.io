@@ -2,8 +2,10 @@
   <header>
     <h1>Gitin käyttö Visual Studio Codessa</h1>
     <p>
-      Tällä sivulla käsitellään Gitin käyttöä Microsoftin kehittämällä koodieditorilla
-      <strong>Visual Studio Codella</strong> (tai lyhyemmin <strong>VS Codella</strong>).
+      Tällä sivulla käsitellään Gitin käyttöä Microsoftin kehittämällä
+      koodieditorilla
+      <strong>Visual Studio Codella</strong> (tai lyhyemmin
+      <strong>VS Codella</strong>).
     </p>
     <div
       class="accordion"
@@ -11,10 +13,13 @@
       data-title="Gitin ja GitHubin käyttöönotto VS Codessa">
       <div class="contentToAccordion">
         <p class="keep-margin">
-          Gitin ja GitHubin käyttöönottoon Visual Studio Codessa ei tarvita yleensä muita
+          Gitin ja GitHubin käyttöönottoon Visual Studio Codessa ei tarvita
+          yleensä muita
           toimenpiteitä kuin ne, jotka on tehty osiossa
-          <a href="/basics/git-install.html">1.4 Käyttöönotto</a>. Kirjautumalla kuitenkin sisään
-          omaan GitHub-tiliisi saat käyttöösi useita lisäominaisuuksia, kuten VS Coden asetusten
+          <a href="/basics/git-install.html">1.4 Käyttöönotto</a>. Kirjautumalla
+          kuitenkin sisään
+          omaan GitHub-tiliisi saat käyttöösi useita lisäominaisuuksia, kuten VS
+          Coden asetusten
           varmuuskopioinnin, GitHub Copilotin ja muita GitHub-liitännäisiä.
         </p>
         <h5>Kirjautuminen tapahtuu seuraavasti</h5>
@@ -51,7 +56,8 @@
             <div class="note-box">
               <ul>
                 <li class="warning">
-                  Mikäli sinulla on jo GitHub auki selaimessa ja olet kirjautunut sisään, voit
+                  Mikäli sinulla on jo GitHub auki selaimessa ja olet
+                  kirjautunut sisään, voit
                   siirtyä suoraan kohtaan
                   <strong>6. Käytettävän tilin valinta</strong>.
                 </li>
@@ -77,7 +83,8 @@
             </figure>
           </li>
           <li>
-            Anna kaksivaiheisen tunnistautumisen avainkoodi tunnistautumissovelluksestasi <br />
+            Anna kaksivaiheisen tunnistautumisen avainkoodi
+            tunnistautumissovelluksestasi <br />
 
             Klikkaa
             <strong>Verify</strong>
@@ -106,9 +113,12 @@
             <strong>Continue</strong> käyttäjänimen vierestä
 
             <p class="note-box">
-              Mikäli sinulla oli GitHub avoinna selaimessa ja olit jo valmiiksi kirjautuneena sinne
-              sisään ja jos sinulla on kaksivaiheinen tunnistautuminen käytössä saattaa GitHub tämän
-              vaiheen jälkeen pyytää vielä syöttämään tunnistautumissovelluksen avainkoodin (kts.
+              Mikäli sinulla oli GitHub avoinna selaimessa ja olit jo valmiiksi
+              kirjautuneena sinne
+              sisään ja jos sinulla on kaksivaiheinen tunnistautuminen käytössä
+              saattaa GitHub tämän
+              vaiheen jälkeen pyytää vielä syöttämään tunnistautumissovelluksen
+              avainkoodin (kts.
               kohta 4).
             </p>
 
@@ -164,9 +174,12 @@
       </div>
     </div>
     <p>
-      Osiossa luodaan edellisen sivun malliin editorin avulla jälleen tiedosto ja paikallinen
-      repositorio sekä viedään se samaan, edellisessä osiossakin käytettyyn, etärepositorioon, mutta
-      käytetään tälle osiolle omaa haaraansa. Gitin käyttöön VS Coden terminaalista voit hyödyntää
+      Osiossa luodaan edellisen sivun malliin editorin avulla jälleen tiedosto
+      ja paikallinen
+      repositorio sekä viedään se samaan, edellisessä osiossakin käytettyyn,
+      etärepositorioon <strong>git-opas</strong>, mutta
+      käytetään tälle osiolle omaa haaraansa. Gitin käyttöön VS Coden
+      terminaalista voit hyödyntää
       edellisen sivun ohjeita.
     </p>
     <!-- Accordion element with reused content starts -->
@@ -182,8 +195,10 @@
     </div>
     <!-- Reusable accordion element ends -->
     <p class="note-box">
-      Huomiona mainittakoon, että VS Code tarjoaa mahdollisuuksia tehdä Git toimintoja usealla eri
-      tavalla. Jotkin toiminnoista voi tehdä mahdollisesti myös toisella tapaa, ehkäpä jopa paremmin
+      Huomiona mainittakoon, että VS Code tarjoaa mahdollisuuksia tehdä Git
+      toimintoja usealla eri
+      tavalla. Jotkin toiminnoista voi tehdä mahdollisesti myös toisella tapaa,
+      ehkäpä jopa paremmin
       tai tehokkaammin kuin mitä ohjeessa on esitetty.
     </p>
   </header>
@@ -194,7 +209,8 @@
       <h6>Luo uusi kansio testausta varten</h6>
       <ul>
         <li>Klikkaa <strong>Open Folder</strong></li>
-        <li> Navigoi haluamaasi kansioon ja klikkaa <strong>Uusi kansio</strong> </li>
+        <li> Navigoi haluamaasi kansioon ja klikkaa <strong>Uusi kansio</strong>
+        </li>
         <li>Anna kansiolle nimi ja klikkaa <strong>Valitse kansio</strong></li>
       </ul>
       <figure>
@@ -224,8 +240,10 @@
       <h6>Luo paikallinen repositorio</h6>
       <ul>
         <li>
-          Avaa Source Control-valikko klikkaamalla sivupalkin kuvakkeesta tai näppäimillä
-          <strong>CTRL + SHIFT + G</strong>. Klikkaa Source Control kuvaketta sivuvalikosta.
+          Avaa Source Control-valikko klikkaamalla sivupalkin kuvakkeesta tai
+          näppäimillä
+          <strong>CTRL + SHIFT + G</strong>. Klikkaa Source Control kuvaketta
+          sivuvalikosta.
         </li>
         <li>
           Valitse avautuneesta valikosta
@@ -245,7 +263,8 @@
       <h6>Yhdistä paikallinen repositorio etärepositorioon</h6>
       <ul>
         <li>
-          Klikkaa kolmea pistettä luodun repositorion vierestä ja valitse Remote-valikon alta
+          Klikkaa kolmea pistettä luodun repositorion vierestä ja valitse
+          Remote-valikon alta
           valinta
           <strong>Add Remote...</strong>
         </li>
@@ -295,7 +314,8 @@
       <div class="note-box">
         <ul>
           <li class="warning">
-            Mikäli käytät uutta tyhjää etärepositoriota jätä tämä vaihe välistä ja siirry kohtaan
+            Mikäli käytät uutta tyhjää etärepositoriota jätä tämä vaihe välistä
+            ja siirry kohtaan
             <em class="no-line-change">5. Luo uusi tiedosto testausta varten</em>.
           </li>
         </ul>
@@ -312,19 +332,22 @@
           class="wide-image"
           src="../../assets/images/basics/IDE-and-usage/vscode/git vscode 5.webp"
           alt="Etärepositorion sisällön tuominen paikalliseen repositorioon" />
-        <figcaption> Etärepositorion sisällön tuominen paikalliseen repositorioon </figcaption>
+        <figcaption> Etärepositorion sisällön tuominen paikalliseen
+          repositorioon </figcaption>
       </figure>
       <ul>
         <li>Valitse haara jonka sisällön haluat tuoda</li>
         <li>
-          <strong>origin/HEAD</strong> tarkoittaa aina etärepositorion oletushaara (Default)
+          <strong>origin/HEAD</strong> tarkoittaa aina etärepositorion
+          oletushaara (Default)
         </li>
         <li>
           Tässä tapauksessa repositorion oletus haara on nimeltään
           <strong>origin/main</strong>
         </li>
         <li>
-          Eli molemmat vaihtoehdot ovat siis tällä hetkellä tämän repositorion kohdalla yksi ja sama
+          Eli molemmat vaihtoehdot ovat siis tällä hetkellä tämän repositorion
+          kohdalla yksi ja sama
           haara
         </li>
       </ul>
@@ -341,14 +364,16 @@
       <h6>Luo uusi tiedosto testausta varten</h6>
       <ul>
         <li>
-          Avaa Explorer-valikko klikkaamalla sivupalkin kuvakkeesta tai näppäimillä
+          Avaa Explorer-valikko klikkaamalla sivupalkin kuvakkeesta tai
+          näppäimillä
           <strong>CTRL + SHIFT + E</strong>
         </li>
         <li>
           Kansion nimen vierestä uusi tiedosto
           <strong>kuvaketta</strong>
         </li>
-        <li> Anna tiedostolle nimi esim. <code>tiedosto-vs-codella.md</code> + enter </li>
+        <li> Anna tiedostolle nimi esim. <code>tiedosto-vs-codella.md</code> +
+          enter </li>
       </ul>
 
       <figure>
@@ -393,16 +418,21 @@
           <!-- Accordion content starts -->
           <ul>
             <li>
-              Avaa Source Control -valikko klikkaamalla sivupalkin kuvakkeesta tai näppäimillä
-              <strong>CTRL + SHIFT + G</strong> </li
-            ><li>
-              Klikkaa <strong>Changes</strong> -valikon alta <strong>README.MD</strong> tiedostoa
+              Avaa Source Control -valikko klikkaamalla sivupalkin kuvakkeesta
+              tai näppäimillä
+              <strong>CTRL + SHIFT + G</strong>
             </li>
             <li>
-              Aukeaa ruutu README.md (working tree) jonka avulla voit tarkastella muutoksia
+              Klikkaa <strong>Changes</strong> -valikon alta
+              <strong>README.MD</strong> tiedostoa
+            </li>
+            <li>
+              Aukeaa ruutu README.md (working tree) jonka avulla voit
+              tarkastella muutoksia
               tiedoston edellisen commitin tilaan verrattuna
             </li>
-            <li> Ikkunassa näkyy tehdyt muutokset vihreällä ja aikaisempi koodi punaisella </li>
+            <li> Ikkunassa näkyy tehdyt muutokset vihreällä ja aikaisempi koodi
+              punaisella </li>
           </ul>
 
           <figure>
@@ -433,10 +463,10 @@
       <div class="note-box">
         <ul>
           <li class="warning">
-            Teoriaa Gitin haaroihin (branches) liittyen käydään läpi tarkemmin osiossa
+            Teoriaa Gitin haaroihin (branches) liittyen käydään läpi tarkemmin
+            osiossa
             <a class="no-line-change" href="/teamwork/branches.html#branches"
-              >2.1 Tiimityö ja haarat</a
-            >.
+              >2.1 Tiimityö ja haarat</a>.
           </li>
         </ul>
       </div>
@@ -451,10 +481,12 @@
     </li>
 
     <li>
-      <h6> Lisää muutokset ja uusi tiedosto välialueelle (staging) ja tee commit </h6>
+      <h6> Lisää muutokset ja uusi tiedosto välialueelle (staging) ja tee commit
+      </h6>
       <ul>
         <li>
-          Klikkaa kolmea pistettä ja valitse <strong>Changes</strong>-valikon alta valinta
+          Klikkaa kolmea pistettä ja valitse <strong>Changes</strong>-valikon
+          alta valinta
           <strong>Stage All Changes</strong>. Tämä vastaa komentoa
           <code>git add .</code>
         </li>
@@ -463,8 +495,10 @@
       <div class="note-box">
         <ul>
           <li class="warning">
-            Käytä komentoa <code>git add .</code> varoen. Varsinkin jos projekti sisältää
-            arkaluontoista tietoa. Harkitse myös <code>.gitignore</code> -tiedoston lisäämistä
+            Käytä komentoa <code>git add .</code> varoen. Varsinkin jos projekti
+            sisältää
+            arkaluontoista tietoa. Harkitse myös <code>.gitignore</code>
+            -tiedoston lisäämistä
             projektiin. Lisää tietoa gitignoresta luvussa
             <a href="/teamwork/privacy-and-security.html">2.5 Yksityisyys ja tietoturva</a>.
           </li>
@@ -504,7 +538,8 @@
           <!-- Accordion content starts -->
           <ul>
             <li>
-              Jätä <em>message</em> kenttä tyhjäksi ja paina <strong>Commit</strong> painiketta
+              Jätä <em>message</em> kenttä tyhjäksi ja paina
+              <strong>Commit</strong> painiketta
             </li>
           </ul>
 
@@ -555,10 +590,13 @@
       </figure>
 
       <ul>
-        <li> VS Code ilmoittaa, että etärepositoriossa ei ole tämän nimistä haaraa </li>
-        <li> Valitsemalla <strong>OK</strong> voit luoda haaran etärepositorioon </li>
+        <li> VS Code ilmoittaa, että etärepositoriossa ei ole tämän nimistä
+          haaraa </li>
+        <li> Valitsemalla <strong>OK</strong> voit luoda haaran etärepositorioon
+        </li>
         <li>
-          Vaihtoehtoisesti voit painaa <strong>Publish Branch</strong> -painiketta, joka luo uuden
+          Vaihtoehtoisesti voit painaa <strong>Publish Branch</strong>
+          -painiketta, joka luo uuden
           haaran etärepositorioon ja vie muutokset sinne samalla
         </li>
       </ul>

@@ -2,24 +2,42 @@
 .navbar {
   background-color: #ffffff !important;
   border-bottom: #14827d 2px solid;
-  min-height: 96px;
+  min-height: 80px;
 }
 
 /* navbar logo and text area */
 .navbar-brand {
   display: flex;
   align-items: center;
+  gap: 0.75rem;
   max-width: 70%;
 }
 
 /* navbar header text */
 .navbar-text {
-  padding: 0 1vw;
-  color: #000000 !important;
+  padding: 0;
+  color: var(--bs-body-color);
   white-space: normal;
-  word-break: break-word;
-  min-height: 28px;
   margin: 0;
+  word-break: break-word;
+}
+
+/* main title in navbar */
+.navbar-text h4 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+/* subtitle in navbar */
+.navbar-text .navbar-subtitle {
+  margin: 0.1rem 0 0 0;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #6c757d;
 }
 
 /* navbar items right padding */
@@ -29,16 +47,18 @@
 
 /* navbar items padding and text */
 .nav-item {
-  padding: 0 1vw;
+  padding: 0 0.7vw;
   margin: 0;
-  font-weight: bold;
-  color: #000000 !important;
+  font-weight: 600;
   white-space: nowrap;
 }
 
 /* navbar items hover effect */
 .nav-link:hover {
   color: #14827d !important;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }
 
 /* lay out changes for mobile */

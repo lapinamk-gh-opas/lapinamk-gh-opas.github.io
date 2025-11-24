@@ -30,6 +30,21 @@
   line-height: 1.2;
 }
 
+.footer-text {
+  text-align: center;
+  line-height: 1.2;
+}
+
+.footer-subtitle {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.footer-note {
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
 /* ---------- Footer for mobile ---------- */
 @media (max-width: 600px) {
   .site-footer {

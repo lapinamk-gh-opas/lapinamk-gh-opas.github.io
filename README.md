@@ -30,7 +30,7 @@ Opas on julkaistu GitHub Pages -sivuna:
 
 Opasta voivat päivittää vain valtuutetut henkilöt.  
 Päivitysohjeet löytyvät projektin wikistä:  
-👉 [Päivitysohje (Wiki)](https://github.com/lapinamk-gh-opas/lapinamk-gh-opas/wiki/P%C3%A4ivitysohje)
+👉 [Päivitysohje (Wiki)](https://github.com/lapinamk-gh-opas/lapinamk-gh-opas.github.io/wiki/Update-Manual)
 
 ---
 
@@ -62,6 +62,6 @@ The guide is published via GitHub Pages:
 
 The guide can only be updated by authorized contributors.  
 For update instructions, see the project wiki:  
-👉 [Update Guide (Wiki)](https://github.com/lapinamk-gh-opas/lapinamk-gh-opas/wiki/P%C3%A4ivitysohje)
+👉 [Update Manual (Wiki)](https://github.com/lapinamk-gh-opas/lapinamk-gh-opas.github.io/wiki/Update-Manual)
 
 ---
