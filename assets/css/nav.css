@@ -22,6 +22,10 @@
   word-break: break-word;
 }
 
+.navbar-brand:hover {
+  text-decoration: none !important;
+}
+
 /* main title in navbar */
 .navbar-text h4 {
   margin: 0;
