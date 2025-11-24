@@ -72,11 +72,11 @@ a {
 }
 
 a:hover {
-  color: #14827d;
+  text-decoration: underline 2px;
 }
 
 code {
-  color: #ae2e6e;
+  color: #96285f;
   font-size: 0.95rem;
   font-family: 'Fira Code', 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas,
     monospace;
