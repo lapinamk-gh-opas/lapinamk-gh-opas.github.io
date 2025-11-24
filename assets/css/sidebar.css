@@ -192,7 +192,6 @@ a.active {
 .dropdown-toggle::after {
   content: '▼';
   border-top: none;
-  top: -1px;
   transform: rotate(0deg);
   transition: transform 0.3s ease;
 }
@@ -310,8 +309,17 @@ a.active {
     left: 300px;
   }
 
-  .sidebar.closed .dropdown-toggle {
-    transform: translateY(4px) !important;
+  .toggle-arrow {
+    top: -50px;
+  }
+
+  .dropdown-toggle::after {
+    position: relative;
+    top: 0.5px;
+  }
+
+  .dropdown-toggle.commands::after {
+    top: -0.8px;
   }
 }
 
@@ -402,4 +410,7 @@ a.active {
   border-radius: 5px;
   cursor: pointer;
   font-size: 0.8rem;
+}
+
+@media (max-width: 1200px) {
 }
