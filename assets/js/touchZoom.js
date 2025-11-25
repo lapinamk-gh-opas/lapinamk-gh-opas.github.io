@@ -1,6 +1,12 @@
 // This script enables zoom-on-hold for images (mouse and touch).
 
 let images = []; // array to track images that have zoom functionality initialized
+const parentElement = document.querySelector('#content'); //used to block touch scroll
+
+//function for blocking scroll on touch screen
+const blockTouchScroll = (e) => {
+  e.preventDefault();
+};
 
 // Initializes zoom functionality for a given image
 const initImageZoom = (img) => {
@@ -31,15 +37,9 @@ const initImageZoom = (img) => {
     // Apply zoom class, zoom amount is handled in CSS
     if (!img.classList.contains('zoomed')) {
       img.classList.add('zoomed');
-      document.body.classList.add('lock-screen');
 
       window.addEventListener('touchmove', blockTouchScroll, { passive: false });
     }
-  };
-
-  //function for blocking scroll on touch screen
-  const blockTouchScroll = (e) => {
-    e.preventDefault();
   };
 
   // Function to remove zoom effect
@@ -84,6 +84,7 @@ const initImageZoom = (img) => {
           e.preventDefault();
           longPressed = true;
           addZoom(touch.clientX, touch.clientY);
+          parentElement.classList.add('lock-screen');
         }
       }, 150);
     },
@@ -105,11 +106,13 @@ const initImageZoom = (img) => {
   // remove zoom on touch end with removeZoom function
   img.addEventListener('touchend', () => {
     removeZoom();
+    parentElement.classList.remove('lock-screen');
   });
 
   // remove zoom on touch cancel with removeZoom function
   img.addEventListener('touchcancel', () => {
     removeZoom();
+    parentElement.classList.remove('lock-screen');
   });
 
   // add zoom on mouse down

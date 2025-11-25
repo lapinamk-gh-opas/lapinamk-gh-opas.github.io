@@ -25,6 +25,14 @@ img.zoomed:not(.no-zoom) {
   z-index: 15;
   transition: transform 0.25s ease, left 0.25s ease;
   touch-action: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.lock-screen {
+  overflow: hidden;
+  touch-action: none;
 }
 
 .accordion img.zoomed:not(.no-zoom) {

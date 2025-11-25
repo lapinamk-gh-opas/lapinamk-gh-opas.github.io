@@ -1,47 +1,43 @@
 <section class="introduction">
   <header>
-    <h1>Merge-konfliktin perusteet</h1>
+    <h1>Merge-konfliktien perusteet</h1>
   </header>
 
   <p>
     Merge on yksi versionhallinnan tärkeimmistä toiminnoista. Sen avulla
-    <strong>eri kehityshaarojen muutokset voidaan
-    yhdistää yhdeksi kokonaisuudeksi</strong>. Useimmiten Git osaa tehdä
-    tämän automaattisesti, mutta jos haaroissa on ristiriitaisia muutoksia
-    samoihin riveihin tai tiedostoihin, Git ei pysty päättämään, mikä versio
-    tulisi säilyttää. Tällöin syntyy merge-konflikti, joka on
-    ratkaistava manuaalisesti.
+    <strong>eri kehityshaarojen muutokset voidaan yhdistää yhdeksi kokonaisuudeksi</strong>.
+    Useimmiten Git osaa tehdä tämän automaattisesti, mutta jos haaroissa on ristiriitaisia muutoksia
+    samoihin riveihin tai tiedostoihin, Git ei pysty päättämään, mikä versio tulisi säilyttää.
+    Tällöin syntyy merge-konflikti, joka on ratkaistava manuaalisesti.
   </p>
 
-  <p class="note-box">Merge-konflikti täytyy ratkaista ennen
-    kuin <em>merge</em> voidaan viedä loppuun.</p>
+  <p class="note-box"
+    >Merge-konflikti täytyy ratkaista ennen kuin <em>merge</em> voidaan viedä loppuun.</p
+  >
 
   <h3>Merge-konfliktin tunnistaminen</h3>
 
   <p>
     Kun merge epäonnistuu konfliktin vuoksi,
-    <strong>Git ilmoittaa siitä</strong> komentorivillä,
-    IDE:ssä tai GitHubissa. Konfliktin saaneet tiedostot merkitään
-    automaattisesti, jotta ne on helppo tunnistaa ja korjata.
+    <strong>Git ilmoittaa siitä</strong> komentorivillä, IDE:ssä tai GitHubissa. Konfliktin saaneet
+    tiedostot merkitään automaattisesti, jotta ne on helppo tunnistaa ja korjata.
   </p>
   <p>
-    Git listaa kaikki konfliktit myös komennolla <code>git status</code>.
-    Konfliktin saaneet
-    tiedostot näkyvät merkinnällä <em>both modified</em>, mikä tarkoittaa, että
-    molemmissa haaroissa
-    on tehty muutoksia samaan tiedostoon. <em>Current change</em> viittaa omaan
-    haaraasi ja
+    Git listaa kaikki konfliktit myös komennolla <code>git status</code>. Konfliktin saaneet
+    tiedostot näkyvät merkinnällä <em>both modified</em>, mikä tarkoittaa, että molemmissa haaroissa
+    on tehty muutoksia samaan tiedostoon. <em>Current change</em> viittaa omaan haaraasi ja
     <em>incoming change</em> yhdistettävään haaraan.
   </p>
 
+  <!-- accordion 1. start-->
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
     data-title="Merge-konfliktin merkinnät tiedostossa">
     <div class="contentToAccordion">
+      <!-- accordion content start-->
       <p>
-        Git merkitsee <strong>merge-konfliktin</strong> selkeästi tiedostoon
-        tunnisteiden
+        Git merkitsee <strong>merge-konfliktin</strong> selkeästi tiedostoon tunnisteiden
         <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> ja
         <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> väliin.
       </p>
@@ -59,21 +55,19 @@
       </code>
 
       <p>
-        <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> -kohdan ja
-        <code>=======</code> väliin jäävä
-        osuus näyttää sen version, joka on omassa haarassasi
-        (<em>current change</em>). <br>
-        <code>=======</code> ja <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>
-        -merkkien väliin jäävä osa
-        taas näyttää koodin, joka on yhdistettävässä haarassa
-        (<em>incoming change</em>).
+        <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> -kohdan ja <code>=======</code> väliin jäävä
+        osuus näyttää sen version, joka on omassa haarassasi (<em>current change</em>). <br />
+        <code>=======</code> ja <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> -merkkien väliin jäävä osa
+        taas näyttää koodin, joka on yhdistettävässä haarassa (<em>incoming change</em>).
       </p>
+      <!-- accordion content end-->
     </div>
   </div>
+  <!-- accordion 1. end-->
 
   <p>
-    VS Codessa ja muissa vastaavissa IDE:issä konfliktit näkyvät myös usein
-    värikoodattuina, mikä helpottaa niiden tunnistamista ja löytämistä.
+    VS Codessa ja muissa vastaavissa IDE:issä konfliktit näkyvät myös usein värikoodattuina, mikä
+    helpottaa niiden tunnistamista ja löytämistä.
   </p>
 
   <figure>
@@ -88,47 +82,40 @@
 
   <p>
     Merge-konfliktit voidaan ratkaista <strong>komentorivillä</strong>,
-    <strong>GitHubissa</strong> tai
-    <strong>paikallisessa kehitysympäristössä</strong>, kuten Visual Studio
-    Codessa. GitHubin selainversio ja komentorivi sopivat hyvin yksinkertaisiin
-    muutoksiin, mutta monimutkaisemmat konfliktit on helpointa ratkaista VS
-    Codessa tai muussa visuaalisessa IDE:ssä, jossa näet molemmat versiot
-    koodista rinnakkain. Näin on helppo valita, mitkä muutokset
-    säilytetään, ja
-    varmistaa, että kaikki toimii ennen yhdistämistä.
+    <strong>GitHubissa</strong> tai <strong>paikallisessa kehitysympäristössä</strong>, kuten Visual
+    Studio Codessa. GitHubin selainversio ja komentorivi sopivat hyvin yksinkertaisiin muutoksiin,
+    mutta monimutkaisemmat konfliktit on helpointa ratkaista VS Codessa tai muussa visuaalisessa
+    IDE:ssä, jossa näet molemmat versiot koodista rinnakkain. Näin on helppo valita, mitkä muutokset
+    säilytetään, ja varmistaa, että kaikki toimii ennen yhdistämistä.
   </p>
 
   <p>
-    Yksinkertaiset merge-konfliktit voi ratkaista itse, mutta monimutkaisemmat
-    tilanteet on hyvä käydä läpi yhdessä sen tiimikaverin kanssa, jonka koodin
-    kanssa konflikti syntyi. Yhteistyössä on helpompi päättää, mitkä muutokset
-    säilytetään ja miksi.
+    Yksinkertaiset merge-konfliktit voi ratkaista itse, mutta monimutkaisemmat tilanteet on hyvä
+    käydä läpi yhdessä sen tiimikaverin kanssa, jonka koodin kanssa konflikti syntyi. Yhteistyössä
+    on helpompi päättää, mitkä muutokset säilytetään ja miksi.
   </p>
 
   <p>
-    Kun ristiriita on ratkaistu, poista konfliktimerkit tiedostosta, tallenna
-    muutokset ja tee uusi commit.
+    Kun ristiriita on ratkaistu, poista konfliktimerkit tiedostosta, tallenna muutokset ja tee uusi
+    commit.
   </p>
 
-  <p class="note-box">Nykyään myös GitHubin copilot voi auttaa merge-konfliktien
-    ratkaisemisessa
-    tarjoamalla ehdotuksia ja automaattisia korjauksia. Kannattaa kuitenkin aina
-    varmistaa, että ehdotukset ovat järkeviä ennen niiden hyväksymistä.</p>
+  <p class="note-box"
+    >Nykyään myös GitHubin copilot voi auttaa merge-konfliktien ratkaisemisessa tarjoamalla
+    ehdotuksia ja automaattisia korjauksia. Kannattaa kuitenkin aina varmistaa, että ehdotukset ovat
+    järkeviä ennen niiden hyväksymistä.</p
+  >
 
   <h5>Merge-konfliktin peruminen</h5>
 
   <p>
-    Jos merge ei etene toivotusti ja haluat peruuttaa sen
-    kokonaan, voit tehdä sen komennolla
-    <code>git merge --abort</code>. Tämä
-    palauttaa haaran tilaan ennen merge-komennon suorittamista, jolloin voit
-    aloittaa prosessin alusta tai harkita muita vaihtoehtoja.
+    Jos merge ei etene toivotusti ja haluat peruuttaa sen kokonaan, voit tehdä sen komennolla
+    <code>git merge --abort</code>. Tämä palauttaa haaran tilaan ennen merge-komennon suorittamista,
+    jolloin voit aloittaa prosessin alusta tai harkita muita vaihtoehtoja.
   </p>
 
   <p class="note-box">
-    <strong>Huom!</strong> Merge-konfliktit ovat normaali osa
-    ohjelmistokehitystä. Avaa tiedosto,
-    tarkista merkatut kohdat ja päätä rauhassa, mitkä muutokset haluat
-    säilyttää.
+    <strong>Huom!</strong> Merge-konfliktit ovat normaali osa ohjelmistokehitystä. Avaa tiedosto,
+    tarkista merkatut kohdat ja päätä rauhassa, mitkä muutokset haluat säilyttää.
   </p>
 </section>

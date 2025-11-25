@@ -35,10 +35,6 @@ body {
   overflow: hidden;
 }
 
-.lock-screen {
-  touch-action: none;
-}
-
 /*header styles*/
 h1,
 h2,

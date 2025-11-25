@@ -1,19 +1,24 @@
-// Function gets page/file name from URL hash (# part of url)
-// (eg. /basics/git-install.html#create-account --> create-account)
+// Function gets page/file name from URL hash (?section= part of url)
+// (eg. /basics/git-install.html?section=create-account --> create-account)
 // If no hash is found, it sets value of data-page attribute from first link inside div
 // with id mainContainer to the URL hash and returns that
-export function getPageFromHash() {
-  const content = location.hash.substring(1); // gets hash part of URL and removes #
-  if (!content) {
-    const container = document.getElementById('mainContainer'); // gets main container div
-    const first = container.querySelectorAll('[data-page]')[0]; // gets first link with data-page attribute
+export function getPageFromParam() {
+  const params = new URLSearchParams(location.search);
+  const section = params.get('section');
+
+  if (!section) {
+    const container = document.getElementById('mainContainer');
+    const first = container.querySelector('[data-page]');
     if (first) {
-      const firstSubContent = first.getAttribute('data-page'); // gets value of data-page attribute
-      location.hash = firstSubContent; // sets URL hash to that value
-      return firstSubContent; // returns that value
+      const firstSection = first.getAttribute('data-page');
+      const newUrl = `${location.pathname}?section=${firstSection}`;
+      history.replaceState(null, '', newUrl);
+      return firstSection;
     }
+    return null;
   }
-  return content; // returns the hash value if found
+
+  return section;
 }
 
 // Function gets path from URL hash
@@ -36,10 +41,25 @@ export async function loadPage(subContent, basePath) {
   const container = document.getElementById('content'); // looks for div by id
   try {
     if (basePath && subContent) {
-      const content = await fetch(`${basePath}/${subContent}.html`); // fetches the content to show
-      if (!content.ok) throw new Error(content.statusText); // error handling if fetch fails
-      container.innerHTML = await content.text(); // sets content to container div
-      location.hash = subContent;
+      const response = await fetch(`${basePath}/${subContent}.html`);
+      if (!response.ok) throw new Error(response.statusText);
+
+      container.innerHTML = await response.text();
+
+      const params = new URLSearchParams(location.search);
+      params.set('section', subContent);
+      const newUrl = `${location.pathname}?${params.toString()}`;
+      history.replaceState(null, '', newUrl);
+    }
+
+    const firstH1 = document.querySelector('#content h1');
+
+    if (firstH1) {
+      const titleEl = document.getElementById('page-title');
+      const origTitle = titleEl.textContent;
+      const text = firstH1.textContent.trim();
+
+      if (titleEl) titleEl.textContent = `${text} | Git ja GitHub Opiskelijan opas`;
     }
     document.dispatchEvent(new Event('links:loaded'));
     document.dispatchEvent(new Event('subContent:loaded'));

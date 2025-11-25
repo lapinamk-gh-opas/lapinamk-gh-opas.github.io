@@ -8,25 +8,24 @@
     </p>
 
     <p>
-      Harjoituksessa simuloidaan konfliktia ja sen korjaamista hyödyntäen
-      VS Codea, terminaalia sekä GitHubia.
+      Harjoituksessa simuloidaan konfliktia ja sen korjaamista hyödyntäen VS Codea, terminaalia sekä
+      GitHubia.
     </p>
 
     <div class="note-box">
-      <strong>Huom!</strong> Merge-konflikteja voidaan ratkaista myös monilla
-      muilla eri tavoilla ja työkaluilla, esimerkiksi GitHubin editorilla, VS
-      Coden merge-näkymällä tai komentorivipohjaisilla ratkaisuilla.
+      <strong>Huom!</strong> Merge-konflikteja voidaan ratkaista myös monilla muilla eri tavoilla ja
+      työkaluilla, esimerkiksi GitHubin editorilla, VS Coden merge-näkymällä tai
+      komentorivipohjaisilla ratkaisuilla.
     </div>
-
   </header>
   <main>
     <h2>Merge-konfliktien ratkaiseminen</h2>
 
     <p>
-      Aluksi luodaan paikallinen kansio ja kloonataan siihen
-      etärepositorio <strong>git-opas</strong>. Sen jälkeen muokataan samaa
-      tiedostoa GitHubin päähaarassa sekä paikallisesti omassa haarassa, ja
-      lopuksi yhdistetään muutokset, jolloin syntyy merge-konflikti.
+      Aluksi luodaan paikallinen kansio ja kloonataan siihen etärepositorio
+      <strong>git-opas</strong>. Sen jälkeen muokataan samaa tiedostoa GitHubin päähaarassa sekä
+      paikallisesti omassa haarassa, ja lopuksi yhdistetään muutokset, jolloin syntyy
+      merge-konflikti.
     </p>
 
     <ol>
@@ -43,11 +42,11 @@
           <figcaption>Aloitusnäkymä VS Codessa</figcaption>
         </figure>
         <ul>
-          <li>Navigoi haluamaasi kansioon ja klikkaa
+          <li
+            >Navigoi haluamaasi kansioon ja klikkaa
             <strong>Uusi kansio</strong>
           </li>
-          <li>Anna kansiolle nimi ja klikkaa <strong>Valitse kansio</strong>
-          </li>
+          <li>Anna kansiolle nimi ja klikkaa <strong>Valitse kansio</strong> </li>
         </ul>
         <figure>
           <img
@@ -57,20 +56,18 @@
           <figcaption>Uuden kansion luominen ja valitseminen</figcaption>
         </figure>
 
-        <!-- Accordion element starts -->
+        <!-- Accordion element 1. starts -->
         <div
           class="accordion"
           data-include="../../accordion-element/accordion.html"
           data-title="Do you trust the authors of the files in this folder? -varoitus">
-          <!-- Reused accordion content starts -->
           <div
             class="contentToAccordion reused-accordion"
             data-include="/reused-accordion-content/trust-the-authors.html">
             <!-- Accordion content starts from /reused-accordion-content/trust-the-authors.html-->
           </div>
-          <!-- Reused accordion content ends -->
         </div>
-        <!-- Accordion element ends -->
+        <!-- Accordion element 1. ends -->
       </li>
       <li>
         <h6>Kloonaa (<em>clone</em>) etärepositorio ja luo uusi haara</h6>
@@ -78,8 +75,7 @@
           <li>Avaa Git Bash VS Coden terminaaliin</li>
 
           <li>
-            Kloonaa repositorio <strong>git-opas</strong> pilvestä omalle
-            koneelle komennolla
+            Kloonaa repositorio <strong>git-opas</strong> pilvestä omalle koneelle komennolla
             <code>git clone https://github.com/repositorion/url-osoite.git</code>
           </li>
 
@@ -98,36 +94,30 @@
             class="wide-image"
             src="../../assets/images/teamwork/merge-conflicts/merge-konflikti-2.webp"
             alt="VS Coden terminaali ja komennot" />
-          <figcaption>Repositorion kloonaus ja uuden haaran luominen
-            komennoilla
-          </figcaption>
+          <figcaption>Repositorion kloonaus ja uuden haaran luominen komennoilla </figcaption>
         </figure>
-        <!--Accordion starts-->
+
+        <!--Accordion 2. starts-->
         <div
           class="accordion"
           data-include="../../accordion-element/accordion.html"
           data-title="Git Bashin avaaminen VS Codessa">
-          <!-- Reused accordion content starts -->
           <div
             class="contentToAccordion reused-accordion"
             data-include="/reused-accordion-content/git-bash-on-vscode.html">
             <!-- Accordion content starts from /reused-accordion-content/git-bash-on-vscode.html-->
           </div>
-          <!-- Reused accordion content ends -->
         </div>
-        <!-- Accordion ends-->
+        <!-- Accordion 2. ends-->
       </li>
       <li>
         <h6>Tee muutokset tiedostoon</h6>
         <ul>
           <li>
-            Tee haluamasi <strong>muutokset</strong> tiedostoon
-            testi-tiedosto.md (tai johonkin
-            muuhun tiedostoon kunhan teet muutokset myöhemmin samaan tiedostoon
-            GitHubissa)
+            Tee haluamasi <strong>muutokset</strong> tiedostoon testi-tiedosto.md (tai johonkin
+            muuhun tiedostoon kunhan teet muutokset myöhemmin samaan tiedostoon GitHubissa)
           </li>
-          <li>Tallenna muutokset <strong>CTRL</strong> + <strong>S</strong>
-            pikanäppäimillä</li>
+          <li>Tallenna muutokset <strong>CTRL</strong> + <strong>S</strong> pikanäppäimillä</li>
         </ul>
         <figure>
           <img
@@ -142,8 +132,7 @@
         <ul>
           <li>Varmista, että olet <strong>päähaarassa</strong></li>
           <li>
-            Avaa sama tiedosto, johon teit muutokset paikallisesti klikkaamalla
-            tiedoston nimeä
+            Avaa sama tiedosto, johon teit muutokset paikallisesti klikkaamalla tiedoston nimeä
           </li>
         </ul>
         <figure>
@@ -151,15 +140,13 @@
             class="wide-image"
             src="../../assets/images/teamwork/merge-conflicts/merge-konflikti-4.webp"
             alt="Tiedostot GitHib repositoriossa" />
-          <figcaption>Valitun git-haaran varmistaminen ja tiedoston
-            valitseminen</figcaption>
+          <figcaption>Valitun git-haaran varmistaminen ja tiedoston valitseminen</figcaption>
         </figure>
       </li>
       <li>
         <h6>Tee muutokset tiedostoon GitHubissa</h6>
         <ul>
-          <li>Klikkaa <strong>kynä-ikonia</strong> avataksesi muokkausikkunan
-          </li>
+          <li>Klikkaa <strong>kynä-ikonia</strong> avataksesi muokkausikkunan </li>
         </ul>
         <figure>
           <img
@@ -177,23 +164,21 @@
             class="wide-image"
             src="../../assets/images/teamwork/merge-conflicts/merge-konflikti-6.webp"
             alt="Muokkausikkuna ja muutokset" />
-          <figcaption>Muutosten tekeminen tiedostoon ja Commit changes...
-            -nappi</figcaption>
+          <figcaption>Muutosten tekeminen tiedostoon ja Commit changes... -nappi</figcaption>
         </figure>
         <ul>
-          <li>Anna commit-viesti <strong>Commit message</strong> -tekstikenttään
-          </li>
-          <li>Ja klikkaa <strong>Commit changes</strong> -nappia tallentaaksesi
-            muutokset
-            päähaaraan</li>
+          <li>Anna commit-viesti <strong>Commit message</strong> -tekstikenttään </li>
+          <li
+            >Ja klikkaa <strong>Commit changes</strong> -nappia tallentaaksesi muutokset
+            päähaaraan</li
+          >
         </ul>
         <figure>
           <img
             class="wide-image"
             src="../../assets/images/teamwork/merge-conflicts/merge-konflikti-7.webp"
             alt="Näkymä muutosten tallentamiseen (commit)" />
-          <figcaption>Commit-viestin lisääminen ja Commit changes -nappi
-          </figcaption>
+          <figcaption>Commit-viestin lisääminen ja Commit changes -nappi </figcaption>
         </figure>
       </li>
       <li>
@@ -214,15 +199,12 @@
         <h6>Tuo etärepositoriosta tehdyt muutokset</h6>
         <ul>
           <li>
-            Tuo etärepositoriossa tehdyt muutokset paikalliseen repositorioon
-            komennolla
+            Tuo etärepositoriossa tehdyt muutokset paikalliseen repositorioon komennolla
             <code>git pull origin main</code>
           </li>
+          <li> Tässä vaiheessa pitäisi syntyä <strong>merge-konflikti</strong></li>
           <li>
-            Tässä vaiheessa pitäisi syntyä <strong>merge-konflikti</strong></li>
-          <li>
-            Git ilmoittaa terminaalissa konfliktista, eikä tiedostoa voida
-            yhdistää automaattisesti
+            Git ilmoittaa terminaalissa konfliktista, eikä tiedostoa voida yhdistää automaattisesti
           </li>
         </ul>
 
@@ -232,8 +214,9 @@
             src="../../assets/images/teamwork/merge-conflicts/merge-konflikti-8.webp"
             alt="Paikallisten muutosten commitointi ja muutosten tuonti
             etärepositoriosta" />
-          <figcaption>Paikallisten muutosten commitointi ja muutosten tuonti
-            etärepositoriosta</figcaption>
+          <figcaption
+            >Paikallisten muutosten commitointi ja muutosten tuonti etärepositoriosta</figcaption
+          >
         </figure>
       </li>
       <li>
@@ -241,22 +224,19 @@
         <ul>
           <li>
             Avaa konfliktit sisältävä tiedosto VS Codessa klikkaamalla
-            <strong>tiedoston nimeä</strong> (tiedosto on merkitty punaisella
-            värillä ja huutomerkillä)
+            <strong>tiedoston nimeä</strong> (tiedosto on merkitty punaisella värillä ja
+            huutomerkillä)
           </li>
           <li>
-            Konfliktit on merkitty erikoismerkeillä ja väreillä: vihreä näyttää
-            paikalliset muutokset ja sininen etärepositoriosta tulevat muutokset
+            Konfliktit on merkitty erikoismerkeillä ja väreillä: vihreä näyttää paikalliset
+            muutokset ja sininen etärepositoriosta tulevat muutokset
           </li>
           <li>
-            Ratkaise konflikti klikkaamalla <em>Accept</em>
-            <strong>Current</strong>,
-            <strong>Incoming</strong> tai
-            <strong>Both</strong> <em>Changes</em> -nappia riippuen siitä mitkä
-            muutokset haluat säilyttää
+            Ratkaise konflikti klikkaamalla <em>Accept</em> <strong>Current</strong>,
+            <strong>Incoming</strong> tai <strong>Both</strong> <em>Changes</em> -nappia riippuen
+            siitä mitkä muutokset haluat säilyttää
           </li>
-          <li>Tallenna tiedosto <strong>CTRL</strong> + <strong>S</strong>
-            pikanäppäimillä</li>
+          <li>Tallenna tiedosto <strong>CTRL</strong> + <strong>S</strong> pikanäppäimillä</li>
         </ul>
         <figure>
           <img
@@ -271,8 +251,7 @@
             <code>git add .</code>
           </li>
           <li>
-            Viimeistele haarojen yhdistäminen (merge) commitoimalla ratkaistu
-            konflikti komennolla
+            Viimeistele haarojen yhdistäminen (merge) commitoimalla ratkaistu konflikti komennolla
             <code>git commit -m "Sopiva commit-viesti"</code>
           </li>
         </ul>
@@ -281,8 +260,7 @@
             class="wide-image"
             src="../../assets/images/teamwork/merge-conflicts/merge-konflikti-10.webp"
             alt="Mergen viimeistely konfliktin ratkaisun jälkeen" />
-          <figcaption>Mergen viimeistely konfliktin ratkaisun jälkeen
-          </figcaption>
+          <figcaption>Mergen viimeistely konfliktin ratkaisun jälkeen </figcaption>
         </figure>
       </li>
       <li>
@@ -298,8 +276,7 @@
             class="wide-image"
             src="../../assets/images/teamwork/merge-conflicts/merge-konflikti-11.webp"
             alt="Haaran muutosten vieminen etärepositorioon" />
-          <figcaption>Haaran muutosten vieminen etärepositorioon
-          </figcaption>
+          <figcaption>Haaran muutosten vieminen etärepositorioon </figcaption>
         </figure>
       </li>
       <li>
@@ -310,9 +287,11 @@
             <a href="/teamwork/pullrequests.html#how-to-pr">Pull Request -ohjetta</a>
             kohdasta 5. eteenpäin
           </li>
-          <li>Tai yhdistä haarat komennoilla ohjeen
+          <li
+            >Tai yhdistä haarat komennoilla ohjeen
             <a href="/teamwork/branches.html#how-to-branches"
-              >Feature-haaran yhdistäminen main-haaraan komentokehottella</a>
+              >Feature-haaran yhdistäminen main-haaraan komentokehottella</a
+            >
             mukaisesti
           </li>
         </ol>

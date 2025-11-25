@@ -19,7 +19,7 @@ export async function loadHead(pageTitle) {
   // Sets custom page title if given as parameter.
   if (pageTitle) {
     const titleEl = document.getElementById('page-title');
-    if (titleEl) titleEl.textContent = pageTitle;
+    if (titleEl) titleEl.textContent = `${pageTitle} | Git ja GitHub Opiskelijan opas`;
   }
 
   // Loads and appends scripts to document head to ensure they are executed.

@@ -6,35 +6,29 @@
       Työskennellessäsi kehityshaarassa (<em>feature-branch</em>) on
       <strong>tärkeää pitää se ajan tasalla päähaaran</strong>
       (<em>main</em>)
-      <strong>kanssa.</strong> Näin varmistat, että työskentelet aina projektin
-      uusimmassa
+      <strong>kanssa.</strong> Näin varmistat, että työskentelet aina projektin uusimmassa
       versiossa.
     </p>
 
     <p>
-      On hyvä tapa <strong>hakea tuoreimmat muutokset</strong> ennen uuden osion
-      aloittamista tai
-      aina, kun tiimikaveri
-      on tehnyt muutoksia päähaaraan. Tämä auttaa pitämään koodin ajantasaisena
-      ja
+      On hyvä tapa <strong>hakea tuoreimmat muutokset</strong> ennen uuden osion aloittamista tai
+      aina, kun tiimikaveri on tehnyt muutoksia päähaaraan. Tämä auttaa pitämään koodin
+      ajantasaisena ja
       <strong>ehkäisee merge-konflikteja.</strong>
     </p>
   </header>
 
   <h3>Kehityshaaran päivittäminen päähaarasta</h3>
   <p>
-    Ennen kehityshaaran päivittämistä varmista, että työtilassa olevat muutokset
-    on
-    joko <strong>commitoitu ja puskettu</strong> etärepositorioon tai
-    <strong>stashattu</strong> talteen. Voit päivittää kehityshaaran
-    päähaarasta
-    seuraavasti.
+    Ennen kehityshaaran päivittämistä varmista, että työtilassa olevat muutokset on joko
+    <strong>commitoitu ja puskettu</strong> etärepositorioon tai <strong>stashattu</strong> talteen.
+    Voit päivittää kehityshaaran päähaarasta seuraavasti.
   </p>
   <ol>
-    <li>Siirry omaan haaraasi <br><code>git checkout oma-haara</code></li>
-    <li>Hae tuoreimmat muutokset päähaarasta <br><code>git fetch origin</code>
-    </li>
-    <li>Yhdistä päähaaran muutokset omaan haaraasi <br>
+    <li>Siirry omaan haaraasi <br /><code>git checkout oma-haara</code></li>
+    <li>Hae tuoreimmat muutokset päähaarasta <br /><code>git fetch origin</code> </li>
+    <li
+      >Yhdistä päähaaran muutokset omaan haaraasi <br />
       <code>git merge origin/main</code>
     </li>
     <li>
@@ -42,80 +36,78 @@
       <a href="/teamwork/merge-conflicts.html">2.4 Merge-konfliktit</a>)
     </li>
     <li>
-      Commitoi ja puske päivitetyt muutokset omaan haaraasi <br>
+      Commitoi ja puske päivitetyt muutokset omaan haaraasi <br />
       <code>git push origin oma-haara</code>
     </li>
   </ol>
 
   <p class="note-box">
-    Muista, että voit aina tarkistaa tärkeimmät workflowt sivupalkin
-    muistilistasta!
+    Muista, että voit aina tarkistaa tärkeimmät workflowt sivupalkin muistilistasta!
   </p>
 
   <h3>Keskeneräisten muutosten tallennus (git stash)</h3>
 
   <p>
-    Kun työskentelet tiimissä, saatat joutua tarkistamaan toisten tekemiä
-    muutoksia tai päivittämään päähaaraa kesken kaiken.
-    Tällöin
+    Kun työskentelet tiimissä, saatat joutua tarkistamaan toisten tekemiä muutoksia tai päivittämään
+    päähaaraa kesken kaiken. Tällöin
     <code>git stash</code> on kätevä työkalu. Sen avulla voit
-    <strong>tallentaa keskeneräiset muutokset väliaikaisesti</strong> ilman,
-    että niitä tarvitsee vielä committoida tai puskea etärepositorioon.
+    <strong>tallentaa keskeneräiset muutokset väliaikaisesti</strong> ilman, että niitä tarvitsee
+    vielä committoida tai puskea etärepositorioon.
   </p>
 
   <p>
-    Komento tallentaa tekemäsi muutokset <strong>paikallisesti Gitin
-    omaan säilytyspinoon</strong> (<em>stash stack</em>) ja palauttaa
-    työskentelyhakemiston
-    viimeisimmän commitin mukaiseen tilaan. Näin voit
-    turvallisesti vaihtaa haaraa ilman, että seurattujen tiedostojen
-    keskeneräiset muutokset katoavat.
+    Komento tallentaa tekemäsi muutokset
+    <strong>paikallisesti Gitin omaan säilytyspinoon</strong> (<em>stash stack</em>) ja palauttaa
+    työskentelyhakemiston viimeisimmän commitin mukaiseen tilaan. Näin voit turvallisesti vaihtaa
+    haaraa ilman, että seurattujen tiedostojen keskeneräiset muutokset katoavat.
   </p>
 
   <p class="note-box">
-    <code>git stash</code> tallentaa väliaikaisesti kaikki committeihin lisätyt
-    muutokset, sekä
-    seurattujen tiedostojen (<em>tracked</em>) muutokset. Uudet, vielä
-    versionhallinnan ulkopuoliset
-    tiedostot (<em>untracked</em>) eivät tallennu, ellei komentoon lisätä
-    valitsinta
+    <code>git stash</code> tallentaa väliaikaisesti kaikki committeihin lisätyt muutokset, sekä
+    seurattujen tiedostojen (<em>tracked</em>) muutokset. Uudet, vielä versionhallinnan ulkopuoliset
+    tiedostot (<em>untracked</em>) eivät tallennu, ellei komentoon lisätä valitsinta
     <code>-u</code> (<em>include-untracked</em>).
   </p>
 
   <p>
     Kun olet valmis jatkamaan työtäsi, voit palata takaisin omaan haaraasi ja
-    <strong>palauttaa tallennetut muutokset</strong>. Alla oleva workflow
-    näyttää, miten <em>stash</em>-komento toimii käytännössä.
+    <strong>palauttaa tallennetut muutokset</strong>. Alla oleva workflow näyttää, miten
+    <em>stash</em>-komento toimii käytännössä.
   </p>
 
   <ol>
-    <li>Stashaa muutokset väliaikaisesti<br>
+    <li
+      >Stashaa muutokset väliaikaisesti<br />
       <code>git stash</code>
     </li>
-    <li>Siirry päähaaraan (tai mihin haluatkaan)<br>
+    <li
+      >Siirry päähaaraan (tai mihin haluatkaan)<br />
       <code>git checkout main</code>
     </li>
     <li>
-      Tee haluamasi asiat (esim. päivitä päähaara <code>git pull</code> ja
-      tarkista muutokset)
+      Tee haluamasi asiat (esim. päivitä päähaara <code>git pull</code> ja tarkista muutokset)
     </li>
-    <li>Palaa takaisin omaan haaraasi <br> <code>git checkout oma-haara</code>
+    <li
+      >Palaa takaisin omaan haaraasi <br />
+      <code>git checkout oma-haara</code>
     </li>
-    <li>Palauta stashatut muutokset <br>
+    <li
+      >Palauta stashatut muutokset <br />
       <code>git stash pop</code>
     </li>
   </ol>
 
+  <!-- accordion 1. start-->
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
     data-title="Git stash GitHub Desktopissa">
     <div class="contentToAccordion">
+      <!-- accordion content start-->
       <p>
-        Jos käytät <strong>GitHub Desktop</strong> -sovellusta ja olet
-        vaihtamassa haaraa,
-        sovellus kysyy automaattisesti haluatko
-        tallentaa (<em>stash</em>) muutokset ennen haaran vaihtamista.
+        Jos käytät <strong>GitHub Desktop</strong> -sovellusta ja olet vaihtamassa haaraa, sovellus
+        kysyy automaattisesti haluatko tallentaa (<em>stash</em>) muutokset ennen haaran
+        vaihtamista.
       </p>
 
       <figure>
@@ -123,13 +115,11 @@
           class="wide-image"
           src="../../assets/images/teamwork/branches/stash.png"
           alt="Git stash GitHub Desktopissa" />
-        <figcaption>Git stash GitHub Desktopissa haaraa vaihtaessa
-        </figcaption>
+        <figcaption>Git stash GitHub Desktopissa haaraa vaihtaessa </figcaption>
       </figure>
 
       <p>
-        Kun olet valmis jatkamaan työtäsi stashattujen muutosten kanssa, siirry
-        takaisin omaan
+        Kun olet valmis jatkamaan työtäsi stashattujen muutosten kanssa, siirry takaisin omaan
         haaraasi ja aloita palautus painamalla ensin <strong>View Stash</strong>
         -painiketta.
       </p>
@@ -139,13 +129,12 @@
           class="wide-image"
           src="../../assets/images/teamwork/branches/stash2.png"
           alt="Git stashin View Stash -näkymä GitHub Desktopissa" />
-        <figcaption>Git stashin View Stash -näkymä GitHub Desktopissa
-        </figcaption>
+        <figcaption>Git stashin View Stash -näkymä GitHub Desktopissa </figcaption>
       </figure>
 
       <p>
-        Tämän jälkeen paina <strong>Restore</strong>-painiketta tuodaksesi
-        muutokset takaisin työtilaan.
+        Tämän jälkeen paina <strong>Restore</strong>-painiketta tuodaksesi muutokset takaisin
+        työtilaan.
       </p>
 
       <figure>
@@ -153,16 +142,16 @@
           class="wide-image"
           src="../../assets/images/teamwork/branches/stash3.png"
           alt="Git stashin palautus GitHub Desktopissa" />
-        <figcaption>Git stashin palautus (restore) GitHub Desktopissa
-        </figcaption>
+        <figcaption>Git stashin palautus (restore) GitHub Desktopissa </figcaption>
       </figure>
 
       <p>
-        Nyt tekemäsi muutokset ovat palautettu stashista ja voit jatkaa
-        työskentelyäsi normaalisti.
+        Nyt tekemäsi muutokset ovat palautettu stashista ja voit jatkaa työskentelyäsi normaalisti.
       </p>
+      <!-- accordion content end-->
     </div>
   </div>
+  <!-- accordion 1. end-->
 
   <p>
     Opiskele lisää stash-komennosta
@@ -171,10 +160,8 @@
   </p>
 
   <p class="note-box">
-    Git-haarojen hallinta on tärkeä osa tiimityötä. Pidä haarasi ajan tasalla ja
-    opettele myös
-    <code>git stash</code> -komennon käyttö. Se helpottaa arkea, kun työ
-    keskeytyy ja joudut
+    Git-haarojen hallinta on tärkeä osa tiimityötä. Pidä haarasi ajan tasalla ja opettele myös
+    <code>git stash</code> -komennon käyttö. Se helpottaa arkea, kun työ keskeytyy ja joudut
     vaihtamaan haaraa kesken kaiken.
   </p>
 </section>
