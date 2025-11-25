@@ -4,18 +4,17 @@
   </header>
 
   <p>
-    <em>Pull Request</em> (PR) on GitHubin ominaisuus, jonka avulla voit <strong>ehdottaa muutoksia
-    projektiin</strong>. Se on käytännössä pyyntö yhdistää omassa haarassasi
-    tehdyt muutokset toiseen haaraan, yleensä päähaaraan (<em>main</em>).
+    <em>Pull Request</em> (PR) on GitHubin ominaisuus, jonka avulla voit
+    <strong>ehdottaa muutoksia projektiin</strong>. Se on käytännössä pyyntö yhdistää omassa
+    haarassasi tehdyt muutokset toiseen haaraan, yleensä päähaaraan (<em>main</em>).
   </p>
 
   <p>
-    PR luodaan kun olet tehnyt omassa haarassasi valmiin kokonaisuuden,
-    esimerkiksi uuden ominaisuuden, korjauksen tai päivityksen, ja haluat
-    ehdottaa sen lisäämistä päähaaraan. Se on tärkeä osa tiimityötä, koska sen
-    avulla <strong>muut voivat tarkistaa tehdyt muutokset</strong> ja varmistaa,
-    etteivät ne riko
-    olemassa olevaa koodia ennen mergeä.
+    PR luodaan kun olet tehnyt omassa haarassasi valmiin kokonaisuuden, esimerkiksi uuden
+    ominaisuuden, korjauksen tai päivityksen, ja haluat ehdottaa sen lisäämistä päähaaraan. Se on
+    tärkeä osa tiimityötä, koska sen avulla
+    <strong>muut voivat tarkistaa tehdyt muutokset</strong> ja varmistaa, etteivät ne riko olemassa
+    olevaa koodia ennen mergeä.
   </p>
 
   <figure>
@@ -24,112 +23,96 @@
   </figure>
 
   <p>
-    Pull request näyttää selkeästi, mitä tiedostoja on muokattu ja miten koodi
-    eroaa päähaarasta. Sen avulla voidaan myös käydä
-    <strong>koodikatselmointi</strong> (<em>code review</em>), eli
-    keskustella muutoksista, kommentoida koodia ja pyytää parannuksia ennen
-    hyväksyntää.
+    Pull request näyttää selkeästi, mitä tiedostoja on muokattu ja miten koodi eroaa päähaarasta.
+    Sen avulla voidaan myös käydä
+    <strong>koodikatselmointi</strong> (<em>code review</em>), eli keskustella muutoksista,
+    kommentoida koodia ja pyytää parannuksia ennen hyväksyntää.
   </p>
 
-  <!--Accordion starts-->
+  <!--Accordion 1. starts-->
   <div
     class="accordion"
     data-include="../../accordion-element/accordion.html"
     data-title="Koodikatselmointi (Code Review)">
-    <!-- Reused accordion content starts -->
     <div class="contentToAccordion">
+      <!-- accordion content start-->
       <p>
-        Koodikatselmointi tarkoittaa toisen kehittäjän tekemää muutosten
-        läpikäyntiä Pull
-        Requestissä ennen niiden yhdistämistä päähaaraan. Tavoitteena on
-        parantaa koodin laatua,
+        Koodikatselmointi tarkoittaa toisen kehittäjän tekemää muutosten läpikäyntiä Pull
+        Requestissä ennen niiden yhdistämistä päähaaraan. Tavoitteena on parantaa koodin laatua,
         yhtenäisyyttä ja turvallisuutta, sekä jakaa tietoa tiimin sisällä.
       </p>
 
       <ul>
         <li>
-          <strong>Tarkistettavia seikkoja:</strong> selkeys, tyyli, testit,
-          suorituskyky ja
+          <strong>Tarkistettavia seikkoja:</strong> selkeys, tyyli, testit, suorituskyky ja
           turvallisuus
         </li>
         <li>
-          <strong>Katselmoinnin tavoitteet:</strong> löytää virheet varhain,
-          yhdenmukaistaa koodi ja
+          <strong>Katselmoinnin tavoitteet:</strong> löytää virheet varhain, yhdenmukaistaa koodi ja
           parantaa koodin tuntemusta
         </li>
         <li>
-          <strong>Hyvä palaute:</strong> rakentavaa, perusteltua, ehdottaa
-          parannuksia ja ei
+          <strong>Hyvä palaute:</strong> rakentavaa, perusteltua, ehdottaa parannuksia ja ei
           syyllistä
         </li>
       </ul>
 
       <ul>
         <li>
-          <strong>PR:n tekijän</strong> on hyvä kirjoittaa selkeät kuvaukset ja
-          kommentoinnit sekä
+          <strong>PR:n tekijän</strong> on hyvä kirjoittaa selkeät kuvaukset ja kommentoinnit sekä
           pitää muutokset kohtuullisen pieninä
         </li>
         <li>
-          <strong>Katselmoijan</strong> kannalta on tärkeää antaa konkreettisia,
-          selkeitä
+          <strong>Katselmoijan</strong> kannalta on tärkeää antaa konkreettisia, selkeitä
           kommentteja ja tarvittaessa ehdottaa vaihtoehtoja
         </li>
       </ul>
       <p>
-        Katselmointi ei ole kilpailu, vastakkainasettelua tai henkilökohtaista.
-        Se on tilaisuus mennä kohti yhteistä tavoitetta, eli parempaa
-        lopputulosta.
-        Koodikatselmoinnin tarkoitus ei
-        ole arvioida kehittäjää, vaan itse koodia ja auttaa tekemään siitä
-        parempaa.
+        Katselmointi ei ole kilpailu, vastakkainasettelua tai henkilökohtaista. Se on tilaisuus
+        mennä kohti yhteistä tavoitetta, eli parempaa lopputulosta. Koodikatselmoinnin tarkoitus ei
+        ole arvioida kehittäjää, vaan itse koodia ja auttaa tekemään siitä parempaa.
       </p>
     </div>
-    <!-- Reused accordion content ends -->
+    <!-- Accordion content ends -->
   </div>
-  <!-- Accordion ends-->
+  <!-- Accordion 1. ends-->
 
   <p>
-    Kun kaikki on tarkistettu, PR voidaan hyväksyä ja yhdistää
-    kohdehaaraan. Tämä auttaa varmistamaan, että koodin laatu pysyy korkeana ja
-    kaikki muutokset tulevat dokumentoiduiksi.
+    Kun kaikki on tarkistettu, PR voidaan hyväksyä ja yhdistää kohdehaaraan. Tämä auttaa
+    varmistamaan, että koodin laatu pysyy korkeana ja kaikki muutokset tulevat dokumentoiduiksi.
   </p>
 
   <p class="note-box">
-    Pull requestia voi hyödyntää myös yksin työskennellessä, sillä se auttaa
-    seuraamaan muutoksia ja dokumentoimaan kehitystä.
+    Pull requestia voi hyödyntää myös yksin työskennellessä, sillä se auttaa seuraamaan muutoksia ja
+    dokumentoimaan kehitystä.
   </p>
 
   <h3>Haaransuojaus (<em>Branch Protection Rules</em>)</h3>
 
-  <p>Haarasuojaus liittyy suoraan pull request -prosessiin, koska sen avulla
-    voidaan varmistaa, että muutoksia ei viedä suoraan päähaaraan vaan ne
-    <strong>käsitellään PR:n kautta</strong>. Kuten
+  <p
+    >Haarasuojaus liittyy suoraan pull request -prosessiin, koska sen avulla voidaan varmistaa, että
+    muutoksia ei viedä suoraan päähaaraan vaan ne <strong>käsitellään PR:n kautta</strong>. Kuten
     <a href="/teamwork/how-to-teamwork.html#repo-in-practice">Repositorion asetukset käytännössä</a>
-    -kappaleessa mainittiin, haaroille voidaan määrittää erilaisia sääntöjä ja
-    rajoituksia repositoriokohtaisesti. Alla oleva osio tarjoaa tiiviin
-    yhteenvedon
-    haarasuojauksen perusperiaatteista sekä kevyestä asetuskokonaisuudesta.
+    -kappaleessa mainittiin, haaroille voidaan määrittää erilaisia sääntöjä ja rajoituksia
+    repositoriokohtaisesti. Alla oleva osio tarjoaa tiiviin yhteenvedon haarasuojauksen
+    perusperiaatteista sekä kevyestä asetuskokonaisuudesta.
   </p>
 
-  <!-- Accordion element 1 starts -->
+  <!-- Accordion element 2. starts -->
   <div
     class="accordion"
     data-include="/accordion-element/accordion.html"
     data-title="Git-haaran suojauksen (Branch protection rules) käyttöönotto">
-    <!-- Reused accordion content starts -->
     <div
       class="contentToAccordion reused-accordion"
       data-include="/reused-accordion-content/protection-rules.html">
       <!-- Accordion content starts from /reused-accordion-content/protection-rules.html-->
     </div>
-    <!-- Reused accordion content ends -->
   </div>
-  <!-- Accordion element 1 ends -->
+  <!-- Accordion element 2. ends -->
 
   <p class="note-box">
-    Huom! Haaransuojaus toimii ilmaisella GitHub-tilillä vain
-    julkisissa repositorioissa. Yksityisissä repositorioissa se vaatii
-    maksullisen GitHub-tilauksen.
+    Huom! Haaransuojaus toimii ilmaisella GitHub-tilillä vain julkisissa repositorioissa.
+    Yksityisissä repositorioissa se vaatii maksullisen GitHub-tilauksen.
   </p>
 </section>

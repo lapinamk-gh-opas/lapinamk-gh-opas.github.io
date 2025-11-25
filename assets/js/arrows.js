@@ -2,7 +2,7 @@
 // user can navigate trough sub pages and different parts by pressing arrow buttons.
 
 //imports helper functions
-import { getPageFromHash, getBasePath, loadPage } from '/assets/js/helpers.js';
+import { getPageFromParam, getBasePath, loadPage } from '/assets/js/navigationHelpers.js';
 
 // Variables
 let currentPage;
@@ -17,7 +17,7 @@ let linkIndex = 0;
 
 //Gets values for current page and base path on initial load
 document.addEventListener('content:loaded', () => {
-  currentPage = getPageFromHash();
+  currentPage = getPageFromParam();
   basePath = getBasePath();
 });
 
@@ -41,7 +41,7 @@ document.addEventListener('sidebar:loaded', () => {
 // top part page navigation links. In that case custom event launches from includeSubContent.js
 // Here sub pages are set to variables for later navigational and text rendering purposes.
 document.addEventListener('links:loaded', () => {
-  currentPage = getPageFromHash(); // gets current page from URL hash
+  currentPage = getPageFromParam(); // gets current page from URL hash
   const container = document.getElementById('mainContainer'); // gets container of page links
   const subContentPages = container.querySelectorAll('[data-page]'); // get pages from container with data-page attribute
 

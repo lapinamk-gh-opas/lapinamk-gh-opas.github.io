@@ -2,46 +2,42 @@
   <h1>GitHub Actions käytännössä</h1>
   <p>
     Tässä osiossa luodaan
-    <strong>yksinkertainen GitHub Actions -workflow</strong> ja katsotaan,
-    mistä GitHub Actionsiin liittyvät asetukset ja tiedot löytyvät GitHubissa.
-    Workflown kirjoittamista ei käydä läpi vaihe vaiheelta, vaan voit ladata
-    valmiin esimerkin täältä:
-    <a href="/advanced/automation/example-workflow/example.yaml" download>example.yaml</a>.
-    Kun sivu avautuu, voit tallentaa esimerkkitiedoston suoraan pikanäppäimellä
-    <strong>Ctrl</strong> + <strong>S</strong>. Tiedosto sisältää kommentteja,
-    jotka
-    selittävät kunkin vaiheen. Jos kopioit sisältöä manuaalisesti, kommentit
-    voivat
-    aiheuttaa virheitä, joten poista ne tarvittaessa.
+    <strong>yksinkertainen GitHub Actions -workflow</strong> ja katsotaan, mistä GitHub Actionsiin
+    liittyvät asetukset ja tiedot löytyvät GitHubissa. Workflown kirjoittamista ei käydä läpi vaihe
+    vaiheelta, vaan voit ladata valmiin esimerkin täältä:
+    <a href="/advanced/automation/example-workflow/example.yaml" download>example.yaml</a>. Kun sivu
+    avautuu, voit tallentaa esimerkkitiedoston suoraan pikanäppäimellä <strong>Ctrl</strong> +
+    <strong>S</strong>. Tiedosto sisältää kommentteja, jotka selittävät kunkin vaiheen. Jos kopioit
+    sisältöä manuaalisesti, kommentit voivat aiheuttaa virheitä, joten poista ne tarvittaessa.
   </p>
   <p>
-    Tässä osiossa käytetään samaa repositoriota kuin aikaisemmissa ohjeissa.
-    Esimerkin workflow-tiedosto example.yaml automatisoi oppaassa
-    usein käytetyn README.md -tiedoston päivittämisen. Workflow
-    kasvattaa versionumeroa jokaisen commitin yhteydessä, hakee Gitin
-    lokista viimeisimmän commitin tiedot ja lisää ne README-tiedoston
-    tekijätietoihin. Lopuksi workflow tekee automaattisen commitin ja tallentaa
-    muutokset päähaaraan.
+    Tässä osiossa käytetään samaa repositoriota kuin aikaisemmissa ohjeissa. Esimerkin
+    workflow-tiedosto example.yaml automatisoi oppaassa usein käytetyn README.md -tiedoston
+    päivittämisen. Workflow kasvattaa versionumeroa jokaisen commitin yhteydessä, hakee Gitin
+    lokista viimeisimmän commitin tiedot ja lisää ne README-tiedoston tekijätietoihin. Lopuksi
+    workflow tekee automaattisen commitin ja tallentaa muutokset päähaaraan.
   </p>
 </header>
 <section>
   <h3>GitHub Actions workflown käyttöönotto</h3>
   <ol>
     <li>
-      <h6>Muuta GitHub Actionsin asetuksia, jotta se voi tehdä muutoksia
-        repositorion
-        tiedostoihin</h6>
+      <h6
+        >Muuta GitHub Actionsin asetuksia, jotta se voi tehdä muutoksia repositorion
+        tiedostoihin</h6
+      >
       <ul>
         <li>
           Mene selaimella GitHubiin, valitse repositorio
           <strong>git-opas</strong> ja mene sen
           <strong>asetuksiin</strong>
         </li>
-        <li>Valitse sivuvalikosta <strong>Actionsin</strong> alta
+        <li
+          >Valitse sivuvalikosta <strong>Actionsin</strong> alta
           <strong>General</strong>
         </li>
-        <li>Varmista, että
-          <strong>Allow all actions and reusable workflows</strong> on valittuna
+        <li
+          >Varmista, että <strong>Allow all actions and reusable workflows</strong> on valittuna
         </li>
       </ul>
       <figure>
@@ -52,7 +48,8 @@
         <figcaption>GitHub Actionsin asetusten muuttaminen</figcaption>
       </figure>
       <ul>
-        <li>Scrollaa asetussivua alaspäin kohtaan
+        <li
+          >Scrollaa asetussivua alaspäin kohtaan
           <strong>Workflow permissions</strong>
         </li>
         <li>
@@ -66,27 +63,26 @@
           class="wide-image"
           src="../../assets/images/advanced/actions/actions-2.webp"
           alt="GitHub Actionsin luku- ja kirjoitusoikeudet repositorioon" />
-        <figcaption>
-          GitHub Actionsin luku- ja kirjoitusoikeudet repositorioon
-        </figcaption>
+        <figcaption> GitHub Actionsin luku- ja kirjoitusoikeudet repositorioon </figcaption>
       </figure>
 
       <div class="note-box">
+        <strong> Oikeudet repositorioon</strong>
         <ul>
-          <strong> Oikeudet repositorioon</strong>
-          <li class="warning">Salli <em>Read &amp; write</em> -oikeudet GitHub
-            Actionsille vain, jos työnkulun täytyy tehdä muutoksia repositorioon
-            (esim. commit, push, tagien luonti). Kirjoitusoikeudet antavat
-            workflowlle mahdollisuuden muokata tiedostoja, joten väärä
-            konfigurointi voi aiheuttaa ei-toivottuja muutoksia tai
-            turvallisuusriskejä.</li>
+          <li class="warning">
+            Salli <em>Read &amp; write</em> -oikeudet GitHub Actionsille vain, jos työnkulun täytyy
+            tehdä muutoksia repositorioon (esim. commit, push, tagien luonti). Kirjoitusoikeudet
+            antavat workflowlle mahdollisuuden muokata tiedostoja, joten väärä konfigurointi voi
+            aiheuttaa ei-toivottuja muutoksia tai turvallisuusriskejä.
+          </li>
           <li>
             Lisää tietoa asetuksista löydät
             <a
               target="_blank"
               rel="noopener noreferrer"
               href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository"
-              >täältä</a>.
+              >täältä</a
+            >.
           </li>
         </ul>
       </div>
@@ -94,10 +90,12 @@
     <li>
       <h6>Lisää Workflow-tiedosto repositorioon</h6>
       <ul>
-        <li>Tee repositorion juureen kansio ja nimeä se
+        <li
+          >Tee repositorion juureen kansio ja nimeä se
           <strong>.github</strong>
         </li>
-        <li>Tee .github-kansion sisään uusi kansio ja nimeä se
+        <li
+          >Tee .github-kansion sisään uusi kansio ja nimeä se
           <strong>workflows</strong>
         </li>
       </ul>
@@ -107,17 +105,14 @@
           src="../../assets/images/advanced/actions/actions-3.webp"
           alt=".github ja workflows kansioiden lisääminen repositorion
           juureen" />
-        <figcaption>.github ja workflows kansioiden lisääminen repositorion
-          juureen</figcaption>
+        <figcaption>.github ja workflows kansioiden lisääminen repositorion juureen</figcaption>
       </figure>
       <ul>
         <li>
-          Lisää <strong>example.yaml</strong> workflow-tiedosto
-          <strong>workflows</strong>-kansioon
+          Lisää <strong>example.yaml</strong> workflow-tiedosto <strong>workflows</strong>-kansioon
         </li>
         <li>
-          Näin Actions löytää työkulun ja osaa käynnistää sen, kun sen
-          laukaiseva toiminto
+          Näin Actions löytää työkulun ja osaa käynnistää sen, kun sen laukaiseva toiminto
           suoritetaan GitHub-repositoriossa
         </li>
       </ul>
@@ -126,8 +121,7 @@
           class="wide-image"
           src="../../assets/images/advanced/actions/actions-4.webp"
           alt="example.yaml workflow-tiedosto lisätty workflows-kansioon" />
-        <figcaption>example.yaml workflow-tiedosto lisätty workflows-kansioon
-        </figcaption>
+        <figcaption>example.yaml workflow-tiedosto lisätty workflows-kansioon </figcaption>
       </figure>
     </li>
     <li>
@@ -142,9 +136,9 @@
     <li>
       <h6>Tarkista Workflow GitHubissa</h6>
       <ul>
-        <li>Repositorion <strong>Actions</strong>-välilehdellä pääset
-          tarkastelemaan
-          työnkulkuja</li>
+        <li
+          >Repositorion <strong>Actions</strong>-välilehdellä pääset tarkastelemaan työnkulkuja</li
+        >
         <ul>
           <li><strong>Vihreä:</strong> Päättynyt ja onnistunut workflow</li>
           <li><strong>Punainen:</strong> Virheeseen päättynyt workflow</li>
@@ -152,8 +146,8 @@
         </ul>
 
         <li>
-          Työnkulun lokia ja suoritusta voi tarkastella avaamalla sen
-          käynnistäneen commitin <strong>viestin</strong>
+          Työnkulun lokia ja suoritusta voi tarkastella avaamalla sen käynnistäneen commitin
+          <strong>viestin</strong>
         </li>
       </ul>
       <figure>
@@ -161,34 +155,34 @@
           class="wide-image"
           src="../../assets/images/advanced/actions/actions-5.webp"
           alt="Lisätty workflow Actions-välilehdellä" />
-        <figcaption>Lisätty workflow Actions-välilehdellä
-        </figcaption>
+        <figcaption>Lisätty workflow Actions-välilehdellä </figcaption>
       </figure>
 
+      <!-- accordion 1. start-->
       <div
         class="accordion"
         data-include="../../accordion-element/accordion.html"
         data-title="Workflow repositorion etusivulla (code-välilehti)">
         <div class="contentToAccordion">
+          <!-- accordion content start-->
           <p>
-            Myös repositorion <strong>Code</strong>-välilehdellä näytetään
-            workflown tila samoilla väreillä kuin
-            <strong>Actions</strong>-välilehdellä.
+            Myös repositorion <strong>Code</strong>-välilehdellä näytetään workflown tila samoilla
+            väreillä kuin <strong>Actions</strong>-välilehdellä.
           </p>
           <figure>
             <img
               class="wide-image"
               src="../../assets/images/advanced/actions/actions-5.2.webp"
               alt="Workflow repositorion etusivulla (code-välilehti)" />
-            <figcaption>Workflow repositorion etusivulla (code-välilehti)
-            </figcaption>
+            <figcaption>Workflow repositorion etusivulla (code-välilehti) </figcaption>
           </figure>
+          <!-- accordion content end-->
         </div>
       </div>
+      <!-- accordion 1. end-->
 
       <ul>
-        <li>Avaa tarkempi loki klikkaamalla työn (job) <strong>nimeä</strong>
-        </li>
+        <li>Avaa tarkempi loki klikkaamalla työn (job) <strong>nimeä</strong> </li>
       </ul>
       <figure>
         <img
@@ -202,52 +196,45 @@
       <h6>Tarkista loki</h6>
       <ul>
         <li>
-          Erityisesti epäonnistuneiden työnkulkujen lokin tarkastelu on tärkeää,
-          jotta päästään
+          Erityisesti epäonnistuneiden työnkulkujen lokin tarkastelu on tärkeää, jotta päästään
           selvyyteen mistä epäonnistuminen johtui
         </li>
         <li>Epäonnistunut askel merkitään lokissa punaisella x-symbolilla</li>
         <li>
-          Klikkaamalla askeleen nimen vieressä olevaa nuolta saa avattua
-          tarkemmat tiedot askeleesta
+          Klikkaamalla askeleen nimen vieressä olevaa nuolta saa avattua tarkemmat tiedot askeleesta
           ja virheestä (mikäli ne eivät ole jo näkyvissä)
         </li>
         <li>
-          Alla olevassa kuvassa näkyvä virhe johtui siitä, että workflow yritti
-          muokata tiedostoa README.md, mutta koska tiedostoa ei
-          ollut repositoriossa workflow loi uuden tiedoston, jolloin
-          muokkausyritys epäonnistui ja työnkulku keskeytyi
+          Alla olevassa kuvassa näkyvä virhe johtui siitä, että workflow yritti muokata tiedostoa
+          README.md, mutta koska tiedostoa ei ollut repositoriossa workflow loi uuden tiedoston,
+          jolloin muokkausyritys epäonnistui ja työnkulku keskeytyi
         </li>
-    </li>
-    <li>Varsinainen virhe voi siis olla muuallakin kuin työn pysäyttäneessä
-      askeleessa</li>
-    </ul>
-    <figure>
-      <img
+        <li>Varsinainen virhe voi siis olla muuallakin kuin työn pysäyttäneessä askeleessa</li>
+      </ul>
+      <figure>
+        <img
           class="wide-image"
           src="../../assets/images/advanced/actions/actions-7.webp"
           alt="Työnkulun pysäyttäneen virheen tarkastelu" />
-      <figcaption>Työnkulun pysäyttäneen virheen tarkastelu
-      </figcaption>
-    </figure>
+        <figcaption>Työnkulun pysäyttäneen virheen tarkastelu </figcaption>
+      </figure>
     </li>
     <li>
       <h6>Tarkista Workflown tekemät muutokset repositoriossa</h6>
       <ul>
-        <li>Siirry repositorion <strong>Code</strong>-välilehdelle ja tarkista
-          README-tiedoston muutokset</li>
-        <li>Onnistuneesti suoritettuna workflow lisäsi README-tiedostoon
-          versio-osion</li>
-        <li>Osiossa näkyy <em>versionumero</em>, sekä commitin ja sen tekijän
-          tietoja</li>
+        <li
+          >Siirry repositorion <strong>Code</strong>-välilehdelle ja tarkista README-tiedoston
+          muutokset</li
+        >
+        <li>Onnistuneesti suoritettuna workflow lisäsi README-tiedostoon versio-osion</li>
+        <li>Osiossa näkyy <em>versionumero</em>, sekä commitin ja sen tekijän tietoja</li>
       </ul>
       <figure>
         <img
           class="wide-image"
           src="../../assets/images/advanced/actions/actions-8.webp"
           alt="Workflown tekemät muutokset README-tiedostossa" />
-        <figcaption>Workflown tekemät muutokset README-tiedostossa
-        </figcaption>
+        <figcaption>Workflown tekemät muutokset README-tiedostossa </figcaption>
       </figure>
 
       <ul>
@@ -262,9 +249,10 @@
         <figcaption>README-tiedoston tietojen päivittyminen</figcaption>
       </figure>
 
-      <p class="note-box">Huom! Viimeisin tekemäsi commit ei ole repositorion
-        uusin commit, koska workflow luo lopuksi vielä oman commitin
-        README-tiedoston päivityksestä.</p>
+      <p class="note-box"
+        >Huom! Viimeisin tekemäsi commit ei ole repositorion uusin commit, koska workflow luo
+        lopuksi vielä oman commitin README-tiedoston päivityksestä.</p
+      >
 
       <figure>
         <img
@@ -288,8 +276,7 @@
           class="wide-image"
           src="../../assets/images/advanced/actions/actions-11.webp"
           alt="Actionsin käyttötilaston avaaminen" />
-        <figcaption>Actionsin käyttötilaston avaaminen
-        </figcaption>
+        <figcaption>Actionsin käyttötilaston avaaminen </figcaption>
       </figure>
       <ul>
         <li>
@@ -298,16 +285,16 @@
         </li>
         <li>
           Näkymään pääsee myös menemällä
-          <strong>Insights</strong>-välilehdelle ja klikkaamalla
-          sivupalkista <strong>Actions usage metrics</strong>
+          <strong>Insights</strong>-välilehdelle ja klikkaamalla sivupalkista
+          <strong>Actions usage metrics</strong>
         </li>
         <li>
           Näkymän yläosassa näkyy repositorion kaikkien
           <strong>työnkulkujen suorittamiseen käytetty aika</strong>
         </li>
         <li>
-          Listasta voi tarkastella tarkemmin myös yksittäisen työnkulun tai
-          tietyn työn käyttämää aikaa
+          Listasta voi tarkastella tarkemmin myös yksittäisen työnkulun tai tietyn työn käyttämää
+          aikaa
         </li>
       </ul>
       <figure>
@@ -338,18 +325,18 @@
       <div class="note-box">
         <ul>
           <li>
-            <strong>Billing &amp; Licensing -näkymä</strong><br /> Sivulla näkyvät mahdolliset kustannukset ovat laskennallisia, eikä niistä tarvitse huolestua peruskäytössä. Ilmaisella GitHub-tilillä saat käyttöösi
+            <strong>Billing &amp; Licensing -näkymä</strong><br />
+            Sivulla näkyvät mahdolliset kustannukset ovat laskennallisia, eikä niistä tarvitse
+            huolestua peruskäytössä. Ilmaisella GitHub-tilillä saat käyttöösi
             <strong>2 000 minuuttia/kk Actions-ajoa</strong> ja
             <strong>500 MB tallennustilaa</strong> ilman kustannuksia.
           </li>
           <li>
-            Jos et ole lisännyt maksutietoja ja ylität ilmaiset käyttörajat,
-            GitHub ei veloita mitään. Actionsin ajot kuitenkin keskeytyvät
-            automaattisesti siihen asti kunnes uusi kuukausi alkaa ja käyttöraja
-            nollautuu.
+            Jos et ole lisännyt maksutietoja ja ylität ilmaiset käyttörajat, GitHub ei veloita
+            mitään. Actionsin ajot kuitenkin keskeytyvät automaattisesti siihen asti kunnes uusi
+            kuukausi alkaa ja käyttöraja nollautuu.
           </li>
-          <li>Näkymä näyttää siis vain millaisia kustannuksia tulisi ilman
-            ilmaista käyttöä.</li>
+          <li>Näkymä näyttää siis vain millaisia kustannuksia tulisi ilman ilmaista käyttöä.</li>
         </ul>
       </div>
     </li>

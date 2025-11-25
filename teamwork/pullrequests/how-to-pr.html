@@ -2,32 +2,26 @@
   <header>
     <h1>Kuinka tehdä Pull Request</h1>
     <p>
-      Tässä osiossa opit, miten <strong>pull request</strong> -toimintoa
-      käytetään <strong>GitHubissa selaimen kautta</strong>.
+      Tässä osiossa opit, miten <strong>pull request</strong> -toimintoa käytetään
+      <strong>GitHubissa selaimen kautta</strong>.
     </p>
-
 
     <p class="note-box">
-      Kuten monet muutkin Gitin toiminnot, myös pull requestin luominen ja
-      käsittely onnistuu useilla eri tavoilla. Esimerkiksi se voidaan tehdä
-      komentoriviltä
+      Kuten monet muutkin Gitin toiminnot, myös pull requestin luominen ja käsittely onnistuu
+      useilla eri tavoilla. Esimerkiksi se voidaan tehdä komentoriviltä
       <a target="_blank" rel="noopener noreferrer" href="https://cli.github.com/"> GitHub CLI </a>
-      -työkalulla, mutta tässä oppaassa keskitytään GitHubin verkkosivun
-      käyttöön.
+      -työkalulla, mutta tässä oppaassa keskitytään GitHubin verkkosivun käyttöön.
     </p>
-
   </header>
   <main>
     <h3>Pull Requestin luominen</h3>
 
-    <p>Aluksi kerrataan paikallisen kansion luominen, kloonataan
-      <strong>git-opas</strong>-repositorio luotuun kansioon, luodaan
-      uusi haara, tehdään muutokset ja commitoidaan ne, sekä työnnetään
-      muutokset
-      etärepositorioon. Sen jälkeen pääsemme tekemään pull requestin
-      GitHubin verkkosivulla. Voit seurata ohjetta alusta alkaen, tai jos
-      sinulla on jo haara valmiina muutoksineen, voit siirtyä suoraan kohtaan 5.
-      Avaa pull request.
+    <p
+      >Aluksi kerrataan paikallisen kansion luominen, kloonataan
+      <strong>git-opas</strong>-repositorio luotuun kansioon, luodaan uusi haara, tehdään muutokset
+      ja commitoidaan ne, sekä työnnetään muutokset etärepositorioon. Sen jälkeen pääsemme tekemään
+      pull requestin GitHubin verkkosivulla. Voit seurata ohjetta alusta alkaen, tai jos sinulla on
+      jo haara valmiina muutoksineen, voit siirtyä suoraan kohtaan 5. Avaa pull request.
     </p>
 
     <ol>
@@ -44,10 +38,12 @@
           <figcaption>Aloitusnäkymä VS Codessa</figcaption>
         </figure>
         <ul>
-          <li>Navigoi haluamaasi kansioon ja klikkaa
+          <li
+            >Navigoi haluamaasi kansioon ja klikkaa
             <strong>Uusi kansio</strong>
           </li>
-          <li>Anna kansiolle nimi (esim. <em>pull-request</em>) ja klikkaa
+          <li
+            >Anna kansiolle nimi (esim. <em>pull-request</em>) ja klikkaa
             <strong>Valitse kansio</strong>
           </li>
         </ul>
@@ -59,20 +55,18 @@
           <figcaption>Uuden kansion luominen ja valitseminen</figcaption>
         </figure>
 
-        <!-- Accordion element starts -->
+        <!-- Accordion element 1. starts -->
         <div
           class="accordion"
           data-include="../../accordion-element/accordion.html"
           data-title="Do you trust the authors of the files in this folder? -varoitus">
-          <!-- Reused accordion content starts -->
           <div
             class="contentToAccordion reused-accordion"
             data-include="/reused-accordion-content/trust-the-authors.html">
             <!-- Accordion content starts from /reused-accordion-content/trust-the-authors.html-->
           </div>
-          <!-- Reused accordion content ends -->
         </div>
-        <!-- Accordion element ends -->
+        <!-- Accordion element 1. ends -->
       </li>
       <li>
         <h6>Kloonaa (<em>Clone</em>) etärepositorio</h6>
@@ -80,8 +74,8 @@
           <li>Avaa Git Bash VS Coden terminaaliin</li>
 
           <li>
-            Kloonaa repositorio <strong>git-opas</strong> palvelimelta
-            omalle koneelle luotuun kansioon komennolla
+            Kloonaa repositorio <strong>git-opas</strong> palvelimelta omalle koneelle luotuun
+            kansioon komennolla
             <code>git clone https://github.com/repositorion/url-osoite.git</code>
             ja aja komento painamalla <strong>Enter</strong>
           </li>
@@ -94,33 +88,28 @@
           <figcaption>VS Coden terminaali ja kloonaus-komento</figcaption>
         </figure>
 
-        <!--Accordion starts-->
+        <!--Accordion 2. starts-->
         <div
           class="accordion"
           data-include="../../accordion-element/accordion.html"
           data-title="Git Bashin avaaminen VS Codessa">
-          <!-- Reused accordion content starts -->
           <div
             class="contentToAccordion reused-accordion"
             data-include="/reused-accordion-content/git-bash-on-vscode.html">
             <!-- Accordion content starts from /reused-accordion-content/git-bash-on-vscode.html-->
           </div>
-          <!-- Reused accordion content ends -->
         </div>
-        <!-- Accordion ends-->
+        <!-- Accordion 2. ends-->
 
         <ul>
-          <li>Tarkista että kloonaus onnistui VS Coden
-            <strong>Explorer</strong>-näkymästä
-          </li>
+          <li>Tarkista että kloonaus onnistui VS Coden <strong>Explorer</strong>-näkymästä </li>
         </ul>
         <figure>
           <img
             class="wide-image"
             src="../../assets/images/teamwork/pull-request/clone-4.webp"
             alt="VS Coden näkymä repositorion kloonauksen jälkeen" />
-          <figcaption> VS Coden näkymä repositorion kloonauksen jälkeen
-          </figcaption>
+          <figcaption> VS Coden näkymä repositorion kloonauksen jälkeen </figcaption>
         </figure>
       </li>
       <li>
@@ -144,11 +133,9 @@
         </figure>
         <ul>
           <li>
-            Tee haluamasi muutokset johonkin repositorion tiedostoista
-            (<em>esim README.md</em>)
+            Tee haluamasi muutokset johonkin repositorion tiedostoista (<em>esim README.md</em>)
           </li>
-          <li>Tallenna muutokset <strong>CTRL</strong> + <strong>S</strong>
-            pikanäppäimillä</li>
+          <li>Tallenna muutokset <strong>CTRL</strong> + <strong>S</strong> pikanäppäimillä</li>
         </ul>
         <figure>
           <img
@@ -210,12 +197,10 @@
           <figcaption>Terminaalin linkki pull requestiin</figcaption>
         </figure>
         <div class="note-box">
-          <p>Ohje seuraa PR:n avaamista selaimella Pull request -välilehden
-            kautta.</p>
+          <p>Ohje seuraa PR:n avaamista selaimella Pull request -välilehden kautta.</p>
           <p>
-            Tämä siksi, että kyseinen reitti on aina varmasti näkyvillä. Esim.
-            Compare & pull request -nappi ei jostain syystä aina tule näkyviin
-            GitHubin etusivulle.
+            Tämä siksi, että kyseinen reitti on aina varmasti näkyvillä. Esim. Compare & pull
+            request -nappi ei jostain syystä aina tule näkyviin GitHubin etusivulle.
           </p>
         </div>
       </li>
@@ -223,7 +208,8 @@
         <h6>Luo pull request</h6>
         <ul>
           <li>Välilehdellä voi tarkastella avoimia PR:ä tai luoda uusia</li>
-          <li>Uuden PR:n avaamiseen on taas kaksi mahdollisuutta klikata
+          <li
+            >Uuden PR:n avaamiseen on taas kaksi mahdollisuutta klikata
             <strong>Compare & pull request</strong> -nappi tai
             <strong>New pull request</strong> -nappi
           </li>
@@ -234,24 +220,21 @@
             class="wide-image"
             src="../../assets/images/teamwork/pull-request/pull-request-2.webp"
             alt="Pull request välilehti ja uuden PR:n avaaminen" />
-          <figcaption>Pull request välilehti ja uuden PR:n avaaminen
-          </figcaption>
+          <figcaption>Pull request välilehti ja uuden PR:n avaaminen </figcaption>
         </figure>
       </li>
       <li>
         <h6>Valitse verrattavat haarat</h6>
         <ul>
           <li>
-            Base on haara johon PR lopulta yhdistetään eli yleensä repositorion
-            päähaara, joka on myös oletuksena valittuna
+            Base on haara johon PR lopulta yhdistetään eli yleensä repositorion päähaara, joka on
+            myös oletuksena valittuna
           </li>
           <li>
-            Compare-kohtaan valitaan alasvetovalikosta se haara, jonka muutokset
-            halutaan yhdistää
+            Compare-kohtaan valitaan alasvetovalikosta se haara, jonka muutokset halutaan yhdistää
           </li>
           <li>
-            Klikkaa alasvetovalikosta sen <strong>haaran nimeä</strong> jonka
-            haluat yhdistää
+            Klikkaa alasvetovalikosta sen <strong>haaran nimeä</strong> jonka haluat yhdistää
           </li>
         </ul>
         <figure>
@@ -262,17 +245,14 @@
           <figcaption>Vertailtavien git-haarojen valitseminen</figcaption>
         </figure>
         <ul>
-          <li> Kun oikea haara on valittu klikkaa
-            <strong>Create pull request</strong> -nappia
-          </li>
+          <li> Kun oikea haara on valittu klikkaa <strong>Create pull request</strong> -nappia </li>
         </ul>
         <figure>
           <img
             class="wide-image"
             src="../../assets/images/teamwork/pull-request/pull-request-4.webp"
             alt="Näkymä vertailtavien git-haarojen valinnan jälkeen" />
-          <figcaption> Näkymä vertailtavien git-haarojen valinnan jälkeen
-          </figcaption>
+          <figcaption> Näkymä vertailtavien git-haarojen valinnan jälkeen </figcaption>
         </figure>
       </li>
       <li>
@@ -293,18 +273,17 @@
         <h6>Lisää katselmoija (<em>reviewer</em>)</h6>
         <ul>
           <li>
-            Koska yksityisessä repositoriossa ei ole haarasuojausta ja koodissa
-            ei ole havaittu konflikteja, PR:n voisi yhdistää nyt suoraan
-            päähaaraan klikkaamalla <strong>Merge pull request</strong> -nappia
+            Koska yksityisessä repositoriossa ei ole haarasuojausta ja koodissa ei ole havaittu
+            konflikteja, PR:n voisi yhdistää nyt suoraan päähaaraan klikkaamalla
+            <strong>Merge pull request</strong> -nappia
           </li>
           <li>
-            Mutta erityisesti ryhmätöissä suositeltavaa on harjoitella koodin
-            katselmointia ennen yhdistämistä
+            Mutta erityisesti ryhmätöissä suositeltavaa on harjoitella koodin katselmointia ennen
+            yhdistämistä
           </li>
           <li>
             Lisätäksesi katselmoijan klikkaa oikealta Reviewers-tekstin vierestä
-            <strong>ratas</strong> kuvaketta ja valitse avautuvasta listasta
-            repositorion muista
+            <strong>ratas</strong> kuvaketta ja valitse avautuvasta listasta repositorion muista
             käyttäjistä katselmoija klikkaamalla
             <strong>käyttäjän nimeä</strong>
           </li>
@@ -321,13 +300,11 @@
         <h6>Katselmoi koodi</h6>
         <ul>
           <li>
-            Valitulle katselmoijalle tulee ilmoitus katselmointipyynnöstä
-            sähköpostiin ja
+            Valitulle katselmoijalle tulee ilmoitus katselmointipyynnöstä sähköpostiin ja
             <strong>GitHub-tilin viesteihin</strong>
           </li>
           <li>
-            Klikkaa <strong>viestiä</strong> siirtyäksesi katselmointia
-            odottavaan pull requestiin
+            Klikkaa <strong>viestiä</strong> siirtyäksesi katselmointia odottavaan pull requestiin
           </li>
         </ul>
         <figure>
@@ -356,21 +333,20 @@
             class="wide-image"
             src="../../assets/images/teamwork/pull-request/pull-request-8.webp"
             alt="PR:n Files changed näkymä ja katselmoinnin tekeminen" />
-          <figcaption> PR:n Files changed näkymä ja katselmoinnin tekeminen
-          </figcaption>
+          <figcaption> PR:n Files changed näkymä ja katselmoinnin tekeminen </figcaption>
         </figure>
       </li>
       <li>
         <h6>Yhdistä päähaaraan</h6>
         <ul>
           <li>
-            Muutoksien tekijälle eli pull requestin omistajalle tulee ilmoitus
-            tehdystä katselmoinnista sähköpostiin ja GitHub-tilin viesteihin,
-            sekä annettu <strong>Arvio</strong> tulee näkyviin PR:n etusivulle
+            Muutoksien tekijälle eli pull requestin omistajalle tulee ilmoitus tehdystä
+            katselmoinnista sähköpostiin ja GitHub-tilin viesteihin, sekä annettu
+            <strong>Arvio</strong> tulee näkyviin PR:n etusivulle
           </li>
           <li>
-            Tyypillisesti pull requestin omistaja on se joka saattaa
-            yhdistämisen (<em>merge</em>) loppuun ja vie muutokset päähaaraan
+            Tyypillisesti pull requestin omistaja on se joka saattaa yhdistämisen (<em>merge</em>)
+            loppuun ja vie muutokset päähaaraan
           </li>
           <li>
             Yhdistä PR:n muutokset päähaaraan klikkaamalla
@@ -387,8 +363,7 @@
         <ul>
           <li>
             Anna vielä <strong>commit-viesti</strong> ja tarvittaessa
-            <strong>tarkempi kuvaus</strong> ja klikkaa
-            <strong>Merge pull request</strong> -nappia
+            <strong>tarkempi kuvaus</strong> ja klikkaa <strong>Merge pull request</strong> -nappia
           </li>
         </ul>
         <figure>
@@ -396,8 +371,7 @@
             class="wide-image"
             src="../../assets/images/teamwork/pull-request/pull-request-10.webp"
             alt="Commit-viestin lisääminen ja yhdistämisen saattaminen loppuun" />
-          <figcaption> Commit-viestin lisääminen ja yhdistämisen saattaminen
-            loppuun</figcaption>
+          <figcaption> Commit-viestin lisääminen ja yhdistämisen saattaminen loppuun</figcaption>
         </figure>
       </li>
       <li>
@@ -417,8 +391,7 @@
         </figure>
         <ul>
           <li>
-            Tehdyt <strong>muutokset</strong> näkyvät nyt repositorion
-            päänäkymässä
+            Tehdyt <strong>muutokset</strong> näkyvät nyt repositorion päänäkymässä
             <strong>code</strong> -välilehdellä päähaarassa
           </li>
         </ul>
