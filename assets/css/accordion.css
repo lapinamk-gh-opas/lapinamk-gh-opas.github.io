@@ -87,7 +87,7 @@
 
 .close-button {
   position: absolute;
-  bottom: 0px;
+  bottom: -2px;
   right: 35px;
   background-color: rgba(20, 130, 125);
   color: white;
