@@ -1,7 +1,8 @@
 // This script enables zoom-on-hold for images (mouse and touch).
 
 let images = []; // array to track images that have zoom functionality initialized
-const parentElement = document.querySelector('#content'); //used to block touch scroll
+const parentElement = document.querySelector('body'); //used to block touch scroll
+console.log(parentElement);
 
 //function for blocking scroll on touch screen
 const blockTouchScroll = (e) => {
