@@ -31,8 +31,10 @@ img.zoomed:not(.no-zoom) {
 }
 
 .lock-screen {
-  overflow: hidden;
-  touch-action: none;
+  touch-action: none !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .accordion img.zoomed:not(.no-zoom) {
