@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lapinamk-gh-opas.github.io/sitemap.xml
