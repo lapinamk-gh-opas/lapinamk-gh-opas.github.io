@@ -66,67 +66,69 @@
     >Organisaatiotasolla käyttöoikeudet ovat tarkemmin määriteltävissä, ja ne voidaan jakaa
     rooleihin, jotka määrittävät käyttäjän toimivaltuudet repositoriossa.</p
   >
-  <table>
-    <thead>
-      <tr>
-        <th scope="col">Käyttöoikeus </th>
-        <th scope="col">Mitä käyttäjä voi tehdä</th>
-        <th scope="col">Kenelle sopii</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>Read</strong></td>
-        <td>
-          <ul>
-            <li>Nähdä repositorion sisällön, issuet ja PR:t</li>
-            <li>Ei voi tehdä muutoksia</li>
-          </ul>
-        </td>
-        <td>Sidosryhmät ja henkilöt, jotka vain seuraavat projektia</td>
-      </tr>
-      <tr>
-        <td><strong>Triage</strong></td>
-        <td>
-          <ul>
-            <li>Hallita issueita ja pull requesteja</li>
-            <li>Ei voi muokata koodia</li>
-          </ul>
-        </td>
-        <td>Tiimivastaava, projektipäällikkö</td>
-      </tr>
-      <tr>
-        <td><strong>Write</strong></td>
-        <td>
-          <ul>
-            <li>Tehdä muutoksia koodiin, luoda haaroja ja PR:iä</li>
-            <li>Hallita issueita</li>
-          </ul>
-        </td>
-        <td>Tasavertaiset tiimin jäsenet, kehittäjät</td>
-      </tr>
-      <tr>
-        <td><strong>Maintain</strong></td>
-        <td>
-          <ul>
-            <li>Kaikki Write-oikeudet</li>
-            <li>Hallita repositorion asetuksia</li>
-          </ul>
-        </td>
-        <td>Tiimin vetäjä, tekninen johtaja</td>
-      </tr>
-      <tr>
-        <td><strong>Admin</strong></td>
-        <td>
-          <ul>
-            <li>Kaikki Write-oikeudet</li>
-            <li>Muokata repositorion asetuksia, käyttöoikeuksia, sekä poistaa repon</li>
-          </ul>
-        </td>
-        <td>Repositorion omistaja ja muut vastuuhenkilöt</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="table-teamwork-wrapper">
+    <table class="table-teamwork">
+      <thead>
+        <tr>
+          <th scope="col">Käyttöoikeus </th>
+          <th scope="col">Mitä käyttäjä voi tehdä</th>
+          <th scope="col">Kenelle sopii</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Read</strong></td>
+          <td>
+            <ul>
+              <li>Nähdä repositorion sisällön, issuet ja PR:t</li>
+              <li>Ei voi tehdä muutoksia</li>
+            </ul>
+          </td>
+          <td>Sidosryhmät ja henkilöt, jotka vain seuraavat projektia</td>
+        </tr>
+        <tr>
+          <td><strong>Triage</strong></td>
+          <td>
+            <ul>
+              <li>Hallita issueita ja pull requesteja</li>
+              <li>Ei voi muokata koodia</li>
+            </ul>
+          </td>
+          <td>Tiimivastaava, projektipäällikkö</td>
+        </tr>
+        <tr>
+          <td><strong>Write</strong></td>
+          <td>
+            <ul>
+              <li>Tehdä muutoksia koodiin, luoda haaroja ja PR:iä</li>
+              <li>Hallita issueita</li>
+            </ul>
+          </td>
+          <td>Tasavertaiset tiimin jäsenet, kehittäjät</td>
+        </tr>
+        <tr>
+          <td><strong>Maintain</strong></td>
+          <td>
+            <ul>
+              <li>Kaikki Write-oikeudet</li>
+              <li>Hallita repositorion asetuksia</li>
+            </ul>
+          </td>
+          <td>Tiimin vetäjä, tekninen johtaja</td>
+        </tr>
+        <tr>
+          <td><strong>Admin</strong></td>
+          <td>
+            <ul>
+              <li>Kaikki Write-oikeudet</li>
+              <li>Muokata repositorion asetuksia, käyttöoikeuksia, sekä poistaa repon</li>
+            </ul>
+          </td>
+          <td>Repositorion omistaja ja muut vastuuhenkilöt</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
   <p
     >Käyttöoikeudet kannattaa pitää mahdollisimman rajattuina ja antaa vain tehtäviin tarvittavat

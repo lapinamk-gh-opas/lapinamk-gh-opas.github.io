@@ -1,23 +1,18 @@
 // This script enables zoom-on-hold for images (mouse and touch).
 
 let images = []; // array to track images that have zoom functionality initialized
-const parentElement = document.querySelector('body'); //used to block touch scroll
+const parentElement = document.querySelector('html'); //used to block touch scroll
 
-//function for blocking scroll on touch screen
-const blockTouchScroll = (e) => {
-  e.preventDefault();
-};
+// Variables for touch zoom handling
+let pressTimer; // timer for long press detection
+let longPressed = false; // flag to track if long press zoom is active
+let noTouchZoom = true; // flag to prevent zoom if touch is moving
 
 // Initializes zoom functionality for a given image
 const initImageZoom = (img) => {
   // Prevents default dragging and context menu on image
-  img.setAttribute('draggable', 'false');
+  img.setAttribute('draggable', false);
   img.addEventListener('contextmenu', (e) => e.preventDefault(), { passive: false });
-
-  // Variables for touch zoom handling
-  let pressTimer; // timer for long press detection
-  let longPressed = false; // flag to track if long press zoom is active
-  let noTouchZoom = false; // flag to prevent zoom if touch is moving
 
   // Function to add zoom effect
   // x and y are client coordinates of the touch event.
@@ -38,21 +33,6 @@ const initImageZoom = (img) => {
     if (!img.classList.contains('zoomed')) {
       img.classList.add('zoomed');
     }
-
-    document.addEventListener(
-      'touchstart',
-      (e) => {
-        blockTouchScroll(e);
-      },
-      { passive: false }
-    );
-    document.addEventListener(
-      'touchmove',
-      (e) => {
-        blockTouchScroll(e);
-      },
-      { passive: false }
-    );
   };
 
   // Function to remove zoom effect
@@ -64,66 +44,74 @@ const initImageZoom = (img) => {
     noTouchZoom = false;
 
     img.classList.remove('zoomed');
-    document.body.classList.remove('lock-screen');
+    parentElement.classList.remove('lock-screen');
     img.style.transformOrigin = 'center center';
-
-    document.removeEventListener('touchstart', (e) => {
-      blockTouchScroll(e);
-    });
-    document.removeEventListener('touchmove', (e) => {
-      blockTouchScroll(e);
-    });
   };
 
   // Prevents unwanted zoom if finger is moved during touch
   let dragBlockTimer;
-
-  window.addEventListener('touchmove', () => {
+  img.addEventListener('touchstart', (e) => {
+    console.log('dont zoom');
     noTouchZoom = true;
-    clearTimeout(dragBlockTimer);
+
+    img.addEventListener('touchmove', () => {
+      clearTimeout(dragBlockTimer);
+    });
+
     dragBlockTimer = setTimeout(() => {
-      noTouchZoom = false;
+      console.log('ready to zoom', e.cancelable);
+      noTouchZoom = false; //enables zooming
+      parentElement.classList.add('lock-screen'); //prevents scrolling with touch gestures
     }, 150);
   });
 
-  let isDragging = false;
   // Touch event listeners for touch zoom functionality
   img.addEventListener('touchstart', (e) => {
     longPressed = false;
-    noTouchZoom = false;
 
     const touch = e.touches[0];
+
+    img.addEventListener('touchmove', () => {
+      clearTimeout(pressTimer);
+    });
 
     clearTimeout(pressTimer);
     pressTimer = setTimeout(() => {
-      if (!noTouchZoom) {
-        longPressed = true;
-        addZoom(touch.clientX, touch.clientY);
-        parentElement.classList.add('lock-screen');
-      }
+      console.log('no zoom:', noTouchZoom);
+      if (noTouchZoom) return;
+
+      console.log('zoom');
+      longPressed = true;
+      addZoom(touch.clientX, touch.clientY);
     }, 150);
   });
 
-  img.addEventListener('touchmove', (e) => {
-    if (!longPressed) return;
-
-    const touch = e.touches[0];
-    addZoom(touch.clientX, touch.clientY);
-  });
+  img.addEventListener(
+    'touchmove',
+    (e) => {
+      if (!longPressed) return;
+      const touch = e.touches[0];
+      addZoom(touch.clientX, touch.clientY);
+    },
+    { passive: false }
+  );
 
   // remove zoom on touch end with removeZoom function
   img.addEventListener('touchend', () => {
+    console.log('end zoom');
     removeZoom();
     parentElement.classList.remove('lock-screen');
   });
 
   // remove zoom on touch cancel with removeZoom function
   img.addEventListener('touchcancel', () => {
+    console.log('cancel zoom');
     removeZoom();
     parentElement.classList.remove('lock-screen');
   });
 
   // add zoom on mouse down
+  let isDragging = false;
   img.addEventListener('mousedown', (e) => {
     addZoom(e.clientX, e.clientY);
     isDragging = true;
