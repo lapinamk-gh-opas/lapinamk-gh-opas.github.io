@@ -47,6 +47,8 @@ document.querySelectorAll('[data-include]').forEach(async (el) => {
       arrowsLoaded = true;
     }
     if (sidebarLoaded && arrowsLoaded) {
+      sidebarLoaded = false;
+      arrowsLoaded = false;
       document.dispatchEvent(new Event('sidebar:loaded'));
     }
   } catch (err) {

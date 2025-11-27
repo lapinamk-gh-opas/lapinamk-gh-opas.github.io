@@ -1,59 +1,83 @@
+<!-- Template for main page that is used to show content as sub-pages -->
+<!-- If new SubSection is added remember to add it to the sidebar component -->
+<!-- Site header content is loaded with js (initLoader function) to the pages from /utils/head.html file-->
 <!DOCTYPE html>
 <html lang="fi">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <!-- Muuta tähän kappaleen otsikko-->
-    <title>Tiimityöskentely</title>
-
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous" />
-
-    <!-- Bootstrap scripts -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-      defer></script>
-
-    <!-- Custom CSS stylefiles -->
-    <link rel="stylesheet" href="../assets/css/styles.css" />
-    <link rel="stylesheet" href="../assets/css/nav.css" />
-    <link rel="stylesheet" href="../assets/css/footer.css" />
-    <link rel="stylesheet" href="../assets/css/sidebar.css" />
-    <link rel="stylesheet" href="../assets/css/mainContent.css" />
-    <link rel="stylesheet" href="../assets/css/accordion.css" />
-
-    <!-- Custom js scripts -->
-    <script src="../assets/js/includes.js" defer></script>
-    <script src="../assets/js/sidebar.js" defer></script>
-    <script src="../assets/js/includeSubContent.js" defer></script>
-    <script src="../assets/js/arrows.js" defer></script>
-    <script src="../assets/js/accordion.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/loading.css" />
+    <!-- Give page title as variable to initLoader function -->
+    <script type="module">
+      import { initLoader } from '/assets/js/loaderInit.js';
+      initLoader('Etusivu');
+    </script>
   </head>
 
   <body>
+    <!-- Loading screen -->
+    <div id="loader">Ladataan...</div>
+
+    <!-- Main content starts -->
+    <!-- Navbar is loaded with js from /navbar/nav.html file -->
     <div data-include="../navbar/nav.html"></div>
 
+    <!-- div with class page-layout contain sidebar, main content and navigation arrows-->
     <div class="page-layout" id="pageLayout">
+      <!-- Sidebar is loaded with js from /sidebar/sidebar.html file -->
       <div data-include="../sidebar/sidebar.html"></div>
 
       <main class="main-container" id="mainContainer">
-        <!-- Muuta tätän otsikko ja numero! -->
+        <!-- Change here the title and number of the part! -->
         <h1>2.2 Git-haarat</h1>
-        <!--Tähän tulee linkit kappaleen ala-sivuille -->
-        <a class="page-selection" href="#" data-page="introduction">Perusteet</a>
+        <!-- Add here all the links to the sub pages of the part. These links are also 
+             automatically added and used for navigation arrows functionality -->
+
+        <!-- Links are used to load sub page content from separate html-file to the main tag of this file-->
+        <!-- Sub page content need to be in file that is inside folder named same as this main page file-->
+
+        <!-- Add sub pages filename to the links data-page attribute without .html ending 
+             e.g. branches.html => branches -->
+
+        <!-- E.g. part 2.2 Git-haarat is in path /teamwork/branches.html and its first
+             sub page Git-haarojen perusteet is located in a path /teamwork/branches/branches.html -->
+        <a
+          class="page-selection"
+          href="/teamwork/branches.html?section=branches"
+          data-page="branches"
+          >Git-haarojen perusteet</a
+        >
         /
-        <a class="page-selection" href="#" data-page="how-to-branches">Toiminta</a>
+        <a
+          class="page-selection"
+          href="/teamwork/branches.html?section=how-to-branches"
+          data-page="how-to-branches">
+          Git-haarat käytännössä</a
+        >
+        /
+        <a
+          class="page-selection"
+          href="/teamwork/branches.html?section=update-and-stash"
+          data-page="update-and-stash">
+          Haaran päivitys ja git stash</a
+        >
+        /
+        <a
+          class="page-selection"
+          href="/teamwork/branches.html?section=practice-branches"
+          data-page="practice-branches">
+          Harjoitus</a
+        >
+
         <main id="content" class="content-screen"></main>
+        <!-- Navigation arrows are loaded with js from /arrows/arrows.html file -->
         <div data-include="../arrows/arrows.html"></div>
       </main>
     </div>
 
+    <!-- Notification box is loaded with js from /notification/notification.html file -->
+    <!-- Notification box is used to inform user of copying code elements -->
+    <div data-include="../notification/notification.html"></div>
+
+    <!-- Footer is loaded with js from /footer/footer.html file -->
     <div data-include="../footer/footer.html"></div>
   </body>
 </html>

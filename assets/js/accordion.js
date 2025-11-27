@@ -1,6 +1,6 @@
-// Accordion functionality
-// Fetches content from external HTML file if data-include attribute is present
+// Accordion functionality script starst when includeSubContent.js fires event: subContent:loaded
 document.addEventListener('subContent:loaded', () => {
+  //Goes trough all accordion elements and add accordions "frame" to those
   document.querySelectorAll('.accordion[data-include]').forEach(async (acc) => {
     const path = acc.dataset.include;
     const placeholder = acc.querySelector('.contentToAccordion');
@@ -24,6 +24,7 @@ document.addEventListener('subContent:loaded', () => {
 
 // Sets up accordion open/close functionality
 // also handles default open state if "open" class is present for accordion element
+// Places content and title accordingly
 document.addEventListener('accordion:loaded', (e) => {
   const item = e.detail;
   const buttonArea = item.querySelector('.header-icon');

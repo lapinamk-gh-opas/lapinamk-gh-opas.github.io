@@ -35,10 +35,12 @@ export async function initLoader(pageTitle) {
   }
 
   await document.fonts.ready;
+  document.dispatchEvent(new Event('content:loaded'));
+}
 
+document.addEventListener('subContent:loaded', async () => {
   clearTimeout(loaderDelay);
   loaderDelay = setTimeout(() => {
     loader.classList.add('fade-out');
-    document.dispatchEvent(new Event('content:loaded'));
-  }, 100);
-}
+  }, 50);
+});

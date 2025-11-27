@@ -51,7 +51,6 @@ const initImageZoom = (img) => {
   // Prevents unwanted zoom if finger is moved during touch
   let dragBlockTimer;
   img.addEventListener('touchstart', (e) => {
-    console.log('dont zoom');
     noTouchZoom = true;
 
     img.addEventListener('touchmove', () => {
@@ -59,7 +58,6 @@ const initImageZoom = (img) => {
     });
 
     dragBlockTimer = setTimeout(() => {
-      console.log('ready to zoom', e.cancelable);
       noTouchZoom = false; //enables zooming
       parentElement.classList.add('lock-screen'); //prevents scrolling with touch gestures
     }, 150);
@@ -77,10 +75,8 @@ const initImageZoom = (img) => {
 
     clearTimeout(pressTimer);
     pressTimer = setTimeout(() => {
-      console.log('no zoom:', noTouchZoom);
       if (noTouchZoom) return;
 
-      console.log('zoom');
       longPressed = true;
       addZoom(touch.clientX, touch.clientY);
     }, 150);
@@ -98,14 +94,12 @@ const initImageZoom = (img) => {
 
   // remove zoom on touch end with removeZoom function
   img.addEventListener('touchend', () => {
-    console.log('end zoom');
     removeZoom();
     parentElement.classList.remove('lock-screen');
   });
 
   // remove zoom on touch cancel with removeZoom function
   img.addEventListener('touchcancel', () => {
-    console.log('cancel zoom');
     removeZoom();
     parentElement.classList.remove('lock-screen');
   });

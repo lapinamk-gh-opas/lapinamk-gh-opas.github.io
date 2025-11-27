@@ -24,21 +24,21 @@ document.addEventListener('content:loaded', () => {
 //Custom event launches this after needed components are loaded
 //Here sidebar links are set to variables for later navigational and text rendering purposes.
 document.addEventListener('sidebar:loaded', () => {
-  currentPath = window.location.pathname; // gets current path from URL
-  const menuItems = document.querySelectorAll('.sidebar-menu a'); // gets menu items
+  let menuItems = document.querySelectorAll('.sidebar-menu a');
 
-  linkNames = Array.from(menuItems).map((el) => el.getAttribute('href')); // makes array of link href attributes
+  currentPath = window.location.pathname;
+  linkNames = Array.from(menuItems).map((el) => el.getAttribute('href'));
+  linkNamesFin = Array.from(menuItems).map((el) => el.textContent);
 
-  linkNamesFin = Array.from(menuItems).map((el) => el.textContent); // makes array of links text content
+  linkIndex = linkNames.indexOf(currentPath);
 
-  linkIndex = linkNames.indexOf(currentPath); // gets index of currently active link
+  if (linkIndex >= 0) {
+    menuItems[linkIndex].classList.add('active');
+  }
 
-  linkIndex >= 0 && menuItems[linkIndex].classList.add('active'); // add class active to current sidebar a-element for highlighting current part
-  document.dispatchEvent(new Event('links:loaded')); // fires custom event for next phase of script
+  document.dispatchEvent(new Event('links:loaded'));
 });
 
-//Custom event launches this after previous phase is ready. Also launces if user navigates from
-// top part page navigation links. In that case custom event launches from includeSubContent.js
 // Here sub pages are set to variables for later navigational and text rendering purposes.
 document.addEventListener('links:loaded', () => {
   currentPage = getPageFromParam(); // gets current page from URL hash
@@ -104,6 +104,13 @@ document.addEventListener('pages:loaded', () => {
     const textPrev = document.getElementById('prevText'); // gets main text field
     const additionalTextPrev = document.getElementById('prevPart'); // gets sub text field
 
+    //fail safe if script fails to get link names because missed event or unfinished component.
+    if (linkNames.length === 0 || linkNamesFin.length === 0) {
+      console.warn('links not ready yet, retry...');
+      requestAnimationFrame(() => document.dispatchEvent(new Event('sidebar:loaded')));
+      return;
+    }
+
     // if there is prev page then main field renders EDELLINEN SIVU and sub field has pages finnish name as text
     // else main field has text EDELLINEN OSA and subfield renders previous links finnish name
     if (pageIndex > 0) {
@@ -112,7 +119,7 @@ document.addEventListener('pages:loaded', () => {
     } else if (pageIndex === 0 && linkIndex > 0) {
       textPrev.textContent = 'EDELLINEN OSA'; // main field is set here
       additionalTextPrev.textContent = linkNamesFin[linkIndex - 1]; // sub field comes dynamically from variable
-    } else if (pageIndex === 0 && linkIndex === 0) {
+    } else if (pageIndex === 0 && linkIndex === 0 && linkNames.length != 0) {
       // Show home page arrow if on basics index page
       textPrev.textContent = 'ETUSIVU';
     }
@@ -138,7 +145,7 @@ document.addEventListener('pages:loaded', () => {
   // Loads previous page if there is one or else navigates to previous part/link
   if (prevBtn) {
     prevBtn.onclick = () => {
-      if (pageIndex === 0 && linkIndex === 0) {
+      if (pageIndex === 0 && linkIndex === 0 && linkNames.length != 0 && linkNamesFin.length != 0) {
         window.location.href = '/index.html';
       } else {
         navPrev();
@@ -176,7 +183,7 @@ async function getLastSubPageName(sectionPath) {
 document.addEventListener('keyup', function (event) {
   switch (event.key) {
     case 'ArrowLeft':
-      if (pageIndex === 0 && linkIndex === 0) {
+      if (pageIndex === 0 && linkIndex === 0 && linkNames.length != 0 && linkNamesFin.length != 0) {
         window.location.href = '/index.html';
         break;
       }
@@ -201,6 +208,7 @@ document.addEventListener('keyup', function (event) {
 
 // Function for navigating to next part or subpage
 async function navNext() {
+  if (linkNames.length === 0 && linkNamesFin.length === 0) return;
   if (pageIndex < pageNames.length - 1) {
     pageIndex = pageIndex + 1; // sets next page index
     await loadPage(pageNames[pageIndex], basePath); // loads next page
@@ -211,11 +219,11 @@ async function navNext() {
     window.location.href = linkNames[linkIndex + 1]; // navigates to next parts
   }
   window.scrollTo(0, 0); //scrolls window to top
-  document.dispatchEvent(new Event('subContent:loaded'));
 }
 
 // Function for navigating to prev part or subpage
 async function navPrev() {
+  if (linkNames.length === 0 && linkNamesFin.length === 0) return;
   if (pageIndex > 0) {
     pageIndex = pageIndex - 1; // sets previous page index
     await loadPage(pageNames[pageIndex], basePath); // loads previous page
@@ -224,11 +232,10 @@ async function navPrev() {
 
     //if previous part has sub pages navigates to last sub page or else navigates to previous part
     if (prevPage) {
-      window.location.href = `${linkNames[linkIndex - 1]}#${prevPage}`; // navigates to previous parts last subpage
+      window.location.href = `${linkNames[linkIndex - 1]}?section=${prevPage}`; // navigates to previous parts last subpage
     } else {
       window.location.href = linkNames[linkIndex - 1]; // navigates to previous parts
     }
   }
   window.scrollTo(0, 0); //scrolls window to top
-  document.dispatchEvent(new Event('subContent:loaded'));
 }
