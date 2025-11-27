@@ -21,7 +21,7 @@ img {
 
 /* image zoom effect on click */
 img.zoomed:not(.no-zoom) {
-  transform: scale(1.7);
+  transform: scale(2);
   z-index: 15;
   transition: transform 0.25s ease, left 0.25s ease;
   touch-action: none;
@@ -349,7 +349,7 @@ ol + .note-box {
   }
 
   img.zoomed:not(.no-zoom) {
-    transform: scale(2);
+    transform: scale(2.2);
   }
 
   /* button text size */
