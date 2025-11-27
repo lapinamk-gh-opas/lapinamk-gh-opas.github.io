@@ -1,8 +1,11 @@
+<!-- Template for section index pages -->
+<!-- If new section is added remember to add it to the navbar and sidebar components -->
+<!-- Site header content is loaded with js (initLoader function) to the pages from /utils/head.html file-->
 <!DOCTYPE html>
 <html lang="fi">
   <head>
     <link rel="stylesheet" href="/assets/css/loading.css" />
-    <!-- Give page title as variable to initloader function -->
+    <!-- Give page title as variable to initLoader function -->
     <script type="module">
       import { initLoader } from '/assets/js/loaderInit.js';
       initLoader('Etusivu');
@@ -10,13 +13,16 @@
   </head>
 
   <body>
-    <!-- Loader -->
+    <!-- Loading screen -->
     <div id="loader">Ladataan...</div>
 
-    <!-- main content -->
+    <!-- Main content starts -->
+    <!-- Navbar is loaded with js from /navbar/nav.html file -->
     <div data-include="../navbar/nav.html"></div>
 
+    <!-- div with class page-layout contain sidebar, main content and navigation arrows-->
     <div class="page-layout" id="pageLayout">
+      <!-- Sidebar is loaded with js from /sidebar/sidebar.html file -->
       <div data-include="../sidebar/sidebar.html"></div>
 
       <main class="main-container" id="mainContainer">
@@ -61,10 +67,17 @@
             </ol>
           </section>
         </main>
+
+        <!-- Navigation arrows are loaded with js from /arrows/arrows.html file -->
         <div data-include="../arrows/arrows.html"></div>
       </main>
     </div>
+
+    <!-- Notification box is loaded with js from /notification/notification.html file -->
+    <!-- Notification box is used to inform user of copying code elements -->
     <div data-include="../notification/notification.html"></div>
+
+    <!-- Footer is loaded with js from /footer/footer.html file -->
     <div data-include="../footer/footer.html"></div>
   </body>
 </html>

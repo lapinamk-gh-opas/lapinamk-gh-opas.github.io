@@ -1,3 +1,23 @@
+// Escapes HTML metacharacters in a string
+function escapeHTML(str) {
+  return str.replace(/[&<>"']/g, function (m) {
+    switch (m) {
+      case '&':
+        return '&amp;';
+      case '<':
+        return '&lt;';
+      case '>':
+        return '&gt;';
+      case '"':
+        return '&quot;';
+      case "'":
+        return '&#39;';
+      default:
+        return m;
+    }
+  });
+}
+
 // Function gets page/file name from URL hash (?section= part of url)
 // (eg. /basics/git-install.html?section=create-account --> create-account)
 // If no hash is found, it sets value of data-page attribute from first link inside div
@@ -52,18 +72,18 @@ export async function loadPage(subContent, basePath) {
       history.replaceState(null, '', newUrl);
     }
 
-    const firstH1 = document.querySelector('#content h1');
+    // Adds pages title from h1 tag inside content div to page title in head
+    const header = document.querySelector('#content h1');
 
-    if (firstH1) {
+    if (header) {
       const titleEl = document.getElementById('page-title');
-      const origTitle = titleEl.textContent;
-      const text = firstH1.textContent.trim();
+      const text = header.textContent.trim();
 
       if (titleEl) titleEl.textContent = `${text} | Git ja GitHub Opiskelijan opas`;
     }
     document.dispatchEvent(new Event('links:loaded'));
     document.dispatchEvent(new Event('subContent:loaded'));
   } catch (err) {
-    container.innerHTML = `<p>Virhe ladattaessa: ${err}</p>`; // incase of error, show error message
+    container.innerHTML = `<p>Virhe ladattaessa:  ${escapeHTML(err)}</p>`; // in case of error, show error message
   }
 }

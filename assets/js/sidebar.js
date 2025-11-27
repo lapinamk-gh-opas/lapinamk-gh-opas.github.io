@@ -1,8 +1,12 @@
-// includes.js fires event: "sidebar component:loaded" after sidebar component is loaded to DOM
-// and that event is used to launch/run this script.
-var sidebarState = sessionStorage.getItem('sidebar');
+/* includes.js fires event: "sidebar-component:loaded" after sidebar component 
+is loaded to the DOM and that event is used to launch/run this script.*/
 
-// 0. Load table files that are included in sidebar
+// As default sidebar is open on wide screens and closed on small screens.
+
+// user choice is stored to session storage
+// that way sidebar is kept closed during part change
+let sidebarState = sessionStorage.getItem('sidebar');
+
 /**
  * Escape special HTML characters to prevent XSS.
  * @param {string} unsafe
@@ -17,6 +21,7 @@ function escapeHTML(unsafe) {
     .replace(/'/g, '&#039;');
 }
 
+// 0. Load table files that are included in sidebar
 document.addEventListener('sidebar-component:loaded', () => {
   // Process any data-include elements within the sidebar (like table files)
   const sidebarIncludes = document.querySelectorAll('#sidebar [data-include]');
@@ -58,7 +63,7 @@ document.addEventListener('sidebar-component:loaded', () => {
 
 // 1. Sidebar opening and closing functionality.
 document.addEventListener('sidebar-component:loaded', () => {
-  const sidebar = document.getElementById('sidebar'); // get sidebat element
+  const sidebar = document.getElementById('sidebar'); // get sidebar element
   const toggleBtn = document.getElementById('toggleBtn'); // get toggle button element
   const mainContainer = document.getElementById('mainContainer'); // get main container element
 
@@ -80,6 +85,7 @@ document.addEventListener('sidebar-component:loaded', () => {
       mainContainer.classList.toggle('shifted');
 
       const isClosed = sidebar.classList.contains('closed');
+      // stored to session storage to remember user choice during session
       sessionStorage.setItem('sidebar', isClosed ? 'closed' : 'open');
       sidebarState = isClosed ? 'closed' : 'open';
       document.dispatchEvent(new Event('sidebar:changed'));
@@ -89,28 +95,28 @@ document.addEventListener('sidebar-component:loaded', () => {
 
 // 2. Sidebar dropdown functionality
 document.addEventListener('sidebar-component:loaded', () => {
-  const listItems = document.querySelectorAll('.sidebar-main-item'); // gets sibebars first level list items
+  const listItems = document.querySelectorAll('.sidebar-main-item'); // gets sidebar first level list items
 
   // listens click events to each list items dropdown button and toggles class open for sub list
   listItems.forEach((item) => {
     const toggle = item.querySelector('.dropdown-toggle'); // gets dropdown button
-    const sublist = item.querySelector('.sidebar-sub-list'); // gets sub list
+    const subList = item.querySelector('.sidebar-sub-list'); // gets sub list
 
-    if (!toggle || !sublist) return; // if no toggle button or sub list, skip to next item
+    if (!toggle || !subList) return; // if no toggle button or sub list, skip to next item
 
     toggle.addEventListener('click', () => {
       let isOpen = item.classList.contains('open');
       toggle.classList.toggle('open');
-      sublist.classList.toggle('open');
+      subList.classList.toggle('open');
 
       isOpen ? item.classList.remove('open') : item.classList.add('open');
     });
   });
 });
 
-// Closes notelist items when sidebar is closed by removing the open class from the necessary elements.
+// Closes note list items when sidebar is closed by removing the open class from the necessary elements.
 document.addEventListener('sidebar:changed', () => {
-  // gets sibebars notelist elements
+  // gets sidebar note list elements
   const listItems = document.querySelectorAll(
     '.sidebar-main-item.commands, .sidebar-main-item.workflow'
   );
@@ -118,14 +124,14 @@ document.addEventListener('sidebar:changed', () => {
   listItems.forEach((item) => {
     let isOpen = item.classList.contains('open'); // check if element is open
     const toggle = item.querySelector('.dropdown-toggle'); // gets dropdown button
-    const sublist = item.querySelector('.sidebar-sub-list'); // gets sub list
+    const subList = item.querySelector('.sidebar-sub-list'); // gets sub list
 
-    if ((!isOpen && !toggle) || !sublist) return; // if elements can't be found or elemet is not open return
+    if ((!isOpen && !toggle) || !subList) return; // if elements can't be found or element is not open return
 
     // Remove open class from the necessary elements.
     item.classList.remove('open');
     toggle.classList.remove('open');
-    sublist.classList.remove('open');
+    subList.classList.remove('open');
   });
 });
 
@@ -141,11 +147,11 @@ document.addEventListener('sidebar-component:loaded', () => {
       if (!parentItem) return;
       parentItem.classList.add('open');
 
-      const sublist = parentItem.querySelector('.sidebar-sub-list');
+      const subList = parentItem.querySelector('.sidebar-sub-list');
       const toggle = parentItem.querySelector('.dropdown-toggle');
 
       // if match found, adds class open to sub list and toggle button to open the dropdown
-      if (sublist) sublist.classList.add('open');
+      if (subList) subList.classList.add('open');
       if (toggle) toggle.classList.add('open');
     }
   });

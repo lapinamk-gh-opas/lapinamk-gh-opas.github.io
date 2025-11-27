@@ -1,7 +1,7 @@
 // Used to include HTML snippets (eg. nav-bar, footer, sidebar) into the main document
 // Example usage on html file:
 // <div data-include="/path/to/file.html"></div> looks for file.html and includes its content inside this div
-// This enables modularitys to the site by allowing HTML snippets to be reused across multiple pages
+// This enables modularity to the site by allowing HTML snippets to be reused across multiple pages
 
 // Variables to track if sidebar and arrows components are loaded
 let sidebarLoaded = false;
@@ -47,6 +47,8 @@ document.querySelectorAll('[data-include]').forEach(async (el) => {
       arrowsLoaded = true;
     }
     if (sidebarLoaded && arrowsLoaded) {
+      sidebarLoaded = false;
+      arrowsLoaded = false;
       document.dispatchEvent(new Event('sidebar:loaded'));
     }
   } catch (err) {
